@@ -9,7 +9,7 @@
 (function (G) {
   const MN = G.MN = G.MN || {};
   const PREF = 'meuneuro.v1.';
-  const K = { pedidos: PREF + 'pedidos', medico: PREF + 'medico', sessaoMed: PREF + 'sessao-medico', rascunho: PREF + 'rascunho' };
+  const K = { pedidos: PREF + 'pedidos', medico: PREF + 'medico', sessao: PREF + 'sessao', rascunho: PREF + 'rascunho' };
   const LS_RUIM = {};
   let primeiroSave = true;
 
@@ -82,11 +82,17 @@
     },
     async ia() { return null; },
     medico: {
-      async atual() { return ler(K.sessaoMed, null) ? ler(K.medico, null) || {} : null; },
-      async entrar() { G.localStorage.setItem(K.sessaoMed, 'true'); return ler(K.medico, null) || {}; },
-      async sair() { try { G.localStorage.removeItem(K.sessaoMed); } catch (e) { } },
+      async atual() { const s = local.sessao.ler(); return s && s.perfil === 'medico' ? ler(K.medico, null) || {} : null; },
+      async entrar() { return ler(K.medico, null) || {}; },
+      async sair() { local.sessao.sair(); },
       async salvarPerfil(m) { return gravar(K.medico, m); },
       async perfil() { return ler(K.medico, null); }
+    },
+    // sessão de demonstração: perfil (medico | atendente | paciente) escolhido na tela Entrar
+    sessao: {
+      ler() { return ler(K.sessao, null); },
+      entrar(perfil, nome, extra) { const s = Object.assign({ perfil, nome, em: MN.agora() }, extra || {}); gravar(K.sessao, s); return s; },
+      sair() { try { G.localStorage.removeItem(K.sessao); G.localStorage.removeItem(PREF + 'sessao-medico'); } catch (e) { } }
     },
     rascunho: {
       ler() { return ler(K.rascunho, null); },
@@ -199,6 +205,7 @@
       }
     },
     rascunho: local.rascunho,
+    sessao: local.sessao,
     diagnostico: local.diagnostico,
     exportar: local.exportar
   };

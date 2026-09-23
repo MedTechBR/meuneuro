@@ -10,12 +10,15 @@
     const [r, a, b] = h.split('/');
     MN.fecharModal();
     document.body.classList.toggle('pg-medico', r === 'medico');
+    MN.atualizarTopo();
     G.scrollTo(0, 0);
     if (r === 'paciente') return MN.telaPaciente(app);
     if (r === 'medico') return MN.telaMedico(app, a === 'caso' ? b : a);
     if (r === 'acompanhar') return telaAcompanhar(a);
     if (r === 'verificar') return telaVerificar(a);
     if (r === 'termos') return telaTermos();
+    if (r === 'entrar') return telaLogin(a);
+    if (r === 'minha-area') return telaMinhaArea();
     return telaHome();
   }
 
@@ -66,6 +69,73 @@
 
   function telaTermos() {
     app.innerHTML = `<div class="estreito"><div class="card"><div class="cab-card"><span class="ico lg"><i class="ti ti-file-text"></i></span><h2>Termo de consentimento e privacidade</h2></div><div style="white-space:pre-wrap;margin-top:12px;font-size:14.5px">${esc(MN.TCLE)}</div><p class="small muted" style="margin-top:12px">Versão ${esc(MN.TCLE_VERSAO)}</p><a class="btn" href="#/" style="margin-top:14px">Voltar</a></div></div>`;
+  }
+
+  /* ---------- conta e login de demonstração ---------- */
+  const PERFIS = {
+    paciente: { r: 'Paciente', i: 'ti-user-heart', d: 'Renovar receitas e acompanhar pedidos', nome: 'Paciente de demonstração' },
+    medico: { r: 'Médico', i: 'ti-stethoscope', d: 'Atender, revisar e assinar receitas', nome: 'Dra. Helena Duarte' },
+    atendente: { r: 'Atendente', i: 'ti-headset', d: 'Contato com pacientes e andamento da fila', nome: 'Lucas Moreira' }
+  };
+  const MEDICO_DEMO = { nome: 'Dra. Helena Duarte', crm: '000000', uf: 'CE', rqe: '0000', especialidade: 'Neurologia', endereco: 'Endereço fictício de demonstração, 100', cidade: 'Sobral', ufEnd: 'CE', telefone: '(88) 0000-0000', demo: true };
+  MN.atualizarTopo = function () {
+    const box = $('#topo-conta'); if (!box) return;
+    const s = MN.backend.sessao.ler();
+    if (!s) { box.innerHTML = '<a class="top-link" href="#/entrar"><i class="ti ti-login-2"></i>Entrar</a>'; return; }
+    const destino = s.perfil === 'paciente' ? '#/minha-area' : '#/medico';
+    const ini = String(s.nome || '?').split(/\s+/).filter(w => !/^(dr|dra)\.?$/i.test(w)).map(w => w[0]).slice(0, 2).join('').toUpperCase();
+    box.innerHTML = `<a class="conta" href="${destino}" title="Minha área"><span class="avatar">${esc(ini)}</span><span class="nm">${esc(String(s.nome).split(' ').slice(0, 2).join(' '))}<small>${PERFIS[s.perfil].r}</small></span></a>`;
+  };
+
+  function telaLogin(pre) {
+    let perfil = PERFIS[pre] ? pre : 'paciente';
+    const firebase = MN.backend.modo === 'firebase';
+    const desenhar = () => {
+      const P = PERFIS[perfil];
+      app.innerHTML = `<div class="estreito"><div class="card">
+        <div class="cab-card"><span class="ico lg"><i class="ti ti-login-2"></i></span><div><h2>Entrar no Meu Neuro</h2><p class="muted small">Escolha como você usa a plataforma.</p></div></div>
+        <div class="perfis">${Object.entries(PERFIS).map(([k, x]) => `<button class="perfil int ${k === perfil ? 'on' : ''}" data-p="${k}"><span class="ico"><i class="ti ${x.i}"></i></span><span>${x.r}<br><small>${x.d}</small></span></button>`).join('')}</div>
+        <form id="fl">
+          <label class="campo"><span>Nome</span><input class="inp" name="nome" value="${esc(P.nome)}" required></label>
+          ${firebase && perfil !== 'paciente' ? '<label class="campo"><span>E-mail</span><input class="inp" type="email" name="email" required></label><label class="campo"><span>Senha</span><input class="inp" type="password" name="senha" required></label>' : ''}
+          ${perfil === 'medico' ? '<p class="nota" style="margin:-4px 0 14px">Conta fictícia com CRM 000000/CE para testar. Em produção, cada médico entra com e-mail e senha e tem o CRM e o RQE conferidos no cadastro do CFM.</p>' : ''}
+          ${perfil === 'atendente' ? '<p class="nota" style="margin:-4px 0 14px">O atendente vê dados de contato e o andamento dos pedidos, sem acesso às informações clínicas nem à receita.</p>' : ''}
+          ${perfil === 'paciente' ? '<p class="nota" style="margin:-4px 0 14px">Na versão final o paciente entra com CPF e código enviado por SMS ou e-mail. Aqui, para testar, basta o nome.</p>' : ''}
+          <button class="btn btn-p" style="width:100%"><i class="ti ti-arrow-right"></i>Entrar como ${P.r.toLowerCase()} (demonstração)</button>
+        </form></div></div>`;
+      app.querySelectorAll('.perfil').forEach(b => b.onclick = () => { perfil = b.dataset.p; desenhar(); });
+      $('#fl').onsubmit = async e => {
+        e.preventDefault();
+        const f = new FormData(e.target);
+        const nome = String(f.get('nome')).trim() || P.nome;
+        if (firebase && perfil !== 'paciente') {
+          try { await MN.backend.medico.entrar(f.get('email'), f.get('senha')); } catch (err) { return MN.toast(err.message || 'Não foi possível entrar.'); }
+        }
+        MN.backend.sessao.entrar(perfil, nome);
+        if (perfil === 'medico' && !(await MN.backend.medico.perfil())) await MN.backend.medico.salvarPerfil(Object.assign({}, MEDICO_DEMO, { nome }));
+        MN.atualizarTopo();
+        location.hash = perfil === 'paciente' ? '#/minha-area' : '#/medico';
+      };
+    };
+    desenhar();
+  }
+
+  async function telaMinhaArea() {
+    const s = MN.backend.sessao.ler();
+    if (!s || s.perfil !== 'paciente') { location.hash = '#/entrar/paciente'; return; }
+    let meus = [];
+    try { meus = JSON.parse(localStorage.getItem('meuneuro.v1.meus-pedidos') || '[]'); } catch (e) { }
+    const rot = { aguardando: ['Na fila do médico', 'acc', 'ti-clock'], em_atendimento: ['Em atendimento', 'warn', 'ti-stethoscope'], assinado: ['Receita assinada', 'ok', 'ti-file-certificate'], recusado: ['Não renovado', 'bad', 'ti-ban'], urgencia: ['Interrompido', 'bad', 'ti-urgent'] };
+    const pedidos = [];
+    for (const m of meus) { const r = await MN.backend.consultarPorCodigo(m.codigo, m.nasc); if (r.pedido) pedidos.push(r.pedido); }
+    const rasc = MN.backend.rascunho.ler();
+    app.innerHTML = `<div class="estreito">
+      <div class="card"><div class="cab-card"><span class="ico lg"><i class="ti ti-user-heart"></i></span><div><h2>Olá, ${esc(String(s.nome).split(' ')[0])}</h2><p class="muted small">Suas renovações de receita neste aparelho.</p></div></div>
+        <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-p" href="#/paciente"><i class="ti ti-${rasc && rasc.status === 'rascunho' ? 'player-play' : 'plus'}"></i>${rasc && rasc.status === 'rascunho' ? 'Continuar pedido em andamento' : 'Nova renovação'}</a>
+        <button class="btn btn-g" id="sair-pac"><i class="ti ti-logout"></i>Sair</button></div>
+        <div class="lista-ped">${pedidos.length ? pedidos.map(p => { const x = rot[p.status] || [p.status, '', 'ti-file']; return `<a class="ped int" href="#/acompanhar/${esc(p.codigo)}"><span class="ico"><i class="ti ${x[2]}"></i></span><span class="corpo"><b>${esc((p.meds || []).map(m => m.nome).join(', ') || 'Pedido sem remédios listados')}</b><span class="m">${esc(p.codigo)} · ${esc(MN.fmtData(p.enviadoEm))}</span></span><span class="tag ${x[1]}">${x[0]}</span></a>`; }).join('') : '<div class="vazio" style="padding:26px 10px"><span class="ico lg"><i class="ti ti-file-plus"></i></span><p>Você ainda não fez nenhum pedido neste aparelho.</p></div>'}</div>
+      </div></div>`;
+    $('#sair-pac').onclick = () => { MN.backend.sessao.sair(); MN.atualizarTopo(); location.hash = '#/'; };
   }
 
   /* ---------- acompanhar ---------- */

@@ -17,10 +17,18 @@
 
   MN.telaMedico = async function (el, casoId) {
     S.el = el;
-    const m = await MN.backend.medico.atual();
-    if (!m) return telaEntrar(el);
-    S.medico = m;
-    if (!m.nome || !m.crm || !m.uf) return telaPerfil(el, true);
+    const ses = MN.backend.sessao.ler();
+    if (!ses || !['medico', 'atendente'].includes(ses.perfil)) { location.hash = '#/entrar/medico'; return; }
+    S.papel = ses.perfil;
+    if (S.papel === 'atendente') {
+      S.medico = { nome: ses.nome || 'Atendente' };
+      if (casoId === 'perfil') casoId = null;
+      if (S.abaCaso !== 'resumo') S.abaCaso = 'resumo';
+    } else {
+      const m = (await MN.backend.medico.perfil()) || {};
+      S.medico = m;
+      if (!m.nome || !m.crm || !m.uf) return telaPerfil(el, true);
+    }
     if (casoId === 'perfil') return telaPerfil(el, false);
     await recarregar();
     S.caso = casoId ? S.pedidos.find(p => p.id === casoId) || null : null;
@@ -33,25 +41,7 @@
     catch (e) { S.pedidos = []; MN.toast('Não consegui carregar a fila: ' + e.message); }
   }
 
-  /* ---------- entrar / perfil ---------- */
-  function telaEntrar(el) {
-    const local = MN.backend.modo === 'local';
-    el.innerHTML = `<div class="estreito"><div class="card">
-      <div class="cab-card"><span class="ico lg"><i class="ti ti-stethoscope"></i></span><h2>Área do médico</h2></div>
-      <p class="muted" style="margin:6px 0 18px">${local ? 'Modo local: os pedidos ficam neste navegador. Para uso real com vários aparelhos, configure o backend (docs/FIREBASE.md).' : 'Entre com a conta de médico cadastrada pela administração do Meu Neuro.'}</p>
-      ${local ? '<button class="btn btn-p" id="ent" style="width:100%">Entrar no painel (modo local)</button>' : `
-      <form id="fl"><label class="campo"><span>E-mail</span><input class="inp" type="email" name="email" required autocomplete="username"></label>
-      <label class="campo"><span>Senha</span><input class="inp" type="password" name="senha" required autocomplete="current-password"></label>
-      <button class="btn btn-p" style="width:100%">Entrar</button></form>`}
-    </div></div>`;
-    if (local) $('#ent').onclick = async () => { await MN.backend.medico.entrar(); MN.telaMedico(el); };
-    else $('#fl').onsubmit = async e => {
-      e.preventDefault(); const f = new FormData(e.target);
-      try { await MN.backend.medico.entrar(f.get('email'), f.get('senha')); MN.telaMedico(el); }
-      catch (err) { MN.toast(err.message || 'Não foi possível entrar.'); }
-    };
-  }
-
+  /* ---------- perfil ---------- */
   function telaPerfil(el, primeiro) {
     const m = S.medico || {};
     const v = k => esc(m[k] || '');
@@ -85,7 +75,7 @@
       if (primeiro) MN.telaMedico(el);
     };
     const exp = $('#exp'); if (exp) exp.onclick = () => baixar('meuneuro-backup-' + new Date().toISOString().slice(0, 10) + '.json', JSON.stringify(MN.backend.exportar(), null, 1), 'application/json');
-    const sair = $('#sair'); if (sair) sair.onclick = async () => { await MN.backend.medico.sair(); location.hash = '#/'; };
+    const sair = $('#sair'); if (sair) sair.onclick = async () => { await MN.backend.medico.sair(); MN.backend.sessao.sair(); MN.atualizarTopo(); location.hash = '#/'; };
   }
 
   /* ---------- painel ---------- */
@@ -100,7 +90,8 @@
       <nav class="trilho" aria-label="Seções">
         ${ABAS_FILA.map(a => `<button class="trilho-it ${S.aba === a.k ? 'on' : ''}" data-a="${a.k}" title="${a.r}"><span class="ico"><i class="ti ${ICO_ABA[a.k]}"></i></span>${CURTO[a.k]}${a.k === 'aguardando' && n(a.k) ? `<span class="n">${n(a.k)}</span>` : ''}</button>`).join('')}
         <span class="trilho-sp"></span>
-        <a class="trilho-it" href="#/medico/perfil" title="Perfil"><span class="ico"><i class="ti ti-user-circle"></i></span>Perfil</a>
+        ${S.papel === 'medico' ? '<a class="trilho-it" href="#/medico/perfil" title="Perfil"><span class="ico"><i class="ti ti-user-circle"></i></span>Perfil</a>' : ''}
+        <button class="trilho-it" id="sair-trilho" title="Sair"><span class="ico"><i class="ti ti-logout"></i></span>Sair</button>
       </nav>
       <aside class="fila"><div class="fila-top">
         <div style="display:flex;align-items:center;gap:8px"><div style="flex:1"><h2>${ABAS_FILA.find(a => a.k === S.aba).r}</h2><div class="sub">${n(S.aba)} pedido${n(S.aba) === 1 ? '' : 's'}</div></div>
@@ -111,6 +102,7 @@
     el.querySelectorAll('.trilho-it[data-a]').forEach(b => b.onclick = () => { S.aba = b.dataset.a; if (S.caso) location.hash = '#/medico'; else desenhar(); });
     $('#rec').onclick = async () => { const b = $('#rec'); b.querySelector('.ti').style.transition = 'transform .5s'; b.querySelector('.ti').style.transform = 'rotate(360deg)'; await recarregar(); if (S.caso) S.caso = S.pedidos.find(p => p.id === S.caso.id) || null; desenhar(); };
     $('#busca').oninput = e => { S.busca = e.target.value; desenharLista(); };
+    $('#sair-trilho').onclick = () => { MN.backend.sessao.sair(); MN.atualizarTopo(); location.hash = '#/entrar'; };
     desenharLista();
     desenharCaso();
   }
@@ -144,7 +136,8 @@
     const box = $('#caso'), p = S.caso;
     if (!p) { box.innerHTML = '<div class="vazio" style="padding-top:120px"><span class="ico lg"><i class="ti ti-hand-click"></i></span><p>Escolha um pedido para começar o atendimento.</p></div>'; return; }
     const pa = p.paciente, st = ST[p.status] || { r: p.status, c: '' };
-    const podeAgir = p.status === 'aguardando' || p.status === 'em_atendimento';
+    const atend = S.papel === 'atendente';
+    const podeAgir = !atend && (p.status === 'aguardando' || p.status === 'em_atendimento');
     box.innerHTML = `
       <a class="btn btn-s btn-g lado-btn" href="#/medico" style="margin:0 0 10px -6px"><i class="ti ti-arrow-left"></i>Voltar</a>
       <div class="caso-top"><div class="caso-quem"><span class="avatar lg">${esc(iniciais(pa.nome))}</span><div>
@@ -152,18 +145,21 @@
         <div class="id"><span>${MN.idade(pa.nasc)} anos · ${pa.sexo === 'F' ? 'Feminino' : 'Masculino'} · ${esc(p.codigo)} · ${esc(MN.fmtData(p.enviadoEm, true))}</span><span class="tag ${st.c}">${st.r}</span></div>
       </div></div><div class="caso-acoes">
         ${pa.telefone ? `<a class="btn btn-s" target="_blank" rel="noopener" href="https://wa.me/55${esc(pa.telefone)}?text=${encodeURIComponent('Olá, ' + pa.nome.split(' ')[0] + '. Aqui é ' + (S.medico.nome || 'o médico') + ', do Meu Neuro. Recebi seu pedido de renovação de receita (' + p.codigo + ') e vou fazer seu atendimento agora.')}"><i class="ti ti-brand-whatsapp"></i>WhatsApp</a>` : ''}
-        ${p.status === 'aguardando' ? '<button class="btn btn-s btn-p" id="iniciar"><i class="ti ti-player-play"></i>Iniciar atendimento</button>' : ''}
-        ${p.status === 'em_atendimento' ? '<button class="btn btn-s btn-p" id="assinar"><i class="ti ti-signature"></i>Assinar e emitir</button>' : ''}
+        ${atend ? '<button class="btn btn-s btn-p" id="contato"><i class="ti ti-phone-check"></i>Registrar contato</button>' : ''}
+        ${!atend && p.status === 'aguardando' ? '<button class="btn btn-s btn-p" id="iniciar"><i class="ti ti-player-play"></i>Iniciar atendimento</button>' : ''}
+        ${!atend && p.status === 'em_atendimento' ? '<button class="btn btn-s btn-p" id="assinar"><i class="ti ti-signature"></i>Assinar e emitir</button>' : ''}
         ${podeAgir ? '<button class="btn btn-s btn-d" id="recusar">Não renovar</button>' : ''}
         ${p.status === 'assinado' ? '<button class="btn btn-s" id="imp"><i class="ti ti-printer"></i>Imprimir / PDF</button>' : ''}
       </div></div>
-      <div class="alertas">${(p.alertas || []).map(a => `<div class="alerta ${a.nivel}"><span class="ico"><i class="ti ${a.nivel === 'alto' ? 'ti-alert-triangle' : a.nivel === 'medio' ? 'ti-alert-circle' : 'ti-info-circle'}"></i></span><span>${esc(a.texto)}</span></div>`).join('')}</div>
-      <div class="abas">${[['resumo', 'Resumo', 'ti-notes'], ['conversa', 'Conversa', 'ti-messages'], ['receita', 'Receita', 'ti-prescription'], ['atendimento', 'Atendimento', 'ti-stethoscope']].map(([k, r, ic]) => `<button class="aba ${S.abaCaso === k ? 'on' : ''}" data-k="${k}"><i class="ti ${ic}"></i>${r}</button>`).join('')}</div>
+      ${atend ? '<div class="alerta info" style="margin-top:14px"><span class="ico"><i class="ti ti-lock"></i></span><span>Perfil atendente: você vê dados de contato e o andamento do pedido. Informações clínicas e a receita ficam com o médico.</span></div>' : ''}
+      <div class="alertas">${(atend ? [] : p.alertas || []).map(a => `<div class="alerta ${a.nivel}"><span class="ico"><i class="ti ${a.nivel === 'alto' ? 'ti-alert-triangle' : a.nivel === 'medio' ? 'ti-alert-circle' : 'ti-info-circle'}"></i></span><span>${esc(a.texto)}</span></div>`).join('')}</div>
+      <div class="abas">${(atend ? [['resumo', 'Dados e contato', 'ti-address-book']] : [['resumo', 'Resumo', 'ti-notes'], ['conversa', 'Conversa', 'ti-messages'], ['receita', 'Receita', 'ti-prescription'], ['atendimento', 'Atendimento', 'ti-stethoscope']]).map(([k, r, ic]) => `<button class="aba ${S.abaCaso === k ? 'on' : ''}" data-k="${k}"><i class="ti ${ic}"></i>${r}</button>`).join('')}</div>
       <div id="conteudo"></div>`;
     box.querySelectorAll('.aba').forEach(b => b.onclick = () => { S.abaCaso = b.dataset.k; desenharCaso(); });
     const ini = $('#iniciar'); if (ini) ini.onclick = iniciar;
     const ass = $('#assinar'); if (ass) ass.onclick = abrirAssinatura;
     const rec = $('#recusar'); if (rec) rec.onclick = abrirRecusa;
+    const ct = $('#contato'); if (ct) ct.onclick = () => abrirContato(p);
     const imp = $('#imp'); if (imp) imp.onclick = () => MN.imprimir(MN.folhasReceita(p, p.atendimento.medico || S.medico, { orientacoes: true }));
     ({ resumo: abaResumo, conversa: abaConversa, receita: abaReceita, atendimento: abaAtendimento })[S.abaCaso]($('#conteudo'), p);
   }
@@ -201,7 +197,7 @@
       <dt>Endereço</dt><dd>${esc([pa.endereco, pa.bairro, pa.cidade && pa.cidade + '/' + pa.uf].filter(Boolean).join(', ') || '—')}</dd>
       <dt>Consentimento</dt><dd>${p.consentimento ? 'Aceito em ' + esc(MN.fmtData(p.consentimento.em, true)) + ' (' + esc(p.consentimento.versao) + ')' + (p.consentimento.assistente === false ? ' · recusou o assistente' : '') : '—'}</dd>
     </dl></div>`;
-    if (p.meds && p.meds.length) {
+    if (S.papel !== 'atendente' && p.meds && p.meds.length) {
       h += `<div class="sec"><h3><span class="ico sm"><i class="ti ti-pill"></i></span>Medicações informadas</h3><div style="overflow-x:auto"><table class="tab"><thead><tr><th>Medicação</th><th>Posologia informada</th><th>Uso e adesão</th><th>Efeitos</th><th>Receituário</th></tr></thead><tbody>`;
       for (const m of p.meds) {
         const k = MN.kbPorId(m.kbId), r = rx(k), tot = MN.totalDia(m);
@@ -215,11 +211,11 @@
       }
       h += '</tbody></table></div></div>';
     }
-    h += `<div class="sec"><h3><span class="ico sm"><i class="ti ti-notes"></i></span>Resumo para o prontuário<span style="flex:1"></span><button class="btn btn-s btn-g" id="copiar"><i class="ti ti-copy"></i>Copiar</button></h3><div class="resumo-txt">${esc(p.resumo || '')}</div>
+    if (S.papel !== 'atendente') h += `<div class="sec"><h3><span class="ico sm"><i class="ti ti-notes"></i></span>Resumo para o prontuário<span style="flex:1"></span><button class="btn btn-s btn-g" id="copiar"><i class="ti ti-copy"></i>Copiar</button></h3><div class="resumo-txt">${esc(p.resumo || '')}</div>
       ${p.resumoIA ? `<h3 style="margin-top:14px">Síntese da IA</h3><div class="resumo-txt">${esc(p.resumoIA)}</div>` : ''}</div>`;
     h += `<div class="sec"><h3><span class="ico sm"><i class="ti ti-history"></i></span>Histórico do pedido</h3><ul class="small" style="margin:0;padding-left:18px">${(p.historico || []).map(x => `<li>${esc(MN.fmtData(x.em, true))} · ${esc(x.evento)}${x.por ? ' · ' + esc(x.por) : ''}</li>`).join('')}</ul></div>`;
     box.innerHTML = h;
-    $('#copiar').onclick = () => copiar(p.resumo);
+    const cp = $('#copiar'); if (cp) cp.onclick = () => copiar(p.resumo);
   }
 
   /* ---------- aba conversa ---------- */
@@ -388,10 +384,10 @@
       <p class="small" id="fpdf-st" style="margin:8px 0 0"></p>
       <div class="rod">
         <button class="btn" onclick="MN.fecharModal()">Cancelar</button>
-        ${local ? '<button class="btn" id="demo" title="Só para testar o fluxo">Assinar em modo demonstração</button>' : ''}
+        ${local ? '<button class="btn" id="demo" title="Simula o fluxo integrado; não tem validade legal"><i class="ti ti-device-mobile-check"></i>Assinar com VIDaaS (simulação)</button>' : ''}
         <button class="btn btn-p" id="ok" disabled>Emitir com PDF assinado</button>
       </div>`, f => { f.querySelector('.modal').style.maxWidth = '640px'; });
-    let pdf = null;
+    let pdf = null, decisao180 = null;
     const med = medicoResumo();
     $('#bpdf').onclick = () => MN.imprimir(MN.folhasReceita(Object.assign({}, p, { atendimento: null }), med, {}).replace(/RASCUNHO: sem validade até a assinatura do médico/g, 'Pedido ' + p.codigo + ' · documento para assinatura digital'));
     $('#fpdf').onchange = async e => {
@@ -410,14 +406,15 @@
       const reqs = [...document.querySelectorAll('#mn-modal .req')];
       if (reqs.some(c => !c.checked)) { MN.toast('Confirme todos os itens da lista.'); return false; }
       const d = $('#dec180'); if (d && !d.value) { MN.toast('Registre a decisão sobre a consulta presencial.'); return false; }
+      decisao180 = d ? d.value : null;
       return true;
     };
-    const emitir = async tipo => {
-      if (!validar()) return;
+    const emitir = async (tipo, jaValidado) => {
+      if (!jaValidado && !validar()) return;
       const em = MN.agora();
       const hash = await MN.sha256(MN.conteudoAssinado(p, med, em));
       p.atendimento = Object.assign(p.atendimento || {}, {
-        medico: med, concluidoEm: em, decisao180: $('#dec180') ? $('#dec180').value : null, checklistValproato: valp || null,
+        medico: med, concluidoEm: em, decisao180, checklistValproato: valp || null,
         assinatura: { em, tipo, hash, verificacao: hash.slice(0, 10).toUpperCase(), pdf: tipo === 'icp' ? pdf : null }
       });
       p.status = 'assinado';
@@ -426,7 +423,31 @@
       S.abaCaso = 'receita'; desenhar();
     };
     $('#ok').onclick = () => emitir('icp');
-    const demo = $('#demo'); if (demo) demo.onclick = () => emitir('demo');
+    const demo = $('#demo'); if (demo) demo.onclick = () => {
+      if (!validar()) return;
+      // simulação do fluxo integrado: push no app VIDaaS do médico, aprovação no celular, PDF assinado volta sozinho
+      const m = document.querySelector('#mn-modal .modal');
+      m.innerHTML = `<div style="text-align:center;padding:10px 4px">
+        <span class="ico lg" style="margin:0 auto 14px;width:64px;height:64px;border-radius:20px"><i class="ti ti-device-mobile-message" style="font-size:30px"></i></span>
+        <h2>Aprove no seu celular</h2>
+        <p class="muted" style="margin:8px 0 18px">Enviamos uma notificação para o app VIDaaS do CPF cadastrado. Abra o app e toque em Autorizar para assinar ${itens} item(ns).</p>
+        <div class="digitando" style="justify-content:center;display:flex"><i></i><i></i><i></i></div>
+        <p class="nota" style="margin:14px 0 18px">Simulação para demonstração: nenhuma notificação real é enviada e a receita não tem validade legal.</p>
+        <div class="rod" style="justify-content:center"><button class="btn" onclick="MN.fecharModal()">Cancelar</button><button class="btn btn-p" id="aprovar"><i class="ti ti-check"></i>Simular aprovação no celular</button></div></div>`;
+      document.getElementById('aprovar').onclick = () => emitir('demo', true);
+    };
+  }
+
+  function abrirContato(p) {
+    MN.modal(`<div class="cab-card"><span class="ico lg"><i class="ti ti-phone-check"></i></span><h2>Registrar contato</h2></div>
+      <label class="campo"><span>Resultado</span><select class="inp" id="res-ct"><option>Paciente confirmou os dados e aguarda o médico</option><option>Não atendeu; nova tentativa depois</option><option>Horário do atendimento combinado</option><option>Paciente pediu para cancelar</option></select></label>
+      <label class="campo"><span>Observação (opcional)</span><textarea class="inp" id="obs-ct" rows="3" placeholder="Ex.: prefere contato à tarde"></textarea></label>
+      <div class="rod"><button class="btn" onclick="MN.fecharModal()">Cancelar</button><button class="btn btn-p" id="ok-ct"><i class="ti ti-check"></i>Registrar</button></div>`);
+    $('#ok-ct').onclick = async () => {
+      const obs = $('#obs-ct').value.trim();
+      await salvar(p, 'Contato: ' + $('#res-ct').value + (obs ? ' (' + obs + ')' : ''));
+      MN.fecharModal(); MN.toast('Contato registrado no histórico.'); desenharCaso();
+    };
   }
 
   function abrirRecusa() {

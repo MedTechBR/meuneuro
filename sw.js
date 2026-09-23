@@ -1,5 +1,5 @@
 /* Meu Neuro — service worker: rede primeiro (nunca serve código velho se houver internet), cache só para offline */
-const CACHE = 'meuneuro-v7';
+const CACHE = 'meuneuro-v8';
 const SHELL = ['./', 'index.html', 'styles.css', 'core.js', 'kb.js', 'engine.js', 'regras.js', 'receita.js', 'backend.js', 'paciente.js', 'medico.js', 'demo.js', 'app.js', 'config.js', 'manifest.webmanifest', 'icone.svg', 'icone-192.png'];
 self.addEventListener('install', e => { e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); self.skipWaiting(); });
 self.addEventListener('activate', e => { e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())); });
