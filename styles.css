@@ -287,3 +287,4 @@ textarea.inp{resize:vertical;min-height:84px;line-height:1.45}
 }
 .med>*,.conv-wrap>*{min-width:0}
 html,body{overflow-x:hidden}
+.demo-aviso{background:var(--warn-soft);color:#6b4600;font-size:13px;text-align:center;padding:7px 16px;border-bottom:1px solid #f1e0b5}

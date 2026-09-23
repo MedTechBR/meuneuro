@@ -6,7 +6,7 @@ checa sinais de alarme e, no fim, orienta sobre os efeitos de cada remédio e o 
 chega ao neurologista com resumo clínico, alertas e a **receita pré-pronta**; o médico faz o
 atendimento, revisa, assina com certificado ICP-Brasil e o paciente baixa a receita pelo código.
 
-Produto separado do MedTech: marca, repositório e backend próprios (mesmo modelo do Clinicar).
+Marca, repositório e backend próprios.
 
 ## Rodar
 Sem build, sem npm. Qualquer servidor estático:

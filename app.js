@@ -125,7 +125,7 @@
 
   /* ---------- início ---------- */
   (async function () {
-    if (MN.backend.modo === 'local') { const m = $('#modo'); m.textContent = 'Modo local'; m.title = 'Dados guardados só neste navegador'; m.classList.remove('hide'); }
+    if (MN.backend.modo === 'local') { const m = $('#modo'); m.textContent = 'Modo local'; m.title = 'Dados guardados só neste navegador'; m.classList.remove('hide'); $('#demo-aviso').classList.remove('hide'); }
     try { await MN.backend.iniciar(); }
     catch (e) { console.error(e); MN.backend = MN.backendLocal; MN.toast('Backend indisponível; usando modo local.'); }
     G.addEventListener('hashchange', rota);
