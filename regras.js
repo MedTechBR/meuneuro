@@ -258,18 +258,18 @@
     const k = MN.kbPorId(m.kbId);
     const idade = MN.idade(p.paciente.nasc);
     const fertil = p.paciente.sexo === 'F' && idade >= 10 && idade <= 55;
-    let h = `<h3>${esc(MN.nomeRx(m))}</h3>`;
+    let h = `<h3><span class="ico sm"><i class="ti ti-pill"></i></span>${esc(MN.nomeRx(m))}</h3>`;
     const it = p.status === 'assinado' ? (p.receitas || []).flatMap(b => b.itens).find(i => (m.kbId && i.kbId === m.kbId) || MN.norm(i.nome) === MN.norm(MN.nomeRx(m))) : null;
     if (p.status === 'assinado') h += it ? `<p><b>Como tomar (receita do médico):</b> ${esc(it.posologia)}</p>` : '<p><b>Este remédio não entrou na receita.</b> Siga a orientação do médico.</p>';
     else if (m.pos) h += `<p><b>Como você toma:</b> ${esc(MN.descPosologia(m.pos, m.forma))}. Continue assim até o médico decidir a receita.</p>`;
     if (!k) return h + '<p class="small muted">Este remédio não está no meu banco de orientações. O médico vai orientar você no atendimento.</p>';
-    h += '<div class="sub">Efeitos mais comuns</div>' + lista(k.efeitosComuns);
-    h += '<div class="sub">Procure atendimento médico se tiver</div>' + lista(k.sinaisAlerta);
+    h += '<div class="sub"><i class="ti ti-info-circle"></i>Efeitos mais comuns</div>' + lista(k.efeitosComuns);
+    h += '<div class="sub"><i class="ti ti-alert-triangle"></i>Procure atendimento médico se tiver</div>' + lista(k.sinaisAlerta);
     const cuid = [].concat(k.orientacoes || []);
     if (k.suspensao) cuid.push(k.suspensao);
     if (fertil && k.gestacao) cuid.push(k.gestacao);
-    h += '<div class="sub">Cuidados</div>' + lista(cuid);
-    if (k.monitorizacao && k.monitorizacao.length) h += '<div class="sub">Acompanhamento que o médico pode pedir</div>' + lista(k.monitorizacao);
+    h += '<div class="sub"><i class="ti ti-heart-handshake"></i>Cuidados</div>' + lista(cuid);
+    if (k.monitorizacao && k.monitorizacao.length) h += '<div class="sub"><i class="ti ti-calendar-check"></i>Acompanhamento que o médico pode pedir</div>' + lista(k.monitorizacao);
     const ef = (m.efeitos || []).concat(m.efeitosOutros ? [m.efeitosOutros] : []);
     if (ef.length) h += `<p class="small"><b>Você relatou:</b> ${esc(ef.join('; '))}. Eu anotei para o médico avaliar. Não mude a dose por conta própria.</p>`;
     return h;
@@ -286,7 +286,7 @@
     if (c.includes('avc')) itens.push('AVC: controle pressão, colesterol e glicose. Se tiver fraqueza, fala enrolada ou boca torta de repente, ligue 192 na hora.');
     if (p.gestacao === 'planeja' || p.gestacao === 'gestante') itens.push('Gravidez: não pare os remédios por conta própria. Converse com o médico sobre o planejamento e sobre o ácido fólico.');
     itens.push('Sinais de urgência, como crise que não para, fraqueza súbita ou pior dor de cabeça da vida, não esperam a renovação: ligue 192 ou procure um pronto-socorro.');
-    return '<h3>Seu acompanhamento</h3>' + lista(itens);
+    return '<h3><span class="ico sm"><i class="ti ti-calendar-heart"></i></span>Seu acompanhamento</h3>' + lista(itens);
   };
   MN.orientacoesPaciente = function (p) {
     const out = [{ html: '<p>Aqui estão informações gerais sobre os remédios que você informou. Não são uma decisão de tratamento: quem decide a receita é o médico. Elas também ficam salvas na tela de acompanhamento.</p>', texto: 'Orientações' }];

@@ -12,7 +12,11 @@
     el.innerHTML = `
       <div class="conv-wrap">
         <section class="conv" aria-label="Conversa com o assistente">
-          <div class="etapas" id="etapas"></div>
+          <div class="conv-top">
+            <div class="conv-head"><span class="av-ia">${MN.marcaSVG}</span><div><b>Assistente Meu Neuro</b><span class="st">Pré-consulta · o neurologista revisa tudo</span></div><span class="sp"></span>
+              <button class="btn btn-s btn-g lado-btn" id="abrir-lado"><i class="ti ti-clipboard-list"></i><span>O que informei</span></button></div>
+            <div class="etapas" id="etapas"></div>
+          </div>
           <div class="msgs" id="msgs" aria-live="polite"></div>
           <div class="entrada" id="entrada"></div>
         </section>
@@ -22,6 +26,7 @@
     if (pedido && pedido.transcript.length) {
       // retoma a conversa de onde parou
       for (const t of pedido.transcript) msgs.appendChild(bolha(t.de === 'pac' ? 'pac' : 'ia', t.texto));
+      marcarUltimos();
       const r = conv._perguntar();
       desenharEntrada(r.input);
       desenharEtapas(); desenharLado();
@@ -40,7 +45,17 @@
     const d = document.createElement('div');
     d.className = 'msg ' + tipo;
     if (html) d.innerHTML = html; else d.textContent = texto;
-    return d;
+    if (tipo === 'pac') return d;
+    const l = document.createElement('div');
+    l.className = 'linha-ia' + (tipo === 'orient' ? ' largo' : '');
+    l.innerHTML = '<span class="av">' + MN.marcaSVG + '</span>';
+    l.appendChild(d);
+    return l;
+  }
+  // o avatar aparece só na última mensagem de cada sequência do assistente
+  function marcarUltimos() {
+    const ls = document.querySelectorAll('#msgs > *');
+    ls.forEach((el, i) => { if (el.classList.contains('linha-ia')) el.classList.toggle('ultimo', !(ls[i + 1] && ls[i + 1].classList.contains('linha-ia'))); });
   }
   function rolar() { setTimeout(() => G.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' }), 30); }
   const espera = ms => new Promise(r => setTimeout(r, ms));
@@ -49,15 +64,15 @@
     const msgs = $('#msgs'); if (!msgs) return;
     $('#entrada').innerHTML = '';
     for (const m of r.msgs) {
-      const dig = document.createElement('div');
-      dig.className = 'msg ia digitando'; dig.innerHTML = '<i></i><i></i><i></i>';
+      const dig = bolha('ia', '');
+      dig.classList.add('ultimo'); dig.querySelector('.msg').classList.add('digitando'); dig.querySelector('.msg').innerHTML = '<i></i><i></i><i></i>';
       msgs.appendChild(dig); rolar();
       await espera(Math.min(900, 280 + (m.texto || '').length * 4));
       dig.remove();
       if (m.tipo === 'orient') msgs.appendChild(bolha('orient', '', m.html));
       else if (m.tipo === 'resumo') { msgs.appendChild(bolha('ia', m.texto)); msgs.appendChild(bolha('orient', '', resumoHTML(conv.p))); }
       else msgs.appendChild(bolha('ia' + (m.tipo === 'alerta' ? ' alerta' : ''), m.texto));
-      rolar();
+      marcarUltimos(); rolar();
     }
     desenharEtapas(); desenharLado();
     desenharEntrada(r.input);
@@ -96,6 +111,7 @@
     if (ocupado) return; ocupado = true;
     const msgs = $('#msgs');
     if (rotulo !== null) msgs.appendChild(bolha('pac', rotulo != null ? rotulo : String(valor)));
+    marcarUltimos();
     $('#entrada').innerHTML = '';
     rolar();
     try {
@@ -107,21 +123,20 @@
 
   function desenharEtapas() {
     const e = conv.etapa;
-    $('#etapas').innerHTML = MN.ETAPAS.map((n, i) => `<div class="etapa ${i <= e ? 'on' : ''}"><i></i><span>${n}</span></div>`).join('')
-      + `<button class="btn btn-s lado-btn" id="abrir-lado" style="margin-left:6px"><i class="ti ti-list-details"></i></button>`;
+    $('#etapas').innerHTML = MN.ETAPAS.map((n, i) => `<div class="etapa ${i < e ? 'feito' : i === e ? 'atual' : ''}" title="${n}"><span class="pt"><i class="ti ${i < e ? 'ti-check' : MN.ETAPAS_ICO[i]}"></i></span><span class="nm">${n}</span></div>`).join('');
     const b = $('#abrir-lado'); if (b) b.onclick = () => $('#lado').classList.toggle('aberto');
   }
 
   function desenharLado() {
     const p = conv.p, pa = p.paciente;
     const meds = p.meds.filter(m => m.nome);
-    let h = '<div class="card"><h3><i class="ti ti-clipboard-list"></i>O que você informou</h3>';
-    h += '<div class="grupo"><div class="rot">Paciente</div>' + (pa.nome ? esc(pa.nome) + (pa.nasc ? ' · ' + MN.idade(pa.nasc) + ' anos' : '') : '<span class="muted small">Ainda não informado</span>') + '</div>';
-    if (p.condicoes.length) h += '<div class="grupo"><div class="rot">Motivo</div>' + p.condicoes.map(c => esc(c === 'outro' ? p.condicaoOutra : MN.condRot(c))).join('<br>') + '</div>';
-    h += '<div class="grupo"><div class="rot">Remédios</div>';
-    h += meds.length ? meds.map(m => `<div class="rx-item"><b>${esc(MN.nomeRx(m))}</b><span>${esc(m.pos ? MN.descPosologia(m.pos, m.forma) : 'posologia a informar')}</span></div>`).join('') : '<span class="muted small">Nenhum ainda</span>';
-    h += '</div><p class="nota">O médico revisa tudo e decide a receita no atendimento.</p>';
-    h += '<button class="btn btn-s lado-btn" style="width:100%;margin-top:10px" onclick="document.getElementById(\'lado\').classList.remove(\'aberto\')">Fechar</button></div>';
+    const grupo = (ic, rot, corpo) => `<div class="grupo"><span class="ico sm"><i class="ti ${ic}"></i></span><div class="conteudo"><div class="rot">${rot}</div>${corpo}</div></div>`;
+    let h = '<div class="card"><div class="lado-tit"><span class="ico"><i class="ti ti-clipboard-list"></i></span><h3>O que você informou</h3></div>';
+    h += grupo('ti-user', 'Paciente', pa.nome ? esc(pa.nome) + (pa.nasc ? ' · ' + MN.idade(pa.nasc) + ' anos' : '') : '<span class="muted small">Ainda não informado</span>');
+    if (p.condicoes.length) h += grupo('ti-brain', 'Motivo', p.condicoes.map(c => esc(c === 'outro' ? p.condicaoOutra : MN.condRot(c))).join('<br>'));
+    h += grupo('ti-pill', 'Remédios', meds.length ? meds.map(m => `<div class="rx-item"><b>${esc(MN.nomeRx(m))}</b><span>${esc(m.pos ? MN.descPosologia(m.pos, m.forma) : 'como toma: a informar')}</span></div>`).join('') : '<span class="muted small">Nenhum ainda</span>');
+    h += '<p class="nota">O neurologista revisa tudo e decide a receita no atendimento.</p>';
+    h += '<button class="btn btn-s lado-btn" style="width:100%;margin-top:12px" onclick="document.getElementById(\'lado\').classList.remove(\'aberto\')">Fechar</button></div>';
     $('#lado').innerHTML = h;
   }
 
@@ -143,12 +158,12 @@
   function desenharEntrada(inp) {
     const box = $('#entrada'); if (!box || !inp) return;
     let h = '';
-    const chips = (ops, cls) => '<div class="chips' + (cls || '') + '">' + ops.map((o, i) => `<button class="chip ${o.p ? 'p' : ''}" data-i="${i}">${esc(o.r)}</button>`).join('') + '</div>';
+    const chips = (ops, cls) => '<div class="chips' + (cls || (inp.compacto ? ' num' : '')) + '">' + ops.map((o, i) => `<button class="chip ${o.p ? 'p' : ''}" data-i="${i}">${o.p ? '<i class="ti ti-check"></i>' : ''}${esc(o.r)}</button>`).join('') + '</div>';
     if (inp.tipo === 'chips' || inp.tipo === 'fim') {
       h += chips(inp.opcoes || []);
       if (inp.texto) h += campoTexto(inp);
     } else if (inp.tipo === 'texto') {
-      if (inp.dica) h += `<p class="dica">${esc(inp.dica)}</p>`;
+      if (inp.dica) h += `<p class="dica"><i class="ti ti-bulb"></i>${esc(inp.dica)}</p>`;
       h += campoTexto(inp);
     } else if (inp.tipo === 'data') {
       h += `<form class="escreve" id="f"><input class="inp" type="date" id="t" required max="${new Date().toISOString().slice(0, 10)}" aria-label="Data de nascimento"><button class="btn btn-p" aria-label="Enviar"><i class="ti ti-arrow-up"></i></button></form>`;
@@ -156,10 +171,11 @@
       h += chips(inp.chips || []);
       h += `<form class="escreve" id="f"><input class="inp" type="number" inputmode="numeric" id="t" min="${inp.min}" max="${inp.max}" placeholder="Ou escreva o número (${esc(inp.sufixo || '')})"><button class="btn btn-p" aria-label="Enviar"><i class="ti ti-arrow-up"></i></button></form>`;
     } else if (inp.tipo === 'multi') {
-      h += '<div class="lista-sel">' + (inp.opcoes || []).map((o, i) => `<label class="opt"><input type="checkbox" data-v="${esc(o.v)}" data-r="${esc(o.r)}"><span>${esc(o.r)}</span></label>`).join('');
+      let pre = ''; try { pre = conv.passo === 'condicoes' ? sessionStorage.getItem('mn-cond') || '' : ''; } catch (e) { }
+      h += '<div class="lista-sel">' + (inp.opcoes || []).map((o, i) => `<label class="opt"><input type="checkbox" data-v="${esc(o.v)}" data-r="${esc(o.r)}" ${o.v === pre ? 'checked' : ''}><span>${esc(o.r)}</span></label>`).join('');
       if (inp.nenhum) h += `<label class="opt"><input type="checkbox" data-v="${esc(inp.nenhum.v)}" data-r="${esc(inp.nenhum.r)}" data-nenhum="1"><span><b>${esc(inp.nenhum.r)}</b></span></label>`;
       if (inp.outro) h += `<div style="padding:6px 10px 10px"><input class="inp" id="outro" placeholder="${esc(inp.outro)} (opcional)"></div>`;
-      h += '</div><button class="btn btn-p" id="conf" style="width:100%">Confirmar</button>';
+      h += '</div><button class="btn btn-p" id="conf" style="width:100%"><i class="ti ti-check"></i>Confirmar</button>';
     } else if (inp.tipo === 'form') {
       h += '<form class="form-chat" id="f">' + inp.campos.map(c => {
         if (c.tipo === 'uf') return `<label class="campo"><span>${esc(c.r)}</span><select class="inp" name="${c.k}" required><option value="">Selecione</option>${UFS.map(u => `<option>${u}</option>`).join('')}</select></label>`;

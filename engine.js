@@ -198,15 +198,15 @@
 
   /* ====================== conteúdo fixo ====================== */
   MN.CONDICOES = [
-    { v: 'epilepsia', c: 'Epilepsia', r: 'Epilepsia ou crises convulsivas' },
-    { v: 'enxaqueca', c: 'Cefaleia', r: 'Enxaqueca ou outra dor de cabeça crônica' },
-    { v: 'parkinson', c: 'Parkinson', r: 'Doença de Parkinson' },
-    { v: 'demencia', c: 'Demência', r: 'Alzheimer ou outra demência' },
-    { v: 'dor_neuropatica', c: 'Dor neuropática', r: 'Dor neuropática (queimação, choque, formigamento)' },
-    { v: 'tremor', c: 'Tremor', r: 'Tremor essencial' },
-    { v: 'avc', c: 'AVC', r: 'AVC (derrame) prévio' },
-    { v: 'sono', c: 'Sono', r: 'Insônia ou outro distúrbio do sono' },
-    { v: 'espasticidade', c: 'Espasticidade', r: 'Espasticidade (rigidez muscular)' }
+    { v: 'epilepsia', i: 'ti-wave-sine', c: 'Epilepsia', r: 'Epilepsia ou crises convulsivas' },
+    { v: 'enxaqueca', i: 'ti-bolt', c: 'Enxaqueca', r: 'Enxaqueca ou outra dor de cabeça crônica' },
+    { v: 'parkinson', i: 'ti-walk', c: 'Parkinson', r: 'Doença de Parkinson' },
+    { v: 'demencia', i: 'ti-puzzle', c: 'Demência', r: 'Alzheimer ou outra demência' },
+    { v: 'dor_neuropatica', i: 'ti-flame', c: 'Dor neuropática', r: 'Dor neuropática (queimação, choque, formigamento)' },
+    { v: 'tremor', i: 'ti-hand-stop', c: 'Tremor', r: 'Tremor essencial' },
+    { v: 'avc', i: 'ti-heartbeat', c: 'AVC', r: 'AVC (derrame) prévio' },
+    { v: 'sono', i: 'ti-moon', c: 'Sono', r: 'Insônia ou outro distúrbio do sono' },
+    { v: 'espasticidade', i: 'ti-stretching', c: 'Espasticidade', r: 'Espasticidade (rigidez muscular)' }
   ];
   MN.condRot = v => (MN.CONDICOES.find(c => c.v === v) || { r: v }).r;
   MN.condCurta = v => (MN.CONDICOES.find(c => c.v === v) || { c: v }).c;
@@ -264,6 +264,7 @@
   MN.CONTROLE_GERAL = [{ v: 'controlado', r: 'Controlados' }, { v: 'parcial', r: 'Melhoraram, mas ainda incomodam' }, { v: 'descontrolado', r: 'Não estão controlados' }, { v: 'piorando', r: 'Estão piorando' }];
 
   MN.ETAPAS = ['Seus dados', 'Segurança', 'Remédios', 'Sua saúde', 'Revisão'];
+  MN.ETAPAS_ICO = ['ti-user', 'ti-shield-check', 'ti-pill', 'ti-heart-rate-monitor', 'ti-clipboard-check'];
   const ETAPA_DE = {
     inicio: 0, nome: 0, nasc: 0, responsavel: 0, sexo: 0, contato: 0, endereco: 0,
     alarmes: 1, bloqueado: 1, condicoes: 1, ultima_consulta: 1, ep_ultima: 1, ep_freq: 1, cef_dias: 1, cef_analg: 1, pk_sint: 1, dm_resp: 1, dm_sint: 1, dn_int: 1, geral_controle: 1,

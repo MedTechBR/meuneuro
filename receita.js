@@ -24,11 +24,11 @@
     const cidade = med.cidade || '';
     let s = `<div style="margin-top:34px;font-family:var(--font);font-size:12.5px">${esc(cidade ? cidade + ', ' : '')}${esc(MN.fmtData(data || MN.agora(), true))} · Documento emitido em telemedicina</div>`;
     s += `<div class="ass">${esc(med.nome || '')}<br>CRM ${esc(med.crm || '')}/${esc(med.uf || '')}${med.rqe ? ' · RQE ' + esc(med.rqe) : ''}`;
-    if (ass) s += `<br><span style="font-size:11px">${ass.tipo === 'icp' ? 'Original assinado digitalmente (ICP-Brasil) no PDF do pedido' : 'DEMONSTRAÇÃO — sem validade legal'} · ${esc(MN.fmtData(ass.em, true))}</span>`;
+    if (ass) s += `<br><span style="font-size:11px">${ass.tipo === 'icp' ? 'Original assinado digitalmente (ICP-Brasil) no PDF do pedido' : 'DEMONSTRAÇÃO: sem validade legal'} · ${esc(MN.fmtData(ass.em, true))}</span>`;
     return s + '</div>';
   }
   function rodape(p, ass) {
-    const esq = ass && ass.tipo !== 'icp' ? 'DEMONSTRAÇÃO — documento sem validade legal (assinatura ICP-Brasil ausente)' : ass ? `Verificação: ${esc(ass.verificacao)} · ${esc((G.location ? location.origin + location.pathname : '') + '#/verificar/' + ass.verificacao)}` : 'RASCUNHO — sem validade até a assinatura do médico';
+    const esq = ass && ass.tipo !== 'icp' ? 'DEMONSTRAÇÃO: documento sem validade legal (assinatura ICP-Brasil ausente)' : ass ? `Verificação: ${esc(ass.verificacao)} · ${esc((G.location ? location.origin + location.pathname : '') + '#/verificar/' + ass.verificacao)}` : 'RASCUNHO: sem validade até a assinatura do médico';
     return `<div class="rodape"><span>${esq}</span><span>Pedido ${esc(p.codigo)}</span></div>`;
   }
   function justificativas(b) {
@@ -37,7 +37,7 @@
     return '<div style="font-family:var(--font);font-size:12px;margin-top:10px"><b>Justificativa (Portaria 344/98, art. 60):</b> ' + j.map(i => esc(i.nome + ': ' + i.justificativa)).join(' · ') + '</div>';
   }
   function itensHTML(bloco) {
-    return '<ol>' + bloco.itens.map(it => `<li><span class="n">${esc(it.nome)}</span>${it.forma ? ' — ' + esc(it.forma) : ''}<br>
+    return '<ol>' + bloco.itens.map(it => `<li><span class="n">${esc(it.nome)}</span>${it.forma ? ', ' + esc(it.forma) : ''}<br>
       ${esc(it.posologia || '')}<br><span style="font-size:12.5px">Quantidade: ${esc(MN.textoQuantidade(it, bloco.tipo))}${it.quantidade != null ? ' · ' + it.dias + ' dias de tratamento' : ''}${it.obs ? ' · ' + esc(it.obs) : ''}</span></li>`).join('') + '</ol>';
   }
 
@@ -53,7 +53,7 @@
         folhas.push(`<div class="folha">${cabecalho(med)}<div class="tit">RECEITUÁRIO</div>${pacienteBloco(p, 'end')}<div class="uso">USO ORAL / CONFORME INDICADO</div>${itensHTML(b)}${assinatura(med, ass, data)}${rodape(p, ass)}</div>`);
       } else if (b.tipo === 'controle_especial') {
         // eletrônica: documento único (RDC 1.000/2025, art. 10); papel: 2 vias (Portaria 344/98, art. 52)
-        const vias = opts.papel ? ['1ª via — Retenção da farmácia', '2ª via — Orientação ao paciente'] : ['Via única eletrônica'];
+        const vias = opts.papel ? ['1ª via: retenção da farmácia', '2ª via: orientação ao paciente'] : ['Via única eletrônica'];
         for (const via of vias) {
           folhas.push(`<div class="folha"><div class="via">${via}</div>${cabecalho(med)}<div class="tit">RECEITUÁRIO DE CONTROLE ESPECIAL</div>${pacienteBloco(p, 'cpf')}<div class="uso">USO ORAL</div>${itensHTML(b)}${justificativas(b)}${assinatura(med, ass, data)}
           <div class="caixas"><div><b>Identificação do comprador</b><br>Nome:<br>RG/Órgão emissor:<br>Endereço:<br>Cidade/UF:<br>Telefone:</div><div><b>Identificação do fornecedor</b><br><br><br>Assinatura do farmacêutico<br>Data: ___/___/_____</div></div>${rodape(p, ass)}</div>`);

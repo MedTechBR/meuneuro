@@ -20,38 +20,52 @@
   }
 
   function telaHome() {
+    const conds = MN.CONDICOES.map(c => `<a class="cond int" href="#/paciente" data-c="${c.v}"><span class="ico"><i class="ti ${c.i}"></i></span><span>${esc(c.c)}</span><i class="ti ti-arrow-right seta"></i></a>`).join('');
     app.innerHTML = `<div class="home">
       <section class="home-hero">
         <div>
-          <h1>Renove sua receita de neurologia sem sair de casa.</h1>
-          <p class="lead">Um assistente adianta quais remédios você usa, as doses e como está se sentindo. Depois um neurologista revisa tudo, faz o seu atendimento e assina a receita digital.</p>
+          <span class="selo"><span class="ico sm solid" style="width:24px;height:24px;border-radius:8px"><i class="ti ti-stethoscope" style="font-size:14px"></i></span>Neurologista com CRM e RQE em todo atendimento</span>
+          <h1>Sua receita de neurologia <span>renovada</span> sem sair de casa</h1>
+          <p class="lead">Você conta ao assistente quais remédios usa, as doses e como tem se sentido. Um neurologista lê tudo, fala com você e assina a receita digital.</p>
           <div class="home-acoes">
             <a class="btn btn-p" href="#/paciente"><i class="ti ti-message-circle"></i>Renovar minha receita</a>
             <a class="btn" href="#/acompanhar"><i class="ti ti-search"></i>Acompanhar pedido</a>
           </div>
-          <p class="small muted" style="margin-top:14px">Para quem já tem diagnóstico e usa remédios neurológicos de forma contínua: epilepsia, enxaqueca, Parkinson, demência, dor neuropática e outros.</p>
+          <div class="confianca">
+            <div><span class="ico sm"><i class="ti ti-clock"></i></span>Cerca de 5 minutos para preencher</div>
+            <div><span class="ico sm"><i class="ti ti-certificate"></i></span>Assinatura digital ICP-Brasil</div>
+            <div><span class="ico sm"><i class="ti ti-lock"></i></span>Dados de saúde protegidos pela LGPD</div>
+          </div>
         </div>
         <div class="card home-prev" aria-hidden="true">
+          <div class="prev-top"><span class="av-ia">${MN.marcaSVG}</span><div><b>Assistente Meu Neuro</b><span class="on">pré-consulta</span></div></div>
           <div class="prev-msg ia">Qual é o nome do remédio que você quer renovar?</div>
           <div class="prev-msg pac">Keppra 500</div>
-          <div class="prev-msg ia">Como você toma o Levetiracetam 500 mg?</div>
+          <div class="prev-msg ia">Como você toma Levetiracetam 500 mg?</div>
           <div class="prev-msg pac">1 de manhã e 1 à noite</div>
-          <div class="prev-msg ia">Entendi: 1 comprimido pela manhã e 1 comprimido à noite (1.000 mg por dia). Está certo?</div>
-          <div class="prev-rx"><div><b>Pedido para o neurologista</b><span class="tag acc">em revisão</span></div><div><span>Levetiracetam 500 mg</span><span class="muted">12/12 h</span></div><div><span>Última crise há mais de 1 ano</span><span class="muted">sem alertas</span></div></div>
+          <div class="prev-msg ia">Entendi: 1 comprimido pela manhã e 1 à noite, 1.000 mg por dia. Está certo?</div>
+          <div class="prev-rx"><div class="l"><b>Pedido para o neurologista</b><span class="tag acc">em revisão</span></div><div class="l"><span>Levetiracetam 500 mg</span><span class="muted">12/12 h</span></div><div class="l"><span>Última crise há mais de 1 ano</span><span class="tag ok">sem alertas</span></div></div>
         </div>
       </section>
+
+      <div class="sec-tit"><h2>Para quem já faz tratamento</h2><p>Escolha o seu caso para começar. Serve para quem já tem diagnóstico e usa remédio de forma contínua.</p></div>
+      <section class="cond-grid">${conds}</section>
+
+      <div class="sec-tit"><h2>Como funciona</h2><p>O médico decide tudo. O assistente só adianta as informações para o atendimento ser rápido.</p></div>
       <section class="passos">
-        <div class="card passo"><div class="n">1</div><h3>Converse com o assistente</h3><p>Cerca de 5 minutos. Ele pergunta sobre seus remédios, doses, efeitos e sinais de alerta.</p></div>
-        <div class="card passo"><div class="n">2</div><h3>O neurologista atende você</h3><p>Ele lê suas respostas, confirma com você por vídeo ou mensagem e decide a receita.</p></div>
-        <div class="card passo"><div class="n">3</div><h3>Receita digital assinada</h3><p>Assinada com certificado ICP-Brasil, vale em qualquer farmácia. Você baixa pelo código do pedido.</p></div>
+        <div class="card passo int"><span class="num">1</span><span class="ico lg"><i class="ti ti-message-circle"></i></span><h3>Você conversa com o assistente</h3><p>Ele pergunta sobre remédios, doses, efeitos e sinais de alerta.</p></div>
+        <div class="card passo int"><span class="num">2</span><span class="ico lg"><i class="ti ti-stethoscope"></i></span><h3>O neurologista atende você</h3><p>Lê suas respostas, confirma com você por vídeo ou mensagem e decide a receita.</p></div>
+        <div class="card passo int"><span class="num">3</span><span class="ico lg"><i class="ti ti-file-certificate"></i></span><h3>Você baixa a receita assinada</h3><p>Vale em qualquer farmácia. É só entrar com o código do pedido.</p></div>
       </section>
-      <div class="aviso-urg"><i class="ti ti-urgent"></i><span><b>Não é atendimento de urgência.</b> Fraqueza súbita, fala enrolada, crise convulsiva que não para ou a pior dor de cabeça da vida: ligue 192 (SAMU) ou vá ao pronto-socorro.</span></div>
-      <footer class="home-rodape"><span>Meu Neuro · telemedicina (Lei 14.510/2022; Resolução CFM 2.314/2022)</span><a href="#/termos">Termo de consentimento e privacidade</a><a href="#/medico">Área do médico</a></footer>
+
+      <div class="aviso-urg"><span class="ico"><i class="ti ti-urgent"></i></span><span><b>Não atendemos urgência.</b> Fraqueza de repente, fala enrolada, crise convulsiva que não para ou a pior dor de cabeça da vida: ligue 192 (SAMU) ou vá ao pronto-socorro.</span></div>
+      <footer class="home-rodape"><span>Meu Neuro · telemedicina conforme a Lei 14.510/2022 e a Resolução CFM 2.314/2022</span><a href="#/termos">Termo de consentimento e privacidade</a><a href="#/medico">Área do médico</a></footer>
     </div>`;
+    app.querySelectorAll('.cond').forEach(a => a.addEventListener('click', () => { try { sessionStorage.setItem('mn-cond', a.dataset.c); } catch (e) { } }));
   }
 
   function telaTermos() {
-    app.innerHTML = `<div class="estreito"><div class="card"><h2>Termo de consentimento e privacidade</h2><div style="white-space:pre-wrap;margin-top:12px;font-size:14.5px">${esc(MN.TCLE)}</div><p class="small muted" style="margin-top:12px">Versão ${esc(MN.TCLE_VERSAO)}</p><a class="btn" href="#/" style="margin-top:14px">Voltar</a></div></div>`;
+    app.innerHTML = `<div class="estreito"><div class="card"><div class="cab-card"><span class="ico lg"><i class="ti ti-file-text"></i></span><h2>Termo de consentimento e privacidade</h2></div><div style="white-space:pre-wrap;margin-top:12px;font-size:14.5px">${esc(MN.TCLE)}</div><p class="small muted" style="margin-top:12px">Versão ${esc(MN.TCLE_VERSAO)}</p><a class="btn" href="#/" style="margin-top:14px">Voltar</a></div></div>`;
   }
 
   /* ---------- acompanhar ---------- */
@@ -60,8 +74,7 @@
     try { meus = JSON.parse(localStorage.getItem('meuneuro.v1.meus-pedidos') || '[]'); } catch (e) { }
     const pre = meus.find(x => x.codigo === codigo);
     app.innerHTML = `<div class="estreito"><div class="card" id="acomp">
-      <h2>Acompanhar pedido</h2>
-      <p class="muted small" style="margin:6px 0 16px">Use o código que apareceu no fim da conversa e a data de nascimento do paciente.</p>
+      <div class="cab-card"><span class="ico lg"><i class="ti ti-file-search"></i></span><div><h2>Acompanhar pedido</h2><p class="muted small">Use o código que apareceu no fim da conversa e a data de nascimento do paciente.</p></div></div>
       <form id="fa"><div class="linha2">
         <label class="campo"><span>Código do pedido</span><input class="inp" name="codigo" value="${esc(codigo || '')}" placeholder="MN-XXXXXX" required style="text-transform:uppercase"></label>
         <label class="campo"><span>Data de nascimento</span><input class="inp" name="nasc" type="date" value="${esc(pre ? pre.nasc : '')}" required></label></div>
@@ -81,13 +94,13 @@
   function mostrarPedido(p) {
     const at = p.atendimento || {};
     const passos = [
-      { r: 'Pedido enviado', f: true, d: MN.fmtData(p.enviadoEm, true) },
-      { r: 'Em atendimento com o neurologista', f: ['em_atendimento', 'assinado', 'recusado'].includes(p.status), d: at.iniciadoEm ? MN.fmtData(at.iniciadoEm, true) : '' },
-      { r: p.status === 'recusado' ? 'Receita não renovada' : 'Receita assinada', f: ['assinado', 'recusado'].includes(p.status), d: at.concluidoEm ? MN.fmtData(at.concluidoEm, true) : '' }
+      { r: 'Pedido enviado', i: 'ti-send', f: true, d: MN.fmtData(p.enviadoEm, true) },
+      { r: 'Em atendimento com o neurologista', i: 'ti-stethoscope', f: ['em_atendimento', 'assinado', 'recusado'].includes(p.status), d: at.iniciadoEm ? MN.fmtData(at.iniciadoEm, true) : '' },
+      { r: p.status === 'recusado' ? 'Receita não renovada' : 'Receita assinada', i: 'ti-file-certificate', f: ['assinado', 'recusado'].includes(p.status), d: at.concluidoEm ? MN.fmtData(at.concluidoEm, true) : '' }
     ];
     const agora = passos.findIndex(x => !x.f);
     let h = `<div class="card" style="margin-top:16px"><h3>${esc(p.paciente.nome)} · ${esc(p.codigo)}</h3>
-      <ol class="linha-tempo">${passos.map((x, i) => `<li class="${x.f ? 'feito' : i === agora ? 'agora' : ''}"><span class="pt">${x.f ? '<i class="ti ti-check" style="font-size:14px"></i>' : ''}</span><div><b>${x.r}</b>${x.d ? `<div class="small muted">${esc(x.d)}</div>` : ''}</div></li>`).join('')}</ol>`;
+      <ol class="linha-tempo">${passos.map((x, i) => `<li class="${x.f ? 'feito' : i === agora ? 'agora' : ''}"><span class="pt"><i class="ti ${x.f ? 'ti-check' : x.i}"></i></span><div><b>${x.r}</b>${x.d ? `<div class="small muted">${esc(x.d)}</div>` : ''}</div></li>`).join('')}</ol>`;
     if (p.status === 'aguardando') h += '<p class="muted small">Seu pedido está na fila. O médico pode entrar em contato pelo telefone informado. Continue tomando seus remédios normalmente.</p>';
     if (p.status === 'urgencia') h += '<div class="alerta alto"><i class="ti ti-urgent"></i><span>Este pedido foi interrompido por sinais de alerta. Procure atendimento presencial.</span></div>';
     if (p.status === 'recusado') h += `<div class="alerta medio"><i class="ti ti-info-circle"></i><span><b>${esc(at.motivoRecusa || '')}</b><br>${esc(at.orientacaoMedico || '')}</span></div>`;
@@ -107,8 +120,7 @@
 
   /* ---------- verificar autenticidade ---------- */
   async function telaVerificar(cod) {
-    app.innerHTML = `<div class="estreito"><div class="card"><h2>Verificar receita</h2>
-      <p class="muted small" style="margin:6px 0 16px">Digite o código de verificação impresso no rodapé da receita.</p>
+    app.innerHTML = `<div class="estreito"><div class="card"><div class="cab-card"><span class="ico lg"><i class="ti ti-shield-check"></i></span><div><h2>Verificar receita</h2><p class="muted small">Digite o código de verificação impresso no rodapé da receita.</p></div></div>
       <form id="fv" class="escreve"><input class="inp" name="c" value="${esc(cod || '')}" placeholder="Código de verificação" required style="text-transform:uppercase"><button class="btn btn-p" aria-label="Verificar"><i class="ti ti-search"></i></button></form>
       <div id="rv"></div>
       <p class="small muted" style="margin-top:16px">A validade jurídica da assinatura digital ICP-Brasil é conferida no validador oficial: <a href="https://validar.iti.gov.br" target="_blank" rel="noopener">validar.iti.gov.br</a>.</p></div></div>`;
