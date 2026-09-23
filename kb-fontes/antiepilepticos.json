@@ -1,0 +1,1141 @@
+[
+ {
+  "id": "levetiracetam",
+  "nome": "Levetiracetam",
+  "marcas": [
+   "Keppra",
+   "Keppra XR",
+   "Etira",
+   "Antara",
+   "Iludral",
+   "genéricos"
+  ],
+  "classe": "Antiepiléptico (ligante da proteína de vesícula sináptica SV2A)",
+  "indicacoes": [
+   "epilepsia"
+  ],
+  "apresentacoes": [
+   "250 mg comprimido revestido",
+   "500 mg comprimido revestido (genéricos e similares)",
+   "750 mg comprimido revestido",
+   "1.000 mg comprimido revestido (genéricos e similares)",
+   "Solução oral 100 mg/mL",
+   "500 mg comprimido de liberação prolongada (Keppra XR)",
+   "750 mg comprimido de liberação prolongada (Keppra XR)"
+  ],
+  "posologiaUsual": "500–1.500 mg 2x/dia (liberação prolongada: 1.000–3.000 mg 1x/dia); reduzir se ClCr < 80 mL/min",
+  "doseMaxDia": "3.000 mg/dia",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Por ser anticonvulsivante, a quantidade pode chegar a até 6 meses de tratamento (art. 59, parágrafo único); no máximo 3 substâncias da lista C1 por receita (art. 57). Acima dos limites, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026).",
+  "efeitosComuns": [
+   "Sonolência, principalmente nas primeiras semanas",
+   "Cansaço ou fraqueza",
+   "Tontura",
+   "Dor de cabeça",
+   "Irritabilidade, nervosismo ou mudanças de humor",
+   "Sintomas parecidos com resfriado, como nariz entupido e dor de garganta"
+  ],
+  "sinaisAlerta": [
+   "Tristeza intensa, pensamentos de se machucar ou de morte",
+   "Agressividade ou agitação fora do seu normal, ou ver e ouvir coisas que não existem",
+   "Manchas, bolhas ou descamação na pele, ou feridas na boca ou nos olhos",
+   "Febre com manchas na pele, ínguas (gânglios inchados) ou pele e olhos amarelados, mesmo semanas depois de começar",
+   "Inchaço no rosto, nos lábios ou na língua, ou falta de ar",
+   "Febre, infecções que se repetem, sangramentos ou manchas roxas sem motivo",
+   "Crises mais frequentes ou uma crise que não para"
+  ],
+  "monitorizacao": [
+   "Humor e comportamento (irritabilidade, depressão, ideação suicida) a cada consulta, sobretudo nos primeiros meses e após aumento de dose",
+   "Creatinina/ClCr antes de iniciar e periodicamente em idosos e renais crônicos para ajuste (ClCr 50–80: 500–1.000 mg 12/12 h; 30–50: 250–750 mg 12/12 h; < 30: 250–500 mg 12/12 h; diálise: 500–1.000 mg 1x/dia + 250–500 mg após a sessão)",
+   "Hemograma se febre, infecções de repetição ou sangramentos (pancitopenia e agranulocitose raras)",
+   "Nível sérico não é rotineiro; considerar na gestação (queda de até 60% no 3º trimestre) e para checar adesão",
+   "Frequência de crises (diário de crises) a cada consulta"
+  ],
+  "interacoes": [
+   "Sem interação relevante com anticoncepcionais hormonais, outros antiepilépticos ou varfarina",
+   "Álcool e outros depressores do sistema nervoso central somam sonolência e tontura"
+  ],
+  "gestacao": "É um dos antiepilépticos com menor risco conhecido de malformações (cerca de 2 a 3 em cada 100, próximo ao da população geral). Se você planeja engravidar ou engravidou, não pare o remédio: avise o neurologista, porque a dose pode precisar de ajuste na gestação, e use ácido fólico conforme orientação.",
+  "suspensao": "Não pare de tomar nem diminua a dose por conta própria, mesmo que esteja há muito tempo sem crises. Parar de repente pode fazer as crises voltarem, às vezes mais fortes ou prolongadas. Se for o caso de retirar ou trocar o remédio, o médico fará a redução aos poucos, ao longo de semanas.",
+  "orientacoes": [
+   "Tome em dois horários fixos, com cerca de 12 horas de intervalo; o de liberação prolongada é tomado uma vez ao dia",
+   "Pode tomar com ou sem alimento; engula o comprimido com água, sem mastigar o de liberação prolongada",
+   "Se esquecer uma dose, tome assim que lembrar; se já estiver perto do próximo horário, pule a esquecida e não tome dose dobrada",
+   "Evite bebida alcoólica, principalmente no início do tratamento"
+  ],
+  "alertasMedico": [
+   "Alterações psiquiátricas e comportamentais (13% vs 6% com placebo em adultos): perguntar sobre irritabilidade, depressão e ideação suicida",
+   "DRESS: comunicado FDA de 28/11/2023 (latência mediana de 24 dias, pode ocorrer sem rash), incorporado à bula americana em 03/2024; não confirmado se já consta na bula brasileira (revisão 10/2022)",
+   "Ajuste renal obrigatório se ClCr < 80 mL/min",
+   "Uma das opções de menor risco na gestação (AAN/AES/SMFM 2024): útil em mulher em idade fértil"
+  ],
+  "fontes": [
+   "Bula Keppra, profissional de saúde (UCB, ANVISA), revisão 10/2022 https://bula.gratis/ucb_biopharma_ltda/1/keppra/profissional",
+   "FDA. Keppra prescribing information, 03/2024 https://www.accessdata.fda.gov/drugsatfda_docs/label/2024/021035s115,021505s053lbl.pdf",
+   "FDA Drug Safety Communication: DRESS com levetiracetam e clobazam, 28/11/2023 https://www.fda.gov/drugs/drug-safety-communications/fda-warns-rare-serious-drug-reaction-antiseizure-medicines-levetiracetam-keppra-keppra-xr-elepsia-xr",
+   "Battino D et al. EURAP, JAMA Neurology, 2024 https://pmc.ncbi.nlm.nih.gov/articles/PMC10949148/",
+   "MHRA Drug Safety Update: Antiepileptic drugs in pregnancy, comprehensive safety review (2021) https://www.gov.uk/drug-safety-update/antiepileptic-drugs-in-pregnancy-updated-advice-following-comprehensive-safety-review",
+   "Pack AM et al. AAN/AES/SMFM guideline: reducing risks of major congenital malformations in people with epilepsy. Neurology, 2024 https://www.aan.com/PressRoom/Home/PressRelease/5170",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 57, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 (prazo do SNCR 30/09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true"
+  ]
+ },
+ {
+  "id": "lamotrigina",
+  "nome": "Lamotrigina",
+  "marcas": [
+   "Lamictal",
+   "Lamitor",
+   "Lamitor CD",
+   "Neural",
+   "genéricos"
+  ],
+  "classe": "Antiepiléptico (bloqueador de canais de sódio) e estabilizador do humor",
+  "indicacoes": [
+   "epilepsia",
+   "outro"
+  ],
+  "apresentacoes": [
+   "5 mg comprimido dispersível",
+   "25 mg comprimido dispersível",
+   "50 mg comprimido dispersível",
+   "100 mg comprimido dispersível",
+   "200 mg comprimido dispersível",
+   "25 mg comprimido simples (genéricos e similares)",
+   "50 mg e 100 mg comprimido simples (genéricos e similares, conforme fabricante)"
+  ],
+  "posologiaUsual": "Manutenção 100–200 mg/dia em monoterapia ou com valproato; 200–400 mg/dia com indutores enzimáticos; 1–2 tomadas ao dia, sempre após titulação lenta",
+  "doseMaxDia": "500 mg/dia em monoterapia; até 700 mg/dia com indutores enzimáticos sem valproato; com valproato, manutenção habitual de 100–200 mg/dia",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Por ser anticonvulsivante, a quantidade pode chegar a até 6 meses de tratamento (art. 59, parágrafo único); no máximo 3 substâncias da lista C1 por receita (art. 57). Acima dos limites, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026). O art. 59 fala em substâncias anticonvulsivantes; quando prescrito para outra indicação (transtorno bipolar), a aplicação dos 6 meses pode ser interpretada de forma diferente pela vigilância sanitária local: na dúvida, limitar a 60 dias (art. 59, caput) ou justificar.",
+  "efeitosComuns": [
+   "Dor de cabeça",
+   "Tontura ou desequilíbrio",
+   "Enjoo",
+   "Visão dupla ou embaçada",
+   "Sonolência, cansaço ou dificuldade para dormir",
+   "Irritabilidade"
+  ],
+  "sinaisAlerta": [
+   "Qualquer mancha ou vermelhidão nova na pele, principalmente nas primeiras 8 semanas: fale com o médico no mesmo dia",
+   "Bolhas, descamação da pele ou feridas na boca, nos olhos ou nos genitais, com ou sem febre: procure atendimento urgente",
+   "Febre com ínguas, inchaço no rosto ou pele e olhos amarelados",
+   "Febre que não passa com mal-estar forte, sangramentos ou manchas roxas",
+   "Palpitações, desmaio ou dor no peito",
+   "Dor de cabeça forte com febre e rigidez na nuca",
+   "Tristeza profunda ou pensamentos de se machucar"
+  ],
+  "monitorizacao": [
+   "Pele nas primeiras 8 semanas e a cada aumento de dose; confirmar que o esquema de titulação está sendo seguido",
+   "Não exige exames laboratoriais de rotina",
+   "Nível sérico e ajuste de dose ao iniciar ou suspender anticoncepcional com estrogênio, na gestação e no pós-parto, e ao associar ou retirar valproato ou indutores",
+   "ECG antes de iniciar se cardiopatia estrutural, arritmia, síndrome de Brugada ou uso de outros bloqueadores de sódio (atividade antiarrítmica classe IB; alerta FDA 2021)",
+   "Humor e ideação suicida a cada consulta"
+  ],
+  "interacoes": [
+   "Valproato dobra o nível de lamotrigina (meia-vida de cerca de 70 h): titulação e dose pela metade; aumenta o risco de reação grave de pele",
+   "Carbamazepina, fenitoína, fenobarbital, primidona, rifampicina e lopinavir/ritonavir reduzem o nível de lamotrigina pela metade",
+   "Anticoncepcional com etinilestradiol reduz o nível de lamotrigina em cerca de 50% (pode ser preciso até dobrar a dose); o nível sobe na semana de pausa; ao suspender o estrogênio, reduzir a dose. Pílula só de progestagênio não interfere (bula FDA 04/2025)",
+   "Lamotrigina reduz discretamente o levonorgestrel",
+   "Inibe o transportador OCT2: evitar com dofetilida"
+  ],
+  "gestacao": "Está entre os antiepilépticos de menor risco de malformações (cerca de 2 a 3 em cada 100). Na gestação o nível no sangue cai bastante e a dose costuma precisar de ajuste, voltando a subir depois do parto; se planeja engravidar ou engravidou, não pare o remédio, avise o neurologista e use ácido fólico conforme orientação.",
+  "suspensao": "Não pare por conta própria: a interrupção de repente pode trazer as crises (ou a instabilidade do humor) de volta. Se ficar vários dias seguidos sem tomar (cerca de 5 dias ou mais), não volte sozinho à dose que usava: fale com o médico, porque pode ser necessário recomeçar com dose baixa para evitar reação grave na pele.",
+  "orientacoes": [
+   "Siga à risca o esquema de aumento de dose combinado: subir mais rápido aumenta o risco de reação grave na pele",
+   "O comprimido dispersível pode ser engolido inteiro, mastigado ou dissolvido em um pouco de água",
+   "Avise o médico antes de começar ou parar pílula anticoncepcional ou qualquer outro remédio",
+   "Se esquecer uma dose, tome assim que lembrar; se já estiver perto do próximo horário, pule a esquecida e não tome dose dobrada"
+  ],
+  "alertasMedico": [
+   "Rash grave (SSJ/NET): 0,08–0,3% em adultos, maioria entre 2 e 8 semanas; fatores de risco: valproato, dose inicial ou titulação acima do recomendado e HLA-B*1502 (tarja da bula FDA revisada em 10/2025; também citado na bula brasileira de 05/2026)",
+   "Reintrodução após mais de 5 meias-vidas sem a droga exige retitulação desde o início",
+   "Interações com estrogênio e com valproato: conferir contracepção e comedicações a cada renovação",
+   "Atividade classe IB: considerar ECG em cardiopatas e com outros bloqueadores de sódio (FDA 2021)",
+   "Linfo-histiocitose hemofagocítica (alerta FDA 2018): febre persistente com citopenias ou hepatite"
+  ],
+  "fontes": [
+   "Bula Lamictal comprimidos dispersíveis, profissional de saúde (GSK, ANVISA), aprovada em 08/05/2026 https://br.gsk.com/media/3vzebm45/lamictal-comprimidos-dispers%C3%ADveis.pdf",
+   "FDA. Lamictal prescribing information (DailyMed, setid d7e3572d-56fe-4727-2bb4-013ccca22678), revisão 10/2025 https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=d7e3572d-56fe-4727-2bb4-013ccca22678",
+   "FDA Drug Safety Communication: lamotrigina e arritmias, 31/03/2021 https://www.fda.gov/drugs/drug-safety-and-availability/studies-show-increased-risk-heart-rhythm-problems-seizure-and-mental-health-medicine-lamotrigine",
+   "FDA Drug Safety Communication: lamotrigina e linfo-histiocitose hemofagocítica, 25/04/2018",
+   "MHRA Drug Safety Update: Antiepileptic drugs in pregnancy, comprehensive safety review (2021) https://www.gov.uk/drug-safety-update/antiepileptic-drugs-in-pregnancy-updated-advice-following-comprehensive-safety-review",
+   "Pack AM et al. AAN/AES/SMFM guideline: reducing risks of major congenital malformations in people with epilepsy. Neurology, 2024 https://www.aan.com/PressRoom/Home/PressRelease/5170",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 57, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 (prazo do SNCR 30/09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true"
+  ]
+ },
+ {
+  "id": "carbamazepina",
+  "nome": "Carbamazepina",
+  "marcas": [
+   "Tegretol",
+   "Tegretol CR",
+   "genéricos"
+  ],
+  "classe": "Antiepiléptico (bloqueador de canais de sódio)",
+  "indicacoes": [
+   "epilepsia",
+   "dor_neuropatica",
+   "outro"
+  ],
+  "apresentacoes": [
+   "200 mg comprimido",
+   "400 mg comprimido",
+   "Suspensão oral 20 mg/mL (2%)",
+   "200 mg comprimido de liberação prolongada (Tegretol CR)",
+   "400 mg comprimido de liberação prolongada (Tegretol CR)"
+  ],
+  "posologiaUsual": "Epilepsia: 400–1.200 mg/dia em 2–3 tomadas (CR em 2 tomadas); neuralgia do trigêmeo: 200 mg 3–4x/dia",
+  "doseMaxDia": "Epilepsia: até 1.600–2.000 mg/dia em alguns pacientes (bula brasileira; suspensão até 1.200 mg/dia); neuralgia do trigêmeo: 1.200 mg/dia",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Por ser anticonvulsivante, a quantidade pode chegar a até 6 meses de tratamento (art. 59, parágrafo único); no máximo 3 substâncias da lista C1 por receita (art. 57). Acima dos limites, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026). O art. 59 fala em substâncias anticonvulsivantes; quando prescrito para outra indicação (neuralgia do trigêmeo ou transtorno bipolar), a aplicação dos 6 meses pode ser interpretada de forma diferente pela vigilância sanitária local: na dúvida, limitar a 60 dias (art. 59, caput) ou justificar.",
+  "efeitosComuns": [
+   "Tontura e desequilíbrio",
+   "Sonolência",
+   "Enjoo ou vômitos",
+   "Visão dupla ou embaçada",
+   "Dor de cabeça",
+   "Boca seca, inchaço nas pernas ou ganho de peso"
+  ],
+  "sinaisAlerta": [
+   "Manchas, bolhas ou descamação na pele, principalmente com febre ou feridas na boca e nos olhos",
+   "Febre, dor de garganta, feridas na boca, sangramentos ou manchas roxas sem motivo",
+   "Pele ou olhos amarelados, urina escura ou dor forte na barriga",
+   "Confusão, sonolência muito forte, dor de cabeça, enjoo intenso ou crises mais frequentes (pode ser sódio baixo)",
+   "Febre com ínguas e inchaço no rosto",
+   "Tristeza profunda ou pensamentos de se machucar"
+  ],
+  "monitorizacao": [
+   "HLA-B*1502 antes de iniciar em pacientes de ascendência asiática de risco (por exemplo chinesa Han, tailandesa); considerar HLA-A*3101",
+   "Hemograma com plaquetas no início e periodicamente (leucopenia é muito comum; anemia aplástica e agranulocitose raras)",
+   "Função hepática no início e periodicamente; urina e ureia periodicamente (bula FDA)",
+   "Sódio no início, em cerca de 2 semanas e mensalmente por 3 meses em pacientes de risco (idosos, diuréticos, drogas que causam SIADH); depois, se sintomas",
+   "Nível sérico (4–12 mcg/mL) se toxicidade, dúvida de adesão, politerapia ou gestação; reavaliar nas primeiras semanas pela autoindução",
+   "TSH se em uso de levotiroxina"
+  ],
+  "interacoes": [
+   "Indutor potente do CYP3A4 e autoindutor: reduz o nível de lamotrigina, valproato, varfarina e muitos outros fármacos",
+   "Reduz a eficácia de anticoncepcionais hormonais: usar método alternativo e manter contracepção eficaz até 2 semanas após parar (bula brasileira)",
+   "Inibidores do CYP3A4 (por exemplo claritromicina, eritromicina, fluconazol, verapamil, diltiazem e suco de toranja) aumentam o nível e podem causar intoxicação",
+   "Diuréticos e outros fármacos que baixam o sódio somam risco de hiponatremia"
+  ],
+  "gestacao": "Aumenta o risco de malformações no bebê (cerca de 3 a 5 em cada 100, maior com doses altas), incluindo defeitos da coluna (espinha bífida). Se você pode engravidar, use método anticoncepcional eficaz, lembrando que a pílula perde efeito com este remédio, e converse com o neurologista antes de planejar uma gravidez; se engravidar, não pare por conta própria e avise o médico logo.",
+  "suspensao": "Não pare de tomar nem diminua a dose por conta própria, mesmo que esteja há muito tempo sem crises. Parar de repente pode fazer as crises voltarem, às vezes mais fortes ou prolongadas. Se for o caso de retirar ou trocar o remédio, o médico fará a redução aos poucos, ao longo de semanas.",
+  "orientacoes": [
+   "Pode tomar durante, após ou entre as refeições; tomar junto com a comida pode ajudar se houver enjoo",
+   "Não mastigue os comprimidos; o de liberação prolongada (CR) pode ser partido ao meio na linha marcada, se o médico orientar",
+   "Agite bem a suspensão antes de medir a dose",
+   "Evite suco de toranja (grapefruit) e bebida alcoólica"
+  ],
+  "alertasMedico": [
+   "HLA-B*1502: testar em ascendência asiática de risco; se positivo, evitar (SSJ/NET, maior risco nos primeiros meses)",
+   "Tarja FDA: anemia aplástica e agranulocitose",
+   "Hiponatremia/SIADH, sobretudo em idosos e com diuréticos",
+   "Indutor enzimático: falha de anticoncepcional hormonal; em mulher em idade fértil, considerar alternativa de menor risco teratogênico",
+   "Pode piorar crises de ausência e mioclônicas",
+   "Suspensão contém propilenoglicol: EMA/PRAC (09/2025) restringiu uso em neonatos; restrição ainda não consta na bula brasileira de 10/2024"
+  ],
+  "fontes": [
+   "Bula Tegretol comprimido, suspensão e CR, profissional de saúde (Novartis, ANVISA), 22/10/2024 https://portal.novartis.com.br/medicamentos/wp-content/uploads/2023/02/Bula-TEGRETOL-Comprimido-Suspensao-Comprimido-de-Liberacao-Prolongada-Medico-.pdf",
+   "FDA. Tegretol prescribing information (DailyMed, setid 8d409411), vigente em 08/2026 https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=8d409411-aa9f-4f3a-a52c-fbcb0c3ec053",
+   "EMA. PRAC meeting highlights, 1–4 de setembro de 2025 https://www.ema.europa.eu/en/news/meeting-highlights-pharmacovigilance-risk-assessment-committee-prac-1-4-september-2025",
+   "MHRA Drug Safety Update: Antiepileptic drugs in pregnancy, comprehensive safety review (2021) https://www.gov.uk/drug-safety-update/antiepileptic-drugs-in-pregnancy-updated-advice-following-comprehensive-safety-review",
+   "Pack AM et al. AAN/AES/SMFM guideline: reducing risks of major congenital malformations in people with epilepsy. Neurology, 2024 https://www.aan.com/PressRoom/Home/PressRelease/5170",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 57, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 (prazo do SNCR 30/09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true"
+  ]
+ },
+ {
+  "id": "oxcarbazepina",
+  "nome": "Oxcarbazepina",
+  "marcas": [
+   "Trileptal",
+   "Oxcarb",
+   "Selzic",
+   "genéricos"
+  ],
+  "classe": "Antiepiléptico (bloqueador de canais de sódio)",
+  "indicacoes": [
+   "epilepsia"
+  ],
+  "apresentacoes": [
+   "300 mg comprimido revestido",
+   "600 mg comprimido revestido",
+   "Suspensão oral 60 mg/mL"
+  ],
+  "posologiaUsual": "600–2.400 mg/dia divididos em 2 tomadas",
+  "doseMaxDia": "2.400 mg/dia (se ClCr < 30 mL/min, iniciar com 300 mg/dia e titular devagar)",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Por ser anticonvulsivante, a quantidade pode chegar a até 6 meses de tratamento (art. 59, parágrafo único); no máximo 3 substâncias da lista C1 por receita (art. 57). Acima dos limites, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026).",
+  "efeitosComuns": [
+   "Sonolência",
+   "Dor de cabeça",
+   "Tontura",
+   "Visão dupla",
+   "Enjoo ou vômitos",
+   "Cansaço",
+   "Tremor ou desequilíbrio"
+  ],
+  "sinaisAlerta": [
+   "Confusão, sonolência muito forte, dor de cabeça intensa, enjoo, fraqueza ou crises mais frequentes (pode ser sódio baixo)",
+   "Manchas, bolhas ou descamação na pele, ou feridas na boca e nos olhos",
+   "Febre com ínguas, inchaço no rosto ou pele amarelada",
+   "Inchaço nos lábios ou na língua, ou falta de ar",
+   "Desmaio ou batimentos muito lentos ou irregulares",
+   "Tristeza profunda ou pensamentos de se machucar"
+  ],
+  "monitorizacao": [
+   "Sódio no início, em cerca de 2 semanas e mensalmente por 3 meses em pacientes de risco (idosos, diuréticos, drogas que causam SIADH); considerar dosagem periódica em todos na manutenção",
+   "Função hepática no início e periodicamente",
+   "HLA-B*1502 em ascendência asiática de risco antes de iniciar",
+   "Nível do metabólito MHD apenas em casos selecionados (insuficiência renal, gestação, uso de indutores)",
+   "Humor e ideação suicida"
+  ],
+  "interacoes": [
+   "Reduz a eficácia de anticoncepcionais hormonais: associar método não hormonal",
+   "Pode aumentar o nível de fenitoína",
+   "Indutores enzimáticos (carbamazepina, fenitoína, fenobarbital) reduzem o nível do metabólito ativo",
+   "Diuréticos e outros fármacos que baixam o sódio (por exemplo desmopressina e alguns antidepressivos) somam risco de hiponatremia"
+  ],
+  "gestacao": "Está entre os antiepilépticos de menor risco de malformações (cerca de 2 a 3 em cada 100), mas reduz o efeito da pílula anticoncepcional, então use também um método não hormonal ou DIU. Se planeja engravidar ou engravidou, não pare por conta própria: avise o neurologista, porque o nível no sangue cai na gestação, e use ácido fólico conforme orientação.",
+  "suspensao": "Não pare de tomar nem diminua a dose por conta própria, mesmo que esteja há muito tempo sem crises. Parar de repente pode fazer as crises voltarem, às vezes mais fortes ou prolongadas. Se for o caso de retirar ou trocar o remédio, o médico fará a redução aos poucos, ao longo de semanas.",
+  "orientacoes": [
+   "Tome em dois horários fixos, com ou sem alimento",
+   "Agite bem a suspensão antes de medir a dose com a seringa dosadora",
+   "Não comece diuréticos ou outros remédios sem avisar o médico, pelo risco de baixar o sódio",
+   "Se esquecer uma dose, tome assim que lembrar; se já estiver perto do próximo horário, pule a esquecida e não tome dose dobrada"
+  ],
+  "alertasMedico": [
+   "Hiponatremia: sódio < 125 mmol/L em cerca de 2,5%; mais comum nos 3 primeiros meses, mas pode surgir após 1 ano",
+   "Hipersensibilidade cruzada com carbamazepina em 25–30%",
+   "HLA-B*1502 (SSJ/NET) em ascendência asiática",
+   "Reduz eficácia de anticoncepcional hormonal"
+  ],
+  "fontes": [
+   "Bula Trileptal, profissional de saúde (Novartis, ANVISA), 04/05/2026 https://portal.novartis.com.br/medicamentos/wp-content/uploads/2021/10/Bula-TRILEPTAL-Comprimido-Revestido-Suspensao-Medico.pdf",
+   "FDA. Trileptal prescribing information, 12/2025",
+   "MHRA Drug Safety Update: Antiepileptic drugs in pregnancy, comprehensive safety review (2021) https://www.gov.uk/drug-safety-update/antiepileptic-drugs-in-pregnancy-updated-advice-following-comprehensive-safety-review",
+   "Pack AM et al. AAN/AES/SMFM guideline: reducing risks of major congenital malformations in people with epilepsy. Neurology, 2024 https://www.aan.com/PressRoom/Home/PressRelease/5170",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 57, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 (prazo do SNCR 30/09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true"
+  ]
+ },
+ {
+  "id": "valproato",
+  "nome": "Valproato (ácido valproico, valproato de sódio, divalproato de sódio)",
+  "marcas": [
+   "Depakote",
+   "Depakote ER",
+   "Depakote Sprinkle",
+   "Depakene",
+   "Epilenil",
+   "genéricos"
+  ],
+  "classe": "Antiepiléptico de amplo espectro e estabilizador do humor",
+  "indicacoes": [
+   "epilepsia",
+   "enxaqueca",
+   "outro"
+  ],
+  "apresentacoes": [
+   "Divalproato de sódio 250 mg comprimido revestido (Depakote)",
+   "Divalproato de sódio 500 mg comprimido revestido (Depakote)",
+   "Divalproato de sódio 250 mg comprimido de liberação prolongada (Depakote ER)",
+   "Divalproato de sódio 500 mg comprimido de liberação prolongada (Depakote ER)",
+   "Divalproato de sódio 125 mg cápsula com microgrânulos (Depakote Sprinkle)",
+   "Ácido valproico 250 mg cápsula (Depakene, Epilenil)",
+   "Valproato de sódio 300 mg comprimido revestido (Depakene)",
+   "Valproato de sódio 500 mg comprimido revestido (Depakene)",
+   "Xarope 50 mg/mL (Depakene, Epilenil)"
+  ],
+  "posologiaUsual": "Epilepsia: iniciar 10–15 mg/kg/dia e ajustar pela resposta e pelo nível sérico (50–100 mcg/mL), em 1–3 tomadas (ER 1x/dia); enxaqueca: 250 mg 2x/dia, até 1.000 mg/dia",
+  "doseMaxDia": "60 mg/kg/dia (epilepsia e mania); 1.000 mg/dia na profilaxia da enxaqueca",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Por ser anticonvulsivante, a quantidade pode chegar a até 6 meses de tratamento (art. 59, parágrafo único); no máximo 3 substâncias da lista C1 por receita (art. 57). Acima dos limites, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026). O art. 59 fala em substâncias anticonvulsivantes; quando prescrito para outra indicação (profilaxia de enxaqueca ou transtorno bipolar), a aplicação dos 6 meses pode ser interpretada de forma diferente pela vigilância sanitária local: na dúvida, limitar a 60 dias (art. 59, caput) ou justificar.",
+  "efeitosComuns": [
+   "Enjoo, dor de estômago ou diarreia",
+   "Tremor nas mãos",
+   "Sonolência ou cansaço",
+   "Aumento do apetite e ganho de peso",
+   "Queda de cabelo, geralmente passageira",
+   "Tontura"
+  ],
+  "sinaisAlerta": [
+   "Enjoo e vômitos que não passam ou dor forte na barriga que pode ir para as costas",
+   "Pele ou olhos amarelados, urina escura, inchaço, cansaço extremo ou perda de apetite, principalmente nos primeiros 6 meses",
+   "Sonolência excessiva, confusão, vômitos ou lentidão fora do habitual",
+   "Sangramentos, manchas roxas ou sangramento de gengiva sem motivo",
+   "Manchas ou bolhas na pele com febre",
+   "Pensamentos de se machucar",
+   "Suspeita de gravidez: avise o médico imediatamente, sem parar o remédio por conta própria"
+  ],
+  "monitorizacao": [
+   "Função hepática (transaminases, bilirrubinas, TAP) antes de iniciar e com frequência nos primeiros 6 meses; depois a cada 6 meses (bula brasileira)",
+   "Hemograma com plaquetas e coagulograma antes de iniciar, periodicamente e antes de cirurgias",
+   "Amônia se letargia, vômitos, confusão ou hipotermia",
+   "Nível sérico (50–100 mcg/mL em epilepsia) ao ajustar dose e ao associar ou retirar indutores; plaquetopenia mais provável com níveis de 110 mcg/mL ou mais em mulheres e 135 mcg/mL ou mais em homens",
+   "Peso a cada consulta",
+   "Mulher com potencial de engravidar: teste de gravidez antes de iniciar, contracepção altamente eficaz e reavaliação pelo especialista pelo menos anual (programa de prevenção da gravidez)"
+  ],
+  "interacoes": [
+   "Carbapenêmicos (meropenem, imipenem, ertapenem) derrubam o nível de valproato: associação não recomendada",
+   "Lamotrigina: valproato dobra a meia-vida (de cerca de 26 para 70 h); reduzir a dose de lamotrigina; maior risco de SSJ/NET",
+   "Fenitoína, carbamazepina, fenobarbital e primidona podem dobrar a depuração do valproato",
+   "Aumenta o nível de fenobarbital e a fração livre de fenitoína",
+   "Topiramato e acetazolamida: hiperamonemia e hipotermia",
+   "Anticoncepcionais com estrogênio reduzem o nível de valproato",
+   "Varfarina: monitorar coagulação; rifampicina, colestiramina e lopinavir/ritonavir reduzem o nível"
+  ],
+  "gestacao": "Este remédio pode causar malformações graves no bebê (cerca de 11 em cada 100) e problemas de desenvolvimento e aprendizagem (30 a 40 em cada 100 crianças expostas); por isso, se você pode engravidar, só deve usá-lo dentro de um programa de prevenção da gravidez, com teste de gravidez antes de começar, método anticoncepcional altamente eficaz (de preferência DIU ou implante) e revisão com o especialista pelo menos uma vez por ano. Homens em uso também devem conversar com o médico sobre planejamento familiar e usar método anticoncepcional durante o tratamento e até 3 meses depois de parar; se houver plano ou suspeita de gravidez, procure o médico logo, sem parar o remédio por conta própria.",
+  "suspensao": "Não pare de tomar nem diminua a dose por conta própria, mesmo que esteja há muito tempo sem crises. Parar de repente pode fazer as crises voltarem, às vezes mais fortes ou prolongadas. Se for o caso de retirar ou trocar o remédio, o médico fará a redução aos poucos, ao longo de semanas.",
+  "orientacoes": [
+   "Engula o comprimido inteiro, sem partir nem mastigar (o de liberação prolongada é tomado uma vez ao dia)",
+   "Tomar junto com alimento pode ajudar a reduzir o enjoo",
+   "Não doe sêmen durante o tratamento e até 3 meses depois de parar",
+   "Avise qualquer médico que você usa valproato antes de receber antibióticos no hospital ou de fazer cirurgia"
+  ],
+  "alertasMedico": [
+   "Mulher em idade fértil: contraindicado salvo se cumpridas as condições do programa de prevenção da gravidez (bula Depakote, ANVISA 21/11/2024); na gestação, contraindicado para enxaqueca e transtorno bipolar e, na epilepsia, só se não houver alternativa adequada",
+   "Paciente homem: bula brasileira de 2024 incorpora as medidas EMA/PRAC de 01/2024 (contracepção até 3 meses após parar, não doar sêmen, início e supervisão por especialista); PRAC reavaliou em 06/2026 e manteve as medidas",
+   "Hepatotoxicidade (maior risco nos primeiros 6 meses, em menores de 2 anos e em doença mitocondrial); contraindicado em doença POLG, hepatopatia significativa e distúrbios do ciclo da ureia",
+   "Pancreatite, hiperamonemia e plaquetopenia",
+   "Carbapenêmicos: queda abrupta do nível, evitar",
+   "Com lamotrigina: dose e titulação de lamotrigina pela metade"
+  ],
+  "fontes": [
+   "Bula Depakote, profissional de saúde (Abbott, ANVISA), 21/11/2024 https://www.abbottbrasil.com.br/content/dam/corp/abbott/pt-br/documents/pdfs/nossas-bulas/D/BU-30-Depakote-DR-Bula-Profissional-FINAL.pdf",
+   "Bula Depakene, profissional de saúde (Abbott, ANVISA), 21/11/2024 https://www.abbottbrasil.com.br/content/dam/corp/abbott/pt-br/documents/pdfs/nossas-bulas/D/BU30-Depakene-Bula-Profissional-com-FINAL.pdf",
+   "FDA. Depakote prescribing information, 05/2025 https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/019680s057lbl.pdf",
+   "EMA. Medidas de precaução para homens tratados com valproato, 01/2024 https://www.ema.europa.eu/en/news/precautionary-measures-address-potential-risk-neurodevelopmental-disorders-children-born-men-treated-valproate-medicines",
+   "EMA. PRAC meeting highlights, 8–11 de junho de 2026 https://www.ema.europa.eu/en/news/meeting-highlights-pharmacovigilance-risk-assessment-committee-prac-8-11-june-2026",
+   "EMA. Valproate referral (programa de prevenção da gravidez), 2018 https://www.ema.europa.eu/en/medicines/human/referrals/valproate-related-substances-0",
+   "MHRA Drug Safety Update: Antiepileptic drugs in pregnancy, comprehensive safety review (2021) https://www.gov.uk/drug-safety-update/antiepileptic-drugs-in-pregnancy-updated-advice-following-comprehensive-safety-review",
+   "Pack AM et al. AAN/AES/SMFM guideline: reducing risks of major congenital malformations in people with epilepsy. Neurology, 2024 https://www.aan.com/PressRoom/Home/PressRelease/5170",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 57, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 (prazo do SNCR 30/09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true"
+  ]
+ },
+ {
+  "id": "fenitoina",
+  "nome": "Fenitoína",
+  "marcas": [
+   "Hidantal",
+   "Epelin",
+   "genéricos"
+  ],
+  "classe": "Antiepiléptico (hidantoína, bloqueador de canais de sódio)",
+  "indicacoes": [
+   "epilepsia"
+  ],
+  "apresentacoes": [
+   "100 mg comprimido (Hidantal)",
+   "Suspensão oral 20 mg/mL (Epelin; comercialização atual não confirmada)",
+   "Solução injetável 50 mg/mL (uso hospitalar, genéricos)"
+  ],
+  "posologiaUsual": "300–400 mg/dia (geralmente 100 mg 3x/dia), ajustada pelo nível sérico (10–20 mcg/mL)",
+  "doseMaxDia": "600 mg/dia, sempre guiada pelo nível sérico",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Por ser anticonvulsivante, a quantidade pode chegar a até 6 meses de tratamento (art. 59, parágrafo único); no máximo 3 substâncias da lista C1 por receita (art. 57). Acima dos limites, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026).",
+  "efeitosComuns": [
+   "Tontura, desequilíbrio ou fala enrolada (costumam indicar dose alta)",
+   "Sonolência ou lentidão",
+   "Olhos que tremem ao olhar para os lados",
+   "Crescimento da gengiva",
+   "Aumento de pelos no corpo e engrossamento dos traços do rosto com o uso prolongado"
+  ],
+  "sinaisAlerta": [
+   "Manchas, bolhas ou descamação na pele, principalmente com febre",
+   "Febre com ínguas, inchaço no rosto ou pele e olhos amarelados",
+   "Desequilíbrio forte, fala enrolada, visão dupla ou confusão (podem ser sinais de excesso do remédio)",
+   "Sangramentos, manchas roxas ou infecções repetidas",
+   "Desmaio ou batimentos muito lentos",
+   "Tristeza profunda ou pensamentos de se machucar"
+  ],
+  "monitorizacao": [
+   "Nível sérico (10–20 mcg/mL total ou 1–2 mcg/mL livre) após mudança de dose ou de interações; usar nível livre ou corrigido pela albumina em hipoalbuminemia, insuficiência renal ou hepática, idosos e gestação",
+   "Cinética saturável: pequenos aumentos de dose podem elevar muito o nível",
+   "HLA-B*1502 e CYP2C9*3 em ascendência asiática de risco antes de iniciar; considerar evitar se positivo",
+   "Hemograma e função hepática periodicamente ou se sintomas",
+   "Vitamina D, cálcio e saúde óssea no uso prolongado; exame da gengiva"
+  ],
+  "interacoes": [
+   "Indutor enzimático potente: reduz a eficácia de anticoncepcionais hormonais e o nível de muitos fármacos",
+   "Varfarina: o INR pode subir ou cair",
+   "Valproato aumenta a fenitoína livre e a amônia",
+   "Inibidores do CYP2C9 (por exemplo fluconazol e isoniazida) aumentam o nível de fenitoína",
+   "Antiácidos e dieta por sonda reduzem a absorção"
+  ],
+  "gestacao": "Aumenta o risco de malformações (como fenda no lábio ou no céu da boca e defeitos no coração) e de alterações no rosto, unhas e dedos do bebê. Se você pode engravidar, use anticoncepcional eficaz, de preferência DIU ou outro método não hormonal (a pílula perde efeito), e converse com o neurologista antes de planejar uma gravidez; se engravidar, não pare por conta própria.",
+  "suspensao": "Não pare de tomar nem diminua a dose por conta própria, mesmo que esteja há muito tempo sem crises. Parar de repente pode fazer as crises voltarem, às vezes mais fortes ou prolongadas. Se for o caso de retirar ou trocar o remédio, o médico fará a redução aos poucos, ao longo de semanas.",
+  "orientacoes": [
+   "Tome sempre nos mesmos horários e evite trocar de marca ou de forma do remédio sem falar com o médico, porque o nível no sangue pode mudar",
+   "Tome em horário diferente de antiácidos",
+   "Cuide bem dos dentes e das gengivas, com escovação, fio dental e visitas regulares ao dentista",
+   "Evite bebida alcoólica"
+  ],
+  "alertasMedico": [
+   "Índice terapêutico estreito e cinética não linear",
+   "HLA-B*1502 e CYP2C9*3 (SSJ/NET; metabolizador lento precisa de dose menor)",
+   "Indutor enzimático: contracepção e múltiplas interações",
+   "Osteomalácia e osteoporose no uso crônico; hiperplasia gengival",
+   "Em mulher em idade fértil, considerar alternativa de menor risco teratogênico"
+  ],
+  "fontes": [
+   "FDA. Dilantin prescribing information, 08/2023 https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=86dd27d1-9cee-48ae-b55d-e2d2f7dbc593&type=display",
+   "Bula Epelin, profissional de saúde (ANVISA) https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Epelin-Profissional-Consulta-Remedios.pdf",
+   "Sanofi. Comunicado sobre Hidantal injetável, 17/03/2020 https://www.sanofi.com.br/pt/noticias/informacoes-de-produtos/2020-03-17-hidantal",
+   "Hernández-Díaz S et al. North American AED Pregnancy Registry. Neurology, 2012 https://www.neurology.org/doi/10.1212/WNL.0b013e3182574f39",
+   "MHRA Drug Safety Update: Antiepileptic drugs in pregnancy, comprehensive safety review (2021) https://www.gov.uk/drug-safety-update/antiepileptic-drugs-in-pregnancy-updated-advice-following-comprehensive-safety-review",
+   "Pack AM et al. AAN/AES/SMFM guideline: reducing risks of major congenital malformations in people with epilepsy. Neurology, 2024 https://www.aan.com/PressRoom/Home/PressRelease/5170",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 57, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 (prazo do SNCR 30/09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true"
+  ]
+ },
+ {
+  "id": "fenobarbital",
+  "nome": "Fenobarbital",
+  "marcas": [
+   "Gardenal",
+   "Fenocris",
+   "genéricos"
+  ],
+  "classe": "Antiepiléptico (barbitúrico)",
+  "indicacoes": [
+   "epilepsia"
+  ],
+  "apresentacoes": [
+   "50 mg comprimido (Gardenal)",
+   "100 mg comprimido (Gardenal, Fenocris)",
+   "Solução oral 40 mg/mL (gotas; 1 gota = 1 mg) (Gardenal)",
+   "Solução injetável 100 mg/mL (uso hospitalar, Fenocris)"
+  ],
+  "posologiaUsual": "Adultos: 2–3 mg/kg/dia em dose única ou dividida; avaliar o efeito após cerca de 15 dias",
+  "doseMaxDia": "Sem teto fixo na bula brasileira; dose guiada por resposta e nível sérico (cerca de 15–30 mcg/mL, ou 65–130 µmol/L); reduzir em idosos e em insuficiência renal ou hepática",
+  "portaria344": "B1 (Adendo 2: medicamentos com fenobarbital são prescritos em Receita de Controle Especial em 2 vias)",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Apesar de listado na B1, o Adendo 2 dessa lista determina prescrição em Receita de Controle Especial em 2 vias (Anexo I da Portaria 344/1998, Atualização nº 101, RDC 1.036/2026), e não em Notificação B. Validade de 30 dias em todo o território nacional (art. 52, §1º); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Como anticonvulsivante, aplica-se na prática o limite de até 6 meses de tratamento (art. 59, parágrafo único), embora o caput do art. 59 cite nominalmente as listas C1 e C5; acima dos limites, justificar com CID ou diagnóstico e posologia (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026).",
+  "efeitosComuns": [
+   "Sonolência, principalmente pela manhã",
+   "Dificuldade de concentração e de memória",
+   "Irritabilidade ou agitação, mais comum em crianças e idosos",
+   "Enjoo",
+   "Com o uso prolongado, enfraquecimento dos ossos"
+  ],
+  "sinaisAlerta": [
+   "Sonolência extrema, respiração lenta ou dificuldade para acordar, principalmente se usou álcool, remédios para dor fortes (opioides) ou calmantes",
+   "Manchas, bolhas ou descamação na pele, ou feridas na boca e nos olhos",
+   "Febre com ínguas, inchaço no rosto ou pele e olhos amarelados",
+   "Confusão mental forte ou desorientação",
+   "Tristeza profunda ou pensamentos de se machucar",
+   "Crise que não para ou crises seguidas"
+  ],
+  "monitorizacao": [
+   "Nível sérico se necessário (cerca de 15–30 mcg/mL), coletado pela manhã",
+   "Função hepática (elevação de GGT e transaminases é frequente)",
+   "Hemograma e folato (anemia megaloblástica)",
+   "Vitamina D e saúde óssea no uso prolongado",
+   "Sedação, cognição, humor e sinais de dependência a cada consulta",
+   "Mulheres: confirmar contracepção eficaz e planejar troca, pois a bula contraindica o uso em quem pode engravidar"
+  ],
+  "interacoes": [
+   "Indutor enzimático potente: reduz a eficácia de anticoncepcionais hormonais",
+   "Anticoagulantes orais perdem efeito: controlar o INR com mais frequência, inclusive até 8 dias após parar o fenobarbital",
+   "Valproato aumenta o nível de fenobarbital (sonolência e hiperamonemia)",
+   "Opioides, metadona, benzodiazepínicos e álcool: risco de depressão respiratória",
+   "Reduz o efeito de corticoides, hormônio tireoidiano, digitoxina, quinidina e metadona",
+   "Contraindicado com saquinavir e com esquemas para hepatite C com sofosbuvir"
+  ],
+  "gestacao": "Pela bula brasileira atual, o fenobarbital é contraindicado na gravidez e em mulheres que podem engravidar, porque aumenta o risco de malformações (cerca de 6 a 7 em cada 100) e de problemas de crescimento e de desenvolvimento do bebê. Se você pode engravidar, converse com o neurologista sobre a troca por outro remédio e, até lá, use DIU ou outro método não hormonal (a pílula perde efeito), sem parar o fenobarbital por conta própria.",
+  "suspensao": "Nunca pare de repente: além de fazer as crises voltarem, inclusive crises prolongadas, o corpo se acostuma com o remédio e a retirada brusca pode causar sintomas de abstinência. A redução deve ser lenta, ao longo de semanas a meses, sempre com orientação médica.",
+  "orientacoes": [
+   "Tome sempre no mesmo horário; se o remédio der muito sono de dia, pergunte ao médico se pode concentrar a dose à noite",
+   "Nas gotas, 1 gota equivale a 1 mg: conte com atenção e use sempre o mesmo frasco conta-gotas",
+   "Não use bebida alcoólica nem outros calmantes sem falar com o médico",
+   "Tenha cuidado ao dirigir ou operar máquinas"
+  ],
+  "alertasMedico": [
+   "Contraindicado na gestação, em mulheres e meninas com potencial de engravidar e na amamentação (bula Gardenal, ANVISA 31/03/2022): revisar a indicação e planejar a troca",
+   "Lista B1 com Adendo 2: prescrever em Receita de Controle Especial, não em Notificação B",
+   "Dependência (a bula cita 100 mg/dia por 3 meses) e depressão respiratória com opioides, álcool ou benzodiazepínicos",
+   "Indutor enzimático potente",
+   "Pode piorar crises de ausência e mioclônicas",
+   "Idosos: sedação, quedas e prejuízo cognitivo"
+  ],
+  "fontes": [
+   "Bula Gardenal, profissional de saúde (Sanofi Medley, ANVISA), 31/03/2022 https://pill-dev-site-pro-bula-pro.s3.us-east-2.amazonaws.com/7896070601932.pdf",
+   "Bula Fenocris, profissional de saúde (Cristália) https://www.cristalia.com.br/produto/215/bula-profissional",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista B1 e Adendo 2 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "MHRA Drug Safety Update: Antiepileptic drugs in pregnancy, comprehensive safety review (2021) https://www.gov.uk/drug-safety-update/antiepileptic-drugs-in-pregnancy-updated-advice-following-comprehensive-safety-review",
+   "Pack AM et al. AAN/AES/SMFM guideline: reducing risks of major congenital malformations in people with epilepsy. Neurology, 2024 https://www.aan.com/PressRoom/Home/PressRelease/5170"
+  ]
+ },
+ {
+  "id": "topiramato",
+  "nome": "Topiramato",
+  "marcas": [
+   "Amato",
+   "Têmpora",
+   "Topamax (em descontinuação no Brasil)",
+   "genéricos"
+  ],
+  "classe": "Antiepiléptico e profilático de enxaqueca",
+  "indicacoes": [
+   "epilepsia",
+   "enxaqueca"
+  ],
+  "apresentacoes": [
+   "25 mg comprimido revestido",
+   "50 mg comprimido revestido",
+   "100 mg comprimido revestido"
+  ],
+  "posologiaUsual": "Epilepsia: 100–400 mg/dia em 2 tomadas; enxaqueca: 50–100 mg/dia em 2 tomadas; titulação de 25 mg por semana",
+  "doseMaxDia": "Epilepsia: 500 mg/dia em monoterapia na bula brasileira (FDA: 400 mg/dia); enxaqueca: 200 mg/dia; reduzir se ClCr < 70 mL/min",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Por ser anticonvulsivante, a quantidade pode chegar a até 6 meses de tratamento (art. 59, parágrafo único); no máximo 3 substâncias da lista C1 por receita (art. 57). Acima dos limites, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026). O art. 59 fala em substâncias anticonvulsivantes; quando prescrito para outra indicação (profilaxia de enxaqueca), a aplicação dos 6 meses pode ser interpretada de forma diferente pela vigilância sanitária local: na dúvida, limitar a 60 dias (art. 59, caput) ou justificar.",
+  "efeitosComuns": [
+   "Formigamento nas mãos, nos pés ou no rosto",
+   "Perda de apetite e de peso",
+   "Dificuldade para encontrar palavras, lentidão para pensar ou falhas de memória",
+   "Sonolência, cansaço ou tontura",
+   "Mudança no gosto, principalmente de bebidas com gás",
+   "Nervosismo"
+  ],
+  "sinaisAlerta": [
+   "Visão embaçada de repente, dor nos olhos ou olho vermelho, principalmente no primeiro mês: procure atendimento urgente",
+   "Dor forte nas costas ou na lateral da barriga, ou sangue na urina",
+   "Febre ou calor excessivo com pouco ou nenhum suor",
+   "Respiração rápida, cansaço extremo ou confusão",
+   "Manchas, bolhas ou descamação na pele",
+   "Tristeza profunda ou pensamentos de se machucar"
+  ],
+  "monitorizacao": [
+   "Bicarbonato sérico no início e periodicamente (acidose metabólica)",
+   "Creatinina/ClCr para ajuste de dose; perguntar sobre história de cálculo renal",
+   "Sintomas visuais, principalmente no primeiro mês (miopia aguda e glaucoma de ângulo fechado)",
+   "Peso e queixas cognitivas a cada consulta",
+   "Amônia se confusão ou letargia, sobretudo em uso com valproato",
+   "Mulher com potencial de engravidar: teste de gravidez antes de iniciar e contracepção altamente eficaz"
+  ],
+  "interacoes": [
+   "Anticoncepcional com estrogênio: exposição ao etinilestradiol cai 18–30% com 200–800 mg/dia (bula brasileira); FDA alerta perda de eficácia e sangramento de escape, sobretudo acima de 200 mg/dia",
+   "Fenitoína e carbamazepina reduzem o nível de topiramato",
+   "Valproato: hiperamonemia e hipotermia",
+   "Acetazolamida e dieta cetogênica: mais risco de cálculo renal e acidose",
+   "Lítio: monitorar nível com doses altas de topiramato",
+   "Álcool e depressores do sistema nervoso central somam sonolência"
+  ],
+  "gestacao": "Aumenta o risco de malformações, como fenda no lábio ou no céu da boca, e há estudos sugerindo mais risco de alterações do desenvolvimento, como autismo; pela bula brasileira, é contraindicado na gravidez para prevenção de enxaqueca, e mulheres que podem engravidar só devem usá-lo com teste de gravidez antes de começar e método anticoncepcional altamente eficaz. Em doses altas a pílula pode perder efeito, então planeje qualquer gravidez com o neurologista e não pare o remédio por conta própria.",
+  "suspensao": "Não pare de tomar nem diminua a dose por conta própria, mesmo que esteja há muito tempo sem crises. Parar de repente pode fazer as crises voltarem, às vezes mais fortes ou prolongadas. Se for o caso de retirar ou trocar o remédio, o médico fará a redução aos poucos, ao longo de semanas.",
+  "orientacoes": [
+   "Beba bastante água ao longo do dia para ajudar a prevenir pedras nos rins",
+   "Tome o comprimido com bastante água, sem partir, triturar ou mastigar; pode ser junto das refeições",
+   "Em dias muito quentes ou com exercício intenso, hidrate-se bem e evite calor excessivo",
+   "Se esquecer uma dose, tome assim que lembrar; se já estiver perto do próximo horário, pule a esquecida e não tome dose dobrada"
+  ],
+  "alertasMedico": [
+   "Mulher em idade fértil: teste de gravidez e contracepção altamente eficaz; contraindicado na gestação para enxaqueca (bula Topamax, ANVISA 02/08/2024); EMA (2023) e MHRA (2024) exigem programa de prevenção da gravidez",
+   "Miopia aguda com glaucoma secundário de ângulo fechado, em geral no primeiro mês",
+   "Acidose metabólica, nefrolitíase e oligoidrose",
+   "Efeitos cognitivos e de linguagem (28% com 200 mg/dia na enxaqueca)",
+   "Topamax: a fabricante (J&J) comunicou à ANVISA em 06/2026 a descontinuação definitiva no Brasil, sem motivo de segurança; orientar troca por genérico ou similar"
+  ],
+  "fontes": [
+   "Bula Topamax, profissional de saúde (Janssen, ANVISA), 02/08/2024 https://cdn.sara.com.br/leafletMed/112363327.pdf",
+   "Bula Têmpora, profissional de saúde (Cristália), 16/01/2025 https://www.cristalia.com.br/produto/332/bula-profissional",
+   "Johnson & Johnson. Topamax: medicamento descontinuado, 06/2026 https://www.jnj.com/innovativemedicine/brasil/produtos/medicamentos-descontinuados/topamax-topiramato",
+   "FDA. Topamax prescribing information, 03/2026 https://www.accessdata.fda.gov/drugsatfda_docs/label/2026/020505s068lbl.pdf",
+   "EMA. Topiramate referral (programa de prevenção da gravidez), 2023 https://www.ema.europa.eu/en/medicines/human/referrals/topiramate",
+   "MHRA Drug Safety Update, 06/2024 https://assets.publishing.service.gov.uk/media/66740dba64e554df3bd0dbca/DSU_-_June_2024.pdf",
+   "MHRA Drug Safety Update: Antiepileptic drugs in pregnancy, comprehensive safety review (2021) https://www.gov.uk/drug-safety-update/antiepileptic-drugs-in-pregnancy-updated-advice-following-comprehensive-safety-review",
+   "Pack AM et al. AAN/AES/SMFM guideline: reducing risks of major congenital malformations in people with epilepsy. Neurology, 2024 https://www.aan.com/PressRoom/Home/PressRelease/5170",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 57, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 (prazo do SNCR 30/09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true"
+  ]
+ },
+ {
+  "id": "clobazam",
+  "nome": "Clobazam",
+  "marcas": [
+   "Frisium",
+   "Urbanil"
+  ],
+  "classe": "Benzodiazepínico (antiepiléptico adjuvante e ansiolítico)",
+  "indicacoes": [
+   "epilepsia",
+   "outro"
+  ],
+  "apresentacoes": [
+   "10 mg comprimido",
+   "20 mg comprimido"
+  ],
+  "posologiaUsual": "Epilepsia (adjuvante): iniciar com 5–15 mg/dia e ajustar pela resposta; ansiedade: 20–30 mg/dia por períodos curtos",
+  "doseMaxDia": "80 mg/dia na epilepsia; na ansiedade, em geral até 30 mg/dia",
+  "portaria344": "B1",
+  "receituario": "notificacao_b",
+  "limiteQuantidade": "Notificação de Receita B (azul), uma substância por notificação (art. 35, §7º, Portaria SVS/MS 344/1998); até 60 dias de tratamento (art. 46), e acima disso só com justificativa com CID ou diagnóstico e posologia (art. 46, §1º). A exceção de 6 meses do art. 59 vale para a Receita de Controle Especial e não se aplica à Notificação B, mesmo em uso anticonvulsivante. Validade de 30 dias em todo o território nacional (art. 45, redação da RDC 1.000/2025, em vigor desde 13/02/2026). Talonário numerado pela vigilância sanitária; emissão eletrônica somente via SNCR, com assinatura qualificada ICP-Brasil, com liberação prevista para 30/09/2026 (RDC 1.028/2026); até lá, apenas em papel.",
+  "efeitosComuns": [
+   "Sonolência",
+   "Tontura ou desequilíbrio",
+   "Boca seca",
+   "Intestino preso",
+   "Irritabilidade",
+   "Cansaço"
+  ],
+  "sinaisAlerta": [
+   "Sonolência muito forte, respiração lenta ou superficial, principalmente se usou álcool, remédios para dor fortes (opioides) ou outros calmantes",
+   "Manchas, bolhas ou descamação na pele, principalmente nas primeiras 8 semanas",
+   "Confusão, esquecimentos importantes ou agitação fora do seu normal",
+   "Quedas, principalmente em pessoas idosas",
+   "Tristeza profunda ou pensamentos de se machucar"
+  ],
+  "monitorizacao": [
+   "Sedação e função respiratória, sobretudo com opioides, em idosos e em doença pulmonar (contraindicado em apneia do sono, miastenia gravis e insuficiência respiratória ou hepática grave)",
+   "Pele nas primeiras 8 semanas e na reintrodução (SSJ/NET)",
+   "Tolerância, uso indevido e dependência a cada renovação",
+   "Humor e ideação suicida",
+   "Níveis de fenitoína e valproato se associados"
+  ],
+  "interacoes": [
+   "Opioides, álcool e outros depressores do sistema nervoso central: sedação intensa, depressão respiratória e risco de morte; o álcool aumenta a exposição ao clobazam em cerca de 50%",
+   "Inibidores do CYP2C19 (canabidiol, fluconazol, fluvoxamina, omeprazol, ticlopidina) aumentam o metabólito ativo: pode ser preciso reduzir a dose",
+   "Estiripentol aumenta o clobazam e seu metabólito",
+   "Pode reduzir a eficácia de anticoncepcionais hormonais (bula FDA; não consta na bula brasileira): considerar método adicional não hormonal"
+  ],
+  "gestacao": "Evite usar na gravidez sem orientação médica: no fim da gestação pode causar no bebê sonolência, moleza, dificuldade para respirar e sintomas de abstinência. Se planeja engravidar ou engravidou, converse com o neurologista, sem parar por conta própria; a bula brasileira desaconselha o uso durante a amamentação.",
+  "suspensao": "Não pare de repente nem reduza por conta própria: o corpo se acostuma com o remédio, e a interrupção brusca pode causar ansiedade, insônia, tremores e até crises convulsivas. A retirada deve ser gradual, em pequenas reduções ao longo de semanas, com orientação médica.",
+  "orientacoes": [
+   "Tome exatamente a dose prescrita, sem aumentar por conta própria",
+   "Não use bebida alcoólica nem outros calmantes sem falar com o médico",
+   "Tenha cuidado ao dirigir ou fazer atividades que exigem atenção",
+   "A receita é a notificação azul e vale por 30 dias: planeje a renovação com antecedência"
+  ],
+  "alertasMedico": [
+   "Tarjas FDA de classe: uso com opioides (2016) e abuso, dependência e abstinência (2020)",
+   "SSJ/NET com clobazam (comunicado FDA 03/12/2013), maior risco nas primeiras 8 semanas ou na reintrodução",
+   "Notificação B: máximo de 60 dias por receita; não há a exceção de 6 meses dos anticonvulsivantes da C1",
+   "CYP2C19: canabidiol aumenta o metabólito ativo (N-desmetilclobazam)",
+   "MHRA (08/01/2026): combinar plano de redução ou retirada antes de iniciar benzodiazepínicos"
+  ],
+  "fontes": [
+   "Bula Frisium, profissional de saúde (Sanofi Medley, ANVISA), 04/12/2020 https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Frisium-Profissional-Consulta-Remedios.pdf",
+   "Bula Urbanil, profissional de saúde (ANVISA), 02/12/2020 https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Urbanil-Profissional-Consulta-Remedios.pdf",
+   "FDA. Onfi prescribing information, 03/2024 https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=de03bd69-2dca-459c-93b4-541fd3e9571c",
+   "FDA Drug Safety Communication: reações graves de pele com clobazam, 03/12/2013 https://www.fda.gov/drugs/drug-safety-and-availability/fda-drug-safety-communication-fda-warns-serious-skin-reactions-anti-seizure-drug-onfi-clobazam-and",
+   "FDA. Boxed warning da classe dos benzodiazepínicos, 23/09/2020 https://www.fda.gov/drugs/drug-safety-and-availability/fda-requiring-boxed-warning-updated-improve-safe-use-benzodiazepine-drug-class",
+   "MHRA Drug Safety Update, 08/01/2026 https://www.gov.uk/drug-safety-update/improving-information-supplied-with-gabapentinoids-pregabalin-slash-gabapentin-benzodiazepines-and-z-drugs",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista B1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 35 §7º, 45 e 46), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026; notícia Anvisa de 03/06/2026 sobre o SNCR https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/sncr-anvisa-inicia-etapa-de-integracao-com-sistemas-de-prescricao-eletronica-e-amplia-prazo-para-implementacao"
+  ]
+ },
+ {
+  "id": "clonazepam",
+  "nome": "Clonazepam",
+  "marcas": [
+   "Rivotril",
+   "genéricos"
+  ],
+  "classe": "Benzodiazepínico (antiepiléptico e ansiolítico)",
+  "indicacoes": [
+   "epilepsia",
+   "sono",
+   "outro"
+  ],
+  "apresentacoes": [
+   "0,5 mg comprimido",
+   "2 mg comprimido",
+   "0,25 mg comprimido sublingual",
+   "Solução oral 2,5 mg/mL (gotas; 1 gota = 0,1 mg)"
+  ],
+  "posologiaUsual": "Epilepsia: iniciar com até 1,5 mg/dia em 3 tomadas e aumentar 0,5–1 mg a cada 3 dias até o controle; transtorno do pânico: 1–2 mg/dia",
+  "doseMaxDia": "20 mg/dia na epilepsia; 4 mg/dia no transtorno do pânico",
+  "portaria344": "B1",
+  "receituario": "notificacao_b",
+  "limiteQuantidade": "Notificação de Receita B (azul), uma substância por notificação (art. 35, §7º, Portaria SVS/MS 344/1998); até 60 dias de tratamento (art. 46), e acima disso só com justificativa com CID ou diagnóstico e posologia (art. 46, §1º). A exceção de 6 meses do art. 59 vale para a Receita de Controle Especial e não se aplica à Notificação B, mesmo em uso anticonvulsivante. Validade de 30 dias em todo o território nacional (art. 45, redação da RDC 1.000/2025, em vigor desde 13/02/2026). Talonário numerado pela vigilância sanitária; emissão eletrônica somente via SNCR, com assinatura qualificada ICP-Brasil, com liberação prevista para 30/09/2026 (RDC 1.028/2026); até lá, apenas em papel.",
+  "efeitosComuns": [
+   "Sonolência",
+   "Cansaço",
+   "Tontura ou desequilíbrio",
+   "Dificuldade de concentração ou de memória",
+   "Irritabilidade ou desânimo",
+   "Dor de cabeça"
+  ],
+  "sinaisAlerta": [
+   "Sonolência muito forte, respiração lenta ou superficial, principalmente se usou álcool, remédios para dor fortes (opioides) ou outros calmantes",
+   "Confusão, esquecimentos importantes ou agitação e agressividade fora do seu normal",
+   "Quedas, principalmente em pessoas idosas",
+   "Tristeza profunda ou pensamentos de se machucar",
+   "Inchaço no rosto ou na garganta, ou manchas na pele",
+   "Crises mais frequentes ou uma crise que não para"
+  ],
+  "monitorizacao": [
+   "Sedação, quedas e função respiratória, sobretudo em idosos, com opioides e em doença pulmonar",
+   "Tolerância ao efeito anticonvulsivante (cerca de 30% dos pacientes), uso indevido e dependência a cada renovação",
+   "Humor e ideação suicida",
+   "Hemograma e função hepática periódicos no uso prolongado (bula brasileira)"
+  ],
+  "interacoes": [
+   "Opioides, álcool e outros depressores do sistema nervoso central: sedação intensa, depressão respiratória e risco de morte",
+   "Fenitoína, fenobarbital, carbamazepina e lamotrigina aumentam a eliminação do clonazepam",
+   "Inibidores do CYP3A4 (por exemplo fluconazol) aumentam o nível",
+   "Com valproato: relato de estado de mal de ausência"
+  ],
+  "gestacao": "Use na gravidez apenas se o médico considerar indispensável: doses altas no fim da gestação podem causar no bebê moleza, temperatura baixa, dificuldade para respirar e para mamar, além de sintomas de abstinência. Planeje com o neurologista e não pare por conta própria; a bula brasileira contraindica a amamentação.",
+  "suspensao": "Não pare de repente nem reduza por conta própria: o corpo se acostuma com o remédio, e a interrupção brusca pode causar ansiedade, insônia, tremores e até crises convulsivas. A retirada costuma ser feita em pequenas reduções ao longo de semanas ou meses, com orientação médica.",
+  "orientacoes": [
+   "Nas gotas, 1 gota equivale a 0,1 mg: conte com atenção",
+   "O comprimido sublingual deve ser colocado debaixo da língua até dissolver",
+   "Não use bebida alcoólica nem outros calmantes sem falar com o médico, e tenha cuidado ao dirigir",
+   "A receita é a notificação azul e vale por 30 dias: planeje a renovação com antecedência"
+  ],
+  "alertasMedico": [
+   "Tarjas FDA de classe: uso com opioides (2016) e abuso, dependência e abstinência (2020)",
+   "Notificação B: máximo de 60 dias por receita; não há a exceção de 6 meses dos anticonvulsivantes da C1",
+   "Contraindicado em insuficiência respiratória ou hepática grave e em glaucoma agudo de ângulo fechado; no pânico, contraindicado em apneia do sono",
+   "Idosos: sedação, quedas e prejuízo cognitivo; usar a menor dose possível",
+   "MHRA (08/01/2026): combinar plano de redução ou retirada antes de iniciar; desmame individualizado (guideline ASAM 2025: 5–10% da dose a cada 2–4 semanas)"
+  ],
+  "fontes": [
+   "Bula Rivotril, profissional de saúde (Roche, ANVISA), 03/03/2022 https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Rivotril-Profissional-Consulta-Remedios.pdf",
+   "FDA. Klonopin prescribing information https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=cfa0d79a-843c-4b88-95a1-e9511d649ca1&type=display",
+   "FDA. Boxed warning da classe dos benzodiazepínicos, 23/09/2020 https://www.fda.gov/drugs/drug-safety-and-availability/fda-requiring-boxed-warning-updated-improve-safe-use-benzodiazepine-drug-class",
+   "MHRA Drug Safety Update, 08/01/2026 https://www.gov.uk/drug-safety-update/improving-information-supplied-with-gabapentinoids-pregabalin-slash-gabapentin-benzodiazepines-and-z-drugs",
+   "Joint Clinical Practice Guideline on Benzodiazepine Tapering (ASAM e sociedades), 2025 https://pubmed.ncbi.nlm.nih.gov/40526204/",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista B1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 35 §7º, 45 e 46), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026; notícia Anvisa de 03/06/2026 sobre o SNCR https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/sncr-anvisa-inicia-etapa-de-integracao-com-sistemas-de-prescricao-eletronica-e-amplia-prazo-para-implementacao"
+  ]
+ },
+ {
+  "id": "lacosamida",
+  "nome": "Lacosamida",
+  "marcas": [
+   "Vimpat",
+   "Lacotem",
+   "Lakos",
+   "genéricos"
+  ],
+  "classe": "Antiepiléptico (potencializa a inativação lenta dos canais de sódio)",
+  "indicacoes": [
+   "epilepsia"
+  ],
+  "apresentacoes": [
+   "50 mg comprimido revestido",
+   "100 mg comprimido revestido",
+   "150 mg comprimido revestido",
+   "200 mg comprimido revestido",
+   "Solução oral 10 mg/mL",
+   "Solução injetável 10 mg/mL (uso hospitalar)"
+  ],
+  "posologiaUsual": "100–200 mg 2x/dia (200–400 mg/dia)",
+  "doseMaxDia": "400 mg/dia (300 mg/dia se ClCr ≤ 30 mL/min ou insuficiência hepática leve a moderada)",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Por ser anticonvulsivante, a quantidade pode chegar a até 6 meses de tratamento (art. 59, parágrafo único); no máximo 3 substâncias da lista C1 por receita (art. 57). Acima dos limites, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026).",
+  "efeitosComuns": [
+   "Tontura",
+   "Dor de cabeça",
+   "Visão dupla",
+   "Enjoo ou vômitos",
+   "Sonolência",
+   "Desequilíbrio ou tremor"
+  ],
+  "sinaisAlerta": [
+   "Desmaio, batimentos muito lentos ou irregulares, ou palpitações",
+   "Tontura forte com quedas",
+   "Manchas na pele com febre ou ínguas",
+   "Tristeza profunda ou pensamentos de se machucar",
+   "Crises mais frequentes ou uma crise que não para"
+  ],
+  "monitorizacao": [
+   "ECG antes de iniciar e após atingir a dose de manutenção se distúrbio de condução, cardiopatia grave, canalopatia de sódio ou uso de fármacos que prolongam o PR (betabloqueadores, bloqueadores de canal de cálcio, outros bloqueadores de sódio)",
+   "Creatinina/ClCr para ajuste de dose",
+   "Tontura e quedas em idosos",
+   "Humor e ideação suicida"
+  ],
+  "interacoes": [
+   "Poucas interações: não reduz a eficácia de anticoncepcionais hormonais",
+   "Soma prolongamento do PR com carbamazepina, lamotrigina, oxcarbazepina, betabloqueadores, verapamil e diltiazem",
+   "Inibidores fortes do CYP3A4 ou CYP2C9 só são relevantes se houver insuficiência renal ou hepática"
+  ],
+  "gestacao": "Os dados de segurança na gravidez ainda são limitados, então o risco não está bem estabelecido. Se você planeja engravidar ou engravidou, converse com o neurologista, sem parar por conta própria, e use ácido fólico conforme orientação.",
+  "suspensao": "Não pare de tomar nem diminua a dose por conta própria, mesmo que esteja há muito tempo sem crises. Parar de repente pode fazer as crises voltarem, às vezes mais fortes ou prolongadas. Se for o caso de retirar ou trocar o remédio, o médico fará a redução aos poucos, ao longo de semanas.",
+  "orientacoes": [
+   "Tome em dois horários fixos, com cerca de 12 horas de intervalo, com ou sem alimento",
+   "Levante-se devagar e tenha cuidado com quedas, principalmente no início e após aumento de dose",
+   "Avise o médico se começar remédios para o coração ou para pressão",
+   "Se esquecer uma dose, tome assim que lembrar; se já estiver perto do próximo horário, pule a esquecida e não tome dose dobrada"
+  ],
+  "alertasMedico": [
+   "Prolongamento do PR (média de +7,3 ms com 400 mg/dia), BAV e bradicardia; SmPC europeu contraindica em BAV de 2º ou 3º grau",
+   "Ajuste renal e hepático (máximo de 300 mg/dia)",
+   "Fibrilação e flutter atrial descritos (0,5% em neuropatia diabética)",
+   "Possível ampliação de indicação na bula brasileira de 12/2025 (crises tônico-clônicas generalizadas a partir de 4 anos): não confirmada"
+  ],
+  "fontes": [
+   "Bula Vimpat, profissional de saúde (UCB, ANVISA) https://bula.gratis/ucb_biopharma_ltda/0/vimpat",
+   "FDA. Vimpat prescribing information (DailyMed, setid 9e79b42c), 05/2026 https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=9e79b42c-38a3-4b2c-a196-a5a1948250e2",
+   "EMA. Vimpat, resumo das características do medicamento",
+   "MHRA Drug Safety Update: Antiepileptic drugs in pregnancy, comprehensive safety review (2021) https://www.gov.uk/drug-safety-update/antiepileptic-drugs-in-pregnancy-updated-advice-following-comprehensive-safety-review",
+   "Pack AM et al. AAN/AES/SMFM guideline: reducing risks of major congenital malformations in people with epilepsy. Neurology, 2024 https://www.aan.com/PressRoom/Home/PressRelease/5170",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 57, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 (prazo do SNCR 30/09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true"
+  ]
+ },
+ {
+  "id": "gabapentina",
+  "nome": "Gabapentina",
+  "marcas": [
+   "Neurontin",
+   "genéricos"
+  ],
+  "classe": "Antiepiléptico e analgésico para dor neuropática (gabapentinoide)",
+  "indicacoes": [
+   "epilepsia",
+   "dor_neuropatica"
+  ],
+  "apresentacoes": [
+   "300 mg cápsula",
+   "400 mg cápsula",
+   "600 mg comprimido revestido"
+  ],
+  "posologiaUsual": "900–3.600 mg/dia divididos em 3 tomadas (no máximo 12 h entre as doses); ajustar pela função renal",
+  "doseMaxDia": "3.600 mg/dia (ClCr 50–79: 1.800 mg/dia; 30–49: 900 mg/dia; 15–29: 600 mg/dia; < 15: 300 mg/dia)",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Por ser anticonvulsivante, a quantidade pode chegar a até 6 meses de tratamento (art. 59, parágrafo único); no máximo 3 substâncias da lista C1 por receita (art. 57). Acima dos limites, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026). O art. 59 fala em substâncias anticonvulsivantes; quando prescrito para outra indicação (dor neuropática), a aplicação dos 6 meses pode ser interpretada de forma diferente pela vigilância sanitária local: na dúvida, limitar a 60 dias (art. 59, caput) ou justificar.",
+  "efeitosComuns": [
+   "Tontura",
+   "Sonolência",
+   "Inchaço nas pernas e nos pés",
+   "Desequilíbrio",
+   "Cansaço",
+   "Ganho de peso",
+   "Boca seca ou visão embaçada"
+  ],
+  "sinaisAlerta": [
+   "Sonolência muito forte, respiração lenta ou dificuldade para respirar, principalmente se usa remédios para dor fortes (opioides), calmantes ou tem doença no pulmão",
+   "Inchaço no rosto, nos lábios ou na língua, ou falta de ar",
+   "Febre com manchas na pele ou ínguas",
+   "Tristeza profunda ou pensamentos de se machucar, inclusive depois de parar o remédio",
+   "Quedas ou confusão, principalmente em pessoas idosas"
+  ],
+  "monitorizacao": [
+   "Creatinina/ClCr antes de iniciar e periodicamente, sobretudo em idosos, para ajuste de dose",
+   "Sedação e função respiratória com opioides, benzodiazepínicos, DPOC ou idade avançada",
+   "Sinais de uso indevido (escalada de dose, pedidos antecipados de receita)",
+   "Humor e ideação suicida",
+   "Edema e peso"
+  ],
+  "interacoes": [
+   "Opioides: mais risco de depressão respiratória e de morte por opioide (OR ajustado de 1,49); a morfina aumenta a exposição à gabapentina em 44%",
+   "Antiácidos com alumínio ou magnésio reduzem a absorção em cerca de 20%: tomar a gabapentina pelo menos 2 horas depois do antiácido",
+   "Álcool, benzodiazepínicos e outros depressores do sistema nervoso central somam sedação",
+   "Sem interação relevante com outros antiepilépticos ou com anticoncepcionais hormonais"
+  ],
+  "gestacao": "Os estudos disponíveis não mostraram aumento claro de malformações, mas há sinais de mais bebês com baixo peso ou prematuros e risco de sintomas de abstinência no recém-nascido. Use na gravidez apenas se for realmente necessário, planeje com o médico e não pare por conta própria.",
+  "suspensao": "Não pare de repente: pode causar ansiedade, insônia, enjoo, dor e suor, e em quem tem epilepsia pode trazer as crises de volta. A retirada deve ser gradual, em pelo menos 1 semana ou mais, conforme orientação médica.",
+  "orientacoes": [
+   "Divida a dose em 3 tomadas ao longo do dia, sem passar mais de 12 horas entre elas",
+   "Se usar antiácido, tome a gabapentina pelo menos 2 horas depois dele",
+   "Evite bebida alcoólica e tenha cuidado ao dirigir até saber como o remédio afeta você",
+   "Levante-se devagar, principalmente à noite, para evitar quedas"
+  ],
+  "alertasMedico": [
+   "Depressão respiratória com opioides, DPOC ou idosos (comunicado FDA 19/12/2019)",
+   "Uso indevido e dependência, mesmo em dose terapêutica (EMA); MHRA (08/01/2026): combinar plano de redução ou retirada antes de iniciar",
+   "Bula FDA (04/2025) inclui ideação suicida durante e após a suspensão; a bula brasileira de 2023 não tem seção de suicidalidade",
+   "Ajuste renal obrigatório",
+   "Prescrição para dor neuropática: confirmar interpretação local sobre o limite de 6 meses"
+  ],
+  "fontes": [
+   "Bula Neurontin, profissional de saúde (Viatris, ANVISA), 17/02/2023 https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Neurontin-Profissional-Consulta-Remedios.pdf",
+   "FDA. Neurontin prescribing information, 04/2025 https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/020235s079,020882s060,021129s059lbl.pdf",
+   "FDA Drug Safety Communication: gabapentinoides e problemas respiratórios, 19/12/2019 https://www.fda.gov/drugs/fda-drug-safety-podcasts/fda-warns-about-serious-breathing-problems-seizure-and-nerve-pain-medicines-gabapentin-neurontin",
+   "EMA/CMDh. Gabapentin PSUSA/00001499/202202 https://www.ema.europa.eu/en/documents/psusa/gabapentin-cmdh-scientific-conclusions-and-grounds-variation-amendments-product-information-and-timetable-implementation-psusa00001499202202_en.pdf",
+   "MHRA Drug Safety Update, 08/01/2026 https://www.gov.uk/drug-safety-update/improving-information-supplied-with-gabapentinoids-pregabalin-slash-gabapentin-benzodiazepines-and-z-drugs",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 57, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 (prazo do SNCR 30/09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true"
+  ]
+ },
+ {
+  "id": "pregabalina",
+  "nome": "Pregabalina",
+  "marcas": [
+   "Lyrica",
+   "Prebictal",
+   "Dorene",
+   "Dorene Tabs",
+   "genéricos"
+  ],
+  "classe": "Antiepiléptico, analgésico para dor neuropática e ansiolítico (gabapentinoide)",
+  "indicacoes": [
+   "dor_neuropatica",
+   "epilepsia",
+   "outro"
+  ],
+  "apresentacoes": [
+   "25 mg cápsula",
+   "50 mg cápsula (Prebictal)",
+   "75 mg cápsula",
+   "100 mg cápsula (Prebictal)",
+   "150 mg cápsula",
+   "75 mg comprimido (Dorene Tabs)",
+   "150 mg comprimido (Dorene Tabs)"
+  ],
+  "posologiaUsual": "150–600 mg/dia em 2–3 tomadas (início com 75 mg 2x/dia); fibromialgia: 300–450 mg/dia; ajustar pela função renal",
+  "doseMaxDia": "600 mg/dia (ClCr 30–59: 300 mg/dia; 15–29: 150 mg/dia; < 15: 75 mg/dia)",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Por ser anticonvulsivante, a quantidade pode chegar a até 6 meses de tratamento (art. 59, parágrafo único); no máximo 3 substâncias da lista C1 por receita (art. 57). Acima dos limites, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026). O art. 59 fala em substâncias anticonvulsivantes; quando prescrito para outra indicação (dor neuropática, fibromialgia ou ansiedade generalizada), a aplicação dos 6 meses pode ser interpretada de forma diferente pela vigilância sanitária local: na dúvida, limitar a 60 dias (art. 59, caput) ou justificar.",
+  "efeitosComuns": [
+   "Tontura",
+   "Sonolência",
+   "Visão embaçada ou dupla",
+   "Aumento do apetite e ganho de peso",
+   "Inchaço nas pernas e nos pés",
+   "Boca seca",
+   "Desequilíbrio ou dificuldade de concentração"
+  ],
+  "sinaisAlerta": [
+   "Inchaço no rosto, nos lábios, na língua ou na garganta: pare o remédio e procure atendimento urgente",
+   "Sonolência muito forte ou respiração lenta, principalmente se usa remédios para dor fortes (opioides), calmantes ou tem doença no pulmão",
+   "Manchas, bolhas ou descamação na pele",
+   "Falta de ar ou inchaço que piora muito",
+   "Tristeza profunda ou pensamentos de se machucar, inclusive depois de parar o remédio",
+   "Intestino preso intenso com dor na barriga, principalmente se usa opioides"
+  ],
+  "monitorizacao": [
+   "Creatinina/ClCr antes de iniciar e periodicamente para ajuste de dose",
+   "Sinais de uso indevido e dependência a cada renovação",
+   "Sedação e função respiratória com opioides ou depressores do sistema nervoso central",
+   "Edema, peso e sinais de insuficiência cardíaca; glicemia e peso em diabéticos",
+   "Humor e ideação suicida"
+  ],
+  "interacoes": [
+   "Opioides: mais risco de depressão respiratória e de morte por opioide (OR ajustado de 1,68; maior acima de 300 mg/dia)",
+   "Álcool, benzodiazepínicos e outros depressores do sistema nervoso central somam sedação",
+   "Inibidores da ECA podem somar risco de angioedema",
+   "Glitazonas (pioglitazona) aumentam o edema",
+   "Sem interações farmacocinéticas relevantes; não reduz a eficácia de anticoncepcionais"
+  ],
+  "gestacao": "Um grande estudo encontrou um possível pequeno aumento no risco de malformações com o uso no início da gravidez. Por isso, se você pode engravidar, use método anticoncepcional eficaz e evite a pregabalina na gestação, a não ser que o médico a considere claramente necessária; não pare por conta própria e converse com o médico.",
+  "suspensao": "Não pare de repente: pode causar insônia, dor de cabeça, enjoo, ansiedade, suor e diarreia, e em quem tem epilepsia pode trazer as crises de volta. A retirada deve ser gradual, em pelo menos 1 semana ou mais, conforme orientação médica.",
+  "orientacoes": [
+   "Tome nos horários combinados, com ou sem alimento",
+   "Evite bebida alcoólica e tenha cuidado ao dirigir até saber como o remédio afeta você",
+   "Não aumente a dose por conta própria, mesmo que a dor volte; fale com o médico",
+   "Levante-se devagar para evitar quedas, principalmente se você tem mais idade"
+  ],
+  "alertasMedico": [
+   "Uso indevido, abuso e dependência, inclusive em dose terapêutica; MHRA (08/01/2026): combinar plano de redução ou retirada antes de iniciar",
+   "Depressão respiratória com opioides (FDA 12/2019)",
+   "Angioedema: suspender imediatamente",
+   "Gestação: MHRA (04/2022) e SmPC europeu recomendam evitar e usar contracepção eficaz; a bula brasileira (01/2026) tem redação mais branda",
+   "Bula FDA (04/2025): suicidalidade após a suspensão e crises de abstinência",
+   "Prescrição para dor ou ansiedade: confirmar interpretação local sobre o limite de 6 meses"
+  ],
+  "fontes": [
+   "Bula Lyrica, profissional de saúde (Viatris, ANVISA), 22/01/2026 https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/bula_lyrica_profissional_1.pdf",
+   "FDA. Lyrica prescribing information, 04/2025 https://www.accessdata.fda.gov/drugsatfda_docs/label/2025/021446s046,022488s022lbl.pdf",
+   "EMA. Lyrica, informação do produto (EPAR) https://www.ema.europa.eu/en/documents/product-information/lyrica-epar-product-information_en.pdf",
+   "MHRA Drug Safety Update: pregabalina na gestação, 04/2022 https://assets.publishing.service.gov.uk/media/625eb924e90e0729fef7bbc0/April-2022-DSU-PDF.pdf",
+   "FDA Drug Safety Communication: gabapentinoides e problemas respiratórios, 19/12/2019 https://www.fda.gov/drugs/fda-drug-safety-podcasts/fda-warns-about-serious-breathing-problems-seizure-and-nerve-pain-medicines-gabapentin-neurontin",
+   "MHRA Drug Safety Update, 08/01/2026 https://www.gov.uk/drug-safety-update/improving-information-supplied-with-gabapentinoids-pregabalin-slash-gabapentin-benzodiazepines-and-z-drugs",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 57, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 (prazo do SNCR 30/09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true"
+  ]
+ },
+ {
+  "id": "primidona",
+  "nome": "Primidona",
+  "marcas": [
+   "Primid"
+  ],
+  "classe": "Antiepiléptico (barbitúrico, convertido em fenobarbital e PEMA)",
+  "indicacoes": [
+   "epilepsia",
+   "tremor"
+  ],
+  "apresentacoes": [
+   "100 mg comprimido",
+   "250 mg comprimido"
+  ],
+  "posologiaUsual": "Epilepsia: 250 mg 3–4x/dia, após titulação a partir de 100–125 mg à noite; tremor essencial: 50–250 mg/dia",
+  "doseMaxDia": "Epilepsia: 2.000 mg/dia; tremor essencial: 750 mg/dia (bula Primid)",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Por ser anticonvulsivante, a quantidade pode chegar a até 6 meses de tratamento (art. 59, parágrafo único); no máximo 3 substâncias da lista C1 por receita (art. 57). Acima dos limites, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura eletrônica qualificada ICP-Brasil (RDC 1.000/2025; prazo de disponibilização completa do SNCR estendido para 30/09/2026 pela RDC 1.028/2026). O art. 59 fala em substâncias anticonvulsivantes; quando prescrito para outra indicação (tremor essencial), a aplicação dos 6 meses pode ser interpretada de forma diferente pela vigilância sanitária local: na dúvida, limitar a 60 dias (art. 59, caput) ou justificar.",
+  "efeitosComuns": [
+   "Tontura e desequilíbrio, mais fortes no início e que costumam melhorar com o tempo",
+   "Sonolência",
+   "Enjoo ou vômitos",
+   "Perda de apetite",
+   "Cansaço",
+   "Visão dupla"
+  ],
+  "sinaisAlerta": [
+   "Sonolência extrema, respiração lenta ou dificuldade para acordar, principalmente se usou álcool, opioides ou calmantes",
+   "Manchas, bolhas ou descamação na pele",
+   "Palidez, fraqueza ou falta de ar fora do comum",
+   "Confusão mental forte",
+   "Tristeza profunda ou pensamentos de se machucar"
+  ],
+  "monitorizacao": [
+   "Hemograma e bioquímica a cada 6 meses no uso prolongado (bula FDA Mysoline)",
+   "Nível sérico de primidona (5–12 mcg/mL) e do fenobarbital derivado quando necessário",
+   "Folato e vitamina D no uso prolongado (bula Primid recomenda suplementação)",
+   "Sedação, quedas e sinais de dependência"
+  ],
+  "interacoes": [
+   "Indutor enzimático (como o fenobarbital): reduz a eficácia de anticoncepcionais hormonais e de varfarina",
+   "Valproato aumenta o fenobarbital derivado da primidona",
+   "Reduz o nível de lamotrigina e de outros antiepilépticos",
+   "Álcool, opioides e benzodiazepínicos: sedação e depressão respiratória"
+  ],
+  "gestacao": "A bula recomenda evitar na gravidez. Como parte do remédio vira fenobarbital no organismo, pode ter riscos parecidos para o bebê; se você pode engravidar, use DIU ou outro método não hormonal (a pílula perde efeito) e planeje com o neurologista, sem parar por conta própria.",
+  "suspensao": "Não pare de repente: pode trazer as crises (ou o tremor) de volta e causar sintomas de abstinência, porque parte do remédio vira fenobarbital no organismo. A redução deve ser lenta, com orientação médica.",
+  "orientacoes": [
+   "No início, a dose é baixa e tomada à noite, subindo aos poucos; siga o esquema combinado",
+   "Não use bebida alcoólica nem outros calmantes sem falar com o médico",
+   "Tenha cuidado ao dirigir e ao levantar, principalmente nas primeiras semanas",
+   "Se esquecer uma dose, tome assim que lembrar; se já estiver perto do próximo horário, pule a esquecida e não tome dose dobrada"
+  ],
+  "alertasMedico": [
+   "Metabolizada em fenobarbital: mesmos cuidados com dependência, depressão respiratória e indução enzimática",
+   "Tremor essencial é indicação aprovada na bula brasileira",
+   "Contraindicada em porfiria e em hipersensibilidade ao fenobarbital",
+   "Comprimidos contêm tartrazina",
+   "Mulher em idade fértil: bula recomenda evitar na gestação; considerar alternativa"
+  ],
+  "fontes": [
+   "Bula Primid, profissional de saúde (Apsen, ANVISA), 13/06/2019 https://img.drogasil.com.br/raiadrogasil_bula/PRIMID.pdf",
+   "FDA. Mysoline prescribing information https://dailymed.nlm.nih.gov/dailymed/fda/fdaDrugXsl.cfm?setid=af593171-dabb-4ea3-b44c-89ed457b2c46&type=display",
+   "MHRA Drug Safety Update: Antiepileptic drugs in pregnancy, comprehensive safety review (2021) https://www.gov.uk/drug-safety-update/antiepileptic-drugs-in-pregnancy-updated-advice-following-comprehensive-safety-review",
+   "Pack AM et al. AAN/AES/SMFM guideline: reducing risks of major congenital malformations in people with epilepsy. Neurology, 2024 https://www.aan.com/PressRoom/Home/PressRelease/5170",
+   "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (arts. 52, 55, 57, 59 e 60), consultado em 09/2026 https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 (prazo do SNCR 30/09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true"
+  ]
+ }
+]

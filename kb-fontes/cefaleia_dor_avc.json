@@ -1,0 +1,1190 @@
+[
+ {
+  "id": "propranolol",
+  "nome": "Propranolol",
+  "marcas": [
+   "Cloridrato de propranolol (genéricos e similares)"
+  ],
+  "classe": "Betabloqueador não seletivo",
+  "indicacoes": [
+   "enxaqueca",
+   "tremor"
+  ],
+  "apresentacoes": [
+   "Comprimidos de 10 mg, 40 mg e 80 mg (liberação imediata)"
+  ],
+  "posologiaUsual": "Enxaqueca: iniciar 20-40 mg/dia e aumentar a cada 1-2 semanas; dose usual 40-160 mg/dia em 2-3 tomadas (SBCe 2022: 40-240 mg/dia). Tremor essencial: em geral 60-240 mg/dia divididos.",
+  "doseMaxDia": "240 mg/dia na profilaxia da enxaqueca (SBCe 2022).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Cansaço ou desânimo",
+   "Mãos e pés frios",
+   "Tontura ao levantar rápido",
+   "Sonhos vívidos, pesadelos ou dificuldade para dormir",
+   "Batimentos do coração mais lentos",
+   "Enjoo, diarreia ou prisão de ventre",
+   "Menos fôlego para exercícios intensos"
+  ],
+  "sinaisAlerta": [
+   "Chiado no peito ou falta de ar",
+   "Desmaio, ou pulso muito lento acompanhado de tontura forte",
+   "Inchaço nas pernas ou falta de ar ao deitar",
+   "Tristeza intensa ou pensamentos de se machucar",
+   "Se você tem diabetes: episódios de açúcar baixo que você não percebe bem (o remédio pode esconder o tremor e a palpitação)"
+  ],
+  "monitorizacao": [
+   "Pressão arterial e frequência cardíaca a cada consulta (manter FC de repouso em torno de 55-60 bpm ou mais, sem sintomas)",
+   "Humor e sono a cada consulta",
+   "Glicemia em diabéticos em uso de insulina ou sulfonilureia",
+   "Eficácia pelo diário de cefaleia após 2-3 meses em dose-alvo (meta: redução >=50% dos dias de dor)"
+  ],
+  "interacoes": [
+   "Rizatriptana: o propranolol aumenta o nível da rizatriptana; a bula brasileira do Maxalt orienta não usar juntos (a dose de 5 mg não existe no Brasil)",
+   "Verapamil ou diltiazem: risco de bradicardia e bloqueio cardíaco",
+   "Insulina e sulfonilureias: pode mascarar sinais de hipoglicemia",
+   "Clonidina: suspender a clonidina em uso de betabloqueador pode causar pico de pressão",
+   "Broncodilatadores beta-2 (salbutamol, formoterol): efeitos opostos; broncoespasmo em asmáticos",
+   "Anti-inflamatórios (AINEs): reduzem o efeito anti-hipertensivo"
+  ],
+  "gestacao": "Pode ser usado na gravidez quando necessário, sendo um dos preventivos com mais experiência, mas pode estar associado a menor crescimento do bebê e a batimentos lentos ou açúcar baixo no recém-nascido. Se planeja engravidar, converse com o médico; na amamentação é considerado compatível.",
+  "suspensao": "Não pare de uma vez. A parada brusca pode causar palpitações, aumento da pressão e, em quem tem doença do coração, dor no peito. Quando for preciso parar, a dose é reduzida aos poucos, em cerca de 1 a 2 semanas, com orientação médica.",
+  "orientacoes": [
+   "Tome todos os dias nos mesmos horários, mesmo sem dor: é um remédio preventivo e o efeito completo aparece em 4 a 8 semanas",
+   "Levante-se devagar da cama ou da cadeira para evitar tontura",
+   "Mantenha um diário de dor de cabeça para você e o médico avaliarem o resultado",
+   "Se você tem diabetes, meça a glicose com mais atenção"
+  ],
+  "alertasMedico": [
+   "Contraindicado em asma ou DPOC com broncoespasmo, bradicardia sinusal, BAV de 2º/3º grau, doença do nó sinusal, IC descompensada e doença arterial periférica grave",
+   "Evitar associação com rizatriptana (bula brasileira do Maxalt)",
+   "Cautela em depressão ativa e em diabéticos com hipoglicemias",
+   "Metoprolol é alternativa com nível A (SBCe 2022)",
+   "Uso de analgésico >=15 dias/mês ou triptano >=10 dias/mês: cefaleia por uso excessivo, que reduz a resposta ao preventivo"
+  ],
+  "fontes": [
+   "Melhado EM et al. Consenso SBCe para tratamento profilático da enxaqueca episódica: parte I. Arq Neuropsiquiatr 2022;80(8):845-861. https://doi.org/10.1055/s-0042-1756441",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/",
+   "Organon. Bula profissional Maxalt (aprovada pela Anvisa em 15/04/2026): interação com propranolol. https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/maxalt_bula_profissional.pdf",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "amitriptilina",
+  "nome": "Amitriptilina",
+  "marcas": [
+   "Tryptanol",
+   "Amytril",
+   "Protanol",
+   "Neurotrypt"
+  ],
+  "classe": "Antidepressivo tricíclico",
+  "indicacoes": [
+   "enxaqueca",
+   "dor_neuropatica"
+  ],
+  "apresentacoes": [
+   "Comprimidos revestidos de 25 mg e 75 mg (apresentações mais comuns; outras concentrações variam por fabricante)"
+  ],
+  "posologiaUsual": "Enxaqueca e dor neuropática: iniciar 10-25 mg à noite e aumentar 10-25 mg a cada 1-2 semanas; dose usual 25-75 mg/dia em tomada única noturna (SBCe 2022: 10-150 mg/dia).",
+  "doseMaxDia": "150 mg/dia em ambulatório (SBCe 2022 e bula).",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias (lista C1). Validade de 30 dias a partir da emissão (Art. 52, par. 1º). Quantidade máxima de 60 dias de tratamento por receita (Art. 59) e no máximo 3 substâncias da lista C1 por receita (Art. 57); acima disso, exige justificativa com CID ou diagnóstico e posologia, datada e assinada (Art. 60). Vale em todo o território nacional. Pode ser emitida eletronicamente com assinatura qualificada ICP-Brasil (RDC 1.000/2025); integração ao SNCR em implantação a partir de 30/09/2026.",
+  "efeitosComuns": [
+   "Boca seca",
+   "Sonolência, principalmente no início",
+   "Prisão de ventre",
+   "Aumento do apetite e do peso",
+   "Tontura ao levantar",
+   "Visão embaçada",
+   "Suor aumentado"
+  ],
+  "sinaisAlerta": [
+   "Palpitações fortes, batimento irregular ou desmaio",
+   "Dificuldade para urinar",
+   "Confusão mental, principalmente em pessoas idosas",
+   "Piora da tristeza ou pensamentos de se machucar",
+   "Dor forte no olho com vermelhidão e visão embaçada",
+   "Agitação, febre, tremores e rigidez muscular"
+  ],
+  "monitorizacao": [
+   "ECG antes de iniciar se >50 anos, doença cardíaca, ou uso de outros fármacos que prolongam o QT; repetir se aumento de dose importante",
+   "Peso e pressão arterial (incluindo queda ao levantar) a cada consulta",
+   "Humor e ideação suicida, em especial no início, após ajuste de dose e em <25 anos",
+   "Eficácia pelo diário de cefaleia após 2-3 meses em dose-alvo"
+  ],
+  "interacoes": [
+   "IMAO: contraindicado; respeitar intervalo de 14 dias",
+   "Fluoxetina, paroxetina, bupropiona (inibidores do CYP2D6): aumentam muito o nível do tricíclico",
+   "Outros fármacos que prolongam o QT (antiarrítmicos, alguns antipsicóticos, macrolídeos, ondansetrona em doses altas)",
+   "Álcool, benzodiazepínicos, opioides e outros sedativos: somam sonolência",
+   "Tramadol: risco de convulsão e de síndrome serotoninérgica",
+   "Triptanos: risco serotoninérgico teórico, com evidência de risco muito baixo; a combinação é comum na prática"
+  ],
+  "gestacao": "Na gravidez, só use após conversar com o médico; em doses baixas é uma das opções com mais experiência, mas o benefício precisa superar os riscos. Na amamentação, discuta com o médico antes de usar.",
+  "suspensao": "Não interrompa de repente: pode causar mal-estar, enjoo, dor de cabeça, irritabilidade e alterações do sono por alguns dias. A redução deve ser gradual, conforme orientação médica.",
+  "orientacoes": [
+   "Tome à noite, cerca de 1 a 2 horas antes de deitar",
+   "O efeito preventivo aparece em 4 a 8 semanas; não desanime nas primeiras semanas",
+   "Evite bebida alcoólica e tenha cuidado ao dirigir no início do tratamento",
+   "Beba água e coma fibras para evitar prisão de ventre"
+  ],
+  "alertasMedico": [
+   "Contraindicado em IAM recente, arritmias e bloqueios de condução, glaucoma de ângulo fechado e retenção urinária",
+   "Evitar em idosos (critérios de Beers: efeito anticolinérgico, quedas, confusão); preferir nortriptilina",
+   "Alta letalidade em superdose: cautela em risco de suicídio; o limite de 60 dias por receita ajuda",
+   "Nível A na enxaqueca (SBCe 2022); útil com insônia ou cefaleia tensional associada",
+   "Lista C1: receita de controle especial em 2 vias"
+  ],
+  "fontes": [
+   "Melhado EM et al. Consenso SBCe para tratamento profilático da enxaqueca episódica: parte I. Arq Neuropsiquiatr 2022;80(8):845-861. https://doi.org/10.1055/s-0042-1756441",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (Arts. 35, 45, 46, 52, 57, 59, 60). https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Anvisa. RDC nº 1.000/2025 - receituários de controle especial emitidos em meio eletrônico (vigência 13/02/2026). https://www.legisweb.com.br/legislacao/?id=487796",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/"
+  ]
+ },
+ {
+  "id": "nortriptilina",
+  "nome": "Nortriptilina",
+  "marcas": [
+   "Pamelor"
+  ],
+  "classe": "Antidepressivo tricíclico",
+  "indicacoes": [
+   "enxaqueca",
+   "dor_neuropatica"
+  ],
+  "apresentacoes": [
+   "Cápsulas de 10 mg, 25 mg, 50 mg e 75 mg",
+   "Solução oral 2 mg/mL"
+  ],
+  "posologiaUsual": "Enxaqueca: iniciar 10-25 mg à noite e ajustar a cada 1-2 semanas; dose usual 25-50 mg/dia (SBCe 2022: 10-50 mg/dia). Dor neuropática: 25-75 mg/dia.",
+  "doseMaxDia": "50 mg/dia na enxaqueca (SBCe 2022); até 150 mg/dia em depressão (bula).",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias (lista C1). Validade de 30 dias a partir da emissão (Art. 52, par. 1º). Quantidade máxima de 60 dias de tratamento por receita (Art. 59) e no máximo 3 substâncias da lista C1 por receita (Art. 57); acima disso, exige justificativa com CID ou diagnóstico e posologia, datada e assinada (Art. 60). Vale em todo o território nacional. Pode ser emitida eletronicamente com assinatura qualificada ICP-Brasil (RDC 1.000/2025); integração ao SNCR em implantação a partir de 30/09/2026.",
+  "efeitosComuns": [
+   "Boca seca",
+   "Prisão de ventre",
+   "Sonolência (geralmente menor que com amitriptilina)",
+   "Tontura ao levantar",
+   "Aumento do apetite ou do peso",
+   "Suor aumentado"
+  ],
+  "sinaisAlerta": [
+   "Palpitações fortes, batimento irregular ou desmaio",
+   "Dificuldade para urinar",
+   "Confusão mental, principalmente em pessoas idosas",
+   "Piora da tristeza ou pensamentos de se machucar",
+   "Dor forte no olho com visão embaçada",
+   "Agitação, febre, tremores e rigidez muscular"
+  ],
+  "monitorizacao": [
+   "ECG antes de iniciar se >50 anos, doença cardíaca ou uso de fármacos que prolongam o QT",
+   "Peso e pressão arterial a cada consulta",
+   "Humor e ideação suicida no início, após ajustes e em <25 anos",
+   "Nível sérico (faixa terapêutica 50-150 ng/mL) se doses altas, toxicidade ou interação com inibidor do CYP2D6",
+   "Eficácia pelo diário de cefaleia após 2-3 meses"
+  ],
+  "interacoes": [
+   "IMAO: contraindicado; respeitar intervalo de 14 dias",
+   "Fluoxetina, paroxetina, bupropiona (inibidores do CYP2D6): aumentam o nível",
+   "Outros fármacos que prolongam o QT",
+   "Álcool e sedativos: somam sonolência",
+   "Tramadol: risco de convulsão e síndrome serotoninérgica",
+   "Triptanos: risco serotoninérgico teórico, com evidência de risco muito baixo"
+  ],
+  "gestacao": "Na gravidez, só use após conversar com o médico, que avaliará riscos e benefícios. Na amamentação é considerada de baixo risco, mas avise o médico.",
+  "suspensao": "Não interrompa de repente: pode causar mal-estar, enjoo, dor de cabeça, irritabilidade e alteração do sono. A redução deve ser gradual, com orientação médica.",
+  "orientacoes": [
+   "Tome à noite, no mesmo horário",
+   "O efeito preventivo aparece em 4 a 8 semanas",
+   "Evite bebida alcoólica e cuidado ao dirigir no início",
+   "Beba água e coma fibras para evitar prisão de ventre"
+  ],
+  "alertasMedico": [
+   "Contraindicado em IAM recente, arritmias e bloqueios de condução, glaucoma de ângulo fechado e retenção urinária",
+   "Evidência na enxaqueca mais fraca que a da amitriptilina (SBCe 2022: nível C), mas melhor tolerada; preferível em idosos entre os tricíclicos",
+   "Alta letalidade em superdose: cautela em risco de suicídio",
+   "Lista C1: receita de controle especial em 2 vias"
+  ],
+  "fontes": [
+   "Melhado EM et al. Consenso SBCe para tratamento profilático da enxaqueca episódica: parte I. Arq Neuropsiquiatr 2022;80(8):845-861. https://doi.org/10.1055/s-0042-1756441",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (Arts. 35, 45, 46, 52, 57, 59, 60). https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Anvisa. RDC nº 1.000/2025 - receituários de controle especial emitidos em meio eletrônico (vigência 13/02/2026). https://www.legisweb.com.br/legislacao/?id=487796",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/"
+  ]
+ },
+ {
+  "id": "flunarizina",
+  "nome": "Flunarizina",
+  "marcas": [
+   "Vertix",
+   "Flunarin",
+   "Dicloridrato de flunarizina (genéricos)"
+  ],
+  "classe": "Bloqueador de canais de cálcio (antagonista de cálcio com ação antidopaminérgica)",
+  "indicacoes": [
+   "enxaqueca",
+   "outro"
+  ],
+  "apresentacoes": [
+   "Comprimidos ou cápsulas de 10 mg"
+  ],
+  "posologiaUsual": "Enxaqueca: 5-10 mg/dia em dose única à noite (SBCe 2022); em idosos preferir 5 mg. Reavaliar resposta em 2-3 meses.",
+  "doseMaxDia": "10 mg/dia na profilaxia da enxaqueca (SBCe 2022). Algumas bulas brasileiras admitem até 20 mg/dia, sem vantagem demonstrada e com mais efeitos adversos.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sonolência",
+   "Aumento do apetite e do peso",
+   "Cansaço",
+   "Desânimo",
+   "Azia ou enjoo",
+   "Tontura"
+  ],
+  "sinaisAlerta": [
+   "Tremor, rigidez, lentidão dos movimentos ou movimentos involuntários da boca e da língua",
+   "Tristeza persistente, perda de interesse ou pensamentos de morte",
+   "Inquietação intensa, dificuldade de ficar parado"
+  ],
+  "monitorizacao": [
+   "Humor (rastrear depressão) a cada consulta",
+   "Sinais extrapiramidais (tremor, bradicinesia, rigidez, discinesia) a cada consulta, especialmente em >65 anos",
+   "Peso a cada consulta",
+   "Reavaliar necessidade a cada 6 meses e considerar retirada programada se controle estável"
+  ],
+  "interacoes": [
+   "Álcool, benzodiazepínicos, hipnóticos e anti-histamínicos sedativos: somam sonolência",
+   "Antipsicóticos e metoclopramida: maior risco de parkinsonismo e discinesias",
+   "Carbamazepina, fenitoína e outros indutores enzimáticos: reduzem o nível da flunarizina"
+  ],
+  "gestacao": "A segurança na gravidez não está estabelecida; evite e converse com o médico se planeja engravidar. A bula contraindica o uso na amamentação.",
+  "suspensao": "Pode ser interrompida sem necessidade de redução lenta, mas não pare por conta própria: combine com o médico, pois as crises podem voltar.",
+  "orientacoes": [
+   "Tome à noite, porque pode dar sono",
+   "O efeito preventivo aparece em 6 a 8 semanas",
+   "Acompanhe o peso e prefira alimentação equilibrada",
+   "Avise o médico se notar tremor, lentidão ou tristeza"
+  ],
+  "alertasMedico": [
+   "Contraindicada em depressão atual ou prévia, parkinsonismo ou outros distúrbios extrapiramidais, fase aguda de AVC e amamentação (bula)",
+   "Risco de parkinsonismo e depressão maior em idosos e em uso prolongado; os sintomas podem levar de 2 semanas a 6 meses para regredir após a suspensão",
+   "Nível B na enxaqueca (SBCe 2022)",
+   "Uso de analgésico >=15 dias/mês ou triptano >=10 dias/mês: cefaleia por uso excessivo"
+  ],
+  "fontes": [
+   "Santos PSF et al. Consenso SBCe para tratamento profilático da enxaqueca episódica: parte II. Arq Neuropsiquiatr 2022;80(9):953-969. https://www.scielo.br/j/anp/a/kFCt4Br3MxbfFFd6zq5LjXK/",
+   "Bula dicloridrato de flunarizina 10 mg (bula brasileira). https://www.bulas.med.br/p/bulas-de-medicamentos/bula/1367698/dicloridrato-de-flunarizina-comprimido-10-mg.htm",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/"
+  ]
+ },
+ {
+  "id": "venlafaxina",
+  "nome": "Venlafaxina",
+  "marcas": [
+   "Efexor XR",
+   "Venlift OD",
+   "Alenthus XR"
+  ],
+  "classe": "Antidepressivo inibidor da recaptação de serotonina e noradrenalina (IRSN)",
+  "indicacoes": [
+   "enxaqueca",
+   "outro"
+  ],
+  "apresentacoes": [
+   "Cápsulas ou comprimidos de liberação prolongada de 37,5 mg, 75 mg e 150 mg"
+  ],
+  "posologiaUsual": "Enxaqueca: iniciar 37,5 mg/dia (liberação prolongada) por 1 semana e aumentar para 75 mg/dia; dose usual 75-150 mg/dia em tomada única (SBCe 2022).",
+  "doseMaxDia": "150 mg/dia na enxaqueca (SBCe 2022); até 225 mg/dia em ambulatório na depressão (bula).",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias (lista C1). Validade de 30 dias a partir da emissão (Art. 52, par. 1º). Quantidade máxima de 60 dias de tratamento por receita (Art. 59) e no máximo 3 substâncias da lista C1 por receita (Art. 57); acima disso, exige justificativa com CID ou diagnóstico e posologia, datada e assinada (Art. 60). Vale em todo o território nacional. Pode ser emitida eletronicamente com assinatura qualificada ICP-Brasil (RDC 1.000/2025); integração ao SNCR em implantação a partir de 30/09/2026.",
+  "efeitosComuns": [
+   "Enjoo, principalmente nas primeiras semanas",
+   "Suor aumentado",
+   "Boca seca",
+   "Insônia ou sonolência",
+   "Tontura",
+   "Diminuição do desejo sexual ou dificuldade para ter orgasmo",
+   "Aumento da pressão arterial"
+  ],
+  "sinaisAlerta": [
+   "Piora da tristeza, agitação intensa ou pensamentos de se machucar",
+   "Agitação, febre, tremores, suor excessivo e músculos rígidos",
+   "Sangramentos fora do comum ou fezes escuras",
+   "Dor de cabeça muito forte com pressão muito alta",
+   "Confusão, fraqueza ou sonolência intensa, principalmente em idosos",
+   "Dor forte no olho com visão embaçada"
+  ],
+  "monitorizacao": [
+   "Pressão arterial antes de iniciar e a cada consulta (aumento dose-dependente)",
+   "Sódio sérico em idosos ou em uso de diuréticos, no 1º mês e se sintomas",
+   "Humor e ideação suicida no início e após ajustes, especialmente em <25 anos",
+   "Eficácia pelo diário de cefaleia após 2-3 meses"
+  ],
+  "interacoes": [
+   "IMAO: contraindicado (14 dias antes; 7 dias após suspender a venlafaxina)",
+   "Tramadol, linezolida, lítio, triptanos e outros serotoninérgicos: risco de síndrome serotoninérgica (com triptanos a evidência mostra risco muito baixo)",
+   "AAS, clopidogrel, anticoagulantes e anti-inflamatórios: maior risco de sangramento",
+   "Álcool: evitar"
+  ],
+  "gestacao": "Na gravidez, converse com o médico antes de iniciar ou manter; o uso no fim da gestação pode causar sintomas passageiros no recém-nascido. Não interrompa sozinho se engravidar: avise o médico.",
+  "suspensao": "Não pare de repente e evite esquecer doses: a venlafaxina causa com frequência sintomas de retirada, como tontura, sensação de choque na cabeça, enjoo, irritabilidade e insônia. A redução deve ser lenta, ao longo de semanas, com o médico.",
+  "orientacoes": [
+   "Tome uma vez ao dia, com alimento, sempre no mesmo horário",
+   "Engula a cápsula inteira, sem abrir ou mastigar",
+   "O efeito aparece em 4 a 8 semanas",
+   "Meça a pressão de vez em quando"
+  ],
+  "alertasMedico": [
+   "Uso off-label na enxaqueca no Brasil; SBCe 2022: provavelmente eficaz (nível B), boa opção com depressão ou ansiedade associadas",
+   "Evitar em hipertensão não controlada",
+   "Síndrome de descontinuação marcante (meia-vida curta)",
+   "Lista C1: receita de controle especial em 2 vias"
+  ],
+  "fontes": [
+   "Santos PSF et al. Consenso SBCe para tratamento profilático da enxaqueca episódica: parte II. Arq Neuropsiquiatr 2022;80(9):953-969. https://www.scielo.br/j/anp/a/kFCt4Br3MxbfFFd6zq5LjXK/",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (Arts. 35, 45, 46, 52, 57, 59, 60). https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Anvisa. RDC nº 1.000/2025 - receituários de controle especial emitidos em meio eletrônico (vigência 13/02/2026). https://www.legisweb.com.br/legislacao/?id=487796",
+   "Evans RW et al. AHS position paper: alerta da FDA sobre síndrome serotoninérgica com triptanos + ISRS/IRSN. Headache 2010 (evidência insuficiente para limitar o uso, nível U). https://pubmed.ncbi.nlm.nih.gov/20618823/",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/"
+  ]
+ },
+ {
+  "id": "duloxetina",
+  "nome": "Duloxetina",
+  "marcas": [
+   "Cymbalta",
+   "Velija"
+  ],
+  "classe": "Antidepressivo inibidor da recaptação de serotonina e noradrenalina (IRSN)",
+  "indicacoes": [
+   "dor_neuropatica",
+   "enxaqueca",
+   "outro"
+  ],
+  "apresentacoes": [
+   "Cápsulas de liberação retardada de 30 mg e 60 mg"
+  ],
+  "posologiaUsual": "Dor neuropática: 60 mg/dia (iniciar 30 mg/dia por 1 semana). Enxaqueca: 30 mg/dia na 1ª semana e 60 mg/dia depois (SBCe 2022: 30-120 mg/dia).",
+  "doseMaxDia": "120 mg/dia (bula e SBCe 2022); na dor neuropática, doses acima de 60 mg raramente acrescentam benefício.",
+  "portaria344": "C1",
+  "receituario": "controle_especial",
+  "limiteQuantidade": "Receita de Controle Especial em 2 vias (lista C1). Validade de 30 dias a partir da emissão (Art. 52, par. 1º). Quantidade máxima de 60 dias de tratamento por receita (Art. 59) e no máximo 3 substâncias da lista C1 por receita (Art. 57); acima disso, exige justificativa com CID ou diagnóstico e posologia, datada e assinada (Art. 60). Vale em todo o território nacional. Pode ser emitida eletronicamente com assinatura qualificada ICP-Brasil (RDC 1.000/2025); integração ao SNCR em implantação a partir de 30/09/2026.",
+  "efeitosComuns": [
+   "Enjoo, principalmente no início",
+   "Boca seca",
+   "Sonolência ou insônia",
+   "Prisão de ventre",
+   "Suor aumentado",
+   "Menos apetite",
+   "Alterações no desejo ou desempenho sexual"
+  ],
+  "sinaisAlerta": [
+   "Pele ou olhos amarelados, urina escura ou dor do lado direito da barriga",
+   "Piora da tristeza, agitação intensa ou pensamentos de se machucar",
+   "Agitação, febre, tremores e rigidez muscular",
+   "Sangramentos fora do comum ou fezes escuras",
+   "Dificuldade para urinar",
+   "Confusão ou sonolência intensa em idosos"
+  ],
+  "monitorizacao": [
+   "Função hepática se sintomas ou fatores de risco (álcool, hepatopatia)",
+   "Pressão arterial a cada consulta",
+   "Sódio em idosos ou em uso de diuréticos",
+   "Humor e ideação suicida no início e após ajustes",
+   "Função renal: evitar se ClCr <30 mL/min"
+  ],
+  "interacoes": [
+   "Fluvoxamina e ciprofloxacino (inibidores fortes do CYP1A2): contraindicados, aumentam muito o nível",
+   "IMAO: contraindicado (14 dias antes; 5 dias após suspender)",
+   "Tramadol, triptanos e outros serotoninérgicos: risco de síndrome serotoninérgica (com triptanos, risco muito baixo nas evidências atuais)",
+   "AAS, clopidogrel, anticoagulantes e anti-inflamatórios: maior risco de sangramento",
+   "Álcool em excesso: maior risco de lesão no fígado"
+  ],
+  "gestacao": "Na gravidez, converse com o médico antes de iniciar ou manter; o uso no fim da gestação pode causar sintomas passageiros no recém-nascido e aumentar um pouco o risco de sangramento no parto. Não pare sozinho: avise o médico.",
+  "suspensao": "Não pare de repente: podem ocorrer tontura, sensação de choque, enjoo, irritabilidade, insônia e dor de cabeça. A retirada deve ser gradual, com orientação médica.",
+  "orientacoes": [
+   "Tome uma vez ao dia, de preferência com alimento, para reduzir o enjoo",
+   "Engula a cápsula inteira, sem abrir ou mastigar",
+   "O efeito na dor pode começar em 1 a 2 semanas e fica mais claro em 4 a 8 semanas",
+   "Evite bebida alcoólica em excesso"
+  ],
+  "alertasMedico": [
+   "Evitar em hepatopatia, uso abusivo de álcool e ClCr <30 mL/min; cautela em glaucoma de ângulo fechado não controlado",
+   "Na enxaqueca: off-label, SBCe 2022 nível B (provavelmente eficaz)",
+   "Contraindicado com fluvoxamina ou ciprofloxacino",
+   "Lista C1: receita de controle especial em 2 vias"
+  ],
+  "fontes": [
+   "Santos PSF et al. Consenso SBCe para tratamento profilático da enxaqueca episódica: parte II. Arq Neuropsiquiatr 2022;80(9):953-969. https://www.scielo.br/j/anp/a/kFCt4Br3MxbfFFd6zq5LjXK/",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (Arts. 35, 45, 46, 52, 57, 59, 60). https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Anvisa. RDC nº 1.000/2025 - receituários de controle especial emitidos em meio eletrônico (vigência 13/02/2026). https://www.legisweb.com.br/legislacao/?id=487796",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/"
+  ]
+ },
+ {
+  "id": "candesartana",
+  "nome": "Candesartana cilexetila",
+  "marcas": [
+   "Atacand",
+   "Candesartana cilexetila (genéricos)"
+  ],
+  "classe": "Bloqueador do receptor de angiotensina II (BRA)",
+  "indicacoes": [
+   "enxaqueca",
+   "outro"
+  ],
+  "apresentacoes": [
+   "Comprimidos de 8 mg e 16 mg (genéricos também em 32 mg)"
+  ],
+  "posologiaUsual": "Enxaqueca: 8 mg/dia por 1 semana, depois 16 mg/dia em tomada única (dose estudada nos ensaios; SBCe 2022: 8-16 mg/dia).",
+  "doseMaxDia": "32 mg/dia (SBCe 2022).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Tontura, principalmente ao levantar",
+   "Pressão mais baixa",
+   "Cansaço",
+   "Formigamento",
+   "Dor de cabeça leve no início"
+  ],
+  "sinaisAlerta": [
+   "Desmaio ou tontura muito forte",
+   "Inchaço nos lábios, língua, rosto ou garganta, ou dificuldade para respirar: procure urgência",
+   "Fraqueza muscular intensa ou palpitações (pode ser potássio alto)",
+   "Urinar muito menos que o normal"
+  ],
+  "monitorizacao": [
+   "Pressão arterial a cada consulta (atenção a hipotensão em normotensos)",
+   "Creatinina e potássio antes de iniciar, 1-2 semanas após início ou aumento de dose, e depois periodicamente (especialmente idosos, DRC, diuréticos)",
+   "Teste de gravidez ou contracepção eficaz em mulheres em idade fértil",
+   "Eficácia pelo diário de cefaleia após 2-3 meses"
+  ],
+  "interacoes": [
+   "IECA (enalapril, captopril) ou alisquireno: evitar duplo bloqueio (rim e potássio)",
+   "Espironolactona, amilorida, suplementos de potássio e sal com potássio: risco de potássio alto",
+   "Anti-inflamatórios (AINEs): pioram a função renal e reduzem o efeito",
+   "Lítio: aumento do nível e risco de toxicidade"
+  ],
+  "gestacao": "Não use na gravidez: pode causar danos graves ao bebê, principalmente no 2º e 3º trimestres. Se houver chance de engravidar, use método contraceptivo e avise o médico imediatamente se engravidar.",
+  "suspensao": "Não há efeito de retirada importante, mas não pare por conta própria: combine com o médico, principalmente se você também usa o remédio para pressão alta.",
+  "orientacoes": [
+   "Tome uma vez ao dia, sempre no mesmo horário",
+   "Levante-se devagar nas primeiras semanas",
+   "Evite anti-inflamatórios por conta própria",
+   "O efeito preventivo aparece em 4 a 8 semanas"
+  ],
+  "alertasMedico": [
+   "Uso off-label na enxaqueca no Brasil; SBCe 2022: nível A (eficácia estabelecida), boa opção em hipertensos",
+   "Contraindicada na gestação; evitar em estenose bilateral de artéria renal",
+   "Checar K e creatinina após início",
+   "Uso de analgésico >=15 dias/mês ou triptano >=10 dias/mês: cefaleia por uso excessivo"
+  ],
+  "fontes": [
+   "Santos PSF et al. Consenso SBCe para tratamento profilático da enxaqueca episódica: parte II. Arq Neuropsiquiatr 2022;80(9):953-969. https://www.scielo.br/j/anp/a/kFCt4Br3MxbfFFd6zq5LjXK/",
+   "AstraZeneca. Bula Atacand (candesartana cilexetila 8 mg e 16 mg). https://static-webv8.jet.com.br/drogaosuper/bulas/7896206401146.pdf",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/"
+  ]
+ },
+ {
+  "id": "sumatriptana",
+  "nome": "Sumatriptana",
+  "marcas": [
+   "Sumax",
+   "Succinato de sumatriptana (genéricos)"
+  ],
+  "classe": "Triptano (agonista de receptores de serotonina 5-HT1B/1D)",
+  "indicacoes": [
+   "enxaqueca"
+  ],
+  "apresentacoes": [
+   "Comprimidos revestidos de 25 mg, 50 mg e 100 mg",
+   "Spray nasal 10 mg por dose",
+   "Solução injetável subcutânea 6 mg/0,5 mL (seringa preenchida)"
+  ],
+  "posologiaUsual": "Oral: 50-100 mg no início da crise; se a dor voltar, nova dose após no mínimo 2 horas. Spray nasal: 10 mg em uma narina, repetir após 2 horas se necessário. Subcutâneo: 6 mg, repetir após no mínimo 1 hora.",
+  "doseMaxDia": "Bula brasileira (Sumax): 300 mg/24 h por via oral; 40 mg/24 h nasal (4 doses de 10 mg); 12 mg/24 h subcutâneo. A bula americana (FDA) limita a 200 mg/24 h por via oral; na prática, prefira não ultrapassar 200 mg/dia.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sensação de aperto, peso ou calor no peito, pescoço ou mandíbula, que costuma passar sozinha em pouco tempo",
+   "Formigamento ou sensação de calor na pele",
+   "Tontura ou sonolência",
+   "Cansaço ou fraqueza passageira",
+   "Náusea ou boca seca",
+   "Spray nasal: gosto ruim na boca; injeção: dor ou vermelhidão no local"
+  ],
+  "sinaisAlerta": [
+   "Dor ou aperto no peito forte ou que não passa, falta de ar ou suor frio: procure atendimento de urgência (SAMU 192)",
+   "Fraqueza ou dormência em um lado do corpo, fala enrolada, rosto torto ou perda de visão: procure urgência imediatamente",
+   "Dor de cabeça súbita e muito intensa, a pior da sua vida, ou muito diferente das suas crises habituais: procure urgência em vez de tomar outra dose",
+   "Agitação, confusão, febre, tremores, suor excessivo ou músculos rígidos, principalmente se você usa antidepressivo: procure atendimento",
+   "Dor na barriga forte e súbita ou sangue nas fezes: procure atendimento"
+  ],
+  "monitorizacao": [
+   "Diário de cefaleia a cada consulta: dias de dor por mês e dias de uso de triptano e de analgésicos",
+   "Pressão arterial e fatores de risco cardiovascular antes de iniciar e ao menos anualmente",
+   "Avaliação cardiovascular prévia se houver múltiplos fatores de risco (hipertensão, diabetes, tabagismo, dislipidemia, história familiar, homem >40 anos, mulher pós-menopausa)",
+   "Se >=4 dias de enxaqueca por mês ou uso agudo frequente: considerar ou revisar tratamento preventivo"
+  ],
+  "interacoes": [
+   "Ergotamina, di-hidroergotamina ou outro triptano: não usar dentro de 24 horas (vasoconstrição somada)",
+   "Antidepressivos ISRS/IRSN (fluoxetina, sertralina, venlafaxina, duloxetina etc.): alerta em bula de síndrome serotoninérgica; evidência atual mostra risco muito baixo e a combinação pode ser usada com orientação",
+   "IMAO (inclusive moclobemida): contraindicado e até 2 semanas após a suspensão"
+  ],
+  "gestacao": "Na gravidez ou amamentação, use apenas se o seu médico orientar. Entre os triptanos, a sumatriptana é a que tem mais dados na gravidez, sem aumento de malformações nos registros; após uma dose, a bula brasileira orienta evitar amamentar por 24 horas.",
+  "suspensao": "O triptano é usado só nas crises, por isso não existe retirada gradual. Se você está usando em muitos dias do mês, não pare nem aumente por conta própria: converse com o médico sobre um plano de tratamento preventivo.",
+  "orientacoes": [
+   "Tome logo no começo da dor, enquanto ela ainda está leve; tomar durante a aura (antes da dor) não traz benefício",
+   "Use o triptano no máximo 9 dias por mês. Usar 10 dias ou mais por mês, por mais de 3 meses, pode causar cefaleia por uso excessivo de medicamentos, que deixa as dores mais frequentes",
+   "Se a primeira dose não ajudar nada, não repita na mesma crise; se melhorar e a dor voltar, siga o intervalo e o limite diário que seu médico indicou",
+   "Anote no diário cada crise e cada comprimido usado e leve na consulta"
+  ],
+  "alertasMedico": [
+   "Triptano contraindicado em doença coronariana, AVC ou AIT prévio, doença arterial periférica, hipertensão não controlada e enxaqueca hemiplégica ou com aura de tronco encefálico",
+   "Triptano >=10 dias/mês por >3 meses: cefaleia por uso excessivo de medicamentos (ICHD-3 8.2.2); analgésico simples >=15 dias/mês também. Revisar preventivo",
+   "Contraindicado uso de ergotamínicos ou outro triptano dentro de 24 h",
+   "Triptano + ISRS/IRSN: há alerta em bula, mas a evidência indica risco muito baixo (AHS 2010, nível U; Orlova 2018, 0,6-2,3 casos/10.000 pessoas-ano). Não é contraindicação; orientar sinais de toxicidade serotoninérgica",
+   "Cautela em >65 anos (poucos dados; maior prevalência de doença vascular)",
+   "Sulfonamida: cautela em alergia a sulfonamidas (bula)",
+   "Via subcutânea: início mais rápido, útil com vômitos"
+  ],
+  "fontes": [
+   "Libbs. Bula profissional Sumax (comprimidos, spray nasal e injetável). https://www.saudedireta.com.br/catinc/drugs/bulas/sumax.pdf",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/",
+   "ICHD-3 (International Headache Society, 2018), 8.2 Cefaleia por uso excessivo de medicamentos (triptanos >=10 dias/mês por >3 meses). https://ichd-3.org/8-headache-attributed-to-a-substance-or-its-withdrawal/8-2-medication-overuse-headache-moh/8-2-2-triptan-overuse-headache/",
+   "Evans RW et al. AHS position paper: alerta da FDA sobre síndrome serotoninérgica com triptanos + ISRS/IRSN. Headache 2010 (evidência insuficiente para limitar o uso, nível U). https://pubmed.ncbi.nlm.nih.gov/20618823/",
+   "Orlova Y et al. JAMA Neurol 2018: coprescrição triptano + ISRS/IRSN, síndrome serotoninérgica 0,6-2,3 casos/10.000 pessoas-ano. https://jamanetwork.com/journals/jamaneurology/fullarticle/2673391",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "naratriptana",
+  "nome": "Naratriptana",
+  "marcas": [
+   "Naramig"
+  ],
+  "classe": "Triptano (agonista de receptores de serotonina 5-HT1B/1D)",
+  "indicacoes": [
+   "enxaqueca"
+  ],
+  "apresentacoes": [
+   "Comprimidos revestidos de 2,5 mg"
+  ],
+  "posologiaUsual": "2,5 mg no início da crise; se a dor voltar, nova dose após no mínimo 4 horas. Início de ação mais lento (cerca de 1 hora) e menor recorrência; útil em crises longas ou em quem tem muitos efeitos com outros triptanos.",
+  "doseMaxDia": "5 mg/24 h (2 comprimidos). Insuficiência renal ou hepática leve a moderada: 2,5 mg/24 h.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sensação de aperto, peso ou calor no peito, pescoço ou mandíbula, que costuma passar sozinha em pouco tempo",
+   "Formigamento ou sensação de calor na pele",
+   "Tontura ou sonolência",
+   "Cansaço ou fraqueza passageira",
+   "Náusea ou boca seca"
+  ],
+  "sinaisAlerta": [
+   "Dor ou aperto no peito forte ou que não passa, falta de ar ou suor frio: procure atendimento de urgência (SAMU 192)",
+   "Fraqueza ou dormência em um lado do corpo, fala enrolada, rosto torto ou perda de visão: procure urgência imediatamente",
+   "Dor de cabeça súbita e muito intensa, a pior da sua vida, ou muito diferente das suas crises habituais: procure urgência em vez de tomar outra dose",
+   "Agitação, confusão, febre, tremores, suor excessivo ou músculos rígidos, principalmente se você usa antidepressivo: procure atendimento",
+   "Dor na barriga forte e súbita ou sangue nas fezes: procure atendimento"
+  ],
+  "monitorizacao": [
+   "Diário de cefaleia a cada consulta: dias de dor por mês e dias de uso de triptano e de analgésicos",
+   "Pressão arterial e fatores de risco cardiovascular antes de iniciar e ao menos anualmente",
+   "Avaliação cardiovascular prévia se houver múltiplos fatores de risco (hipertensão, diabetes, tabagismo, dislipidemia, história familiar, homem >40 anos, mulher pós-menopausa)",
+   "Se >=4 dias de enxaqueca por mês ou uso agudo frequente: considerar ou revisar tratamento preventivo"
+  ],
+  "interacoes": [
+   "Ergotamina, di-hidroergotamina ou outro triptano: não usar dentro de 24 horas (vasoconstrição somada)",
+   "Antidepressivos ISRS/IRSN (fluoxetina, sertralina, venlafaxina, duloxetina etc.): alerta em bula de síndrome serotoninérgica; evidência atual mostra risco muito baixo e a combinação pode ser usada com orientação",
+   "Não é metabolizada pela MAO; ainda assim, evitar IMAO por prudência"
+  ],
+  "gestacao": "Na gravidez ou amamentação, use apenas se o seu médico orientar. Os dados na gravidez são limitados (bula: categoria C); a sumatriptana costuma ser preferida se um triptano for necessário.",
+  "suspensao": "O triptano é usado só nas crises, por isso não existe retirada gradual. Se você está usando em muitos dias do mês, não pare nem aumente por conta própria: converse com o médico sobre um plano de tratamento preventivo.",
+  "orientacoes": [
+   "Tome logo no começo da dor, enquanto ela ainda está leve; tomar durante a aura (antes da dor) não traz benefício",
+   "Use o triptano no máximo 9 dias por mês. Usar 10 dias ou mais por mês, por mais de 3 meses, pode causar cefaleia por uso excessivo de medicamentos, que deixa as dores mais frequentes",
+   "Se a primeira dose não ajudar nada, não repita na mesma crise; se melhorar e a dor voltar, siga o intervalo e o limite diário que seu médico indicou",
+   "Anote no diário cada crise e cada comprimido usado e leve na consulta"
+  ],
+  "alertasMedico": [
+   "Triptano contraindicado em doença coronariana, AVC ou AIT prévio, doença arterial periférica, hipertensão não controlada e enxaqueca hemiplégica ou com aura de tronco encefálico",
+   "Triptano >=10 dias/mês por >3 meses: cefaleia por uso excessivo de medicamentos (ICHD-3 8.2.2); analgésico simples >=15 dias/mês também. Revisar preventivo",
+   "Contraindicado uso de ergotamínicos ou outro triptano dentro de 24 h",
+   "Triptano + ISRS/IRSN: há alerta em bula, mas a evidência indica risco muito baixo (AHS 2010, nível U; Orlova 2018, 0,6-2,3 casos/10.000 pessoas-ano). Não é contraindicação; orientar sinais de toxicidade serotoninérgica",
+   "Cautela em >65 anos (poucos dados; maior prevalência de doença vascular)",
+   "Contraindicada em insuficiência renal grave (ClCr <15 mL/min) e hepática grave (Child-Pugh C)"
+  ],
+  "fontes": [
+   "GSK. Bula profissional Naramig (aprovada pela Anvisa em 16/09/2025). https://br.gsk.com/media/xg5hh3w2/naramig.pdf",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/",
+   "ICHD-3 (International Headache Society, 2018), 8.2 Cefaleia por uso excessivo de medicamentos (triptanos >=10 dias/mês por >3 meses). https://ichd-3.org/8-headache-attributed-to-a-substance-or-its-withdrawal/8-2-medication-overuse-headache-moh/8-2-2-triptan-overuse-headache/",
+   "Evans RW et al. AHS position paper: alerta da FDA sobre síndrome serotoninérgica com triptanos + ISRS/IRSN. Headache 2010 (evidência insuficiente para limitar o uso, nível U). https://pubmed.ncbi.nlm.nih.gov/20618823/",
+   "Orlova Y et al. JAMA Neurol 2018: coprescrição triptano + ISRS/IRSN, síndrome serotoninérgica 0,6-2,3 casos/10.000 pessoas-ano. https://jamanetwork.com/journals/jamaneurology/fullarticle/2673391",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "rizatriptana",
+  "nome": "Rizatriptana",
+  "marcas": [
+   "Maxalt"
+  ],
+  "classe": "Triptano (agonista de receptores de serotonina 5-HT1B/1D)",
+  "indicacoes": [
+   "enxaqueca"
+  ],
+  "apresentacoes": [
+   "Comprimidos de 10 mg (a versão orodispersível Maxalt RPD não é mais comercializada; a dose de 5 mg não está disponível no Brasil)"
+  ],
+  "posologiaUsual": "10 mg no início da crise; se a dor voltar, nova dose após no mínimo 2 horas.",
+  "doseMaxDia": "30 mg/24 h (3 comprimidos de 10 mg).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sensação de aperto, peso ou calor no peito, pescoço ou mandíbula, que costuma passar sozinha em pouco tempo",
+   "Formigamento ou sensação de calor na pele",
+   "Tontura ou sonolência",
+   "Cansaço ou fraqueza passageira",
+   "Náusea ou boca seca"
+  ],
+  "sinaisAlerta": [
+   "Dor ou aperto no peito forte ou que não passa, falta de ar ou suor frio: procure atendimento de urgência (SAMU 192)",
+   "Fraqueza ou dormência em um lado do corpo, fala enrolada, rosto torto ou perda de visão: procure urgência imediatamente",
+   "Dor de cabeça súbita e muito intensa, a pior da sua vida, ou muito diferente das suas crises habituais: procure urgência em vez de tomar outra dose",
+   "Agitação, confusão, febre, tremores, suor excessivo ou músculos rígidos, principalmente se você usa antidepressivo: procure atendimento",
+   "Dor na barriga forte e súbita ou sangue nas fezes: procure atendimento"
+  ],
+  "monitorizacao": [
+   "Diário de cefaleia a cada consulta: dias de dor por mês e dias de uso de triptano e de analgésicos",
+   "Pressão arterial e fatores de risco cardiovascular antes de iniciar e ao menos anualmente",
+   "Avaliação cardiovascular prévia se houver múltiplos fatores de risco (hipertensão, diabetes, tabagismo, dislipidemia, história familiar, homem >40 anos, mulher pós-menopausa)",
+   "Se >=4 dias de enxaqueca por mês ou uso agudo frequente: considerar ou revisar tratamento preventivo"
+  ],
+  "interacoes": [
+   "Ergotamina, di-hidroergotamina ou outro triptano: não usar dentro de 24 horas (vasoconstrição somada)",
+   "Antidepressivos ISRS/IRSN (fluoxetina, sertralina, venlafaxina, duloxetina etc.): alerta em bula de síndrome serotoninérgica; evidência atual mostra risco muito baixo e a combinação pode ser usada com orientação",
+   "Propranolol: aumenta o nível da rizatriptana; como a dose de 5 mg não existe no Brasil, a bula brasileira orienta que quem usa propranolol não use Maxalt",
+   "IMAO: contraindicado e até 2 semanas após a suspensão (é metabolizada pela MAO-A)"
+  ],
+  "gestacao": "Na gravidez ou amamentação, use apenas se o seu médico orientar. A bula classifica como categoria B e orienta uso apenas se estritamente necessário.",
+  "suspensao": "O triptano é usado só nas crises, por isso não existe retirada gradual. Se você está usando em muitos dias do mês, não pare nem aumente por conta própria: converse com o médico sobre um plano de tratamento preventivo.",
+  "orientacoes": [
+   "Tome logo no começo da dor, enquanto ela ainda está leve; tomar durante a aura (antes da dor) não traz benefício",
+   "Use o triptano no máximo 9 dias por mês. Usar 10 dias ou mais por mês, por mais de 3 meses, pode causar cefaleia por uso excessivo de medicamentos, que deixa as dores mais frequentes",
+   "Se a primeira dose não ajudar nada, não repita na mesma crise; se melhorar e a dor voltar, siga o intervalo e o limite diário que seu médico indicou",
+   "Se você usa propranolol, não use rizatriptana: avise o médico para escolher outro triptano"
+  ],
+  "alertasMedico": [
+   "Triptano contraindicado em doença coronariana, AVC ou AIT prévio, doença arterial periférica, hipertensão não controlada e enxaqueca hemiplégica ou com aura de tronco encefálico",
+   "Triptano >=10 dias/mês por >3 meses: cefaleia por uso excessivo de medicamentos (ICHD-3 8.2.2); analgésico simples >=15 dias/mês também. Revisar preventivo",
+   "Contraindicado uso de ergotamínicos ou outro triptano dentro de 24 h",
+   "Triptano + ISRS/IRSN: há alerta em bula, mas a evidência indica risco muito baixo (AHS 2010, nível U; Orlova 2018, 0,6-2,3 casos/10.000 pessoas-ano). Não é contraindicação; orientar sinais de toxicidade serotoninérgica",
+   "Cautela em >65 anos (poucos dados; maior prevalência de doença vascular)",
+   "Não prescrever com propranolol (bula brasileira, 15/04/2026); escolher outro triptano"
+  ],
+  "fontes": [
+   "Organon. Bula profissional Maxalt (aprovada pela Anvisa em 15/04/2026). https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/maxalt_bula_profissional.pdf",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/",
+   "ICHD-3 (International Headache Society, 2018), 8.2 Cefaleia por uso excessivo de medicamentos (triptanos >=10 dias/mês por >3 meses). https://ichd-3.org/8-headache-attributed-to-a-substance-or-its-withdrawal/8-2-medication-overuse-headache-moh/8-2-2-triptan-overuse-headache/",
+   "Evans RW et al. AHS position paper: alerta da FDA sobre síndrome serotoninérgica com triptanos + ISRS/IRSN. Headache 2010 (evidência insuficiente para limitar o uso, nível U). https://pubmed.ncbi.nlm.nih.gov/20618823/",
+   "Orlova Y et al. JAMA Neurol 2018: coprescrição triptano + ISRS/IRSN, síndrome serotoninérgica 0,6-2,3 casos/10.000 pessoas-ano. https://jamanetwork.com/journals/jamaneurology/fullarticle/2673391",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "zolmitriptana",
+  "nome": "Zolmitriptana",
+  "marcas": [
+   "Zomig",
+   "Zomig OD"
+  ],
+  "classe": "Triptano (agonista de receptores de serotonina 5-HT1B/1D)",
+  "indicacoes": [
+   "enxaqueca"
+  ],
+  "apresentacoes": [
+   "Comprimidos revestidos de 2,5 mg (Zomig)",
+   "Comprimidos orodispersíveis de 2,5 mg (Zomig OD)"
+  ],
+  "posologiaUsual": "2,5 mg no início da crise; se a dor voltar, nova dose após no mínimo 2 horas. Se 2,5 mg não for suficiente, as crises seguintes podem ser tratadas com 5 mg.",
+  "doseMaxDia": "10 mg/24 h. Insuficiência hepática grave: 5 mg/24 h.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sensação de aperto, peso ou calor no peito, pescoço ou mandíbula, que costuma passar sozinha em pouco tempo",
+   "Formigamento ou sensação de calor na pele",
+   "Tontura ou sonolência",
+   "Cansaço ou fraqueza passageira",
+   "Náusea ou boca seca"
+  ],
+  "sinaisAlerta": [
+   "Dor ou aperto no peito forte ou que não passa, falta de ar ou suor frio: procure atendimento de urgência (SAMU 192)",
+   "Fraqueza ou dormência em um lado do corpo, fala enrolada, rosto torto ou perda de visão: procure urgência imediatamente",
+   "Dor de cabeça súbita e muito intensa, a pior da sua vida, ou muito diferente das suas crises habituais: procure urgência em vez de tomar outra dose",
+   "Agitação, confusão, febre, tremores, suor excessivo ou músculos rígidos, principalmente se você usa antidepressivo: procure atendimento",
+   "Dor na barriga forte e súbita ou sangue nas fezes: procure atendimento"
+  ],
+  "monitorizacao": [
+   "Diário de cefaleia a cada consulta: dias de dor por mês e dias de uso de triptano e de analgésicos",
+   "Pressão arterial e fatores de risco cardiovascular antes de iniciar e ao menos anualmente",
+   "Avaliação cardiovascular prévia se houver múltiplos fatores de risco (hipertensão, diabetes, tabagismo, dislipidemia, história familiar, homem >40 anos, mulher pós-menopausa)",
+   "Se >=4 dias de enxaqueca por mês ou uso agudo frequente: considerar ou revisar tratamento preventivo"
+  ],
+  "interacoes": [
+   "Ergotamina, di-hidroergotamina ou outro triptano: não usar dentro de 24 horas (vasoconstrição somada)",
+   "Antidepressivos ISRS/IRSN (fluoxetina, sertralina, venlafaxina, duloxetina etc.): alerta em bula de síndrome serotoninérgica; evidência atual mostra risco muito baixo e a combinação pode ser usada com orientação",
+   "Moclobemida (IMAO-A): interação relevante; evitar ou reduzir dose conforme bula",
+   "Fluvoxamina e cimetidina: aumentam o nível da zolmitriptana (bula americana limita a 5 mg/24 h com cimetidina)"
+  ],
+  "gestacao": "Na gravidez ou amamentação, use apenas se o seu médico orientar. Os dados na gravidez são limitados; a sumatriptana costuma ser preferida se um triptano for necessário.",
+  "suspensao": "O triptano é usado só nas crises, por isso não existe retirada gradual. Se você está usando em muitos dias do mês, não pare nem aumente por conta própria: converse com o médico sobre um plano de tratamento preventivo.",
+  "orientacoes": [
+   "Tome logo no começo da dor, enquanto ela ainda está leve; tomar durante a aura (antes da dor) não traz benefício",
+   "Use o triptano no máximo 9 dias por mês. Usar 10 dias ou mais por mês, por mais de 3 meses, pode causar cefaleia por uso excessivo de medicamentos, que deixa as dores mais frequentes",
+   "Se a primeira dose não ajudar nada, não repita na mesma crise; se melhorar e a dor voltar, siga o intervalo e o limite diário que seu médico indicou",
+   "O comprimido orodispersível (OD) dissolve na língua e pode ser tomado sem água"
+  ],
+  "alertasMedico": [
+   "Triptano contraindicado em doença coronariana, AVC ou AIT prévio, doença arterial periférica, hipertensão não controlada e enxaqueca hemiplégica ou com aura de tronco encefálico",
+   "Triptano >=10 dias/mês por >3 meses: cefaleia por uso excessivo de medicamentos (ICHD-3 8.2.2); analgésico simples >=15 dias/mês também. Revisar preventivo",
+   "Contraindicado uso de ergotamínicos ou outro triptano dentro de 24 h",
+   "Triptano + ISRS/IRSN: há alerta em bula, mas a evidência indica risco muito baixo (AHS 2010, nível U; Orlova 2018, 0,6-2,3 casos/10.000 pessoas-ano). Não é contraindicação; orientar sinais de toxicidade serotoninérgica",
+   "Cautela em >65 anos (poucos dados; maior prevalência de doença vascular)"
+  ],
+  "fontes": [
+   "Grünenthal. Bula Zomig e Zomig OD (zolmitriptana). https://img.drogasil.com.br/raiadrogasil_bula/ZOMIG.pdf",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/",
+   "ICHD-3 (International Headache Society, 2018), 8.2 Cefaleia por uso excessivo de medicamentos (triptanos >=10 dias/mês por >3 meses). https://ichd-3.org/8-headache-attributed-to-a-substance-or-its-withdrawal/8-2-medication-overuse-headache-moh/8-2-2-triptan-overuse-headache/",
+   "Evans RW et al. AHS position paper: alerta da FDA sobre síndrome serotoninérgica com triptanos + ISRS/IRSN. Headache 2010 (evidência insuficiente para limitar o uso, nível U). https://pubmed.ncbi.nlm.nih.gov/20618823/",
+   "Orlova Y et al. JAMA Neurol 2018: coprescrição triptano + ISRS/IRSN, síndrome serotoninérgica 0,6-2,3 casos/10.000 pessoas-ano. https://jamanetwork.com/journals/jamaneurology/fullarticle/2673391",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "baclofeno",
+  "nome": "Baclofeno",
+  "marcas": [
+   "Lioresal",
+   "Baclon",
+   "Baclofen"
+  ],
+  "classe": "Relaxante muscular de ação central (agonista GABA-B)",
+  "indicacoes": [
+   "espasticidade"
+  ],
+  "apresentacoes": [
+   "Comprimidos de 10 mg"
+  ],
+  "posologiaUsual": "Iniciar 5 mg 3 vezes ao dia e aumentar 5 mg por tomada a cada 3 dias conforme resposta; dose usual 30-75 mg/dia divididos em 3-4 tomadas.",
+  "doseMaxDia": "80 mg/dia (bula brasileira). Reduzir dose na insuficiência renal.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sonolência",
+   "Tontura",
+   "Fraqueza muscular ou sensação de pernas moles",
+   "Enjoo",
+   "Cansaço",
+   "Confusão leve, principalmente em idosos",
+   "Urinar com mais frequência"
+  ],
+  "sinaisAlerta": [
+   "Sonolência muito forte, dificuldade para acordar ou respiração lenta",
+   "Confusão, alucinações ou agitação",
+   "Convulsão",
+   "Febre, confusão e piora súbita da rigidez após parar ou esquecer doses: procure urgência"
+  ],
+  "monitorizacao": [
+   "Função renal (creatinina/ClCr) antes de iniciar e periodicamente; evitar em DRC grave ou diálise (risco de encefalopatia)",
+   "Tônus, espasmos e funcionalidade (ex.: escala de Ashworth) a cada ajuste",
+   "Sedação, quedas e força muscular a cada consulta",
+   "Controle de crises em pacientes com epilepsia"
+  ],
+  "interacoes": [
+   "Álcool, opioides, benzodiazepínicos, gabapentina e pregabalina: somam sedação e podem deprimir a respiração",
+   "Anti-hipertensivos: podem baixar mais a pressão",
+   "Levodopa: risco de confusão e alucinações",
+   "Antidepressivos tricíclicos: podem aumentar a fraqueza muscular"
+  ],
+  "gestacao": "Na gravidez, use apenas com orientação médica; o uso no fim da gestação pode causar sintomas de abstinência no bebê após o nascimento, inclusive convulsões. Avise o médico se engravidar.",
+  "suspensao": "Nunca pare de repente. A parada brusca pode causar alucinações, confusão, convulsões, febre e piora forte da rigidez. A retirada deve ser gradual, em pelo menos 1 a 2 semanas, com orientação médica.",
+  "orientacoes": [
+   "Tome nos horários combinados, sem pular doses",
+   "Evite bebida alcoólica e outros remédios que dão sono",
+   "Tenha cuidado ao dirigir e com risco de quedas",
+   "Tenha sempre comprimidos em casa para não ficar sem o remédio"
+  ],
+  "alertasMedico": [
+   "Abstinência de baclofeno oral pode ser grave (alucinações, convulsões, hipertermia): prescrever quantidade suficiente e orientar retirada lenta",
+   "Acúmulo na insuficiência renal: reduzir dose; evitar em DRC grave",
+   "Cautela em epilepsia, doença psiquiátrica e úlcera péptica",
+   "Não consta da Portaria 344/98"
+  ],
+  "fontes": [
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/",
+   "Conitec/MS. Relatório de recomendação: baclofeno oral para espasticidade (2021). http://antigo-conitec.saude.gov.br/images/Consultas/Relatorios/2021/20211103_Relatorio_BaclofenoOral_Espasticidade_CP87.pdf",
+   "Bula baclofeno 10 mg (bula brasileira). https://www.bulas.med.br/p/bulas-de-medicamentos/bula/1346188/baclofeno-comprimido-10-mg.htm",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "acido-acetilsalicilico",
+  "nome": "Ácido acetilsalicílico",
+  "marcas": [
+   "Aspirina Prevent",
+   "AAS Protect",
+   "Somalgin Cardio"
+  ],
+  "classe": "Antiagregante plaquetário (inibidor da COX-1)",
+  "indicacoes": [
+   "avc"
+  ],
+  "apresentacoes": [
+   "Comprimidos de 81 mg e 100 mg e de 300 a 325 mg, conforme a marca (o mais usado na prevenção é 100 mg)"
+  ],
+  "posologiaUsual": "Prevenção secundária de AVC isquêmico ou AIT não cardioembólico: 100 mg uma vez ao dia (AHA/ASA 2021: 50-325 mg/dia). Após AVC menor ou AIT de alto risco, pode ser associado ao clopidogrel por 21 dias e depois mantido sozinho.",
+  "doseMaxDia": "325 mg/dia na prevenção secundária; doses maiores não aumentam a proteção e aumentam o sangramento.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Azia ou dor no estômago",
+   "Enjoo",
+   "Manchas roxas com mais facilidade",
+   "Pequenos sangramentos na gengiva ou no nariz"
+  ],
+  "sinaisAlerta": [
+   "Fezes pretas ou com sangue, ou vômito com sangue ou com aspecto de borra de café",
+   "Sangramento que não para",
+   "Chiado no peito, falta de ar ou inchaço no rosto após tomar",
+   "Fraqueza ou dormência em um lado do corpo, fala enrolada ou dor de cabeça súbita muito forte: ligue 192",
+   "Febre com suspeita de dengue: procure atendimento e informe que usa AAS, sem parar por conta própria"
+  ],
+  "monitorizacao": [
+   "Adesão e sinais de sangramento a cada consulta; hemograma se houver sangramento ou anemia",
+   "Pressão arterial (meta geral <130/80 mmHg) e controle de fatores de risco",
+   "Avaliar proteção gástrica (IBP) se >65 anos, úlcera prévia, uso de anticoagulante, corticoide ou dupla antiagregação",
+   "Confirmar que a etiologia não é cardioembólica (FA exige anticoagulação, não AAS)"
+  ],
+  "interacoes": [
+   "Ibuprofeno e outros anti-inflamatórios: aumentam sangramento e o ibuprofeno pode reduzir o efeito protetor do AAS",
+   "Anticoagulantes (varfarina, rivaroxabana, apixabana etc.) e clopidogrel: somam risco de sangramento; combinar só com indicação clara",
+   "Antidepressivos ISRS/IRSN e corticoides: maior risco de sangramento digestivo",
+   "Álcool em excesso: mais irritação e sangramento no estômago",
+   "Metotrexato: aumento de toxicidade"
+  ],
+  "gestacao": "Na gravidez, o AAS em dose baixa às vezes é indicado pelo obstetra, mas não deve ser usado por conta própria; doses altas devem ser evitadas no 3º trimestre. Informe o médico se engravidar.",
+  "suspensao": "Não pare por conta própria, nem antes de procedimentos: interromper aumenta o risco de novo AVC. Pergunte sempre ao médico, que decidirá se e quando suspender.",
+  "orientacoes": [
+   "Tome uma vez ao dia, após uma refeição",
+   "Evite anti-inflamatórios por conta própria; para dor ou febre, prefira o que o médico orientar",
+   "Avise dentistas e outros médicos que você usa AAS",
+   "Se você usa AAS junto com clopidogrel, siga exatamente o tempo combinado para a dupla"
+  ],
+  "alertasMedico": [
+   "DAPT (AAS + clopidogrel) só por 21 dias após AVC menor (NIHSS <=5) ou AIT de alto risco (ABCD2 >=4), iniciada até 72 h (AHA/ASA 2021 e 2026); exceção: estenose intracraniana grave sintomática (até 90 dias)",
+   "AVC cardioembólico (FA): anticoagulação, não antiagregante",
+   "Contraindicado em asma induzida por AAS, úlcera ativa e sangramento ativo; na suspeita de dengue, avaliar caso a caso",
+   "Não combinar AAS + clopidogrel a longo prazo: mais sangramento sem benefício"
+  ],
+  "fontes": [
+   "Kleindorfer DO et al. 2021 AHA/ASA Guideline for the Prevention of Stroke in Patients With Stroke and TIA. Stroke 2021. https://www.ahajournals.org/doi/10.1161/STR.0000000000000375",
+   "Prabhakaran S et al. 2026 AHA/ASA Guideline for the Early Management of Patients With Acute Ischemic Stroke (DAPT: NIHSS <=5 ou AIT ABCD2 >=4, até 72 h, 21 dias). https://www.ahajournals.org/doi/10.1161/STR.0000000000000513",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "clopidogrel",
+  "nome": "Clopidogrel",
+  "marcas": [
+   "Plavix",
+   "Bissulfato de clopidogrel (genéricos)"
+  ],
+  "classe": "Antiagregante plaquetário (inibidor do receptor P2Y12)",
+  "indicacoes": [
+   "avc"
+  ],
+  "apresentacoes": [
+   "Comprimidos revestidos de 75 mg"
+  ],
+  "posologiaUsual": "75 mg uma vez ao dia. Na dupla antiagregação após AVC menor ou AIT de alto risco: dose de ataque de 300-600 mg (feita no atendimento agudo) seguida de 75 mg/dia com AAS por 21 dias, depois antiagregante único.",
+  "doseMaxDia": "75 mg/dia na manutenção (a dose de ataque de 300-600 mg é única e feita no atendimento agudo).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Manchas roxas com mais facilidade",
+   "Pequenos sangramentos no nariz ou na gengiva",
+   "Diarreia ou dor na barriga",
+   "Azia",
+   "Coceira ou manchas vermelhas na pele"
+  ],
+  "sinaisAlerta": [
+   "Fezes pretas ou com sangue, vômito com sangue ou urina avermelhada",
+   "Sangramento que não para",
+   "Febre com manchas roxas pelo corpo, fraqueza ou confusão (reação rara e grave)",
+   "Pele ou olhos amarelados",
+   "Fraqueza ou dormência em um lado do corpo, fala enrolada ou dor de cabeça súbita muito forte: ligue 192"
+  ],
+  "monitorizacao": [
+   "Adesão e sinais de sangramento a cada consulta; hemograma se sangramento",
+   "Se em dupla antiagregação: conferir data de término (21 dias) e transição para antiagregante único",
+   "Revisar uso de IBP (preferir pantoprazol)",
+   "Genotipagem de CYP2C19 opcional; em portadores de alelo de perda de função, ticagrelor + AAS é alternativa razoável na fase aguda (AHA/ASA 2026)"
+  ],
+  "interacoes": [
+   "Omeprazol e esomeprazol: reduzem a ativação do clopidogrel; preferir pantoprazol",
+   "AAS, anticoagulantes, anti-inflamatórios e antidepressivos ISRS/IRSN: aumentam o risco de sangramento",
+   "Repaglinida: o clopidogrel aumenta muito o nível; evitar",
+   "Opioides: podem atrasar e reduzir o efeito da dose de ataque"
+  ],
+  "gestacao": "Os dados na gravidez são limitados; use apenas se o médico considerar necessário. Informe se engravidar ou se for amamentar.",
+  "suspensao": "Não pare por conta própria: interromper aumenta o risco de novo AVC ou infarto. Antes de cirurgias ou procedimentos, o médico decide se e quando suspender (em geral cerca de 5 dias antes).",
+  "orientacoes": [
+   "Tome uma vez ao dia, no mesmo horário, com ou sem alimento",
+   "Avise dentistas e outros médicos que você usa clopidogrel",
+   "Se usa junto com AAS, siga exatamente o tempo combinado (geralmente 21 dias) e depois continue só com o remédio indicado",
+   "Evite anti-inflamatórios por conta própria"
+  ],
+  "alertasMedico": [
+   "DAPT limitada a 21 dias (AVC menor NIHSS <=5 ou AIT ABCD2 >=4, iniciada até 72 h; AHA/ASA 2026); DAPT prolongada aumenta sangramento sem benefício",
+   "Evitar omeprazol e esomeprazol; preferir pantoprazol",
+   "Alternativa ao AAS em monoterapia na prevenção secundária (AHA/ASA 2021)",
+   "AVC cardioembólico: anticoagulação, não antiagregante"
+  ],
+  "fontes": [
+   "Kleindorfer DO et al. 2021 AHA/ASA Guideline for the Prevention of Stroke in Patients With Stroke and TIA. Stroke 2021. https://www.ahajournals.org/doi/10.1161/STR.0000000000000375",
+   "Prabhakaran S et al. 2026 AHA/ASA Guideline for the Early Management of Patients With Acute Ischemic Stroke (DAPT: NIHSS <=5 ou AIT ABCD2 >=4, até 72 h, 21 dias). https://www.ahajournals.org/doi/10.1161/STR.0000000000000513",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "atorvastatina",
+  "nome": "Atorvastatina",
+  "marcas": [
+   "Lipitor",
+   "Citalor",
+   "Atorvastatina cálcica (genéricos)"
+  ],
+  "classe": "Hipolipemiante (estatina, inibidor da HMG-CoA redutase)",
+  "indicacoes": [
+   "avc"
+  ],
+  "apresentacoes": [
+   "Comprimidos revestidos de 10 mg, 20 mg, 40 mg e 80 mg"
+  ],
+  "posologiaUsual": "Após AVC isquêmico ou AIT de causa aterosclerótica: 40-80 mg/dia em tomada única (AHA/ASA 2021: atorvastatina 80 mg, estudo SPARCL), ajustando para atingir a meta de LDL.",
+  "doseMaxDia": "80 mg/dia.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Dores musculares leves",
+   "Dor nas articulações",
+   "Diarreia, gases ou azia",
+   "Enjoo",
+   "Dor de cabeça"
+  ],
+  "sinaisAlerta": [
+   "Dor ou fraqueza muscular forte e sem explicação, principalmente com urina escura: procure atendimento",
+   "Pele ou olhos amarelados, urina escura ou dor do lado direito da barriga",
+   "Inchaço no rosto, lábios ou dificuldade para respirar"
+  ],
+  "monitorizacao": [
+   "Perfil lipídico 4-12 semanas após início ou ajuste e depois a cada 3-12 meses",
+   "Metas de LDL: <70 mg/dL (AHA/ASA 2021; ACC/AHA 2026), <55 mg/dL se muito alto risco (ACC/AHA 2026); SBC 2025: <50 mg/dL (muito alto risco) ou <40 mg/dL (risco extremo). Associar ezetimiba se não atingir a meta",
+   "TGO/TGP antes de iniciar e se sintomas; CK apenas se sintomas musculares",
+   "Glicemia ou HbA1c periodicamente (pequeno aumento do risco de diabetes)"
+  ],
+  "interacoes": [
+   "Claritromicina, itraconazol, cetoconazol e inibidores de protease (HIV/hepatite C): aumentam o risco de lesão muscular",
+   "Ciclosporina e genfibrozila: evitar a combinação",
+   "Colchicina: maior risco de problema muscular",
+   "Suco de toranja (grapefruit) em grande quantidade: aumenta o nível do remédio"
+  ],
+  "gestacao": "Não use na gravidez nem na amamentação. Se engravidar, avise o médico logo; em geral a estatina é suspensa durante a gestação.",
+  "suspensao": "Não pare por conta própria: parar aumenta o risco de novo AVC. Se tiver dor muscular, fale com o médico, porque existem ajustes e alternativas.",
+  "orientacoes": [
+   "Tome uma vez ao dia, no horário que for mais fácil lembrar, com ou sem alimento",
+   "Mantenha alimentação saudável e atividade física, que somam ao efeito do remédio",
+   "Faça os exames de colesterol pedidos pelo médico",
+   "Avise o médico sobre antibióticos ou antifúngicos novos"
+  ],
+  "alertasMedico": [
+   "AVC isquêmico aterosclerótico: estatina de alta intensidade (Classe I, AHA/ASA 2021); metas de LDL mais baixas nas diretrizes de 2025-2026 (ACC/AHA 2026 e SBC 2025)",
+   "AVC hemorrágico prévio: no SPARCL houve pequeno aumento de hemorragia; individualizar",
+   "Interações com inibidores fortes do CYP3A4",
+   "Considerar ezetimiba e depois inibidor de PCSK9 se não atingir a meta"
+  ],
+  "fontes": [
+   "Kleindorfer DO et al. 2021 AHA/ASA Guideline for the Prevention of Stroke in Patients With Stroke and TIA. Stroke 2021. https://www.ahajournals.org/doi/10.1161/STR.0000000000000375",
+   "2026 ACC/AHA Guideline on the Management of Dyslipidemia (metas LDL <70 e <55 mg/dL). https://www.ahajournals.org/doi/10.1161/CIR.0000000000001423",
+   "SBC. Diretriz Brasileira de Dislipidemias e Prevenção da Aterosclerose - 2025 (metas LDL <50 muito alto risco, <40 risco extremo). https://www.scielo.br/j/abc/a/tRJrwGzKX6C4GvMqdJpZcGk/?lang=pt",
+   "Anvisa - Bulário Eletrônico (bula do profissional). https://consultas.anvisa.gov.br/#/bulario/",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "melatonina",
+  "nome": "Melatonina",
+  "marcas": [
+   "Não há medicamento de melatonina registrado no Brasil; vendida como suplemento alimentar (várias marcas) ou manipulada sob prescrição"
+  ],
+  "classe": "Hormônio regulador do ritmo circadiano (no Brasil, suplemento alimentar)",
+  "indicacoes": [
+   "sono"
+  ],
+  "apresentacoes": [
+   "Suplemento alimentar em gotas, comprimidos ou cápsulas com até 0,21 mg por porção diária",
+   "Formulações manipuladas em doses maiores, apenas com prescrição"
+  ],
+  "posologiaUsual": "Suplemento: até 0,21 mg/dia para >=19 anos (limite Anvisa). Fora do Brasil, a apresentação registrada como medicamento é de 2 mg de liberação prolongada, 1-2 h antes de deitar, após refeição, por até 13 semanas, em >=55 anos com insônia (EMA).",
+  "doseMaxDia": "0,21 mg/dia como suplemento (Anvisa, IN 28/2018 alterada em 2021). Doses maiores deixam de ser suplemento e só podem ser manipuladas com prescrição médica.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sonolência no dia seguinte",
+   "Dor de cabeça",
+   "Tontura",
+   "Enjoo",
+   "Sonhos vívidos"
+  ],
+  "sinaisAlerta": [
+   "Sonolência forte durante o dia, principalmente ao dirigir",
+   "Coceira, manchas na pele ou inchaço (alergia)",
+   "Piora do humor"
+  ],
+  "monitorizacao": [
+   "Diário de sono antes e 4-8 semanas após o início",
+   "Rastrear apneia do sono, síndrome das pernas inquietas, depressão e ansiedade",
+   "Terapia cognitivo-comportamental para insônia (TCC-I) e higiene do sono como primeira linha",
+   "Uso concomitante de fluvoxamina ou anticoagulante"
+  ],
+  "interacoes": [
+   "Fluvoxamina: aumenta muito o nível da melatonina; evitar",
+   "Álcool, zolpidem, benzodiazepínicos e outros sedativos: somam sonolência",
+   "Varfarina: há relatos de alteração do INR",
+   "Cafeína: reduz o efeito"
+  ],
+  "gestacao": "Pela regra da Anvisa, o suplemento de melatonina não deve ser usado por gestantes nem por quem está amamentando.",
+  "suspensao": "Pode ser interrompida sem retirada gradual. Converse com o médico se o sono piorar.",
+  "orientacoes": [
+   "Tome no mesmo horário todas as noites, 1 a 2 horas antes de deitar",
+   "Mantenha o quarto escuro e evite telas e luz forte à noite",
+   "Não dirija nem faça atividades de risco se estiver sonolento",
+   "Prefira produtos regularizados; produtos que prometem curar insônia estão irregulares"
+  ],
+  "alertasMedico": [
+   "Status regulatório: suplemento alimentar (>=19 anos, até 0,21 mg/dia, sem alegação terapêutica aprovada); não há medicamento registrado no Brasil (Ministério da Saúde); doses maiores só manipuladas com prescrição (confirmar com a farmácia)",
+   "AASM 2017: sugere não usar melatonina na insônia crônica do adulto (recomendação fraca); mais útil em transtorno do ritmo circadiano (fase atrasada) e em idosos (liberação prolongada)",
+   "Não permitido como suplemento para crianças, gestantes e lactantes",
+   "Não consta da Portaria 344/98"
+  ],
+  "fontes": [
+   "Ministério da Saúde. Melatonina (situação regulatória: suplemento alimentar, 0,21 mg/dia, >=19 anos). https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/m/melatonina",
+   "Vigilância Sanitária/SC, 2021. Anvisa autoriza melatonina (consumo diário máximo de 0,21 mg) como suplemento alimentar. http://antigo.vigilanciasanitaria.sc.gov.br/index.php/saude-ambiental/vigiagua/150-noticias/noticias-2021/1359-anvisa-autoriza-melatonina-consumo-diario-maximo-de-0-21-mg-na-forma-de-suplemento-alimentar",
+   "Anvisa, 2023. Anvisa proíbe suplemento Soninho Perfeito Melatonina Kids. https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2023/anvisa-proibe-o-suplemento-alimentar-soninho-perfeito-melatonina-kids",
+   "Sateia MJ et al. AASM Clinical Practice Guideline for the Pharmacologic Treatment of Chronic Insomnia in Adults. J Clin Sleep Med 2017;13(2):307-349",
+   "EMA. Circadin (melatonina 2 mg liberação prolongada) - resumo das características do medicamento",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "zolpidem",
+  "nome": "Zolpidem",
+  "marcas": [
+   "Stilnox",
+   "Stilnox CR",
+   "Patz SL",
+   "Lioram",
+   "Hemitartarato de zolpidem (genéricos)"
+  ],
+  "classe": "Hipnótico não benzodiazepínico (droga Z, agonista GABA-A)",
+  "indicacoes": [
+   "sono"
+  ],
+  "apresentacoes": [
+   "Comprimidos revestidos de 10 mg (liberação imediata)",
+   "Comprimidos de liberação prolongada de 6,25 mg e 12,5 mg (Stilnox CR)",
+   "Comprimidos sublinguais de 5 mg (Patz SL)"
+  ],
+  "posologiaUsual": "Insônia: 5-10 mg (liberação imediata) ou 6,25-12,5 mg (CR) imediatamente ao deitar, com 7-8 horas disponíveis para dormir. Idosos ou debilitados: 5 mg ou 6,25 mg CR. A FDA recomenda dose inicial de 5 mg (6,25 mg CR) para mulheres. Duração ideal de até 4 semanas.",
+  "doseMaxDia": "10 mg/dia (liberação imediata) ou 12,5 mg/dia (CR); em idosos, 5 mg/dia ou 6,25 mg/dia (CR).",
+  "portaria344": "B1",
+  "receituario": "notificacao_b",
+  "limiteQuantidade": "Notificação de Receita B (azul), obrigatória para qualquer concentração desde 01/08/2024 (RDC 871/2024 excluiu o zolpidem do Adendo que equiparava doses de até 10 mg à lista C1). Uma substância por notificação (Art. 35, par. 7º); até 60 dias de tratamento (Art. 46), e acima disso só com justificativa com CID ou diagnóstico e posologia (Art. 46, par. 1º). Validade de 30 dias em todo o território nacional (Art. 45, na redação da RDC 1.000/2025, em vigor desde 13/02/2026; antes valia só no estado emissor). Prescritor cadastrado na vigilância sanitária local. Emissão eletrônica somente via SNCR com assinatura ICP-Brasil, com liberação prevista para 30/09/2026 (RDC 1.028/2026); até lá, apenas em papel.",
+  "efeitosComuns": [
+   "Sonolência ou tontura na manhã seguinte",
+   "Dor de cabeça",
+   "Enjoo ou diarreia",
+   "Esquecer o que aconteceu logo depois de tomar",
+   "Sonhos estranhos"
+  ],
+  "sinaisAlerta": [
+   "Fazer coisas dormindo sem lembrar depois, como andar, comer, dirigir ou falar ao telefone: pare o remédio e avise o médico",
+   "Confusão, agitação, alucinações ou comportamento diferente do seu normal",
+   "Respiração lenta ou muita dificuldade para acordar, principalmente se usou álcool ou remédio para dor forte: procure urgência",
+   "Pensamentos de se machucar",
+   "Inchaço no rosto, língua ou garganta"
+  ],
+  "monitorizacao": [
+   "A cada renovação: necessidade, dose, tempo de uso, sinais de tolerância, escalada de dose ou uso fora do horário",
+   "Perguntar ativamente sobre comportamentos complexos do sono e sonolência ao dirigir",
+   "Quedas e confusão em idosos",
+   "Oferecer TCC-I e plano de redução gradual; rastrear apneia do sono, depressão e ansiedade"
+  ],
+  "interacoes": [
+   "Álcool: nunca combine; aumenta sedação e comportamentos durante o sono",
+   "Opioides: risco de depressão respiratória grave (alerta em bula)",
+   "Benzodiazepínicos e outros sedativos: somam sedação",
+   "Cetoconazol, itraconazol, claritromicina e ritonavir: aumentam o nível do zolpidem",
+   "Rifampicina: reduz o efeito"
+  ],
+  "gestacao": "Evite na gravidez, principalmente no final: pode causar sonolência, respiração fraca e sintomas de abstinência no bebê. Avise o médico se engravidar ou for amamentar.",
+  "suspensao": "Se você usa há mais de algumas semanas, não pare de uma vez: pode haver insônia de rebote, ansiedade, irritabilidade e, raramente, convulsões. A redução deve ser gradual e combinada com o médico.",
+  "orientacoes": [
+   "Tome só quando já estiver deitado e puder dormir de 7 a 8 horas",
+   "Não use bebida alcoólica no dia em que tomar",
+   "Não dirija na manhã seguinte se ainda estiver sonolento, principalmente com a versão CR",
+   "Guarde longe de crianças e não compartilhe: é um medicamento controlado"
+  ],
+  "alertasMedico": [
+   "Lista B1 com Notificação B para qualquer dose desde 01/08/2024 (RDC 871/2024; lista confirmada na RDC 1.036/2026)",
+   "Telemedicina: Notificação B eletrônica só via SNCR (prevista para 30/09/2026); até lá, em papel",
+   "Contraindicado após episódio prévio de comportamento complexo do sono (FDA, alerta de 2019); evitar em idosos (Beers); cautela em apneia e insuficiência respiratória",
+   "Uso >4 semanas: reavaliar e planejar desprescrição; TCC-I é primeira linha"
+  ],
+  "fontes": [
+   "Anvisa, 2024. Medicamento zolpidem terá alteração no tipo de receita (a partir de 01/08/2024). https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2024/medicamento-zolpidem-tera-alteracao-no-tipo-de-receita-para-prescricao-e-venda",
+   "Anvisa. RDC nº 871, de 17/05/2024. https://www.legisweb.com.br/legislacao/?id=459412",
+   "Anvisa. RDC nº 1.036/2026 (09/07/2026) - Anexo I atualizado da Portaria SVS/MS 344/1998 (listas consolidadas). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Portaria SVS/MS nº 344/1998, texto consolidado (Arts. 35, 45, 46, 52, 57, 59, 60). https://www.legisweb.com.br/legislacao/?id=317701",
+   "Anvisa. RDC nº 1.000/2025 - receituários de controle especial emitidos em meio eletrônico (vigência 13/02/2026). https://www.legisweb.com.br/legislacao/?id=487796",
+   "Anvisa, 2026. SNCR: início da integração e prorrogação para 30/09/2026 (RDC 1.028/2026). https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/sncr-anvisa-inicia-etapa-de-integracao-com-sistemas-de-prescricao-eletronica-e-amplia-prazo-para-implementacao",
+   "Sanofi. Bula Stilnox CR. https://drogariasp.vteximg.com.br/arquivos/31054---stilnox-10mg-sanofi-aventis-20-comprimidos.pdf",
+   "FDA, 2019. Boxed warning: complex sleep behaviors with eszopiclone, zaleplon and zolpidem"
+  ]
+ }
+]

@@ -1,0 +1,8 @@
+#!/bin/sh
+# Troca o ?v=N de todos os arquivos no index.html e o CACHE do sw.js (evita navegador com código velho).
+# Uso: sh tools/bump.sh 3
+cd "$(dirname "$0")/.." || exit 1
+N="$1"; [ -z "$N" ] && { echo "uso: sh tools/bump.sh <numero>"; exit 1; }
+sed -i '' -E "s/\?v=[0-9]+/?v=$N/g" index.html
+sed -i '' -E "s/meuneuro-v[0-9]+/meuneuro-v$N/" sw.js
+grep -o '?v=[0-9]*' index.html | sort -u; grep -o "meuneuro-v[0-9]*" sw.js

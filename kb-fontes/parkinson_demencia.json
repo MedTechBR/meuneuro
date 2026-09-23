@@ -1,0 +1,1065 @@
+[
+  {
+    "id": "levodopa-carbidopa",
+    "nome": "Levodopa + carbidopa",
+    "marcas": [
+      "Sinemet",
+      "Cronomet",
+      "genéricos"
+    ],
+    "classe": "Antiparkinsoniano (precursor de dopamina com inibidor da dopa-descarboxilase)",
+    "indicacoes": [
+      "parkinson"
+    ],
+    "apresentacoes": [
+      "Comprimido 250 mg + 25 mg",
+      "Comprimido de liberação prolongada 200 mg + 50 mg (Cronomet)"
+    ],
+    "posologiaUsual": "Início com 250/25 mg ao dia divididos em pelo menos 2 tomadas; manutenção geralmente entre 300 e 1.000 mg/dia de levodopa em 3 a 5 tomadas, ajustada à resposta motora.",
+    "doseMaxDia": "2.000 mg/dia de levodopa (PCDT 2025), o que corresponde a 8 comprimidos de 250/25 mg (carbidopa até cerca de 200 mg/dia)",
+    "portaria344": null,
+    "receituario": "simples",
+    "limiteQuantidade": null,
+    "efeitosComuns": [
+      "Enjoo e perda de apetite, principalmente no início",
+      "Tontura ao se levantar, por queda da pressão",
+      "Sonolência durante o dia",
+      "Movimentos involuntários (discinesias), mais comuns após anos de uso",
+      "Sonhos vívidos ou alterações do sono",
+      "Urina, suor ou saliva mais escuros, sem gravidade"
+    ],
+    "sinaisAlerta": [
+      "Ver ou ouvir coisas que não existem, confusão forte ou agitação",
+      "Adormecer de repente durante atividades como conversar, comer ou dirigir",
+      "Desmaio ou quedas repetidas",
+      "Febre alta com rigidez muscular intensa e confusão, principalmente se o remédio foi interrompido ou reduzido",
+      "Vontades difíceis de controlar, como jogar, fazer compras, comer em excesso ou aumento exagerado do desejo sexual",
+      "Pinta ou mancha na pele que mudou de cor, tamanho ou formato"
+    ],
+    "monitorizacao": [
+      "Resposta motora, flutuações de fim de dose (wearing-off) e discinesias a cada consulta, em geral a cada 3 a 6 meses",
+      "Pressão arterial deitado e em pé (hipotensão ortostática)",
+      "Sonolência diurna e ataques de sono, com orientação sobre direção",
+      "Alucinações, confusão e comportamentos compulsivos, perguntando também ao familiar",
+      "Exame periódico da pele (risco aumentado de melanoma na doença de Parkinson, conforme bula)"
+    ],
+    "interacoes": [
+      "Sulfato ferroso e suplementos com ferro reduzem a absorção: separar por pelo menos 2 horas",
+      "Refeições ricas em proteína podem reduzir e atrasar o efeito",
+      "Antipsicóticos típicos e a maioria dos atípicos, metoclopramida e bromoprida bloqueiam o efeito e pioram o parkinsonismo",
+      "IMAO não seletivos (tranilcipromina): contraindicados, suspender pelo menos 14 dias antes; IMAO-B seletivo (rasagilina) é permitido",
+      "Anti-hipertensivos: somam queda de pressão"
+    ],
+    "gestacao": "Os dados são limitados, mas entre os antiparkinsonianos a levodopa é a opção recomendada pelo PCDT 2025 quando o tratamento na gestação é necessário, sendo a associação com carbidopa preferível à com benserazida. Planeje a gravidez junto com o neurologista.",
+    "suspensao": "Não pare nem diminua a dose por conta própria. A interrupção de repente pode piorar muito a rigidez e a lentidão e, raramente, causar febre alta, rigidez intensa e confusão, que precisam de atendimento urgente. Qualquer mudança deve ser feita aos poucos, com orientação médica.",
+    "orientacoes": [
+      "Tome nos horários combinados, todos os dias; a regularidade ajuda a evitar oscilações do efeito",
+      "Se você notar que refeições com muita proteína (carne, ovos, leite) diminuem o efeito, tome o remédio cerca de 30 minutos antes ou 1 hora depois delas; um lanche leve com pouca proteína pode ajudar no enjoo",
+      "O comprimido de liberação prolongada (Cronomet) não deve ser mastigado nem triturado",
+      "Levante-se devagar da cama ou da cadeira para evitar tontura"
+    ],
+    "alertasMedico": [
+      "Levodopa acima de 2.000 mg/dia",
+      "Wearing-off ou discinesias relatadas: considerar ajuste de fracionamento ou adjuvantes",
+      "Transtorno do controle de impulsos e síndrome de desregulação dopaminérgica (menos frequentes que com agonistas)",
+      "Uso concomitante de antipsicótico bloqueador D2, metoclopramida ou bromoprida",
+      "Alucinações ou psicose: revisar primeiro anticolinérgicos, amantadina, agonistas, IMAO-B e ICOMT (PCDT 2025)",
+      "Glaucoma de ângulo fechado e lesão de pele suspeita ou história de melanoma: contraindicações de bula",
+      "Uso de IMAO não seletivo nos últimos 14 dias"
+    ],
+    "fontes": [
+      "Ministério da Saúde. PCDT da Doença de Parkinson, Portaria Conjunta SAES/SECTICS nº 16, de 01/08/2025 (publicada em 18/09/2025) https://www.gov.br/saude/pt-br/assuntos/pcdt/d/doenca-de-parkinson",
+      "Bula Sinemet e Cronomet (carbidopa/levodopa), bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=carbidopa+levodopa",
+      "Fox SH et al. MDS Evidence-Based Medicine Review: treatments for the motor symptoms of Parkinson's disease. Mov Disord 2018 https://doi.org/10.1002/mds.27372",
+      "NICE NG71. Parkinson's disease in adults (2017) https://www.nice.org.uk/guidance/ng71"
+    ]
+  },
+  {
+    "id": "levodopa-benserazida",
+    "nome": "Levodopa + benserazida",
+    "marcas": [
+      "Prolopa",
+      "Prolopa BD",
+      "Prolopa HBS",
+      "Prolopa Dispersível"
+    ],
+    "classe": "Antiparkinsoniano (precursor de dopamina com inibidor da dopa-descarboxilase)",
+    "indicacoes": [
+      "parkinson"
+    ],
+    "apresentacoes": [
+      "Comprimido 200 mg + 50 mg (Prolopa 250)",
+      "Comprimido 100 mg + 25 mg (Prolopa BD)",
+      "Cápsula de liberação prolongada 100 mg + 25 mg (Prolopa HBS)",
+      "Comprimido dispersível 100 mg + 25 mg"
+    ],
+    "posologiaUsual": "Início com 200/50 mg ao dia divididos em pelo menos 2 tomadas (PCDT 2025), com aumentos graduais; dose média eficaz de 600 a 750 mg/dia de levodopa em 3 a 5 tomadas.",
+    "doseMaxDia": "2.000 mg/dia de levodopa (PCDT 2025)",
+    "portaria344": null,
+    "receituario": "simples",
+    "limiteQuantidade": null,
+    "efeitosComuns": [
+      "Enjoo e perda de apetite, principalmente no início",
+      "Tontura ao se levantar",
+      "Sonolência durante o dia",
+      "Movimentos involuntários (discinesias), mais comuns após anos de uso",
+      "Prisão de ventre",
+      "Urina mais escura, sem gravidade"
+    ],
+    "sinaisAlerta": [
+      "Ver ou ouvir coisas que não existem, confusão forte ou agitação",
+      "Adormecer de repente durante atividades como conversar, comer ou dirigir",
+      "Desmaio ou quedas repetidas",
+      "Dor no peito ou falta de ar",
+      "Febre alta com rigidez muscular intensa e confusão, principalmente se o remédio foi interrompido ou reduzido",
+      "Vontades difíceis de controlar, como jogar, fazer compras, comer em excesso ou aumento exagerado do desejo sexual"
+    ],
+    "monitorizacao": [
+      "Resposta motora, wearing-off e discinesias a cada consulta, em geral a cada 3 a 6 meses",
+      "Pressão arterial deitado e em pé",
+      "Sonolência diurna e ataques de sono, com orientação sobre direção",
+      "Alucinações, confusão e comportamentos compulsivos, perguntando também ao familiar",
+      "Exame periódico da pele (melanoma)",
+      "Em mulheres em idade fértil: contracepção eficaz (contraindicação de bula na gestação)"
+    ],
+    "interacoes": [
+      "Sulfato ferroso e suplementos com ferro reduzem a absorção: separar por pelo menos 2 horas",
+      "Refeições ricas em proteína podem reduzir e atrasar o efeito",
+      "Antipsicóticos típicos e a maioria dos atípicos, metoclopramida e bromoprida pioram o parkinsonismo",
+      "IMAO não seletivos: contraindicados, suspender pelo menos 14 dias antes; rasagilina é permitida",
+      "Antiácidos podem reduzir a absorção da cápsula HBS"
+    ],
+    "gestacao": "A bula do Prolopa contraindica o uso na gravidez e em mulheres que podem engravidar sem método contraceptivo eficaz, pela possibilidade de malformações esqueléticas associadas à benserazida, e também desaconselha a amamentação. Se você deseja engravidar, converse antes com o neurologista sobre a troca por levodopa + carbidopa.",
+    "suspensao": "Não pare nem diminua a dose por conta própria. A interrupção de repente pode piorar muito a rigidez e a lentidão e, raramente, causar febre alta, rigidez intensa e confusão, que precisam de atendimento urgente. Qualquer mudança deve ser feita aos poucos, com orientação médica.",
+    "orientacoes": [
+      "Tome nos horários combinados, todos os dias",
+      "Se refeições ricas em proteína diminuírem o efeito, tome cerca de 30 minutos antes ou 1 hora depois delas",
+      "A cápsula HBS deve ser engolida inteira, sem abrir nem mastigar",
+      "O comprimido dispersível deve ser dissolvido em um pouco de água (cerca de 25 a 50 mL) e tomado em até 30 minutos; é útil se você tem dificuldade para engolir ou precisa de efeito mais rápido"
+    ],
+    "alertasMedico": [
+      "Mulher em idade fértil sem contracepção ou gestante: contraindicação de bula da benserazida, considerar levodopa + carbidopa",
+      "Levodopa acima de 2.000 mg/dia",
+      "Wearing-off ou discinesias relatadas",
+      "Uso concomitante de antipsicótico bloqueador D2, metoclopramida ou bromoprida",
+      "Alucinações ou psicose: revisar primeiro anticolinérgicos, amantadina, agonistas, IMAO-B e ICOMT (PCDT 2025)",
+      "Glaucoma de ângulo fechado e lesão de pele suspeita: contraindicações de bula"
+    ],
+    "fontes": [
+      "Ministério da Saúde. PCDT da Doença de Parkinson, Portaria Conjunta SAES/SECTICS nº 16, de 01/08/2025 (publicada em 18/09/2025) https://www.gov.br/saude/pt-br/assuntos/pcdt/d/doenca-de-parkinson",
+      "Bula Prolopa, Prolopa BD, Prolopa HBS e Prolopa Dispersível (Roche), bulário Anvisa",
+      "Fox SH et al. MDS Evidence-Based Medicine Review: treatments for the motor symptoms of Parkinson's disease. Mov Disord 2018 https://doi.org/10.1002/mds.27372",
+      "NICE NG71. Parkinson's disease in adults (2017) https://www.nice.org.uk/guidance/ng71"
+    ]
+  },
+  {
+    "id": "pramipexol",
+    "nome": "Pramipexol",
+    "marcas": [
+      "Sifrol",
+      "Sifrol ER",
+      "genéricos"
+    ],
+    "classe": "Antiparkinsoniano (agonista dopaminérgico não ergolínico)",
+    "indicacoes": [
+      "parkinson",
+      "sono"
+    ],
+    "apresentacoes": [
+      "Comprimido 0,125 mg, 0,25 mg e 1 mg (liberação imediata)",
+      "Comprimido de liberação prolongada 0,375 mg, 0,75 mg, 1,5 mg e 3 mg (Sifrol ER)",
+      "Doses expressas como dicloridrato de pramipexol (0,125 mg de sal = 0,088 mg de base)"
+    ],
+    "posologiaUsual": "Parkinson: início com 0,125 mg 3 vezes ao dia (0,375 mg/dia), com aumentos a cada 5 a 7 dias; manutenção entre 0,375 e 4,5 mg/dia (sal) em 3 tomadas ou 1 vez ao dia na forma ER. Pernas inquietas: 0,125 a 0,75 mg (sal) 2 a 3 horas antes de deitar.",
+    "doseMaxDia": "4,5 mg/dia de dicloridrato (3,3 mg de base) no Parkinson; 0,75 mg/dia (sal) na síndrome das pernas inquietas; reduzir se depuração de creatinina abaixo de 50 mL/min",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a até 6 meses de tratamento por se tratar de antiparkinsoniano (art. 59, parágrafo único). Acima disso, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026).",
+    "efeitosComuns": [
+      "Enjoo",
+      "Sonolência durante o dia",
+      "Tontura, principalmente ao se levantar",
+      "Inchaço nas pernas e tornozelos",
+      "Prisão de ventre",
+      "Insônia ou sonhos vívidos",
+      "Movimentos involuntários quando usado junto com levodopa"
+    ],
+    "sinaisAlerta": [
+      "Adormecer de repente, sem aviso, durante atividades como conversar, comer ou dirigir",
+      "Vontades difíceis de controlar: jogar ou apostar, fazer compras, comer em excesso ou aumento exagerado do desejo sexual (vale pedir a um familiar que observe)",
+      "Ver, ouvir ou sentir coisas que não existem, desconfiança exagerada ou confusão",
+      "Desmaio",
+      "Febre alta com rigidez muscular e confusão após parar ou reduzir o remédio"
+    ],
+    "monitorizacao": [
+      "Pergunta ativa sobre transtorno do controle de impulsos a cada consulta, ao paciente e ao familiar",
+      "Sonolência excessiva e ataques de sono, com orientação sobre direção",
+      "Alucinações e confusão, sobretudo em idosos ou com declínio cognitivo",
+      "Pressão arterial em pé e edema de membros inferiores",
+      "Creatinina e depuração no início e periodicamente em idosos (ajuste de dose)",
+      "Na síndrome das pernas inquietas: aumentação (sintomas mais cedo ou mais intensos) e ferritina"
+    ],
+    "interacoes": [
+      "Antipsicóticos e metoclopramida reduzem o efeito",
+      "Álcool, benzodiazepínicos e outros sedativos aumentam a sonolência",
+      "Cimetidina, amantadina e outros fármacos com secreção tubular renal podem elevar os níveis",
+      "Levodopa: pode aumentar discinesias e alucinações, às vezes exigindo redução da levodopa"
+    ],
+    "gestacao": "Os dados são insuficientes; o PCDT 2025 recomenda não usar agonistas dopaminérgicos na gravidez e evitá-los na amamentação, e o pramipexol também reduz a produção de leite. Avise o médico se você planeja engravidar.",
+    "suspensao": "Não pare de repente. A retirada brusca pode piorar os sintomas e causar uma síndrome de abstinência com ansiedade, desânimo, dor e cansaço e, raramente, febre alta com rigidez. A redução deve ser gradual, orientada pelo médico.",
+    "orientacoes": [
+      "Tome durante ou após as refeições se sentir enjoo",
+      "A forma ER (liberação prolongada) é tomada 1 vez ao dia, sempre no mesmo horário, e deve ser engolida inteira",
+      "Evite dirigir ou operar máquinas se sentir sonolência ou se já cochilou de forma inesperada",
+      "Evite bebidas alcoólicas, que aumentam a sonolência"
+    ],
+    "alertasMedico": [
+      "Transtorno do controle de impulsos com agonista dopaminérgico (jogo, compras, hipersexualidade, compulsão alimentar)",
+      "Ataques de sono: orientar sobre direção veicular",
+      "Idade acima de 70 anos, comorbidades ou déficit cognitivo: PCDT 2025 prefere levodopa",
+      "Depuração de creatinina abaixo de 50 mL/min: ajustar dose",
+      "Síndrome de abstinência de agonista dopaminérgico (DAWS) nas reduções",
+      "Uso para pernas inquietas: vigiar aumentação; o limite de 6 meses do art. 59 cita 'antiparkinsonianos' e a aplicação quando a indicação é SPI deve ser confirmada com a vigilância sanitária local"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Ministério da Saúde. PCDT da Doença de Parkinson, Portaria Conjunta SAES/SECTICS nº 16, de 01/08/2025 (publicada em 18/09/2025) https://www.gov.br/saude/pt-br/assuntos/pcdt/d/doenca-de-parkinson",
+      "Bula Sifrol e Sifrol ER (Boehringer Ingelheim), bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=pramipexole",
+      "Fox SH et al. MDS Evidence-Based Medicine Review: treatments for the motor symptoms of Parkinson's disease. Mov Disord 2018 https://doi.org/10.1002/mds.27372"
+    ]
+  },
+  {
+    "id": "rasagilina",
+    "nome": "Rasagilina",
+    "marcas": [
+      "Azilect",
+      "genéricos"
+    ],
+    "classe": "Antiparkinsoniano (inibidor seletivo e irreversível da MAO-B)",
+    "indicacoes": [
+      "parkinson"
+    ],
+    "apresentacoes": [
+      "Comprimido 1 mg"
+    ],
+    "posologiaUsual": "1 mg 1 vez ao dia, sozinha ou com levodopa; 0,5 mg/dia se em uso de inibidor potente do CYP1A2, como ciprofloxacino.",
+    "doseMaxDia": "1 mg/dia",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a até 6 meses de tratamento por se tratar de antiparkinsoniano (art. 59, parágrafo único). Acima disso, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026).",
+    "efeitosComuns": [
+      "Dor de cabeça",
+      "Dores nas articulações ou no pescoço",
+      "Sintomas parecidos com gripe",
+      "Má digestão ou prisão de ventre",
+      "Tontura ao se levantar",
+      "Aumento dos movimentos involuntários quando usada com levodopa"
+    ],
+    "sinaisAlerta": [
+      "Dor de cabeça muito forte e súbita com pressão alta, palpitações ou suor intenso",
+      "Agitação, confusão, febre, tremores, suor e contrações musculares, principalmente após começar outro remédio (antidepressivos, tramadol, xaropes para tosse)",
+      "Ver ou ouvir coisas que não existem ou confusão",
+      "Adormecer de repente durante atividades",
+      "Vontades difíceis de controlar, como jogar, comprar ou comer em excesso",
+      "Pinta na pele que mudou de aspecto"
+    ],
+    "monitorizacao": [
+      "Resposta motora e discinesias a cada 3 a 6 meses (ajustar levodopa se necessário)",
+      "Revisão de toda nova prescrição quanto a interações serotoninérgicas e simpaticomiméticas",
+      "Função hepática: cautela na insuficiência leve, evitar na moderada, contraindicada na grave; suspender se houver progressão (PCDT 2025)",
+      "Pressão arterial (hipotensão ortostática)",
+      "Exame periódico da pele (melanoma)"
+    ],
+    "interacoes": [
+      "Meperidina (petidina), tramadol, metadona, dextrometorfano, ciclobenzaprina e erva-de-são-joão: contraindicados ou evitar (síndrome serotoninérgica)",
+      "Outros IMAO: contraindicados; aguardar 14 dias após suspender a rasagilina",
+      "Fluoxetina e fluvoxamina: associação contraindicada (PCDT 2025); após suspender fluoxetina, aguardar 5 semanas para iniciar a rasagilina",
+      "Outros ISRS, IRSN, tricíclicos e trazodona: usar com cautela e monitorar",
+      "Ciprofloxacino e outros inibidores do CYP1A2: reduzir para 0,5 mg/dia",
+      "Descongestionantes simpaticomiméticos (pseudoefedrina, fenilefrina, efedrina): evitar"
+    ],
+    "gestacao": "Os dados são insuficientes; o PCDT 2025 recomenda não usar inibidores da MAO-B na gravidez e evitá-los na amamentação.",
+    "suspensao": "Não pare por conta própria, porque os sintomas de Parkinson podem piorar. A rasagilina geralmente não exige retirada lenta, mas o efeito dura cerca de 2 semanas após a última dose, então avise sempre que a usou recentemente antes de iniciar outros remédios.",
+    "orientacoes": [
+      "Tome 1 comprimido por dia, sempre no mesmo horário, com ou sem alimentos",
+      "Antes de usar qualquer remédio novo, inclusive para gripe, tosse, dor ou antidepressivos, avise o médico ou o farmacêutico que você usa rasagilina",
+      "Não é preciso dieta especial, mas evite exageros de alimentos muito ricos em tiramina, como queijos muito curados, embutidos fermentados e grandes quantidades de molho de soja"
+    ],
+    "alertasMedico": [
+      "Associação com fluoxetina ou fluvoxamina (contraindicada), meperidina, tramadol, metadona ou dextrometorfano",
+      "Associação com outros antidepressivos serotoninérgicos, inclusive trazodona: monitorar síndrome serotoninérgica",
+      "Insuficiência hepática moderada ou grave",
+      "Ciprofloxacino ou outro inibidor do CYP1A2: dose máxima 0,5 mg/dia",
+      "Selegilina foi descontinuada no Brasil: troca direta por rasagilina, sem desmame (PCDT 2025)"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Ministério da Saúde. PCDT da Doença de Parkinson, Portaria Conjunta SAES/SECTICS nº 16, de 01/08/2025 (publicada em 18/09/2025) https://www.gov.br/saude/pt-br/assuntos/pcdt/d/doenca-de-parkinson",
+      "Bula Azilect (rasagilina), bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=rasagiline",
+      "Fox SH et al. MDS Evidence-Based Medicine Review: treatments for the motor symptoms of Parkinson's disease. Mov Disord 2018 https://doi.org/10.1002/mds.27372"
+    ]
+  },
+  {
+    "id": "amantadina",
+    "nome": "Amantadina",
+    "marcas": [
+      "Mantidan"
+    ],
+    "classe": "Antiparkinsoniano (antagonista do receptor NMDA; antiviral de origem)",
+    "indicacoes": [
+      "parkinson",
+      "outro"
+    ],
+    "apresentacoes": [
+      "Comprimido 100 mg"
+    ],
+    "posologiaUsual": "100 mg 2 vezes ao dia (manhã e início da tarde); iniciar com 100 mg/dia em idosos, com outras doenças graves ou em uso de outros antiparkinsonianos (PCDT 2025).",
+    "doseMaxDia": "400 mg/dia em doses divididas (PCDT 2025); reduzir conforme a depuração de creatinina",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a até 6 meses de tratamento por se tratar de antiparkinsoniano (art. 59, parágrafo único). Acima disso, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026). O limite de 6 meses se aplica quando prescrita como antiparkinsoniano.",
+    "efeitosComuns": [
+      "Boca seca e prisão de ventre",
+      "Tontura ou sensação de cabeça leve",
+      "Insônia ou sonhos vívidos",
+      "Inchaço nos tornozelos",
+      "Manchas arroxeadas em forma de rede na pele das pernas (livedo), em geral sem gravidade",
+      "Enjoo e perda de apetite"
+    ],
+    "sinaisAlerta": [
+      "Ver ou ouvir coisas que não existem, confusão ou agitação",
+      "Visão embaçada de repente ou dor nos olhos",
+      "Dificuldade para urinar",
+      "Tristeza intensa ou pensamentos de se machucar",
+      "Febre alta com rigidez e confusão após parar o remédio",
+      "Convulsão"
+    ],
+    "monitorizacao": [
+      "Creatinina e depuração no início e periodicamente, ao menos anual e mais frequente em idosos (cerca de 90% eliminada pelos rins)",
+      "Alucinações, confusão e sono a cada consulta, sobretudo em idosos",
+      "Edema de membros inferiores e livedo reticular",
+      "Efeito sobre as discinesias",
+      "Queixas visuais (edema de córnea é raro)"
+    ],
+    "interacoes": [
+      "Anticolinérgicos (biperideno, triexifenidil, tricíclicos, anti-histamínicos antigos): somam boca seca, confusão e retenção urinária",
+      "Memantina: efeito NMDA aditivo, evitar a associação",
+      "Hidroclorotiazida com triantereno e outros que reduzem a eliminação renal: podem elevar os níveis",
+      "Álcool: aumenta tontura, confusão e queda de pressão"
+    ],
+    "gestacao": "É contraindicada na gravidez e em mulheres que pretendem engravidar, por risco de malformações (PCDT 2025). Use método contraceptivo eficaz e avise o médico se planejar uma gravidez.",
+    "suspensao": "Não suspenda de repente. A retirada brusca pode piorar rapidamente os sintomas de Parkinson e causar confusão, agitação e, raramente, febre alta com rigidez muscular. A redução deve ser gradual, em 1 a 2 semanas, com orientação médica.",
+    "orientacoes": [
+      "Tome a última dose até o meio da tarde para não atrapalhar o sono",
+      "Levante-se devagar para evitar tontura",
+      "Avise o médico se você tem problema nos rins, porque a dose pode precisar de ajuste",
+      "Evite bebidas alcoólicas"
+    ],
+    "alertasMedico": [
+      "Ajustar pela função renal (depuração abaixo de 50 mL/min): risco de toxicidade com confusão, alucinações e mioclonia",
+      "Idosos e demência: alto risco de efeitos centrais e anticolinérgicos",
+      "Associação com memantina ou com anticolinérgicos",
+      "Contraindicada na gestação (PCDT 2025)",
+      "Retirada gradual obrigatória em 1 a 2 semanas (PCDT 2025)"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Ministério da Saúde. PCDT da Doença de Parkinson, Portaria Conjunta SAES/SECTICS nº 16, de 01/08/2025 (publicada em 18/09/2025) https://www.gov.br/saude/pt-br/assuntos/pcdt/d/doenca-de-parkinson",
+      "Bula Mantidan (cloridrato de amantadina), bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=amantadine+hydrochloride",
+      "Fox SH et al. MDS Evidence-Based Medicine Review: treatments for the motor symptoms of Parkinson's disease. Mov Disord 2018 https://doi.org/10.1002/mds.27372"
+    ]
+  },
+  {
+    "id": "entacapona",
+    "nome": "Entacapona",
+    "marcas": [
+      "Comtan",
+      "Stalevo (associação com levodopa + carbidopa)",
+      "genéricos"
+    ],
+    "classe": "Antiparkinsoniano (inibidor periférico da COMT, adjuvante da levodopa)",
+    "indicacoes": [
+      "parkinson"
+    ],
+    "apresentacoes": [
+      "Comprimido revestido 200 mg",
+      "Associação fixa levodopa + carbidopa + entacapona (Stalevo) em diferentes concentrações; confirmar disponibilidade comercial atual"
+    ],
+    "posologiaUsual": "200 mg junto com cada dose de levodopa + carbidopa ou benserazida, geralmente 3 a 8 vezes ao dia; com frequência é preciso reduzir a levodopa no início.",
+    "doseMaxDia": "2.000 mg/dia (200 mg até 10 vezes ao dia), segundo o PCDT 2025 e a bula brasileira; a bula americana limita a 1.600 mg/dia",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a até 6 meses de tratamento por se tratar de antiparkinsoniano (art. 59, parágrafo único). Acima disso, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026).",
+    "efeitosComuns": [
+      "Urina laranja-escura ou marrom-avermelhada, sem gravidade",
+      "Aumento dos movimentos involuntários (discinesias)",
+      "Enjoo",
+      "Diarreia",
+      "Dor abdominal ou boca seca",
+      "Tontura ao se levantar"
+    ],
+    "sinaisAlerta": [
+      "Diarreia que não passa ou com perda de peso",
+      "Pele ou olhos amarelados, fezes claras ou dor no lado direito da barriga",
+      "Ver ou ouvir coisas que não existem ou confusão",
+      "Febre alta com rigidez e dor muscular, principalmente após reduzir ou parar o remédio",
+      "Adormecer de repente durante atividades"
+    ],
+    "monitorizacao": [
+      "Discinesias nas primeiras semanas e necessidade de reduzir a levodopa",
+      "Diarreia e peso",
+      "Função hepática: o PCDT 2025 recomenda transaminases a cada 2 semanas nos primeiros 6 meses",
+      "Alucinações, confusão e pressão arterial em pé"
+    ],
+    "interacoes": [
+      "IMAO não seletivos: contraindicados (rasagilina em dose usual é permitida)",
+      "Ferro oral: forma complexos, separar por 2 a 3 horas",
+      "Fármacos metabolizados pela COMT (adrenalina, noradrenalina, dopamina, dobutamina, isoprenalina, apomorfina): risco de taquicardia e aumento da pressão",
+      "Varfarina: pode elevar o INR, monitorar"
+    ],
+    "gestacao": "Os dados são insuficientes; o PCDT 2025 recomenda não usar inibidores da COMT na gravidez e evitá-los na amamentação.",
+    "suspensao": "Não pare de repente. A retirada brusca pode piorar os sintomas de Parkinson e, raramente, causar febre alta, rigidez e confusão. Se for preciso parar, o médico ajusta a levodopa ao mesmo tempo.",
+    "orientacoes": [
+      "Tome sempre junto com cada dose de levodopa, nunca sozinha: ela só funciona acompanhando a levodopa",
+      "A urina pode ficar alaranjada ou marrom; isso é esperado e não faz mal, mas pode manchar roupas",
+      "Se tomar ferro, deixe um intervalo de 2 a 3 horas",
+      "Avise o médico se os movimentos involuntários aumentarem nas primeiras semanas, pois pode ser preciso reduzir a levodopa"
+    ],
+    "alertasMedico": [
+      "Aumento de discinesias após o início: reduzir levodopa",
+      "Insuficiência hepática, feocromocitoma e antecedente de síndrome neuroléptica maligna ou rabdomiólise não traumática: contraindicações de bula",
+      "Uso com IMAO não seletivo",
+      "Monitorização hepática recomendada pelo PCDT 2025",
+      "Psicose na DP: ICOMT está entre os fármacos a reduzir ou suspender (PCDT 2025)"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Ministério da Saúde. PCDT da Doença de Parkinson, Portaria Conjunta SAES/SECTICS nº 16, de 01/08/2025 (publicada em 18/09/2025) https://www.gov.br/saude/pt-br/assuntos/pcdt/d/doenca-de-parkinson",
+      "Bula Comtan e Stalevo (Novartis), bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=entacapone",
+      "Fox SH et al. MDS Evidence-Based Medicine Review: treatments for the motor symptoms of Parkinson's disease. Mov Disord 2018 https://doi.org/10.1002/mds.27372"
+    ]
+  },
+  {
+    "id": "biperideno",
+    "nome": "Biperideno",
+    "marcas": [
+      "Akineton",
+      "Akineton Retard",
+      "Cinetol"
+    ],
+    "classe": "Antiparkinsoniano anticolinérgico (antimuscarínico)",
+    "indicacoes": [
+      "parkinson",
+      "outro"
+    ],
+    "apresentacoes": [
+      "Comprimido 2 mg",
+      "Comprimido de liberação controlada 4 mg (Akineton Retard)",
+      "Solução injetável 5 mg/mL (uso hospitalar)"
+    ],
+    "posologiaUsual": "Início com 1 mg 2 vezes ao dia, com aumentos graduais; dose terapêutica usual de 2 a 8 mg/dia em 2 a 4 tomadas (PCDT 2025). No parkinsonismo por antipsicóticos, 1 a 4 mg de 1 a 4 vezes ao dia.",
+    "doseMaxDia": "16 mg/dia (bula)",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a até 6 meses de tratamento por se tratar de antiparkinsoniano (art. 59, parágrafo único). Acima disso, o prescritor deve justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026).",
+    "efeitosComuns": [
+      "Boca seca",
+      "Visão embaçada",
+      "Prisão de ventre",
+      "Dificuldade para urinar",
+      "Sonolência ou tontura",
+      "Esquecimento ou confusão, principalmente em pessoas mais velhas"
+    ],
+    "sinaisAlerta": [
+      "Confusão forte, agitação ou ver coisas que não existem",
+      "Não conseguir urinar",
+      "Dor forte no olho com visão embaçada e vermelhidão",
+      "Febre ou calor excessivo sem conseguir suar, principalmente em dias quentes",
+      "Coração muito acelerado"
+    ],
+    "monitorizacao": [
+      "Cognição e alucinações a cada consulta; evitar em idosos (PCDT 2025; Critérios de Beers)",
+      "Retenção urinária, sintomas de próstata e constipação",
+      "Sintomas de glaucoma de ângulo fechado",
+      "Sinais de uso abusivo (efeito euforizante descrito)",
+      "Reavaliar periodicamente a necessidade, sobretudo no parkinsonismo induzido por antipsicótico"
+    ],
+    "interacoes": [
+      "Outros anticolinérgicos (tricíclicos, anti-histamínicos antigos, oxibutinina, amantadina, alguns antipsicóticos): somam efeitos",
+      "Donepezila, rivastigmina e galantamina: efeitos opostos, a associação reduz o benefício de ambos",
+      "Álcool e sedativos: mais sonolência",
+      "Metoclopramida: efeitos opostos no trato digestivo"
+    ],
+    "gestacao": "Não há estudos adequados em gestantes; use apenas se o médico considerar claramente necessário. Evite na amamentação, pois pode passar para o leite e reduzir sua produção.",
+    "suspensao": "Não pare de repente. A suspensão brusca pode causar piora rápida da rigidez e do tremor (efeito rebote) e mal-estar. A retirada deve ser gradual, orientada pelo médico.",
+    "orientacoes": [
+      "Tome durante ou após as refeições para reduzir o desconforto no estômago",
+      "Beba água ao longo do dia; balas ou gomas sem açúcar ajudam na boca seca",
+      "Evite calor excessivo e exercícios intensos em dias quentes, porque o remédio reduz o suor",
+      "O comprimido Retard deve ser engolido inteiro"
+    ],
+    "alertasMedico": [
+      "Anticolinérgico em idoso ou com comprometimento cognitivo: evitar (PCDT 2025; Beers)",
+      "Associação com inibidor da colinesterase: antagonismo farmacodinâmico",
+      "Glaucoma de ângulo fechado, retenção urinária e obstrução intestinal: contraindicações",
+      "Psicose na DP: reduzir ou suspender anticolinérgicos primeiro (PCDT 2025)",
+      "Potencial de abuso"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Ministério da Saúde. PCDT da Doença de Parkinson, Portaria Conjunta SAES/SECTICS nº 16, de 01/08/2025 (publicada em 18/09/2025) https://www.gov.br/saude/pt-br/assuntos/pcdt/d/doenca-de-parkinson",
+      "Bula Akineton (Abbott) e Cinetol (Cristália), bulário Anvisa",
+      "American Geriatrics Society Beers Criteria (2023) https://doi.org/10.1111/jgs.18372"
+    ]
+  },
+  {
+    "id": "donepezila",
+    "nome": "Donepezila",
+    "marcas": [
+      "Eranz",
+      "Epéz",
+      "Labrea",
+      "genéricos"
+    ],
+    "classe": "Antidemencial (inibidor da acetilcolinesterase)",
+    "indicacoes": [
+      "demencia"
+    ],
+    "apresentacoes": [
+      "Comprimido revestido 5 mg e 10 mg"
+    ],
+    "posologiaUsual": "5 mg 1 vez ao dia, à noite; após 4 a 6 semanas, aumentar para 10 mg/dia, dose usual de manutenção.",
+    "doseMaxDia": "10 mg/dia (apresentações disponíveis no Brasil)",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a no máximo 60 dias de tratamento (art. 59, caput); a exceção de 6 meses vale apenas para antiparkinsonianos e anticonvulsivantes. Acima disso, justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026).",
+    "efeitosComuns": [
+      "Enjoo, vômitos ou diarreia, principalmente no início ou após aumento da dose",
+      "Perda de apetite e de peso",
+      "Insônia ou sonhos vívidos",
+      "Cãibras musculares",
+      "Cansaço",
+      "Tontura"
+    ],
+    "sinaisAlerta": [
+      "Desmaio, tontura forte ou batimentos muito lentos",
+      "Fezes pretas, vômito com sangue ou dor forte no estômago",
+      "Vômitos que não param ou sinais de desidratação",
+      "Convulsão",
+      "Falta de ar ou chiado no peito piorando"
+    ],
+    "monitorizacao": [
+      "Reavaliação clínica e cognitiva (MEEM e CDR) 3 a 4 meses após o início e depois a cada 6 meses (PCDT 2025)",
+      "Frequência cardíaca e síncope a cada consulta; ECG basal se bradicardia, distúrbio de condução, betabloqueador ou digoxina, ou fármacos que prolongam o QT",
+      "Peso e apetite",
+      "Sintomas digestivos e risco de sangramento (AINE, úlcera prévia)",
+      "Critérios de interrupção do PCDT (sem benefício após 6 meses)"
+    ],
+    "interacoes": [
+      "Anticolinérgicos (biperideno, oxibutinina, tricíclicos, anti-histamínicos antigos): reduzem o efeito",
+      "Betabloqueadores, digoxina, amiodarona, verapamil e diltiazem: maior risco de bradicardia",
+      "Cetoconazol, itraconazol, eritromicina, fluoxetina e quinidina aumentam os níveis; carbamazepina, fenitoína, fenobarbital, rifampicina e álcool reduzem",
+      "AINEs: maior risco de úlcera",
+      "Succinilcolina: prolonga o relaxamento muscular na anestesia",
+      "Outros fármacos que prolongam o QT (citalopram, antipsicóticos, macrolídeos)"
+    ],
+    "gestacao": "Não há dados adequados em gestantes; não é recomendada na gravidez nem na amamentação.",
+    "suspensao": "Parar de repente não costuma ser perigoso, mas a memória e o comportamento podem piorar em algumas semanas. Não interrompa sem falar com o médico. Se ficar vários dias sem tomar, pergunte antes de retomar a dose cheia, porque pode ser preciso recomeçar com dose menor.",
+    "orientacoes": [
+      "Tome 1 vez ao dia, de preferência à noite antes de deitar, com ou sem alimentos",
+      "Se tiver insônia ou sonhos muito vívidos, pergunte ao médico sobre tomar pela manhã",
+      "Um familiar ou cuidador pode ajudar a organizar as tomadas e observar efeitos",
+      "Avise antes de qualquer cirurgia que você usa este remédio"
+    ],
+    "alertasMedico": [
+      "Bradicardia sintomática, BAV de 2º ou 3º grau ou doença do nó sinusal: exclusão pelo PCDT 2025",
+      "Cascata de prescrição com anticolinérgicos (por exemplo, oxibutinina para incontinência)",
+      "Prolongamento do QT e torsades relatados: atenção a fármacos que prolongam o QT",
+      "Asma ou DPOC grave, úlcera péptica e convulsões: cautela",
+      "PCDT 2025: donepezila também na DA grave, em monoterapia ou combinada com memantina"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Ministério da Saúde. PCDT da Doença de Alzheimer, Portaria Conjunta SAES/SCTIE nº 27, de 27/11/2025 https://www.gov.br/conitec/pt-br/midias/protocolos/pcdt-da-doenca-de-alzheimer",
+      "Bula Eranz e genéricos de cloridrato de donepezila, bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=donepezil",
+      "NICE NG97. Dementia: assessment, management and support (2018) https://www.nice.org.uk/guidance/ng97"
+    ]
+  },
+  {
+    "id": "rivastigmina-oral",
+    "nome": "Rivastigmina (cápsula e solução oral)",
+    "marcas": [
+      "Exelon",
+      "genéricos"
+    ],
+    "classe": "Antidemencial (inibidor da acetil e butirilcolinesterase)",
+    "indicacoes": [
+      "demencia",
+      "parkinson"
+    ],
+    "apresentacoes": [
+      "Cápsula 1,5 mg, 3 mg, 4,5 mg e 6 mg",
+      "Solução oral 2 mg/mL"
+    ],
+    "posologiaUsual": "1,5 mg 2 vezes ao dia com as refeições; aumentar a cada 2 semanas ou mais para 3 mg, 4,5 mg e 6 mg 2 vezes ao dia, conforme tolerância; manutenção usual de 6 a 12 mg/dia.",
+    "doseMaxDia": "12 mg/dia (6 mg 2 vezes ao dia)",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a no máximo 60 dias de tratamento (art. 59, caput); a exceção de 6 meses vale apenas para antiparkinsonianos e anticonvulsivantes. Acima disso, justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026).",
+    "efeitosComuns": [
+      "Enjoo e vômitos, os mais comuns, sobretudo ao aumentar a dose",
+      "Diarreia",
+      "Perda de apetite e de peso",
+      "Tontura e dor de cabeça",
+      "Cansaço ou sonolência",
+      "Piora leve do tremor em quem tem Parkinson"
+    ],
+    "sinaisAlerta": [
+      "Vômitos repetidos ou dificuldade para comer e beber",
+      "Desmaio ou batimentos muito lentos",
+      "Fezes pretas ou vômito com sangue",
+      "Piora importante do tremor ou da rigidez",
+      "Convulsão"
+    ],
+    "monitorizacao": [
+      "Peso a cada consulta",
+      "Frequência cardíaca e síncope; ECG se doença de condução ou bradicardizantes",
+      "Tolerância digestiva a cada aumento de dose",
+      "Na demência da DP: tremor e parkinsonismo (interromper temporariamente se piora extrapiramidal ou efeito digestivo, PCDT 2025)",
+      "Reavaliação em 3 a 4 meses e depois a cada 6 meses (MEEM e CDR)"
+    ],
+    "interacoes": [
+      "Anticolinérgicos (biperideno, oxibutinina, tricíclicos): reduzem o efeito",
+      "Betabloqueadores e outros bradicardizantes: maior risco de bradicardia e desmaio",
+      "Metoclopramida: evitar, por somar efeitos extrapiramidais",
+      "Succinilcolina: prolonga o bloqueio neuromuscular na anestesia",
+      "Antipsicóticos: podem piorar efeitos extrapiramidais"
+    ],
+    "gestacao": "Os dados em gestantes são insuficientes; use apenas se claramente necessário. Não amamente durante o uso.",
+    "suspensao": "Parar de repente não costuma ser perigoso, mas a memória e o comportamento podem piorar. Se ficar mais de 3 dias sem tomar, não volte direto à dose anterior: fale com o médico, porque é preciso recomeçar pela dose mais baixa para evitar vômitos fortes.",
+    "orientacoes": [
+      "Tome 2 vezes ao dia junto com o café da manhã e o jantar, para reduzir o enjoo",
+      "Engula as cápsulas inteiras",
+      "A solução oral deve ser medida com a seringa dosadora da embalagem e pode ser tomada pura ou misturada em um copo pequeno de água, suco frio ou refrigerante",
+      "Pese-se com regularidade e conte ao médico se estiver emagrecendo"
+    ],
+    "alertasMedico": [
+      "Interrupção por mais de 3 dias: reiniciar na menor dose (risco de vômitos graves)",
+      "Perda de peso significativa",
+      "Bradicardia, síncope ou distúrbio de condução",
+      "Piora extrapiramidal na doença de Parkinson",
+      "Única IAChE preconizada pelo PCDT 2025 para demência da doença de Parkinson"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Ministério da Saúde. PCDT da Doença de Alzheimer, Portaria Conjunta SAES/SCTIE nº 27, de 27/11/2025 https://www.gov.br/conitec/pt-br/midias/protocolos/pcdt-da-doenca-de-alzheimer",
+      "Ministério da Saúde. PCDT da Doença de Parkinson, Portaria Conjunta SAES/SECTICS nº 16, de 01/08/2025 (publicada em 18/09/2025) https://www.gov.br/saude/pt-br/assuntos/pcdt/d/doenca-de-parkinson",
+      "Bula Exelon (rivastigmina), bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=rivastigmine",
+      "Seppi K et al. MDS Evidence-Based Medicine Review: treatments for nonmotor symptoms of Parkinson's disease. Mov Disord 2019 https://doi.org/10.1002/mds.27602"
+    ]
+  },
+  {
+    "id": "rivastigmina-adesivo",
+    "nome": "Rivastigmina (adesivo transdérmico)",
+    "marcas": [
+      "Exelon Patch",
+      "genéricos"
+    ],
+    "classe": "Antidemencial (inibidor da acetil e butirilcolinesterase)",
+    "indicacoes": [
+      "demencia",
+      "parkinson"
+    ],
+    "apresentacoes": [
+      "Adesivo 5 cm² com 9 mg (libera 4,6 mg/24 h)",
+      "Adesivo 10 cm² com 18 mg (libera 9,5 mg/24 h)",
+      "Adesivo 15 cm² com 27 mg (libera 13,3 mg/24 h)"
+    ],
+    "posologiaUsual": "Iniciar com 4,6 mg/24 h por no mínimo 4 semanas e passar a 9,5 mg/24 h, dose considerada efetiva; 1 adesivo a cada 24 horas.",
+    "doseMaxDia": "13,3 mg/24 h (adesivo 15 cm², bula); o PCDT 2025 disponibiliza até 9,5 mg/24 h",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a no máximo 60 dias de tratamento (art. 59, caput); a exceção de 6 meses vale apenas para antiparkinsonianos e anticonvulsivantes. Acima disso, justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026).",
+    "efeitosComuns": [
+      "Vermelhidão ou coceira leve no local do adesivo",
+      "Enjoo ou vômitos, menos frequentes que com as cápsulas",
+      "Diarreia",
+      "Perda de apetite e de peso",
+      "Tontura ou dor de cabeça"
+    ],
+    "sinaisAlerta": [
+      "Vômitos repetidos, suor intenso, muita salivação ou batimentos muito lentos, principalmente se mais de um adesivo foi colocado por engano",
+      "Reação de pele que se espalha além do local do adesivo, com bolhas ou inchaço",
+      "Desmaio",
+      "Fezes pretas ou vômito com sangue"
+    ],
+    "monitorizacao": [
+      "Pele nos locais de aplicação (suspender se dermatite alérgica que se espalha)",
+      "Peso e apetite",
+      "Frequência cardíaca e síncope",
+      "Rotina de troca e retirada com o cuidador (erros com múltiplos adesivos)",
+      "Reavaliação em 3 a 4 meses e depois a cada 6 meses (MEEM e CDR)"
+    ],
+    "interacoes": [
+      "Anticolinérgicos (biperideno, oxibutinina, tricíclicos): reduzem o efeito",
+      "Betabloqueadores e outros bradicardizantes: maior risco de bradicardia e desmaio",
+      "Metoclopramida: evitar, por somar efeitos extrapiramidais",
+      "Succinilcolina: prolonga o bloqueio neuromuscular na anestesia",
+      "Antipsicóticos: podem piorar efeitos extrapiramidais"
+    ],
+    "gestacao": "Os dados em gestantes são insuficientes; use apenas se claramente necessário. Não amamente durante o uso.",
+    "suspensao": "Parar de repente não costuma ser perigoso, mas os sintomas podem piorar. Se ficar mais de 3 dias sem usar, fale com o médico antes de recomeçar: em geral é preciso voltar ao adesivo de menor dose.",
+    "orientacoes": [
+      "Troque o adesivo a cada 24 horas, sempre no mesmo horário, e retire o anterior antes de colocar o novo; nunca use dois ao mesmo tempo",
+      "Aplique em pele limpa, seca, sem pelos e sem feridas na parte superior das costas, braço ou peito, pressionando por cerca de 30 segundos; mude o local a cada dia e não repita o mesmo ponto antes de 14 dias",
+      "Não corte o adesivo e evite calor direto sobre ele, como bolsa de água quente, sauna ou sol forte por muito tempo",
+      "Depois de usar, dobre o adesivo com a parte colante para dentro, descarte longe de crianças e lave as mãos"
+    ],
+    "alertasMedico": [
+      "Erro de medicação com múltiplos adesivos: toxicidade colinérgica",
+      "Dermatite alérgica disseminada: suspender",
+      "Interrupção por mais de 3 dias: reiniciar com 4,6 mg/24 h",
+      "Conversão da via oral: menos de 6 mg/dia oral para 4,6 mg/24 h; 6 a 12 mg/dia para 9,5 mg/24 h, com o primeiro adesivo no dia seguinte à última dose oral (PCDT 2025)",
+      "Peso abaixo de 50 kg: mais efeitos adversos (bula)"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Ministério da Saúde. PCDT da Doença de Alzheimer, Portaria Conjunta SAES/SCTIE nº 27, de 27/11/2025 https://www.gov.br/conitec/pt-br/midias/protocolos/pcdt-da-doenca-de-alzheimer",
+      "Ministério da Saúde. PCDT da Doença de Parkinson, Portaria Conjunta SAES/SECTICS nº 16, de 01/08/2025 (publicada em 18/09/2025) https://www.gov.br/saude/pt-br/assuntos/pcdt/d/doenca-de-parkinson",
+      "Bula Exelon Patch (rivastigmina transdérmica), bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=rivastigmine+transdermal"
+    ]
+  },
+  {
+    "id": "galantamina",
+    "nome": "Galantamina",
+    "marcas": [
+      "Reminyl ER",
+      "genéricos"
+    ],
+    "classe": "Antidemencial (inibidor da acetilcolinesterase e modulador nicotínico)",
+    "indicacoes": [
+      "demencia"
+    ],
+    "apresentacoes": [
+      "Cápsula de liberação prolongada 8 mg, 16 mg e 24 mg"
+    ],
+    "posologiaUsual": "8 mg 1 vez ao dia pela manhã por 4 semanas; depois 16 mg/dia de manutenção por pelo menos 4 semanas, podendo chegar a 24 mg/dia.",
+    "doseMaxDia": "24 mg/dia; 16 mg/dia na insuficiência hepática ou renal moderada; não usar na insuficiência hepática ou renal grave (PCDT 2025)",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a no máximo 60 dias de tratamento (art. 59, caput); a exceção de 6 meses vale apenas para antiparkinsonianos e anticonvulsivantes. Acima disso, justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026).",
+    "efeitosComuns": [
+      "Enjoo e vômitos",
+      "Diarreia ou dor abdominal",
+      "Perda de apetite e de peso",
+      "Tontura e dor de cabeça",
+      "Cansaço ou sonolência",
+      "Desânimo"
+    ],
+    "sinaisAlerta": [
+      "Desmaio ou batimentos muito lentos",
+      "Manchas na pele, bolhas ou descamação, com ou sem febre",
+      "Fezes pretas ou vômito com sangue",
+      "Vômitos persistentes ou sinais de desidratação",
+      "Dificuldade para urinar",
+      "Convulsão"
+    ],
+    "monitorizacao": [
+      "Reavaliação em 3 a 4 meses e depois a cada 6 meses (MEEM e CDR)",
+      "Creatinina e transaminases (PCDT 2025)",
+      "Frequência cardíaca e síncope; ECG se doença de condução ou bradicardizantes",
+      "Peso",
+      "Pele (reações cutâneas graves raras, como Stevens-Johnson e PEGA)"
+    ],
+    "interacoes": [
+      "Anticolinérgicos: reduzem o efeito",
+      "Betabloqueadores, digoxina, amiodarona e bloqueadores de canal de cálcio: bradicardia",
+      "Paroxetina, fluoxetina, cetoconazol e eritromicina: aumentam os níveis",
+      "Succinilcolina: potencializa o bloqueio neuromuscular",
+      "AINEs: maior risco de úlcera"
+    ],
+    "gestacao": "Os dados em gestantes são insuficientes; use apenas se claramente necessário. Não amamente durante o uso.",
+    "suspensao": "Parar de repente não costuma ser perigoso, mas a memória pode piorar. Se ficar vários dias sem tomar, fale com o médico antes de recomeçar, porque pode ser preciso voltar à dose inicial.",
+    "orientacoes": [
+      "Tome 1 vez ao dia pela manhã, de preferência com o café da manhã",
+      "Engula a cápsula inteira, sem abrir nem mastigar",
+      "Beba bastante líquido durante o tratamento, sobretudo se tiver enjoo ou diarreia",
+      "Pese-se com regularidade"
+    ],
+    "alertasMedico": [
+      "Insuficiência hepática ou renal grave: contraindicada (PCDT 2025)",
+      "Insuficiência moderada: máximo de 16 mg/dia",
+      "Bradicardia, BAV ou doença do nó sinusal",
+      "Reação cutânea: suspender ao primeiro sinal de rash grave",
+      "Associação com anticolinérgicos"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Ministério da Saúde. PCDT da Doença de Alzheimer, Portaria Conjunta SAES/SCTIE nº 27, de 27/11/2025 https://www.gov.br/conitec/pt-br/midias/protocolos/pcdt-da-doenca-de-alzheimer",
+      "Bula Reminyl ER (bromidrato de galantamina), bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=galantamine",
+      "NICE NG97. Dementia: assessment, management and support (2018) https://www.nice.org.uk/guidance/ng97"
+    ]
+  },
+  {
+    "id": "memantina",
+    "nome": "Memantina",
+    "marcas": [
+      "Ebix",
+      "Alois",
+      "Heimer",
+      "Zider",
+      "genéricos"
+    ],
+    "classe": "Antidemencial (antagonista do receptor NMDA)",
+    "indicacoes": [
+      "demencia"
+    ],
+    "apresentacoes": [
+      "Comprimido revestido 10 mg e 20 mg",
+      "Solução oral e comprimido orodispersível em algumas marcas"
+    ],
+    "posologiaUsual": "5 mg/dia na 1ª semana, aumentando 5 mg por semana até 20 mg/dia na 4ª semana (10 mg 2 vezes ao dia ou 20 mg 1 vez ao dia).",
+    "doseMaxDia": "20 mg/dia; 10 mg/dia se depuração de creatinina entre 5 e 29 mL/min; não usar abaixo de 5 mL/min",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a no máximo 60 dias de tratamento (art. 59, caput); a exceção de 6 meses vale apenas para antiparkinsonianos e anticonvulsivantes. Acima disso, justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026).",
+    "efeitosComuns": [
+      "Tontura",
+      "Dor de cabeça",
+      "Sonolência ou cansaço",
+      "Prisão de ventre",
+      "Pressão um pouco mais alta",
+      "Falta de equilíbrio"
+    ],
+    "sinaisAlerta": [
+      "Confusão forte, agitação ou ver coisas que não existem",
+      "Convulsão",
+      "Desmaio ou quedas",
+      "Falta de ar com inchaço nas pernas"
+    ],
+    "monitorizacao": [
+      "Creatinina e depuração no início e periodicamente (ajuste renal)",
+      "Pressão arterial",
+      "Agitação, alucinações, tontura e quedas",
+      "Reavaliação em 3 a 4 meses e depois a cada 6 meses (MEEM e CDR), com os critérios de interrupção do PCDT 2025"
+    ],
+    "interacoes": [
+      "Amantadina, cetamina e dextrometorfano: evitar, por efeito NMDA aditivo e risco de psicose",
+      "Bicarbonato de sódio, acetazolamida e urina alcalina (dieta vegetariana estrita, infecção urinária): reduzem a eliminação",
+      "Hidroclorotiazida, cimetidina, quinidina e nicotina: podem alterar os níveis",
+      "Varfarina: monitorar o INR"
+    ],
+    "gestacao": "Os dados são insuficientes; não é recomendada na gravidez, salvo necessidade clara. Não amamente durante o uso.",
+    "suspensao": "Pode ser interrompida sem risco imediato, mas os sintomas podem piorar. Não pare sem conversar com o médico.",
+    "orientacoes": [
+      "Tome sempre no mesmo horário, com ou sem alimentos, 1 ou 2 vezes ao dia conforme a receita",
+      "No início, siga exatamente o esquema de aumento semanal",
+      "Levante-se com calma e tome cuidado para evitar quedas se sentir tontura",
+      "Avise o médico se você tem problema nos rins"
+    ],
+    "alertasMedico": [
+      "Depuração de creatinina abaixo de 30 mL/min: máximo de 10 mg/dia; abaixo de 5 mL/min: exclusão (PCDT 2025)",
+      "Associação com amantadina",
+      "Epilepsia: cautela",
+      "PCDT 2025: memantina na DA moderada a grave e combinação livre de donepezila com memantina na DA grave"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Ministério da Saúde. PCDT da Doença de Alzheimer, Portaria Conjunta SAES/SCTIE nº 27, de 27/11/2025 https://www.gov.br/conitec/pt-br/midias/protocolos/pcdt-da-doenca-de-alzheimer",
+      "Bula Ebix (cloridrato de memantina, Lundbeck), bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=memantine",
+      "NICE NG97. Dementia: assessment, management and support (2018) https://www.nice.org.uk/guidance/ng97"
+    ]
+  },
+  {
+    "id": "quetiapina",
+    "nome": "Quetiapina",
+    "marcas": [
+      "Seroquel",
+      "Seroquel XRO",
+      "genéricos"
+    ],
+    "classe": "Antipsicótico atípico (uso off-label na psicose da doença de Parkinson e da demência)",
+    "indicacoes": [
+      "parkinson",
+      "demencia",
+      "outro"
+    ],
+    "apresentacoes": [
+      "Comprimido revestido 25 mg, 100 mg, 200 mg e 300 mg",
+      "Comprimido de liberação prolongada 50 mg, 200 mg e 300 mg (Seroquel XRO)"
+    ],
+    "posologiaUsual": "Na psicose da doença de Parkinson ou da demência (off-label): iniciar com 12,5 a 25 mg à noite e usar a menor dose eficaz, em geral 25 a 100 mg/dia. As indicações psiquiátricas aprovadas usam doses bem maiores.",
+    "doseMaxDia": "800 mg/dia (bula, esquizofrenia e transtorno bipolar); em idosos com Parkinson ou demência usam-se doses baixas, em geral até 100 mg/dia",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a no máximo 60 dias de tratamento (art. 59, caput); a exceção de 6 meses vale apenas para antiparkinsonianos e anticonvulsivantes. Acima disso, justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026).",
+    "efeitosComuns": [
+      "Sonolência",
+      "Tontura ao se levantar",
+      "Boca seca",
+      "Prisão de ventre",
+      "Aumento do apetite e do peso",
+      "Cansaço"
+    ],
+    "sinaisAlerta": [
+      "Febre alta com rigidez muscular, confusão e suor intenso",
+      "Desmaio, quedas ou palpitações",
+      "Sonolência tão intensa que é difícil acordar",
+      "Muita sede e muita urina",
+      "Fraqueza de um lado do corpo, fala enrolada ou boca torta: procure a emergência",
+      "Movimentos involuntários na boca ou na língua"
+    ],
+    "monitorizacao": [
+      "Reavaliar a necessidade a cada consulta e tentar reduzir ou retirar em até 4 meses após a resposta, se os sintomas permitirem (APA 2016)",
+      "Peso, glicemia e lipídios no início, em 12 semanas e depois anualmente",
+      "Pressão arterial em pé, sedação e quedas",
+      "ECG se doença cardíaca, distúrbio eletrolítico ou outros fármacos que prolongam o QT",
+      "Parkinsonismo e cognição"
+    ],
+    "interacoes": [
+      "Cetoconazol, itraconazol, claritromicina, ritonavir e suco de toranja: aumentam muito os níveis, evitar",
+      "Carbamazepina, fenitoína e rifampicina: reduzem o efeito",
+      "Outros fármacos que prolongam o QT (citalopram, amiodarona, macrolídeos, ondansetrona)",
+      "Benzodiazepínicos, opioides, álcool e outros sedativos: somam sedação e risco de queda",
+      "Levodopa e agonistas dopaminérgicos: efeitos opostos, embora a quetiapina bloqueie pouco o receptor D2"
+    ],
+    "gestacao": "Use na gravidez apenas se o benefício justificar; o uso no 3º trimestre pode causar sintomas de abstinência ou movimentos anormais no recém-nascido. Converse com o médico antes de engravidar.",
+    "suspensao": "Não pare de repente: pode causar insônia, enjoo, vômitos e a volta dos sintomas. A redução deve ser gradual, com orientação médica.",
+    "orientacoes": [
+      "Tome à noite, porque o remédio dá sono",
+      "O comprimido XRO deve ser engolido inteiro, sempre no mesmo horário, sem refeição pesada",
+      "Levante-se devagar e deixe uma luz acesa à noite para evitar quedas",
+      "Evite bebidas alcoólicas"
+    ],
+    "alertasMedico": [
+      "Quetiapina em demência: alerta de mortalidade aumentada (boxed warning FDA; advertência na bula brasileira) e de eventos cerebrovasculares; não aprovada para psicose associada à demência",
+      "Psicose na DP: PCDT 2025 indica clozapina e desaconselha os demais antipsicóticos (quetiapina não superior ao placebo em ECR); MDS 2019 classifica a quetiapina como possivelmente útil com evidência insuficiente",
+      "Antes de antipsicótico na DP: reduzir anticolinérgicos, amantadina, agonistas, IMAO-B e ICOMT",
+      "Prolongamento do QT e interação com inibidores do CYP3A4",
+      "Síndrome metabólica",
+      "Ideação suicida em menores de 25 anos (boxed warning)"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Ministério da Saúde. PCDT da Doença de Parkinson, Portaria Conjunta SAES/SECTICS nº 16, de 01/08/2025 (publicada em 18/09/2025) https://www.gov.br/saude/pt-br/assuntos/pcdt/d/doenca-de-parkinson",
+      "Seppi K et al. MDS Evidence-Based Medicine Review: treatments for nonmotor symptoms of Parkinson's disease. Mov Disord 2019 https://doi.org/10.1002/mds.27602",
+      "Bula Seroquel e Seroquel XRO (AstraZeneca), bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=quetiapine",
+      "American Psychiatric Association. Practice Guideline on the Use of Antipsychotics to Treat Agitation or Psychosis in Patients With Dementia (2016) https://doi.org/10.1176/appi.books.9780890426807",
+      "ADA/APA Consensus on antipsychotic drugs and obesity and diabetes (2004) https://doi.org/10.2337/diacare.27.2.596"
+    ]
+  },
+  {
+    "id": "trazodona",
+    "nome": "Trazodona",
+    "marcas": [
+      "Donaren",
+      "Donaren Retard",
+      "genéricos"
+    ],
+    "classe": "Antidepressivo (antagonista 5-HT2A e inibidor da recaptação de serotonina); em dose baixa, usado para insônia e agitação",
+    "indicacoes": [
+      "sono",
+      "demencia",
+      "outro"
+    ],
+    "apresentacoes": [
+      "Comprimido 50 mg e 100 mg",
+      "Comprimido de liberação prolongada 150 mg (Donaren Retard)"
+    ],
+    "posologiaUsual": "Insônia ou agitação na demência (off-label): 25 a 100 mg à noite. Depressão: iniciar com 50 a 150 mg/dia e ajustar conforme bula.",
+    "doseMaxDia": "400 mg/dia em pacientes ambulatoriais (até 600 mg/dia em internados, bula); em idosos com demência usam-se doses baixas",
+    "portaria344": "C1",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias, válida por 30 dias a partir da emissão em todo o território nacional (art. 52, §1º, Portaria SVS/MS 344/1998); CPF do paciente obrigatório (art. 55, b, redação da RDC 1.000/2025). Quantidade limitada a no máximo 60 dias de tratamento (art. 59, caput); a exceção de 6 meses vale apenas para antiparkinsonianos e anticonvulsivantes. Acima disso, justificar com CID ou diagnóstico e posologia, datando e assinando as duas vias (art. 60). Receita eletrônica: só por serviço de prescrição integrado ao SNCR, com assinatura qualificada ICP-Brasil, em via única; SNCR previsto até 30/09/2026, e receitas sem numeração SNCR aceitas por até 30 dias após o início do registro (RDC 1.000/2025, alterada pela RDC 1.028/2026).",
+    "efeitosComuns": [
+      "Sonolência, inclusive na manhã seguinte",
+      "Tontura ao se levantar",
+      "Boca seca",
+      "Dor de cabeça",
+      "Enjoo",
+      "Visão embaçada"
+    ],
+    "sinaisAlerta": [
+      "Ereção prolongada e dolorosa por mais de 4 horas: procure a emergência",
+      "Desmaio, palpitações ou batimento irregular",
+      "Agitação, febre, suor, tremores e contrações musculares, principalmente junto com outros antidepressivos",
+      "Confusão, dor de cabeça forte e fraqueza (possível sódio baixo)",
+      "Sangramentos incomuns",
+      "Pensamentos de se machucar"
+    ],
+    "monitorizacao": [
+      "Sedação matinal, pressão arterial em pé e quedas em idosos",
+      "ECG se cardiopatia, QT longo ou fármacos que prolongam o QT",
+      "Sódio se houver sintomas ou uso de diurético ou ISRS em idoso",
+      "Reavaliar a necessidade periodicamente e priorizar medidas não farmacológicas para o sono",
+      "Ideação suicida em jovens (boxed warning)"
+    ],
+    "interacoes": [
+      "Outros serotoninérgicos (ISRS, IRSN, tramadol, triptanos, lítio) e rasagilina: risco de síndrome serotoninérgica; IMAO não seletivos contraindicados (intervalo de 14 dias)",
+      "Cetoconazol, itraconazol, ritonavir e claritromicina: aumentam os níveis",
+      "Carbamazepina: reduz o efeito",
+      "Fármacos que prolongam o QT",
+      "Anticoagulantes, antiagregantes e AINEs: maior risco de sangramento",
+      "Álcool, benzodiazepínicos e outros sedativos: sonolência e quedas",
+      "Anti-hipertensivos: queda de pressão"
+    ],
+    "gestacao": "Os dados são limitados; use apenas se o benefício justificar e com orientação médica. Passa em pequena quantidade para o leite materno.",
+    "suspensao": "Em doses mais altas ou após uso prolongado, não pare de repente: pode causar ansiedade, insônia, irritabilidade e mal-estar. Reduza aos poucos, com orientação médica.",
+    "orientacoes": [
+      "Tome logo após uma refeição ou lanche, o que reduz a tontura",
+      "Para o sono, tome cerca de 30 minutos antes de deitar",
+      "O comprimido de liberação prolongada não deve ser mastigado nem triturado",
+      "Levante-se devagar à noite e evite bebidas alcoólicas"
+    ],
+    "alertasMedico": [
+      "Priapismo",
+      "Prolongamento do QT e arritmia; evitar com outros fármacos que prolongam o QT",
+      "Síndrome serotoninérgica com IMAO-B (rasagilina) e outros serotoninérgicos",
+      "Hipotensão ortostática e quedas em idosos",
+      "Uso off-label para sono ou agitação na demência: evidência de baixa certeza (Cochrane 2020: 50 mg melhorou o tempo total de sono na DA moderada a grave)",
+      "Boxed warning: suicidalidade em menores de 25 anos"
+    ],
+    "fontes": [
+      "Anvisa. RDC nº 1.036, de 09/07/2026: Anexo I da Portaria SVS/MS 344/1998, Atualização nº 101, lista C1 (2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Portaria SVS/MS nº 344/1998, texto compilado (arts. 52, 55, 59 e 60), AnvisaLegis (consultado em 09/2026) https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Anvisa. RDC nº 1.000/2025 (receituários eletrônicos), alterada pela RDC nº 1.028/2026 https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001000&seqAto=000&valorAno=2025&orgao=RDC%2FDC%2FANVISA%2FMS&codTipo=&desItem=&desItemFim=&cod_menu=1696&cod_modulo=134&pesquisa=true",
+      "Bula Donaren e Donaren Retard (cloridrato de trazodona), bulário Anvisa",
+      "FDA label (DailyMed) https://dailymed.nlm.nih.gov/dailymed/search.cfm?query=trazodone",
+      "McCleery J, Sharpley AL. Pharmacotherapies for sleep disturbances in dementia. Cochrane Database Syst Rev 2020 https://doi.org/10.1002/14651858.CD009178.pub4",
+      "NICE NG97. Dementia: assessment, management and support (2018) https://www.nice.org.uk/guidance/ng97"
+    ]
+  }
+]
