@@ -1,19 +1,30 @@
-# Backend Firebase do Meu Neuro
+# Backend Firebase do RefilMed
 
-O app funciona sem backend (modo local). Para uso real — paciente no celular dele, médico no
-computador — é preciso um projeto Firebase **próprio** do Meu Neuro. Criar projeto, mexer em IAM,
-chaves e cobrança é feito pelo dono.
+Projeto **refilmed** (https://console.firebase.google.com/project/refilmed), conta matheusparente1@gmail.com. Criado em 24/09/2026.
 
-1. Console Firebase → novo projeto (ex.: `meuneuro`), plano **Blaze**, região `southamerica-east1`.
-2. Authentication → habilitar **Anônimo** (pacientes) e **E-mail/senha** (médicos).
-3. Firestore → criar banco em `southamerica-east1`.
-4. Google Cloud do mesmo projeto → habilitar **Vertex AI API**.
-5. Na pasta do projeto: `firebase use <id>` e `firebase deploy --only functions,firestore:rules`.
-   Defina a variável `ADMIN_EMAILS` da função `definirMedico` com o e-mail do administrador.
-6. Colar a configuração web em `config.js` e publicar.
-7. Criar a conta de cada médico (Authentication) e dar a permissão chamando `definirMedico`
-   logado como administrador (o painel de administração é pendência).
+## Já feito
+- Projeto, app web e configuração em `config.js` (pública por design; `ativo: false` mantém o site em demonstração).
+- Firestore em `southamerica-east1`, com regras publicadas (`firestore.rules`):
+  paciente (login anônimo) cria e vê só o próprio pedido; só médicos aprovados listam e atendem;
+  cada profissional mantém o próprio perfil em `medicos/{uid}`; "aprovado" só o servidor grava.
+- Login ligado no console: **Anônimo** e **E-mail/senha**; domínio `medtechbr.com.br` autorizado.
+- APIs habilitadas: Firestore, Identity Toolkit, Vertex AI, Cloud Functions, Eventarc, Storage.
+- Testado em 24/09: pedido fictício gravado com login anônimo, consulta do paciente funcionando e
+  leitura/listagem sem login recusadas (403). O documento de teste tem o nome começando por "[TESTE]".
 
-Regras: o paciente cria e lê só o próprio pedido; só contas com a permissão `medico` listam e
-atendem; o paciente consulta de outro aparelho pela função `consultarPedido` (código + nascimento).
-O PDF assinado fica no documento do pedido (até 700 KB); com volume real, mover para o Storage.
+## Testar o modo real antes de ligar para todos
+Abra o site com `?backend=firebase` (vale para aquele navegador; `?backend=local` volta).
+
+## Aprovar médicos e atendentes
+- A pessoa cria a conta em Entrar → Médico/Atendente → "criar agora" (ela mesma define a senha).
+- Aprovação: tela `#/admin` (precisa das funções) ou, antes do Blaze, no terminal:
+  `python3 tools/definir_papel.py email@exemplo.com medico` (ou `atendente`, `admin`).
+  Para você virar administrador: crie sua conta pelo site e rode `... seuemail admin`.
+
+## Falta (depende de você)
+1. **Plano Blaze** (Uso e faturamento). Depois, duplo clique em `publicar-servidor.command`:
+   publica as funções (IA, consulta por código, verificação, assinatura VIDaaS, QR do ITI, aprovação)
+   e as regras do Storage.
+2. **VIDaaS:** cadastrar a aplicação RefilMed na Valid e colocar o `VIDAAS_CLIENT_ID` em
+   `functions/.env.refilmed`; rodar o script de novo.
+3. Ligar para todos: `ativo: true` em `config.js` e publicar o site.

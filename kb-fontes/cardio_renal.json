@@ -1,0 +1,1316 @@
+[
+ {
+  "id": "losartana",
+  "nome": "Losartana",
+  "marcas": [
+   "Cozaar",
+   "Aradois",
+   "Corus"
+  ],
+  "classe": "Bloqueador do receptor da angiotensina II (BRA)",
+  "indicacoes": [
+   "hipertensao",
+   "coracao",
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "25 mg comprimido revestido",
+   "50 mg comprimido revestido",
+   "100 mg comprimido revestido"
+  ],
+  "posologiaUsual": "HAS: 50 mg 1x/dia, podendo subir para 100 mg/dia (inicial 25 mg se hipovolemia). IC: iniciar 12,5 mg/dia e titular semanalmente até 50 mg/dia. Nefropatia do DM2 com proteinúria: 50 a 100 mg 1x/dia. Com ou sem alimento.",
+  "doseMaxDia": "100 mg/dia",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Você pode sentir tontura, principalmente ao levantar rápido nos primeiros dias",
+   "Cansaço leve",
+   "Aumento do potássio no sangue, que só aparece em exame",
+   "Pressão baixa se estiver desidratado, com vômitos ou diarreia"
+  ],
+  "sinaisAlerta": [
+   "Procure atendimento urgente se tiver inchaço no rosto, lábios, língua ou garganta, falta de ar, desmaio, ou se passar a urinar muito pouco.",
+   "Fraqueza muscular intensa ou batimentos irregulares (pode ser potássio alto).",
+   "Tontura forte com desmaio."
+  ],
+  "monitorizacao": "Potássio e creatinina antes de iniciar, 1 a 2 semanas após início ou aumento de dose e depois a cada 6 a 12 meses (mais frequente em DRC, IC, idosos ou uso com espironolactona). PA em consultas e medidas domiciliares.",
+  "interacoes": [
+   "Espironolactona, amilorida, suplementos de potássio e sal light: risco de potássio alto",
+   "IECA ou alisquireno: não associar (alisquireno contraindicado em diabéticos ou DRC)",
+   "Anti-inflamatórios (AINE): reduzem o efeito e podem piorar a função renal, sobretudo com diurético",
+   "Lítio: aumenta o nível do lítio"
+  ],
+  "gestacao": "Contraindicado na gestação (risco de lesão renal e morte fetal no 2º e 3º trimestres). Mulheres que podem engravidar devem usar contracepção e, se engravidarem, avisar o médico logo para troca do remédio.",
+  "suspensao": "Não pare por conta própria: a pressão pode voltar a subir. Se tiver vômitos ou diarreia intensa e não conseguir beber líquidos, fale com o médico, pois pode ser preciso pausar temporariamente.",
+  "orientacoes": [
+   "Tome no mesmo horário todos os dias.",
+   "Evite sal light ou suplementos com potássio sem falar com o médico.",
+   "Evite anti-inflamatórios por conta própria (ibuprofeno, diclofenaco, nimesulida).",
+   "Levante devagar da cama ou da cadeira nas primeiras semanas."
+  ],
+  "alertasMedico": [
+   "Hipercalemia: atenção com espironolactona, suplementos de K, SMX-TMP e DRC",
+   "Não combinar com IECA; alisquireno contraindicado em DM ou DRC",
+   "Aumento de creatinina de até 30% após início é aceitável; acima disso investigar hipovolemia ou estenose de artéria renal",
+   "Contraindicado na gestação: checar contracepção em mulheres em idade fértil",
+   "Sem ajuste renal inicial, inclusive em diálise (bula)"
+  ],
+  "fontes": [
+   "Bula profissional Cozaar (Organon), aprovada pela Anvisa em 24/04/2025, https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/cozaar_bula_profissional.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas conferidas apenas parcialmente (as citadas nas bulas acessadas); disponibilidade comercial atual de cada marca não verificada. Cozaar tem 50 e 100 mg; 25 mg existe em genéricos (bula Aché, não aberta)."
+  ]
+ },
+ {
+  "id": "valsartana",
+  "nome": "Valsartana",
+  "marcas": [
+   "Diovan"
+  ],
+  "classe": "Bloqueador do receptor da angiotensina II (BRA)",
+  "indicacoes": [
+   "hipertensao",
+   "coracao"
+  ],
+  "apresentacoes": [
+   "40 mg comprimido revestido",
+   "80 mg comprimido revestido",
+   "160 mg comprimido revestido",
+   "320 mg comprimido revestido"
+  ],
+  "posologiaUsual": "HAS: 80 ou 160 mg 1x/dia, podendo subir para 320 mg 1x/dia ou associar diurético. IC: 40 mg 2x/dia, titulando para 80 e 160 mg 2x/dia conforme tolerância. Pós-IAM: 20 mg 2x/dia até alvo de 160 mg 2x/dia.",
+  "doseMaxDia": "320 mg/dia",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Você pode sentir tontura, principalmente ao levantar",
+   "Cansaço",
+   "Aumento do potássio ou da creatinina, visto só no exame",
+   "Pressão baixa em dias de calor ou desidratação"
+  ],
+  "sinaisAlerta": [
+   "Procure atendimento urgente se tiver inchaço no rosto, lábios, língua ou garganta, falta de ar, desmaio, ou se passar a urinar muito pouco.",
+   "Fraqueza muscular intensa ou batimentos irregulares.",
+   "Tontura forte com desmaio."
+  ],
+  "monitorizacao": "Potássio e creatinina antes, 1 a 2 semanas após início ou ajuste de dose, depois a cada 6 a 12 meses (mais frequente em IC, DRC e idosos). PA regularmente.",
+  "interacoes": [
+   "Espironolactona, suplementos de potássio, sal light: risco de potássio alto",
+   "IECA ou alisquireno: não associar",
+   "Sacubitril/valsartana (Entresto) já contém valsartana: não somar",
+   "Anti-inflamatórios (AINE): pior controle da PA e da função renal",
+   "Lítio: aumenta o nível do lítio"
+  ],
+  "gestacao": "Contraindicado na gestação (risco de lesão renal e morte fetal no 2º e 3º trimestres). Mulheres que podem engravidar devem usar contracepção e, se engravidarem, avisar o médico logo para troca do remédio.",
+  "suspensao": "Não interrompa sem orientação; a pressão pode subir e, na insuficiência cardíaca, os sintomas podem piorar. Em caso de vômitos ou diarreia intensa, procure o médico.",
+  "orientacoes": [
+   "Tome no mesmo horário, com ou sem alimento.",
+   "Não use sal light nem suplementos de potássio sem orientação.",
+   "Evite anti-inflamatórios por conta própria.",
+   "Se usar Entresto, não tome valsartana separada junto."
+  ],
+  "alertasMedico": [
+   "Hipercalemia e piora de função renal em DRC, IC e associação com antagonista mineralocorticoide",
+   "Não combinar com IECA; alisquireno contraindicado em DM",
+   "Não associar a sacubitril/valsartana",
+   "Contraindicada na gestação",
+   "No Brasil, Diovan não é aprovado para menores de 18 anos (bula)"
+  ],
+  "fontes": [
+   "Bula profissional Diovan (Novartis), aprovada pela Anvisa em 27/05/2025, https://portal.novartis.com.br/medicamentos/wp-content/uploads/2021/10/Bula-DIOVAN-Comprimido-Revestido-Medico.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas conferidas apenas parcialmente (as citadas nas bulas acessadas); disponibilidade comercial atual de cada marca não verificada."
+  ]
+ },
+ {
+  "id": "enalapril",
+  "nome": "Enalapril",
+  "marcas": [
+   "Renitec",
+   "Eupressin"
+  ],
+  "classe": "Inibidor da enzima conversora de angiotensina (IECA)",
+  "indicacoes": [
+   "hipertensao",
+   "coracao"
+  ],
+  "apresentacoes": [
+   "2,5 mg comprimido",
+   "5 mg comprimido",
+   "10 mg comprimido",
+   "20 mg comprimido"
+  ],
+  "posologiaUsual": "HAS: 10 a 20 mg/dia (manutenção usual 20 mg/dia), em 1 ou 2 tomadas; iniciar com 5 mg ou menos se uso de diurético ou hipovolemia. IC: iniciar 2,5 mg e titular. Dose inicial pela função renal: ClCr 30-80: 5-10 mg/dia; ClCr ≤ 30: 2,5-5 mg/dia.",
+  "doseMaxDia": "40 mg/dia",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Tosse seca persistente, que pode surgir semanas ou meses depois de começar",
+   "Você pode sentir tontura, principalmente ao levantar",
+   "Dor de cabeça",
+   "Cansaço",
+   "Aumento do potássio, visto só no exame"
+  ],
+  "sinaisAlerta": [
+   "Procure atendimento urgente se tiver inchaço no rosto, lábios, língua ou garganta, falta de ar, desmaio, ou se passar a urinar muito pouco.",
+   "Fraqueza muscular intensa ou batimentos irregulares.",
+   "Tontura forte com desmaio."
+  ],
+  "monitorizacao": "Potássio e creatinina antes, 1 a 2 semanas após início ou aumento de dose, depois a cada 6 a 12 meses. PA regularmente.",
+  "interacoes": [
+   "Sacubitril/valsartana: contraindicado; intervalo mínimo de 36 horas entre um e outro (risco de angioedema)",
+   "BRA ou alisquireno: não associar (alisquireno contraindicado em DM)",
+   "Espironolactona, suplementos de potássio, sal light: risco de potássio alto",
+   "Anti-inflamatórios (AINE): reduzem o efeito e pioram a função renal",
+   "Lítio: aumenta o nível do lítio"
+  ],
+  "gestacao": "Contraindicado na gestação (risco de lesão renal e morte fetal no 2º e 3º trimestres). Mulheres que podem engravidar devem usar contracepção e, se engravidarem, avisar o médico logo para troca do remédio.",
+  "suspensao": "Não pare por conta própria. Se a tosse incomodar muito, avise o médico: existe troca por outro remédio com efeito parecido. Em vômitos ou diarreia intensos, procure orientação.",
+  "orientacoes": [
+   "Tome no mesmo horário todos os dias.",
+   "Tosse seca persistente é um efeito conhecido; comente na consulta.",
+   "Não use sal light ou suplementos de potássio sem orientação.",
+   "Evite anti-inflamatórios por conta própria."
+  ],
+  "alertasMedico": [
+   "Angioedema: contraindicado com sacubitril (janela de 36 h) e se angioedema prévio com IECA",
+   "Hipercalemia: DRC, IC, antagonista mineralocorticoide, suplementos de K",
+   "Ajustar dose inicial pela função renal",
+   "Tosse frequente: trocar por BRA",
+   "Contraindicado na gestação",
+   "Renitec não comercializa mais 2,5 mg; genéricos sim (bula)"
+  ],
+  "fontes": [
+   "Bula profissional Renitec (Organon), aprovada pela Anvisa em 01/05/2025, https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/renitec_bula_profissional.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas conferidas apenas parcialmente (as citadas nas bulas acessadas); disponibilidade comercial atual de cada marca não verificada."
+  ]
+ },
+ {
+  "id": "captopril",
+  "nome": "Captopril",
+  "marcas": [
+   "Capoten"
+  ],
+  "classe": "Inibidor da enzima conversora de angiotensina (IECA)",
+  "indicacoes": [
+   "hipertensao",
+   "coracao",
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "12,5 mg comprimido",
+   "25 mg comprimido",
+   "50 mg comprimido"
+  ],
+  "posologiaUsual": "HAS: 25 mg 2 a 3x/dia, titulando até 50 mg 2 a 3x/dia; em geral não passa de 150 mg/dia. Tomar 1 hora antes das refeições. Pós-IAM: titular até 150 mg/dia em doses divididas.",
+  "doseMaxDia": "150 mg/dia (usual na HAS; bula admite teto absoluto de 450 mg/dia)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Tosse seca persistente",
+   "Alteração ou perda do paladar",
+   "Você pode sentir tontura ao levantar",
+   "Coceira ou manchas vermelhas na pele",
+   "Aumento do potássio, visto só no exame"
+  ],
+  "sinaisAlerta": [
+   "Procure atendimento urgente se tiver inchaço no rosto, lábios, língua ou garganta, falta de ar, desmaio, ou se passar a urinar muito pouco.",
+   "Febre, dor de garganta ou feridas na boca sem explicação (raramente o remédio baixa as defesas do sangue).",
+   "Fraqueza muscular intensa ou batimentos irregulares."
+  ],
+  "monitorizacao": "Potássio e creatinina antes, 1 a 2 semanas após início ou ajuste, depois a cada 6 a 12 meses. Proteinúria antes do tratamento se DRC e doses altas; hemograma se doença autoimune ou DRC (risco de neutropenia).",
+  "interacoes": [
+   "Sacubitril/valsartana: contraindicado (intervalo de 36 horas)",
+   "BRA ou alisquireno: não associar",
+   "Espironolactona e suplementos de potássio: potássio alto",
+   "Anti-inflamatórios (AINE): pioram PA e função renal",
+   "Lítio: aumenta o nível do lítio",
+   "Alopurinol e imunossupressores: maior risco de alterações no sangue"
+  ],
+  "gestacao": "Contraindicado na gestação (risco de lesão renal e morte fetal no 2º e 3º trimestres). Mulheres que podem engravidar devem usar contracepção e, se engravidarem, avisar o médico logo para troca do remédio.",
+  "suspensao": "Não pare sem falar com o médico; a pressão pode subir. Como o efeito é curto, não pule doses.",
+  "orientacoes": [
+   "Tome 1 hora antes das refeições, nos horários combinados (2 a 3 vezes ao dia).",
+   "Tosse seca e mudança no paladar são efeitos conhecidos; comente na consulta.",
+   "Evite sal light, suplementos de potássio e anti-inflamatórios por conta própria."
+  ],
+  "alertasMedico": [
+   "Meia-vida curta: 2-3 tomadas/dia prejudicam adesão; em uso crônico considerar IECA de dose única",
+   "Neutropenia/agranulocitose rara, maior risco em DRC e colagenoses",
+   "Hipercalemia e angioedema como os demais IECA; contraindicado com sacubitril",
+   "Contraindicado na gestação"
+  ],
+  "fontes": [
+   "Bula profissional Farmanguinhos captopril (Fiocruz), histórico de alterações até 26/04/2021, https://www.far.fiocruz.br/wp-content/uploads/2021/04/Farmanguinhos-captopril_Bula_Prof-Saude.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas conferidas apenas parcialmente (as citadas nas bulas acessadas); disponibilidade comercial atual de cada marca não verificada. Comercialização atual de Capoten não confirmada."
+  ]
+ },
+ {
+  "id": "anlodipino",
+  "nome": "Anlodipino",
+  "marcas": [
+   "Norvasc",
+   "Pressat"
+  ],
+  "classe": "Bloqueador dos canais de cálcio di-hidropiridínico",
+  "indicacoes": [
+   "hipertensao",
+   "coracao"
+  ],
+  "apresentacoes": [
+   "2,5 mg comprimido",
+   "5 mg comprimido",
+   "10 mg comprimido"
+  ],
+  "posologiaUsual": "HAS e angina: 5 mg 1x/dia, podendo chegar a 10 mg 1x/dia. Idosos, frágeis ou com insuficiência hepática: considerar início com 2,5 mg.",
+  "doseMaxDia": "10 mg/dia",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Inchaço nos tornozelos e pés, mais comum com a dose de 10 mg",
+   "Vermelhidão e calor no rosto",
+   "Dor de cabeça no início",
+   "Você pode sentir palpitação",
+   "Crescimento da gengiva, raro; mantenha boa higiene bucal"
+  ],
+  "sinaisAlerta": [
+   "Dor no peito nova ou mais forte, ou falta de ar.",
+   "Tontura forte ou desmaio.",
+   "Inchaço com falta de ar ao deitar."
+  ],
+  "monitorizacao": "PA e presença de edema em consultas; sem exames laboratoriais de rotina específicos.",
+  "interacoes": [
+   "Sinvastatina: limitar a dose (bula do Norvasc: até 20 mg/dia; bula padrão da sinvastatina: até 40 mg/dia)",
+   "Inibidores fortes da CYP3A4 (claritromicina, cetoconazol, ritonavir): aumentam o nível do anlodipino",
+   "Ciclosporina e tacrolimo: podem subir de nível",
+   "Toranja (grapefruit) em grande quantidade: pode aumentar o efeito"
+  ],
+  "gestacao": "Segurança na gestação não estabelecida (categoria C em bula): usar só se não houver alternativa mais segura, sob orientação do obstetra ou cardiologista.",
+  "suspensao": "Parar não costuma causar rebote importante, mas a pressão tende a subir; só pare com orientação médica.",
+  "orientacoes": [
+   "Tome 1 vez ao dia, sempre no mesmo horário.",
+   "Inchaço nos tornozelos é comum e não significa problema no coração; comente na consulta se incomodar.",
+   "Mantenha boa higiene bucal e visitas ao dentista."
+  ],
+  "alertasMedico": [
+   "Edema dose-dependente responde mal a diurético; associar IECA/BRA ou reduzir dose",
+   "Divergência de bulas no limite da sinvastatina com anlodipino (20 vs 40 mg/dia); o conservador é 20 mg",
+   "Cautela em IC não isquêmica (mais edema pulmonar em estudo)",
+   "Iniciar baixo em idosos e hepatopatas"
+  ],
+  "fontes": [
+   "Bula profissional Norvasc (Viatris), aprovada pela Anvisa em 11/05/2026, https://www.viatris.com.br/-/media/project/common/viatriscombr/pdf/leaflets_legacy_myl_brazil/norvasc_nvccom_17_bula-profissional_net.pdf",
+   "Bula profissional sinvastatina (Novartis), conforme bula padrão aprovada em 23/01/2025, https://portal.novartis.com.br/medicamentos/wp-content/uploads/2022/11/Bula-SINVASTATINA-Comprimido-revestido-Medico.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas conferidas apenas parcialmente (as citadas nas bulas acessadas); disponibilidade comercial atual de cada marca não verificada. Apresentação de 2,5 mg existe em genéricos, não conferida em bula nesta revisão; dose inicial de 2,5 mg em idosos/hepatopatas baseada na rotulagem FDA, citada de memória."
+  ]
+ },
+ {
+  "id": "hidroclorotiazida",
+  "nome": "Hidroclorotiazida",
+  "marcas": [
+   "Clorana"
+  ],
+  "classe": "Diurético tiazídico",
+  "indicacoes": [
+   "hipertensao",
+   "outro"
+  ],
+  "apresentacoes": [
+   "25 mg comprimido",
+   "50 mg comprimido"
+  ],
+  "posologiaUsual": "HAS: na prática atual 12,5 a 25 mg 1x/dia pela manhã, até 50 mg/dia. A bula genérica ainda cita início de 50 a 100 mg/dia, acima do usado hoje. Edema: conforme resposta.",
+  "doseMaxDia": "50 mg/dia na HAS (bula admite doses maiores para edema)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Você vai urinar mais nas primeiras horas após a dose",
+   "Queda do potássio ou do sódio, vista em exame",
+   "Aumento do ácido úrico (pode desencadear gota) e da glicose",
+   "Tontura ao levantar",
+   "Maior sensibilidade da pele ao sol"
+  ],
+  "sinaisAlerta": [
+   "Dor nos olhos ou piora súbita da visão, de horas a semanas após começar: procure atendimento no mesmo dia (reação rara de glaucoma agudo).",
+   "Fraqueza muscular intensa, câimbras fortes, confusão ou batimentos irregulares.",
+   "Crise de dor e inchaço forte em uma articulação (gota).",
+   "Lesão de pele nova ou que muda de aspecto: mostre ao médico."
+  ],
+  "monitorizacao": "Sódio, potássio, creatinina, glicemia e ácido úrico antes, 2 a 4 semanas após início ou ajuste, depois a cada 6 a 12 meses. Exame da pele periódico em uso prolongado.",
+  "interacoes": [
+   "Lítio: aumenta o nível do lítio (evitar ou monitorar)",
+   "Anti-inflamatórios (AINE): reduzem o efeito",
+   "Digoxina: potássio baixo aumenta toxicidade",
+   "Corticoides e outros diuréticos: somam perda de potássio"
+  ],
+  "gestacao": "Não deve ser usada para tratar hipertensão essencial na gestação, salvo situações raras sem alternativa (bula). Converse com o médico se planeja engravidar.",
+  "suspensao": "Não pare por conta própria; a pressão pode subir. Em dias de vômitos, diarreia ou muito calor com pouca ingestão de líquidos, fale com o médico.",
+  "orientacoes": [
+   "Tome pela manhã para não levantar à noite para urinar.",
+   "Use protetor solar e evite sol prolongado; examine sua pele e mostre lesões novas ao médico.",
+   "Mantenha hidratação normal, sem exagero."
+  ],
+  "alertasMedico": [
+   "Câncer de pele não melanoma com dose cumulativa alta (alerta Anvisa 2018-2019): examinar pele; preferir alternativa se história de CBC/CEC",
+   "Derrame coroidal, miopia aguda e glaucoma agudo de ângulo fechado",
+   "Hiponatremia em idosos; hipocalemia; hiperuricemia e hiperglicemia",
+   "Diretriz SBC 2025 prefere tiazídicos-símile (clortalidona, indapamida) por ação longa e evidência de desfechos",
+   "Efeito reduzido com TFG < 30 mL/min/1,73 m2"
+  ],
+  "fontes": [
+   "Bula profissional hidroclorotiazida (Cimed), data de aprovação não localizada na cópia, https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Hidroclorotiazida-Cimed-Profissional-Consulta-Remedios.pdf",
+   "Anvisa, carta aos profissionais de saúde: atualização das bulas de medicamentos com hidroclorotiazida (câncer de pele não melanoma), dez/2018, https://www.gov.br/anvisa/pt-br/assuntos/fiscalizacao-e-monitoramento/cartas-aos-profissionais-de-saude/2019/naprix-r-d-e-venzer-r-hct-atualizacao-das-bulas-de-medicamentos-contendo-hidroclorotiazida-libbs-07-de-dezembro-de-2018",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas conferidas apenas parcialmente (as citadas nas bulas acessadas); disponibilidade comercial atual de cada marca não verificada. Dose usual de 12,5-25 mg baseada na prática/diretriz, não na bula genérica; apresentação isolada de 12,5 mg não verificada."
+  ]
+ },
+ {
+  "id": "clortalidona",
+  "nome": "Clortalidona",
+  "marcas": [
+   "Higroton"
+  ],
+  "classe": "Diurético tiazídico-símile",
+  "indicacoes": [
+   "hipertensao",
+   "outro"
+  ],
+  "apresentacoes": [
+   "12,5 mg comprimido",
+   "25 mg comprimido",
+   "50 mg comprimido"
+  ],
+  "posologiaUsual": "HAS: 12,5 a 25 mg 1x/dia pela manhã; faixa eficaz 12,5 a 50 mg/dia. Edema: 25 a 50 mg/dia; casos graves até 100 a 200 mg/dia por curto período.",
+  "doseMaxDia": "50 mg/dia na HAS (acima disso mais efeitos metabólicos e raro benefício, segundo a bula)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Você vai urinar mais nas primeiras horas após a dose",
+   "Queda do potássio ou do sódio, vista em exame",
+   "Aumento do ácido úrico e da glicose",
+   "Tontura ao levantar",
+   "Câimbras"
+  ],
+  "sinaisAlerta": [
+   "Fraqueza muscular intensa, câimbras fortes, confusão ou batimentos irregulares.",
+   "Crise de dor e inchaço forte em uma articulação (gota).",
+   "Tontura forte ou desmaio."
+  ],
+  "monitorizacao": "Sódio, potássio, magnésio, creatinina, glicemia e ácido úrico antes, 2 a 4 semanas após início ou ajuste, depois a cada 6 a 12 meses.",
+  "interacoes": [
+   "Lítio: aumenta o nível do lítio",
+   "Digoxina: potássio baixo aumenta toxicidade",
+   "Anti-inflamatórios (AINE): reduzem o efeito",
+   "Corticoides e outros diuréticos: somam perda de potássio"
+  ],
+  "gestacao": "Evitar na gestação para tratar hipertensão, exceto se o médico julgar indispensável; quem planeja engravidar deve conversar sobre troca.",
+  "suspensao": "Não pare por conta própria; a pressão pode subir. Em vômitos, diarreia ou muito calor com pouca ingestão de líquidos, procure orientação.",
+  "orientacoes": [
+   "Tome pela manhã.",
+   "Mantenha hidratação normal, sem exagero.",
+   "Relate câimbras frequentes ou fraqueza."
+  ],
+  "alertasMedico": [
+   "Hipocalemia e hiponatremia mais frequentes que com HCTZ em dose equivalente",
+   "Preferida pela diretriz SBC 2025, junto com indapamida",
+   "Cautela com lítio e digoxina",
+   "Efeito anti-hipertensivo também em DRC estágio 4 (CLICK, NEJM 2021)"
+  ],
+  "fontes": [
+   "Bula profissional clortalidona (Vitamedic), https://www.vitamedic.ind.br/wp-content/uploads/2021/07/Bula-clortalidona-Profissional.pdf",
+   "Apresentações de Higroton 12,5/25/50 mg conforme bula Novartis (vista em busca), https://portal.novartis.com.br/medicamentos/wp-content/uploads/2021/10/00_OLD_Bula-HIGROTON-Comprimido-Paciente.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Estudo CLICK citado de memória, não reconferido."
+  ]
+ },
+ {
+  "id": "indapamida",
+  "nome": "Indapamida",
+  "marcas": [
+   "Natrilix SR",
+   "Natrilix"
+  ],
+  "classe": "Diurético tiazídico-símile",
+  "indicacoes": [
+   "hipertensao"
+  ],
+  "apresentacoes": [
+   "1,5 mg comprimido revestido de liberação prolongada",
+   "2,5 mg comprimido"
+  ],
+  "posologiaUsual": "1,5 mg (liberação prolongada) 1x/dia pela manhã, engolido inteiro. Aumentar a dose não aumenta o efeito anti-hipertensivo, só o diurético.",
+  "doseMaxDia": "1,5 mg/dia (liberação prolongada) ou 2,5 mg/dia (liberação imediata)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Queda do potássio, vista em exame",
+   "Queda do sódio, sobretudo em idosos",
+   "Você pode sentir tontura ou cansaço",
+   "Manchas ou coceira na pele",
+   "Aumento do ácido úrico e da glicose"
+  ],
+  "sinaisAlerta": [
+   "Confusão, sonolência intensa, náusea forte ou convulsão (pode ser sódio baixo).",
+   "Palpitações, desmaio ou fraqueza muscular intensa.",
+   "Lesões de pele extensas ou bolhas."
+  ],
+  "monitorizacao": "Sódio e potássio antes, 2 a 4 semanas após início e periodicamente (mais atenção em idosos e em quem usa remédios que prolongam o QT). Creatinina, glicemia e ácido úrico a cada 6 a 12 meses.",
+  "interacoes": [
+   "Lítio: aumenta o nível do lítio",
+   "Remédios que prolongam o QT (amiodarona, sotalol, alguns antipsicóticos e antibióticos): risco de arritmia se potássio baixo",
+   "Anti-inflamatórios (AINE): reduzem o efeito",
+   "Corticoides e laxantes estimulantes: somam perda de potássio"
+  ],
+  "gestacao": "Por precaução, é preferível evitar na gestação (bula). Converse com o médico se planeja engravidar.",
+  "suspensao": "Não pare por conta própria; a pressão pode subir.",
+  "orientacoes": [
+   "Tome pela manhã, com um copo de água, sem mastigar o comprimido SR.",
+   "Relate câimbras, fraqueza ou confusão.",
+   "Não aumente a dose por conta própria: não melhora a pressão."
+  ],
+  "alertasMedico": [
+   "Hiponatremia e hipocalemia: vigiar idosos e QT longo (bula: controle regular de sódio indispensável)",
+   "Preferida pela diretriz SBC 2025 (ação longa, evidência de desfechos)",
+   "Derivado sulfonamídico: cautela em alergia a sulfas"
+  ],
+  "fontes": [
+   "Bula profissional Natrilix SR (Servier), arquivo publicado em jul/2026, data de aprovação não localizada no texto, https://servier.com.br/app/uploads/sites/3/2026/07/Natrilix_SR_BULA-PS.pdf",
+   "Bula profissional Natrilix 2,5 mg (Servier, nov/2025; existência vista em busca, arquivo não aberto), https://servier.com.br/wp-content/uploads/sites/42/2025/11/25.11.03_Bula_Profissional_Natrilix.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "espironolactona",
+  "nome": "Espironolactona",
+  "marcas": [
+   "Aldactone"
+  ],
+  "classe": "Antagonista do receptor mineralocorticoide (diurético poupador de potássio)",
+  "indicacoes": [
+   "hipertensao",
+   "coracao",
+   "outro"
+  ],
+  "apresentacoes": [
+   "25 mg comprimido",
+   "50 mg comprimido",
+   "100 mg comprimido"
+  ],
+  "posologiaUsual": "IC com fração de ejeção reduzida (diretrizes): 25 mg 1x/dia, podendo ir a 50 mg/dia se potássio e função renal permitirem. HAS resistente: 25 a 50 mg/dia. Bula (texto de 2020): HAS 50 a 100 mg/dia até 200 mg/dia; cirrose com ascite 100 a 400 mg/dia.",
+  "doseMaxDia": "50 mg/dia na IC; bula admite até 400 mg/dia em hiperaldosteronismo e cirrose",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Aumento do potássio no sangue, visto no exame",
+   "Aumento ou dor nas mamas, em homens e mulheres",
+   "Alteração menstrual",
+   "Você pode sentir tontura ou sonolência",
+   "Náusea ou desconforto no estômago"
+  ],
+  "sinaisAlerta": [
+   "Fraqueza muscular intensa, formigamento, batimentos lentos ou irregulares (pode ser potássio alto): procure atendimento.",
+   "Diminuição importante da urina.",
+   "Vômitos ou diarreia intensos que impedem de se hidratar: fale com o médico, pode ser preciso pausar o remédio."
+  ],
+  "monitorizacao": "Potássio e creatinina antes, em 1 e 4 semanas após início ou ajuste, depois em 2 e 3 meses e a cada 4 a 6 meses. Na IC, não iniciar se K > 5,0 mEq/L ou TFG < 30 mL/min/1,73 m2.",
+  "interacoes": [
+   "IECA, BRA, sacubitril/valsartana: risco de potássio alto (associação útil na IC, mas exige exames)",
+   "Suplementos de potássio, sal light, amilorida, trimetoprima: potássio alto",
+   "Anti-inflamatórios (AINE): potássio alto e piora renal",
+   "Digoxina: pode alterar níveis e a dosagem laboratorial"
+  ],
+  "gestacao": "Evitar na gestação (efeito antiandrogênico sobre o feto em estudos animais). Avise o médico se engravidar.",
+  "suspensao": "Não pare por conta própria. Em doença aguda com vômitos, diarreia ou desidratação, o médico pode orientar pausa temporária para proteger o rim e o potássio.",
+  "orientacoes": [
+   "Não use sal light, suplementos de potássio ou anti-inflamatórios sem orientação.",
+   "Faça os exames de sangue nas datas combinadas.",
+   "Aumento das mamas pode ocorrer; comente com o médico, existe alternativa."
+  ],
+  "alertasMedico": [
+   "Hipercalemia potencialmente fatal com IECA/BRA/ARNI, DRC, DM e idosos (alerta em bula)",
+   "Contraindicada com hipercalemia, doença de Addison e anúria",
+   "Ginecomastia dose-dependente: considerar eplerenona",
+   "Bula brasileira (2020) não traz o esquema de 25 mg da IC; usar diretriz"
+  ],
+  "fontes": [
+   "Bula Aldactone (Pfizer), aprovada pela Anvisa em 19/11/2020, https://img.drogasil.com.br/raiadrogasil_bula/Aldactone.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Dose de IC e esquema de monitorização de potássio baseados nas diretrizes ESC de IC 2021/2023, citadas de memória, não reconferidas nesta revisão."
+  ]
+ },
+ {
+  "id": "furosemida",
+  "nome": "Furosemida",
+  "marcas": [
+   "Lasix"
+  ],
+  "classe": "Diurético de alça",
+  "indicacoes": [
+   "coracao",
+   "hipertensao",
+   "outro"
+  ],
+  "apresentacoes": [
+   "40 mg comprimido"
+  ],
+  "posologiaUsual": "Adultos: iniciar 20 a 80 mg/dia; manutenção 20 a 40 mg/dia, de preferência em dose única pela manhã, em jejum. Ajustar pelo peso e sintomas de congestão.",
+  "doseMaxDia": "Sem teto fixo em bula (depende da resposta)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Você vai urinar bastante 1 a 2 horas após a dose",
+   "Sede e boca seca",
+   "Tontura ao levantar",
+   "Queda de potássio, sódio e magnésio, vista em exame",
+   "Câimbras"
+  ],
+  "sinaisAlerta": [
+   "Tontura forte, desmaio, muita sede com pouca urina (desidratação).",
+   "Fraqueza muscular intensa ou batimentos irregulares.",
+   "Ganho de peso rápido (mais de 2 kg em 3 dias), inchaço ou falta de ar piorando: avise o médico no mesmo dia.",
+   "Zumbido ou perda de audição."
+  ],
+  "monitorizacao": "Sódio, potássio, magnésio e creatinina 1 a 2 semanas após início ou ajuste e a cada 3 a 6 meses; peso diário em casa na insuficiência cardíaca.",
+  "interacoes": [
+   "Aminoglicosídeos: risco de dano à audição e aos rins",
+   "Lítio: aumenta o nível do lítio",
+   "Digoxina: potássio baixo aumenta toxicidade",
+   "Anti-inflamatórios (AINE): reduzem o efeito e pioram o rim",
+   "Corticoides: somam perda de potássio"
+  ],
+  "gestacao": "Atravessa a placenta; na gestação, usar só se estritamente indicado e por pouco tempo, com acompanhamento do crescimento fetal (bula).",
+  "suspensao": "Não pare nem mude a dose sozinho, especialmente se tiver insuficiência cardíaca: o líquido pode voltar a acumular. O médico pode orientar ajuste pelo peso.",
+  "orientacoes": [
+   "Tome pela manhã, em jejum, para não atrapalhar o sono.",
+   "Pese-se todos os dias no mesmo horário se tiver insuficiência cardíaca e anote.",
+   "Siga a orientação de sal e líquidos do seu médico."
+  ],
+  "alertasMedico": [
+   "Hipocalemia, hipomagnesemia, hiponatremia e piora renal por hipovolemia",
+   "Ototoxicidade com doses altas ou aminoglicosídeo",
+   "Alergia a sulfonamidas: possível sensibilidade cruzada (bula)",
+   "Na HAS sem congestão, preferir tiazídico/tiazídico-símile; alça em TFG muito baixa ou congestão"
+  ],
+  "fontes": [
+   "Bula profissional Lasix comprimido 40 mg (Sanofi Medley), aprovada pela Anvisa em 07/12/2023, https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Lasix-Profissional-Consulta-Remedios.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "carvedilol",
+  "nome": "Carvedilol",
+  "marcas": [
+   "Cardilol",
+   "Divelol",
+   "Ictus"
+  ],
+  "classe": "Betabloqueador não seletivo com bloqueio alfa-1",
+  "indicacoes": [
+   "hipertensao",
+   "coracao"
+  ],
+  "apresentacoes": [
+   "3,125 mg comprimido",
+   "6,25 mg comprimido",
+   "12,5 mg comprimido",
+   "25 mg comprimido"
+  ],
+  "posologiaUsual": "IC: 3,125 mg 2x/dia por 2 semanas, dobrando a cada 2 semanas até 25 mg 2x/dia (até 50 mg 2x/dia se peso > 85 kg). HAS: 12,5 mg 1x/dia por 2 dias, depois 25 mg/dia, até 50 mg/dia. Tomar com alimento.",
+  "doseMaxDia": "50 mg/dia (HAS; IC até 85 kg); 100 mg/dia na IC com peso > 85 kg",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Você pode sentir tontura, principalmente ao levantar e nas primeiras semanas",
+   "Cansaço",
+   "Pulso mais lento",
+   "Mãos e pés frios",
+   "Retenção de líquido ou leve ganho de peso no início"
+  ],
+  "sinaisAlerta": [
+   "Desmaio, pulso muito lento (menos de 50 por minuto) com mal-estar.",
+   "Falta de ar piorando, inchaço ou ganho de peso rápido.",
+   "Chiado no peito ou crise de asma."
+  ],
+  "monitorizacao": "Frequência cardíaca, PA (inclusive em pé), peso e sintomas de congestão a cada ajuste de dose. Glicemia em diabéticos (pode mascarar sintomas de hipoglicemia).",
+  "interacoes": [
+   "Verapamil e diltiazem: risco de bradicardia e bloqueio",
+   "Amiodarona, digoxina, ivabradina: somam efeito sobre a frequência",
+   "Insulina e sulfonilureias: sintomas de hipoglicemia podem ficar mascarados",
+   "Clonidina: se ambos forem suspensos, parar o betabloqueador primeiro",
+   "Rifampicina reduz; fluoxetina e paroxetina aumentam o nível"
+  ],
+  "gestacao": "Usar na gestação apenas se o benefício justificar, sob orientação médica; pode causar pulso lento e hipoglicemia no bebê.",
+  "suspensao": "Não pare de repente: a interrupção brusca pode causar aumento da pressão, dor no peito ou arritmia. Se precisar parar, a redução é gradual, em 1 a 2 semanas, com orientação médica.",
+  "orientacoes": [
+   "Tome junto com as refeições para reduzir tontura.",
+   "Levante devagar.",
+   "Nas primeiras semanas de aumento de dose pode haver mais cansaço; costuma melhorar.",
+   "Se tiver diabetes, tremor e palpitação da hipoglicemia podem ficar menos evidentes; confie no suor e na medida da glicemia."
+  ],
+  "alertasMedico": [
+   "Contraindicado em asma brônquica, BAV 2º/3º grau sem marca-passo, bradicardia sintomática e IC descompensada",
+   "Titulação lenta na IC; piora transitória de congestão pode exigir ajuste do diurético",
+   "Retirada gradual",
+   "Não seletivo: preferir cardiosseletivo em DPOC/broncoespasmo"
+  ],
+  "fontes": [
+   "Bula carvedilol (Aché), conforme bula padrão aprovada pela Anvisa em 16/04/2021, https://www.ache.com.br/wp-content/uploads/application/pdf/bula-paciente-carvedilol-1.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas conferidas apenas parcialmente (as citadas nas bulas acessadas); disponibilidade comercial atual de cada marca não verificada. Marcas Cardilol, Divelol e Ictus não reconferidas nesta revisão."
+  ]
+ },
+ {
+  "id": "metoprolol",
+  "nome": "Metoprolol",
+  "marcas": [
+   "Selozok",
+   "Seloken",
+   "Lopressor"
+  ],
+  "classe": "Betabloqueador beta-1 seletivo",
+  "indicacoes": [
+   "hipertensao",
+   "coracao",
+   "enxaqueca"
+  ],
+  "apresentacoes": [
+   "25 mg comprimido de liberação controlada",
+   "50 mg comprimido de liberação controlada",
+   "100 mg comprimido de liberação controlada",
+   "100 mg comprimido"
+  ],
+  "posologiaUsual": "Succinato de liberação controlada (Selozok), 1x/dia: HAS 50 mg, até 100 a 200 mg; angina 100 a 200 mg; IC classe II 25 mg e classes III-IV 12,5 mg, dobrando a cada 2 semanas até 200 mg/dia ou dose máxima tolerada. Tartarato (comprimido comum de 100 mg): dividir em 2 tomadas.",
+  "doseMaxDia": "200 mg/dia",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Cansaço",
+   "Você pode sentir tontura",
+   "Pulso mais lento",
+   "Mãos e pés frios",
+   "Sono agitado ou sonhos vívidos"
+  ],
+  "sinaisAlerta": [
+   "Desmaio ou pulso muito lento com mal-estar.",
+   "Falta de ar piorando ou inchaço nas pernas.",
+   "Chiado no peito ou crise de asma.",
+   "Dor no peito nova ou mais forte."
+  ],
+  "monitorizacao": "Frequência cardíaca, PA e sintomas de IC a cada ajuste; sem exames laboratoriais de rotina.",
+  "interacoes": [
+   "Verapamil e diltiazem: bradicardia e bloqueio",
+   "Fluoxetina, paroxetina, bupropiona, propafenona: aumentam o nível (inibem a CYP2D6)",
+   "Amiodarona, digoxina, ivabradina: somam efeito sobre a frequência",
+   "Clonidina: se ambos forem suspensos, parar o betabloqueador primeiro",
+   "Insulina e sulfonilureias: sintomas de hipoglicemia podem ficar mascarados"
+  ],
+  "gestacao": "Pode ser usado na gestação quando o médico julgar necessário; o bebê pode ter pulso lento e hipoglicemia ao nascer, por isso o obstetra deve saber.",
+  "suspensao": "Não pare de repente: pode piorar a angina, subir a pressão ou provocar arritmia. Se precisar parar, a redução é gradual, em cerca de 2 semanas, com orientação.",
+  "orientacoes": [
+   "Selozok: tome 1 vez ao dia, com ou sem alimento; pode partir no sulco, mas não mastigue nem triture.",
+   "Cuidado ao dirigir nos primeiros dias se sentir tontura ou cansaço.",
+   "Se tiver diabetes, meça a glicemia se sentir suor frio, pois a palpitação pode não aparecer."
+  ],
+  "alertasMedico": [
+   "Na IC usar succinato (evidência MERIT-HF); tartarato não substitui",
+   "Inibidores de CYP2D6 aumentam a exposição",
+   "Retirada gradual",
+   "Contraindicado em BAV 2º/3º grau, bradicardia sintomática e choque cardiogênico"
+  ],
+  "fontes": [
+   "Bula Selozok (AstraZeneca), cópia de farmácia sem data de aprovação visível, https://static-webv8.jet.com.br/drogaosuper/Bulas/7896206402853.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas conferidas apenas parcialmente (as citadas nas bulas acessadas); disponibilidade comercial atual de cada marca não verificada. Apresentação e posologia do tartarato 100 mg (Seloken/Lopressor) não reconferidas em bula."
+  ]
+ },
+ {
+  "id": "atenolol",
+  "nome": "Atenolol",
+  "marcas": [
+   "Atenol"
+  ],
+  "classe": "Betabloqueador beta-1 seletivo",
+  "indicacoes": [
+   "hipertensao",
+   "coracao"
+  ],
+  "apresentacoes": [
+   "25 mg comprimido",
+   "50 mg comprimido",
+   "100 mg comprimido"
+  ],
+  "posologiaUsual": "HAS: 50 a 100 mg 1x/dia. Angina: 100 mg/dia em 1 ou 2 tomadas. Arritmias: manutenção 50 a 100 mg 1x/dia. Ajuste renal: ClCr 15-35: máx. 50 mg/dia; ClCr < 15: 25 mg/dia ou 50 mg em dias alternados; hemodiálise: 50 mg após cada sessão.",
+  "doseMaxDia": "100 mg/dia",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Cansaço",
+   "Mãos e pés frios",
+   "Pulso mais lento",
+   "Você pode sentir tontura",
+   "Náusea ou alteração intestinal leve"
+  ],
+  "sinaisAlerta": [
+   "Desmaio ou pulso muito lento com mal-estar.",
+   "Falta de ar, chiado no peito ou inchaço nas pernas.",
+   "Dor no peito nova ou mais forte."
+  ],
+  "monitorizacao": "Frequência cardíaca e PA em consultas; creatinina periódica para ajuste de dose (eliminação renal).",
+  "interacoes": [
+   "Verapamil e diltiazem: bradicardia e bloqueio",
+   "Amiodarona e digoxina: somam efeito sobre a frequência",
+   "Clonidina: se ambos forem suspensos, parar o betabloqueador primeiro",
+   "Insulina e sulfonilureias: sintomas de hipoglicemia podem ficar mascarados",
+   "Anti-inflamatórios (AINE): reduzem o efeito anti-hipertensivo"
+  ],
+  "gestacao": "Categoria D em bula: associado a restrição do crescimento fetal. Se engravidar ou planeja engravidar, o médico costuma trocar por outra opção.",
+  "suspensao": "Não pare de repente: pode piorar angina, pressão ou ritmo cardíaco. A retirada é gradual, com orientação.",
+  "orientacoes": [
+   "Tome 1 vez ao dia, no mesmo horário.",
+   "Levante devagar se sentir tontura.",
+   "Se tiver diabetes, atenção a sinais de hipoglicemia além da palpitação."
+  ],
+  "alertasMedico": [
+   "Eliminação renal: ajustar com ClCr < 35 mL/min/1,73 m2 (bula)",
+   "Diretriz SBC 2025: betabloqueador na HAS só em situações específicas (IC, FA, DAC, arritmias etc.)",
+   "Evitar na gestação (restrição de crescimento)",
+   "Retirada gradual"
+  ],
+  "fontes": [
+   "Bula profissional atenolol (Geolab), conforme bula padrão aprovada pela Anvisa em 27/11/2019, https://www.geolab.com.br/wp-content/uploads/2021/05/ATENOLOL-Bula-Profissional.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas conferidas apenas parcialmente (as citadas nas bulas acessadas); disponibilidade comercial atual de cada marca não verificada."
+  ]
+ },
+ {
+  "id": "bisoprolol",
+  "nome": "Bisoprolol",
+  "marcas": [
+   "Concor"
+  ],
+  "classe": "Betabloqueador beta-1 seletivo",
+  "indicacoes": [
+   "hipertensao",
+   "coracao"
+  ],
+  "apresentacoes": [
+   "1,25 mg comprimido revestido",
+   "2,5 mg comprimido revestido",
+   "5 mg comprimido revestido",
+   "10 mg comprimido revestido"
+  ],
+  "posologiaUsual": "HAS e angina: 5 a 10 mg 1x/dia. IC: 1,25 mg 1x/dia, aumentando a cada 2 semanas ou mais para 2,5, 3,75, 5, 7,5 e 10 mg/dia conforme tolerância.",
+  "doseMaxDia": "20 mg/dia (HAS e angina); 10 mg/dia na IC",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Cansaço",
+   "Você pode sentir tontura",
+   "Pulso mais lento",
+   "Mãos e pés frios",
+   "Náusea, diarreia ou prisão de ventre"
+  ],
+  "sinaisAlerta": [
+   "Desmaio ou pulso muito lento com mal-estar.",
+   "Falta de ar piorando, inchaço ou ganho de peso rápido.",
+   "Chiado no peito."
+  ],
+  "monitorizacao": "Frequência cardíaca, PA e sinais de piora da IC durante a titulação; sem exames laboratoriais de rotina.",
+  "interacoes": [
+   "Verapamil e diltiazem: bradicardia e bloqueio",
+   "Amiodarona, digoxina, ivabradina: somam efeito sobre a frequência",
+   "Clonidina: suspender o betabloqueador antes",
+   "Insulina e sulfonilureias: sintomas de hipoglicemia podem ficar mascarados"
+  ],
+  "gestacao": "Usar na gestação somente se o médico considerar necessário, com acompanhamento do crescimento do bebê.",
+  "suspensao": "Não pare de repente, principalmente se tiver doença das coronárias ou insuficiência cardíaca. A retirada é gradual, com orientação.",
+  "orientacoes": [
+   "Tome pela manhã, com ou sem alimento, sempre no mesmo horário.",
+   "Não mude a dose por conta própria durante o aumento gradual.",
+   "Se tiver diabetes, meça a glicemia se sentir suor frio."
+  ],
+  "alertasMedico": [
+   "Titulação lenta na IC com vigilância de congestão",
+   "Cardiosseletivo: opção em DPOC",
+   "Contraindicado em BAV 2º/3º grau, bradicardia sintomática, IC descompensada",
+   "Retirada gradual (bula)"
+  ],
+  "fontes": [
+   "Bula Concor (Merck), cópia sem data de aprovação visível, https://www.saudedireta.com.br/catinc/drugs/bulas/concor.pdf",
+   "Diretriz Brasileira de Hipertensão Arterial 2025 (SBC/SBH/SBN), Arq Bras Cardiol 2025, https://www.scielo.br/j/abc/a/BXT7Vk4B9VKQnJFsJhgJ4Hn/?lang=pt",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Concentrações além de 1,25 mg conferidas por resultados de busca (Panvel/Drogasil), não no texto da bula."
+  ]
+ },
+ {
+  "id": "rosuvastatina",
+  "nome": "Rosuvastatina",
+  "marcas": [
+   "Crestor",
+   "Rosucor",
+   "Vivacor",
+   "Trezor"
+  ],
+  "classe": "Estatina de alta potência (inibidor da HMG-CoA redutase)",
+  "indicacoes": [
+   "colesterol",
+   "coracao"
+  ],
+  "apresentacoes": [
+   "5 mg comprimido revestido",
+   "10 mg comprimido revestido",
+   "20 mg comprimido revestido",
+   "40 mg comprimido revestido"
+  ],
+  "posologiaUsual": "5 a 40 mg 1x/dia, a qualquer hora, com ou sem alimento. Alta intensidade: 20 a 40 mg. Considerar início com 5 mg em descendentes de asiáticos. Insuficiência renal grave: não exceder 10 mg/dia.",
+  "doseMaxDia": "40 mg/dia (10 mg/dia na insuficiência renal grave)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Dor ou cansaço muscular leve",
+   "Dor de cabeça",
+   "Náusea, prisão de ventre ou dor abdominal",
+   "Você pode sentir tontura",
+   "Pequeno aumento da glicose em quem já tem tendência a diabetes"
+  ],
+  "sinaisAlerta": [
+   "Dor muscular forte, fraqueza ou urina escura (cor de chá): procure atendimento.",
+   "Pele ou olhos amarelados, urina escura e cansaço intenso.",
+   "Reação alérgica com inchaço do rosto ou falta de ar."
+  ],
+  "monitorizacao": "Perfil lipídico 4 a 12 semanas após início ou ajuste, depois a cada 6 a 12 meses; TGO/TGP antes de iniciar e se sintomas; CK apenas se houver dor muscular.",
+  "interacoes": [
+   "Ciclosporina: exposição cerca de 7 vezes maior (limitar a 5 mg/dia)",
+   "Genfibrozila: aumenta a exposição; evitar (fenofibrato é a opção se precisar de fibrato)",
+   "Inibidores de protease do HIV/HCV, ticagrelor, roxadustate: aumentam o nível",
+   "Varfarina: pode aumentar o INR ao iniciar ou ajustar",
+   "Antiácidos com alumínio ou magnésio: tomar 2 horas depois da rosuvastatina"
+  ],
+  "gestacao": "A bula brasileira de 2026 classifica como categoria D e não lista mais a gestação como contraindicação; ainda assim, em geral a estatina é suspensa ao planejar ou confirmar gravidez, decisão a tomar com o médico. Contraindicada na amamentação.",
+  "suspensao": "Parar não causa efeito imediato, mas o colesterol volta a subir e o risco de infarto e AVC aumenta. Não interrompa sem conversar com o médico, mesmo com dor muscular leve.",
+  "orientacoes": [
+   "Tome todos os dias, no horário mais fácil de lembrar.",
+   "Relate dor muscular nova e persistente.",
+   "Mantenha dieta e atividade física: somam efeito."
+  ],
+  "alertasMedico": [
+   "Estatina + fibrato: evitar genfibrozila; fenofibrato preferido, com monitorização",
+   "Ciclosporina: máx. 5 mg/dia",
+   "Asiáticos: iniciar 5 mg; insuficiência renal grave: máx. 10 mg/dia",
+   "Diretriz SBC 2025: nova categoria de risco extremo (LDL-c < 40 mg/dL); estatina de alta potência + ezetimiba desde o início quando redução ≥ 50% for necessária",
+   "Bula Crestor 06/01/2026: gestação saiu das contraindicações (categoria D); aleitamento segue contraindicado"
+  ],
+  "fontes": [
+   "Bula profissional Crestor (AstraZeneca), aprovada pela Anvisa em 06/01/2026, https://www.azmed.com.br/content/dam/multibrand/br/pt/azmed-2022/home/bulas-profissionais/bulas/Crestor_Bula_Profissional.pdf",
+   "Diretriz Brasileira de Dislipidemias e Prevenção da Aterosclerose 2025 (SBC), https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12674852/",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas conferidas apenas parcialmente (as citadas nas bulas acessadas); disponibilidade comercial atual de cada marca não verificada. Marcas Rosucor, Vivacor e Trezor não reconferidas; limite de 5 mg com ciclosporina baseado na rotulagem FDA, citada de memória."
+  ]
+ },
+ {
+  "id": "sinvastatina",
+  "nome": "Sinvastatina",
+  "marcas": [
+   "Zocor",
+   "Sinvastacor"
+  ],
+  "classe": "Estatina de moderada potência (inibidor da HMG-CoA redutase)",
+  "indicacoes": [
+   "colesterol",
+   "coracao"
+  ],
+  "apresentacoes": [
+   "10 mg comprimido revestido",
+   "20 mg comprimido revestido",
+   "40 mg comprimido revestido"
+  ],
+  "posologiaUsual": "10 a 40 mg 1x/dia, à noite. Prevenção cardiovascular: 20 a 40 mg/dia. Ajustes a cada 4 semanas ou mais. Não partir nem mastigar.",
+  "doseMaxDia": "40 mg/dia (80 mg não é mais usada rotineiramente pelo risco de miopatia)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Dor ou cansaço muscular leve",
+   "Dor abdominal, gases ou prisão de ventre",
+   "Dor de cabeça",
+   "Pequeno aumento das enzimas do fígado, visto só no exame"
+  ],
+  "sinaisAlerta": [
+   "Dor muscular forte, fraqueza ou urina escura (cor de chá): procure atendimento.",
+   "Pele ou olhos amarelados.",
+   "Reação alérgica com inchaço do rosto ou falta de ar."
+  ],
+  "monitorizacao": "Perfil lipídico 4 a 12 semanas após início ou ajuste, depois a cada 6 a 12 meses; TGO/TGP antes e se sintomas; CK se dor muscular.",
+  "interacoes": [
+   "Contraindicados: genfibrozila, ciclosporina, danazol e inibidores potentes da CYP3A4 (itraconazol, cetoconazol, claritromicina, eritromicina, inibidores de protease, cobicistate)",
+   "Amiodarona, verapamil, diltiazem: máximo 20 mg/dia",
+   "Anlodipino: máximo 40 mg/dia pela bula da sinvastatina (a bula do Norvasc diz 20 mg/dia)",
+   "Fibratos que não o fenofibrato: máximo 10 mg/dia",
+   "Suco de toranja (grapefruit) em grande quantidade: evitar",
+   "Ácido fusídico: risco de rabdomiólise"
+  ],
+  "gestacao": "Contraindicada na gestação e na amamentação segundo a bula brasileira. Suspenda e avise o médico se engravidar ou planejar engravidar.",
+  "suspensao": "Parar não causa sintomas, mas o colesterol volta a subir e o risco cardiovascular aumenta. Não pare sem orientação.",
+  "orientacoes": [
+   "Tome à noite.",
+   "Evite suco de toranja (grapefruit).",
+   "Avise qualquer médico que for prescrever antibiótico ou antifúngico que você usa sinvastatina.",
+   "Relate dor muscular nova e persistente."
+  ],
+  "alertasMedico": [
+   "Estatina + fibrato: genfibrozila contraindicada; fenofibrato com cautela",
+   "Limites: amiodarona/verapamil/diltiazem 20 mg; anlodipino 40 mg na bula padrão, 20 mg na bula do anlodipino e na FDA",
+   "ClCr < 30: doses > 10 mg só com cautela",
+   "Potência moderada: frequentemente insuficiente para as metas da diretriz SBC 2025 em alto/muito alto risco"
+  ],
+  "fontes": [
+   "Bula profissional sinvastatina (Novartis), conforme bula padrão aprovada pela Anvisa em 23/01/2025, https://portal.novartis.com.br/medicamentos/wp-content/uploads/2022/11/Bula-SINVASTATINA-Comprimido-revestido-Medico.pdf",
+   "Bula profissional Norvasc (Viatris), aprovada em 11/05/2026 (limite de 20 mg com anlodipino)",
+   "Diretriz Brasileira de Dislipidemias e Prevenção da Aterosclerose 2025 (SBC), https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12674852/",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas conferidas apenas parcialmente (as citadas nas bulas acessadas); disponibilidade comercial atual de cada marca não verificada. Apresentação de 10 mg e marca Zocor não reconferidas; restrição da dose de 80 mg baseada em comunicado FDA de 2011, citado de memória."
+  ]
+ },
+ {
+  "id": "ezetimiba",
+  "nome": "Ezetimiba",
+  "marcas": [
+   "Ezetrol",
+   "Zetia"
+  ],
+  "classe": "Inibidor da absorção intestinal de colesterol",
+  "indicacoes": [
+   "colesterol"
+  ],
+  "apresentacoes": [
+   "10 mg comprimido"
+  ],
+  "posologiaUsual": "10 mg 1x/dia, a qualquer hora, com ou sem alimento, geralmente associada a estatina. Com colestiramina, tomar pelo menos 2 horas antes ou 4 horas depois.",
+  "doseMaxDia": "10 mg/dia",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Diarreia ou dor abdominal leve",
+   "Cansaço",
+   "Dor muscular leve, principalmente junto com estatina",
+   "Pequeno aumento das enzimas do fígado, visto só no exame"
+  ],
+  "sinaisAlerta": [
+   "Dor muscular forte com urina escura.",
+   "Pele ou olhos amarelados.",
+   "Reação alérgica com inchaço do rosto ou falta de ar."
+  ],
+  "monitorizacao": "Perfil lipídico 4 a 12 semanas após início, depois a cada 6 a 12 meses; enzimas hepáticas conforme a estatina associada.",
+  "interacoes": [
+   "Colestiramina: reduz a absorção (separar as doses)",
+   "Ciclosporina: aumenta níveis de ambos; monitorar ciclosporina",
+   "Varfarina: monitorar INR ao iniciar",
+   "Fibratos: associação com fenofibrato aprovada; outros fibratos não estudados"
+  ],
+  "gestacao": "Sem dados clínicos na gestação (categoria C): não usar sem orientação médica. Quando associada a estatina, valem as restrições da estatina.",
+  "suspensao": "Parar não causa sintomas, mas o LDL volta a subir. Converse com o médico antes.",
+  "orientacoes": [
+   "Tome 1 vez ao dia, no horário mais fácil de lembrar.",
+   "Se usar colestiramina, mantenha intervalo entre os dois.",
+   "Continue a estatina normalmente, se prescrita."
+  ],
+  "alertasMedico": [
+   "Não recomendada em insuficiência hepática moderada ou grave (bula)",
+   "Diretriz SBC 2025 incentiva estatina + ezetimiba desde o início quando redução de LDL ≥ 50% for necessária",
+   "Monitorar INR com varfarina e nível de ciclosporina"
+  ],
+  "fontes": [
+   "Bula profissional Ezetrol (Organon), data de aprovação não extraída, https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/ezetrol_bula_profissional.pdf",
+   "Bula profissional Zetia (Organon), https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/zetia_bula_profissional.pdf",
+   "Diretriz Brasileira de Dislipidemias e Prevenção da Aterosclerose 2025 (SBC), https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12674852/",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Intervalo com colestiramina baseado na rotulagem FDA, citado de memória."
+  ]
+ },
+ {
+  "id": "varfarina",
+  "nome": "Varfarina",
+  "marcas": [
+   "Marevan",
+   "Coumadin"
+  ],
+  "classe": "Anticoagulante oral antagonista da vitamina K",
+  "indicacoes": [
+   "coracao",
+   "avc",
+   "outro"
+  ],
+  "apresentacoes": [
+   "1 mg comprimido",
+   "2,5 mg comprimido",
+   "5 mg comprimido",
+   "7,5 mg comprimido"
+  ],
+  "posologiaUsual": "Dose individualizada pelo INR. Início 2,5 a 5 mg/dia; manutenção usual 2,5 a 10 mg/dia, 1x/dia, sempre no mesmo horário. Alvo de INR 2,0 a 3,0 na maioria (FA, TEV, bioprótese); 2,5 a 3,5 em prótese mecânica mitral ou prótese mecânica com fatores de risco.",
+  "doseMaxDia": "Sem dose máxima fixa: guiada pelo INR",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Pequenos sangramentos, como na gengiva ao escovar ou pelo nariz",
+   "Manchas roxas com facilidade",
+   "Menstruação mais intensa",
+   "Náusea ou diarreia leve"
+  ],
+  "sinaisAlerta": [
+   "Sangramento que não para, vômito com sangue ou com aspecto de borra de café, fezes pretas ou com sangue, urina vermelha: procure atendimento urgente.",
+   "Dor de cabeça forte e súbita, confusão, fraqueza de um lado do corpo ou dificuldade para falar.",
+   "Queda com batida na cabeça, mesmo sem sintomas: avalie no pronto-socorro.",
+   "Dedos dos pés arroxeados e doloridos."
+  ],
+  "monitorizacao": "INR a cada poucos dias no início até estabilizar, depois pelo menos a cada 4 semanas; repetir sempre que iniciar ou parar outro remédio, antibiótico ou mudar a dieta. Hemograma se sangramento. Tempo na faixa terapêutica desejável acima de 65 a 70%.",
+  "interacoes": [
+   "Aumentam o INR: amiodarona, metronidazol, sulfametoxazol-trimetoprima, fluconazol, ciprofloxacino, fenofibrato, paracetamol em uso regular alto",
+   "Diminuem o INR: rifampicina, carbamazepina, fenobarbital, erva de São João",
+   "AAS, clopidogrel e anti-inflamatórios: somam risco de sangramento",
+   "Mudanças bruscas no consumo de verduras verde-escuras (vitamina K) e de álcool alteram o INR"
+  ],
+  "gestacao": "Contraindicada na gestação (categoria X): causa malformações no 1º trimestre e sangramento fetal. Portadoras de prótese valvar mecânica precisam de plano específico com especialista antes de engravidar.",
+  "suspensao": "Nunca suspenda sem orientação: risco de coágulo, AVC ou trombose de prótese. Para cirurgias ou extrações dentárias, o médico define quando parar e se precisa de ponte com heparina.",
+  "orientacoes": [
+   "Tome no mesmo horário todos os dias e anote as doses e os resultados de INR.",
+   "Mantenha a dieta regular: não precisa cortar verduras, mas evite grandes mudanças.",
+   "Avise todo médico e dentista que usa varfarina e não comece remédios, chás ou suplementos sem perguntar.",
+   "Se esquecer uma dose, tome no mesmo dia; nunca dobre no dia seguinte."
+  ],
+  "alertasMedico": [
+   "Alvos de INR: 2,0-3,0 (FA, TEV, bioprótese); 2,5-3,5 (prótese mecânica mitral ou de risco)",
+   "Anticoagulante de escolha em prótese mecânica e estenose mitral moderada/grave (DOAC contraindicado/não recomendado)",
+   "Interações numerosas: rechecar INR em 3-7 dias após mudança de fármacos",
+   "Pacientes ≥ 60 anos têm resposta de INR maior que a esperada (bula)",
+   "ESC 2024: em idosos frágeis estáveis em AVK, trocar para DOAC pode aumentar sangramento (FRAIL-AF)"
+  ],
+  "fontes": [
+   "Bula profissional Marevan (Farmoquímica), aprovada pela Anvisa em 26/11/2020, https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Marevan-Profissional-Consulta-Remedios.pdf",
+   "Bula profissional Coumadin 1/2,5/5 mg (BMS), https://uploads.consultaremedios.com.br/drug_leaflet/pro/bula-coumadin-profissional-consulta-remedios.pdf",
+   "2024 ESC Guidelines for the management of atrial fibrillation (resumo ACC), https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2024/09/17/04/05/2024-ESC-guidelines-for-AF-esc-2024",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Alvos de INR, frequência de controle e TTR baseados em diretrizes ACC/AHA 2020 de valvopatias e ACCP, citadas de memória, não reconferidas. Comercialização atual de Coumadin no Brasil não confirmada."
+  ]
+ },
+ {
+  "id": "rivaroxabana",
+  "nome": "Rivaroxabana",
+  "marcas": [
+   "Xarelto"
+  ],
+  "classe": "Anticoagulante oral direto, inibidor do fator Xa",
+  "indicacoes": [
+   "coracao",
+   "avc",
+   "outro"
+  ],
+  "apresentacoes": [
+   "2,5 mg comprimido revestido",
+   "10 mg comprimido revestido",
+   "15 mg comprimido revestido",
+   "20 mg comprimido revestido"
+  ],
+  "posologiaUsual": "FA não valvar: 20 mg 1x/dia com refeição (15 mg 1x/dia se ClCr 15-49 mL/min). TVP/TEP: 15 mg 2x/dia por 21 dias, depois 20 mg 1x/dia; prevenção estendida 10 ou 20 mg 1x/dia. DAC/DAP: 2,5 mg 2x/dia com AAS. Profilaxia pós-artroplastia: 10 mg 1x/dia. Doses de 15 e 20 mg sempre com refeição.",
+  "doseMaxDia": "20 mg/dia na manutenção (30 mg/dia nos primeiros 21 dias do tratamento de TVP/TEP)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sangramentos pequenos, como na gengiva ou pelo nariz",
+   "Manchas roxas com facilidade",
+   "Menstruação mais intensa",
+   "Náusea ou dor de estômago",
+   "Você pode sentir tontura"
+  ],
+  "sinaisAlerta": [
+   "Sangramento que não para, vômito com sangue ou com aspecto de borra de café, fezes pretas ou com sangue, urina vermelha: procure atendimento urgente.",
+   "Dor de cabeça forte e súbita, confusão, fraqueza de um lado do corpo ou dificuldade para falar.",
+   "Queda com batida na cabeça, mesmo sem sintomas: avalie no pronto-socorro."
+  ],
+  "monitorizacao": "Creatinina (ClCr por Cockcroft-Gault), hemograma e função hepática antes de iniciar e pelo menos anualmente; se ClCr ≤ 60, a cada ClCr/10 meses; idosos ≥ 75 anos ou frágeis a cada 6 meses. Não usa INR.",
+  "interacoes": [
+   "Cetoconazol, itraconazol, posaconazol, voriconazol e ritonavir: não recomendado (aumentam muito o nível)",
+   "Rifampicina, carbamazepina, fenitoína, fenobarbital, erva de São João: reduzem o efeito (evitar)",
+   "AAS, clopidogrel, anti-inflamatórios, ISRS: aumentam sangramento",
+   "Dronedarona: evitar (dados limitados)"
+  ],
+  "gestacao": "Contraindicada na gestação e na amamentação. Mulheres em idade fértil devem usar contracepção eficaz e avisar o médico logo se engravidarem.",
+  "suspensao": "Não suspenda sem orientação: o efeito some em 1 a 2 dias e o risco de AVC ou trombose volta. Para cirurgia ou dentista, o médico orienta quantos dias parar.",
+  "orientacoes": [
+   "Tome as doses de 15 e 20 mg junto com uma refeição.",
+   "Esquecimento (dose 1x/dia): tome assim que lembrar no mesmo dia; não dobre no dia seguinte.",
+   "Avise todo médico e dentista que usa anticoagulante; evite anti-inflamatórios.",
+   "Se tiver dificuldade para engolir, o comprimido pode ser triturado e misturado a água ou alimento pastoso."
+  ],
+  "alertasMedico": [
+   "FA: 15 mg/dia se ClCr 15-49 mL/min; não recomendado se ClCr < 15 (limiares de bula por Cockcroft-Gault)",
+   "TEV com ClCr 15-49: manter 15 mg 2x/dia por 21 dias; depois considerar 15 mg/dia se risco de sangramento superar o de recorrência",
+   "Contraindicado em prótese valvar mecânica e em SAF triplo positivo de alto risco (não recomendado)",
+   "Contraindicado em hepatopatia com coagulopatia (incluindo Child B/C)",
+   "ESC 2024: não reduzir dose fora dos critérios da bula (subdose aumenta AVC sem reduzir sangramento)"
+  ],
+  "fontes": [
+   "Bula profissional Xarelto (Bayer), aprovada pela Anvisa em 19/08/2022, https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Xarelto-Profissional-Consulta-Remedios.pdf",
+   "2024 ESC Guidelines for the management of atrial fibrillation (resumo ACC), https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2024/09/17/04/05/2024-ESC-guidelines-for-AF-esc-2024",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Frequência de monitorização renal (ClCr/10 meses) segundo EHRA Practical Guide 2021, citado de memória. Existência de genéricos de rivaroxabana no Brasil não verificada."
+  ]
+ },
+ {
+  "id": "apixabana",
+  "nome": "Apixabana",
+  "marcas": [
+   "Eliquis"
+  ],
+  "classe": "Anticoagulante oral direto, inibidor do fator Xa",
+  "indicacoes": [
+   "coracao",
+   "avc",
+   "outro"
+  ],
+  "apresentacoes": [
+   "2,5 mg comprimido revestido",
+   "5 mg comprimido revestido"
+  ],
+  "posologiaUsual": "FA não valvar: 5 mg 2x/dia; 2,5 mg 2x/dia se pelo menos 2 de: idade ≥ 80 anos, peso ≤ 60 kg, creatinina ≥ 1,5 mg/dL. TVP/TEP: 10 mg 2x/dia por 7 dias, depois 5 mg 2x/dia; após 6 meses pode reduzir para 2,5 mg 2x/dia. Profilaxia pós-artroplastia: 2,5 mg 2x/dia. Com ou sem alimento.",
+  "doseMaxDia": "10 mg/dia na manutenção (20 mg/dia nos primeiros 7 dias de TVP/TEP)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sangramentos pequenos, como na gengiva ou pelo nariz",
+   "Manchas roxas com facilidade",
+   "Menstruação mais intensa",
+   "Náusea",
+   "Anemia leve, vista em exame"
+  ],
+  "sinaisAlerta": [
+   "Sangramento que não para, vômito com sangue ou com aspecto de borra de café, fezes pretas ou com sangue, urina vermelha: procure atendimento urgente.",
+   "Dor de cabeça forte e súbita, confusão, fraqueza de um lado do corpo ou dificuldade para falar.",
+   "Queda com batida na cabeça, mesmo sem sintomas: avalie no pronto-socorro."
+  ],
+  "monitorizacao": "Creatinina, peso, hemograma e função hepática antes de iniciar e pelo menos anualmente; se ClCr ≤ 60, a cada ClCr/10 meses; idosos ≥ 75 anos ou frágeis a cada 6 meses. Rever os critérios de dose (idade, peso, creatinina) em cada renovação. Não usa INR.",
+  "interacoes": [
+   "Cetoconazol, itraconazol, voriconazol, posaconazol e inibidores de protease do HIV: não recomendado",
+   "Rifampicina, fenitoína, carbamazepina, fenobarbital, erva de São João: reduzem o efeito",
+   "AAS, clopidogrel, anti-inflamatórios, ISRS: aumentam sangramento"
+  ],
+  "gestacao": "Não recomendada na gestação nem na amamentação. Use contracepção eficaz e avise o médico se engravidar.",
+  "suspensao": "Não suspenda sem orientação: o efeito some em cerca de 1 dia e o risco de AVC ou trombose volta. Para cirurgia ou dentista, o médico orienta a pausa.",
+  "orientacoes": [
+   "Tome de 12 em 12 horas, com ou sem alimento.",
+   "Esquecimento: tome assim que lembrar e siga os horários normais; não dobre a dose.",
+   "Avise todo médico e dentista que usa anticoagulante; evite anti-inflamatórios."
+  ],
+  "alertasMedico": [
+   "FA: 2,5 mg 2x/dia só com ≥ 2 de idade ≥ 80, peso ≤ 60 kg, Cr ≥ 1,5 mg/dL; bula brasileira: não recomendada com ClCr < 15 ou diálise",
+   "ESC 2024: não reduzir dose fora dos critérios (subdose é comum e prejudicial)",
+   "Contraindicada em prótese mecânica e hepatopatia com coagulopatia",
+   "Não recomendada em insuficiência hepática grave"
+  ],
+  "fontes": [
+   "Bula profissional Eliquis (BMS), Rev0515, aprovada pela Anvisa em 06/04/2015; versão mais recente (titular Pfizer) não obtida, https://www.bms.com/assets/bms/brazil/documents/hcp/bula-profissional-saude/ELIQUIS_COM_VPS_Rev0515-new.pdf",
+   "Bula paciente Eliquis (Pfizer Brasil), https://bula-anvisa.s3.sa-east-1.amazonaws.com/121100464_paciente.pdf",
+   "2024 ESC Guidelines for the management of atrial fibrillation (resumo ACC), https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2024/09/17/04/05/2024-ESC-guidelines-for-AF-esc-2024",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Esquema de TEV (10 mg 2x/dia por 7 dias; 2,5 mg 2x/dia após 6 meses) e regra de dose esquecida não constam da bula Rev0515 obtida; baseados em rotulagem EMA/FDA citada de memória."
+  ]
+ },
+ {
+  "id": "dabigatrana",
+  "nome": "Dabigatrana",
+  "marcas": [
+   "Pradaxa"
+  ],
+  "classe": "Anticoagulante oral direto, inibidor direto da trombina",
+  "indicacoes": [
+   "coracao",
+   "avc",
+   "outro"
+  ],
+  "apresentacoes": [
+   "75 mg cápsula",
+   "110 mg cápsula",
+   "150 mg cápsula"
+  ],
+  "posologiaUsual": "FA não valvar: 150 mg 2x/dia. 110 mg 2x/dia se idade ≥ 80 anos ou uso de verapamil; considerar 110 mg 2x/dia se 75 a 80 anos, ClCr 30-50 mL/min, gastrite/esofagite/refluxo ou alto risco de sangramento. TVP/TEP: 150 mg 2x/dia após pelo menos 5 dias de anticoagulante parenteral. Engolir a cápsula inteira com água.",
+  "doseMaxDia": "300 mg/dia",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Azia, má digestão ou dor no estômago",
+   "Diarreia ou náusea",
+   "Sangramentos pequenos, como na gengiva ou pelo nariz",
+   "Manchas roxas com facilidade"
+  ],
+  "sinaisAlerta": [
+   "Sangramento que não para, vômito com sangue ou com aspecto de borra de café, fezes pretas ou com sangue, urina vermelha: procure atendimento urgente.",
+   "Dor de cabeça forte e súbita, confusão, fraqueza de um lado do corpo ou dificuldade para falar.",
+   "Queda com batida na cabeça, mesmo sem sintomas: avalie no pronto-socorro."
+  ],
+  "monitorizacao": "Creatinina (ClCr por Cockcroft-Gault) antes de iniciar; pelo menos anualmente se ≥ 75 anos ou ClCr < 50 mL/min, e sempre que houver suspeita de piora renal (desidratação, doença aguda). Hemograma periódico. Não usa INR.",
+  "interacoes": [
+   "Contraindicados: cetoconazol sistêmico, itraconazol, ciclosporina, dronedarona",
+   "Verapamil: usar 110 mg 2x/dia; amiodarona e quinidina: cautela",
+   "Rifampicina, carbamazepina, erva de São João: reduzem o efeito (evitar)",
+   "AAS, clopidogrel, anti-inflamatórios, ISRS: aumentam sangramento"
+  ],
+  "gestacao": "Não deve ser usada na gestação nem na amamentação, salvo decisão do especialista. Use contracepção eficaz.",
+  "suspensao": "Não suspenda sem orientação: o efeito some rápido e o risco de AVC ou trombose volta. Para cirurgia, a pausa depende da função dos rins e é definida pelo médico.",
+  "orientacoes": [
+   "Engula a cápsula inteira com água; não abra nem mastigue (abrir aumenta muito a absorção e o risco de sangramento).",
+   "Retire a cápsula do blister puxando o alumínio, sem empurrar a cápsula através dele; guarde na embalagem original, longe da umidade.",
+   "Tomar com alimento pode reduzir a azia.",
+   "Esquecimento: tome se faltar mais de 6 horas para a próxima dose; não dobre."
+  ],
+  "alertasMedico": [
+   "Contraindicada se ClCr < 30 mL/min (Cockcroft-Gault); cerca de 80% de eliminação renal",
+   "110 mg 2x/dia obrigatório se ≥ 80 anos ou com verapamil",
+   "Contraindicada em prótese valvar mecânica",
+   "Reversor específico: idarucizumabe",
+   "Dispepsia frequente é causa comum de abandono",
+   "Genérico de etexilato de dabigatrana registrado pela Anvisa em 2024"
+  ],
+  "fontes": [
+   "Bula Pradaxa (Boehringer Ingelheim) via Consulta Remédios, data de aprovação não verificada, https://consultaremedios.com.br/pradaxa/bula",
+   "Anvisa, etexilato de dabigatrana: registro de genérico (24/06/2024), https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/novos-medicamentos-e-indicacoes/etexilato-de-dabigatrana-registro-de-generico",
+   "2024 ESC Guidelines for the management of atrial fibrillation (resumo ACC), https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2024/09/17/04/05/2024-ESC-guidelines-for-AF-esc-2024",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036/2026 (09/07/2026, vigência 04/08/2026): substância não consta das listas (texto integral conferido por busca do nome), https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Dose de TEV, idarucizumabe, regra das 6 horas e fração renal baseados em rotulagem EMA/FDA citada de memória; a bula brasileira completa em PDF obtida era versão antiga (só profilaxia ortopédica)."
+  ]
+ }
+]

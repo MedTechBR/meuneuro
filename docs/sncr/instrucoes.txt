@@ -1,0 +1,350 @@
+         Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+               Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+    Instruções de apoio ao processo de integração – JUL/2026 – v1.0
+                     Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+            É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                           Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+1. Apresentação
+
+
+    1.1. Objetivo da documentação
+
+
+     Esta documentação tem por objetivo apoiar usuários, desenvolvedores, analistas e demais
+profissionais de tecnologia da informação interessados pelo uso do sistema SNCR e pela integração de
+sistemas, servindo como referência para a correta utilização dos recursos disponibilizados.
+
+
+
+2. Cadastro de Prescritores
+
+    O sistema SNCR conta com um fluxo de cadastro automatizado de prescritores, sendo necessário
+    apenas o acesso ao sistema uma vez.
+    Vale destacar que o profissional deve possuir inscrição ativa em conselho profissional (CFM, CFMV ou
+    CFO).
+    Em virtude da necessidade dos dados do prescritor na base de dados do sistema SNCR para a
+    disponibilização de numerações via API, esse passo é obrigatório para novos usuários.
+
+
+
+    2.1. Instruções para cadastro
+       i.   Acesse a página https://sncr-treinamento.anvisa.gov.br/;
+
+
+
+
+      ii.      Clique sobre “Entrar com gov.br”;
+     iii.      Informe seu CPF;
+
+
+
+
+                Instruções de apoio ao processo de integração – JUL/2026 – v1.0
+               Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+      É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                     Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+iv.      Caso não possua uma conta ativa no ambiente de testes do gov.br, a tela abaixo será
+         exibida. Caso já possua conta ativa, bastará informar sua senha.
+
+
+
+
+v.       Marque a opção “Li e estou de acordo com o Termo de Uso e Aviso de Privacidade”
+         e clique em “Continuar”;
+vi.      Clique na opção “Tentar de outra forma”;
+
+
+
+
+          Instruções de apoio ao processo de integração – JUL/2026 – v1.0
+                 Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+        É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                       Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+vii.       Na seguinte tala, marque as opções necessárias, e acione o botão “Continuar” na
+           parte inferior da tela:
+
+           a.   Primeiro nome da sua mãe: MAMAE
+           b.   Mês de nascimento: JANEIRO
+           c.   Dia de nascimento: 01
+           d.   Ano de nascimento: 1980
+
+
+
+
+viii.      Confirme os dados acionando o botão “Continuar”.
+
+
+
+
+            Instruções de apoio ao processo de integração – JUL/2026 – v1.0
+               Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+      É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                     Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+ix.      Selecione a opção para ativar a conta (email ou sms), preencha o conteúdo da
+         opção (conta de email ou telefone celular) e clique no botão “Continuar”. Se
+         selecionar a opção de telefone, informe o DDD.
+
+
+
+
+x.       Digite o código de acesso e clique no botão “Continuar”.
+
+
+
+
+          Instruções de apoio ao processo de integração – JUL/2026 – v1.0
+               Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+      É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                     Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+xi.      Preencha com senha escolhida e clique no botão “Continuar” para finalizar o
+         cadastro.
+
+
+
+
+          Instruções de apoio ao processo de integração – JUL/2026 – v1.0
+                Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+       É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                      Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+xii.      Desde que o profissional possua inscrição ativa em dos conselhos profissionais
+          consultados (CFM, CFMV ou CFO), o acesso ao sistema SNCR será realizada com
+          sucesso e o cadastro concluído.
+
+
+
+
+           Instruções de apoio ao processo de integração – JUL/2026 – v1.0
+                 Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+        É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                       Agência Nacional de Vigilância Sanitária (Anvisa).
+
+3. Credenciamento de plataformas
+
+   O credenciamento de plataformas não será necessário. As validações do profissional e, em
+   breve, da organização mantenedora da plataforma de prescrição eletrônica serão
+   suficientes.
+
+
+
+4. Passo a Passo - Integração API SNCR com login via GovBr
+
+   4.1 Visão Geral
+   Este guia explica como integrar seu frontend com a API SNCR usando autenticação via
+   Gov.br. O processo é simples e suporta qualquer domínio “.br”.
+
+   4.2 Preparação do Frontend
+
+       4.2.1     Configure a URL base da API:
+
+           4.2.1.1 Pré-requisitos:
+               a. Frontend em qualquer tecnologia (Angular, React, Vue, etc.)
+               b. Acesso à API SNCR (ex: https://sncr-api.apps.anvisa.gov.br)
+
+
+
+// Exemplo em Angular
+
+const API_URL = 'https://sncr-api.apps.anvisa.gov.br';
+
+
+
+
+   4.3 Redirecionar para Login
+       Quando o usuário clicar em "Entrar":
+
+function fazerLogin() {
+  const clientUrl = window.location.origin + window.location.pathname;
+  const loginUrl =
+`${API_URL}/api/v1/auth/login?client_url=${encodeURIComponent(clientUrl)} `;
+  window.location.href = loginUrl;
+}
+
+
+
+
+Importante: O parâmetro client_url deve ser a URL completa do seu frontend para onde o
+usuário será redirecionado após autenticação.
+
+
+
+
+               Instruções de apoio ao processo de integração – JUL/2026 – v1.0
+                   Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+          É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                         Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+     4.4 Processar Callback
+         Ao retornar da autenticação (URL com ?session_id=xxx):
+
+async function processarCallback() {
+  const sessionId = new URLSearchParams(window.location.search).get('session_id');
+
+    if (sessionId) {
+      const response = await fetch(
+        `${API_URL}/api/v1/auth/token?session_id=${sessionId}`
+      );
+      if (response.ok) {
+        const data = await response.json();
+        // Salva o token (localStorage, sessionStorage, etc.)
+        localStorage.setItem('auth_token', data.access_token);
+        // Remove session_id da URL
+        window.history.replaceState({}, document.title, window.location.pathname);
+        return true;
+      }
+    }
+    return false;
+}
+
+
+
+     4.5 Enviar Token nas Requisições
+         Para acessar endpoints protegidos, envie o token no header:
+
+function fazerRequisicaoProtegida() {
+  const token = localStorage.getItem('auth_token');
+
+    if (!token) {
+      // Redireciona para login
+      fazerLogin();
+      return;
+    }
+
+    fetch(`${API_URL}/api/v1/receita-branca/`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        conselho: 'CRM',
+        tipo: 'RET',
+        documento: '67665',
+        uf: 'SP',
+        cnpj: '11111111000221'
+      })
+    })
+    .then(response => {
+      if (response.status === 401) {
+        // Token expirado, limpar e redirecionar
+        localStorage.removeItem('auth_token');
+        fazerLogin();
+        return;
+      }
+      return response.json();
+    })
+    .then(data => {
+      // Processa resposta
+      console.log(data);
+
+
+
+
+               Instruções de apoio ao processo de integração – JUL/2026 – v1.0
+                    Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+           É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                          Agência Nacional de Vigilância Sanitária (Anvisa).
+
+    });
+}
+
+
+
+     4.6 Verificar Autenticação
+
+function isAutenticado(): boolean {
+  const token = localStorage.getItem('auth_token');
+  if (!token) return false;
+
+    // Verifica expiração do JWT
+    try {
+      const payload = JSON.parse(atob(token.split('.')[1]));
+      return payload.exp * 1000 > Date.now();
+    } catch {
+      return false;
+    }
+}
+
+
+
+
+     4.7 Fluxo Resumido
+
+              i.      Usuário → Clique "Entrar"
+             ii.      Frontend → Redireciona para: /auth/login?client_url=SEU_SITE
+            iii.      Backend → Redireciona para Gov.br
+            iv.       Usuário → Faz login no Gov.br
+             v.       Backend → Redireciona para: SEU_SITE?session_id=xxx
+            vi.       Frontend → Pega session_id e faz GET /auth/token?session_id=xxx
+           vii.       Frontend → Salva token retornado
+          viii.       Frontend → Usa token em todas as requisições (Authorization: Bearer token)
+
+
+
+     4.8 Lista de Verificação para Integração
+
+          a.       Configurar URL da API no frontend
+          b.       Implementar função de redirecionamento com client_url
+          c.       Implementar processamento do callback com session_id
+          d.       Implementar armazenamento do token
+          e.       Adicionar token no header Authorization de todas as requisições
+          f.       Implementar tratamento para token expirado (401)
+          g.       Implementar limpeza de sessão no logout
+          h.       Implementar verificação de autenticação
+
+
+
+     4.9 Dicas Importantes
+
+          a. Cross-Domain: A API suporta CORS, então seu frontend pode estar em qualquer
+             domínio .br
+          b. Segurança: O token JWT deve ser armazenado de forma segura (prefira
+             sessionStorage em vez de localStorage)
+          c. Session ID: Use apenas uma vez, sempre faça a troca pelo token imediatamente
+
+
+
+                   Instruções de apoio ao processo de integração – JUL/2026 – v1.0
+          Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+ É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                Agência Nacional de Vigilância Sanitária (Anvisa).
+
+d. Expiração: O token tem validade, verifique e renove quando necessário
+e. Erro 401: Sempre redirecione para login quando receber este erro
+
+
+
+
+     Instruções de apoio ao processo de integração – JUL/2026 – v1.0
+

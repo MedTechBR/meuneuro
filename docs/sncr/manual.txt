@@ -1,0 +1,417 @@
+   SNCR
+
+
+
+
+API SNCR
+                                                   SNCR
+
+
+
+    1. API SNCR
+
+Serviço para fornecimento de numerações de notificação de receitas eletrônicas para elaboração de
+prescrições eletrônicas.
+
+    •    Base URL: https://sncr-api.hmg.apps.anvisa.gov.br/api/v1    HOMOLOGAÇÃO
+
+
+
+
+                                         IMPORTANTE
+Durante a fase de integração e homologação técnica com o SNCR, o perfil de requisição de numeração de
+Notificação de Receita pelo prescritor poderá operar, em ambiente de teste, sem depender de aprovação prévia
+da autoridade sanitária, exclusivamente para viabilizar a validação técnica das integrações. Essa
+funcionalidade não se aplica ao ambiente de produção.
+
+Em operação real, toda solicitação de numeração de Notificação de Receita continuará sujeita à análise e
+aprovação prévia da Visa competente, que permanece responsável pela autorização da numeração. As
+plataformas integradas ao SNCR, inclusive as mantidas por conselhos profissionais ou por provedores
+privados, atuam apenas como intermediadoras tecnológicas para consumo dos números previamente
+autorizados ao prescritor, sem substituição da competência regulatória e operacional da vigilância sanitária.
+
+Além disso, cumpre esclarecer que a página de solicitação de numeração destinada aos prescritores não estará
+disponível nesta primeira etapa de implementação, prevista até 30 de setembro de 2026. Nesse período inicial,
+o fluxo de solicitação permanecerá ocorrendo pelos canais atualmente adotados por cada Visa competente,
+conforme seus procedimentos próprios.
+
+        1.1 Swagger:
+
+    •    URL: https://sncr-api.hmg.apps.anvisa.gov.br/swagger-ui/index.html#/      HOMOLOGAÇÃO
+
+
+
+
+           Detalhes técnicos da API disponíveis:
+                   • Métodos HTTP;
+                   • Schemas;
+                   • Exemplos de requisição e resposta;
+                   • Autenticação técnica;
+                   • Payloads completos;
+
+
+
+        1.2 Autenticação:
+
+           I. Visão Geral:
+
+          A API SNCR utiliza um mecanismo de autenticação integrado à plataforma Gov.br, garantindo que
+          apenas usuários devidamente identificados e autorizados possam acessar seus recursos.
+
+          Para que uma requisição seja processada com sucesso, o profissional requisitante deve possuir uma
+          conta Gov.br ativa e válida. O processo de autenticação é realizado por meio do protocolo OAuth 2.0
+          com OpenID Connect (OIDC), utilizando o Gov.br como provedor de identidade.
+
+          A integração é realizada pelo GovBrRedirectFilter, componente de autenticação que implementa o
+          fluxo de autenticação OAuth2/OIDC para integração com o Gov.br via Keycloak, com suporte a
+          múltiplos clientes frontend em domínios diferentes (cross-domain).
+                                               SNCR
+
+II. Fluxo:
+
+
+
+
+III. Endpoints:
+
+         a. [GET] /api/v1/auth/login (Inicia o fluxo)
+
+                  i.       Dados para requisição:
+
+                        Parâmetro            Obrigatório          Descrição
+
+                        client_url           Sim                  URL de retorno do frontend.
+
+                        state                Não                  Estado arbitrário do cliente
+
+
+                  ii.      Comportamento:
+
+                                •    Gera nonce e state assinado com HMAC-SHA256.
+                                •    Cria sessão temporária (apenas para validação do nonce).
+                                •    Redireciona para Keycloak com kc_idp_hint=govbr.
+
+
+         b. Callback Configurável (${app.auth.auth-callback})
+
+                  i.       Processamento:
+
+                                1.   Recebe code e state do Keycloak.
+                                2.   Valida assinatura e expiração do state.
+                                3.   Valida nonce (não depende de cookie!).
+                                4.   Troca code por access_token via Keycloak.
+                                5.   Gera session_token de uso único (30s).
+                                6.   Redireciona para client_url com ?session_id={token}.
+                                      SNCR
+
+
+        c. [GET] /api/v1/auth/token (Recupera Access Token)
+
+              i.    Resposta (200 OK):
+
+
+
+
+              ii.   Erro:
+
+
+
+
+            Observação: O token é removido da sessão após a requisição (uso único).
+
+
+IV. Variáveis de Configuração:
+
+        a. application.yml:
+
+
+
+
+        b. Segurança:
+
+             Mecanismo                     Descrição
+             HMAC State                    State assinado com HMAC-SHA256
+             Nonce Validation              Previne replay attacks (timeout: 5 minutos)
+
+             Session Token One-Time        session_token expira em 30s e é removido após uso
+
+             State Expiry                  Timeout configurável (5 minutos)
+
+             Domain Whitelist              Apenas domínios .br são permitidos
+
+
+
+
+                    Importante - O estado da autenticação é mantido via:
+                       • nonce no state para validação do callback
+                       • session_token na URL para recuperação do token
+                                          SNCR
+
+
+                  i.    Estrutura do State Assinado:
+
+
+
+
+           c. Notas de Segurança:
+
+                   i.   HTTPS obrigatório em produção;
+                  ii.   Session token tem expiração curta (30s) e uso único;
+                 iii.   State tem expiração de 5 minutos;
+                 iv.    Nonce armazenado em memória com timeout.
+
+
+
+
+1.3 Endpoints:
+
+   I.   Notificação de Receita: Disponibilização de números para notificações de receita autorizadas
+        pela Vigilância Sanitária.
+                                                      SNCR
+             a. URL: [POST] /numeracoes/notificacao-receita
+             b. Fluxo:
+
+
+
+
+             c. Dados para requisição:
+
+Parâmetro     Tipo              Obrigatório     Exemplo   Descrição
+
+                                                          Tipo de receita. Valores permitidos: NRA, NRB, NRB2,
+receita       string            Sim             NRA
+                                                          NRR, NRT.
+                                                          Conselho no qual o prescritor possui inscrição. Valores
+conselho      string            Sim             CRM
+                                                          permitidos: CRM, CRMV e CRO.
+uf            string            Sim             RJ        Unidade Federativa (UF) do conselho.
+documento     string            Sim             123456    Número de identificação do prescritor no conselho.
+              Integer
+quantidade                      Sim             25        Quantidade de números desejados. Min: 10 – Max: 50
+              (32)
+
+
+                     i.       Exemplo:
+
+
+
+
+             d. Resposta:
+
+Campo                  Tipo           Exemplo                  Descrição
+numeroReceita          string         2411.1-00.0000001        Número da receita disponibilizado. Mais de um
+                                      2411.1-00.0000002        número poderá ser informado.
+                                      2411.1-00.0000003
+saldoReceitas          Interger       49                       Quantidade de numerações de receita do tipo
+                       (32)                                    informado disponíveis
+mensagem               string         "Saldo inferior a 50     Mensagem de alerta exibida quando a quantidade
+                                      receitas disponíveis."   de numerações atribuídas a um prescritor é inferior
+                                                               a 50.
+                                              SNCR
+
+                  i.    Exemplo:
+
+
+
+
+         e. Regras de negócio e restrições:
+
+                  i.    Validação do prescritor:
+                            • O profissional autenticado por meio do gov.br durante o processo de
+                               autenticação da API SNCR deve corresponder ao prescritor informado
+                               na requisição.
+
+                             •   O prescritor deve ter sido previamente cadastrado no sistema SNCR.
+
+                             •   Os dados de conselho profissional, UF do conselho e número de
+                                 documento profissional informados na requisição devem corresponder
+                                 a um registro válido existente na base de dados do sistema SNCR.
+
+                 ii.    Numerações atribuídas:
+                           • O prescritor deve possuir numerações disponíveis e atribuídas ao seu
+                              cadastro para o tipo de receita solicitado (NRA, NRB, NRB2, NRR ou
+                              NRT).
+
+                 iii.   Limite de numerações de receita:
+                           • A disponibilização de numerações está limitada a 50 números por tipo
+                                de receita, por prescritor e por dia.
+
+                             •   Caso a quantidade solicitada seja superior à quantidade de
+                                 numerações disponíveis para o prescritor, a API retornará apenas a
+                                 quantidade existente em estoque.
+
+
+
+
+         f.    Códigos de status:
+
+Código        Descrição
+201           Numeração de receita disponibilizada com sucesso.
+204           Nenhuma numeração de receita disponível.
+              Parâmetros inválidos, prescritor não encontrado, limite diário alcançado ou quantidade solicitada
+400
+              inválida.
+401           Não autorizado.
+403           Acesso negado.
+404           Página não foi encontrada.
+500           Erro interno do servidor.
+
+
+         g.
+                                                    SNCR
+
+Código         Mensagem                                 Descrição
+HTTP
+400            Tipo da receita não pode ser nulo        O campo receita não foi informado na requisição.
+400            Tipo de receita inválido para esta       O valor informado para receita não é suportado.
+               requisição.                              Valores aceitos: NRA, NRB, NRB2, NRR e NRT.
+400            Conselho não pode ser nulo               O campo conselho não foi informado na
+                                                        requisição.
+400            Conselho inválido                        O conselho informado não é suportado pela API.
+400            UF não pode ser nulo                     O campo uf não foi informado na requisição.
+400            Número de identidicação do               O campo documento não foi informado na
+               prescritor não pode ser nulo             requisição.
+400            Quantidade de receitas não pode          O campo quantidade não foi informado na
+               ser nulo                                 requisição.
+400            A quantidade mínima permitida é 10       O valor informado para quantidade é inferior ao
+                                                        mínimo permitido.
+400            Limite diário de 50 receitas atingido.   A quantidade solicitada ultrapassa o limite diário
+               Já disponibilizadas hoje: X. Saldo       de disponibilização de numerações para o
+               restante para hoje: Y.                   prescritor.
+403            A inscrição profissional informada       O conselho, número de inscrição ou UF
+               não está vinculada ao profissional       informados não correspondem a uma inscrição
+               autenticado.                             ativa vinculada ao CPF do profissional autenticado
+                                                        via Gov.br.
+
+
+
+
+         II.     Receita de Controle Especial / Receita Sujeita a Retenção: Criação do bloco de
+                 numeração para receitas de controle especial e receitas sujeitas à retenção;
+
+                     a. URL: [POST] /numeracoes/receita-especial-retencao
+                     b. Fluxo:
+                                                SNCR
+
+
+
+
+            c. Dados para requisição:
+
+Parâmetro     Tipo      Obrigatório    Exemplo          Descrição
+                                                        Conselho ao qual o prescritor possui inscrição.
+conselho      string    Sim            CRM
+                                                        Valores permitidos: CRM, CRMV e CRO.
+tipo          string    Sim            RCE              Tipo de receita. Valores permitidos: RCE e RET.
+documento     string    Sim            123456           Número de identificação do prescritor no conselho.
+uf            string    Sim            RJ               Unidade Federativa (UF) do conselho.
+cnpj          string    Sim            11111111111111   CNPJ da empresa responsável pela plataforma de
+                                                        prescrição eletrônica que está consumindo a API.
+
+
+
+               i.           Exemplo:
+
+
+
+
+            d. Resposta:
+Campo                Tipo      Exemplo                  Descrição
+inicio               string    2602.6-53.0000001        Numeração inicial do intervalo de 1000 números
+                                                        disponibilizados.
+
+fim                  string    2602.6-53.0001000        Numeração final do intervalo de 1000 números
+                                                        disponibilizados.
+                                               SNCR
+quantidade             Integer   1000                     Indicação      da    quantidade      de    número
+                       (32)                               disponibilizados. Neste cenário, 1000 números será
+                                                          uma constante.
+mensagem               string    "Numeração gerada com    Mensagem exibida após requisição realizada com
+                                 sucesso."                sucesso.
+
+
+
+
+                i.          Exemplo:
+
+
+
+
+             e. Regras de negócio e restrições:
+
+                      i.    Validação do prescritor:
+                                • O profissional autenticado por meio do gov.br durante o processo de
+                                   autenticação da API SNCR deve corresponder ao prescritor informado
+                                   na requisição.
+
+                                 •   O prescritor deve possuir inscrição ativa no conselho profissional
+                                     indicado na requisição.
+
+                                 •   Os dados de conselho profissional, UF do conselho e número de
+                                     documento profissional informados na requisição devem corresponder
+                                     a um registro válido existente na base de dados do sistema SNCR.
+
+                     ii.    Validação do CNPJ:
+                                • O CNPJ informado deve corresponder ao CNPJ da empresa
+                                   responsável pela plataforma de prescrição eletrônica que está
+                                   consumindo a API.
+
+                                 •   O CNPJ informado deve ser válido, conforme validação dos dígitos
+                                     verificadores.
+
+                     iii.   Limite de numerações de receita:
+                               • O endpoint “Receita de Controle Especial / Receita Sujeita a
+                                    Retenção” disponibiliza 1.000 numerações por requisição.
+
+                                 •   Limite de 3 requisições mensais por inscrição profissional para
+                                     obtenção de numerações de Receita de Controle Especial (RCE /
+                                     Receita Sujeita a Retenção (RET);
+
+                                 •   Cada profissional está limitado à obtenção de 3.000 numerações entre
+                                     RCE e RET por mês.
+                                             SNCR
+         f.    Códigos de status:
+
+Código        Descrição
+201           Numeração de receita disponibilizada com sucesso.
+400           Parâmetros inválidos ou regra de negócio não atendida.
+401           Não autorizado.
+403           Acesso negado.
+404           Página não foi encontrada.
+500           Erro interno do servidor.
+
+
+
+
+         g. Mensagens de erro:
+
+Código HTTP                           Mensagem                             Descrição
+400                                   Tipo de receita não pode ser nulo.   O campo tipo não foi informado na
+                                                                           requisição.
+400                                   UF não pode ser nulo.                O campo uf não foi informado na
+                                                                           requisição.
+400                                   Conselho não pode ser nulo.          O campo conselho não foi
+                                                                           informado na requisição.
+400                                   Documento não pode ser nulo.         O campo documento não foi
+                                                                           informado na requisição.
+                                      CNPJ inválido.                       O CNPJ informado não possui
+                                                                           formato válido ou não passou na
+400                                                                        validação        dos        dígitos
+                                                                           verificadores.
+400                                   Tipo da receita inválido. Valores    Apenas receitas dos tipos RCE
+                                      permitidos: [RCE, RET]               e RET podem ser emitidas.
+400                                   UF não encontrada: {UF}              A UF deve existir na base
+                                                                           cadastral do sistema.
+400                                   Usuário atingiu o limite máximo de   O prescritor possui limite mensal
+                                      receita para o tipo de receita no    de 3.000 receitas por tipo.
+                                      mês atual.
+404                                   O usuário informado não possui       O prescritor deve possuir inscrição
+                                      vínculo    ativo    no    conselho   ativa e compatível com conselho,
+                                      {CONSELHO} para o documento          UF e registro informados.
+                                      {DOCUMENTO} e UF {UF}.
+400                                   Usuário       autenticado     não    O usuário autenticado via Gov.br
+                                      encontrado: {USER_ID}                ainda não possui cadastro no
+                                                                           SNCR. É necessário realizar o
+                                                                           cadastro antes de utilizar a
+                                                                           operação.
+

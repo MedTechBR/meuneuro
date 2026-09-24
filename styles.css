@@ -1,4 +1,4 @@
-/* Meu Neuro — estilos
+/* RefilMed — estilos
    Fonte do sistema, uma cor de acento, cartões de raio grande sobre cinza claro,
    ícones em blocos arredondados que reagem ao toque. */
 :root{
@@ -10,10 +10,10 @@
   --muted:#5d6676;
   --line:#e4e7ee;
   --line-2:#d5dae3;
-  --acc:#3346c4;
-  --acc-ink:#2533a0;
-  --acc-soft:#eceefc;
-  --acc-soft-2:#dfe3fa;
+  --acc:#0f7b6c;
+  --acc-ink:#0a5a4f;
+  --acc-soft:#e0f3ef;
+  --acc-soft-2:#c9eae2;
   --ok:#16734a;
   --ok-soft:#e3f4eb;
   --warn:#8a5a00;
@@ -43,7 +43,7 @@ p{margin:0}
 .small{font-size:13px}
 .hide{display:none!important}
 .ti{font-size:18px;line-height:1;vertical-align:-3px}
-:focus-visible{outline:3px solid rgba(51,70,196,.35);outline-offset:2px}
+:focus-visible{outline:3px solid rgba(15,123,108,.35);outline-offset:2px}
 
 /* ---------- ícone em bloco arredondado ---------- */
 .ico{width:42px;height:42px;border-radius:14px;display:inline-grid;place-items:center;flex:none;background:var(--acc-soft);color:var(--acc);transition:background .2s var(--ease),color .2s var(--ease),transform .2s var(--ease)}
@@ -97,7 +97,7 @@ p{margin:0}
 .btn:active{transform:scale(.97)}
 .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
 .btn-p{background:var(--acc);border-color:var(--acc);color:#fff}
-.btn-p:hover{background:var(--acc-ink);border-color:var(--acc-ink);box-shadow:0 6px 18px rgba(51,70,196,.28)}
+.btn-p:hover{background:var(--acc-ink);border-color:var(--acc-ink);box-shadow:0 6px 18px rgba(15,123,108,.28)}
 .btn-d{color:var(--bad);border-color:#f0c7c2}
 .btn-d:hover{background:var(--bad-soft);border-color:#eab0a9}
 .btn-s{padding:7px 12px;min-height:36px;font-size:14px;border-radius:12px}
@@ -108,7 +108,7 @@ p{margin:0}
 .campo>span{display:block;font-size:13px;color:var(--ink-2);margin:0 0 6px;font-weight:550}
 .inp,select.inp,textarea.inp{width:100%;border:1px solid var(--line-2);background:#fff;border-radius:13px;padding:11px 13px;min-height:46px;outline:none;transition:border-color .15s,box-shadow .15s}
 .inp:hover{border-color:#bfc6d2}
-.inp:focus{border-color:var(--acc);box-shadow:0 0 0 4px rgba(51,70,196,.13)}
+.inp:focus{border-color:var(--acc);box-shadow:0 0 0 4px rgba(15,123,108,.13)}
 textarea.inp{resize:vertical;min-height:88px;line-height:1.45}
 .linha2{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--r-xl);box-shadow:var(--shadow)}
@@ -179,7 +179,7 @@ textarea.inp{resize:vertical;min-height:88px;line-height:1.45}
 .etapa.feito .pt{background:var(--acc-soft);border-color:var(--acc-soft);color:var(--acc)}
 .etapa.feito::after{background:var(--acc)}
 .etapa.atual{color:var(--ink)}
-.etapa.atual .pt{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 0 0 4px rgba(51,70,196,.15)}
+.etapa.atual .pt{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 0 0 4px rgba(15,123,108,.15)}
 .msgs{flex:1;padding:12px 0 18px;display:flex;flex-direction:column;gap:8px}
 .linha-ia{display:flex;gap:10px;align-items:flex-end;max-width:88%}
 .linha-ia .av{width:30px;height:30px;border-radius:10px;overflow:hidden;flex:none;visibility:hidden}
@@ -207,7 +207,7 @@ textarea.inp{resize:vertical;min-height:88px;line-height:1.45}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 10px}
 .chip{display:inline-flex;align-items:center;gap:8px;border:1px solid var(--line-2);background:var(--surface);border-radius:14px;padding:10px 14px;font-size:14.5px;font-weight:500;text-align:left;line-height:1.3;transition:transform .15s var(--ease),border-color .15s,background .15s,box-shadow .15s}
 .chip .ti{font-size:17px;color:var(--acc)}
-.chip:hover{border-color:var(--acc);color:var(--acc-ink);box-shadow:0 4px 12px rgba(51,70,196,.12);transform:translateY(-1px)}
+.chip:hover{border-color:var(--acc);color:var(--acc-ink);box-shadow:0 4px 12px rgba(15,123,108,.12);transform:translateY(-1px)}
 .chip:active{transform:scale(.96)}
 .chip.p{background:var(--acc);border-color:var(--acc);color:#fff}
 .chip.p .ti{color:#fff}
@@ -222,7 +222,7 @@ textarea.inp{resize:vertical;min-height:88px;line-height:1.45}
 .opt input:checked::after,.check input:checked::after{transform:rotate(-45deg) translate(1px,-1px) scale(1)}
 .opt:has(input:checked){background:var(--acc-soft)}
 .escreve{display:flex;gap:8px;align-items:flex-end;background:var(--surface);border:1px solid var(--line-2);border-radius:20px;padding:6px 6px 6px 8px;box-shadow:var(--shadow);transition:border-color .15s,box-shadow .15s}
-.escreve:focus-within{border-color:var(--acc);box-shadow:0 0 0 4px rgba(51,70,196,.12)}
+.escreve:focus-within{border-color:var(--acc);box-shadow:0 0 0 4px rgba(15,123,108,.12)}
 .escreve .inp{flex:1;border:0;box-shadow:none!important;min-height:44px;background:transparent;padding:10px 8px}
 .escreve textarea.inp{min-height:44px;resize:none}
 .escreve .btn{min-height:44px;width:44px;padding:0;border-radius:15px;flex:none}
@@ -260,7 +260,7 @@ textarea.inp{resize:vertical;min-height:88px;line-height:1.45}
 .fila-top h2{font-size:19px}
 .fila-top .sub{font-size:12.5px;color:var(--muted);margin:2px 0 12px}
 .busca{display:flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--line-2);border-radius:14px;padding:0 12px;transition:border-color .15s,box-shadow .15s}
-.busca:focus-within{border-color:var(--acc);box-shadow:0 0 0 4px rgba(51,70,196,.12)}
+.busca:focus-within{border-color:var(--acc);box-shadow:0 0 0 4px rgba(15,123,108,.12)}
 .busca input{border:0;outline:0;background:transparent;min-height:40px;flex:1;font-size:14px;min-width:0}
 .busca .ti{color:var(--muted)}
 .fila-lista{overflow:auto;flex:1;padding:4px 10px 14px}
@@ -344,7 +344,7 @@ textarea.inp{resize:vertical;min-height:88px;line-height:1.45}
 .linha-tempo .pt{width:32px;height:32px;border-radius:11px;background:var(--surface-2);border:1px solid var(--line-2);flex:none;display:grid;place-items:center;color:var(--muted)}
 .linha-tempo .pt .ti{font-size:16px;vertical-align:0}
 .linha-tempo li.feito .pt{background:var(--ok);border-color:var(--ok);color:#fff}
-.linha-tempo li.agora .pt{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 0 0 4px rgba(51,70,196,.15)}
+.linha-tempo li.agora .pt{background:var(--acc);border-color:var(--acc);color:#fff;box-shadow:0 0 0 4px rgba(15,123,108,.15)}
 
 /* ---------- documento da receita (tela e impressão) ---------- */
 .doc-area{background:#e7e9ee;padding:22px;border-radius:var(--r-xl);overflow:auto}
@@ -467,7 +467,7 @@ textarea.inp{resize:vertical;min-height:88px;line-height:1.45}
 .cond:hover .ico{transform:rotate(-8deg) scale(1.1)}
 .passo .num{color:var(--tint);background:var(--tint-soft);width:28px;height:28px;border-radius:10px;display:grid;place-items:center;top:18px;right:18px}
 .passo::before{content:"";position:absolute;left:22px;right:22px;top:0;height:3px;border-radius:0 0 3px 3px;background:var(--tint)}
-.etapa.atual .pt{background:var(--tint,var(--acc));border-color:var(--tint,var(--acc));box-shadow:0 0 0 4px var(--tint-soft,rgba(51,70,196,.15))}
+.etapa.atual .pt{background:var(--tint,var(--acc));border-color:var(--tint,var(--acc));box-shadow:0 0 0 4px var(--tint-soft,rgba(15,123,108,.15))}
 .etapa.feito .pt{background:var(--tint-soft,var(--acc-soft));border-color:var(--tint-soft,var(--acc-soft));color:var(--tint,var(--acc))}
 .etapa.feito::after{background:var(--tint,var(--acc))}
 .trilho-it:hover .ico{background:var(--tint-soft,var(--acc-soft));color:var(--tint,var(--acc))}
@@ -493,3 +493,8 @@ textarea.inp{resize:vertical;min-height:88px;line-height:1.45}
 @media (max-width:760px){.flutua{display:none}}
 .trilho-it .ico{background:transparent;color:var(--tint,var(--muted))}
 .trilho-it:not(.on) .ico .ti{opacity:.85}
+.esp-filtro{display:flex;gap:6px;overflow-x:auto;margin:10px 0 0;padding-bottom:2px;scrollbar-width:none}
+.esp-filtro::-webkit-scrollbar{display:none}
+.esp-chip{border:1px solid var(--line-2);background:var(--surface);border-radius:999px;padding:5px 11px;font-size:12.5px;font-weight:550;white-space:nowrap;color:var(--ink-2);transition:.15s}
+.esp-chip:hover{border-color:var(--acc);color:var(--acc-ink)}
+.esp-chip.on{background:var(--acc);border-color:var(--acc);color:#fff}

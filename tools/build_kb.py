@@ -49,6 +49,11 @@ APELIDOS = {
     'venlafaxina': ['venlafaxine'],
     'sumatriptana': ['sumatriptano', 'sumatripitana'],
     'zolpidem': ['zolpiden'],
+    'insulina-nph': ['nph', 'insulina nph', 'humulin n', 'novolin n'],
+    'insulina-regular': ['insulina regular', 'humulin r', 'novolin r'],
+    'insulina-glargina': ['glargina', 'lantus', 'basaglar', 'toujeo', 'glargilin'],
+    'levotiroxina': ['puran', 'puran t4', 'synthroid', 'euthyrox', 'levoid'],
+    'metformina': ['glifage', 'glifage xr'],
 }
 
 # Portaria 344/98, art. 59, parágrafo único: anticonvulsivantes e antiparkinsonianos até 6 meses de tratamento
@@ -59,7 +64,21 @@ EXCECAO_6M = {**{i: 'epilepsia' for i in ['levetiracetam', 'lamotrigina', 'carba
                                         'topiramato', 'lacosamida', 'gabapentina', 'pregabalina', 'primidona']},
               **{i: 'parkinson' for i in ['pramipexol', 'rasagilina', 'amantadina', 'entacapona', 'biperideno']}}
 
+LISTAS = ['marcas', 'indicacoes', 'apresentacoes', 'efeitosComuns', 'sinaisAlerta', 'monitorizacao', 'interacoes', 'orientacoes', 'alertasMedico', 'fontes']
+TEXTOS = ['posologiaUsual', 'doseMaxDia', 'gestacao', 'suspensao', 'classe', 'nome']
+
 FORMAS = [
+    (r'aerossol oral|spray oral|aerossol', lambda m: 'aerossol oral (bombinha)'),
+    (r'pó inalatório|pó para inalação', lambda m: 'pó inalatório'),
+    (r'cápsulas? inalatórias?', lambda m: 'cápsula inalatória'),
+    (r'solução para inalação', lambda m: 'solução para inalação'),
+    (r'solução para nebulização', lambda m: 'solução para nebulização'),
+    (r'comprimidos? mastigáve(?:l|is)', lambda m: 'comprimido mastigável'),
+    (r'sachês?(?: de grânulos)?', lambda m: 'sachê'),
+    (r'cápsulas? (?:duras? )?de liberação modificada', lambda m: 'cápsula de liberação modificada'),
+    (r'caneta', lambda m: 'caneta preenchida'),
+    (r'frasco', lambda m: 'frasco-ampola'),
+
     (r'comprimidos? revestidos? de liberação (prolongada|retardada|controlada)', lambda m: 'comprimido revestido de liberação ' + m.group(1)),
     (r'comprimidos? de liberação (prolongada|retardada|controlada)', lambda m: 'comprimido de liberação ' + m.group(1)),
     (r'cápsulas? (?:duras? )?de liberação (prolongada|retardada|controlada)', lambda m: 'cápsula de liberação ' + m.group(1)),
@@ -105,15 +124,26 @@ def formas_de(aps):
             if m: doses = [num(m.group(1)) + ' mg/24 h']
         else:
             combos = re.findall(r'(\d+(?:[.,]\d+)?)\s*mg\s*\+\s*(\d+(?:[.,]\d+)?)\s*mg', corpo)
+            barra = re.findall(r'(\d+(?:[.,]\d+)?)\s*/\s*(\d+(?:[.,]\d+)?)\s*(mcg|mg)\b', corpo)
+            liquido = re.search(r'(\d+(?:[.,]\d+)?)\s*mg\s*/\s*(\d+(?:[.,]\d+)?)\s*mL', corpo)
+            ui = re.search(r'(\d+)\s*UI\s*/\s*mL', corpo)
             if combos:
                 doses = [num(a) + '/' + num(b) + ' mg' for a, b in combos]
+            elif barra:
+                doses = [num(a) + '/' + num(b) + ' ' + u for a, b, u in barra]
+            elif liquido:
+                doses = [num(liquido.group(1)) + ' mg/' + num(liquido.group(2)) + ' mL']
+            elif ui:
+                doses = [ui.group(1) + ' UI/mL']
             else:
                 # "0,125 mg, 0,25 mg e 1 mg" | "10 mg, 40 mg e 80 mg" | "25, 50 e 100 mg"
-                for m in re.finditer(r'((?:\d+(?:[.,]\d+)?\s*(?:mg|mcg)?\s*(?:,|e|a)\s*)*\d+(?:[.,]\d+)?)\s*(mg/mL|mg/ml|mg por dose|mg|mcg)\b', corpo):
-                    unidade = m.group(2).replace('mg/ml', 'mg/mL').replace(' por dose', '')
+                for m in re.finditer(r'((?:\d+(?:[.,]\d+)?\s*(?:mg|mcg)?\s*(?:,|e|a)\s*)*\d+(?:[.,]\d+)?)\s*(mg/mL|mg/ml|mg por dose|mcg/dose|mcg/inalação|mg|mcg)\b', corpo):
+                    unidade = m.group(2).replace('mg/ml', 'mg/mL').replace(' por dose', '').replace('/inalação', '/dose')
                     for n in re.findall(r'\d+(?:[.,]\d+)?', m.group(1)):
                         doses.append(num(n) + ' ' + unidade)
         for d in doses:
+            if 'UI' in d and forma.startswith('comprimido'):
+                continue
             k = (d, forma)
             if k in vistos: continue
             vistos.add(k)
@@ -133,14 +163,24 @@ def main():
                 print('ids repetidos:', i, arq.name); continue
             ids.add(i)
             x['id'] = i
+            for campo in LISTAS:
+                v = x.get(campo)
+                if v is None: x[campo] = []
+                elif isinstance(v, str):
+                    # texto corrido com itens separados por ';' vira lista de itens
+                    partes = [t.strip().rstrip('.') for t in re.split(r';\s+', v) if t.strip()]
+                    x[campo] = [pp[0].upper() + pp[1:] if pp else pp for pp in partes]
+            for campo in TEXTOS:
+                v = x.get(campo)
+                if isinstance(v, list): print('  lista virou texto:', i, campo); x[campo] = ' '.join(v)
             x['excecao6meses'] = EXCECAO_6M.get(i) if x['receituario'] == 'controle_especial' else None
             x['formas'] = formas_de(x.get('apresentacoes') or [])
             x['aliases'] = APELIDOS.get(i, [])
             kb.append(x)
     kb.sort(key=lambda k: k['nome'])
-    js = '/* Meu Neuro — banco de medicamentos neurológicos (GERADO por tools/build_kb.py; não editar à mão)\n' \
+    js = '/* RefilMed — banco de medicamentos neurológicos (GERADO por tools/build_kb.py; não editar à mão)\n' \
          '   Conteúdo verificado em bulas ANVISA, rótulos FDA/EMA, PCDT/MS e diretrizes (fontes em cada item). */\n' \
-         '(typeof window !== "undefined" ? window : globalThis).MN_KB = ' + json.dumps(kb, ensure_ascii=False, indent=0) + ';\n'
+         '(typeof window !== "undefined" ? window : globalThis).RF_KB = ' + json.dumps(kb, ensure_ascii=False, indent=0) + ';\n'
     (RAIZ / 'kb.js').write_text(js, encoding='utf-8')
     print(len(kb), 'fármacos;', sum(1 for k in kb if k['excecao6meses']), 'com exceção de 6 meses')
     for k in kb:

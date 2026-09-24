@@ -1,4 +1,4 @@
-# Meu Neuro — Base regulatória (Brasil, verificada em 23/09/2026)
+# RefilMed — Base regulatória (Brasil, verificada em 23/09/2026)
 
 Escopo: triagem por assistente de IA (queixas + medicações neurológicas atuais + rascunho de renovação de receita), depois teleconsulta com neurologista, que revisa, assina digitalmente e libera a receita online.
 
@@ -49,7 +49,7 @@ URL: https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2018/2217_2018.pd
   - (d) data e hora;
   - (e) assinatura digital.
   - URL: https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2021/2299_2021.pdf
-- **Res. CFM 2.336/2023 (publicidade), art. 4º:** peça publicitária deve trazer nome, CRM, a palavra "MÉDICO" e especialidade + **número do RQE**. O art. 5º traz as regras para estabelecimentos. Como a marca "Meu Neuro" anuncia neurologia, só médico com RQE em Neurologia pode ser apresentado como neurologista.
+- **Res. CFM 2.336/2023 (publicidade), art. 4º:** peça publicitária deve trazer nome, CRM, a palavra "MÉDICO" e especialidade + **número do RQE**. O art. 5º traz as regras para estabelecimentos. Como a marca "RefilMed" anuncia neurologia, só médico com RQE em Neurologia pode ser apresentado como neurologista.
   - URL: https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2023/2336_2023.pdf
 
 ### Guarda do prontuário

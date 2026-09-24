@@ -1,19 +1,19 @@
-/* Meu Neuro — tela do paciente (conversa com o assistente) */
+/* RefilMed — tela do paciente (conversa com o assistente) */
 (function (G) {
-  const MN = G.MN;
-  const { esc, $ } = MN;
+  const RF = G.RF;
+  const { esc, $ } = RF;
   const UFS = 'AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO'.split(' ');
   let conv = null, ocupado = false;
 
-  MN.telaPaciente = function (el) {
-    const salvo = MN.backend.rascunho.ler();
+  RF.telaPaciente = function (el) {
+    const salvo = RF.backend.rascunho.ler();
     const pedido = salvo && salvo.status === 'rascunho' || (salvo && salvo.status === 'urgencia') ? salvo : null;
-    conv = new MN.Conversa(pedido, { ia: (t, d) => MN.backend.ia(t, d) });
+    conv = new RF.Conversa(pedido, { ia: (t, d) => RF.backend.ia(t, d) });
     el.innerHTML = `
       <div class="conv-wrap">
         <section class="conv" aria-label="Conversa com o assistente">
           <div class="conv-top">
-            <div class="conv-head"><span class="av-ia">${MN.marcaSVG}</span><div><b>Assistente Meu Neuro</b><span class="st">Pré-consulta · o neurologista revisa tudo</span></div><span class="sp"></span>
+            <div class="conv-head"><span class="av-ia">${RF.marcaSVG}</span><div><b>Assistente RefilMed</b><span class="st">Pré-consulta · o médico revisa tudo</span></div><span class="sp"></span>
               <button class="btn btn-s btn-g lado-btn" id="abrir-lado"><i class="ti ti-clipboard-list"></i><span>O que informei</span></button></div>
             <div class="etapas" id="etapas"></div>
           </div>
@@ -34,7 +34,7 @@
       aviso.className = 'small muted'; aviso.style.textAlign = 'center';
       aviso.innerHTML = 'Você voltou de onde parou. <button class="btn btn-s btn-g" id="recomecar">Começar de novo</button>';
       msgs.appendChild(aviso);
-      $('#recomecar').onclick = () => { if (confirm('Apagar as respostas e começar de novo?')) { MN.backend.rascunho.apagar(); MN.telaPaciente(el); } };
+      $('#recomecar').onclick = () => { if (confirm('Apagar as respostas e começar de novo?')) { RF.backend.rascunho.apagar(); RF.telaPaciente(el); } };
       rolar();
     } else {
       mostrar(conv.perguntar());
@@ -48,7 +48,7 @@
     if (tipo === 'pac') return d;
     const l = document.createElement('div');
     l.className = 'linha-ia' + (tipo === 'orient' ? ' largo' : '');
-    l.innerHTML = '<span class="av">' + MN.marcaSVG + '</span>';
+    l.innerHTML = '<span class="av">' + RF.marcaSVG + '</span>';
     l.appendChild(d);
     return l;
   }
@@ -82,23 +82,23 @@
   async function persistir() {
     const p = conv.p;
     if (p.status === 'rascunho' || p.status === 'urgencia') {
-      MN.backend.rascunho.gravar(p);
-      if (p.status === 'urgencia') { try { await MN.backend.salvarPedido(limpo(p)); } catch (e) { } }
+      RF.backend.rascunho.gravar(p);
+      if (p.status === 'urgencia') { try { await RF.backend.salvarPedido(limpo(p)); } catch (e) { } }
       return;
     }
     // enviado: grava no backend e guarda o código para acompanhar
     try {
-      await MN.backend.salvarPedido(limpo(p));
-      MN.backend.rascunho.apagar();
+      await RF.backend.salvarPedido(limpo(p));
+      RF.backend.rascunho.apagar();
       try {
-        const k = 'meuneuro.v1.meus-pedidos';
+        const k = 'refilmed.v1.meus-pedidos';
         const l = JSON.parse(localStorage.getItem(k) || '[]');
         if (!l.find(x => x.codigo === p.codigo)) l.unshift({ codigo: p.codigo, nasc: p.paciente.nasc, em: p.enviadoEm });
         localStorage.setItem(k, JSON.stringify(l.slice(0, 10)));
       } catch (e) { }
     } catch (e) {
-      MN.toast('Não consegui enviar agora. Verifique a internet; suas respostas estão guardadas.');
-      MN.backend.rascunho.gravar(p);
+      RF.toast('Não consegui enviar agora. Verifique a internet; suas respostas estão guardadas.');
+      RF.backend.rascunho.gravar(p);
     }
   }
   function limpo(p) {
@@ -123,7 +123,7 @@
 
   function desenharEtapas() {
     const e = conv.etapa;
-    $('#etapas').innerHTML = MN.ETAPAS.map((n, i) => `<div class="etapa ${MN.ETAPAS_COR[i]} ${i < e ? 'feito' : i === e ? 'atual' : ''}" title="${n}"><span class="pt"><i class="ti ${i < e ? 'ti-check' : MN.ETAPAS_ICO[i]}"></i></span><span class="nm">${n}</span></div>`).join('');
+    $('#etapas').innerHTML = RF.ETAPAS.map((n, i) => `<div class="etapa ${RF.ETAPAS_COR[i]} ${i < e ? 'feito' : i === e ? 'atual' : ''}" title="${n}"><span class="pt"><i class="ti ${i < e ? 'ti-check' : RF.ETAPAS_ICO[i]}"></i></span><span class="nm">${n}</span></div>`).join('');
     const b = $('#abrir-lado'); if (b) b.onclick = () => $('#lado').classList.toggle('aberto');
   }
 
@@ -132,10 +132,10 @@
     const meds = p.meds.filter(m => m.nome);
     const grupo = (ic, rot, corpo, cor) => `<div class="grupo ${cor || ''}"><span class="ico sm"><i class="ti ${ic}"></i></span><div class="conteudo"><div class="rot">${rot}</div>${corpo}</div></div>`;
     let h = '<div class="card"><div class="lado-tit"><span class="ico"><i class="ti ti-clipboard-list"></i></span><h3>O que você informou</h3></div>';
-    h += grupo('ti-user', 'Paciente', pa.nome ? esc(pa.nome) + (pa.nasc ? ' · ' + MN.idade(pa.nasc) + ' anos' : '') : '<span class="muted small">Ainda não informado</span>', 'c-azul');
-    if (p.condicoes.length) h += grupo('ti-brain', 'Motivo', p.condicoes.map(c => esc(c === 'outro' ? p.condicaoOutra : MN.condRot(c))).join('<br>'), 'c-rosa');
-    h += grupo('ti-pill', 'Remédios', meds.length ? meds.map(m => `<div class="rx-item"><b>${esc(MN.nomeRx(m))}</b><span>${esc(m.pos ? MN.descPosologia(m.pos, m.forma) : 'como toma: a informar')}</span></div>`).join('') : '<span class="muted small">Nenhum ainda</span>', 'c-violeta');
-    h += '<p class="nota">O neurologista revisa tudo e decide a receita no atendimento.</p>';
+    h += grupo('ti-user', 'Paciente', pa.nome ? esc(pa.nome) + (pa.nasc ? ' · ' + RF.idade(pa.nasc) + ' anos' : '') : '<span class="muted small">Ainda não informado</span>', 'c-azul');
+    if (p.condicoes.length) h += grupo('ti-brain', 'Motivo', p.condicoes.map(c => esc(c === 'outro' ? p.condicaoOutra : RF.condRot(c))).join('<br>'), 'c-rosa');
+    h += grupo('ti-pill', 'Remédios', meds.length ? meds.map(m => `<div class="rx-item"><b>${esc(RF.nomeRx(m))}</b><span>${esc(m.pos ? RF.descPosologia(m.pos, m.forma) : 'como toma: a informar')}</span></div>`).join('') : '<span class="muted small">Nenhum ainda</span>', 'c-violeta');
+    h += '<p class="nota">O médico revisa tudo e decide a receita no atendimento.</p>';
     h += '<button class="btn btn-s lado-btn" style="width:100%;margin-top:12px" onclick="document.getElementById(\'lado\').classList.remove(\'aberto\')">Fechar</button></div>';
     $('#lado').innerHTML = h;
   }
@@ -144,9 +144,9 @@
     const pa = p.paciente, meds = p.meds.filter(m => m.nome);
     const linha = (r, v) => v ? `<div style="display:flex;gap:10px;padding:4px 0"><span class="muted" style="min-width:130px">${r}</span><span>${v}</span></div>` : '';
     let h = '<h3>Resumo do pedido</h3>';
-    h += linha('Paciente', esc(pa.nome) + ' · ' + MN.idade(pa.nasc) + ' anos');
-    h += linha('Motivo', p.condicoes.map(c => esc(c === 'outro' ? p.condicaoOutra : MN.condRot(c))).join('; '));
-    h += '<div class="sub" style="margin-top:10px">Remédios</div><ul>' + meds.map(m => `<li><b>${esc(MN.nomeRx(m))}</b>: ${esc(m.pos ? MN.descPosologia(m.pos, m.forma) : '')}${(m.efeitos.length || m.efeitosOutros) ? '. Efeitos: ' + esc(m.efeitos.concat(m.efeitosOutros ? [m.efeitosOutros] : []).join('; ')) : ''}</li>`).join('') + '</ul>';
+    h += linha('Paciente', esc(pa.nome) + ' · ' + RF.idade(pa.nasc) + ' anos');
+    h += linha('Motivo', p.condicoes.map(c => esc(c === 'outro' ? p.condicaoOutra : RF.condRot(c))).join('; '));
+    h += '<div class="sub" style="margin-top:10px">Remédios</div><ul>' + meds.map(m => `<li><b>${esc(RF.nomeRx(m))}</b>: ${esc(m.pos ? RF.descPosologia(m.pos, m.forma) : '')}${(m.efeitos.length || m.efeitosOutros) ? '. Efeitos: ' + esc(m.efeitos.concat(m.efeitosOutros ? [m.efeitosOutros] : []).join('; ')) : ''}</li>`).join('') + '</ul>';
     h += linha('Outros remédios', esc(p.outrosMeds || 'Nenhum'));
     h += linha('Alergias', esc(p.alergias || 'Nenhuma'));
     h += linha('Receita para', (p.duracao || 30) + ' dias');
@@ -171,7 +171,7 @@
       h += chips(inp.chips || []);
       h += `<form class="escreve" id="f"><input class="inp" type="number" inputmode="numeric" id="t" min="${inp.min}" max="${inp.max}" placeholder="Ou escreva o número (${esc(inp.sufixo || '')})"><button class="btn btn-p" aria-label="Enviar"><i class="ti ti-arrow-up"></i></button></form>`;
     } else if (inp.tipo === 'multi') {
-      let pre = ''; try { pre = conv.passo === 'condicoes' ? sessionStorage.getItem('mn-cond') || '' : ''; } catch (e) { }
+      let pre = ''; try { pre = conv.passo === 'condicoes' ? sessionStorage.getItem('rf-cond') || '' : ''; } catch (e) { }
       h += '<div class="lista-sel">' + (inp.opcoes || []).map((o, i) => `<label class="opt"><input type="checkbox" data-v="${esc(o.v)}" data-r="${esc(o.r)}" ${o.v === pre ? 'checked' : ''}><span>${esc(o.r)}</span></label>`).join('');
       if (inp.nenhum) h += `<label class="opt"><input type="checkbox" data-v="${esc(inp.nenhum.v)}" data-r="${esc(inp.nenhum.r)}" data-nenhum="1"><span><b>${esc(inp.nenhum.r)}</b></span></label>`;
       if (inp.outro) h += `<div style="padding:6px 10px 10px"><input class="inp" id="outro" placeholder="${esc(inp.outro)} (opcional)"></div>`;
@@ -198,7 +198,7 @@
         e.preventDefault();
         const t = $('#t', box); const v = t.value.trim();
         if (!v) return;
-        if (inp.tipo === 'data') responder(v, MN.fmtData(v));
+        if (inp.tipo === 'data') responder(v, RF.fmtData(v));
         else responder(v, v);
       };
       const t = $('#t', box);
@@ -225,7 +225,7 @@
       $('#conf', box).onclick = () => {
         const sel = [...cks].filter(c => c.checked);
         const outro = inp.outro ? ($('#outro', box).value || '').trim() : '';
-        if (!sel.length && !outro) { MN.toast('Marque pelo menos uma opção.'); return; }
+        if (!sel.length && !outro) { RF.toast('Marque pelo menos uma opção.'); return; }
         const vals = sel.map(c => c.dataset.v), rots = sel.map(c => c.dataset.r);
         if (outro) rots.push(outro);
         responder(inp.outro ? { sel: vals, outro } : vals, rots.join('; '));

@@ -1,17 +1,19 @@
-/* Meu Neuro — motor da conversa com o paciente
+/* RefilMed — motor da conversa com o paciente
    Roteiro fixo (garante que nada importante fica sem perguntar) + interpretação de texto livre
    (nome do remédio, dose, posologia). Quando o backend tem IA publicada, ela entra como reforço
    para entender respostas que o interpretador local não resolveu e para dúvidas do paciente.
    Funciona em node (testes) e no navegador. */
 (function (G) {
-  const MN = G.MN = G.MN || {};
-  const norm = MN.norm;
-  const KB = () => G.MN_KB || [];
-  MN.kbPorId = id => KB().find(m => m.id === id) || null;
+  const RF = G.RF = G.RF || {};
+  const norm = RF.norm;
+  const KB = () => G.RF_KB || [];
+  RF.kbPorId = id => KB().find(m => m.id === id) || null;
+  // "Glifage XR", "Depakote ER", "Seroquel XRO", "LP", "CR", "retard"
+  RF.querLiberacaoLonga = txt => /\b(xr|xro|er|lp|cr|sr|od|la|retard|prolongada|controlada)\b/.test(RF.norm(txt || ''));
   // nome para receita (DCB, sem os parênteses explicativos do banco)
-  MN.nomeCurto = function (k, informado) {
+  RF.nomeCurto = function (k, informado) {
     if (k.id === 'valproato') {
-      const t = MN.norm(informado);
+      const t = RF.norm(informado);
       if (/depakote|divalpro/.test(t)) return 'Divalproato de sódio';
       if (/depakene|valproic/.test(t) && !/sodio/.test(t)) return 'Ácido valproico';
       return 'Valproato de sódio';
@@ -35,7 +37,7 @@
   const STOP = new Set(['sodio', 'acido', 'cloridrato', 'maleato', 'mesilato', 'bromidrato', 'hemitartarato', 'comprimido', 'comprimidos', 'capsula', 'liberacao', 'prolongada', 'retard', 'gotas', 'solucao', 'adesivo', 'oral', 'tomo', 'tomando', 'remedio', 'generico', 'para', 'dose', 'noite', 'manha', 'desde', 'anos', 'meses']);
 
   // procura o remédio no banco; devolve [{m, score, forte}] do mais provável ao menos
-  MN.acharMed = function (texto) {
+  RF.acharMed = function (texto) {
     const t = ' ' + norm(texto).replace(/[^a-z0-9+ ]/g, ' ').replace(/\s+/g, ' ') + ' ';
     const palavras = t.trim().split(' ').filter(w => w.length >= 4 && !STOP.has(w) && !/^\d/.test(w));
     const res = [];
@@ -68,7 +70,7 @@
     return res;
   };
 
-  MN.acharDose = function (texto) {
+  RF.acharDose = function (texto) {
     const t = norm(texto).replace(/(\d),(\d)/g, '$1.$2');
     let m = t.match(/(\d+(?:\.\d+)?)\s*\/\s*(\d+(?:\.\d+)?)\s*mg\b/);
     if (m) return m[1] + '/' + m[2] + ' mg';
@@ -80,7 +82,7 @@
     return null;
   };
   // miligramas numéricos de uma dose ("500 mg" → 500; "250/25 mg" → 250)
-  MN.mgDe = function (dose) {
+  RF.mgDe = function (dose) {
     const t = norm(dose).replace(',', '.');
     let m = t.match(/(\d+(?:\.\d+)?)\s*(?:\/\s*\d+(?:\.\d+)?\s*)?mg\b(?!\/)/);
     if (m) return parseFloat(m[1]);
@@ -109,7 +111,7 @@
   ];
 
   // "1 comprimido de manhã e 2 à noite" → {tomadas:[{p:'manha',q:1},{p:'noite',q:2}], unidadesDia:3, ...}
-  MN.lerPosologia = function (texto) {
+  RF.lerPosologia = function (texto) {
     const orig = String(texto || '');
     let t = numerosEmTexto(norm(orig));
     const r = { sos: false, tomadas: [], vezesDia: null, qtdPorTomada: null, unidadesDia: null, intervaloH: null, alternado: false, semanal: false };
@@ -160,129 +162,170 @@
   };
 
   // unidade de administração a partir da apresentação
-  MN.unidadeDe = function (forma) {
+  RF.unidadeDe = function (forma) {
     const f = norm(forma);
     if (/adesivo/.test(f)) return ['adesivo', 'adesivos'];
+    if (/aerossol|bombinha|po inalatorio|inalacao|inalatoria/.test(f)) return ['inalação', 'inalações'];
+    if (/caneta|frasco-ampola|\bui\b/.test(f)) return ['UI', 'UI'];
     if (/gota/.test(f)) return ['gota', 'gotas'];
-    if (/solucao|suspensao|xarope|ml/.test(f)) return ['mL', 'mL'];
+    if (/solucao|suspensao|xarope|nebuliza|ml/.test(f)) return ['mL', 'mL'];
     if (/capsula/.test(f)) return ['cápsula', 'cápsulas'];
     if (/drageia/.test(f)) return ['drágea', 'drágeas'];
     if (/sache|granulado/.test(f)) return ['sachê', 'sachês'];
     if (/spray|nasal/.test(f)) return ['jato', 'jatos'];
-    if (/injet|ampola|caneta/.test(f)) return ['aplicação', 'aplicações'];
+    if (/injet|ampola/.test(f)) return ['aplicação', 'aplicações'];
     return ['comprimido', 'comprimidos'];
   };
-  function qtdUn(q, un) { return MN.fmtQtd(q) + ' ' + (q > 1 ? un[1] : un[0]); }
+  // unidade que se conta na receita (comprimido, cápsula...) — nas demais o médico informa frascos/canetas
+  RF.unidadeContavel = forma => ['comprimido', 'cápsula', 'drágea', 'adesivo', 'sachê'].includes(RF.unidadeDe(forma)[0]);
+  RF.viaDe = function (forma) {
+    const f = norm(forma);
+    if (/adesivo/.test(f)) return ['Aplicar', ' na pele (trocar conforme orientação)'];
+    if (/nebuliza/.test(f)) return ['Nebulizar', ''];
+    if (/aerossol|bombinha|po inalatorio|inalacao|inalatoria/.test(f)) return ['Inalar', ' por via inalatória'];
+    if (/caneta|frasco-ampola/.test(f)) return ['Aplicar', ' por via subcutânea'];
+    if (/nasal/.test(f)) return ['Aplicar', ' por via nasal'];
+    if (/sublingual/.test(f)) return ['Colocar', ' embaixo da língua'];
+    return ['Tomar', ' por via oral'];
+  };
+  function qtdUn(q, un) { return RF.fmtQtd(q) + ' ' + (q > 1 ? un[1] : un[0]); }
 
   // descrição da posologia, para o paciente conferir e para a receita
-  MN.descPosologia = function (pos, forma, receita) {
+  RF.descPosologia = function (pos, forma, receita) {
     if (!pos) return '';
-    const un = MN.unidadeDe(forma || '');
+    const un = RF.unidadeDe(forma || '');
     let s = '';
     if (pos.tomadas && pos.tomadas.length) {
       const partes = pos.tomadas.map(x => qtdUn(x.q, un) + ' ' + PERIODOS.find(p => p.k === x.p).rot);
       s = partes.length > 1 ? partes.slice(0, -1).join(', ') + ' e ' + partes[partes.length - 1] : partes[0];
     } else if (pos.intervaloH) s = qtdUn(pos.qtdPorTomada, un) + ' de ' + pos.intervaloH + ' em ' + pos.intervaloH + ' horas';
-    else if (pos.semanal) s = qtdUn(pos.qtdPorTomada, un) + ' ' + (pos.semanal === 1 ? 'uma vez' : MN.fmtQtd(pos.semanal) + ' vezes') + ' por semana';
+    else if (pos.semanal) s = qtdUn(pos.qtdPorTomada, un) + ' ' + (pos.semanal === 1 ? 'uma vez' : RF.fmtQtd(pos.semanal) + ' vezes') + ' por semana';
     else if (pos.alternado) s = qtdUn(pos.qtdPorTomada, un) + ' em dias alternados';
-    else if (pos.vezesDia) s = qtdUn(pos.qtdPorTomada, un) + (pos.vezesDia === 1 ? ' uma vez ao dia' : ' ' + MN.fmtQtd(pos.vezesDia) + ' vezes ao dia');
+    else if (pos.vezesDia) s = qtdUn(pos.qtdPorTomada, un) + (pos.vezesDia === 1 ? ' uma vez ao dia' : ' ' + RF.fmtQtd(pos.vezesDia) + ' vezes ao dia');
     else if (pos.sos) s = qtdUn(pos.qtdPorTomada || 1, un);
     if (pos.sos) s += (s ? ' ' : '') + 'se necessário (na crise)';
     if (receita) {
-      const via = /adesivo/.test(norm(forma)) ? 'Aplicar' : 'Tomar';
-      const sufixo = /adesivo/.test(norm(forma)) ? ' na pele (trocar conforme orientação)' : ' por via oral';
+      if (RF.unidadeDe(forma)[0] === 'inalação') return 'Fazer ' + s + '.';
+      const [via, sufixo] = RF.viaDe(forma);
       return via + ' ' + s.replace(/^(\S+ \S+)/, '$1' + sufixo) + '.';
     }
     return s;
   };
 
   /* ====================== conteúdo fixo ====================== */
-  MN.CONDICOES = [
-    { v: 'epilepsia', cor: 'c-violeta', i: 'ti-wave-sine', c: 'Epilepsia', r: 'Epilepsia ou crises convulsivas' },
-    { v: 'enxaqueca', cor: 'c-ambar', i: 'ti-bolt', c: 'Enxaqueca', r: 'Enxaqueca ou outra dor de cabeça crônica' },
-    { v: 'parkinson', cor: 'c-verde', i: 'ti-walk', c: 'Parkinson', r: 'Doença de Parkinson' },
-    { v: 'demencia', cor: 'c-rosa', i: 'ti-puzzle', c: 'Demência', r: 'Alzheimer ou outra demência' },
-    { v: 'dor_neuropatica', cor: 'c-laranja', i: 'ti-flame', c: 'Dor neuropática', r: 'Dor neuropática (queimação, choque, formigamento)' },
-    { v: 'tremor', cor: 'c-teal', i: 'ti-hand-stop', c: 'Tremor', r: 'Tremor essencial' },
-    { v: 'avc', cor: 'c-vermelho', i: 'ti-heartbeat', c: 'AVC', r: 'AVC (derrame) prévio' },
-    { v: 'sono', cor: 'c-indigo', i: 'ti-moon', c: 'Sono', r: 'Insônia ou outro distúrbio do sono' },
-    { v: 'espasticidade', cor: 'c-ciano', i: 'ti-stretching', c: 'Espasticidade', r: 'Espasticidade (rigidez muscular)' }
+  // condições de uso contínuo; esp = especialidade que costuma acompanhar (fila do médico filtra por ela)
+  RF.CONDICOES = [
+    { v: 'hipertensao', cor: 'c-vermelho', i: 'ti-heart-rate-monitor', c: 'Pressão alta', r: 'Pressão alta (hipertensão)', esp: 'Cardiologia' },
+    { v: 'diabetes', cor: 'c-laranja', i: 'ti-droplet', c: 'Diabetes', r: 'Diabetes', esp: 'Endocrinologia' },
+    { v: 'colesterol', cor: 'c-ambar', i: 'ti-chart-line', c: 'Colesterol', r: 'Colesterol ou triglicerídeos altos', esp: 'Cardiologia' },
+    { v: 'coracao', cor: 'c-rosa', i: 'ti-heart', c: 'Coração', r: 'Doença do coração (infarto, arritmia, insuficiência cardíaca)', esp: 'Cardiologia' },
+    { v: 'tireoide', cor: 'c-teal', i: 'ti-butterfly', c: 'Tireoide', r: 'Hipotireoidismo ou outra doença da tireoide', esp: 'Endocrinologia' },
+    { v: 'asma_dpoc', cor: 'c-ciano', i: 'ti-lungs', c: 'Asma ou DPOC', r: 'Asma, bronquite ou DPOC (enfisema)', esp: 'Pneumologia' },
+    { v: 'estomago', cor: 'c-verde', i: 'ti-soup', c: 'Estômago', r: 'Refluxo, gastrite ou úlcera', esp: 'Gastroenterologia' },
+    { v: 'depressao_ansiedade', cor: 'c-violeta', i: 'ti-mood-smile', c: 'Saúde mental', r: 'Depressão, ansiedade ou outro problema de saúde mental', esp: 'Psiquiatria' },
+    { v: 'sono', cor: 'c-indigo', i: 'ti-moon', c: 'Sono', r: 'Insônia ou outro distúrbio do sono', esp: 'Psiquiatria' },
+    { v: 'epilepsia', cor: 'c-violeta', i: 'ti-wave-sine', c: 'Epilepsia', r: 'Epilepsia ou crises convulsivas', esp: 'Neurologia' },
+    { v: 'enxaqueca', cor: 'c-ambar', i: 'ti-bolt', c: 'Enxaqueca', r: 'Enxaqueca ou outra dor de cabeça crônica', esp: 'Neurologia' },
+    { v: 'parkinson', cor: 'c-verde', i: 'ti-walk', c: 'Parkinson', r: 'Doença de Parkinson', esp: 'Neurologia' },
+    { v: 'demencia', cor: 'c-rosa', i: 'ti-puzzle', c: 'Demência', r: 'Alzheimer ou outra demência', esp: 'Neurologia' },
+    { v: 'dor_neuropatica', cor: 'c-laranja', i: 'ti-flame', c: 'Dor crônica', r: 'Dor crônica ou neuropática (queimação, choque, formigamento)', esp: 'Neurologia' },
+    { v: 'avc', cor: 'c-vermelho', i: 'ti-brain', c: 'AVC', r: 'AVC (derrame) prévio', esp: 'Neurologia' },
+    { v: 'osteoporose', cor: 'c-ciano', i: 'ti-bone', c: 'Osteoporose', r: 'Osteoporose', esp: 'Endocrinologia' },
+    { v: 'gota', cor: 'c-laranja', i: 'ti-shoe', c: 'Gota', r: 'Gota (ácido úrico)', esp: 'Reumatologia' },
+    { v: 'prostata', cor: 'c-azul', i: 'ti-gender-male', c: 'Próstata', r: 'Próstata aumentada', esp: 'Urologia' },
+    { v: 'anticoncepcao', cor: 'c-rosa', i: 'ti-gender-female', c: 'Anticoncepção', r: 'Anticoncepcional (evitar gravidez)', esp: 'Ginecologia' },
+    { v: 'tremor', cor: 'c-teal', i: 'ti-hand-stop', c: 'Tremor', r: 'Tremor essencial', esp: 'Neurologia' }
   ];
-  MN.condRot = v => (MN.CONDICOES.find(c => c.v === v) || { r: v }).r;
-  MN.condCurta = v => (MN.CONDICOES.find(c => c.v === v) || { c: v }).c;
+  RF.espDe = v => (RF.CONDICOES.find(c => c.v === v) || { esp: 'Clínica Médica' }).esp;
+  RF.condRot = v => (RF.CONDICOES.find(c => c.v === v) || { r: v }).r;
+  RF.condCurta = v => (RF.CONDICOES.find(c => c.v === v) || { c: v }).c;
 
-  MN.ALARMES = [
-    { v: 'deficit', r: 'Fraqueza, dormência ou formigamento de repente em um lado do corpo, boca torta, fala enrolada ou perda de visão, agora ou nas últimas horas' },
+  RF.ALARMES = [
+    { v: 'dor_peito', r: 'Dor, aperto ou queimação no peito agora ou nas últimas horas' },
+    { v: 'falta_ar', r: 'Falta de ar forte, mesmo parado, ou lábios arroxeados' },
+    { v: 'deficit', r: 'Fraqueza, dormência ou formigamento de repente em um lado do corpo, boca torta, fala enrolada ou perda de visão' },
     { v: 'cefaleia_subita', r: 'Dor de cabeça que começou de repente e muito forte, a pior da sua vida' },
     { v: 'crise_prolongada', r: 'Crise convulsiva hoje que durou mais de 5 minutos, ou crises seguidas sem acordar entre elas' },
+    { v: 'glicose', r: 'Glicose muito alta ou muito baixa com confusão, desmaio ou vômitos que não param' },
+    { v: 'desmaio', r: 'Desmaio, palpitação forte ou batimento muito acelerado agora' },
+    { v: 'sangramento', r: 'Sangramento que não para, vômito com sangue ou fezes pretas' },
     { v: 'febre_rigidez', r: 'Febre com nuca dura, confusão ou sonolência fora do normal' },
     { v: 'pele', r: 'Manchas, bolhas ou feridas na pele ou na boca, com febre, depois de começar ou aumentar um remédio' },
-    { v: 'suicidio', r: 'Pensamentos de se machucar ou de tirar a própria vida' },
-    { v: 'queda_cabeca', r: 'Batida forte na cabeça nas últimas 24 horas, com vômitos, sonolência ou confusão' }
+    { v: 'suicidio', r: 'Pensamentos de se machucar ou de tirar a própria vida' }
   ];
 
-  MN.ULTIMA_CONSULTA = [
+  RF.ULTIMA_CONSULTA = [
     { v: 'ate6m', r: 'Há menos de 6 meses' },
     { v: '6a12m', r: 'Entre 6 meses e 1 ano' },
     { v: '1a2a', r: 'Entre 1 e 2 anos' },
     { v: 'mais2a', r: 'Há mais de 2 anos' },
-    { v: 'nunca', r: 'Nunca consultei presencialmente com neurologista' }
+    { v: 'nunca', r: 'Nunca consultei presencialmente para este problema' }
   ];
-  MN.rotulo = (lista, v) => ((lista || []).find(x => x.v === v) || { r: v || '' }).r;
+  RF.rotulo = (lista, v) => ((lista || []).find(x => x.v === v) || { r: v || '' }).r;
   // minúscula inicial sem estragar siglas ("DIU de cobre" continua "DIU de cobre")
-  MN.minus = s => (s && s.length > 1 && s[1] === s[1].toLowerCase()) ? s[0].toLowerCase() + s.slice(1) : (s || '');
+  RF.minus = s => (s && s.length > 1 && s[1] === s[1].toLowerCase()) ? s[0].toLowerCase() + s.slice(1) : (s || '');
 
-  MN.COMORB = [
+  RF.COMORB = [
     { v: 'has', r: 'Pressão alta' }, { v: 'dm', r: 'Diabetes' }, { v: 'coracao', r: 'Doença do coração (infarto, angina, arritmia)' },
     { v: 'figado', r: 'Doença do fígado' }, { v: 'rim', r: 'Doença dos rins' }, { v: 'psiq', r: 'Depressão, ansiedade ou outro problema de saúde mental' },
     { v: 'asma', r: 'Asma ou bronquite' }, { v: 'glaucoma', r: 'Glaucoma' }, { v: 'prostata', r: 'Próstata aumentada ou dificuldade para urinar' },
     { v: 'osteoporose', r: 'Osteoporose' }
   ];
 
-  MN.TEMPO_USO = [{ v: 'lt3m', r: 'Menos de 3 meses' }, { v: '3a12m', r: '3 a 12 meses' }, { v: '1a5a', r: '1 a 5 anos' }, { v: 'gt5a', r: 'Mais de 5 anos' }];
-  MN.ADESAO = [{ v: 'boa', r: 'Nunca ou quase nunca esqueço' }, { v: 'as_vezes', r: 'Esqueço às vezes (cerca de 1 vez por semana)' }, { v: 'ruim', r: 'Esqueço com frequência' }];
-  MN.EFICACIA = [{ v: 'boa', r: 'Sim, está funcionando bem' }, { v: 'parcial', r: 'Mais ou menos' }, { v: 'ruim', r: 'Não sinto que funciona' }];
-  MN.DURACAO = [{ v: 30, r: '30 dias' }, { v: 60, r: '60 dias' }, { v: 90, r: '90 dias' }, { v: 180, r: '6 meses' }];
-  MN.GESTACAO = [{ v: 'nao', r: 'Não' }, { v: 'gestante', r: 'Estou grávida' }, { v: 'amamentando', r: 'Estou amamentando' }, { v: 'planeja', r: 'Pretendo engravidar nos próximos meses' }];
-  MN.CONTRACEP = [
+  RF.COMORB_COND = { has: 'hipertensao', dm: 'diabetes', coracao: 'coracao', psiq: 'depressao_ansiedade', asma: 'asma_dpoc', prostata: 'prostata', osteoporose: 'osteoporose' };
+  RF.TEMPO_USO = [{ v: 'lt3m', r: 'Menos de 3 meses' }, { v: '3a12m', r: '3 a 12 meses' }, { v: '1a5a', r: '1 a 5 anos' }, { v: 'gt5a', r: 'Mais de 5 anos' }];
+  RF.ADESAO = [{ v: 'boa', r: 'Nunca ou quase nunca esqueço' }, { v: 'as_vezes', r: 'Esqueço às vezes (cerca de 1 vez por semana)' }, { v: 'ruim', r: 'Esqueço com frequência' }];
+  RF.EFICACIA = [{ v: 'boa', r: 'Sim, está funcionando bem' }, { v: 'parcial', r: 'Mais ou menos' }, { v: 'ruim', r: 'Não sinto que funciona' }];
+  RF.DURACAO = [{ v: 30, r: '30 dias' }, { v: 60, r: '60 dias' }, { v: 90, r: '90 dias' }, { v: 180, r: '6 meses' }];
+  RF.GESTACAO = [{ v: 'nao', r: 'Não' }, { v: 'gestante', r: 'Estou grávida' }, { v: 'amamentando', r: 'Estou amamentando' }, { v: 'planeja', r: 'Pretendo engravidar nos próximos meses' }];
+  RF.CONTRACEP = [
     { v: 'hormonal_comb', r: 'Pílula, anel vaginal ou adesivo' }, { v: 'injecao', r: 'Injeção' }, { v: 'implante', r: 'Implante (chip)' },
     { v: 'diu_horm', r: 'DIU hormonal' }, { v: 'diu_cobre', r: 'DIU de cobre' }, { v: 'definitivo', r: 'Laqueadura ou vasectomia do parceiro' },
     { v: 'preservativo', r: 'Só preservativo' }, { v: 'nenhum', r: 'Não uso método' }, { v: 'na', r: 'Não se aplica (sem relações ou menopausa)' }
   ];
-  MN.EP_ULTIMA = [{ v: 'lt30d', r: 'Nos últimos 30 dias' }, { v: '1a6m', r: 'Entre 1 e 6 meses' }, { v: '6a12m', r: 'Entre 6 meses e 1 ano' }, { v: 'gt1a', r: 'Há mais de 1 ano' }];
-  MN.PK_SINT = [
+  RF.EP_ULTIMA = [{ v: 'lt30d', r: 'Nos últimos 30 dias' }, { v: '1a6m', r: 'Entre 1 e 6 meses' }, { v: '6a12m', r: 'Entre 6 meses e 1 ano' }, { v: 'gt1a', r: 'Há mais de 1 ano' }];
+  RF.PK_SINT = [
     { v: 'wearing_off', r: 'O efeito do remédio acaba antes da próxima dose' }, { v: 'discinesia', r: 'Movimentos involuntários (o corpo "dança")' },
     { v: 'quedas', r: 'Quedas ou quase quedas' }, { v: 'alucinacao', r: 'Vê coisas que não existem ou fica confuso' },
     { v: 'hipotensao', r: 'Tontura ao levantar' }, { v: 'sono_subito', r: 'Pega no sono de repente durante o dia' },
     { v: 'impulsos', r: 'Vontade difícil de controlar de jogar, comprar, comer ou de sexo' }, { v: 'engasgo', r: 'Engasgos para engolir' }
   ];
-  MN.DM_SINT = [
+  RF.DM_SINT = [
     { v: 'piora_rapida', r: 'A memória piorou rápido nas últimas semanas' }, { v: 'agitacao', r: 'Agitação ou agressividade' },
     { v: 'alucinacao', r: 'Vê ou ouve coisas que não existem' }, { v: 'quedas', r: 'Quedas' }, { v: 'peso', r: 'Perda de peso ou de apetite' },
     { v: 'sono', r: 'Troca o dia pela noite' }, { v: 'gastro', r: 'Náuseas, vômitos ou diarreia' }
   ];
-  MN.CONTROLE_GERAL = [{ v: 'controlado', r: 'Controlados' }, { v: 'parcial', r: 'Melhoraram, mas ainda incomodam' }, { v: 'descontrolado', r: 'Não estão controlados' }, { v: 'piorando', r: 'Estão piorando' }];
+  RF.PA_CASA = [{ v: 'lt130', r: 'Abaixo de 13 por 8 (130/80)' }, { v: '130a139', r: 'Entre 13 por 8 e 14 por 9' }, { v: '140a159', r: 'Entre 14 por 9 e 16 por 10' }, { v: 'ge160', r: '16 por 10 ou mais' }, { v: 'naomede', r: 'Não costumo medir' }];
+  RF.HBA1C = [{ v: 'lt7', r: 'Abaixo de 7%' }, { v: '7a8', r: 'Entre 7% e 8%' }, { v: '8a9', r: 'Entre 8% e 9%' }, { v: 'gt9', r: 'Acima de 9%' }, { v: 'naosei', r: 'Não sei ou não fiz' }];
+  RF.HIPO = [{ v: 'nao', r: 'Não' }, { v: 'poucas', r: '1 ou 2 vezes' }, { v: 'varias', r: 'Mais de 2 vezes' }, { v: 'grave', r: 'Tive uma forte, precisei de ajuda de outra pessoa' }];
+  RF.RESGATE = [{ v: 'nenhuma', r: 'Nenhuma vez' }, { v: 'ate2', r: 'Até 2 vezes por semana' }, { v: 'mais2', r: 'Mais de 2 vezes por semana' }, { v: 'diario', r: 'Todo dia' }];
+  RF.HUMOR = [{ v: 'nao', r: 'Não' }, { v: 'alguns', r: 'Em alguns dias' }, { v: 'metade', r: 'Em mais da metade dos dias' }, { v: 'quase', r: 'Quase todos os dias' }];
+  RF.EXAME_ANO = [{ v: 'normal', r: 'Sim, e deu normal' }, { v: 'alterado', r: 'Sim, e deu alterado' }, { v: 'nao', r: 'Não fiz' }, { v: 'naosei', r: 'Não lembro' }];
+  RF.CORACAO_SINT = [{ v: 'falta_ar', r: 'Falta de ar que piorou' }, { v: 'inchaco', r: 'Inchaço nas pernas que piorou' }, { v: 'palpitacao', r: 'Palpitações ou coração disparado' }, { v: 'tontura', r: 'Tontura ou quase desmaio' }, { v: 'angina', r: 'Dor no peito ao fazer esforço' }];
+  // condições que já têm pergunta própria de controle (as demais caem na pergunta geral)
+  RF.COM_PERGUNTA = ['hipertensao', 'diabetes', 'coracao', 'asma_dpoc', 'depressao_ansiedade', 'tireoide', 'colesterol', 'epilepsia', 'enxaqueca', 'parkinson', 'demencia', 'dor_neuropatica'];
+  RF.CONTROLE_GERAL = [{ v: 'controlado', r: 'Controlados' }, { v: 'parcial', r: 'Melhoraram, mas ainda incomodam' }, { v: 'descontrolado', r: 'Não estão controlados' }, { v: 'piorando', r: 'Estão piorando' }];
 
-  MN.ETAPAS = ['Seus dados', 'Segurança', 'Remédios', 'Sua saúde', 'Revisão'];
-  MN.ETAPAS_ICO = ['ti-user', 'ti-shield-check', 'ti-pill', 'ti-heart-rate-monitor', 'ti-clipboard-check'];
-  MN.ETAPAS_COR = ['c-azul', 'c-vermelho', 'c-violeta', 'c-rosa', 'c-verde'];
+  RF.ETAPAS = ['Seus dados', 'Segurança', 'Remédios', 'Sua saúde', 'Revisão'];
+  RF.ETAPAS_ICO = ['ti-user', 'ti-shield-check', 'ti-pill', 'ti-heart-rate-monitor', 'ti-clipboard-check'];
+  RF.ETAPAS_COR = ['c-azul', 'c-vermelho', 'c-violeta', 'c-rosa', 'c-verde'];
   const ETAPA_DE = {
     inicio: 0, nome: 0, nasc: 0, responsavel: 0, sexo: 0, contato: 0, endereco: 0,
-    alarmes: 1, bloqueado: 1, condicoes: 1, ultima_consulta: 1, ep_ultima: 1, ep_freq: 1, cef_dias: 1, cef_analg: 1, pk_sint: 1, dm_resp: 1, dm_sint: 1, dn_int: 1, geral_controle: 1,
+    alarmes: 1, bloqueado: 1, condicoes: 1, ultima_consulta: 1, ep_ultima: 1, ep_freq: 1, cef_dias: 1, cef_analg: 1, pk_sint: 1, dm_resp: 1, dm_sint: 1, dn_int: 1, geral_controle: 1, pa_casa: 1, dm_hba1c: 1, dm_hipo: 1, asma_resgate: 1, asma_crise: 1, humor: 1, tsh: 1, lipidio: 1, cor_sint: 1,
     med_nome: 2, med_escolha: 2, med_confirma: 2, med_dose: 2, med_pos: 2, med_pos_conf: 2, med_sos_freq: 2, med_tempo: 2, med_adesao: 2, med_efeitos: 2, med_eficacia: 2, med_mais: 2,
     outros_meds: 3, alergias: 3, comorb: 3, gest: 3, contracep: 3, exames: 3, exames_txt: 3, duracao: 3, livre: 3,
     revisao: 4, semia_texto: 3, fim_semia: 4, corrigir_qual: 4, corrigir_acao: 4, orientacao: 4, fim: 4
   };
 
-  MN.TCLE_VERSAO = 'tcle-2026-09';
-  MN.TCLE = 'Termo de consentimento para teleatendimento\n\n' +
-    '1. O Meu Neuro faz renovação de receitas de remédios neurológicos por telemedicina (Lei 14.510/2022 e Resolução CFM 2.314/2022). A consulta presencial continua sendo a referência: o atendimento a distância tem limitações, como a falta de exame físico, e você pode interromper e optar pelo atendimento presencial a qualquer momento.\n\n' +
+  RF.TCLE_VERSAO = 'tcle-2026-09';
+  RF.TCLE = 'Termo de consentimento para teleatendimento\n\n' +
+    '1. O RefilMed faz renovação de receitas de remédios de uso contínuo por telemedicina (Lei 14.510/2022 e Resolução CFM 2.314/2022). A consulta presencial continua sendo a referência: o atendimento a distância tem limitações, como a falta de exame físico, e você pode interromper e optar pelo atendimento presencial a qualquer momento.\n\n' +
     '2. A primeira etapa é conduzida por um assistente automatizado (inteligência artificial) que só coleta informações e dá orientações gerais. Ele não faz diagnóstico, não muda doses e não decide o tratamento. Você pode recusar o assistente e seguir direto com o médico.\n\n' +
-    '3. Um médico neurologista revisa todas as respostas, faz o atendimento e decide se renova, ajusta ou não renova a receita, que só vale depois da assinatura digital dele.\n\n' +
+    '3. Um médico revisa todas as respostas, faz o atendimento e decide se renova, ajusta ou não renova a receita, que só vale depois da assinatura digital dele.\n\n' +
     '4. Seus dados de saúde são usados apenas para o seu atendimento (LGPD, art. 11, II, f), ficam no seu prontuário pelo prazo legal de 20 anos e só são vistos pela equipe que atende você. Nada é usado para propaganda ou vendido.\n\n' +
     '5. Este serviço não atende urgências. Em caso de urgência, ligue 192 (SAMU) ou procure um pronto-socorro.';
 
-  MN.cpfValido = function (c) {
+  RF.cpfValido = function (c) {
     const d = String(c || '').replace(/\D/g, '');
     if (d.length !== 11 || /^(\d)\1{10}$/.test(d)) return false;
     for (const n of [9, 10]) {
@@ -293,12 +336,12 @@
     }
     return true;
   };
-  MN.fmtCPF = c => String(c || '').replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
+  RF.fmtCPF = c => String(c || '').replace(/\D/g, '').replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
 
   /* ====================== pedido novo ====================== */
-  MN.novoPedido = function () {
+  RF.novoPedido = function () {
     return {
-      id: MN.uid(10), codigo: MN.codigo(), versao: 1, criadoEm: MN.agora(), atualizadoEm: MN.agora(),
+      id: RF.uid(10), codigo: RF.codigo(), versao: 1, criadoEm: RF.agora(), atualizadoEm: RF.agora(),
       status: 'rascunho', paciente: {}, consentimento: null, alarmes: [], condicoes: [], condicaoOutra: '',
       ultimaConsulta: '', controle: {}, meds: [], outrosMeds: '', alergias: '', comorbidades: [], gestacao: '', contracepcao: '',
       exames: '', duracao: null, relato: '', duvidas: [], transcript: [], receitas: null, atendimento: null, historico: []
@@ -311,7 +354,7 @@
   /* ====================== conversa ====================== */
   class Conversa {
     constructor(pedido, opts) {
-      this.p = pedido || MN.novoPedido();
+      this.p = pedido || RF.novoPedido();
       this.o = opts || {};
       this.passo = this.p._passo || 'inicio';
       this.fila = this.p._fila || [];
@@ -321,12 +364,12 @@
     }
     get med() { return this.p.meds[this.mi]; }
     get etapa() { return ETAPA_DE[this.passo] || 0; }
-    fertil() { const i = MN.idade(this.p.paciente.nasc); return this.p.paciente.sexo === 'F' && i != null && i >= 10 && i <= 55; }
+    fertil() { const i = RF.idade(this.p.paciente.nasc); return this.p.paciente.sexo === 'F' && i != null && i >= 10 && i <= 55; }
     primeiroNome() { return String(this.p.paciente.nome || '').split(' ')[0]; }
     salvarEstado() { Object.assign(this.p, { _passo: this.passo, _fila: this.fila, _mi: this.mi, _corrigindo: this.corrigindo, _tmp: this.tmp }); }
     ia(t, d) { return this.o.ia ? this.o.ia(t, d) : Promise.resolve(null); }
 
-    registrar(de, texto) { if (texto) this.p.transcript.push({ de, texto: String(texto), t: MN.agora() }); }
+    registrar(de, texto) { if (texto) this.p.transcript.push({ de, texto: String(texto), t: RF.agora() }); }
 
     // devolve {msgs:[{texto,tipo}], input}
     perguntar() {
@@ -356,8 +399,8 @@
       switch (this.passo) {
         case 'inicio': return {
           msgs: [
-            { texto: 'Olá! Eu sou a assistente virtual do Meu Neuro, um sistema automatizado (inteligência artificial). Vou adiantar a renovação da sua receita de remédios neurológicos antes de você ser atendido pelo médico.' },
-            { texto: 'Vou perguntar quais remédios você usa, as doses, como toma, há quanto tempo e se sente algum efeito. No final, explico os cuidados com cada remédio. Depois, um neurologista revisa tudo, faz o seu atendimento e é ele quem decide e assina a receita.\n\nMinha função é só coletar informações e dar orientações gerais: eu não faço diagnóstico nem decido o tratamento. Este serviço não atende urgências. Leva cerca de 5 minutos.' }
+            { texto: 'Olá! Eu sou a assistente virtual do RefilMed, um sistema automatizado (inteligência artificial). Vou adiantar a renovação da sua receita de remédios de uso contínuo antes de você ser atendido pelo médico.' },
+            { texto: 'Vou perguntar quais remédios você usa, as doses, como toma, há quanto tempo e se sente algum efeito. No final, explico os cuidados com cada remédio. Depois, um médico revisa tudo, faz o seu atendimento e é ele quem decide e assina a receita.\n\nMinha função é só coletar informações e dar orientações gerais: eu não faço diagnóstico nem decido o tratamento. Este serviço não atende urgências. Leva cerca de 5 minutos.' }
           ],
           input: { tipo: 'chips', opcoes: [{ v: 'aceito', r: 'Concordo e quero começar', p: 1 }, { v: 'termos', r: 'Ler o termo de consentimento' }, { v: 'semia', r: 'Prefiro não usar o assistente' }] }
         };
@@ -382,7 +425,7 @@
         };
         case 'alarmes': return {
           msgs: [{ texto: 'Antes dos remédios, uma checagem de segurança. Você está com algum destes sinais agora ou nas últimas horas?' }],
-          input: { tipo: 'multi', opcoes: MN.ALARMES, nenhum: { v: 'nenhum', r: 'Nenhum destes' } }
+          input: { tipo: 'multi', opcoes: RF.ALARMES, nenhum: { v: 'nenhum', r: 'Nenhum destes' } }
         };
         case 'bloqueado': {
           const tem = v => p.alarmes.includes(v);
@@ -394,21 +437,30 @@
         }
         case 'condicoes': return {
           msgs: [{ texto: 'Para qual problema você usa os remédios que quer renovar? Pode marcar mais de um.' }],
-          input: { tipo: 'multi', opcoes: MN.CONDICOES, outro: 'Outro problema neurológico' }
+          input: { tipo: 'multi', opcoes: RF.CONDICOES, outro: 'Outro problema de saúde' }
         };
-        case 'ultima_consulta': return { msgs: [{ texto: 'Quando foi sua última consulta presencial com neurologista?' }], input: { tipo: 'chips', opcoes: MN.ULTIMA_CONSULTA } };
-        case 'ep_ultima': return { msgs: [{ texto: 'Sobre a epilepsia: quando foi sua última crise?' }], input: { tipo: 'chips', opcoes: MN.EP_ULTIMA } };
+        case 'ultima_consulta': return { msgs: [{ texto: 'Quando foi sua última consulta presencial com o médico que acompanha esse problema?' }], input: { tipo: 'chips', opcoes: RF.ULTIMA_CONSULTA } };
+        case 'ep_ultima': return { msgs: [{ texto: 'Sobre a epilepsia: quando foi sua última crise?' }], input: { tipo: 'chips', opcoes: RF.EP_ULTIMA } };
         case 'ep_freq': return { msgs: [{ texto: 'Quantas crises você teve nos últimos 3 meses? Um número aproximado já ajuda.' }], input: { tipo: 'numero', min: 0, max: 500, sufixo: 'crises', chips: [{ v: '1', r: '1' }, { v: '2', r: '2' }, { v: '3', r: '3 a 5' }, { v: '10', r: 'Mais de 5' }] } };
         case 'cef_dias': return { msgs: [{ texto: 'Sobre a dor de cabeça: em quantos dias por mês, em média, você tem dor?' }], input: { tipo: 'numero', min: 0, max: 31, sufixo: 'dias por mês', chips: [{ v: '2', r: 'Até 3 dias' }, { v: '6', r: '4 a 8 dias' }, { v: '12', r: '9 a 14 dias' }, { v: '20', r: '15 dias ou mais' }] } };
         case 'cef_analg': return { msgs: [{ texto: 'E em quantos dias por mês você toma algum remédio para a crise de dor (analgésico, anti-inflamatório ou triptano)?' }], input: { tipo: 'numero', min: 0, max: 31, sufixo: 'dias por mês', chips: [{ v: '2', r: 'Até 3 dias' }, { v: '6', r: '4 a 9 dias' }, { v: '12', r: '10 a 14 dias' }, { v: '20', r: '15 dias ou mais' }] } };
-        case 'pk_sint': return { msgs: [{ texto: 'Sobre o Parkinson: você tem notado alguma destas coisas?' }], input: { tipo: 'multi', opcoes: MN.PK_SINT, nenhum: { v: 'nenhum', r: 'Nenhuma destas' } } };
+        case 'pk_sint': return { msgs: [{ texto: 'Sobre o Parkinson: você tem notado alguma destas coisas?' }], input: { tipo: 'multi', opcoes: RF.PK_SINT, nenhum: { v: 'nenhum', r: 'Nenhuma destas' } } };
         case 'dm_resp': return { msgs: [{ texto: 'Quem está respondendo às perguntas?' }], input: { tipo: 'chips', opcoes: [{ v: 'paciente', r: 'O próprio paciente' }, { v: 'cuidador', r: 'Um familiar ou cuidador' }] } };
-        case 'dm_sint': return { msgs: [{ texto: 'Nos últimos meses, você notou alguma destas mudanças?' }], input: { tipo: 'multi', opcoes: MN.DM_SINT, nenhum: { v: 'nenhum', r: 'Nenhuma destas' } } };
+        case 'dm_sint': return { msgs: [{ texto: 'Nos últimos meses, você notou alguma destas mudanças?' }], input: { tipo: 'multi', opcoes: RF.DM_SINT, nenhum: { v: 'nenhum', r: 'Nenhuma destas' } } };
         case 'dn_int': return { msgs: [{ texto: 'De 0 a 10, qual a intensidade média da dor neuropática com o tratamento atual?' }], input: { tipo: 'chips', opcoes: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map(n => ({ v: String(n), r: String(n) })), compacto: 1 } };
+        case 'pa_casa': return { msgs: [{ texto: 'Sobre a pressão: quando você mede em casa ou na farmácia, qual costuma ser o resultado?' }], input: { tipo: 'chips', opcoes: RF.PA_CASA } };
+        case 'dm_hba1c': return { msgs: [{ texto: 'Sobre o diabetes: qual foi o resultado da sua última hemoglobina glicada (HbA1c)?' }], input: { tipo: 'chips', opcoes: RF.HBA1C } };
+        case 'dm_hipo': return { msgs: [{ texto: 'No último mês, teve glicose baixa (abaixo de 70) ou crises de tremor, suor frio e confusão?' }], input: { tipo: 'chips', opcoes: RF.HIPO } };
+        case 'asma_resgate': return { msgs: [{ texto: 'Sobre a respiração: nas últimas 4 semanas, com que frequência você precisou da bombinha de alívio para falta de ar ou chiado?' }], input: { tipo: 'chips', opcoes: RF.RESGATE } };
+        case 'asma_crise': return { msgs: [{ texto: 'Nos últimos 12 meses, precisou ir ao pronto-socorro ou tomar corticoide em comprimido por falta de ar?' }], input: { tipo: 'chips', opcoes: [{ v: 'sim', r: 'Sim' }, { v: 'nao', r: 'Não' }] } };
+        case 'humor': return { msgs: [{ texto: 'Nas últimas 2 semanas, você se sentiu para baixo ou sem interesse pelas coisas?' }], input: { tipo: 'chips', opcoes: RF.HUMOR } };
+        case 'tsh': return { msgs: [{ texto: 'Sobre a tireoide: fez o exame de TSH nos últimos 12 meses?' }], input: { tipo: 'chips', opcoes: RF.EXAME_ANO } };
+        case 'lipidio': return { msgs: [{ texto: 'Sobre o colesterol: fez o exame de colesterol nos últimos 12 meses?' }], input: { tipo: 'chips', opcoes: RF.EXAME_ANO } };
+        case 'cor_sint': return { msgs: [{ texto: 'Sobre o coração: notou alguma destas coisas nas últimas semanas?' }], input: { tipo: 'multi', opcoes: RF.CORACAO_SINT, nenhum: { v: 'nenhum', r: 'Nenhuma destas' } } };
         case 'geral_controle': {
-          const rest = p.condicoes.filter(c => !['epilepsia', 'enxaqueca', 'parkinson', 'demencia', 'dor_neuropatica'].includes(c));
-          const nomes = rest.map(c => c === 'outro' ? (p.condicaoOutra || 'outro problema') : MN.condRot(c).toLowerCase());
-          return { msgs: [{ texto: `Com o tratamento atual, como estão os sintomas de ${nomes.join(' e ')}?` }], input: { tipo: 'chips', opcoes: MN.CONTROLE_GERAL } };
+          const rest = p.condicoes.filter(c => !RF.COM_PERGUNTA.includes(c));
+          const nomes = rest.map(c => c === 'outro' ? (p.condicaoOutra || 'outro problema') : RF.condRot(c).toLowerCase());
+          return { msgs: [{ texto: `Com o tratamento atual, como estão os sintomas de ${nomes.join(' e ')}?` }], input: { tipo: 'chips', opcoes: RF.CONTROLE_GERAL } };
         }
         case 'med_nome': {
           const n = p.meds.filter(m => m.nome).length;
@@ -418,17 +470,17 @@
           return { msgs: [{ texto: t }], input: { tipo: 'texto', ph: 'Nome do remédio', dica: 'Se tiver a caixa por perto, copie o nome e a dose que estão nela.' } };
         }
         case 'med_escolha': {
-          const ops = (this.tmp.candidatos || []).map(id => { const k = MN.kbPorId(id); return { v: id, r: k.nome + (k.marcas && k.marcas.length ? ' (' + k.marcas.slice(0, 2).join(', ') + ')' : '') }; });
+          const ops = (this.tmp.candidatos || []).map(id => { const k = RF.kbPorId(id); return { v: id, r: k.nome + (k.marcas && k.marcas.length ? ' (' + k.marcas.slice(0, 2).join(', ') + ')' : '') }; });
           ops.push({ v: '_outro', r: 'Nenhum desses' });
           return { msgs: [{ texto: 'Encontrei mais de uma opção. Qual destes é o seu?' }], input: { tipo: 'chips', opcoes: ops } };
         }
         case 'med_confirma': {
-          const c = this.tmp.sugestao ? MN.kbPorId(this.tmp.sugestao) : null;
+          const c = this.tmp.sugestao ? RF.kbPorId(this.tmp.sugestao) : null;
           if (c) return { msgs: [{ texto: `Você quis dizer ${c.nome}${c.marcas && c.marcas.length ? ' (' + c.marcas.slice(0, 2).join(', ') + ')' : ''}?` }], input: { tipo: 'chips', opcoes: [{ v: 'sim', r: 'Sim, é esse', p: 1 }, { v: 'nao', r: 'Não, vou escrever de novo' }, { v: 'manter', r: `Não, é "${this.med.informado}" mesmo` }] } };
-          return { msgs: [{ texto: `Não encontrei "${this.med.informado}" na minha lista de remédios neurológicos. Pode ser um nome que eu não conheço. Quer manter assim para o médico conferir ou escrever de novo?` }], input: { tipo: 'chips', opcoes: [{ v: 'manter', r: 'Manter assim' }, { v: 'nao', r: 'Escrever de novo' }] } };
+          return { msgs: [{ texto: `Não encontrei "${this.med.informado}" na minha lista de remédios. Pode ser um nome que eu não conheço. Quer manter assim para o médico conferir ou escrever de novo?` }], input: { tipo: 'chips', opcoes: [{ v: 'manter', r: 'Manter assim' }, { v: 'nao', r: 'Escrever de novo' }] } };
         }
         case 'med_dose': {
-          const k = MN.kbPorId(this.med.kbId);
+          const k = RF.kbPorId(this.med.kbId);
           const ops = k ? (k.formas || []).filter(f => !/injet/.test(f.forma)).slice(0, 10).map((f, i) => ({ v: 'f' + (k.formas.indexOf(f)), r: f.dose + ' · ' + f.forma })) : [];
           return { msgs: [{ texto: `Qual a dose de cada ${k ? 'unidade' : 'comprimido ou cápsula'} de ${this.med.nome}? Olhe na caixa; geralmente está em mg.` }], input: { tipo: 'chips', opcoes: ops, texto: 1, ph: 'Ex.: 500 mg' } };
         }
@@ -438,43 +490,43 @@
         };
         case 'med_pos_conf': {
           const m = this.med;
-          let t = `Entendi: ${MN.descPosologia(m.pos, m.forma)}`;
+          let t = `Entendi: ${RF.descPosologia(m.pos, m.forma)}`;
           const tot = totalDia(m);
-          if (tot && !m.pos.sos) t += ` (${MN.fmtNum(tot)} mg por dia)`;
+          if (tot && !m.pos.sos) t += ` (${RF.fmtNum(tot)} mg por dia)`;
           return { msgs: [{ texto: t + '. Está certo?' }], input: { tipo: 'chips', opcoes: [{ v: 'sim', r: 'Sim, está certo', p: 1 }, { v: 'nao', r: 'Não, vou corrigir' }] } };
         }
         case 'med_sos_freq': return { msgs: [{ texto: `Em quantos dias por mês, em média, você precisa usar ${this.med.nome}?` }], input: { tipo: 'numero', min: 0, max: 31, sufixo: 'dias por mês', chips: [{ v: '2', r: 'Até 3' }, { v: '6', r: '4 a 8' }, { v: '10', r: '9 a 14' }, { v: '15', r: '15 ou mais' }] } };
-        case 'med_tempo': return { msgs: [{ texto: `Há quanto tempo você usa ${this.med.nome}?` }], input: { tipo: 'chips', opcoes: MN.TEMPO_USO } };
-        case 'med_adesao': return { msgs: [{ texto: 'Você costuma esquecer alguma dose?' }], input: { tipo: 'chips', opcoes: MN.ADESAO } };
+        case 'med_tempo': return { msgs: [{ texto: `Há quanto tempo você usa ${this.med.nome}?` }], input: { tipo: 'chips', opcoes: RF.TEMPO_USO } };
+        case 'med_adesao': return { msgs: [{ texto: 'Você costuma esquecer alguma dose?' }], input: { tipo: 'chips', opcoes: RF.ADESAO } };
         case 'med_efeitos': {
-          const k = MN.kbPorId(this.med.kbId);
+          const k = RF.kbPorId(this.med.kbId);
           const ops = k ? (k.efeitosComuns || []).map((e, i) => ({ v: 'k' + i, r: e })) : [];
           return {
             msgs: [{ texto: k ? `Você sente algum destes efeitos que ${this.med.nome} pode causar?` : `Você sente algum efeito colateral com ${this.med.nome}?` }],
             input: { tipo: 'multi', opcoes: ops, nenhum: { v: 'nenhum', r: 'Não sinto nenhum efeito' }, outro: 'Outro efeito' }
           };
         }
-        case 'med_eficacia': return { msgs: [{ texto: `E você acha que ${this.med.nome} está funcionando?` }], input: { tipo: 'chips', opcoes: MN.EFICACIA } };
+        case 'med_eficacia': return { msgs: [{ texto: `E você acha que ${this.med.nome} está funcionando?` }], input: { tipo: 'chips', opcoes: RF.EFICACIA } };
         case 'med_mais': {
           const lista = p.meds.filter(m => m.nome).map(m => '• ' + m.nome + (m.dose ? ' ' + m.dose : '')).join('\n');
-          return { msgs: [{ texto: `Anotei:\n${lista}\n\nVocê usa mais algum remédio neurológico que precisa renovar?` }], input: { tipo: 'chips', opcoes: [{ v: 'sim', r: 'Sim, tenho outro' }, { v: 'nao', r: 'Não, são só esses', p: 1 }] } };
+          return { msgs: [{ texto: `Anotei:\n${lista}\n\nVocê usa mais algum remédio de uso contínuo que precisa renovar?` }], input: { tipo: 'chips', opcoes: [{ v: 'sim', r: 'Sim, tenho outro' }, { v: 'nao', r: 'Não, são só esses', p: 1 }] } };
         }
         case 'outros_meds': return { msgs: [{ texto: 'Você toma outros remédios, para qualquer problema? Por exemplo pressão, diabetes, colesterol, anticoncepcional, remédios para dormir ou vitaminas. Escreva os nomes.' }], input: { tipo: 'chips', texto: 1, ph: 'Outros remédios', opcoes: [{ v: '', r: 'Não tomo outros remédios' }] } };
         case 'alergias': return { msgs: [{ texto: 'Tem alergia a algum remédio?' }], input: { tipo: 'chips', texto: 1, ph: 'Qual remédio e o que aconteceu', opcoes: [{ v: '', r: 'Não tenho alergia a remédios' }] } };
-        case 'comorb': return { msgs: [{ texto: 'Você tem algum destes problemas de saúde?' }], input: { tipo: 'multi', opcoes: MN.COMORB, nenhum: { v: 'nenhum', r: 'Nenhum destes' }, outro: 'Outro problema' } };
-        case 'gest': return { msgs: [{ texto: 'Você está grávida, amamentando ou pretende engravidar em breve? Isso muda a escolha de alguns remédios neurológicos.' }], input: { tipo: 'chips', opcoes: MN.GESTACAO } };
-        case 'contracep': return { msgs: [{ texto: 'Usa algum método para evitar gravidez? Alguns remédios para epilepsia diminuem o efeito da pílula.' }], input: { tipo: 'chips', opcoes: MN.CONTRACEP } };
+        case 'comorb': return { msgs: [{ texto: 'Você tem algum destes outros problemas de saúde?' }], input: { tipo: 'multi', opcoes: RF.COMORB.filter(o => !p.condicoes.includes(RF.COMORB_COND[o.v])), nenhum: { v: 'nenhum', r: 'Nenhum destes' }, outro: 'Outro problema' } };
+        case 'gest': return { msgs: [{ texto: 'Você está grávida, amamentando ou pretende engravidar em breve? Isso muda a escolha de alguns remédios.' }], input: { tipo: 'chips', opcoes: RF.GESTACAO } };
+        case 'contracep': return { msgs: [{ texto: 'Usa algum método para evitar gravidez? Alguns remédios para epilepsia diminuem o efeito da pílula.' }], input: { tipo: 'chips', opcoes: RF.CONTRACEP } };
         case 'exames': return { msgs: [{ texto: 'Fez exames de sangue nos últimos 12 meses?' }], input: { tipo: 'chips', opcoes: [{ v: 'sim', r: 'Sim' }, { v: 'nao', r: 'Não' }, { v: 'naosei', r: 'Não lembro' }] } };
         case 'exames_txt': return { msgs: [{ texto: 'Lembra quais foram e se deu alguma alteração? Pode resumir do seu jeito (ex.: "nível de ácido valproico normal em março").' }], input: { tipo: 'chips', texto: 1, ph: 'Exames e resultados', opcoes: [{ v: '', r: 'Não lembro os detalhes' }] } };
         case 'duracao': {
           const t = 'Por quanto tempo você precisa da receita? O médico decide a quantidade final, respeitando os limites da lei para remédios controlados.';
-          return { msgs: [{ texto: t }], input: { tipo: 'chips', opcoes: MN.DURACAO.map(d => ({ v: String(d.v), r: d.r })) } };
+          return { msgs: [{ texto: t }], input: { tipo: 'chips', opcoes: RF.DURACAO.map(d => ({ v: String(d.v), r: d.r })) } };
         }
         case 'livre': return { msgs: [{ texto: 'Quase lá. Quer contar mais alguma coisa ao médico? Uma queixa nova, uma dúvida, algo que mudou.' }], input: { tipo: 'chips', texto: 1, area: 1, ph: 'Escreva aqui (opcional)', opcoes: [{ v: '', r: 'Não, é só isso' }] } };
         case 'revisao': return { msgs: [{ texto: 'Confira o resumo do seu pedido. Se estiver tudo certo, eu envio para o médico.', tipo: 'resumo' }], input: { tipo: 'chips', opcoes: [{ v: 'enviar', r: 'Está tudo certo, enviar', p: 1 }, { v: 'corrigir', r: 'Corrigir um remédio' }, { v: 'adicionar', r: 'Adicionar outro remédio' }] } };
         case 'corrigir_qual': return { msgs: [{ texto: 'Qual remédio você quer corrigir?' }], input: { tipo: 'chips', opcoes: p.meds.map((m, i) => ({ v: String(i), r: m.nome + (m.dose ? ' ' + m.dose : '') })).concat([{ v: 'voltar', r: 'Voltar' }]) } };
         case 'corrigir_acao': return { msgs: [{ texto: `O que você quer fazer com ${this.med.nome}?` }], input: { tipo: 'chips', opcoes: [{ v: 'refazer', r: 'Responder de novo' }, { v: 'remover', r: 'Remover (não uso mais)' }, { v: 'voltar', r: 'Voltar' }] } };
-        case 'orientacao': return { msgs: MN.orientacoesPaciente(p).map(o => ({ texto: o.texto, html: o.html, tipo: 'orient' })).concat([{ texto: `Pronto, ${nm}! Seu pedido foi enviado ao médico. Guarde o código ${p.codigo} para acompanhar. Você recebe a receita assinada aqui mesmo, na tela "Acompanhar pedido", e o médico pode entrar em contato pelo telefone informado.` }]), input: { tipo: 'fim', opcoes: [{ v: 'acompanhar', r: 'Acompanhar meu pedido', p: 1 }] } };
+        case 'orientacao': return { msgs: RF.orientacoesPaciente(p).map(o => ({ texto: o.texto, html: o.html, tipo: 'orient' })).concat([{ texto: `Pronto, ${nm}! Seu pedido foi enviado ao médico. Guarde o código ${p.codigo} para acompanhar. Você recebe a receita assinada aqui mesmo, na tela "Acompanhar pedido", e o médico pode entrar em contato pelo telefone informado.` }]), input: { tipo: 'fim', opcoes: [{ v: 'acompanhar', r: 'Acompanhar meu pedido', p: 1 }] } };
         case 'semia_texto': return { msgs: [{ texto: 'Escreva quais remédios você precisa renovar e o que mais quiser contar ao médico.' }], input: { tipo: 'texto', area: 1, ph: 'Remédios e observações' } };
         case 'fim_semia': return { msgs: [{ texto: `Pedido enviado. Guarde o código ${p.codigo}. O médico vai entrar em contato pelo telefone informado para fazer o atendimento.` }], input: { tipo: 'fim', opcoes: [{ v: 'acompanhar', r: 'Acompanhar meu pedido', p: 1 }] } };
         case 'fim': return { msgs: [], input: { tipo: 'fim', opcoes: [{ v: 'acompanhar', r: 'Acompanhar meu pedido', p: 1 }] } };
@@ -485,14 +537,22 @@
     // sequência depois das condições
     montarFilaControle() {
       const c = this.p.condicoes, f = [];
+      if (c.includes('hipertensao')) f.push('pa_casa');
+      if (c.includes('diabetes')) f.push('dm_hba1c', 'dm_hipo');
+      if (c.includes('coracao')) f.push('cor_sint');
+      if (c.includes('asma_dpoc')) f.push('asma_resgate', 'asma_crise');
+      if (c.includes('depressao_ansiedade')) f.push('humor');
+      if (c.includes('tireoide')) f.push('tsh');
+      if (c.includes('colesterol')) f.push('lipidio');
       if (c.includes('epilepsia')) f.push('ep_ultima');
       if (c.includes('enxaqueca')) f.push('cef_dias', 'cef_analg');
       if (c.includes('parkinson')) f.push('pk_sint');
       if (c.includes('demencia')) f.push('dm_resp', 'dm_sint');
       if (c.includes('dor_neuropatica')) f.push('dn_int');
-      if (c.some(x => !['epilepsia', 'enxaqueca', 'parkinson', 'demencia', 'dor_neuropatica'].includes(x))) f.push('geral_controle');
+      if (c.some(x => !RF.COM_PERGUNTA.includes(x))) f.push('geral_controle');
       return f;
     }
+    proxControle() { this.proximoDaFila('med_nome'); if (this.passo === 'med_nome') this.iniciarMed(); }
     proximoDaFila(padrao) { this.passo = this.fila.length ? this.fila.shift() : padrao; }
     iniciarMed() { this.p.meds.push(medVazio()); this.mi = this.p.meds.length - 1; this.tmp = {}; this.passo = 'med_nome'; }
     posMed() {
@@ -511,18 +571,18 @@
       }
       switch (this.passo) {
         case 'inicio':
-          if (v === 'termos') return { msgs: [{ texto: MN.TCLE }] };
-          p.consentimento = { em: MN.agora(), versao: MN.TCLE_VERSAO, texto: MN.TCLE, assistente: v !== 'semia' };
+          if (v === 'termos') return { msgs: [{ texto: RF.TCLE }] };
+          p.consentimento = { em: RF.agora(), versao: RF.TCLE_VERSAO, texto: RF.TCLE, assistente: v !== 'semia' };
           if (v === 'semia') { p.semAssistente = true; this.passo = 'nome'; return { msgs: [{ texto: 'Tudo bem. Vou pedir só os dados obrigatórios e fazer uma checagem de segurança. O restante você conta diretamente ao médico, sem o assistente.' }] }; }
           this.passo = 'nome'; return;
         case 'nome': {
           const s = String(v || '').trim().replace(/\s+/g, ' ');
           if (s.split(' ').length < 2 || s.length < 5) throw new Error('Preciso do nome completo (nome e sobrenome), como no documento.');
-          p.paciente.nome = s.replace(/\b\w/g, c => c.toUpperCase()).replace(/\b(Da|De|Do|Das|Dos|E)\b/g, w => w.toLowerCase());
+          p.paciente.nome = s.split(' ').map((w, i) => (i > 0 && /^(da|de|do|das|dos|e)$/i.test(w)) ? w.toLowerCase() : w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ');
           this.passo = 'nasc'; return;
         }
         case 'nasc': {
-          const i = MN.idade(v);
+          const i = RF.idade(v);
           if (i == null || i < 0 || i > 120) throw new Error('Não consegui entender a data. Use o formato dia/mês/ano.');
           p.paciente.nasc = v; p.paciente.idade = i;
           this.passo = i < 18 ? 'responsavel' : 'sexo'; return;
@@ -537,7 +597,7 @@
           const tel = String(v.telefone || '').replace(/\D/g, '');
           if (tel.length < 10 || tel.length > 13) throw new Error('Confira o telefone: coloque o DDD e o número.');
           if (v.email && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(v.email)) throw new Error('O e-mail parece incompleto. Corrija ou deixe em branco.');
-          if (!MN.cpfValido(v.cpf)) throw new Error('Este CPF não parece válido. Confira os números.');
+          if (!RF.cpfValido(v.cpf)) throw new Error('Este CPF não parece válido. Confira os números.');
           p.paciente.cpf = String(v.cpf).replace(/\D/g, '');
           p.paciente.telefone = tel; p.paciente.email = String(v.email || '').trim(); this.passo = 'endereco'; return;
         }
@@ -555,10 +615,10 @@
         case 'semia_texto': {
           const s = String(v || '').trim();
           if (s.length < 3) throw new Error('Escreva pelo menos o nome dos remédios que precisa renovar.');
-          p.relato = s; p.status = 'aguardando'; p.enviadoEm = MN.agora();
+          p.relato = s; p.status = 'aguardando'; p.enviadoEm = RF.agora(); p.especialidades = ['Clínica Médica'];
           p.alertas = [{ nivel: 'medio', texto: 'Paciente optou por não usar o assistente: anamnese e prescrição devem ser feitas no atendimento.' }];
-          p.resumo = MN.resumoClinico(p); p.receitas = [];
-          p.historico.push({ em: MN.agora(), evento: 'Pedido enviado pelo paciente (sem assistente)' });
+          p.resumo = RF.resumoClinico(p); p.receitas = [];
+          p.historico.push({ em: RF.agora(), evento: 'Pedido enviado pelo paciente (sem assistente)' });
           this.passo = 'fim_semia'; return;
         }
         case 'bloqueado':
@@ -588,14 +648,23 @@
         case 'dm_resp': p.controle.dmResp = v; this.passo = 'dm_sint'; return;
         case 'dm_sint': p.controle.dm = (v || []).filter(x => x !== 'nenhum'); this.proximoDaFila('med_nome'); if (this.passo === 'med_nome') this.iniciarMed(); return;
         case 'dn_int': p.controle.dnInt = parseInt(v, 10); this.proximoDaFila('med_nome'); if (this.passo === 'med_nome') this.iniciarMed(); return;
+        case 'pa_casa': p.controle.pa = v; this.proxControle(); return;
+        case 'dm_hba1c': p.controle.hba1c = v; this.passo = 'dm_hipo'; this.fila = this.fila.filter(x => x !== 'dm_hipo'); return;
+        case 'dm_hipo': p.controle.hipo = v; this.proxControle(); return;
+        case 'asma_resgate': p.controle.resgate = v; this.passo = 'asma_crise'; this.fila = this.fila.filter(x => x !== 'asma_crise'); return;
+        case 'asma_crise': p.controle.asmaCrise = v; this.proxControle(); return;
+        case 'humor': p.controle.humor = v; this.proxControle(); return;
+        case 'tsh': p.controle.tsh = v; this.proxControle(); return;
+        case 'lipidio': p.controle.lipidio = v; this.proxControle(); return;
+        case 'cor_sint': p.controle.cor = (v || []).filter(x => x !== 'nenhum'); this.proxControle(); return;
         case 'geral_controle': p.controle.geral = v; this.proximoDaFila('med_nome'); if (this.passo === 'med_nome') this.iniciarMed(); return;
 
         case 'med_nome': {
           const s = String(v || '').trim();
           if (s.length < 3) throw new Error('Escreva o nome do remédio.');
           const m = this.med; m.informado = s;
-          const dose = MN.acharDose(s); if (dose) m.dose = dose;
-          const achados = MN.acharMed(s);
+          const dose = RF.acharDose(s); if (dose) m.dose = dose;
+          const achados = RF.acharMed(s);
           const repetido = id => p.meds.some((x, i) => i !== this.mi && x.kbId === id);
           if (achados.length) {
             const top = achados[0].score;
@@ -609,22 +678,22 @@
           }
           const r = await this.ia('identificar_remedio', { texto: s, lista: KB().map(k => k.id) });
           const id = r && String(r).trim().toLowerCase();
-          if (id && MN.kbPorId(id)) { this.tmp.sugestao = id; } else this.tmp.sugestao = null;
+          if (id && RF.kbPorId(id)) { this.tmp.sugestao = id; } else this.tmp.sugestao = null;
           this.passo = 'med_confirma'; return;
         }
         case 'med_escolha':
           if (v === '_outro') { this.tmp.sugestao = null; this.passo = 'med_confirma'; return; }
-          this.definirMed(MN.kbPorId(v)); return;
+          this.definirMed(RF.kbPorId(v)); return;
         case 'med_confirma':
-          if (v === 'sim' && this.tmp.sugestao) { this.definirMed(MN.kbPorId(this.tmp.sugestao)); return; }
+          if (v === 'sim' && this.tmp.sugestao) { this.definirMed(RF.kbPorId(this.tmp.sugestao)); return; }
           if (v === 'manter') { const m = this.med; m.kbId = null; m.nome = m.informado.replace(/\s*\d+(?:[.,]\d+)?\s*(mg|mcg|g|ml)\b.*$/i, '').trim() || m.informado; this.passo = m.dose ? 'med_pos' : 'med_dose'; return; }
           this.med.informado = ''; this.passo = 'med_nome'; return;
         case 'med_dose': {
           const m = this.med, s = String(v || '').trim();
-          const k = MN.kbPorId(m.kbId);
+          const k = RF.kbPorId(m.kbId);
           if (k && /^f\d+$/.test(s) && k.formas[+s.slice(1)]) { const f = k.formas[+s.slice(1)]; m.dose = f.dose; m.forma = f.forma; }
           else {
-            const d = MN.acharDose(s) || (/^\d+([.,]\d+)?(\s*\/\s*\d+([.,]\d+)?)?$/.test(s) ? s.replace('.', ',').replace(/\s/g, '') + ' mg' : null);
+            const d = RF.acharDose(s) || (/^\d+([.,]\d+)?(\s*\/\s*\d+([.,]\d+)?)?$/.test(s) ? s.replace('.', ',').replace(/\s/g, '') + ' mg' : null);
             if (!d) throw new Error('Não entendi a dose. Escreva o número e a unidade, por exemplo 500 mg.');
             m.dose = d; this.completarForma(m);
           }
@@ -632,7 +701,7 @@
         }
         case 'med_pos': {
           const m = this.med; m.posologiaTexto = String(v || '').trim();
-          let pos = MN.lerPosologia(m.posologiaTexto);
+          let pos = RF.lerPosologia(m.posologiaTexto);
           if (!pos.ok) {
             const r = await this.ia('posologia', { texto: m.posologiaTexto, remedio: m.nome, dose: m.dose });
             try { const j = r && JSON.parse(String(r).replace(/^```(json)?|```$/g, '').trim()); if (j && (j.unidadesDia || j.sos)) pos = Object.assign(pos, j, { ok: true }); } catch (e) { }
@@ -647,7 +716,7 @@
         case 'med_tempo': this.med.tempoUso = v; this.passo = 'med_adesao'; return;
         case 'med_adesao': this.med.adesao = v; this.passo = 'med_efeitos'; return;
         case 'med_efeitos': {
-          const m = this.med, k = MN.kbPorId(m.kbId);
+          const m = this.med, k = RF.kbPorId(m.kbId);
           const sel = (v.sel || v || []).filter(x => x !== 'nenhum');
           m.efeitos = sel.map(x => k && /^k\d+$/.test(x) ? k.efeitosComuns[+x.slice(1)] : x);
           m.efeitosOutros = v.outro ? String(v.outro).trim() : '';
@@ -674,11 +743,12 @@
           if (v === 'corrigir') { this.passo = 'corrigir_qual'; return; }
           if (v === 'adicionar') { this.iniciarMed(); this.corrigindo = 'um'; return; }
           p.meds = p.meds.filter(m => m.nome);
-          p.alertas = MN.calcularAlertas(p);
-          p.resumo = MN.resumoClinico(p);
-          p.receitas = MN.montarReceitas(p);
-          p.status = 'aguardando'; p.enviadoEm = MN.agora();
-          p.historico.push({ em: MN.agora(), evento: 'Pedido enviado pelo paciente' });
+          p.alertas = RF.calcularAlertas(p);
+          p.especialidades = [...new Set(p.condicoes.map(RF.espDe))];
+          p.resumo = RF.resumoClinico(p);
+          p.receitas = RF.montarReceitas(p);
+          p.status = 'aguardando'; p.enviadoEm = RF.agora();
+          p.historico.push({ em: RF.agora(), evento: 'Pedido enviado pelo paciente' });
           {
             const r = await this.ia('resumo', { resumo: p.resumo });
             if (r) p.resumoIA = r;
@@ -700,35 +770,37 @@
 
     definirMed(k) {
       const m = this.med;
-      m.kbId = k.id; m.nome = MN.nomeCurto(k, m.informado);
+      m.kbId = k.id; m.nome = RF.nomeCurto(k, m.informado);
       if (!m.dose) {
         // "Depakote 500": número solto que bate com uma apresentação do banco
-        const nums = (MN.norm(m.informado).match(/\b\d+(?:[.,]\d+)?(?:\/\d+(?:[.,]\d+)?)?\b/g) || []).map(n => n.replace('.', ','));
-        const f = (k.formas || []).find(f => nums.some(n => MN.norm(f.dose).split(' ')[0] === n));
+        const nums = (RF.norm(m.informado).match(/\b\d+(?:[.,]\d+)?(?:\/\d+(?:[.,]\d+)?)?\b/g) || []).map(n => n.replace('.', ','));
+        const cands = (k.formas || []).filter(f => nums.some(n => RF.norm(f.dose).split(' ')[0] === n));
+        const f = cands.find(f => RF.querLiberacaoLonga(m.informado) === /liberacao|retard/.test(RF.norm(f.forma))) || cands[0];
         if (f) { m.dose = f.dose; m.forma = f.forma; }
       }
       if (m.dose && !m.forma) this.completarForma(m);
       this.passo = m.dose ? 'med_pos' : 'med_dose';
     }
     completarForma(m) {
-      const k = MN.kbPorId(m.kbId);
+      const k = RF.kbPorId(m.kbId);
       if (!k) { m.forma = m.forma || 'comprimido'; return; }
-      const alvo = MN.norm(m.dose).replace(/\s/g, '');
-      const fs = (k.formas || []).filter(f => MN.norm(f.dose).replace(/\s/g, '') === alvo);
+      const alvo = RF.norm(m.dose).replace(/\s/g, '');
+      const fs = (k.formas || []).filter(f => RF.norm(f.dose).replace(/\s/g, '') === alvo);
       // se o paciente escreveu a forma ("cápsula", "gotas", "liberação prolongada"), usa a que casar
-      const txt = MN.norm(m.informado || '');
-      const porTexto = fs.find(f => MN.norm(f.forma).split(' ').some(w => w.length > 5 && txt.includes(w)));
+      const txt = RF.norm(m.informado || '');
+      const porTexto = fs.find(f => RF.norm(f.forma).split(' ').some(w => w.length > 5 && txt.includes(w)))
+        || (RF.querLiberacaoLonga(m.informado) ? fs.find(f => /liberacao|retard/.test(RF.norm(f.forma))) : fs.find(f => !/liberacao|retard/.test(RF.norm(f.forma))));
       if (porTexto || fs.length) m.forma = (porTexto || fs[0]).forma;
       else m.forma = m.forma || ((k.formas || [])[0] || {}).forma || 'comprimido';
     }
   }
-  MN.Conversa = Conversa;
+  RF.Conversa = Conversa;
 
   function totalDia(m) {
     if (!m.pos || !m.pos.unidadesDia) return null;
-    const mg = MN.mgDe(m.dose);
-    if (mg == null || MN.unidadeDe(m.forma)[0] !== 'comprimido' && MN.unidadeDe(m.forma)[0] !== 'cápsula' && MN.unidadeDe(m.forma)[0] !== 'drágea') return null;
+    const mg = RF.mgDe(m.dose);
+    if (mg == null || RF.unidadeDe(m.forma)[0] !== 'comprimido' && RF.unidadeDe(m.forma)[0] !== 'cápsula' && RF.unidadeDe(m.forma)[0] !== 'drágea') return null;
     return mg * m.pos.unidadesDia;
   }
-  MN.totalDia = totalDia;
+  RF.totalDia = totalDia;
 })(typeof window !== 'undefined' ? window : globalThis);

@@ -1,0 +1,933 @@
+[
+ {
+  "id": "salbutamol",
+  "nome": "Salbutamol",
+  "marcas": [
+   "Aerolin",
+   "genéricos"
+  ],
+  "classe": "Broncodilatador beta-2 agonista de curta ação (SABA)",
+  "indicacoes": [
+   "asma_dpoc"
+  ],
+  "apresentacoes": [
+   "100 mcg/dose aerossol oral",
+   "2 mg/5 mL xarope",
+   "2 mg comprimido",
+   "4 mg comprimido",
+   "5 mg/mL solução para nebulização"
+  ],
+  "posologiaUsual": "Aerossol: 100 a 200 mcg (1 a 2 jatos) se necessário para alívio, ou 200 mcg antes do exercício; não usar mais que 4 vezes ao dia pela bula. Oral (xarope/comprimido): 2 a 4 mg 3 a 4 vezes ao dia, uso cada vez menos indicado.",
+  "doseMaxDia": "Aerossol: bula Aerolin até 200 mcg 4 vezes ao dia (800 mcg/dia); GINA 2026 orienta procurar atendimento se precisar de mais de 12 jatos em 24 h. Oral: até 8 mg por dose, 3 a 4 vezes ao dia (32 mg/dia).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Tremor leve nas mãos",
+   "Coração acelerado ou palpitações",
+   "Dor de cabeça",
+   "Sensação de nervosismo ou agitação",
+   "Cãibras musculares"
+  ],
+  "sinaisAlerta": [
+   "Falta de ar que não melhora com a bombinha ou que volta em menos de 3 horas",
+   "Precisar da bombinha muitas vezes no mesmo dia (mais de 12 jatos em 24 horas)",
+   "Chiado piorando logo após usar a bombinha",
+   "Dor no peito ou batimentos muito rápidos e irregulares",
+   "Lábios ou dedos arroxeados, dificuldade para falar frases completas"
+  ],
+  "monitorizacao": "Registrar quantas vezes por semana usa o resgate e quantos frascos compra por ano (3 ou mais frascos/ano associa-se a maior risco de crise). Avaliar controle da asma (GINA) e técnica inalatória a cada consulta. Em uso intenso ou com diuréticos/corticoide, considerar potássio.",
+  "interacoes": "Betabloqueadores não seletivos (propranolol) anulam o efeito e podem precipitar broncoespasmo. Diuréticos, corticoides e xantinas aumentam risco de hipocalemia. Antidepressivos tricíclicos e IMAO podem potencializar efeitos cardiovasculares.",
+  "gestacao": "Pode ser usado na gestação e amamentação quando necessário; o risco da asma descontrolada supera o do medicamento.",
+  "suspensao": "Pode ser suspenso sem retirada gradual; como é medicação de alívio, não substitui o tratamento de controle.",
+  "orientacoes": [
+   "Agite o frasco imediatamente antes de cada jato (é suspensão), expire, coloque na boca, aperte no início de uma inspiração lenta e profunda e segure o ar por cerca de 10 segundos",
+   "Use espaçador se tiver dificuldade de coordenar o jato com a respiração",
+   "Se estiver usando a bombinha de alívio mais de 2 vezes por semana, sua asma não está controlada: avise o médico",
+   "Leve a bombinha sempre com você"
+  ],
+  "alertasMedico": [
+   "GINA 2025/2026: tratamento só com SABA não é mais recomendado para adultos e adolescentes com asma; preferir via 1 com ICS-formoterol como resgate anti-inflamatório ou, na via 2, sempre associar ICS de manutenção",
+   "Uso de resgate mais de 2 vezes por semana define asma não controlada",
+   "GINA 2026 substituiu a ideia de dose máxima por orientação de procurar atendimento se mais de 12 jatos de SABA em 24 h",
+   "Dispensação de 3 ou mais frascos por ano associa-se a mais exacerbações; 12 ou mais, a maior mortalidade",
+   "Salbutamol oral tem pior relação benefício/efeito adverso que a via inalatória; rever indicação",
+   "Na DPOC, SABA isolado é aceitável apenas como resgate; manutenção é com broncodilatador de longa ação (GOLD 2026)"
+  ],
+  "fontes": [
+   "Bula Aerolin spray, profissional (GSK Brasil) - https://drogariasp.vteximg.com.br/arquivos/264---aerolin-spray-gsk-200-doses.pdf",
+   "Bula Aerolin comprimidos e xarope (GSK Brasil) - https://img.drogasil.com.br/raiadrogasil_bula/AerolinGSK.pdf ; https://br.gsk.com/media/lnenqw1w/aerolin-xarope.pdf",
+   "Solução para nebulização 5 mg/mL consta no histórico de apresentações da bula Aerolin; comercialização atual não confirmada",
+   "GINA 2026 Strategy Report (maio/2026) - https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf",
+   "GINA 2025 Summary Guide (2025) - https://ginasthma.org/wp-content/uploads/2025/11/GINA-Summary-Guide-2025-WEB_FINAL-WMS.pdf",
+   "GOLD 2026 Report - Key Changes Summary (nov/2025) - https://goldcopd.org/wp-content/uploads/2025/11/KEY-CHANGES-GOLD-2026-10Nov2025.pdf",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "budesonida-formoterol",
+  "nome": "Budesonida + formoterol",
+  "marcas": [
+   "Symbicort Turbuhaler",
+   "Alenia",
+   "Vannair",
+   "Foraseq",
+   "genéricos"
+  ],
+  "classe": "Corticoide inalatório + beta-2 agonista de longa ação de início rápido (ICS-formoterol)",
+  "indicacoes": [
+   "asma_dpoc"
+  ],
+  "apresentacoes": [
+   "6/100 mcg/inalação pó inalatório (Turbuhaler)",
+   "6/200 mcg/inalação pó inalatório (Turbuhaler)",
+   "12/400 mcg/inalação pó inalatório (Turbuhaler)",
+   "6/200 mcg cápsula inalatória",
+   "12/400 mcg cápsula inalatória",
+   "6/100 mcg/dose aerossol oral",
+   "6/200 mcg/dose aerossol oral"
+  ],
+  "posologiaUsual": "Asma leve, resgate anti-inflamatório (≥12 anos, 6/200): 1 inalação quando houver sintomas. Manutenção e alívio (MART, 6/100 ou 6/200): 1 inalação 2 vezes ao dia (ou 2 inalações 1 vez ao dia) mais 1 inalação extra quando precisar. Manutenção fixa: 1 a 2 inalações 1 a 2 vezes ao dia. DPOC (adultos): 6/200 2 inalações 2 vezes ao dia ou 12/400 1 inalação 2 vezes ao dia.",
+  "doseMaxDia": "MART/resgate com 6/200 ou 6/100: normalmente até 8 inalações/dia, até 12 inalações/dia temporariamente (bula Symbicort; GINA 2026: procurar atendimento se mais de 12 inalações totais em 24 h). Máximo de 6 inalações em uma única ocasião. 12/400 somente manutenção: máximo 2 inalações 2 vezes ao dia.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Rouquidão ou irritação na garganta",
+   "Sapinho (placas brancas na boca)",
+   "Tremor leve",
+   "Palpitações",
+   "Dor de cabeça",
+   "Tosse logo após inalar"
+  ],
+  "sinaisAlerta": [
+   "Falta de ar que não melhora mesmo com as inalações extras",
+   "Precisar de mais de 12 inalações em 24 horas",
+   "Chiado que piora logo após a inalação",
+   "Febre, tosse com catarro e cansaço (possível pneumonia, principalmente se você tem DPOC)",
+   "Inchaço no rosto, lábios ou língua"
+  ],
+  "monitorizacao": "Controle da asma (sintomas diurnos, despertares, uso de resgate, limitação) e exacerbações a cada consulta; técnica inalatória e adesão; espirometria periódica. Na DPOC, vigiar pneumonia. Em dose alta de ICS prolongada: crescimento em crianças, catarata/glaucoma e densidade óssea conforme risco.",
+  "interacoes": "Inibidores potentes da CYP3A4 (ritonavir, cobicistate, cetoconazol, itraconazol) aumentam a exposição à budesonida com risco de Cushing e supressão adrenal. Betabloqueadores podem antagonizar o formoterol. Diuréticos/corticoide sistêmico: hipocalemia. Fármacos que prolongam QT: cautela.",
+  "gestacao": "Budesonida é o corticoide inalatório com mais dados de segurança na gravidez; manter o controle da asma é prioritário. Compatível com amamentação.",
+  "suspensao": "Não suspender por conta própria; a retirada do corticoide inalatório aumenta risco de crise. Redução deve ser gradual e só após cerca de 3 meses de asma controlada.",
+  "orientacoes": [
+   "No Turbuhaler: gire a base até o clique com o inalador em pé, expire longe do bocal e inspire rápido e profundo; não sopre dentro do aparelho",
+   "Enxágue a boca com água e cuspa após cada uso para evitar sapinho e rouquidão",
+   "Se o seu médico prescreveu como manutenção e alívio, use o mesmo inalador quando tiver sintomas, sem precisar de outra bombinha",
+   "Não deixe acabar: confira o contador de doses"
+  ],
+  "alertasMedico": [
+   "GINA 2025/2026 via 1 (preferencial): ICS-formoterol como resgate anti-inflamatório (AIR) nas etapas 1-2 e MART nas etapas 3-5; reduz exacerbações graves em cerca de 60% versus SABA isolado",
+   "Na bula brasileira do Symbicort Turbuhaler 6/200 consta a indicação de uso apenas conforme necessário na asma leve (≥12 anos)",
+   "GINA 2026: trocou a expressão dose máxima por procurar atendimento se mais de 12 inalações totais (manutenção + resgate) de 200/6 em 24 h; 12/400 não deve ser usado como resgate",
+   "Uso de resgate mais de 2 vezes por semana indica asma não controlada",
+   "DPOC: GOLD não recomenda LABA+ICS isolado; se houver indicação de ICS (eosinófilos ≥300, ou ≥100 com exacerbações), preferir LABA+LAMA+ICS; ICS aumenta risco de pneumonia",
+   "Foraseq tem formoterol e budesonida em cápsulas separadas; não permite estratégia MART"
+  ],
+  "fontes": [
+   "Bula Symbicort Turbuhaler, paciente (AstraZeneca Brasil) - https://www.astrazeneca.com.br/content/dam/az-br/Medicine/medicine-pdf/SymbicortTurbuhaler_Bula_Paciente.pdf",
+   "Bula Vannair, profissional (AstraZeneca Brasil) - https://www.azmed.com.br/content/dam/multibrand/br/pt/azmed-2022/home/bulas-profissionais/bulas/Vannair_Bula_Profissional.pdf",
+   "Bula Alenia - https://www.saudedireta.com.br/catinc/drugs/bulas/alenia.pdf (apresentação Alenia 6/100 não confirmada)",
+   "CONITEC 2021 - inclusão da apresentação spray de formoterol+budesonida - https://www.gov.br/conitec/pt-br/midias/consultas/relatorios/2021/20210217_relatorio_formoterol_budesonida_asma_cp07.pdf",
+   "GINA 2026 Strategy Report (maio/2026) - https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf",
+   "GINA 2025 Summary Guide (2025) - https://ginasthma.org/wp-content/uploads/2025/11/GINA-Summary-Guide-2025-WEB_FINAL-WMS.pdf",
+   "GOLD 2026 Report - Key Changes Summary (nov/2025) - https://goldcopd.org/wp-content/uploads/2025/11/KEY-CHANGES-GOLD-2026-10Nov2025.pdf",
+   "SBPT - Recomendações para o manejo da asma 2020 (J Bras Pneumol) - https://www.scielo.br/j/jbpneu/a/jbyyhBv98bWq3WksvBqnDBn/?lang=pt",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "formoterol-beclometasona",
+  "nome": "Beclometasona + formoterol",
+  "marcas": [
+   "Fostair",
+   "Fostair DPI"
+  ],
+  "classe": "Corticoide inalatório + beta-2 agonista de longa ação de início rápido (ICS-formoterol), partícula extrafina",
+  "indicacoes": [
+   "asma_dpoc"
+  ],
+  "apresentacoes": [
+   "100/6 mcg/dose aerossol oral",
+   "200/6 mcg/dose aerossol oral",
+   "100/6 mcg/dose pó inalatório (Nexthaler)",
+   "200/6 mcg/dose pó inalatório (Nexthaler)"
+  ],
+  "posologiaUsual": "Asma, manutenção (adultos ≥18 anos): 100/6 1 a 2 inalações 2 vezes ao dia; 200/6 2 inalações 2 vezes ao dia. Manutenção e alívio (somente 100/6): 1 inalação 2 vezes ao dia mais 1 inalação extra quando houver sintomas. DPOC grave: 100/6 2 inalações 2 vezes ao dia.",
+  "doseMaxDia": "Manutenção: 4 inalações/dia. Manutenção e alívio com 100/6: 8 inalações/dia pela bula brasileira (GINA 2026 sugere procurar atendimento se mais de 12 inalações totais em 24 h). 200/6 não deve ser usado como resgate.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Rouquidão",
+   "Dor ou irritação na garganta",
+   "Sapinho (placas brancas na boca)",
+   "Dor de cabeça",
+   "Tremor ou palpitações leves"
+  ],
+  "sinaisAlerta": [
+   "Falta de ar que não melhora com as inalações",
+   "Precisar de muito mais inalações do que o habitual",
+   "Chiado que piora logo após a inalação",
+   "Febre, tosse com catarro e cansaço (possível pneumonia, principalmente se você tem DPOC)",
+   "Inchaço no rosto, lábios ou língua"
+  ],
+  "monitorizacao": "Controle da asma e exacerbações, técnica inalatória e adesão a cada consulta; espirometria periódica. DPOC: vigiar pneumonia. ICS em dose alta prolongada: olhos (catarata/glaucoma) e osso conforme risco.",
+  "interacoes": "Inibidores potentes da CYP3A4 (ritonavir, cobicistate, cetoconazol): menor efeito que com fluticasona, mas cautela. Betabloqueadores antagonizam o formoterol. Diuréticos/corticoide sistêmico: hipocalemia. O aerossol contém pequena quantidade de álcool: cuidado com dissulfiram e metronidazol.",
+  "gestacao": "Categoria C na bula; usar se benefício superar risco. Controle da asma na gestação é prioritário; budesonida tem mais dados.",
+  "suspensao": "Não suspender por conta própria; reduzir gradualmente sob orientação após período de controle.",
+  "orientacoes": [
+   "Spray: expire, coloque o bocal na boca, acione no início de uma inspiração lenta e profunda e segure o ar por 5 a 10 segundos; se tiver dificuldade, use espaçador (AeroChamber)",
+   "Enxágue a boca com água e cuspa após cada uso",
+   "Nexthaler (pó): abra a tampa completamente, expire longe do aparelho e inspire rápido e fundo; o contador só desce se a dose foi inalada",
+   "Se o médico prescreveu como manutenção e alívio, use o mesmo inalador quando tiver sintomas"
+  ],
+  "alertasMedico": [
+   "Bula brasileira: contraindicado para menores de 18 anos",
+   "Somente 100/6 é aprovado para MART; limite na bula de 8 inalações/dia (GINA 2026 extrapola 12 inalações totais, 72 mcg de formoterol)",
+   "GINA 2025/2026: ICS-formoterol como resgate é a via preferencial; SABA isolado não é mais recomendado",
+   "DPOC: GOLD não recomenda LABA+ICS isolado; se ICS indicado, preferir terapia tripla; ICS aumenta risco de pneumonia",
+   "Beclometasona extrafina: 100 mcg equivalem aproximadamente a 250 mcg de beclometasona não extrafina"
+  ],
+  "fontes": [
+   "Bula Fostair Spray 100/6, profissional (Chiesi Brasil) - https://www.chiesi.com.br/fostair-spray-1006/bula-profissional",
+   "Bula Fostair DPI 100/6 (Chiesi Brasil) - https://www.chiesi.com.br/fostair-dpi-1006/bula-profissional",
+   "Bula Fostair DPI 200/6 (Chiesi Brasil) - https://www.chiesi.com.br/img/prodotti/documenti/40_leaflet_doc_professionals.pdf",
+   "Bula Fostair 200/6 aerossol - https://img.drogasil.com.br/raiadrogasil_bula/Fostair200.pdf (posologia do 200/6 conferida por resumo, não por leitura integral)",
+   "GINA 2026 Strategy Report (maio/2026) - https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf",
+   "GOLD 2026 Report - Key Changes Summary (nov/2025) - https://goldcopd.org/wp-content/uploads/2025/11/KEY-CHANGES-GOLD-2026-10Nov2025.pdf",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "salmeterol-fluticasona",
+  "nome": "Salmeterol + fluticasona",
+  "marcas": [
+   "Seretide Diskus",
+   "Seretide Spray",
+   "genéricos"
+  ],
+  "classe": "Corticoide inalatório + beta-2 agonista de longa ação (ICS-LABA)",
+  "indicacoes": [
+   "asma_dpoc"
+  ],
+  "apresentacoes": [
+   "50/100 mcg/dose pó inalatório (Diskus)",
+   "50/250 mcg/dose pó inalatório (Diskus)",
+   "50/500 mcg/dose pó inalatório (Diskus)",
+   "25/50 mcg/dose aerossol oral",
+   "25/125 mcg/dose aerossol oral",
+   "25/250 mcg/dose aerossol oral"
+  ],
+  "posologiaUsual": "Asma (≥12 anos): Diskus 1 inalação 2 vezes ao dia (50/100, 50/250 ou 50/500) ou Spray 2 jatos 2 vezes ao dia (25/50, 25/125 ou 25/250). Crianças ≥4 anos: Diskus 50/100 1 inalação ou Spray 25/50 2 jatos, 2 vezes ao dia. DPOC (adultos): Diskus 50/250 a 50/500 1 inalação 2 vezes ao dia.",
+  "doseMaxDia": "Salmeterol 100 mcg/dia (Diskus 1 inalação 2x/dia ou Spray 2 jatos 2x/dia); fluticasona até 1.000 mcg/dia.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Dor de cabeça",
+   "Rouquidão",
+   "Sapinho (placas brancas na boca)",
+   "Cãibras musculares",
+   "Dor nas articulações",
+   "Irritação na garganta"
+  ],
+  "sinaisAlerta": [
+   "Falta de ar que não melhora com a bombinha de resgate",
+   "Chiado que piora logo após a inalação",
+   "Febre, tosse com catarro e cansaço (possível pneumonia, principalmente se você tem DPOC)",
+   "Visão embaçada ou dor nos olhos",
+   "Inchaço no rosto, lábios ou língua"
+  ],
+  "monitorizacao": "Controle da asma/DPOC, exacerbações, técnica e adesão; espirometria periódica. Crianças: altura. Dose alta prolongada: glicemia, olhos, osso e sinais de supressão adrenal conforme risco. DPOC: vigiar pneumonia.",
+  "interacoes": "Ritonavir, cobicistate, cetoconazol e itraconazol: evitar (casos de Cushing e supressão adrenal com fluticasona; aumento de efeitos cardíacos do salmeterol). Betabloqueadores antagonizam o salmeterol. Diuréticos: hipocalemia.",
+  "gestacao": "Usar se o benefício superar o risco; controle da asma na gestação é prioritário.",
+  "suspensao": "Não suspender por conta própria; na DPOC a interrupção pode levar a descompensação. Redução gradual sob orientação.",
+  "orientacoes": [
+   "Diskus: abra, empurre a alavanca até o clique, expire longe do aparelho e inspire rápido e profundo pelo bocal",
+   "Spray: agite imediatamente antes de cada jato; use espaçador se tiver dificuldade",
+   "Enxágue a boca com água e cuspa após cada uso",
+   "Este remédio é de manutenção: use todos os dias, mesmo sem sintomas, e não serve para aliviar crise"
+  ],
+  "alertasMedico": [
+   "Salmeterol não tem início rápido: não pode ser usado como resgate nem em MART; o paciente precisa de resgate separado (GINA via 2)",
+   "GINA 2025: na via 2, etapa 4 passou de dose média-alta para dose média de ICS-LABA, para reduzir exposição a ICS em dose alta",
+   "DPOC: GOLD não recomenda LABA+ICS isolado; se ICS indicado, preferir LABA+LAMA+ICS; ICS aumenta pneumonia",
+   "Evitar associação com ritonavir/cobicistate (Cushing iatrogênico)"
+  ],
+  "fontes": [
+   "Bula Seretide Diskus, profissional (GSK Brasil) - https://br.gsk.com/media/0gghwrlv/seretide-diskus.pdf",
+   "Bula Seretide Spray, profissional (GSK Brasil) - https://br.gsk.com/media/tv1pwhgp/seretide-spray.pdf",
+   "GINA 2026 Strategy Report (maio/2026) - https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf",
+   "GINA 2025 Summary Guide (2025) - https://ginasthma.org/wp-content/uploads/2025/11/GINA-Summary-Guide-2025-WEB_FINAL-WMS.pdf",
+   "GOLD 2026 Report - Key Changes Summary (nov/2025) - https://goldcopd.org/wp-content/uploads/2025/11/KEY-CHANGES-GOLD-2026-10Nov2025.pdf",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "tiotropio",
+  "nome": "Tiotrópio",
+  "marcas": [
+   "Spiriva Respimat"
+  ],
+  "classe": "Antimuscarínico inalatório de longa ação (LAMA)",
+  "indicacoes": [
+   "asma_dpoc"
+  ],
+  "apresentacoes": [
+   "2,5 mcg/dose solução para inalação (Respimat)"
+  ],
+  "posologiaUsual": "2 jatos (5 mcg) uma vez ao dia, sempre no mesmo horário. DPOC em adultos; asma como tratamento adicional a partir de 6 anos em uso de corticoide inalatório (com ou sem LABA).",
+  "doseMaxDia": "5 mcg/dia (2 jatos uma vez ao dia).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Boca seca",
+   "Prisão de ventre",
+   "Tosse ou irritação na garganta",
+   "Tontura",
+   "Visão levemente borrada se o spray atingir os olhos"
+  ],
+  "sinaisAlerta": [
+   "Dor nos olhos com vermelhidão, visão embaçada ou halos em volta das luzes (glaucoma agudo)",
+   "Dificuldade para urinar ou bexiga cheia sem conseguir esvaziar",
+   "Chiado que piora logo após a inalação",
+   "Palpitações ou batimentos irregulares",
+   "Inchaço no rosto, lábios ou língua"
+  ],
+  "monitorizacao": "DPOC: sintomas (CAT/mMRC), exacerbações e técnica inalatória a cada consulta; espirometria periódica. Asma: controle e exacerbações. Vigiar retenção urinária em homens com HPB e sintomas de glaucoma.",
+  "interacoes": "Não associar a outros antimuscarínicos de longa ação (umeclidínio, glicopirrônio) nem usar ipratrópio regularmente junto; efeitos anticolinérgicos somam-se aos de outros anticolinérgicos (oxibutinina, tricíclicos). Insuficiência renal moderada a grave aumenta exposição: vigiar.",
+  "gestacao": "Dados humanos limitados; usar somente se o benefício justificar.",
+  "suspensao": "Pode ser suspenso sem retirada gradual, mas a interrupção pode piorar sintomas e exacerbações.",
+  "orientacoes": [
+   "Respimat: antes do primeiro uso, encaixe o cartucho e prepare o aparelho; a cada dose, gire a base meio giro até o clique, abra a tampa, expire, feche os lábios no bocal, aperte o botão enquanto inspira lento e profundo e segure o ar",
+   "São 2 jatos seguidos, uma vez ao dia",
+   "Não serve para aliviar crise de falta de ar; mantenha o remédio de resgate",
+   "Evite que o spray atinja os olhos"
+  ],
+  "alertasMedico": [
+   "GOLD 2026: tratamento inicial com LAMA ou LABA+LAMA; LABA+LAMA preferível a LABA+ICS; limiar de 1 exacerbação moderada/grave passa a definir o grupo E e considerar escalonamento",
+   "Asma (GINA 2026): LAMA como adicional nas etapas 4-5 a partir de 6 anos, após ICS-LABA; nunca em monoterapia na asma",
+   "Cautela em glaucoma de ângulo fechado e retenção urinária/HPB obstrutiva",
+   "Spiriva cápsula 18 mcg (HandiHaler) não confirmada como comercializada no Brasil atualmente"
+  ],
+  "fontes": [
+   "Bula Spiriva Respimat (Boehringer Ingelheim Brasil) - https://img.drogasil.com.br/raiadrogasil_bula/Spiriva-Boehringer.pdf ; https://consultaremedios.com.br/spiriva-respimat/bula",
+   "GOLD 2026 Report - Key Changes Summary (nov/2025) - https://goldcopd.org/wp-content/uploads/2025/11/KEY-CHANGES-GOLD-2026-10Nov2025.pdf",
+   "GINA 2026 Strategy Report (maio/2026) - https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "montelucaste",
+  "nome": "Montelucaste",
+  "marcas": [
+   "Singulair",
+   "genéricos"
+  ],
+  "classe": "Antagonista do receptor de leucotrienos (LTRA)",
+  "indicacoes": [
+   "asma_dpoc",
+   "outro"
+  ],
+  "apresentacoes": [
+   "4 mg sachê de grânulos",
+   "4 mg comprimido mastigável",
+   "5 mg comprimido mastigável",
+   "10 mg comprimido revestido"
+  ],
+  "posologiaUsual": "Uma vez ao dia, à noite: 10 mg (≥15 anos); 5 mg (6 a 14 anos); 4 mg (2 a 5 anos). Indicado em asma (tratamento adicional/alternativo) e rinite alérgica.",
+  "doseMaxDia": "10 mg/dia em adultos (doses maiores não trazem benefício adicional).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Dor de cabeça",
+   "Dor de barriga",
+   "Sonhos vívidos ou pesadelos",
+   "Irritabilidade ou agitação",
+   "Infecção de vias aéreas superiores"
+  ],
+  "sinaisAlerta": [
+   "Pensamentos de se machucar ou de morte, ou tristeza profunda",
+   "Mudança marcante de comportamento, agressividade, ansiedade intensa, alucinações ou sonambulismo",
+   "Formigamento nos braços ou pernas, manchas na pele e piora da falta de ar (principalmente ao reduzir corticoide)",
+   "Inchaço no rosto, lábios ou língua"
+  ],
+  "monitorizacao": "Perguntar ativamente sobre sono, humor e comportamento em toda consulta (inclusive em crianças, via cuidadores). Reavaliar benefício no controle da asma após 4 a 8 semanas.",
+  "interacoes": "Fenobarbital, fenitoína e rifampicina reduzem os níveis (bula não recomenda ajuste, mas considerar menor efeito). Poucas interações relevantes.",
+  "gestacao": "Categoria B na bula; usar somente se claramente necessário.",
+  "suspensao": "Pode ser suspenso sem retirada gradual. Suspender se surgirem alterações neuropsiquiátricas.",
+  "orientacoes": [
+   "Tome uma vez ao dia, à noite, com ou sem comida",
+   "O comprimido mastigável deve ser mastigado; o sachê pode ser dado direto na boca ou misturado a alimento pastoso frio",
+   "Não serve para crise aguda: mantenha a bombinha de alívio",
+   "Você ou sua família devem avisar o médico se notarem mudança de humor, sono ou comportamento"
+  ],
+  "alertasMedico": [
+   "FDA 2020: tarja preta (boxed warning) para eventos neuropsiquiátricos graves, incluindo ideação e comportamento suicida; na rinite alérgica, reservar para quem não respondeu ou não tolera outras opções",
+   "GINA 2026: LTRA é menos eficaz que ICS e que adicionar LABA; ao prescrever, aconselhar sobre efeitos neuropsiquiátricos",
+   "Não substitui corticoide inalatório na asma persistente",
+   "Raros casos de granulomatose eosinofílica com poliangiite (Churg-Strauss), geralmente com redução de corticoide sistêmico"
+  ],
+  "fontes": [
+   "Bula Singulair, profissional (Organon Brasil) - https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/singulair_bula_profissional.pdf",
+   "FDA Drug Safety Communication - boxed warning montelucaste (mar/2020) - https://www.fda.gov/media/135840/download",
+   "Anvisa - carta aos profissionais sobre Singulair e pensamentos suicidas - https://www.gov.br/anvisa/pt-br/assuntos/fiscalizacao-e-monitoramento/cartas-aos-profissionais-de-saude/anos-anteriores/informacoes-sobre-singulair-r-montelucaste-de-sodio-e-pensamentos-suicidas_.pdf",
+   "GINA 2026 Strategy Report (maio/2026) - https://ginasthma.org/wp-content/uploads/2026/05/GINA-2026-Strategy-Report-WMS.pdf",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "omeprazol",
+  "nome": "Omeprazol",
+  "marcas": [
+   "Losec MUPS",
+   "genéricos"
+  ],
+  "classe": "Inibidor da bomba de prótons (IBP)",
+  "indicacoes": [
+   "estomago"
+  ],
+  "apresentacoes": [
+   "10 mg cápsula",
+   "20 mg cápsula",
+   "40 mg cápsula"
+  ],
+  "posologiaUsual": "20 mg uma vez ao dia em jejum, antes do café da manhã (DRGE, úlcera, gastroproteção); 40 mg/dia em esofagite grave; 20 mg 2 vezes ao dia na erradicação do H. pylori (com antibióticos).",
+  "doseMaxDia": "Uso habitual até 40 mg/dia; Zollinger-Ellison: início 60 mg/dia, doses acima de 80 mg/dia divididas em 2 tomadas, com relatos de até 120 mg 3 vezes ao dia.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Dor de cabeça",
+   "Dor de barriga",
+   "Diarreia ou prisão de ventre",
+   "Gases",
+   "Enjoo"
+  ],
+  "sinaisAlerta": [
+   "Fezes pretas como borra de café ou vômito com sangue",
+   "Dificuldade ou dor para engolir, perda de peso sem explicação",
+   "Diarreia aquosa intensa e persistente, com febre ou dor abdominal",
+   "Cãibras, tremores, palpitações ou convulsões (magnésio baixo)",
+   "Manchas na pele que pioram com o sol ou dor nas articulações",
+   "Diminuição da urina ou inchaço"
+  ],
+  "monitorizacao": "Reavaliar a indicação a cada renovação (dose mínima eficaz, tentar redução/desprescrição quando cabível). Uso prolongado: magnésio se associado a digoxina/diuréticos ou fatores de risco; vitamina B12 em idosos ou uso por anos; saúde óssea em quem tem risco de osteoporose.",
+  "interacoes": "Clopidogrel: evitar (omeprazol inibe CYP2C19 e reduz o metabólito ativo em cerca de 40%; se precisar de IBP, preferir pantoprazol). Contraindicado com rilpivirina; evitar com atazanavir/nelfinavir. Metotrexato em dose alta: aumenta níveis. Reduz absorção de cetoconazol/itraconazol, ferro oral, levotiroxina e micofenolato. Aumenta níveis de citalopram/escitalopram, diazepam, fenitoína, varfarina (monitorar INR) e tacrolimo.",
+  "gestacao": "Grande volume de dados observacionais sem aumento de malformações; pode ser usado quando indicado. Passa pouco para o leite; geralmente compatível com amamentação.",
+  "suspensao": "Após uso por mais de algumas semanas, reduzir gradualmente (por exemplo, dias alternados ou meia dose por 2 a 4 semanas) para evitar rebote de acidez.",
+  "orientacoes": [
+   "Tome em jejum, de 30 a 60 minutos antes do café da manhã, com água",
+   "Engula a cápsula inteira, sem mastigar ou abrir",
+   "Se usa há muito tempo, pergunte ao médico se ainda precisa ou se pode reduzir",
+   "Evite parar de repente depois de uso prolongado"
+  ],
+  "alertasMedico": [
+   "Uso prolongado: associação (principalmente observacional) com deficiência de vitamina B12, hipomagnesemia, fraturas, infecção por Clostridioides difficile, nefrite intersticial e lúpus cutâneo; a AGA 2022 recomenda reavaliar periodicamente a indicação e desprescrever quando não houver indicação, e não suspender apenas por medo de efeito adverso",
+   "Sinais de alarme (disfagia, perda de peso, vômitos persistentes, sangramento, anemia, início após 60 anos) exigem endoscopia; o IBP pode mascarar câncer gástrico",
+   "Suspensão após uso prolongado pode causar hipersecreção ácida rebote: reduzir gradualmente ou passar para uso sob demanda",
+   "Manutenção de longo prazo justificada em esofagite grave (LA C/D), Barrett, gastroproteção de alto risco com AINE/antiagregante e hipersecreção",
+   "Com clopidogrel, omeprazol e esomeprazol devem ser evitados; pantoprazol é a alternativa preferida"
+  ],
+  "fontes": [
+   "Bulas de omeprazol genérico, profissional (Brasil) - https://www.geolab.com.br/wp-content/uploads/2021/05/omeprazol-Bula-Profissional.pdf ; https://www.cristalia.com.br/produto/143/bula-profissional",
+   "Apresentações de 10 e 40 mg e marca Losec MUPS não conferidas em bula nesta sessão",
+   "AGA Clinical Practice Update on De-Prescribing of PPIs (Gastroenterology 2022) - https://pubmed.ncbi.nlm.nih.gov/35183361/",
+   "FDA Drug Safety Communications sobre IBP: fraturas (2010), hipomagnesemia (2011), C. difficile (2012), lúpus (2016) - citadas de memória, não reverificadas nesta sessão",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "pantoprazol",
+  "nome": "Pantoprazol",
+  "marcas": [
+   "Pantozol",
+   "genéricos"
+  ],
+  "classe": "Inibidor da bomba de prótons (IBP)",
+  "indicacoes": [
+   "estomago"
+  ],
+  "apresentacoes": [
+   "20 mg comprimido revestido de liberação retardada",
+   "40 mg comprimido revestido de liberação retardada"
+  ],
+  "posologiaUsual": "20 mg uma vez ao dia em sintomas leves/manutenção/gastroproteção; 40 mg uma vez ao dia em esofagite moderada a grave e úlceras; 40 mg 2 vezes ao dia na erradicação do H. pylori (com antibióticos, em jejum).",
+  "doseMaxDia": "Uso habitual até 40 mg/dia (80 mg/dia só no H. pylori); Zollinger-Ellison: início 80 mg/dia, acima disso dividir em 2 tomadas, aumentos temporários acima de 160 mg/dia. Insuficiência hepática grave: 40 mg em dias alternados.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Dor de cabeça",
+   "Dor de barriga",
+   "Diarreia ou prisão de ventre",
+   "Gases",
+   "Enjoo"
+  ],
+  "sinaisAlerta": [
+   "Fezes pretas como borra de café ou vômito com sangue",
+   "Dificuldade ou dor para engolir, perda de peso sem explicação",
+   "Diarreia aquosa intensa e persistente, com febre ou dor abdominal",
+   "Cãibras, tremores, palpitações ou convulsões (magnésio baixo)",
+   "Pele ou olhos amarelados",
+   "Diminuição da urina ou inchaço"
+  ],
+  "monitorizacao": "Reavaliar a indicação a cada renovação. Uso prolongado: magnésio com digoxina/diuréticos ou fatores de risco; vitamina B12 em idosos ou uso por anos; saúde óssea conforme risco. Hepatopatia grave: enzimas hepáticas.",
+  "interacoes": "Menor inibição da CYP2C19 entre os IBP: é o preferido quando há clopidogrel. Contraindicado com rilpivirina; evitar com atazanavir. Metotrexato em dose alta: aumenta níveis. Reduz absorção de cetoconazol/itraconazol, ferro oral, levotiroxina e micofenolato. Varfarina: monitorar INR.",
+  "gestacao": "Dados observacionais sem sinal de malformações; usar quando indicado. Dados limitados na amamentação, excreção no leite baixa.",
+  "suspensao": "Após uso prolongado, reduzir gradualmente para evitar rebote de acidez.",
+  "orientacoes": [
+   "Tome uma vez ao dia, de preferência pela manhã, antes do café (a bula brasileira permite antes, durante ou após o café; na erradicação do H. pylori, em jejum)",
+   "Engula o comprimido inteiro, sem partir ou mastigar",
+   "Se usa há muito tempo, pergunte ao médico se ainda precisa ou se pode reduzir",
+   "Evite parar de repente depois de uso prolongado"
+  ],
+  "alertasMedico": [
+   "Uso prolongado: associação (principalmente observacional) com deficiência de vitamina B12, hipomagnesemia, fraturas, infecção por Clostridioides difficile, nefrite intersticial e lúpus cutâneo; a AGA 2022 recomenda reavaliar periodicamente a indicação e desprescrever quando não houver indicação, e não suspender apenas por medo de efeito adverso",
+   "Sinais de alarme (disfagia, perda de peso, vômitos persistentes, sangramento, anemia, início após 60 anos) exigem endoscopia; o IBP pode mascarar câncer gástrico",
+   "Suspensão após uso prolongado pode causar hipersecreção ácida rebote: reduzir gradualmente ou passar para uso sob demanda",
+   "Manutenção de longo prazo justificada em esofagite grave (LA C/D), Barrett, gastroproteção de alto risco com AINE/antiagregante e hipersecreção",
+   "IBP de escolha quando o paciente usa clopidogrel"
+  ],
+  "fontes": [
+   "Bula pantoprazol, profissional (Novartis/Sandoz Brasil) - https://portal.novartis.com.br/medicamentos/wp-content/uploads/2022/11/Bula-PANTOPRAZOL-Comprimido-revestido-Medico.pdf",
+   "Bula Pantozol 40 mg - https://www.saudedireta.com.br/catinc/drugs/bulas/pantozol40.pdf",
+   "AGA Clinical Practice Update on De-Prescribing of PPIs (Gastroenterology 2022) - https://pubmed.ncbi.nlm.nih.gov/35183361/",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "esomeprazol",
+  "nome": "Esomeprazol",
+  "marcas": [
+   "Nexium",
+   "genéricos"
+  ],
+  "classe": "Inibidor da bomba de prótons (IBP)",
+  "indicacoes": [
+   "estomago"
+  ],
+  "apresentacoes": [
+   "20 mg comprimido revestido de liberação retardada",
+   "40 mg comprimido revestido de liberação retardada"
+  ],
+  "posologiaUsual": "DRGE sem esofagite: 20 mg uma vez ao dia; esofagite erosiva: 40 mg uma vez ao dia por 4 a 8 semanas, depois 20 mg/dia de manutenção; gastroproteção com AINE: 20 mg/dia; H. pylori: 20 mg 2 vezes ao dia com amoxicilina e claritromicina.",
+  "doseMaxDia": "Uso habitual até 40 mg/dia; Zollinger-Ellison: início 40 mg 2 vezes ao dia, com relatos de até 120 mg 2 vezes ao dia.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Dor de cabeça",
+   "Dor de barriga",
+   "Diarreia ou prisão de ventre",
+   "Gases",
+   "Enjoo ou vômito"
+  ],
+  "sinaisAlerta": [
+   "Fezes pretas como borra de café ou vômito com sangue",
+   "Dificuldade ou dor para engolir, perda de peso sem explicação",
+   "Diarreia aquosa intensa e persistente, com febre ou dor abdominal",
+   "Cãibras, tremores, palpitações ou convulsões (magnésio baixo)",
+   "Manchas na pele que pioram com o sol ou dor nas articulações",
+   "Diminuição da urina ou inchaço"
+  ],
+  "monitorizacao": "Reavaliar a indicação a cada renovação. Uso prolongado: magnésio com digoxina/diuréticos ou fatores de risco; vitamina B12 em idosos ou uso por anos; saúde óssea em quem tem risco de osteoporose.",
+  "interacoes": "Clopidogrel: evitar (bula brasileira: uso concomitante deve ser evitado). Contraindicado com rilpivirina; evitar com atazanavir/nelfinavir/saquinavir. Metotrexato em dose alta, cilostazol, citalopram, diazepam, fenitoína, varfarina (monitorar INR) e tacrolimo: níveis aumentados. Reduz absorção de cetoconazol/itraconazol, ferro e levotiroxina.",
+  "gestacao": "Dados observacionais (em grande parte com omeprazol, seu racemato) sem aumento de malformações; usar quando indicado.",
+  "suspensao": "Após uso prolongado, reduzir gradualmente para evitar rebote de acidez.",
+  "orientacoes": [
+   "Tome uma vez ao dia, de preferência antes do café da manhã (a bula permite com ou sem alimento)",
+   "Engula o comprimido inteiro, sem partir ou mastigar",
+   "Se usa há muito tempo, pergunte ao médico se ainda precisa ou se pode reduzir",
+   "Evite parar de repente depois de uso prolongado"
+  ],
+  "alertasMedico": [
+   "Uso prolongado: associação (principalmente observacional) com deficiência de vitamina B12, hipomagnesemia, fraturas, infecção por Clostridioides difficile, nefrite intersticial e lúpus cutâneo; a AGA 2022 recomenda reavaliar periodicamente a indicação e desprescrever quando não houver indicação, e não suspender apenas por medo de efeito adverso",
+   "Sinais de alarme (disfagia, perda de peso, vômitos persistentes, sangramento, anemia, início após 60 anos) exigem endoscopia; o IBP pode mascarar câncer gástrico",
+   "Suspensão após uso prolongado pode causar hipersecreção ácida rebote: reduzir gradualmente ou passar para uso sob demanda",
+   "Manutenção de longo prazo justificada em esofagite grave (LA C/D), Barrett, gastroproteção de alto risco com AINE/antiagregante e hipersecreção",
+   "Com clopidogrel, preferir pantoprazol",
+   "Bula traz risco de fratura osteoporótica e hipomagnesemia grave em uso prolongado"
+  ],
+  "fontes": [
+   "Bula Nexium (AstraZeneca Brasil) - https://img.drogasil.com.br/raiadrogasil_bula/Nexium-Astrazeneca.pdf",
+   "Bula Nexium, profissional (AstraZeneca Brasil) - https://www.azmed.com.br/content/dam/multibrand/br/pt/azmed-2022/home/bulas-profissionais/bulas/Nexium_Bula_Profissional.pdf (sachê 10 mg pediátrico não confirmado nesta sessão)",
+   "AGA Clinical Practice Update on De-Prescribing of PPIs (Gastroenterology 2022) - https://pubmed.ncbi.nlm.nih.gov/35183361/",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "tansulosina",
+  "nome": "Tansulosina",
+  "marcas": [
+   "Secotex",
+   "Secotex ADV",
+   "genéricos"
+  ],
+  "classe": "Bloqueador alfa-1 adrenérgico uroseletivo",
+  "indicacoes": [
+   "prostata"
+  ],
+  "apresentacoes": [
+   "0,4 mg cápsula de liberação prolongada",
+   "0,4 mg comprimido revestido de liberação prolongada"
+  ],
+  "posologiaUsual": "0,4 mg uma vez ao dia, sempre no mesmo horário (cápsula classicamente após a mesma refeição; comprimido ADV independe de refeição). Engolir inteiro.",
+  "doseMaxDia": "0,4 mg/dia na bula brasileira (0,8 mg/dia é aprovado nos EUA, não no Brasil).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Tontura, principalmente ao levantar",
+   "Diminuição ou ausência de ejaculação (ejaculação retrógrada)",
+   "Nariz entupido",
+   "Dor de cabeça",
+   "Cansaço"
+  ],
+  "sinaisAlerta": [
+   "Desmaio ou quase desmaio ao se levantar",
+   "Não conseguir urinar (bexiga cheia e dolorosa)",
+   "Ereção dolorosa que dura mais de 4 horas",
+   "Inchaço no rosto, lábios ou língua ou manchas na pele com bolhas"
+  ],
+  "monitorizacao": "Resposta dos sintomas urinários (IPSS) em 4 a 12 semanas; pressão arterial e hipotensão postural, sobretudo em idosos ou com anti-hipertensivos. Excluir câncer de próstata conforme avaliação urológica (toque/PSA quando indicado).",
+  "interacoes": "Contraindicado com inibidores potentes da CYP3A4 (cetoconazol); cautela com inibidores moderados (eritromicina) e inibidores da CYP2D6 (paroxetina, fluoxetina). Outros alfa-bloqueadores, anti-hipertensivos e inibidores da PDE5 (sildenafila, tadalafila): risco de hipotensão.",
+  "gestacao": "Não indicado para mulheres.",
+  "suspensao": "Pode ser suspensa sem retirada gradual; os sintomas urinários tendem a voltar.",
+  "orientacoes": [
+   "Tome uma vez ao dia, no mesmo horário, e engula inteiro sem abrir, partir ou mastigar",
+   "Levante-se devagar, principalmente no início do tratamento",
+   "Se for operar catarata ou glaucoma, avise o oftalmologista que usa ou já usou tansulosina",
+   "Pode diminuir o volume do sêmen; isso não é perigoso"
+  ],
+  "alertasMedico": [
+   "Síndrome da íris flácida intraoperatória (IFIS) em cirurgia de catarata, inclusive em uso prévio; informar o oftalmologista; não iniciar tansulosina em quem tem cirurgia de catarata programada",
+   "EAU 2026: alfa-bloqueador é opção de primeira linha em LUTS moderado a grave; associar inibidor da 5-alfa-redutase se próstata maior que 40 mL e risco de progressão",
+   "Contraindicado com cetoconazol e em hipotensão ortostática prévia e insuficiência hepática grave",
+   "Cautela com inibidores da PDE5 (hipotensão)"
+  ],
+  "fontes": [
+   "Bula Secotex/Secotex ADV, profissional (Boehringer Ingelheim Brasil) - https://www.saudedireta.com.br/catinc/drugs/bulas/secotex.pdf",
+   "Bula Secotex ADV, paciente - https://www.saudedireta.com.br/catinc/drugs/bulas/secotexadv.pdf",
+   "EAU Guidelines on Non-neurogenic Male LUTS (2026) - https://d56bochluxqnz.cloudfront.net/documents/full-guideline/EAU-Guidelines-on-Non-Neurogenic-Male-LUTS-2026-1.pdf",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "finasterida",
+  "nome": "Finasterida",
+  "marcas": [
+   "Proscar",
+   "Propecia",
+   "genéricos"
+  ],
+  "classe": "Inibidor da 5-alfa-redutase tipo 2",
+  "indicacoes": [
+   "prostata",
+   "outro"
+  ],
+  "apresentacoes": [
+   "5 mg comprimido revestido",
+   "1 mg comprimido revestido"
+  ],
+  "posologiaUsual": "Hiperplasia prostática benigna: 5 mg uma vez ao dia (efeito pleno em 6 meses ou mais). Alopecia androgenética masculina: 1 mg uma vez ao dia.",
+  "doseMaxDia": "5 mg/dia (HPB); 1 mg/dia (alopecia).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Diminuição do desejo sexual",
+   "Dificuldade de ereção",
+   "Diminuição do volume de sêmen",
+   "Aumento ou sensibilidade nas mamas",
+   "Tristeza ou alterações de humor"
+  ],
+  "sinaisAlerta": [
+   "Tristeza profunda, desânimo persistente ou pensamentos de se machucar ou de morte: pare o remédio e procure ajuda",
+   "Caroço, dor ou secreção no mamilo ou na mama",
+   "Não conseguir urinar",
+   "Inchaço no rosto, lábios ou língua"
+  ],
+  "monitorizacao": "PSA basal antes de iniciar e após 6 meses (novo valor de referência); durante o uso, multiplicar o PSA por 2 para comparação; qualquer aumento confirmado do PSA em uso de finasterida merece investigação. Avaliar humor e função sexual. HPB: resposta dos sintomas e volume prostático.",
+  "interacoes": "Sem interações clinicamente relevantes conhecidas. Frequentemente associada a alfa-bloqueador (tansulosina, doxazosina) na HPB.",
+  "gestacao": "Contraindicada em mulheres grávidas ou que possam engravidar: pode causar malformação genital em feto masculino; grávidas não devem manusear comprimidos partidos ou esmagados.",
+  "suspensao": "Pode ser suspensa sem retirada gradual; o efeito na próstata e no cabelo se perde em meses. O PSA volta a subir após a suspensão.",
+  "orientacoes": [
+   "Tome 1 comprimido por dia; na próstata o efeito completo pode levar 6 meses",
+   "Mulheres grávidas ou que possam engravidar não devem manusear comprimidos partidos",
+   "Avise sempre que usa finasterida quando for dosar PSA",
+   "Se notar tristeza, desânimo ou alteração de humor, pare e fale com o médico"
+  ],
+  "alertasMedico": [
+   "Reduz o PSA em cerca de 50% após 6 a 12 meses: dobrar o valor medido para comparação (EAU 2026; bula)",
+   "Ensaio PCPT e alerta FDA 2011: aumento de câncer de próstata de alto grau com inibidores da 5-alfa-redutase; não usar para prevenção de câncer",
+   "EMA/PRAC 2025 (revisão artigo 31): ideação suicida confirmada como efeito adverso da finasterida 1 e 5 mg (frequência desconhecida); cartão do paciente para 1 mg; orientar suspensão se depressão ou ideação",
+   "EAU 2026: indicada em LUTS moderado a grave com próstata maior que 40 mL; combinação com alfa-bloqueador em risco de progressão",
+   "Relatos de disfunção sexual persistente após suspensão",
+   "Não consta das listas da Portaria 344 (não é anabolizante da lista C5): receita simples"
+  ],
+  "fontes": [
+   "EMA - referral finasterida/dutasterida, medidas para risco de pensamentos suicidas (2025) - https://www.ema.europa.eu/en/medicines/human/referrals/finasteride-dutasteride-containing-medicinal-products",
+   "EMA PRAC highlights 5-8 maio 2025 - https://www.ema.europa.eu/en/news/meeting-highlights-pharmacovigilance-risk-assessment-committee-prac-5-8-may-2025",
+   "EAU Guidelines on Non-neurogenic Male LUTS (2026) - https://d56bochluxqnz.cloudfront.net/documents/full-guideline/EAU-Guidelines-on-Non-Neurogenic-Male-LUTS-2026-1.pdf",
+   "Bula Proscar/Propecia (MSD/Organon): não relida nesta sessão; conteúdo de PSA, gestação e PCPT conforme rotulagem FDA/bula, citado de memória",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "doxazosina",
+  "nome": "Doxazosina",
+  "marcas": [
+   "Carduran XL",
+   "genéricos"
+  ],
+  "classe": "Bloqueador alfa-1 adrenérgico",
+  "indicacoes": [
+   "prostata",
+   "hipertensao"
+  ],
+  "apresentacoes": [
+   "2 mg comprimido",
+   "4 mg comprimido",
+   "4 mg comprimido de liberação controlada"
+  ],
+  "posologiaUsual": "Liberação imediata: iniciar 1 mg à noite e aumentar a cada 1 a 2 semanas para 2, 4 e até 8 mg uma vez ao dia (usual 2 a 4 mg). Carduran XL: 4 mg uma vez ao dia, podendo ir a 8 mg após 4 semanas.",
+  "doseMaxDia": "HPB: 8 mg/dia. Hipertensão (liberação imediata): até 16 mg/dia em rotulagem FDA. XL: 8 mg/dia.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Tontura, principalmente ao levantar",
+   "Cansaço ou fraqueza",
+   "Dor de cabeça",
+   "Inchaço nas pernas",
+   "Nariz entupido",
+   "Palpitações"
+  ],
+  "sinaisAlerta": [
+   "Desmaio ou quase desmaio, principalmente após a primeira dose ou aumento de dose",
+   "Falta de ar, inchaço importante nas pernas ou ganho rápido de peso",
+   "Ereção dolorosa que dura mais de 4 horas",
+   "Inchaço no rosto, lábios ou língua"
+  ],
+  "monitorizacao": "Pressão arterial sentado e em pé (hipotensão postural) no início e a cada ajuste; resposta dos sintomas urinários (IPSS). Excluir câncer de próstata conforme avaliação urológica.",
+  "interacoes": "Inibidores da PDE5 (sildenafila, tadalafila): hipotensão sintomática. Outros anti-hipertensivos e alfa-bloqueadores: efeito aditivo. Inibidores potentes da CYP3A4 (cetoconazol, claritromicina, ritonavir) aumentam níveis.",
+  "gestacao": "Categoria C; não é medicamento de escolha para hipertensão na gestação.",
+  "suspensao": "Pode ser suspensa sem retirada gradual; se interrompida por vários dias, reiniciar pela dose inicial (risco de efeito de primeira dose).",
+  "orientacoes": [
+   "Tome a primeira dose e as doses aumentadas à noite, ao deitar",
+   "Levante-se devagar da cama ou da cadeira",
+   "Carduran XL deve ser engolido inteiro, sem partir ou mastigar",
+   "Se for operar catarata, avise o oftalmologista"
+  ],
+  "alertasMedico": [
+   "Efeito de primeira dose (síncope): iniciar com 1 mg e titular; reiniciar do começo após interrupção",
+   "ALLHAT (2000): braço doxazosina interrompido por excesso de insuficiência cardíaca versus clortalidona; não usar como anti-hipertensivo de primeira linha",
+   "IFIS em cirurgia de catarata (efeito de classe dos alfa-1 bloqueadores)",
+   "EAU 2026: alfa-bloqueador para LUTS moderado a grave; útil quando coexistem HPB e hipertensão, mas vigiar hipotensão em idosos"
+  ],
+  "fontes": [
+   "Bula Carduran/Carduran XL, profissional (Brasil) - https://bula.gratis/upjohn_brasil_importadora_e_distribuidora_de_medicamentos_ltda/1/carduran/profissional",
+   "Rotulagem Pfizer Cardura (dose máxima 8 mg HPB, 16 mg hipertensão) - https://labeling.pfizer.com/ShowLabeling.aspx?id=4297",
+   "Apresentações de liberação imediata 2 e 4 mg conforme genéricos; não conferidas em bula nesta sessão",
+   "EAU Guidelines on Non-neurogenic Male LUTS (2026) - https://d56bochluxqnz.cloudfront.net/documents/full-guideline/EAU-Guidelines-on-Non-Neurogenic-Male-LUTS-2026-1.pdf",
+   "ALLHAT Collaborative Research Group, JAMA 2000 - citado de memória, não reverificado nesta sessão",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "etinilestradiol-levonorgestrel",
+  "nome": "Etinilestradiol + levonorgestrel",
+  "marcas": [
+   "Microvlar",
+   "Ciclo 21",
+   "genéricos"
+  ],
+  "classe": "Anticoncepcional oral combinado (progestagênio de 2a geração)",
+  "indicacoes": [
+   "anticoncepcao"
+  ],
+  "apresentacoes": [
+   "0,03 mg + 0,15 mg comprimido"
+  ],
+  "posologiaUsual": "1 comprimido por dia, no mesmo horário, por 21 dias, seguido de pausa de 7 dias (sangramento de privação); iniciar nova cartela no 8o dia.",
+  "doseMaxDia": "1 comprimido/dia.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sangramento de escape nos primeiros meses",
+   "Enjoo",
+   "Dor ou sensibilidade nas mamas",
+   "Dor de cabeça",
+   "Alterações de humor",
+   "Retenção de líquido ou leve variação de peso"
+  ],
+  "sinaisAlerta": [
+   "Dor abdominal forte e súbita",
+   "Dor no peito, falta de ar repentina ou tosse com sangue",
+   "Dor de cabeça forte e diferente do habitual, principalmente com fraqueza, formigamento ou dificuldade para falar",
+   "Alteração súbita da visão (perda, visão borrada ou dupla) ou pontos luminosos novos",
+   "Dor, inchaço, calor ou vermelhidão em uma perna (principalmente na panturrilha)",
+   "Pele ou olhos amarelados"
+  ],
+  "monitorizacao": "Pressão arterial antes de iniciar e periodicamente (pelo menos anual); rever tabagismo, idade, enxaqueca (com ou sem aura), IMC, antecedentes pessoais/familiares de trombose e novas doenças a cada renovação, reclassificando pelo critério de elegibilidade (OMS/UKMEC). Não exige exames laboratoriais de rotina.",
+  "interacoes": "Anticonvulsivantes indutores enzimáticos (carbamazepina, fenitoína, fenobarbital, primidona, oxcarbazepina, topiramato ≥200 mg/dia), rifampicina/rifabutina, efavirenz, ritonavir, bosentana, modafinila e erva-de-são-joão reduzem a eficácia: preferir DIU/DMPA ou usar preservativo durante e por 28 dias após. Lamotrigina: o anticoncepcional combinado reduz os níveis de lamotrigina (risco de crises). Antibióticos comuns (amoxicilina, doxiciclina) não reduzem a eficácia. Vômitos até 3 horas após a pílula ou diarreia intensa contam como esquecimento.",
+  "gestacao": "Não usar na gravidez (suspender se engravidar; não há evidência de malformação por exposição inadvertida). Pós-parto: evitar nas primeiras 3 semanas (6 semanas se houver outros fatores de risco para trombose ou se amamentando); na amamentação, preferir métodos só de progestagênio até 6 meses.",
+  "suspensao": "Pode ser interrompido a qualquer momento; a fertilidade retorna rapidamente, por isso outro método deve ser iniciado sem intervalo se não desejar gravidez.",
+  "orientacoes": [
+   "Tome no mesmo horário todos os dias",
+   "Esquecimento pela bula: se o atraso for menor que 12 horas, tome assim que lembrar e siga normalmente; se maior que 12 horas, tome a última esquecida assim que lembrar (mesmo que tome 2 no mesmo dia), siga a cartela e use camisinha por 7 dias",
+   "Se o esquecimento acontecer na última semana da cartela, emende a próxima cartela sem fazer a pausa; se foi na primeira semana e houve relação nos dias anteriores, procure orientação sobre contracepção de emergência",
+   "Vômito até 3 horas após tomar ou diarreia forte contam como esquecimento; camisinha continua necessária contra infecções sexualmente transmissíveis"
+  ],
+  "alertasMedico": [
+   "Estrogênio combinado contraindicado (categoria 4 OMS/UKMEC/US MEC): enxaqueca com aura em qualquer idade; tabagista com 35 anos ou mais fumando 15 ou mais cigarros/dia (menos de 15/dia ou parou há menos de 1 ano: categoria 3); PA ≥160/100 ou doença vascular (PA 140-159/90-99 ou hipertensão controlada: categoria 3); TEV prévio ou atual, mutação trombogênica, lúpus com anticorpo antifosfolípide, cardiopatia isquêmica/AVC, câncer de mama atual, cirrose descompensada/tumor hepático, cirurgia maior com imobilização prolongada",
+   "Levonorgestrel é o progestagênio combinado com menor risco de TEV: escolha de primeira linha quando se opta por pílula combinada",
+   "UKMEC 2025: doença renal crônica e esclerose múltipla com imobilidade entram como condições desfavoráveis a AHC; e-cigarro sem evidência suficiente, priorizar alternativas",
+   "CoSRH/FSRH 2023: regra de esquecimento mais permissiva que a bula (1 pílula esquecida, até 48 h desde a última, não exige método adicional); a bula brasileira usa o limiar de 12 horas",
+   "OMS publicou a 6a edição do MEC em 2025 (substitui a de 2015) e o UKMEC 2025 substituiu o de 2016"
+  ],
+  "fontes": [
+   "Bula Microvlar (Bayer Brasil) - https://www.farmacianacional.com.br/custom/content/themes/Shared/Bula/557347.pdf",
+   "Bula Ciclo 21 (resumo) - https://www.procuromaissaude.com/2014/04/ciclo-21-levonorgestrel-015-mg.html",
+   "Outras doses (ex.: 0,02 + 0,10 mg) existem no mercado mas não foram conferidas nesta sessão",
+   "OMS - Medical eligibility criteria for contraceptive use, 6a edição (nov/2025) - https://www.who.int/publications/b/81082 (categorias específicas de AHC não reverificadas nesta sessão; conferidas no UKMEC 2025 e US MEC 2024)",
+   "OMS - Medical eligibility criteria for contraceptive use, 5a edição (2015), substituída pela 6a edição de 2025",
+   "CoSRH (ex-FSRH) - UKMEC 2025 e resumo de mudanças (dez/2025) - https://www.cosrh.org/Common/Uploaded%20files/documents/UKMEC_2025_Summary_Tables.pdf ; https://www.cosrh.org/Common/Uploaded%20files/documents/UKMEC_2025_Whats_New.pdf",
+   "CDC - U.S. MEC for Contraceptive Use 2024 (MMWR) - https://www.cdc.gov/mmwr/volumes/73/rr/rr7304a1.htm",
+   "FSRH/CoSRH Guideline Combined Hormonal Contraception (out/2023) - https://www.cosrh.org/Common/Uploaded%20files/documents/fsrh-guideline-combined-hormonal-contraception-october-2023.pdf",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "desogestrel",
+  "nome": "Desogestrel",
+  "marcas": [
+   "Cerazette",
+   "genéricos"
+  ],
+  "classe": "Anticoncepcional oral só de progestagênio (inibe ovulação)",
+  "indicacoes": [
+   "anticoncepcao"
+  ],
+  "apresentacoes": [
+   "75 mcg comprimido"
+  ],
+  "posologiaUsual": "1 comprimido por dia, no mesmo horário, de forma contínua, sem pausa entre as cartelas.",
+  "doseMaxDia": "75 mcg/dia.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sangramento irregular, escapes ou ausência de menstruação",
+   "Acne",
+   "Dor nas mamas",
+   "Dor de cabeça",
+   "Alterações de humor ou da libido",
+   "Enjoo ou variação de peso"
+  ],
+  "sinaisAlerta": [
+   "Dor forte no baixo ventre, principalmente de um lado, com atraso ou sangramento (gravidez ectópica)",
+   "Dor, inchaço e vermelhidão em uma perna, ou dor no peito com falta de ar",
+   "Sangramento muito intenso ou prolongado",
+   "Pele ou olhos amarelados",
+   "Tristeza profunda ou pensamentos de se machucar",
+   "Caroço na mama"
+  ],
+  "monitorizacao": "Não exige exames de rotina; rever padrão de sangramento, humor, PA e novas doenças a cada renovação. Investigar sangramento persistente ou novo após meses de padrão estável (IST, gestação, patologia cervical).",
+  "interacoes": "Indutores enzimáticos (carbamazepina, fenitoína, fenobarbital, primidona, oxcarbazepina, topiramato, rifampicina, efavirenz, bosentana, erva-de-são-joão) reduzem a eficácia: usar método de barreira durante e por 28 dias após, ou preferir método não afetado (DIU, DMPA). Ulipristal (contracepção de emergência) reduz a eficácia do desogestrel e vice-versa: aguardar 5 dias para reiniciar e usar preservativo por 7 dias.",
+  "gestacao": "Não usar na gravidez. Compatível com amamentação (sem estrogênio, não reduz o leite); boa opção no pós-parto.",
+  "suspensao": "Pode ser interrompido a qualquer momento; a fertilidade retorna rapidamente.",
+  "orientacoes": [
+   "Tome todos os dias no mesmo horário, sem pausa entre as cartelas",
+   "Se atrasar até 12 horas, tome assim que lembrar e siga normalmente",
+   "Se atrasar mais de 12 horas, tome assim que lembrar, siga no horário habitual e use camisinha por 7 dias; se houve relação nos dias anteriores, procure orientação sobre contracepção de emergência",
+   "É comum a menstruação ficar irregular ou sumir; isso não é perigoso, mas avise se incomodar"
+  ],
+  "alertasMedico": [
+   "Sem estrogênio: alternativa quando estrogênio é contraindicado (enxaqueca com aura, tabagismo com 35 anos ou mais, hipertensão, amamentação); câncer de mama atual permanece categoria 4",
+   "Janela de 12 horas (diferente das minipílulas tradicionais de 3 horas) conforme bula e CoSRH/FSRH 2022",
+   "Principal motivo de abandono é o sangramento irregular: aconselhar antes de iniciar",
+   "TEV atual: bula contraindica; em TEV prévio o risco com progestagênio isolado é baixo (categoria 2 nos critérios de elegibilidade)"
+  ],
+  "fontes": [
+   "Bula Cerazette, profissional (Organon Brasil) - https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/cerazette_bula_profissional.pdf",
+   "Bula Cerazette, paciente (Organon Brasil) - https://www.organon.com/brazil/wp-content/uploads/sites/33/2023/06/cerazette_bula_paciente.pdf",
+   "FSRH/CoSRH Guideline Progestogen-only Pills (ago/2022, emendada) - https://www.cosrh.org/Common/Uploaded%20files/documents/fsrh-ceu-clinical-guideline-progestogen-only-pills-aug22-amended-11july-2023-.pdf",
+   "CoSRH (ex-FSRH) - UKMEC 2025 e resumo de mudanças (dez/2025) - https://www.cosrh.org/Common/Uploaded%20files/documents/UKMEC_2025_Summary_Tables.pdf ; https://www.cosrh.org/Common/Uploaded%20files/documents/UKMEC_2025_Whats_New.pdf",
+   "OMS - Medical eligibility criteria for contraceptive use, 6a edição (nov/2025) - https://www.who.int/publications/b/81082 (categorias específicas de AHC não reverificadas nesta sessão; conferidas no UKMEC 2025 e US MEC 2024)",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "drospirenona-etinilestradiol",
+  "nome": "Drospirenona + etinilestradiol",
+  "marcas": [
+   "Yasmin",
+   "Yaz",
+   "genéricos"
+  ],
+  "classe": "Anticoncepcional oral combinado (progestagênio antimineralocorticoide)",
+  "indicacoes": [
+   "anticoncepcao"
+  ],
+  "apresentacoes": [
+   "3 mg + 0,03 mg comprimido",
+   "3 mg + 0,02 mg comprimido"
+  ],
+  "posologiaUsual": "3/0,03 mg (Yasmin): 1 comprimido por dia por 21 dias e pausa de 7 dias. 3/0,02 mg (Yaz): 24 comprimidos ativos seguidos de 4 inativos, sem pausa entre as cartelas.",
+  "doseMaxDia": "1 comprimido/dia.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Sangramento de escape nos primeiros meses",
+   "Enjoo",
+   "Dor ou sensibilidade nas mamas",
+   "Dor de cabeça",
+   "Alterações de humor",
+   "Diminuição da libido"
+  ],
+  "sinaisAlerta": [
+   "Dor abdominal forte e súbita",
+   "Dor no peito, falta de ar repentina ou tosse com sangue",
+   "Dor de cabeça forte e diferente do habitual, principalmente com fraqueza, formigamento ou dificuldade para falar",
+   "Alteração súbita da visão (perda, visão borrada ou dupla) ou pontos luminosos novos",
+   "Dor, inchaço, calor ou vermelhidão em uma perna (principalmente na panturrilha)",
+   "Pele ou olhos amarelados",
+   "Fraqueza muscular intensa ou palpitações (potássio alto)"
+  ],
+  "monitorizacao": "Pressão arterial antes e periodicamente; rever tabagismo, idade, enxaqueca com aura, IMC e risco de trombose a cada renovação. Potássio no primeiro ciclo se usar IECA, BRA, espironolactona, AINE crônico ou tiver doença renal.",
+  "interacoes": "Anticonvulsivantes indutores enzimáticos (carbamazepina, fenitoína, fenobarbital, primidona, oxcarbazepina, topiramato ≥200 mg/dia), rifampicina/rifabutina, efavirenz, ritonavir, bosentana, modafinila e erva-de-são-joão reduzem a eficácia: preferir DIU/DMPA ou usar preservativo durante e por 28 dias após. Lamotrigina: o anticoncepcional combinado reduz os níveis de lamotrigina (risco de crises). Antibióticos comuns (amoxicilina, doxiciclina) não reduzem a eficácia. Vômitos até 3 horas após a pílula ou diarreia intensa contam como esquecimento. Drospirenona retém potássio: cautela com IECA, BRA, espironolactona/eplerenona, amilorida, suplemento de potássio e AINE crônico.",
+  "gestacao": "Não usar na gravidez. Pós-parto: evitar nas primeiras 3 semanas (6 se houver fatores de risco ou amamentação); na amamentação, preferir métodos só de progestagênio.",
+  "suspensao": "Pode ser interrompido a qualquer momento; a fertilidade retorna rapidamente.",
+  "orientacoes": [
+   "Tome no mesmo horário todos os dias; no Yaz não há pausa, os 4 comprimidos inativos fazem parte da cartela",
+   "Esquecimento de comprimido ativo: se o atraso for menor que 12 horas, tome assim que lembrar; se maior, tome a última esquecida, siga a cartela e use camisinha por 7 dias",
+   "Se esquecer comprimido inativo, apenas descarte-o; vômito até 3 horas após o ativo ou diarreia forte contam como esquecimento",
+   "Camisinha continua necessária contra infecções sexualmente transmissíveis"
+  ],
+  "alertasMedico": [
+   "Risco de TEV maior que com levonorgestrel (Anvisa emitiu alerta; EMA 2013: cerca de 9-12 versus 5-7 casos por 10.000 mulheres-ano); reservar para quando há motivo para preferir drospirenona (acne, TDPM, retenção)",
+   "Mesmas contraindicações categoria 4 do estrogênio: enxaqueca com aura, tabagista ≥35 anos com 15 ou mais cigarros/dia, PA ≥160/100 ou doença vascular, TEV/trombofilia, cardiopatia isquêmica/AVC, câncer de mama atual, hepatopatia grave",
+   "Contraindicado em insuficiência renal grave, insuficiência adrenal e hepatopatia grave (retenção de potássio)",
+   "Risco de TEV é maior nos primeiros 3 a 12 meses de uso e ao reiniciar após pausa de 4 semanas ou mais",
+   "OMS MEC 6a edição (2025) e UKMEC 2025 substituíram as versões de 2015/2016"
+  ],
+  "fontes": [
+   "Bula drospirenona + etinilestradiol genérico (Germed) - https://cdn.awsli.com.br/9/9098/arquivos/generico%20yas.pdf",
+   "Bula Yaz Flex (Bayer) - https://www.panvel.com/panvel/yaz-flex-3mg-0-02mg-30-comprimido-revestido/856370/bula",
+   "Números de risco de TEV da EMA (2013) citados de memória, não reverificados nesta sessão",
+   "OMS - Medical eligibility criteria for contraceptive use, 6a edição (nov/2025) - https://www.who.int/publications/b/81082 (categorias específicas de AHC não reverificadas nesta sessão; conferidas no UKMEC 2025 e US MEC 2024)",
+   "CoSRH (ex-FSRH) - UKMEC 2025 e resumo de mudanças (dez/2025) - https://www.cosrh.org/Common/Uploaded%20files/documents/UKMEC_2025_Summary_Tables.pdf ; https://www.cosrh.org/Common/Uploaded%20files/documents/UKMEC_2025_Whats_New.pdf",
+   "CDC - U.S. MEC for Contraceptive Use 2024 (MMWR) - https://www.cdc.gov/mmwr/volumes/73/rr/rr7304a1.htm",
+   "FSRH/CoSRH Guideline Combined Hormonal Contraception (out/2023) - https://www.cosrh.org/Common/Uploaded%20files/documents/fsrh-guideline-combined-hormonal-contraception-october-2023.pdf",
+   "Verificado: ausente do Anexo I da Portaria SVS/MS 344/1998, Atualização n. 101 (RDC Anvisa 1.036, de 09/07/2026) - https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ }
+]

@@ -1,0 +1,1012 @@
+[
+  {
+    "id": "sertralina",
+    "nome": "Sertralina",
+    "marcas": [
+      "Zoloft",
+      "Assert",
+      "Tolrest",
+      "genéricos"
+    ],
+    "classe": "Antidepressivo inibidor seletivo da recaptação de serotonina (ISRS)",
+    "indicacoes": [
+      "depressao_ansiedade"
+    ],
+    "apresentacoes": [
+      "25 mg comprimido",
+      "50 mg comprimido",
+      "75 mg comprimido",
+      "100 mg comprimido"
+    ],
+    "posologiaUsual": "50 mg uma vez ao dia, pela manhã ou à noite, com ou sem alimento; no pânico, TEPT e ansiedade social pode-se iniciar com 25 mg por 1 semana. Ajustes de 50 mg em intervalos de pelo menos 1 semana.",
+    "doseMaxDia": "200 mg/dia",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Enjoo, diarreia ou intestino solto nas primeiras semanas",
+      "Dor de cabeça e tontura",
+      "Insônia ou, ao contrário, sonolência",
+      "Suor aumentado e boca seca",
+      "Diminuição do desejo sexual, dificuldade de ereção ou de chegar ao orgasmo",
+      "Tremor leve ou sensação de inquietação no início"
+    ],
+    "sinaisAlerta": [
+      "Pensamentos de se machucar ou de tirar a propria vida, ou piora brusca da tristeza, agitação ou impulsividade, principalmente nas primeiras semanas ou após mudança de dose e em pessoas com menos de 25 anos: procure ajuda imediatamente (CVV 188 ou SAMU 192).",
+      "Agitação intensa, confusão, febre, suor excessivo, tremores ou abalos musculares, diarreia forte e coração acelerado, sobretudo depois de associar outro remédio: pode ser síndrome serotoninérgica, procure emergência.",
+      "Euforia ou irritabilidade fora do comum, pouca necessidade de dormir, fala acelerada e gastos ou atitudes impulsivas: avise o médico logo, pode ser virada para mania.",
+      "Sangramentos fora do comum (nariz, gengiva, fezes escuras, manchas roxas grandes), principalmente se você usa anticoagulante, AAS ou anti-inflamatório.",
+      "Confusão, sonolência exagerada, dor de cabeça forte, fraqueza ou quedas, sobretudo em idosos: pode ser sódio baixo no sangue, procure atendimento.",
+      "Manchas ou bolhas na pele, inchaço de rosto, lábios ou língua, ou falta de ar: procure emergência."
+    ],
+    "monitorizacao": "Reavaliação clínica do humor e de ideação suicida nas primeiras semanas e após cada mudança de dose, sobretudo em menores de 25 anos. Sódio em idosos ou em uso de diurético se houver sintomas. Não exige exame laboratorial de rotina.",
+    "interacoes": "Contraindicada com IMAO (inclusive linezolida e azul de metileno; intervalo de 14 dias) e com pimozida. Soma risco serotoninérgico com triptanos, tramadol, outros antidepressivos, lítio, erva-de-são-joão e fentanil. Aumenta risco de sangramento com AAS, anti-inflamatórios, clopidogrel e anticoagulantes. Inibe moderadamente CYP2D6 (pode elevar níveis de antidepressivos tricíclicos, alguns antipsicóticos e metoprolol). A solução oral, onde existir, contém álcool (evitar com dissulfiram).",
+    "gestacao": "Se você engravidar ou planejar engravidar, avise o médico, mas não pare o remédio por conta própria: parar de repente aumenta o risco de a depressão voltar. O médico pesa os riscos e benefícios. Uso no fim da gestação pode causar sintomas passageiros no bebê (irritabilidade, dificuldade para mamar) e raramente hipertensão pulmonar persistente no recém-nascido, por isso o parto deve ser informado à equipe. Em julho de 2025 um painel da FDA discutiu o tema, mas não houve mudança de bula até esta revisão. A sertralina é um dos ISRS com mais dados de segurança na gestação e na amamentação.",
+    "suspensao": "Não pare de repente. A interrupção brusca pode causar tontura, sensação de choque, enjoo, irritabilidade, insônia, sonhos vívidos e sintomas parecidos com gripe (síndrome de descontinuação). Quando for a hora de parar, o médico reduz a dose aos poucos, em geral ao longo de semanas ou meses, e mais devagar se surgirem sintomas.",
+    "orientacoes": [
+      "O efeito completo costuma aparecer entre 2 e 6 semanas; não desanime nem aumente a dose por conta própria.",
+      "Se enjoar, tome após uma refeição.",
+      "Evite álcool, que piora a depressão e a sonolência.",
+      "Continue tomando mesmo depois de melhorar, pelo tempo combinado com o médico, para evitar recaída."
+    ],
+    "alertasMedico": "Boxed Warning de suicidalidade até 24 anos (FDA). Contraindicada com IMAO e pimozida. Hiponatremia/SIADH em idosos. Risco hemorrágico com antiplaquetários e anticoagulantes. Prolongamento de QT relatado em doses altas e com outros fatores de risco (bula). Rastrear bipolaridade antes de iniciar ou renovar. Receita de Controle Especial C1 (até 60 dias).",
+    "fontes": [
+      "Bula profissional Zoloft, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Zoloft-Profissional-Consulta-Remedios.pdf",
+      "Bula profissional Assert, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Assert-Profissional-Consulta-Remedios.pdf",
+      "Bula profissional Tolrest, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Tolrest-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "FDA. Boxed Warning de suicidalidade para antidepressivos (crianças, adolescentes e adultos jovens até 24 anos), presente nas bulas americanas vigentes (texto de 2007, mantido). Não reaberto nesta sessão; conteúdo de conhecimento consolidado.",
+      "Lam RW et al. CANMAT 2023 Update on Clinical Guidelines for Management of Major Depressive Disorder in Adults. Can J Psychiatry 2024;69(9):641-687. doi:10.1177/07067437241245384 (não reaberto nesta sessão; citado de memória, conferir).",
+      "FDA Expert Panel on SSRIs and Pregnancy (21/07/2025) e petição cidadã de 09/2025: até a data desta revisão não houve mudança de bula da FDA. https://www.raps.org/news-and-articles/news-articles/2025/7/fda-panel-debates-label-change-on-ssri-use-during"
+    ]
+  },
+  {
+    "id": "escitalopram",
+    "nome": "Oxalato de escitalopram",
+    "marcas": [
+      "Lexapro",
+      "genéricos e similares"
+    ],
+    "classe": "Antidepressivo inibidor seletivo da recaptação de serotonina (ISRS)",
+    "indicacoes": [
+      "depressao_ansiedade"
+    ],
+    "apresentacoes": [
+      "10 mg comprimido",
+      "15 mg comprimido",
+      "20 mg comprimido",
+      "20 mg/mL solução oral em gotas (1 gota = 1 mg)"
+    ],
+    "posologiaUsual": "10 mg uma vez ao dia; no transtorno de pânico iniciar com 5 mg na primeira semana. Idosos acima de 65 anos: iniciar com 5 mg e não passar de 10 mg/dia (bula brasileira).",
+    "doseMaxDia": "20 mg/dia; 10 mg/dia em maiores de 65 anos e em insuficiência hepática ou metabolizadores lentos de CYP2C19 (bula brasileira)",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Enjoo nas primeiras semanas",
+      "Dor de cabeça",
+      "Insônia ou sonolência",
+      "Suor aumentado e boca seca",
+      "Diminuição do desejo sexual ou dificuldade de orgasmo e ejaculação",
+      "Cansaço e bocejos"
+    ],
+    "sinaisAlerta": [
+      "Pensamentos de se machucar ou de tirar a propria vida, ou piora brusca da tristeza, agitação ou impulsividade, principalmente nas primeiras semanas ou após mudança de dose e em pessoas com menos de 25 anos: procure ajuda imediatamente (CVV 188 ou SAMU 192).",
+      "Palpitações, desmaio ou tontura súbita com sensação de coração disparado: procure emergência (o remédio pode alterar o ritmo cardíaco).",
+      "Agitação intensa, confusão, febre, suor excessivo, tremores ou abalos musculares, diarreia forte e coração acelerado, sobretudo depois de associar outro remédio: pode ser síndrome serotoninérgica, procure emergência.",
+      "Euforia ou irritabilidade fora do comum, pouca necessidade de dormir, fala acelerada e gastos ou atitudes impulsivas: avise o médico logo, pode ser virada para mania.",
+      "Sangramentos fora do comum (nariz, gengiva, fezes escuras, manchas roxas grandes), principalmente se você usa anticoagulante, AAS ou anti-inflamatório.",
+      "Confusão, sonolência exagerada, dor de cabeça forte, fraqueza ou quedas, sobretudo em idosos: pode ser sódio baixo no sangue, procure atendimento."
+    ],
+    "monitorizacao": "Reavaliação clínica do humor e de ideação suicida nas primeiras semanas e após cada mudança de dose, sobretudo em menores de 25 anos. Sódio em idosos ou em uso de diurético se houver sintomas. ECG antes de iniciar ou de aumentar a dose em quem tem doença cardíaca, bradicardia, síndrome do QT longo, idade avançada ou usa outros remédios que prolongam o QT; corrigir potássio e magnésio baixos antes.",
+    "interacoes": "Contraindicado com IMAO (incluindo linezolida) e pimozida, e com outros fármacos que prolongam o QT (antiarrítmicos classe IA e III, alguns antipsicóticos, antibióticos macrolídeos e quinolonas, antimaláricos, metadona, ondansetrona em dose alta). Omeprazol, esomeprazol, fluconazol e cimetidina elevam o nível do escitalopram (inibição de CYP2C19). Risco serotoninérgico com triptanos, tramadol, lítio e erva-de-são-joão. Risco de sangramento com AAS, anti-inflamatórios e anticoagulantes.",
+    "gestacao": "Se você engravidar ou planejar engravidar, avise o médico, mas não pare o remédio por conta própria: parar de repente aumenta o risco de a depressão voltar. O médico pesa os riscos e benefícios. Uso no fim da gestação pode causar sintomas passageiros no bebê (irritabilidade, dificuldade para mamar) e raramente hipertensão pulmonar persistente no recém-nascido, por isso o parto deve ser informado à equipe. Em julho de 2025 um painel da FDA discutiu o tema, mas não houve mudança de bula até esta revisão.",
+    "suspensao": "Não pare de repente. A interrupção brusca pode causar tontura, sensação de choque, enjoo, irritabilidade, insônia, sonhos vívidos e sintomas parecidos com gripe (síndrome de descontinuação). Quando for a hora de parar, o médico reduz a dose aos poucos, em geral ao longo de semanas ou meses, e mais devagar se surgirem sintomas.",
+    "orientacoes": [
+      "O efeito completo costuma aparecer entre 2 e 6 semanas.",
+      "Tome sempre no mesmo horário, com ou sem alimento.",
+      "Avise qualquer médico que for prescrever outro remédio que você usa escitalopram, por causa do ritmo cardíaco.",
+      "Evite álcool."
+    ],
+    "alertasMedico": "Prolongamento de QT dose-dependente: contraindicado em QT longo congênito ou adquirido e com outros fármacos que prolongam o QT (bula). Dose máxima 10 mg/dia em maiores de 65 anos (bula brasileira; alinhada a EMA 2011; a bula da FDA não traz esse teto). Boxed Warning de suicidalidade até 24 anos. Hiponatremia em idosos. Receita de Controle Especial C1.",
+    "fontes": [
+      "Bula LEXAPRO (Lundbeck Brasil), comprimidos 10/15/20 mg, ANVISA. https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Lexapro-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "FDA. Boxed Warning de suicidalidade para antidepressivos (crianças, adolescentes e adultos jovens até 24 anos), presente nas bulas americanas vigentes (texto de 2007, mantido). Não reaberto nesta sessão; conteúdo de conhecimento consolidado.",
+      "Lam RW et al. CANMAT 2023 Update on Clinical Guidelines for Management of Major Depressive Disorder in Adults. Can J Psychiatry 2024;69(9):641-687. doi:10.1177/07067437241245384 (não reaberto nesta sessão; citado de memória, conferir).",
+      "FDA Expert Panel on SSRIs and Pregnancy (21/07/2025) e petição cidadã de 09/2025: até a data desta revisão não houve mudança de bula da FDA. https://www.raps.org/news-and-articles/news-articles/2025/7/fda-panel-debates-label-change-on-ssri-use-during"
+    ]
+  },
+  {
+    "id": "citalopram",
+    "nome": "Bromidrato de citalopram",
+    "marcas": [
+      "Cipramil",
+      "genéricos e similares"
+    ],
+    "classe": "Antidepressivo inibidor seletivo da recaptação de serotonina (ISRS)",
+    "indicacoes": [
+      "depressao_ansiedade"
+    ],
+    "apresentacoes": [
+      "20 mg comprimido"
+    ],
+    "posologiaUsual": "20 mg uma vez ao dia; pode chegar a 40 mg. No pânico, iniciar com 10 mg na primeira semana. Idosos: 10 a 20 mg/dia.",
+    "doseMaxDia": "40 mg/dia; 20 mg/dia em idosos (bula brasileira) e acima de 60 anos (FDA), em insuficiência hepática e em metabolizadores lentos de CYP2C19 ou em uso de inibidores de CYP2C19",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Enjoo e boca seca",
+      "Sonolência ou insônia",
+      "Suor aumentado",
+      "Tremor leve",
+      "Diminuição do desejo sexual ou dificuldade de ejaculação e orgasmo",
+      "Cansaço"
+    ],
+    "sinaisAlerta": [
+      "Pensamentos de se machucar ou de tirar a propria vida, ou piora brusca da tristeza, agitação ou impulsividade, principalmente nas primeiras semanas ou após mudança de dose e em pessoas com menos de 25 anos: procure ajuda imediatamente (CVV 188 ou SAMU 192).",
+      "Palpitações, desmaio ou tontura súbita com sensação de coração disparado: procure emergência (o remédio pode alterar o ritmo cardíaco).",
+      "Agitação intensa, confusão, febre, suor excessivo, tremores ou abalos musculares, diarreia forte e coração acelerado, sobretudo depois de associar outro remédio: pode ser síndrome serotoninérgica, procure emergência.",
+      "Euforia ou irritabilidade fora do comum, pouca necessidade de dormir, fala acelerada e gastos ou atitudes impulsivas: avise o médico logo, pode ser virada para mania.",
+      "Sangramentos fora do comum (nariz, gengiva, fezes escuras, manchas roxas grandes), principalmente se você usa anticoagulante, AAS ou anti-inflamatório.",
+      "Confusão, sonolência exagerada, dor de cabeça forte, fraqueza ou quedas, sobretudo em idosos: pode ser sódio baixo no sangue, procure atendimento."
+    ],
+    "monitorizacao": "Reavaliação clínica do humor e de ideação suicida nas primeiras semanas e após cada mudança de dose, sobretudo em menores de 25 anos. Sódio em idosos ou em uso de diurético se houver sintomas. ECG basal e após aumento de dose em idosos, cardiopatas, bradicárdicos e em uso de outros fármacos que prolongam o QT; potássio e magnésio em quem usa diurético ou tem risco de distúrbio eletrolítico.",
+    "interacoes": "Contraindicado com IMAO, pimozida e outros fármacos que prolongam o QT; linezolida só com monitorização rigorosa (bula). Omeprazol, esomeprazol, fluconazol, fluvoxamina e cimetidina aumentam o nível (CYP2C19): nesses casos máximo de 20 mg/dia. Risco serotoninérgico com triptanos, tramadol, lítio, outros antidepressivos e erva-de-são-joão. Risco de sangramento com AAS, anti-inflamatórios e anticoagulantes.",
+    "gestacao": "Se você engravidar ou planejar engravidar, avise o médico, mas não pare o remédio por conta própria: parar de repente aumenta o risco de a depressão voltar. O médico pesa os riscos e benefícios. Uso no fim da gestação pode causar sintomas passageiros no bebê (irritabilidade, dificuldade para mamar) e raramente hipertensão pulmonar persistente no recém-nascido, por isso o parto deve ser informado à equipe. Em julho de 2025 um painel da FDA discutiu o tema, mas não houve mudança de bula até esta revisão.",
+    "suspensao": "Não pare de repente. A interrupção brusca pode causar tontura, sensação de choque, enjoo, irritabilidade, insônia, sonhos vívidos e sintomas parecidos com gripe (síndrome de descontinuação). Quando for a hora de parar, o médico reduz a dose aos poucos, em geral ao longo de semanas ou meses, e mais devagar se surgirem sintomas.",
+    "orientacoes": [
+      "O efeito completo costuma aparecer entre 2 e 6 semanas.",
+      "Tome uma vez ao dia, sempre no mesmo horário.",
+      "Avise qualquer médico que for prescrever outro remédio, principalmente antibióticos, remédios para enjoo ou para o coração.",
+      "Evite álcool."
+    ],
+    "alertasMedico": "Prolongamento de QT dose-dependente (Carta ANVISA/Lundbeck 2011; FDA 2011/2012): contraindicado em QT longo; não exceder 40 mg/dia; máximo 20 mg/dia acima de 60 anos (FDA) ou em idosos (bula BR), em hepatopatas, metabolizadores lentos de CYP2C19 e com omeprazol/cimetidina. Em quem já usa 40 mg e chega aos 60 anos, reduzir para 20 mg na renovação. Boxed Warning de suicidalidade até 24 anos. Receita C1.",
+    "fontes": [
+      "Bula profissional Cipramil, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Cipramil-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. Carta aos profissionais de saúde: associação do Cipramil (citalopram) com prolongamento de QT dose-dependente (2011). https://www.gov.br/anvisa/pt-br/assuntos/fiscalizacao-e-monitoramento/cartas-aos-profissionais-de-saude/2011/lundbeck_brasil_associacao_do_cipramil_citalopram_com_prolongamento_de_qt_dose_dependente",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "FDA. Boxed Warning de suicidalidade para antidepressivos (crianças, adolescentes e adultos jovens até 24 anos), presente nas bulas americanas vigentes (texto de 2007, mantido). Não reaberto nesta sessão; conteúdo de conhecimento consolidado.",
+      "FDA Expert Panel on SSRIs and Pregnancy (21/07/2025) e petição cidadã de 09/2025: até a data desta revisão não houve mudança de bula da FDA. https://www.raps.org/news-and-articles/news-articles/2025/7/fda-panel-debates-label-change-on-ssri-use-during"
+    ]
+  },
+  {
+    "id": "fluoxetina",
+    "nome": "Cloridrato de fluoxetina",
+    "marcas": [
+      "Prozac",
+      "Daforin",
+      "genéricos e similares"
+    ],
+    "classe": "Antidepressivo inibidor seletivo da recaptação de serotonina (ISRS)",
+    "indicacoes": [
+      "depressao_ansiedade",
+      "outro"
+    ],
+    "apresentacoes": [
+      "10 mg cápsula",
+      "20 mg cápsula",
+      "20 mg/mL solução oral em gotas"
+    ],
+    "posologiaUsual": "20 mg uma vez ao dia, pela manhã. TOC: 20 a 60 mg/dia. Bulimia nervosa: 60 mg/dia.",
+    "doseMaxDia": "80 mg/dia (doses acima de 80 mg não foram estudadas, bula Prozac)",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Enjoo e perda de apetite",
+      "Insônia ou sono agitado; por isso costuma ser tomada de manhã",
+      "Nervosismo, ansiedade ou inquietação no início",
+      "Dor de cabeça",
+      "Diarreia",
+      "Diminuição do desejo sexual ou dificuldade de orgasmo"
+    ],
+    "sinaisAlerta": [
+      "Pensamentos de se machucar ou de tirar a propria vida, ou piora brusca da tristeza, agitação ou impulsividade, principalmente nas primeiras semanas ou após mudança de dose e em pessoas com menos de 25 anos: procure ajuda imediatamente (CVV 188 ou SAMU 192).",
+      "Agitação intensa, confusão, febre, suor excessivo, tremores ou abalos musculares, diarreia forte e coração acelerado, sobretudo depois de associar outro remédio: pode ser síndrome serotoninérgica, procure emergência.",
+      "Euforia ou irritabilidade fora do comum, pouca necessidade de dormir, fala acelerada e gastos ou atitudes impulsivas: avise o médico logo, pode ser virada para mania.",
+      "Sangramentos fora do comum (nariz, gengiva, fezes escuras, manchas roxas grandes), principalmente se você usa anticoagulante, AAS ou anti-inflamatório.",
+      "Confusão, sonolência exagerada, dor de cabeça forte, fraqueza ou quedas, sobretudo em idosos: pode ser sódio baixo no sangue, procure atendimento.",
+      "Manchas ou bolhas na pele, inchaço de rosto, lábios ou língua, ou falta de ar: procure emergência."
+    ],
+    "monitorizacao": "Reavaliação clínica do humor e de ideação suicida nas primeiras semanas e após cada mudança de dose, sobretudo em menores de 25 anos. Sódio em idosos ou em uso de diurético se houver sintomas. Peso em crianças e adolescentes. Não exige exame laboratorial de rotina.",
+    "interacoes": "Contraindicada com IMAO; por causa da meia-vida longa, esperar pelo menos 5 semanas após parar a fluoxetina antes de iniciar um IMAO. Contraindicada com pimozida e tioridazina. Inibidor potente de CYP2D6: eleva tricíclicos, alguns antipsicóticos, metoprolol, e reduz o efeito do tamoxifeno (evitar associação). Risco serotoninérgico com triptanos, tramadol, lítio e erva-de-são-joão. Risco de sangramento com AAS, anti-inflamatórios e anticoagulantes.",
+    "gestacao": "Se você engravidar ou planejar engravidar, avise o médico, mas não pare o remédio por conta própria: parar de repente aumenta o risco de a depressão voltar. O médico pesa os riscos e benefícios. Uso no fim da gestação pode causar sintomas passageiros no bebê (irritabilidade, dificuldade para mamar) e raramente hipertensão pulmonar persistente no recém-nascido, por isso o parto deve ser informado à equipe. Em julho de 2025 um painel da FDA discutiu o tema, mas não houve mudança de bula até esta revisão.",
+    "suspensao": "A fluoxetina tem meia-vida muito longa, por isso os sintomas de retirada são menos comuns e mais tardios que com outros antidepressivos. Mesmo assim, não pare por conta própria: a parada deve ser combinada com o médico, com redução gradual quando a dose for alta.",
+    "orientacoes": [
+      "Tome de manhã para não atrapalhar o sono.",
+      "O efeito completo costuma aparecer entre 2 e 6 semanas.",
+      "Se você usa tamoxifeno ou remédios para o coração, avise o médico.",
+      "Evite álcool."
+    ],
+    "alertasMedico": "Boxed Warning de suicidalidade até 24 anos. Inibidor potente de CYP2D6 (evitar com tamoxifeno; cuidado com tricíclicos, antipsicóticos e betabloqueadores). Meia-vida longa (norfluoxetina): washout de 5 semanas antes de IMAO. Receita C1.",
+    "fontes": [
+      "Bula PROZAC (fluoxetina 20 mg), ANVISA. https://img.drogasil.com.br/raiadrogasil_bula/Prozac.pdf",
+      "Bula profissional Daforin, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Daforin-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "FDA. Boxed Warning de suicidalidade para antidepressivos (crianças, adolescentes e adultos jovens até 24 anos), presente nas bulas americanas vigentes (texto de 2007, mantido). Não reaberto nesta sessão; conteúdo de conhecimento consolidado.",
+      "Lam RW et al. CANMAT 2023 Update on Clinical Guidelines for Management of Major Depressive Disorder in Adults. Can J Psychiatry 2024;69(9):641-687. doi:10.1177/07067437241245384 (não reaberto nesta sessão; citado de memória, conferir).",
+      "FDA Expert Panel on SSRIs and Pregnancy (21/07/2025) e petição cidadã de 09/2025: até a data desta revisão não houve mudança de bula da FDA. https://www.raps.org/news-and-articles/news-articles/2025/7/fda-panel-debates-label-change-on-ssri-use-during"
+    ]
+  },
+  {
+    "id": "paroxetina",
+    "nome": "Cloridrato de paroxetina",
+    "marcas": [
+      "Aropax",
+      "Pondera",
+      "genéricos"
+    ],
+    "classe": "Antidepressivo inibidor seletivo da recaptação de serotonina (ISRS)",
+    "indicacoes": [
+      "depressao_ansiedade"
+    ],
+    "apresentacoes": [
+      "20 mg comprimido revestido"
+    ],
+    "posologiaUsual": "20 mg uma vez ao dia, pela manhã, com alimento. Pânico: iniciar com 10 mg. Ajustes de 10 mg por semana conforme resposta.",
+    "doseMaxDia": "50 mg/dia na depressão; 60 mg/dia no TOC e no pânico; 40 mg/dia em maiores de 65 anos (bula Aropax)",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Enjoo e boca seca",
+      "Sonolência e cansaço",
+      "Suor aumentado",
+      "Prisão de ventre",
+      "Aumento de peso com o tempo",
+      "Diminuição do desejo sexual, dificuldade de ereção ou de ejaculação"
+    ],
+    "sinaisAlerta": [
+      "Pensamentos de se machucar ou de tirar a propria vida, ou piora brusca da tristeza, agitação ou impulsividade, principalmente nas primeiras semanas ou após mudança de dose e em pessoas com menos de 25 anos: procure ajuda imediatamente (CVV 188 ou SAMU 192).",
+      "Agitação intensa, confusão, febre, suor excessivo, tremores ou abalos musculares, diarreia forte e coração acelerado, sobretudo depois de associar outro remédio: pode ser síndrome serotoninérgica, procure emergência.",
+      "Euforia ou irritabilidade fora do comum, pouca necessidade de dormir, fala acelerada e gastos ou atitudes impulsivas: avise o médico logo, pode ser virada para mania.",
+      "Sangramentos fora do comum (nariz, gengiva, fezes escuras, manchas roxas grandes), principalmente se você usa anticoagulante, AAS ou anti-inflamatório.",
+      "Confusão, sonolência exagerada, dor de cabeça forte, fraqueza ou quedas, sobretudo em idosos: pode ser sódio baixo no sangue, procure atendimento.",
+      "Dor nos olhos com visão embaçada e halos coloridos: pode ser glaucoma agudo, procure emergência."
+    ],
+    "monitorizacao": "Reavaliação clínica do humor e de ideação suicida nas primeiras semanas e após cada mudança de dose, sobretudo em menores de 25 anos. Sódio em idosos ou em uso de diurético se houver sintomas. Peso. Não exige exame laboratorial de rotina.",
+    "interacoes": "Contraindicada com IMAO (inclusive linezolida), tioridazina e pimozida. Inibidor potente de CYP2D6: eleva tricíclicos, metoprolol, risperidona e aripiprazol; reduz o efeito do tamoxifeno (evitar). Risco serotoninérgico com triptanos, tramadol, lítio e erva-de-são-joão. Risco de sangramento com AAS, anti-inflamatórios e anticoagulantes. Efeito anticolinérgico soma com outros anticolinérgicos.",
+    "gestacao": "Se você pode engravidar, converse com o médico antes: a paroxetina no primeiro trimestre foi associada a aumento do risco de malformações do coração do bebê (bula brasileira), por isso costuma ser evitada em quem planeja gestação. Se engravidar, avise o médico logo, mas não pare de repente. No fim da gestação pode causar sintomas passageiros no bebê.",
+    "suspensao": "Entre os antidepressivos, a paroxetina é a que mais causa sintomas de retirada: tontura, sensação de choque, enjoo, irritabilidade, insônia e sonhos vívidos, às vezes já com um ou dois dias sem o remédio. Nunca pare de repente nem esqueça doses; a redução deve ser bem lenta, combinada com o médico.",
+    "orientacoes": [
+      "Tome pela manhã, junto com o café da manhã.",
+      "Evite esquecer doses, porque isso pode causar mal-estar de retirada.",
+      "O efeito completo costuma aparecer entre 2 e 6 semanas.",
+      "Evite álcool."
+    ],
+    "alertasMedico": "Maior síndrome de descontinuação entre os ISRS (meia-vida curta): desmame lento. Efeito anticolinérgico: AGS Beers 2023 recomenda evitar em idosos. Evitar no planejamento gestacional (malformações cardíacas no 1o trimestre). Inibidor potente de CYP2D6 (tamoxifeno). Boxed Warning de suicidalidade até 24 anos. Receita C1.",
+    "fontes": [
+      "Bula AROPAX (paroxetina 20 mg), ANVISA. https://img.drogasil.com.br/raiadrogasil_bula/Aropax.pdf",
+      "Bula profissional Aropax, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Aropax-Profissional-Consulta-Remedios.pdf",
+      "Bula profissional Pondera, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Pondera-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "FDA. Boxed Warning de suicidalidade para antidepressivos (crianças, adolescentes e adultos jovens até 24 anos), presente nas bulas americanas vigentes (texto de 2007, mantido). Não reaberto nesta sessão; conteúdo de conhecimento consolidado.",
+      "American Geriatrics Society 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71(7):2052-2081 (citado de memória; não reaberto nesta sessão)."
+    ]
+  },
+  {
+    "id": "bupropiona",
+    "nome": "Cloridrato de bupropiona",
+    "marcas": [
+      "Wellbutrin XL",
+      "Zyban",
+      "Bup XL",
+      "Bupium XL",
+      "genéricos"
+    ],
+    "classe": "Antidepressivo inibidor da recaptação de noradrenalina e dopamina; auxiliar na cessação do tabagismo",
+    "indicacoes": [
+      "depressao_ansiedade",
+      "outro"
+    ],
+    "apresentacoes": [
+      "150 mg comprimido de liberação prolongada (XL, 24 h)",
+      "300 mg comprimido de liberação prolongada (XL, 24 h)",
+      "150 mg comprimido de liberação lenta (Zyban, tabagismo)"
+    ],
+    "posologiaUsual": "Depressão (XL): 150 mg uma vez ao dia pela manhã, podendo passar a 300 mg após algumas semanas. Tabagismo (Zyban): 150 mg uma vez ao dia por 3 dias e depois 150 mg duas vezes ao dia, com pelo menos 8 horas entre as doses, por 7 a 12 semanas, parando de fumar na 2a semana.",
+    "doseMaxDia": "300 mg/dia (bulas brasileiras de Wellbutrin XL e Zyban); nunca mais de 150 mg por tomada nas formas de liberação lenta",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Insônia, principalmente se tomada à tarde ou à noite",
+      "Boca seca",
+      "Dor de cabeça",
+      "Enjoo e perda de apetite",
+      "Agitação, ansiedade ou tremor",
+      "Zumbido ou suor aumentado"
+    ],
+    "sinaisAlerta": [
+      "Convulsão (crise com perda de consciência e abalos): chame o SAMU 192 e não tome mais o remédio até falar com o médico.",
+      "Pensamentos de se machucar ou de tirar a propria vida, ou piora brusca da tristeza, agitação ou impulsividade, principalmente nas primeiras semanas ou após mudança de dose e em pessoas com menos de 25 anos: procure ajuda imediatamente (CVV 188 ou SAMU 192).",
+      "Mudanças de comportamento, agressividade, agitação ou alucinações, inclusive durante o uso para parar de fumar.",
+      "Pressão muito alta com dor de cabeça forte.",
+      "Euforia ou irritabilidade fora do comum, pouca necessidade de dormir, fala acelerada e gastos ou atitudes impulsivas: avise o médico logo, pode ser virada para mania.",
+      "Manchas ou bolhas na pele, inchaço de rosto, lábios ou língua, ou falta de ar: procure emergência."
+    ],
+    "monitorizacao": "Pressão arterial antes e durante o tratamento, sobretudo se associada a adesivo de nicotina. Reavaliação clínica do humor e de ideação suicida nas primeiras semanas e após cada mudança de dose, sobretudo em menores de 25 anos. Sódio em idosos ou em uso de diurético se houver sintomas.",
+    "interacoes": "Contraindicada com IMAO (intervalo de 14 dias). Evitar ou ter muita cautela com fármacos que baixam o limiar convulsivo (antipsicóticos, tricíclicos, tramadol, teofilina, corticoide sistêmico, quinolonas). Inibe CYP2D6: aumenta níveis de tricíclicos, metoprolol, risperidona, e reduz o efeito do tamoxifeno. Carbamazepina, fenitoína e ritonavir reduzem o nível. Associação com levodopa ou amantadina aumenta efeitos adversos. Álcool aumenta o risco de convulsão.",
+    "gestacao": "Avise o médico se engravidar ou planejar engravidar. Os dados em gestação não mostram aumento claro de malformações, mas são mais limitados que os dos ISRS; o médico decidirá. A bupropiona passa para o leite materno.",
+    "suspensao": "Costuma causar poucos sintomas de retirada, mas não pare por conta própria sem falar com o médico, porque a depressão pode voltar. No tabagismo, o tratamento tem duração definida.",
+    "orientacoes": [
+      "Tome pela manhã; se precisar de segunda dose, antes das 16 h e com pelo menos 8 horas de intervalo.",
+      "Engula o comprimido inteiro, sem partir ou mastigar.",
+      "Evite ou reduza muito o álcool, e não pare de beber de repente se você bebe muito sem avisar o médico: ambos aumentam o risco de convulsão.",
+      "Não use junto com outro remédio que contenha bupropiona."
+    ],
+    "alertasMedico": "Risco de convulsão dose-dependente (cerca de 0,1% até 300 mg/dia XL): contraindicada em epilepsia ou história de convulsão, bulimia ou anorexia nervosa atual ou prévia, tumor do SNC, retirada abrupta de álcool, benzodiazepínico ou barbitúrico, e uso de IMAO. Não exceder 300 mg/dia (bula BR). Pode elevar a pressão arterial. Boxed Warning de suicidalidade até 24 anos (o alerta neuropsiquiátrico específico para tabagismo foi retirado pela FDA em 2016). Receita C1.",
+    "fontes": [
+      "Bula profissional Wellbutrin-XL, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Wellbutrin-XL-Profissional-Consulta-Remedios.pdf",
+      "Bula profissional Zyban, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Zyban-Profissional-Consulta-Remedios.pdf",
+      "Bula BUPIUM XL (EMS), ANVISA. https://img.drogasil.com.br/raiadrogasil_bula/BupiumXL.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "FDA. Boxed Warning de suicidalidade para antidepressivos (crianças, adolescentes e adultos jovens até 24 anos), presente nas bulas americanas vigentes (texto de 2007, mantido). Não reaberto nesta sessão; conteúdo de conhecimento consolidado."
+    ]
+  },
+  {
+    "id": "mirtazapina",
+    "nome": "Mirtazapina",
+    "marcas": [
+      "Remeron SolTab",
+      "Menelat",
+      "genéricos"
+    ],
+    "classe": "Antidepressivo noradrenérgico e serotoninérgico específico (NaSSA)",
+    "indicacoes": [
+      "depressao_ansiedade"
+    ],
+    "apresentacoes": [
+      "15 mg comprimido orodispersível",
+      "30 mg comprimido orodispersível",
+      "45 mg comprimido orodispersível",
+      "30 mg comprimido revestido",
+      "45 mg comprimido revestido"
+    ],
+    "posologiaUsual": "15 ou 30 mg uma vez ao dia, à noite, antes de deitar; faixa eficaz de 15 a 45 mg.",
+    "doseMaxDia": "45 mg/dia",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Sonolência, principalmente nos primeiros dias",
+      "Aumento do apetite e ganho de peso",
+      "Boca seca",
+      "Tontura",
+      "Prisão de ventre",
+      "Inchaço leve nas pernas"
+    ],
+    "sinaisAlerta": [
+      "Febre, dor de garganta, feridas na boca ou outros sinais de infecção: faça um hemograma com urgência, pois raramente o remédio reduz as células de defesa.",
+      "Pensamentos de se machucar ou de tirar a propria vida, ou piora brusca da tristeza, agitação ou impulsividade, principalmente nas primeiras semanas ou após mudança de dose e em pessoas com menos de 25 anos: procure ajuda imediatamente (CVV 188 ou SAMU 192).",
+      "Agitação intensa, confusão, febre, suor excessivo, tremores ou abalos musculares, diarreia forte e coração acelerado, sobretudo depois de associar outro remédio: pode ser síndrome serotoninérgica, procure emergência.",
+      "Euforia ou irritabilidade fora do comum, pouca necessidade de dormir, fala acelerada e gastos ou atitudes impulsivas: avise o médico logo, pode ser virada para mania.",
+      "Confusão, sonolência exagerada, dor de cabeça forte, fraqueza ou quedas, sobretudo em idosos: pode ser sódio baixo no sangue, procure atendimento.",
+      "Manchas ou bolhas na pele com febre e ínguas: procure emergência (reações graves de pele relatadas raramente)."
+    ],
+    "monitorizacao": "Reavaliação clínica do humor e de ideação suicida nas primeiras semanas e após cada mudança de dose, sobretudo em menores de 25 anos. Sódio em idosos ou em uso de diurético se houver sintomas. Peso e, em quem tem risco metabólico, glicemia e lipídios. Hemograma se houver febre ou sinais de infecção.",
+    "interacoes": "Contraindicada com IMAO (14 dias). Soma sedação com álcool, benzodiazepínicos e outros depressores do sistema nervoso. Risco serotoninérgico com outros antidepressivos, triptanos, tramadol, lítio e erva-de-são-joão. Carbamazepina e fenitoína reduzem o nível; cetoconazol e cimetidina aumentam. Pode aumentar levemente o INR com varfarina. Cautela com fármacos que prolongam o QT.",
+    "gestacao": "Se você engravidar ou planejar engravidar, avise o médico, mas não pare o remédio por conta própria: parar de repente aumenta o risco de a depressão voltar. O médico pesa os riscos e benefícios. Uso no fim da gestação pode causar sintomas passageiros no bebê (irritabilidade, dificuldade para mamar) e raramente hipertensão pulmonar persistente no recém-nascido, por isso o parto deve ser informado à equipe. Em julho de 2025 um painel da FDA discutiu o tema, mas não houve mudança de bula até esta revisão.",
+    "suspensao": "Não pare de repente. A interrupção brusca pode causar tontura, sensação de choque, enjoo, irritabilidade, insônia, sonhos vívidos e sintomas parecidos com gripe (síndrome de descontinuação). Quando for a hora de parar, o médico reduz a dose aos poucos, em geral ao longo de semanas ou meses, e mais devagar se surgirem sintomas.",
+    "orientacoes": [
+      "Tome à noite, pois dá sono.",
+      "O comprimido orodispersível derrete na língua, não precisa de água.",
+      "Controle o peso e prefira alimentação saudável, porque o apetite aumenta.",
+      "Não dirija se estiver sonolento e evite álcool."
+    ],
+    "alertasMedico": "Agranulocitose rara (hemograma se febre ou infecção). Ganho de peso e dislipidemia. Sedação e risco de quedas em idosos. Hiponatremia. Boxed Warning de suicidalidade até 24 anos. Receita C1.",
+    "fontes": [
+      "Bula profissional Remeron, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Remeron-Profissional-Consulta-Remedios.pdf",
+      "Bula profissional Menelat, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Menelat-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "FDA. Boxed Warning de suicidalidade para antidepressivos (crianças, adolescentes e adultos jovens até 24 anos), presente nas bulas americanas vigentes (texto de 2007, mantido). Não reaberto nesta sessão; conteúdo de conhecimento consolidado.",
+      "Lam RW et al. CANMAT 2023 Update on Clinical Guidelines for Management of Major Depressive Disorder in Adults. Can J Psychiatry 2024;69(9):641-687. doi:10.1177/07067437241245384 (não reaberto nesta sessão; citado de memória, conferir)."
+    ]
+  },
+  {
+    "id": "desvenlafaxina",
+    "nome": "Succinato de desvenlafaxina",
+    "marcas": [
+      "Pristiq",
+      "genéricos e similares"
+    ],
+    "classe": "Antidepressivo inibidor da recaptação de serotonina e noradrenalina (IRSN)",
+    "indicacoes": [
+      "depressao_ansiedade"
+    ],
+    "apresentacoes": [
+      "50 mg comprimido de liberação controlada",
+      "100 mg comprimido de liberação controlada"
+    ],
+    "posologiaUsual": "50 mg uma vez ao dia, com ou sem alimento; aumentos, se necessários, a intervalos de pelo menos 7 dias. Insuficiência renal grave ou diálise: 50 mg em dias alternados.",
+    "doseMaxDia": "200 mg/dia (bula brasileira); doses acima de 50 mg geralmente não trazem benefício adicional",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Enjoo, principalmente no início",
+      "Boca seca e suor aumentado",
+      "Tontura",
+      "Insônia ou sonolência",
+      "Prisão de ventre e perda de apetite",
+      "Diminuição do desejo sexual ou dificuldade de ejaculação"
+    ],
+    "sinaisAlerta": [
+      "Pensamentos de se machucar ou de tirar a propria vida, ou piora brusca da tristeza, agitação ou impulsividade, principalmente nas primeiras semanas ou após mudança de dose e em pessoas com menos de 25 anos: procure ajuda imediatamente (CVV 188 ou SAMU 192).",
+      "Dor de cabeça forte com pressão muito alta.",
+      "Agitação intensa, confusão, febre, suor excessivo, tremores ou abalos musculares, diarreia forte e coração acelerado, sobretudo depois de associar outro remédio: pode ser síndrome serotoninérgica, procure emergência.",
+      "Euforia ou irritabilidade fora do comum, pouca necessidade de dormir, fala acelerada e gastos ou atitudes impulsivas: avise o médico logo, pode ser virada para mania.",
+      "Sangramentos fora do comum (nariz, gengiva, fezes escuras, manchas roxas grandes), principalmente se você usa anticoagulante, AAS ou anti-inflamatório.",
+      "Confusão, sonolência exagerada, dor de cabeça forte, fraqueza ou quedas, sobretudo em idosos: pode ser sódio baixo no sangue, procure atendimento."
+    ],
+    "monitorizacao": "Pressão arterial antes de iniciar e periodicamente (aumento dose-dependente). Colesterol e triglicerídeos podem subir. Reavaliação clínica do humor e de ideação suicida nas primeiras semanas e após cada mudança de dose, sobretudo em menores de 25 anos. Sódio em idosos ou em uso de diurético se houver sintomas.",
+    "interacoes": "Contraindicada com IMAO (esperar 7 dias após parar a desvenlafaxina e 14 dias após parar o IMAO; também linezolida e azul de metileno). Risco serotoninérgico com triptanos, tramadol, outros antidepressivos, lítio e erva-de-são-joão. Risco de sangramento com AAS, anti-inflamatórios e anticoagulantes. Não associar a venlafaxina.",
+    "gestacao": "Se você engravidar ou planejar engravidar, avise o médico, mas não pare o remédio por conta própria: parar de repente aumenta o risco de a depressão voltar. O médico pesa os riscos e benefícios. Uso no fim da gestação pode causar sintomas passageiros no bebê (irritabilidade, dificuldade para mamar) e raramente hipertensão pulmonar persistente no recém-nascido, por isso o parto deve ser informado à equipe. Em julho de 2025 um painel da FDA discutiu o tema, mas não houve mudança de bula até esta revisão.",
+    "suspensao": "Não pare de repente. A interrupção brusca pode causar tontura, sensação de choque, enjoo, irritabilidade, insônia, sonhos vívidos e sintomas parecidos com gripe (síndrome de descontinuação). Quando for a hora de parar, o médico reduz a dose aos poucos, em geral ao longo de semanas ou meses, e mais devagar se surgirem sintomas.",
+    "orientacoes": [
+      "Engula o comprimido inteiro; pode aparecer nas fezes a 'casca' vazia, isso é normal.",
+      "Meça a pressão de vez em quando.",
+      "O efeito completo costuma aparecer entre 2 e 6 semanas.",
+      "Evite álcool."
+    ],
+    "alertasMedico": "Elevação de PA dose-dependente: controlar HAS antes. Ajuste renal (ClCr < 30: 50 mg em dias alternados; ClCr 30-50: máximo 50 mg/dia). Descontinuação intensa. Boxed Warning de suicidalidade até 24 anos. Receita C1.",
+    "fontes": [
+      "Bula PRISTIQ (Pfizer), 50 e 100 mg, ANVISA. https://img.drogasil.com.br/raiadrogasil_bula/Pristiq.pdf",
+      "Pristiq Profissional de Saúde (Pfizer Brasil). https://www.pfizer.com.br/files/Pristiq_Profissional_de_Saude_30.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "FDA. Boxed Warning de suicidalidade para antidepressivos (crianças, adolescentes e adultos jovens até 24 anos), presente nas bulas americanas vigentes (texto de 2007, mantido). Não reaberto nesta sessão; conteúdo de conhecimento consolidado.",
+      "Lam RW et al. CANMAT 2023 Update on Clinical Guidelines for Management of Major Depressive Disorder in Adults. Can J Psychiatry 2024;69(9):641-687. doi:10.1177/07067437241245384 (não reaberto nesta sessão; citado de memória, conferir)."
+    ]
+  },
+  {
+    "id": "litio",
+    "nome": "Carbonato de lítio",
+    "marcas": [
+      "Carbolitium",
+      "Carbolitium CR",
+      "genéricos"
+    ],
+    "classe": "Estabilizador do humor",
+    "indicacoes": [
+      "depressao_ansiedade",
+      "outro"
+    ],
+    "apresentacoes": [
+      "300 mg comprimido revestido (liberação imediata)",
+      "450 mg comprimido de liberação controlada (CR)"
+    ],
+    "posologiaUsual": "Dose individual, guiada pela litemia (coleta 12 horas após a última dose). Mania aguda: 900 a 1800 mg/dia divididos (bula). Manutenção: geralmente 600 a 1200 mg/dia, por exemplo 450 mg CR duas vezes ao dia, ajustados para litemia de 0,6 a 0,8 mmol/L (NICE; até 1,0 se recaída), faixa de manutenção da bula 0,6 a 1,2 mEq/L. Potencialização de antidepressivo: litemia de 0,5 a 1,0 mEq/L.",
+    "doseMaxDia": "Definida pela litemia, não por miligramas; a bula cita até 1800 mg/dia na mania aguda. Idosos costumam precisar de doses menores e podem ter toxicidade com níveis considerados terapêuticos.",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Tremor fino nas mãos",
+      "Sede e vontade de urinar com mais frequência",
+      "Enjoo ou diarreia leve, principalmente no início",
+      "Aumento de peso",
+      "Gosto metálico na boca",
+      "Acne ou piora da psoríase"
+    ],
+    "sinaisAlerta": [
+      "Sinais de intoxicação por lítio: diarreia ou vômitos persistentes, tremor forte, fraqueza, tontura, fala enrolada, andar desequilibrado, visão turva, confusão ou sonolência intensa. Pare a próxima dose e procure emergência para dosar o lítio.",
+      "Qualquer situação de desidratação (febre alta, diarreia, vômitos, calor intenso, dieta muito restrita) aumenta o risco de intoxicação: procure o médico.",
+      "Convulsão, desmaio ou coração muito lento: emergência.",
+      "Urinar muito mais do que o habitual com sede intensa e constante.",
+      "Pensamentos de se machucar ou piora importante do humor, ou euforia fora do comum."
+    ],
+    "monitorizacao": "Litemia 5 a 7 dias após iniciar e após cada mudança de dose até estabilizar; depois a cada 3 meses no primeiro ano e a cada 6 meses a partir daí (manter a cada 3 meses em idosos, em uso de medicamentos que interagem, risco renal ou tireoidiano, adesão ruim ou última litemia de 0,8 ou mais), conforme NICE CG185. Creatinina/TFG, TSH e cálcio antes de iniciar e pelo menos a cada 6 meses; peso ou IMC; ECG basal se houver doença cardíaca ou fatores de risco. Litemia extra se surgirem sintomas de toxicidade, desidratação ou início de fármaco que interage.",
+    "interacoes": "Aumentam a litemia e o risco de intoxicação: diuréticos tiazídicos (hidroclorotiazida, clortalidona, indapamida), IECA (enalapril, captopril), BRA (losartana, valsartana), anti-inflamatórios não esteroides (ibuprofeno, diclofenaco, naproxeno, nimesulida, cetoprofeno; inclusive de venda livre), metronidazol e desidratação. Reduzem a litemia: teofilina, cafeína em excesso, acetazolamida, bicarbonato. Com ISRS, triptanos e tramadol: risco de síndrome serotoninérgica. Com antipsicóticos (especialmente haloperidol): neurotoxicidade. Dieta com muita variação de sal altera o nível.",
+    "gestacao": "Se você pode engravidar, converse com o médico antes de planejar a gestação. O lítio atravessa a placenta e pode causar malformações, principalmente cardíacas, no primeiro trimestre (bula). Não pare de repente se engravidar, porque a interrupção brusca aumenta muito o risco de recaída; procure o médico logo para planejar, com ultrassom morfológico e ecocardiograma fetal e litemias frequentes, sobretudo perto do parto. A amamentação exige avaliação especializada.",
+    "suspensao": "Não pare de repente: a interrupção brusca aumenta o risco de recaída (mania ou depressão) e de suicídio. Se for necessário parar, o médico reduz a dose gradualmente, em geral ao longo de pelo menos 4 semanas, idealmente mais.",
+    "orientacoes": [
+      "Beba bastante água (cerca de 2 a 3 litros por dia) e mantenha o sal da comida constante, sem dietas muito restritas.",
+      "Não tome anti-inflamatórios (ibuprofeno, diclofenaco, nimesulida) por conta própria; para dor prefira paracetamol e avise qualquer médico que você usa lítio.",
+      "Colete a litemia cerca de 12 horas após a última dose, antes da dose da manhã.",
+      "Em caso de diarreia, vômitos ou febre, procure o médico, pois pode ser preciso ajustar a dose."
+    ],
+    "alertasMedico": "Janela terapêutica estreita (Boxed Warning FDA). Toxicidade precipitada por tiazídicos, IECA, BRA, AINE, desidratação, dieta hipossódica e piora da função renal: evitar essas associações ou reduzir dose e dosar litemia em 5 a 7 dias. Efeitos crônicos: hipotireoidismo, hiperparatireoidismo com hipercalcemia, diabetes insipidus nefrogênico e DRC. Não renovar sem litemia, TFG, TSH e cálcio recentes (idealmente últimos 6 meses). Consta na lista C1 (entrada 103 Lítio), exigindo Receita de Controle Especial; conferido na RDC 1.036/2026.",
+    "fontes": [
+      "Bula CARBOLITIUM e CARBOLITIUM CR (Eurofarma), ANVISA. https://img.drogasil.com.br/raiadrogasil_bula/CARBOLITIUM.pdf",
+      "NICE CG185 (bipolar) e Quality Standard QS95, statement 5: litemia a cada 3 meses no 1o ano e depois a cada 6 meses (3/3 meses se idoso, interações, risco renal/tireoidiano, adesão ruim ou última litemia >= 0,8); TFG, função tireoidiana e cálcio pelo menos a cada 6 meses. https://www.nice.org.uk/guidance/qs95/chapter/quality-statement-5-maintaining-plasma-lithium-levels",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "Yatham LN et al. CANMAT/ISBD 2018 guidelines for bipolar disorder. Bipolar Disord 2018;20:97-170 (citado de memória; não reaberto nesta sessão)."
+    ]
+  },
+  {
+    "id": "alprazolam",
+    "nome": "Alprazolam",
+    "marcas": [
+      "Frontal",
+      "Frontal XR",
+      "genéricos e similares"
+    ],
+    "classe": "Ansiolítico benzodiazepínico",
+    "indicacoes": [
+      "depressao_ansiedade"
+    ],
+    "apresentacoes": [
+      "0,25 mg comprimido",
+      "0,5 mg comprimido",
+      "1 mg comprimido",
+      "2 mg comprimido",
+      "0,5 mg comprimido de liberação prolongada (XR)",
+      "1 mg comprimido de liberação prolongada (XR)",
+      "2 mg comprimido de liberação prolongada (XR)"
+    ],
+    "posologiaUsual": "Ansiedade: 0,25 a 0,5 mg três vezes ao dia (faixa de 0,5 a 4 mg/dia). Pânico: 0,5 a 1 mg ao deitar ou 0,5 mg três vezes ao dia, ajuste de no máximo 1 mg a cada 3 ou 4 dias. XR: uma vez ao dia. Idosos: 0,25 mg duas ou três vezes ao dia (0,5 a 0,75 mg/dia).",
+    "doseMaxDia": "4 mg/dia na ansiedade; ocasionalmente até 10 mg/dia no transtorno do pânico (bula Frontal)",
+    "portaria344": "Lista B1 (psicotrópicos), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "notificacao_b",
+    "limiteQuantidade": "Notificação de Receita B (azul) acompanhada de receita: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 46); acima disso, justificativa com CID (art. 46, par. 1o). Validade de 30 dias, em todo o território nacional (art. 45, redação da RDC 873/2024).",
+    "efeitosComuns": [
+      "Sonolência e cansaço",
+      "Tontura e falta de coordenação",
+      "Dificuldade de memória e de concentração",
+      "Fala arrastada",
+      "Boca seca",
+      "Alteração do apetite"
+    ],
+    "sinaisAlerta": [
+      "Sonolência tão forte que você não consegue acordar direito, respiração lenta ou fraca, lábios arroxeados: emergência, especialmente se tiver misturado com álcool, opioides (morfina, codeína, tramadol) ou outros calmantes.",
+      "Confusão, desorientação, quedas ou perda de equilíbrio, sobretudo em idosos.",
+      "Reações paradoxais: agitação, agressividade, alucinações ou comportamento estranho.",
+      "Episódios de fazer coisas dormindo (dirigir, comer, sair) sem lembrar depois.",
+      "Pensamentos de se machucar ou piora importante do humor.",
+      "Vontade de tomar mais do que o prescrito ou de buscar o remédio por outros meios."
+    ],
+    "monitorizacao": "Reavaliar a cada renovação a indicação, a dose, a duração e sinais de tolerância, dependência ou uso indevido. Em idosos, avaliar quedas e cognição. Não exige exame laboratorial de rotina.",
+    "interacoes": "Álcool, opioides (morfina, codeína, tramadol, oxicodona; FDA Boxed Warning de 2016 para depressão respiratória e morte), outros benzodiazepínicos, zolpidem, antipsicóticos sedativos, anti-histamínicos sedativos, gabapentina e pregabalina (somam sedação). Inibidores potentes de CYP3A4 (cetoconazol, itraconazol, claritromicina, ritonavir) aumentam muito o nível: cetoconazol e itraconazol são contraindicados. Fluvoxamina, fluoxetina, diltiazem e anticoncepcionais orais também elevam o nível. Carbamazepina reduz.",
+    "gestacao": "Avise o médico se engravidar ou planejar engravidar. Uso no fim da gestação pode deixar o bebê sonolento, com o corpo mole, dificuldade para mamar e sintomas de abstinência após o nascimento. Não interrompa sozinha: a retirada precisa ser gradual. O remédio passa para o leite materno e pode deixar o bebê sonolento.",
+    "suspensao": "Não pare de repente, mesmo que se sinta bem. Após semanas de uso o corpo se acostuma, e a parada brusca pode causar ansiedade rebote, insônia, tremores, suor, confusão e até convulsões. A retirada deve ser feita aos poucos com o médico; a diretriz conjunta de 2025 sugere começar reduzindo cerca de 5 a 10% da dose a cada 2 a 4 semanas, ajustando conforme os sintomas. O alprazolam, por ter ação curta, costuma dar abstinência mais intensa; a bula sugere reduzir no máximo 0,5 mg a cada 3 dias, e muitas vezes é preciso ir mais devagar.",
+    "orientacoes": [
+      "Não dirija nem opere máquinas até saber como o remédio age em você, e nunca após beber álcool.",
+      "Use a menor dose pelo menor tempo; este remédio não deve ser a única forma de tratar ansiedade ou insônia a longo prazo.",
+      "Guarde longe de crianças e não compartilhe com ninguém.",
+      "Engula o Frontal XR inteiro, sem partir ou mastigar."
+    ],
+    "alertasMedico": "FDA 2020: Boxed Warning de abuso, adição, dependência e abstinência para a classe. AGS Beers 2023: evitar benzodiazepínicos em idosos (declínio cognitivo, delirium, quedas, fraturas, acidentes de trânsito). Evitar associação com opioides e outros depressores do SNC. Reavaliar a necessidade a cada renovação; na telerrenovação crônica, registrar indicação, tempo de uso e plano de desmame. Notificação B (azul) e documento físico até a liberação da emissão eletrônica pelo SNCR (prevista pela ANVISA para 30/09/2026, com assinatura qualificada ICP-Brasil e sistema integrado ao SNCR; RDC 1.000/2025). Alprazolam: meia-vida curta, maior risco de abstinência e rebote entre doses; interação com inibidores de CYP3A4.",
+    "fontes": [
+      "Bula profissional Frontal, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Frontal-Profissional-Consulta-Remedios.pdf",
+      "Bula profissional Frontal-XR, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Frontal-XR-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "ANVISA. RDC 873/2024 (SNCR; Notificações de Receita válidas em todo o território nacional). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=RDC&numeroAto=00000873&seqAto=000&valorAno=2024&orgao=RDC/DC/ANVISA/MS",
+      "ANVISA. RDC 1.000/2025 (receituários de controle especial e Notificações de Receita em meio eletrônico, assinatura qualificada ICP-Brasil, integração ao SNCR) e notícia ANVISA 2026 'Início de nova etapa do SNCR: o que muda a partir de 30 de setembro'. https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/inicio-de-nova-etapa-do-sncr-o-que-muda-a-partir-de-30-de-setembro",
+      "FDA Drug Safety Communication (23/09/2020): Boxed Warning de abuso, uso indevido, adição, dependência física e abstinência para toda a classe dos benzodiazepínicos. https://www.fda.gov/drugs/drug-safety-and-availability/fda-requiring-boxed-warning-updated-improve-safe-use-benzodiazepine-drug-class",
+      "Joint Clinical Practice Guideline on Benzodiazepine Tapering (ASAM e mais 9 sociedades). J Gen Intern Med 2025 (redução inicial de 5 a 10% da dose diária a cada 2 a 4 semanas). https://pubmed.ncbi.nlm.nih.gov/40526204/",
+      "American Geriatrics Society 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71(7):2052-2081 (citado de memória; não reaberto nesta sessão)."
+    ]
+  },
+  {
+    "id": "lorazepam",
+    "nome": "Lorazepam",
+    "marcas": [
+      "Lorax",
+      "genéricos"
+    ],
+    "classe": "Ansiolítico benzodiazepínico",
+    "indicacoes": [
+      "depressao_ansiedade",
+      "sono"
+    ],
+    "apresentacoes": [
+      "1 mg comprimido",
+      "2 mg comprimido"
+    ],
+    "posologiaUsual": "Ansiedade: média de 2 a 3 mg/dia divididos em duas ou três tomadas. Insônia associada à ansiedade: 1 a 2 mg ao deitar. Idosos e debilitados: reduzir a dose inicial.",
+    "doseMaxDia": "10 mg/dia (faixa da bula de 1 a 10 mg/dia)",
+    "portaria344": "Lista B1 (psicotrópicos), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "notificacao_b",
+    "limiteQuantidade": "Notificação de Receita B (azul) acompanhada de receita: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 46); acima disso, justificativa com CID (art. 46, par. 1o). Validade de 30 dias, em todo o território nacional (art. 45, redação da RDC 873/2024).",
+    "efeitosComuns": [
+      "Sonolência e cansaço",
+      "Tontura e falta de equilíbrio",
+      "Fraqueza muscular",
+      "Esquecimento de fatos recentes",
+      "Dificuldade de concentração",
+      "Desânimo"
+    ],
+    "sinaisAlerta": [
+      "Sonolência tão forte que você não consegue acordar direito, respiração lenta ou fraca, lábios arroxeados: emergência, especialmente se tiver misturado com álcool, opioides (morfina, codeína, tramadol) ou outros calmantes.",
+      "Confusão, desorientação, quedas ou perda de equilíbrio, sobretudo em idosos.",
+      "Reações paradoxais: agitação, agressividade, alucinações ou comportamento estranho.",
+      "Episódios de fazer coisas dormindo (dirigir, comer, sair) sem lembrar depois.",
+      "Pensamentos de se machucar ou piora importante do humor.",
+      "Vontade de tomar mais do que o prescrito ou de buscar o remédio por outros meios."
+    ],
+    "monitorizacao": "Reavaliar a cada renovação a indicação, a dose, a duração e sinais de dependência. Em idosos, avaliar quedas e cognição. Não exige exame laboratorial de rotina.",
+    "interacoes": "Álcool, opioides (morfina, codeína, tramadol, oxicodona; FDA Boxed Warning de 2016 para depressão respiratória e morte), outros benzodiazepínicos, zolpidem, antipsicóticos sedativos, anti-histamínicos sedativos, gabapentina e pregabalina (somam sedação). Valproato e probenecida aumentam o nível do lorazepam (reduzir a dose). Por ser metabolizado por glicuronidação, sofre pouca interação via CYP450.",
+    "gestacao": "Avise o médico se engravidar ou planejar engravidar. Uso no fim da gestação pode deixar o bebê sonolento, com o corpo mole, dificuldade para mamar e sintomas de abstinência após o nascimento. Não interrompa sozinha: a retirada precisa ser gradual. O remédio passa para o leite materno e pode deixar o bebê sonolento.",
+    "suspensao": "Não pare de repente, mesmo que se sinta bem. Após semanas de uso o corpo se acostuma, e a parada brusca pode causar ansiedade rebote, insônia, tremores, suor, confusão e até convulsões. A retirada deve ser feita aos poucos com o médico; a diretriz conjunta de 2025 sugere começar reduzindo cerca de 5 a 10% da dose a cada 2 a 4 semanas, ajustando conforme os sintomas.",
+    "orientacoes": [
+      "Não dirija nem opere máquinas até saber como o remédio age em você, e nunca após beber álcool.",
+      "Use a menor dose pelo menor tempo; este remédio não deve ser a única forma de tratar ansiedade ou insônia a longo prazo.",
+      "Guarde longe de crianças e não compartilhe com ninguém.",
+      "Se for usado para dormir, tome só na hora de deitar e quando puder dormir 7 a 8 horas."
+    ],
+    "alertasMedico": "FDA 2020: Boxed Warning de abuso, adição, dependência e abstinência para a classe. AGS Beers 2023: evitar benzodiazepínicos em idosos (declínio cognitivo, delirium, quedas, fraturas, acidentes de trânsito). Evitar associação com opioides e outros depressores do SNC. Reavaliar a necessidade a cada renovação; na telerrenovação crônica, registrar indicação, tempo de uso e plano de desmame. Notificação B (azul) e documento físico até a liberação da emissão eletrônica pelo SNCR (prevista pela ANVISA para 30/09/2026, com assinatura qualificada ICP-Brasil e sistema integrado ao SNCR; RDC 1.000/2025). Lorazepam: sem metabólitos ativos e sem dependência de CYP, opção em hepatopatas, mas mantém o mesmo risco de dependência e quedas.",
+    "fontes": [
+      "Bula profissional Lorax, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Lorax-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "ANVISA. RDC 873/2024 (SNCR; Notificações de Receita válidas em todo o território nacional). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=RDC&numeroAto=00000873&seqAto=000&valorAno=2024&orgao=RDC/DC/ANVISA/MS",
+      "ANVISA. RDC 1.000/2025 (receituários de controle especial e Notificações de Receita em meio eletrônico, assinatura qualificada ICP-Brasil, integração ao SNCR) e notícia ANVISA 2026 'Início de nova etapa do SNCR: o que muda a partir de 30 de setembro'. https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/inicio-de-nova-etapa-do-sncr-o-que-muda-a-partir-de-30-de-setembro",
+      "FDA Drug Safety Communication (23/09/2020): Boxed Warning de abuso, uso indevido, adição, dependência física e abstinência para toda a classe dos benzodiazepínicos. https://www.fda.gov/drugs/drug-safety-and-availability/fda-requiring-boxed-warning-updated-improve-safe-use-benzodiazepine-drug-class",
+      "Joint Clinical Practice Guideline on Benzodiazepine Tapering (ASAM e mais 9 sociedades). J Gen Intern Med 2025 (redução inicial de 5 a 10% da dose diária a cada 2 a 4 semanas). https://pubmed.ncbi.nlm.nih.gov/40526204/",
+      "American Geriatrics Society 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71(7):2052-2081 (citado de memória; não reaberto nesta sessão)."
+    ]
+  },
+  {
+    "id": "diazepam",
+    "nome": "Diazepam",
+    "marcas": [
+      "Valium",
+      "genéricos e similares"
+    ],
+    "classe": "Ansiolítico benzodiazepínico de ação longa",
+    "indicacoes": [
+      "depressao_ansiedade",
+      "espasticidade",
+      "outro"
+    ],
+    "apresentacoes": [
+      "5 mg comprimido",
+      "10 mg comprimido"
+    ],
+    "posologiaUsual": "Adultos: 5 a 10 mg por dose, 5 a 20 mg/dia em uma a três tomadas conforme a gravidade; cada dose oral normalmente não deve passar de 10 mg. Idosos e debilitados: metade da dose.",
+    "doseMaxDia": "20 mg/dia no uso ambulatorial habitual (bula Valium: 5 a 20 mg/dia; dose isolada até 10 mg); doses maiores apenas em situações específicas sob supervisão",
+    "portaria344": "Lista B1 (psicotrópicos), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "notificacao_b",
+    "limiteQuantidade": "Notificação de Receita B (azul) acompanhada de receita: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 46); acima disso, justificativa com CID (art. 46, par. 1o). Validade de 30 dias, em todo o território nacional (art. 45, redação da RDC 873/2024).",
+    "efeitosComuns": [
+      "Sonolência e cansaço",
+      "Fraqueza muscular",
+      "Tontura e falta de coordenação",
+      "Dificuldade de memória",
+      "Visão borrada",
+      "Efeito que pode durar até o dia seguinte (ressaca)"
+    ],
+    "sinaisAlerta": [
+      "Sonolência tão forte que você não consegue acordar direito, respiração lenta ou fraca, lábios arroxeados: emergência, especialmente se tiver misturado com álcool, opioides (morfina, codeína, tramadol) ou outros calmantes.",
+      "Confusão, desorientação, quedas ou perda de equilíbrio, sobretudo em idosos.",
+      "Reações paradoxais: agitação, agressividade, alucinações ou comportamento estranho.",
+      "Episódios de fazer coisas dormindo (dirigir, comer, sair) sem lembrar depois.",
+      "Pensamentos de se machucar ou piora importante do humor.",
+      "Vontade de tomar mais do que o prescrito ou de buscar o remédio por outros meios."
+    ],
+    "monitorizacao": "Reavaliar a cada renovação a indicação, a dose e a duração (a bula recomenda não ultrapassar 2 a 3 meses, incluindo a retirada). Em idosos, avaliar quedas, sonolência diurna e cognição.",
+    "interacoes": "Álcool, opioides (morfina, codeína, tramadol, oxicodona; FDA Boxed Warning de 2016 para depressão respiratória e morte), outros benzodiazepínicos, zolpidem, antipsicóticos sedativos, anti-histamínicos sedativos, gabapentina e pregabalina (somam sedação). Omeprazol, esomeprazol, fluvoxamina, fluconazol e cimetidina aumentam o nível (CYP2C19 e CYP3A4). Carbamazepina, fenitoína e rifampicina reduzem.",
+    "gestacao": "Avise o médico se engravidar ou planejar engravidar. Uso no fim da gestação pode deixar o bebê sonolento, com o corpo mole, dificuldade para mamar e sintomas de abstinência após o nascimento. Não interrompa sozinha: a retirada precisa ser gradual. O remédio passa para o leite materno e pode deixar o bebê sonolento.",
+    "suspensao": "Não pare de repente, mesmo que se sinta bem. Após semanas de uso o corpo se acostuma, e a parada brusca pode causar ansiedade rebote, insônia, tremores, suor, confusão e até convulsões. A retirada deve ser feita aos poucos com o médico; a diretriz conjunta de 2025 sugere começar reduzindo cerca de 5 a 10% da dose a cada 2 a 4 semanas, ajustando conforme os sintomas. Por ter ação longa, o diazepam é às vezes usado pelo médico para facilitar a retirada de outros benzodiazepínicos.",
+    "orientacoes": [
+      "Não dirija nem opere máquinas até saber como o remédio age em você, e nunca após beber álcool.",
+      "Use a menor dose pelo menor tempo; este remédio não deve ser a única forma de tratar ansiedade ou insônia a longo prazo.",
+      "Guarde longe de crianças e não compartilhe com ninguém.",
+      "O efeito pode durar até o dia seguinte: tenha cuidado redobrado ao dirigir pela manhã."
+    ],
+    "alertasMedico": "FDA 2020: Boxed Warning de abuso, adição, dependência e abstinência para a classe. AGS Beers 2023: evitar benzodiazepínicos em idosos (declínio cognitivo, delirium, quedas, fraturas, acidentes de trânsito). Evitar associação com opioides e outros depressores do SNC. Reavaliar a necessidade a cada renovação; na telerrenovação crônica, registrar indicação, tempo de uso e plano de desmame. Notificação B (azul) e documento físico até a liberação da emissão eletrônica pelo SNCR (prevista pela ANVISA para 30/09/2026, com assinatura qualificada ICP-Brasil e sistema integrado ao SNCR; RDC 1.000/2025). Diazepam: meia-vida longa com metabólito ativo (desmetildiazepam), acumula em idosos e hepatopatas; bula limita o tratamento a 2-3 meses incluindo a retirada.",
+    "fontes": [
+      "Bula profissional Valium, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Valium-Profissional-Consulta-Remedios.pdf",
+      "Bula profissional Diazepam, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Diazepam-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "ANVISA. RDC 873/2024 (SNCR; Notificações de Receita válidas em todo o território nacional). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=RDC&numeroAto=00000873&seqAto=000&valorAno=2024&orgao=RDC/DC/ANVISA/MS",
+      "ANVISA. RDC 1.000/2025 (receituários de controle especial e Notificações de Receita em meio eletrônico, assinatura qualificada ICP-Brasil, integração ao SNCR) e notícia ANVISA 2026 'Início de nova etapa do SNCR: o que muda a partir de 30 de setembro'. https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/inicio-de-nova-etapa-do-sncr-o-que-muda-a-partir-de-30-de-setembro",
+      "FDA Drug Safety Communication (23/09/2020): Boxed Warning de abuso, uso indevido, adição, dependência física e abstinência para toda a classe dos benzodiazepínicos. https://www.fda.gov/drugs/drug-safety-and-availability/fda-requiring-boxed-warning-updated-improve-safe-use-benzodiazepine-drug-class",
+      "Joint Clinical Practice Guideline on Benzodiazepine Tapering (ASAM e mais 9 sociedades). J Gen Intern Med 2025 (redução inicial de 5 a 10% da dose diária a cada 2 a 4 semanas). https://pubmed.ncbi.nlm.nih.gov/40526204/",
+      "American Geriatrics Society 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71(7):2052-2081 (citado de memória; não reaberto nesta sessão)."
+    ]
+  },
+  {
+    "id": "bromazepam",
+    "nome": "Bromazepam",
+    "marcas": [
+      "Lexotan",
+      "genéricos e similares"
+    ],
+    "classe": "Ansiolítico benzodiazepínico",
+    "indicacoes": [
+      "depressao_ansiedade"
+    ],
+    "apresentacoes": [
+      "3 mg comprimido",
+      "6 mg comprimido"
+    ],
+    "posologiaUsual": "Uso ambulatorial: 1,5 a 3 mg até três vezes ao dia. Casos graves, em geral hospitalares: 6 a 12 mg duas ou três vezes ao dia. Iniciar com doses baixas; idosos com doses menores.",
+    "doseMaxDia": "36 mg/dia em adultos (bula Lexotan); no ambulatório raramente se justifica passar de 9 mg/dia",
+    "portaria344": "Lista B1 (psicotrópicos), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "notificacao_b",
+    "limiteQuantidade": "Notificação de Receita B (azul) acompanhada de receita: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 46); acima disso, justificativa com CID (art. 46, par. 1o). Validade de 30 dias, em todo o território nacional (art. 45, redação da RDC 873/2024).",
+    "efeitosComuns": [
+      "Sonolência e cansaço",
+      "Tontura e falta de coordenação",
+      "Fraqueza muscular",
+      "Dificuldade de memória e concentração",
+      "Lentidão de reflexos",
+      "Confusão, sobretudo em idosos"
+    ],
+    "sinaisAlerta": [
+      "Sonolência tão forte que você não consegue acordar direito, respiração lenta ou fraca, lábios arroxeados: emergência, especialmente se tiver misturado com álcool, opioides (morfina, codeína, tramadol) ou outros calmantes.",
+      "Confusão, desorientação, quedas ou perda de equilíbrio, sobretudo em idosos.",
+      "Reações paradoxais: agitação, agressividade, alucinações ou comportamento estranho.",
+      "Episódios de fazer coisas dormindo (dirigir, comer, sair) sem lembrar depois.",
+      "Pensamentos de se machucar ou piora importante do humor.",
+      "Vontade de tomar mais do que o prescrito ou de buscar o remédio por outros meios."
+    ],
+    "monitorizacao": "Reavaliar a cada renovação a indicação, a dose e a duração (a bula recomenda que o tratamento não ultrapasse 8 a 12 semanas, incluindo a retirada). Em idosos, avaliar quedas e cognição.",
+    "interacoes": "Álcool, opioides (morfina, codeína, tramadol, oxicodona; FDA Boxed Warning de 2016 para depressão respiratória e morte), outros benzodiazepínicos, zolpidem, antipsicóticos sedativos, anti-histamínicos sedativos, gabapentina e pregabalina (somam sedação). Inibidores de CYP3A4 (cetoconazol, itraconazol, claritromicina), fluvoxamina e cimetidina podem aumentar o nível.",
+    "gestacao": "Avise o médico se engravidar ou planejar engravidar. Uso no fim da gestação pode deixar o bebê sonolento, com o corpo mole, dificuldade para mamar e sintomas de abstinência após o nascimento. Não interrompa sozinha: a retirada precisa ser gradual. O remédio passa para o leite materno e pode deixar o bebê sonolento.",
+    "suspensao": "Não pare de repente, mesmo que se sinta bem. Após semanas de uso o corpo se acostuma, e a parada brusca pode causar ansiedade rebote, insônia, tremores, suor, confusão e até convulsões. A retirada deve ser feita aos poucos com o médico; a diretriz conjunta de 2025 sugere começar reduzindo cerca de 5 a 10% da dose a cada 2 a 4 semanas, ajustando conforme os sintomas.",
+    "orientacoes": [
+      "Não dirija nem opere máquinas até saber como o remédio age em você, e nunca após beber álcool.",
+      "Use a menor dose pelo menor tempo; este remédio não deve ser a única forma de tratar ansiedade ou insônia a longo prazo.",
+      "Guarde longe de crianças e não compartilhe com ninguém."
+    ],
+    "alertasMedico": "FDA 2020: Boxed Warning de abuso, adição, dependência e abstinência para a classe. AGS Beers 2023: evitar benzodiazepínicos em idosos (declínio cognitivo, delirium, quedas, fraturas, acidentes de trânsito). Evitar associação com opioides e outros depressores do SNC. Reavaliar a necessidade a cada renovação; na telerrenovação crônica, registrar indicação, tempo de uso e plano de desmame. Notificação B (azul) e documento físico até a liberação da emissão eletrônica pelo SNCR (prevista pela ANVISA para 30/09/2026, com assinatura qualificada ICP-Brasil e sistema integrado ao SNCR; RDC 1.000/2025). Bromazepam: bula limita a duração a 8-12 semanas incluindo a retirada; uso crônico prolongado e comum no Brasil e deve motivar plano de desmame.",
+    "fontes": [
+      "Bula profissional Lexotan, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Lexotan-Profissional-Consulta-Remedios.pdf",
+      "Bula profissional Bromazepam, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Bromazepam-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "ANVISA. RDC 873/2024 (SNCR; Notificações de Receita válidas em todo o território nacional). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=RDC&numeroAto=00000873&seqAto=000&valorAno=2024&orgao=RDC/DC/ANVISA/MS",
+      "ANVISA. RDC 1.000/2025 (receituários de controle especial e Notificações de Receita em meio eletrônico, assinatura qualificada ICP-Brasil, integração ao SNCR) e notícia ANVISA 2026 'Início de nova etapa do SNCR: o que muda a partir de 30 de setembro'. https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/inicio-de-nova-etapa-do-sncr-o-que-muda-a-partir-de-30-de-setembro",
+      "FDA Drug Safety Communication (23/09/2020): Boxed Warning de abuso, uso indevido, adição, dependência física e abstinência para toda a classe dos benzodiazepínicos. https://www.fda.gov/drugs/drug-safety-and-availability/fda-requiring-boxed-warning-updated-improve-safe-use-benzodiazepine-drug-class",
+      "Joint Clinical Practice Guideline on Benzodiazepine Tapering (ASAM e mais 9 sociedades). J Gen Intern Med 2025 (redução inicial de 5 a 10% da dose diária a cada 2 a 4 semanas). https://pubmed.ncbi.nlm.nih.gov/40526204/",
+      "American Geriatrics Society 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71(7):2052-2081 (citado de memória; não reaberto nesta sessão)."
+    ]
+  },
+  {
+    "id": "risperidona",
+    "nome": "Risperidona",
+    "marcas": [
+      "Risperdal",
+      "Zargus",
+      "genéricos e similares"
+    ],
+    "classe": "Antipsicótico atípico (segunda geração)",
+    "indicacoes": [
+      "outro"
+    ],
+    "apresentacoes": [
+      "0,5 mg comprimido",
+      "1 mg comprimido",
+      "2 mg comprimido",
+      "3 mg comprimido",
+      "1 mg/mL solução oral"
+    ],
+    "posologiaUsual": "Esquizofrenia: iniciar com 2 mg/dia e ajustar para 4 a 6 mg/dia, em uma ou duas tomadas. Mania bipolar: 2 a 6 mg/dia. Irritabilidade no autismo (5 a 17 anos): dose por peso, em geral 0,5 a 3 mg/dia. Idosos e insuficiência renal ou hepática: iniciar com 0,5 mg duas vezes ao dia.",
+    "doseMaxDia": "16 mg/dia na bula para esquizofrenia, porém acima de 6 mg/dia raramente há benefício e aumentam os efeitos extrapiramidais",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Sonolência e cansaço",
+      "Aumento do apetite e do peso",
+      "Tremor, rigidez ou inquietação",
+      "Tontura ao levantar",
+      "Alterações menstruais, saída de leite pelas mamas ou aumento das mamas",
+      "Diminuição do desejo sexual"
+    ],
+    "sinaisAlerta": [
+      "Febre alta com rigidez muscular intensa, confusão e suor excessivo: pode ser síndrome neuroléptica maligna, emergência.",
+      "Movimentos involuntários da boca, língua ou rosto, ou inquietação que não deixa você parar quieto.",
+      "Muita sede, urinar demais, cansaço extremo ou perda de peso sem motivo: pode ser açúcar alto no sangue.",
+      "Desmaio, palpitações ou tontura forte ao levantar.",
+      "Febre, dor de garganta ou feridas na boca persistentes (raramente, queda das células de defesa).",
+      "Pensamentos de se machucar ou piora importante do humor."
+    ],
+    "monitorizacao": "Antes de começar e depois periodicamente: peso e circunferência abdominal (em 4, 8 e 12 semanas e depois a cada 3 meses), pressão arterial, glicemia de jejum ou HbA1c e perfil lipídico (em 12 semanas e depois anualmente), conforme o consenso ADA/APA. Avaliar movimentos involuntários (discinesia tardia) pelo menos uma vez por ano e prolactina se houver sintomas (alteração menstrual, saída de leite, disfunção sexual). ECG se houver doença cardíaca ou uso de outros remédios que prolongam o QT. Prolactina com atenção especial (a risperidona é a que mais eleva entre os atípicos de uso comum).",
+    "interacoes": "Fluoxetina e paroxetina (inibem CYP2D6) aumentam o nível; carbamazepina, fenitoína e rifampicina reduzem. Soma sedação com álcool, benzodiazepínicos e opioides. Anti-hipertensivos: mais hipotensão. Fármacos que prolongam o QT: cautela. Levodopa e agonistas dopaminérgicos: efeitos opostos. Furosemida em idosos com demência associou-se a maior mortalidade (bula).",
+    "gestacao": "Avise o médico se engravidar ou planejar engravidar; não interrompa sozinha, porque a doença descompensada também traz risco. O uso no terceiro trimestre pode causar no bebê, logo após o nascimento, agitação, rigidez ou moleza, tremores, sonolência e dificuldade para mamar ou respirar (alerta presente nas bulas). O médico avaliará o plano e a amamentação.",
+    "suspensao": "Não pare de repente: pode haver volta dos sintomas, insônia, náuseas, suor e movimentos involuntários. Qualquer redução deve ser planejada com o médico, de forma gradual, porque a recaída pode acontecer semanas ou meses depois.",
+    "orientacoes": [
+      "Levante-se devagar da cama ou da cadeira, principalmente no início.",
+      "Cuide da alimentação e faça atividade física para evitar ganho de peso.",
+      "Se você vai fazer cirurgia de catarata, avise o oftalmologista que usa risperidona.",
+      "Evite álcool e não dirija se estiver sonolento."
+    ],
+    "alertasMedico": "Boxed Warning (FDA) e bula brasileira: aumento de mortalidade (cerca de 1,6 a 1,7 vez o placebo) e de eventos cerebrovasculares em idosos com psicose associada a demência; não aprovado para esse uso. Monitorização metabólica obrigatória (ADA/APA 2004). AGS Beers 2023: evitar antipsicóticos em idosos exceto esquizofrenia, bipolar ou uso de curto prazo como antiemético na quimioterapia. Risperidona: hiperprolactinemia mais frequente; síndrome da íris flácida intraoperatória em cirurgia de catarata; ajustar em insuficiência renal. Receita C1.",
+    "fontes": [
+      "Bula profissional Risperdal, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Risperdal-Profissional-Consulta-Remedios.pdf",
+      "Bula profissional Zargus, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Zargus-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "FDA Boxed Warning: aumento de mortalidade em idosos com psicose associada a demência (classe dos antipsicóticos, 2005/2008), reproduzido nas bulas brasileiras de Zyprexa, Abilify e Risperdal.",
+      "ADA/APA/AACE/NAASO. Consensus development conference on antipsychotic drugs and obesity and diabetes. Diabetes Care 2004;27(2):596-601 (esquema de monitorização metabólica; citado de memória, não reaberto nesta sessão).",
+      "American Geriatrics Society 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71(7):2052-2081 (citado de memória; não reaberto nesta sessão)."
+    ]
+  },
+  {
+    "id": "olanzapina",
+    "nome": "Olanzapina",
+    "marcas": [
+      "Zyprexa",
+      "genéricos e similares"
+    ],
+    "classe": "Antipsicótico atípico (segunda geração)",
+    "indicacoes": [
+      "outro"
+    ],
+    "apresentacoes": [
+      "2,5 mg comprimido revestido",
+      "5 mg comprimido revestido",
+      "10 mg comprimido revestido"
+    ],
+    "posologiaUsual": "Esquizofrenia: 10 mg uma vez ao dia, faixa de 5 a 20 mg. Mania aguda: 15 mg/dia em monoterapia ou 10 mg/dia associada a lítio ou valproato; manutenção de 5 a 20 mg/dia. Idosos: considerar iniciar com 5 mg.",
+    "doseMaxDia": "20 mg/dia",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Sonolência",
+      "Aumento importante do apetite e do peso",
+      "Boca seca e prisão de ventre",
+      "Tontura ao levantar",
+      "Inchaço nas pernas",
+      "Aumento de colesterol, triglicerídeos e glicose nos exames"
+    ],
+    "sinaisAlerta": [
+      "Febre alta com rigidez muscular intensa, confusão e suor excessivo: pode ser síndrome neuroléptica maligna, emergência.",
+      "Movimentos involuntários da boca, língua ou rosto, ou inquietação que não deixa você parar quieto.",
+      "Muita sede, urinar demais, cansaço extremo ou perda de peso sem motivo: pode ser açúcar alto no sangue.",
+      "Desmaio, palpitações ou tontura forte ao levantar.",
+      "Febre, dor de garganta ou feridas na boca persistentes (raramente, queda das células de defesa).",
+      "Pensamentos de se machucar ou piora importante do humor.",
+      "Manchas na pele com febre, ínguas e inchaço no rosto semanas após o início: pode ser reação grave (DRESS), procure emergência."
+    ],
+    "monitorizacao": "Antes de começar e depois periodicamente: peso e circunferência abdominal (em 4, 8 e 12 semanas e depois a cada 3 meses), pressão arterial, glicemia de jejum ou HbA1c e perfil lipídico (em 12 semanas e depois anualmente), conforme o consenso ADA/APA. Avaliar movimentos involuntários (discinesia tardia) pelo menos uma vez por ano e prolactina se houver sintomas (alteração menstrual, saída de leite, disfunção sexual). ECG se houver doença cardíaca ou uso de outros remédios que prolongam o QT. Na olanzapina a vigilância metabólica deve ser rigorosa (maior risco de ganho de peso, diabetes e dislipidemia entre os antipsicóticos de uso comum). Transaminases se houver sintomas ou doença hepática.",
+    "interacoes": "Fumar reduz o nível da olanzapina (indução de CYP1A2): parar de fumar pode aumentar muito o nível e a sedação, avisar o médico. Fluvoxamina e ciprofloxacino aumentam; carbamazepina reduz. Soma sedação com álcool, benzodiazepínicos e opioides. Anti-hipertensivos: mais hipotensão. Levodopa e agonistas dopaminérgicos: efeitos opostos.",
+    "gestacao": "Avise o médico se engravidar ou planejar engravidar; não interrompa sozinha, porque a doença descompensada também traz risco. O uso no terceiro trimestre pode causar no bebê, logo após o nascimento, agitação, rigidez ou moleza, tremores, sonolência e dificuldade para mamar ou respirar (alerta presente nas bulas). O médico avaliará o plano e a amamentação.",
+    "suspensao": "Não pare de repente: pode haver volta dos sintomas, insônia, náuseas, suor e movimentos involuntários. Qualquer redução deve ser planejada com o médico, de forma gradual, porque a recaída pode acontecer semanas ou meses depois.",
+    "orientacoes": [
+      "Controle peso e cintura; alimentação e atividade física desde o início ajudam muito.",
+      "Se você parar ou começar a fumar, avise o médico, porque a dose pode precisar de ajuste.",
+      "Levante-se devagar e evite álcool."
+    ],
+    "alertasMedico": "Boxed Warning (FDA) e bula brasileira: aumento de mortalidade (cerca de 1,6 a 1,7 vez o placebo) e de eventos cerebrovasculares em idosos com psicose associada a demência; não aprovado para esse uso. Monitorização metabólica obrigatória (ADA/APA 2004). AGS Beers 2023: evitar antipsicóticos em idosos exceto esquizofrenia, bipolar ou uso de curto prazo como antiemético na quimioterapia. Olanzapina: maior risco metabólico da lista (peso, DM2, dislipidemia); DRESS (alerta FDA 2016); tabagismo altera níveis (CYP1A2). Receita C1.",
+    "fontes": [
+      "Bula profissional Zyprexa, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Zyprexa-Profissional-Consulta-Remedios.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "FDA Boxed Warning: aumento de mortalidade em idosos com psicose associada a demência (classe dos antipsicóticos, 2005/2008), reproduzido nas bulas brasileiras de Zyprexa, Abilify e Risperdal.",
+      "ADA/APA/AACE/NAASO. Consensus development conference on antipsychotic drugs and obesity and diabetes. Diabetes Care 2004;27(2):596-601 (esquema de monitorização metabólica; citado de memória, não reaberto nesta sessão).",
+      "American Geriatrics Society 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71(7):2052-2081 (citado de memória; não reaberto nesta sessão)."
+    ]
+  },
+  {
+    "id": "aripiprazol",
+    "nome": "Aripiprazol",
+    "marcas": [
+      "Abilify",
+      "Aristab",
+      "genéricos e similares"
+    ],
+    "classe": "Antipsicótico atípico (agonista parcial dopaminérgico)",
+    "indicacoes": [
+      "outro"
+    ],
+    "apresentacoes": [
+      "10 mg comprimido",
+      "15 mg comprimido",
+      "20 mg comprimido",
+      "30 mg comprimido"
+    ],
+    "posologiaUsual": "Esquizofrenia: 10 ou 15 mg uma vez ao dia, com ou sem alimento. Mania bipolar: 15 mg uma vez ao dia, podendo chegar a 30 mg. Ajustes a intervalos de pelo menos 2 semanas.",
+    "doseMaxDia": "30 mg/dia",
+    "portaria344": "Lista C1 (outras substâncias sujeitas a controle especial), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "controle_especial",
+    "limiteQuantidade": "Receita de Controle Especial em 2 vias: quantidade para no máximo 60 dias de tratamento (Portaria 344/98, art. 59); acima disso o prescritor precisa justificar com CID ou diagnóstico (art. 60). Validade de 30 dias a partir da emissão (art. 52, par. 1o). No máximo 3 substâncias da lista C1 por receita (art. 57).",
+    "efeitosComuns": [
+      "Inquietação, sensação de não conseguir ficar parado",
+      "Insônia ou sonolência",
+      "Dor de cabeça",
+      "Enjoo ou prisão de ventre",
+      "Tontura",
+      "Tremor"
+    ],
+    "sinaisAlerta": [
+      "Febre alta com rigidez muscular intensa, confusão e suor excessivo: pode ser síndrome neuroléptica maligna, emergência.",
+      "Movimentos involuntários da boca, língua ou rosto, ou inquietação que não deixa você parar quieto.",
+      "Muita sede, urinar demais, cansaço extremo ou perda de peso sem motivo: pode ser açúcar alto no sangue.",
+      "Desmaio, palpitações ou tontura forte ao levantar.",
+      "Febre, dor de garganta ou feridas na boca persistentes (raramente, queda das células de defesa).",
+      "Pensamentos de se machucar ou piora importante do humor.",
+      "Impulsos que você não consegue controlar, como jogar, comprar, comer ou fazer sexo de forma compulsiva: avise o médico, esse efeito é reconhecido na bula."
+    ],
+    "monitorizacao": "Antes de começar e depois periodicamente: peso e circunferência abdominal (em 4, 8 e 12 semanas e depois a cada 3 meses), pressão arterial, glicemia de jejum ou HbA1c e perfil lipídico (em 12 semanas e depois anualmente), conforme o consenso ADA/APA. Avaliar movimentos involuntários (discinesia tardia) pelo menos uma vez por ano e prolactina se houver sintomas (alteração menstrual, saída de leite, disfunção sexual). ECG se houver doença cardíaca ou uso de outros remédios que prolongam o QT. Perguntar ativamente sobre compulsões (jogo, compras, sexo, comida) em cada renovação.",
+    "interacoes": "Inibidores de CYP2D6 (fluoxetina, paroxetina, bupropiona) e de CYP3A4 (cetoconazol, itraconazol, claritromicina) aumentam o nível: reduzir a dose pela metade ou mais. Carbamazepina e rifampicina reduzem: dobrar a dose. Soma sedação com álcool e benzodiazepínicos. Anti-hipertensivos: mais hipotensão.",
+    "gestacao": "Avise o médico se engravidar ou planejar engravidar; não interrompa sozinha, porque a doença descompensada também traz risco. O uso no terceiro trimestre pode causar no bebê, logo após o nascimento, agitação, rigidez ou moleza, tremores, sonolência e dificuldade para mamar ou respirar (alerta presente nas bulas). O médico avaliará o plano e a amamentação.",
+    "suspensao": "Não pare de repente: pode haver volta dos sintomas, insônia, náuseas, suor e movimentos involuntários. Qualquer redução deve ser planejada com o médico, de forma gradual, porque a recaída pode acontecer semanas ou meses depois.",
+    "orientacoes": [
+      "Se sentir muita inquietação nas pernas ou no corpo, avise o médico; costuma ter solução.",
+      "Tome sempre no mesmo horário.",
+      "Evite álcool."
+    ],
+    "alertasMedico": "Boxed Warning (FDA) e bula brasileira: aumento de mortalidade (cerca de 1,6 a 1,7 vez o placebo) e de eventos cerebrovasculares em idosos com psicose associada a demência; não aprovado para esse uso. Monitorização metabólica obrigatória (ADA/APA 2004). AGS Beers 2023: evitar antipsicóticos em idosos exceto esquizofrenia, bipolar ou uso de curto prazo como antiemético na quimioterapia. Aripiprazol: transtornos do controle de impulsos (alerta FDA 2016; bula BR); acatisia; ajuste de dose com inibidores de CYP2D6/3A4 (atenção se associado a fluoxetina, paroxetina ou bupropiona). Perfil metabólico mais favorável, mas monitorização contínua obrigatória. Receita C1.",
+    "fontes": [
+      "Bula profissional Abilify, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Abilify-Profissional-Consulta-Remedios.pdf",
+      "Bula ARISTAB (aripiprazol), ANVISA. https://img.drogasil.com.br/raiadrogasil_bula/Aristab.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "FDA Boxed Warning: aumento de mortalidade em idosos com psicose associada a demência (classe dos antipsicóticos, 2005/2008), reproduzido nas bulas brasileiras de Zyprexa, Abilify e Risperdal.",
+      "ADA/APA/AACE/NAASO. Consensus development conference on antipsychotic drugs and obesity and diabetes. Diabetes Care 2004;27(2):596-601 (esquema de monitorização metabólica; citado de memória, não reaberto nesta sessão)."
+    ]
+  },
+  {
+    "id": "metilfenidato",
+    "nome": "Cloridrato de metilfenidato",
+    "marcas": [
+      "Ritalina",
+      "Ritalina LA",
+      "Concerta"
+    ],
+    "classe": "Psicoestimulante do sistema nervoso central",
+    "indicacoes": [
+      "outro",
+      "sono"
+    ],
+    "apresentacoes": [
+      "10 mg comprimido (Ritalina)",
+      "10 mg cápsula de liberação modificada (Ritalina LA)",
+      "20 mg cápsula de liberação modificada (Ritalina LA)",
+      "30 mg cápsula de liberação modificada (Ritalina LA)",
+      "40 mg cápsula de liberação modificada (Ritalina LA)",
+      "18 mg comprimido de liberação prolongada (Concerta)",
+      "36 mg comprimido de liberação prolongada (Concerta)",
+      "54 mg comprimido de liberação prolongada (Concerta)"
+    ],
+    "posologiaUsual": "Ritalina: em geral 10 mg duas ou três vezes ao dia (alguns precisam de 40 a 60 mg/dia), última dose antes das 18 h. Ritalina LA: 20 mg uma vez ao dia pela manhã (pode iniciar com 10 mg). Concerta: 18 mg pela manhã em crianças e adolescentes, 18 ou 36 mg em adultos, aumentos de 18 mg por semana. Narcolepsia: apenas Ritalina de liberação imediata.",
+    "doseMaxDia": "Ritalina: 60 mg/dia. Ritalina LA: 60 mg/dia em crianças e adolescentes e 80 mg/dia em adultos. Concerta: 54 mg/dia de 6 a 12 anos e 72 mg/dia em adolescentes e adultos.",
+    "portaria344": "Lista A3 (psicotrópicos), Portaria SVS/MS 344/1998, conferido no Anexo I atualizado pela RDC 1.036/2026",
+    "receituario": "notificacao_a",
+    "limiteQuantidade": "Notificação de Receita A (amarela) acompanhada de receita: quantidade para no máximo 30 dias de tratamento (Portaria 344/98, art. 43); acima disso, justificativa com CID (art. 43, par. 1o). Validade de 30 dias, em todo o território nacional (art. 41, redação da RDC 873/2024).",
+    "efeitosComuns": [
+      "Perda de apetite e de peso",
+      "Dificuldade para dormir",
+      "Dor de cabeça",
+      "Dor de barriga ou enjoo",
+      "Nervosismo, irritabilidade ou choro fácil quando o efeito passa",
+      "Coração um pouco mais acelerado e pressão um pouco mais alta"
+    ],
+    "sinaisAlerta": [
+      "Dor no peito, desmaio, falta de ar ou palpitações fortes: emergência.",
+      "Alucinações, ideias de perseguição, euforia exagerada ou agressividade.",
+      "Pensamentos de se machucar ou piora importante do humor.",
+      "Ereção dolorosa que dura mais de 2 horas: emergência.",
+      "Dedos das mãos ou dos pés frios, dormentes, pálidos ou arroxeados.",
+      "Vontade de usar mais do que o prescrito ou uso para ficar acordado ou 'turbinar' o estudo."
+    ],
+    "monitorizacao": "Pressão arterial e frequência cardíaca antes de iniciar e a cada ajuste e renovação. Peso e altura em curva de crescimento em crianças e adolescentes. Antes de iniciar, investigar história pessoal e familiar de doença cardíaca, morte súbita e arritmias. Avaliar sono, apetite, humor, tiques e sinais de uso indevido ou desvio em cada renovação.",
+    "interacoes": "Contraindicado com IMAO (e até 14 dias após). Pode reduzir o efeito de anti-hipertensivos. Aumenta níveis de varfarina, anticonvulsivantes (fenitoína, fenobarbital) e antidepressivos tricíclicos. Com clonidina, relatos de eventos graves. Descongestionantes (pseudoefedrina) e outros estimulantes somam efeitos na pressão. Anestésicos halogenados: risco de aumento súbito de pressão, não tomar no dia de cirurgia programada. Álcool pode piorar efeitos no sistema nervoso e, nas formas LA, acelerar a liberação.",
+    "gestacao": "Avise o médico se engravidar ou planejar engravidar. Os dados na gestação são limitados; o médico avaliará se vale continuar. O remédio passa para o leite materno em pequena quantidade.",
+    "suspensao": "Em geral pode ser interrompido sem sintomas graves de abstinência nas doses habituais, mas após uso prolongado de doses altas pode haver cansaço intenso e depressão: interrompa só com orientação médica. Algumas pessoas fazem pausas planejadas com o médico.",
+    "orientacoes": [
+      "Tome pela manhã (ou no máximo até o início da tarde) para não atrapalhar o sono.",
+      "Engula Concerta inteiro, sem partir; a 'casca' pode sair nas fezes. A cápsula de Ritalina LA pode ser aberta e o conteúdo misturado a uma colher de alimento pastoso, sem mastigar.",
+      "Guarde em local seguro e nunca dê ou venda a outra pessoa: é crime e é a principal fonte de uso indevido.",
+      "Faça refeições caprichadas antes do efeito ou à noite para não perder peso."
+    ],
+    "alertasMedico": "Lista A3: exige Notificação de Receita A (amarela) com numeração fornecida pela Vigilância Sanitária, quantidade máxima para 30 dias, validade de 30 dias em todo o território nacional (RDC 873/2024). Até 30/09/2026 a Notificação A só existe em papel; a partir dessa data a ANVISA libera a emissão eletrônica pelo SNCR (assinatura qualificada ICP-Brasil, numeração eletrônica própria, sistema integrado), de forma gradual e facultativa. Não renovar por telemedicina com receita simples ou de controle especial. FDA 2023: Boxed Warning padronizado de abuso, uso indevido, adição e overdose. Contraindicado em glaucoma, hipertireoidismo, feocromocitoma, doença cardiovascular grave, uso de IMAO; cautela com tiques, psicose e bipolaridade.",
+    "fontes": [
+      "Bula profissional Ritalina, ANVISA (cópia Consulta Remédios, lida em 24/09/2026). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Ritalina-Profissional-Consulta-Remedios.pdf",
+      "Bula CONCERTA (Janssen), ANVISA. https://img.drogasil.com.br/raiadrogasil_bula/Concerta.pdf",
+      "ANVISA. RDC n. 1.036, de 09/07/2026 (atualiza o Anexo I da Portaria SVS/MS 344/1998; conferido o texto consolidado das listas em 24/09/2026). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+      "Portaria SVS/MS 344/1998, texto consolidado (arts. 41, 43, 45, 46, 52, 57, 59, 60; redação dada pelas RDC 873/2024 e RDC 1.000/2025). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=POR&numeroAto=00000344&seqAto=000&valorAno=1998&orgao=SVS%2FMS",
+      "ANVISA. RDC 873/2024 (SNCR; Notificações de Receita válidas em todo o território nacional). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&link=S&tipo=RDC&numeroAto=00000873&seqAto=000&valorAno=2024&orgao=RDC/DC/ANVISA/MS",
+      "ANVISA. RDC 1.000/2025 (receituários de controle especial e Notificações de Receita em meio eletrônico, assinatura qualificada ICP-Brasil, integração ao SNCR) e notícia ANVISA 2026 'Início de nova etapa do SNCR: o que muda a partir de 30 de setembro'. https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2026/inicio-de-nova-etapa-do-sncr-o-que-muda-a-partir-de-30-de-setembro",
+      "FDA (05/2023). Atualização obrigatória do Boxed Warning dos estimulantes (abuso, uso indevido, adição, overdose; desvio por familiares e colegas). https://www.fda.gov/drugs/drug-alerts-and-statements/fda-requires-updates-clarify-labeling-prescription-stimulants-used-treat-adhd-and-other-conditions"
+    ]
+  }
+]

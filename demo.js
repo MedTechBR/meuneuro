@@ -1,8 +1,8 @@
-/* Meu Neuro — roteiros de exemplo (dados fictícios)
+/* RefilMed — roteiros de exemplo (dados fictícios)
    Usado pelos testes automáticos (node) e pelo botão "Criar pedidos de exemplo" no modo local.
    Cada roteiro responde à conversa real, passo a passo, como um paciente faria. */
 (function (G) {
-  const MN = G.MN;
+  const RF = G.RF;
 
   function cpfFicticio(base9) {
     const d = String(base9).split('').map(Number);
@@ -14,7 +14,7 @@
   }
   function nascDeIdade(anos) { const d = new Date(); d.setFullYear(d.getFullYear() - anos); d.setMonth(2, 15); return d.toISOString().slice(0, 10); }
 
-  MN.ROTEIROS = [
+  RF.ROTEIROS = [
     {
       nome: 'Mariana Souza Lima', idade: 29, sexo: 'F', cpf: cpfFicticio('123456789'), tel: '85999990001',
       end: { endereco: 'Rua das Acácias, 120, apto 302', bairro: 'Aldeota', cidade: 'Fortaleza', uf: 'CE' },
@@ -45,18 +45,30 @@
         { texto: 'sumatriptana 50 mg', pos: '1 comprimido quando tenho crise', sosFreq: '12', tempo: '1a5a', adesao: 'boa', efeitos: [], eficacia: 'boa' }
       ],
       outros: '', alergias: '', comorb: [], gest: 'nao', contracep: 'diu_cobre', exames: 'naosei', duracao: '60', livre: 'A dor piorou nos últimos 2 meses?'
+    },
+    {
+      nome: 'Antônio Pereira Gomes', idade: 64, sexo: 'M', cpf: cpfFicticio('321654987'), tel: '88966660004',
+      end: { endereco: 'Rua Coronel Diogo, 300', bairro: 'Centro', cidade: 'Sobral', uf: 'CE' },
+      condicoes: ['hipertensao', 'diabetes', 'colesterol'], ultima: '6a12m', pa: '140a159', hba1c: '8a9', hipo: 'poucas', lipidio: 'normal',
+      meds: [
+        { texto: 'losartana 50', pos: '1 de manhã e 1 à noite', tempo: 'gt5a', adesao: 'boa', efeitos: [], eficacia: 'parcial' },
+        { texto: 'glifage xr 500', pos: '2 comprimidos no jantar', tempo: '1a5a', adesao: 'as_vezes', efeitos: [0], eficacia: 'parcial' },
+        { texto: 'glibenclamida 5 mg', pos: '1 antes do café', tempo: 'gt5a', adesao: 'boa', efeitos: [], eficacia: 'boa' },
+        { texto: 'sinvastatina 20mg', pos: '1 à noite', tempo: 'gt5a', adesao: 'boa', efeitos: [], eficacia: 'boa' }
+      ],
+      outros: '', alergias: '', comorb: ['rim'], exames: 'sim', examesTxt: 'Creatinina 1,3 e glicada 8,4 em julho', duracao: '90', livre: ''
     }
   ];
 
   // conduz a conversa até o envio; devolve o pedido
-  MN.rodarRoteiro = async function (R, opts) {
-    const c = new MN.Conversa(null, opts || {});
+  RF.rodarRoteiro = async function (R, opts) {
+    const c = new RF.Conversa(null, opts || {});
     let mi = -1, guarda = 0;
     c.perguntar();
     while (!['orientacao', 'fim', 'bloqueado', 'fim_semia'].includes(c.passo)) {
       if (++guarda > 200) throw new Error('roteiro não terminou; parado em ' + c.passo);
       const m = R.meds[mi];
-      const k = m && c.med ? MN.kbPorId(c.med.kbId) : null;
+      const k = m && c.med ? RF.kbPorId(c.med.kbId) : null;
       let v;
       switch (c.passo) {
         case 'inicio': v = 'aceito'; break;
@@ -78,12 +90,21 @@
         case 'dm_sint': v = R.dm && R.dm.length ? R.dm : ['nenhum']; break;
         case 'dn_int': v = String(R.dn || 5); break;
         case 'geral_controle': v = R.geral || 'controlado'; break;
+        case 'pa_casa': v = R.pa || 'lt130'; break;
+        case 'dm_hba1c': v = R.hba1c || 'lt7'; break;
+        case 'dm_hipo': v = R.hipo || 'nao'; break;
+        case 'asma_resgate': v = R.resgate || 'nenhuma'; break;
+        case 'asma_crise': v = R.asmaCrise || 'nao'; break;
+        case 'humor': v = R.humor || 'nao'; break;
+        case 'tsh': v = R.tsh || 'normal'; break;
+        case 'lipidio': v = R.lipidio || 'normal'; break;
+        case 'cor_sint': v = R.cor && R.cor.length ? R.cor : ['nenhum']; break;
         case 'med_nome': mi++; v = R.meds[mi].texto; break;
         case 'med_escolha': v = c.tmp.candidatos[0]; break;
         case 'med_confirma': v = c.tmp.sugestao ? 'sim' : 'manter'; break;
         case 'med_dose': {
-          const alvo = MN.norm(m.dose || '').replace(/\s/g, '');
-          const i = k ? k.formas.findIndex(f => MN.norm(f.dose).replace(/\s/g, '') === alvo) : -1;
+          const alvo = RF.norm(m.dose || '').replace(/\s/g, '');
+          const i = k ? k.formas.findIndex(f => RF.norm(f.dose).replace(/\s/g, '') === alvo) : -1;
           v = i >= 0 ? 'f' + i : (m.dose || (k && k.formas[0] ? 'f0' : '10 mg'));
           break;
         }
@@ -114,11 +135,11 @@
     return p;
   };
 
-  MN.criarExemplos = async function () {
-    for (const R of MN.ROTEIROS) {
-      const p = await MN.rodarRoteiro(R);
+  RF.criarExemplos = async function () {
+    for (const R of RF.ROTEIROS) {
+      const p = await RF.rodarRoteiro(R);
       p.exemplo = true;
-      await MN.backend.salvarPedido(p);
+      await RF.backend.salvarPedido(p);
     }
   };
 })(typeof window !== 'undefined' ? window : globalThis);

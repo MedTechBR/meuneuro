@@ -1,0 +1,1183 @@
+[
+ {
+  "id": "metformina",
+  "nome": "Metformina",
+  "marcas": [
+   "Glifage",
+   "Glifage XR",
+   "genéricos"
+  ],
+  "classe": "Biguanida",
+  "indicacoes": [
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "500 mg comprimido",
+   "850 mg comprimido",
+   "1000 mg comprimido",
+   "500 mg comprimido de liberação prolongada",
+   "750 mg comprimido de liberação prolongada",
+   "1000 mg comprimido de liberação prolongada"
+  ],
+  "posologiaUsual": "Liberação imediata: iniciar 500 mg 1 a 2 vezes ao dia ou 850 mg 1 vez ao dia, junto das refeições, aumentando aos poucos (semanal a quinzenal); manutenção usual 1.000 a 2.000 mg/dia divididos em 2 a 3 tomadas. Liberação prolongada (XR): iniciar 500 mg 1 vez ao dia no jantar e aumentar a cada 1 a 2 semanas até 1.500 a 2.000 mg 1 vez ao dia.",
+  "doseMaxDia": "2.550 mg/dia na liberação imediata (bula Glifage 850 mg). XR: 2.000 mg/dia (bula Glifage XR 500 mg e 1 g; a bula do XR 750 mg admite 2.250 mg). TFG 30-44: no máximo 1.000 mg/dia.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Enjoo, diarreia, gases ou desconforto na barriga, principalmente nas primeiras semanas; costuma melhorar com o tempo e tomando junto da comida.",
+   "Gosto metálico na boca.",
+   "Perda de apetite, às vezes com leve perda de peso.",
+   "Com o uso por anos, a vitamina B12 pode baixar e você pode sentir formigamento nos pés ou cansaço.",
+   "Sozinha, a metformina quase não causa hipoglicemia (açúcar baixo)."
+  ],
+  "sinaisAlerta": [
+   "Mal-estar muito forte com vômitos, dor na barriga, dores musculares, respiração rápida e profunda, sonolência ou sensação de frio: pode ser acidose lática, rara mas grave. Procure emergência.",
+   "Vômitos ou diarreia intensos, desidratação ou infecção grave: pare a metformina e procure atendimento, pois nessas situações o risco de acidose aumenta."
+  ],
+  "monitorizacao": [
+   "HbA1c a cada 3 meses até atingir a meta e depois a cada 6 meses.",
+   "Creatinina com TFG estimada (CKD-EPI 2021) antes de iniciar e pelo menos 1 vez ao ano; a cada 3-6 meses se TFG 45-59 e a cada 3 meses se TFG 30-44.",
+   "Vitamina B12 anualmente após 4 anos de uso (SBD 2026), ou antes se houver neuropatia ou anemia."
+  ],
+  "interacoes": [
+   "Contraste iodado: suspender no dia do exame se TFG 30-60, hepatopatia, etilismo, insuficiência cardíaca ou contraste intra-arterial; reavaliar TFG em 48 h antes de reiniciar.",
+   "Álcool em excesso aumenta o risco de acidose lática.",
+   "Topiramato, acetazolamida e outros inibidores da anidrase carbônica: somam risco de acidose metabólica.",
+   "Dolutegravir, cimetidina, ranolazina, vandetanibe: reduzem a eliminação renal da metformina e aumentam seus níveis.",
+   "Corticoides, diuréticos tiazídicos e antipsicóticos atípicos podem elevar a glicemia.",
+   "Com insulina ou sulfonilureia pode haver hipoglicemia (pelo outro remédio)."
+  ],
+  "gestacao": "Atravessa a placenta; pode ser usada em situações específicas, mas a insulina é o tratamento preferencial do diabetes na gestação. Pode ser usada na amamentação. Se planeja engravidar ou engravidou, avise o médico para rever o tratamento.",
+  "suspensao": "Não causa sintomas de retirada, mas a glicemia sobe ao parar. Pausar temporariamente em vômitos ou diarreia intensos, desidratação, cirurgia de maior porte e exames com contraste iodado, conforme orientação médica.",
+  "orientacoes": [
+   "Tome junto ou logo após as refeições para diminuir o enjoo e a diarreia.",
+   "A versão XR deve ser engolida inteira, sem partir ou mastigar, de preferência no jantar; às vezes o 'esqueleto' do comprimido aparece nas fezes, e isso é normal.",
+   "Evite exagerar na bebida alcoólica.",
+   "Avise que usa metformina antes de qualquer exame com contraste ou cirurgia."
+  ],
+  "alertasMedico": [
+   "TFG <30: contraindicada, suspender. TFG 30-44: não iniciar; se já em uso, dose máxima 1.000 mg/dia (SBD 2026: reduzir 50%) e TFG a cada 3 meses. TFG 45-59: pode manter até 2.000 mg/dia com TFG a cada 3-6 meses (bula Glifage XR; FDA; SBD 2026).",
+   "Risco de acidose lática em IC descompensada, hipóxia, sepse, hepatopatia, etilismo, idade >=65 anos e contraste (boxed warning FDA).",
+   "Dosar vitamina B12 em uso prolongado, sobretudo se neuropatia ou anemia.",
+   "Primeira linha no DM2 com TFG >=30 (SBD 2026 R5, classe I, nível A); iSGLT2/arGLP-1 podem ser usados independentemente da metformina quando há indicação cardiorrenal (ADA 2026)."
+  ],
+  "fontes": [
+   "Bula Glifage (Merck), texto profissional com posologia de 500/850/1000 mg. https://www.saudedireta.com.br/catinc/drugs/bulas/glifage.pdf",
+   "Bula Glifage XR (Merck), posologia e ajuste renal. https://back.apppharma.com.br/public/bula/19a9aaaa31413971a63167f5046b2105.pdf",
+   "FDA label metformin hydrochloride ER (genérico) via openFDA (effective_time 20260909). https://api.fda.gov/drug/label.json?search=openfda.generic_name:%22METFORMIN+HYDROCHLORIDE%22",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "ADA. Standards of Care in Diabetes 2026, seção 9 (Pharmacologic Approaches). Diabetes Care 2026;49(Suppl 1):S183. https://diabetesjournals.org/care/article/49/Supplement_1/S183/163934/",
+   "KDIGO 2022 Clinical Practice Guideline for Diabetes Management in CKD. Kidney Int 2022;102(5S):S1-S127 (citado de memória, não reconsultado nesta revisão)",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "glibenclamida",
+  "nome": "Glibenclamida",
+  "marcas": [
+   "Daonil",
+   "genéricos"
+  ],
+  "classe": "Sulfonilureia de segunda geração (longa ação)",
+  "indicacoes": [
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "5 mg comprimido"
+  ],
+  "posologiaUsual": "Iniciar 2,5 a 5 mg 1 vez ao dia antes do café da manhã; aumentar no máximo 2,5 mg a cada 1 a 2 semanas conforme glicemia. Dose usual 5 a 10 mg/dia; doses acima de 10 mg divididas (antes do café e antes do jantar). Não tomar mais de 10 mg de uma vez.",
+  "doseMaxDia": "15 mg/dia (bula: exceder 3 comprimidos não é recomendado; até 20 mg/dia apenas em casos excepcionais).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Hipoglicemia (açúcar baixo): tremor, suor, fome, coração acelerado.",
+   "Ganho de peso.",
+   "Enjoo, azia ou sensação de estômago cheio.",
+   "Coceira ou manchas na pele e maior sensibilidade ao sol.",
+   "Alteração passageira da visão no início do tratamento."
+  ],
+  "sinaisAlerta": [
+   "Hipoglicemia: tremor, suor frio, fome forte, coração acelerado, confusão ou fala enrolada. Se a glicemia estiver abaixo de 70, tome 15 g de açúcar (1 colher de sopa de açúcar em água ou 150 mL de refrigerante comum) e meça de novo em 15 minutos.",
+   "Hipoglicemia grave: desmaio, convulsão ou confusão que não melhora com açúcar. Quem estiver perto não deve dar nada pela boca se você estiver desacordado; chame o SAMU (192). Com a glibenclamida a hipoglicemia pode voltar horas depois, por isso vá ao pronto-socorro mesmo se melhorar.",
+   "Pele ou olhos amarelados, urina escura, bolhas ou feridas na pele: procure atendimento."
+  ],
+  "monitorizacao": [
+   "HbA1c a cada 3 meses até a meta e depois a cada 6 meses.",
+   "Glicemia capilar se houver sintomas de hipoglicemia, e com mais frequência em idosos.",
+   "Creatinina/TFG e enzimas hepáticas ao menos 1 vez ao ano."
+  ],
+  "interacoes": [
+   "Álcool: aumenta hipoglicemia e pode causar mal-estar com vermelhidão.",
+   "Fluconazol, miconazol, claritromicina, sulfametoxazol-trimetoprima e fluoroquinolonas aumentam o risco de hipoglicemia.",
+   "Betabloqueadores podem esconder os sintomas da hipoglicemia.",
+   "Insulina e outros antidiabéticos somam risco de hipoglicemia.",
+   "Bosentana: aumento de enzimas hepáticas (associação contraindicada no rótulo FDA da gliburida).",
+   "Corticoides, tiazídicos e hormônio tireoidiano podem elevar a glicemia."
+  ],
+  "gestacao": "A bula brasileira contraindica na gravidez e na amamentação; o tratamento deve ser trocado por insulina. Se planeja engravidar, avise o médico antes.",
+  "suspensao": "Não precisa de desmame; a glicemia sobe ao parar. Em jejum prolongado, vômitos, cirurgia ou redução importante da alimentação pode ser preciso pausar para evitar hipoglicemia.",
+  "orientacoes": [
+   "Tome antes do café da manhã (e antes do jantar, se for 2 vezes ao dia) e nunca pule a refeição depois de tomar.",
+   "Carregue sempre uma fonte de açúcar (balas, sachê de açúcar) para tratar uma hipoglicemia.",
+   "Se esquecer uma dose, não tome dose dobrada depois."
+  ],
+  "alertasMedico": [
+   "Sulfonilureia com maior risco de hipoglicemia grave e prolongada (metabólitos ativos de eliminação renal). Beers 2023: evitar sulfonilureias em idosos como 1a ou 2a linha; se usar, preferir as de curta ação e evitar glibenclamida e glimepirida.",
+   "Contraindicada em disfunção renal ou hepática grave (bula); na DRC, preferir gliclazida MR ou classe sem hipoglicemia.",
+   "Sulfonilureias não reduzem desfechos cardiovasculares (SBD 2026); na renovação, considerar troca para gliclazida MR ou iSGLT2/arGLP-1/iDPP-4 conforme perfil.",
+   "Contraindicada na gestação e lactação pela bula brasileira."
+  ],
+  "fontes": [
+   "Bula profissional Daonil (Sanofi Medley), histórico de alterações até 06/2020. https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Daonil-Profissional-Consulta-Remedios.pdf",
+   "American Geriatrics Society. 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71:2052-81. https://geriatrictoolkit.missouri.edu/drug/Beers-Criteria-AGS-2023.pdf",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "ADA. Standards of Care in Diabetes 2026, seção 13 (Older Adults). Diabetes Care 2026;49(Suppl 1):S277. https://diabetesjournals.org/care/article/49/Supplement_1/S277/163921/",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Interação com bosentana: rótulo FDA da gliburida (citado de memória, não reconsultado)."
+  ]
+ },
+ {
+  "id": "gliclazida",
+  "nome": "Gliclazida",
+  "marcas": [
+   "Diamicron MR",
+   "Azukon MR",
+   "genéricos"
+  ],
+  "classe": "Sulfonilureia de segunda geração (liberação modificada)",
+  "indicacoes": [
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "30 mg comprimido de liberação prolongada",
+   "60 mg comprimido de liberação prolongada"
+  ],
+  "posologiaUsual": "30 a 120 mg 1 vez ao dia no café da manhã. Iniciar com 30 mg (inclusive acima de 65 anos) e aumentar em passos de 30 mg com intervalo mínimo de 1 mês (2 semanas se a glicemia não cair).",
+  "doseMaxDia": "120 mg/dia",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Hipoglicemia (açúcar baixo), menos frequente que com outras sulfonilureias.",
+   "Dor ou desconforto na barriga, enjoo, diarreia ou prisão de ventre.",
+   "Ganho de peso leve.",
+   "Manchas vermelhas ou coceira na pele.",
+   "Visão embaçada passageira no início do tratamento."
+  ],
+  "sinaisAlerta": [
+   "Hipoglicemia: tremor, suor frio, fome forte, coração acelerado, confusão ou fala enrolada. Se a glicemia estiver abaixo de 70, tome 15 g de açúcar (1 colher de sopa de açúcar em água ou 150 mL de refrigerante comum) e meça de novo em 15 minutos.",
+   "Hipoglicemia grave: desmaio, convulsão ou confusão que não melhora com açúcar. Quem estiver perto não deve dar nada pela boca se você estiver desacordado; chame o SAMU (192).",
+   "Pele ou olhos amarelados, bolhas na pele, febre com manchas pelo corpo: procure atendimento."
+  ],
+  "monitorizacao": [
+   "HbA1c a cada 3 meses até a meta e depois a cada 6 meses.",
+   "Glicemia capilar se houver sintomas de hipoglicemia.",
+   "Creatinina/TFG e enzimas hepáticas ao menos 1 vez ao ano."
+  ],
+  "interacoes": [
+   "Miconazol (comprimido ou gel oral): associação contraindicada, risco de hipoglicemia grave.",
+   "Fluconazol, claritromicina, sulfonamidas, fluoroquinolonas, IECA e betabloqueadores podem aumentar a hipoglicemia (betabloqueadores também escondem os sintomas).",
+   "Álcool aumenta o risco de hipoglicemia.",
+   "Danazol, clorpromazina em alta dose, corticoides e salbutamol podem elevar a glicemia.",
+   "Varfarina: pode ter o efeito aumentado."
+  ],
+  "gestacao": "Contraindicada na gravidez pela bula (risco de hipoglicemia no bebê) e na amamentação; usar insulina. Avise o médico se planeja engravidar.",
+  "suspensao": "Não precisa de desmame. Pausar em jejum, vômitos ou cirurgia conforme orientação para evitar hipoglicemia.",
+  "orientacoes": [
+   "Tome 1 vez ao dia no café da manhã e não pule refeições.",
+   "Engula o comprimido inteiro, sem mastigar ou triturar; o de 60 mg pode ser partido apenas no sulco, se o médico indicar meia dose.",
+   "Carregue uma fonte de açúcar para tratar hipoglicemia."
+  ],
+  "alertasMedico": [
+   "Entre as sulfonilureias, menor risco de hipoglicemia (SBD 2026 cita 3,7% vs 8,9% com glimepirida), mas o risco é real em idosos, DRC e baixa ingestão; Beers 2023 desaconselha toda a classe em idosos como 1a/2a linha.",
+   "Contraindicada em insuficiência renal ou hepática grave e com miconazol sistêmico; em IR leve a moderada, mesma dose com monitorização (bula).",
+   "Não reduz eventos cardiovasculares; em DCV, IC ou DRC priorizar iSGLT2/arGLP-1 (SBD 2026; ADA 2026)."
+  ],
+  "fontes": [
+   "Bula profissional Diamicron MR 30 mg (Servier). https://cr-net-public-prod.s3.amazonaws.com/product_leaflet/5CC60C3C3940AD3F1C8ABBDD1BC42B20.pdf",
+   "Bula profissional Diamicron 60 mg (Servier, versão 12/2025) localizada, mas o link não abriu como PDF; dados do 60 mg conferidos por resumo de busca. https://servier.com.br/wp-content/uploads/sites/42/2025/12/BU_profissional_DIAMICRON_60MG_COM_LIB_PROL_25.12.17.pdf",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "American Geriatrics Society. 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71:2052-81. https://geriatrictoolkit.missouri.edu/drug/Beers-Criteria-AGS-2023.pdf",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marca Azukon MR: citada de memória, não conferida na Anvisa."
+  ]
+ },
+ {
+  "id": "glimepirida",
+  "nome": "Glimepirida",
+  "marcas": [
+   "Amaryl",
+   "genéricos"
+  ],
+  "classe": "Sulfonilureia de segunda geração (longa ação)",
+  "indicacoes": [
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "1 mg comprimido",
+   "2 mg comprimido",
+   "3 mg comprimido",
+   "4 mg comprimido",
+   "6 mg comprimido"
+  ],
+  "posologiaUsual": "Iniciar 1 mg 1 vez ao dia imediatamente antes do café da manhã ou da primeira refeição principal; aumentar a cada 1 a 2 semanas em etapas (1, 2, 3, 4, 6 mg). Dose usual 1 a 4 mg/dia.",
+  "doseMaxDia": "8 mg/dia (bula e FDA); acima de 6 mg o benefício ocorre só em uma minoria de pacientes.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Hipoglicemia (açúcar baixo): tremor, suor, fome, coração acelerado.",
+   "Ganho de peso.",
+   "Enjoo, dor de barriga ou diarreia.",
+   "Tontura ou dor de cabeça.",
+   "Coceira, manchas na pele ou sensibilidade ao sol."
+  ],
+  "sinaisAlerta": [
+   "Hipoglicemia: tremor, suor frio, fome forte, coração acelerado, confusão ou fala enrolada. Se a glicemia estiver abaixo de 70, tome 15 g de açúcar (1 colher de sopa de açúcar em água ou 150 mL de refrigerante comum) e meça de novo em 15 minutos.",
+   "Hipoglicemia grave: desmaio, convulsão ou confusão que não melhora com açúcar. Quem estiver perto não deve dar nada pela boca se você estiver desacordado; chame o SAMU (192).",
+   "Pele ou olhos amarelados, manchas roxas, sangramentos ou febre com dor de garganta: procure atendimento."
+  ],
+  "monitorizacao": [
+   "HbA1c a cada 3 meses até a meta e depois a cada 6 meses.",
+   "Glicemia capilar se houver sintomas de hipoglicemia.",
+   "Creatinina/TFG e enzimas hepáticas ao menos 1 vez ao ano."
+  ],
+  "interacoes": [
+   "Fluconazol, miconazol, claritromicina, sulfonamidas, fluoroquinolonas, fibratos e IECA podem aumentar a hipoglicemia.",
+   "Betabloqueadores escondem sintomas de hipoglicemia.",
+   "Álcool aumenta ou torna imprevisível o efeito sobre a glicemia.",
+   "Rifampicina, corticoides, tiazídicos e hormônio tireoidiano podem reduzir o efeito.",
+   "Insulina e outros antidiabéticos somam risco de hipoglicemia."
+  ],
+  "gestacao": "Não deve ser usada na gravidez nem na amamentação; o tratamento deve ser trocado por insulina. Avise o médico se planeja engravidar.",
+  "suspensao": "Não precisa de desmame. Em jejum prolongado, vômitos ou cirurgia pode ser preciso pausar para evitar hipoglicemia.",
+  "orientacoes": [
+   "Tome imediatamente antes do café da manhã ou da primeira refeição grande do dia e não pule essa refeição.",
+   "Engula o comprimido inteiro com água, sem mastigar.",
+   "Carregue uma fonte de açúcar para tratar hipoglicemia."
+  ],
+  "alertasMedico": [
+   "Longa ação: Beers 2023 recomenda evitar em idosos (preferir curta ação se sulfonilureia for inevitável).",
+   "Maior sensibilidade à hipoglicemia na insuficiência renal; informação limitada na DRC (bula).",
+   "Na troca a partir de outro antidiabético, reiniciar com 1 mg (bula).",
+   "Sem benefício cardiovascular; considerar alternativas com proteção cardiorrenal (SBD 2026)."
+  ],
+  "fontes": [
+   "Bula profissional glimepirida (Geolab), V.01_09/2018. https://www.geolab.com.br/wp-content/uploads/2021/05/Glimepirida-Bula-Profissional.pdf",
+   "Apresentações de Amaryl 1/2/3/4/6 mg: conferidas por resumo de busca (bula.com.br), não pelo PDF da Sanofi.",
+   "American Geriatrics Society. 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71:2052-81. https://geriatrictoolkit.missouri.edu/drug/Beers-Criteria-AGS-2023.pdf",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "dapagliflozina",
+  "nome": "Dapagliflozina",
+  "marcas": [
+   "Forxiga",
+   "genéricos"
+  ],
+  "classe": "Inibidor do SGLT2 (iSGLT2)",
+  "indicacoes": [
+   "diabetes",
+   "coracao",
+   "outro"
+  ],
+  "apresentacoes": [
+   "5 mg comprimido",
+   "10 mg comprimido"
+  ],
+  "posologiaUsual": "10 mg 1 vez ao dia, em qualquer horário, com ou sem alimento (DM2, insuficiência cardíaca e doença renal crônica). O FDA sugere iniciar com 5 mg quando o objetivo é só controle glicêmico; 5 mg também em risco de hipovolemia (bula).",
+  "doseMaxDia": "10 mg/dia",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Você vai urinar mais e pode sentir mais sede.",
+   "Infecção por fungo na região genital (coceira, corrimento ou vermelhidão), mais comum em mulheres.",
+   "Infecção urinária (ardência ao urinar).",
+   "Tontura ao levantar, por perda de líquido ou pressão mais baixa.",
+   "Leve perda de peso.",
+   "No começo, a creatinina do exame de sangue pode subir um pouco; isso é esperado."
+  ],
+  "sinaisAlerta": [
+   "Enjoo, vômitos, dor na barriga, cansaço intenso ou respiração rápida, mesmo com a glicemia normal ou pouco alta: pode ser cetoacidose euglicêmica. Pare o remédio e procure emergência.",
+   "Dor, inchaço ou vermelhidão na região genital ou entre o ânus e os genitais, com febre ou mal-estar: pode ser gangrena de Fournier, rara e grave. Procure emergência.",
+   "Febre, dor nas costas (região dos rins) ou ardência forte para urinar: infecção urinária grave.",
+   "Tontura forte, desmaio ou urina muito escassa: desidratação."
+  ],
+  "monitorizacao": [
+   "HbA1c a cada 3-6 meses quando usada para diabetes.",
+   "Creatinina/TFG (CKD-EPI 2021) antes de iniciar e periodicamente; pequena queda inicial e reversível da TFG é esperada.",
+   "Pressão arterial e sinais de desidratação, sobretudo em idosos e em uso de diurético.",
+   "Cetonemia/cetonúria se houver sintomas, mesmo com glicemia normal."
+  ],
+  "interacoes": [
+   "Diuréticos de alça e tiazídicos: maior risco de desidratação e hipotensão; pode ser preciso reduzir o diurético.",
+   "Insulina e sulfonilureias: maior risco de hipoglicemia; considerar reduzir a dose delas.",
+   "Lítio: iSGLT2 podem reduzir o nível de lítio; monitorar litemia.",
+   "Álcool em excesso e dieta cetogênica aumentam o risco de cetoacidose."
+  ],
+  "gestacao": "Não recomendada no 2o e 3o trimestres (efeitos renais em animais); em geral é suspensa ao engravidar e substituída por insulina. Não usar na amamentação.",
+  "suspensao": "Suspender pelo menos 3 dias antes de cirurgia ou procedimento com jejum prolongado e retomar quando estiver estável e comendo (FDA). Pausar em doença aguda com vômitos, desidratação ou jejum. Parar por conta própria pode tirar a proteção do coração e dos rins.",
+  "orientacoes": [
+   "Beba água ao longo do dia, a não ser que o médico tenha restringido líquidos por insuficiência cardíaca.",
+   "Mantenha a higiene íntima diária, lavando e secando bem a região genital.",
+   "Se ficar doente com vômitos, diarreia ou sem conseguir comer, pause o remédio e fale com o médico; retome quando voltar a comer normalmente.",
+   "Evite dietas muito pobres em carboidratos (cetogênicas) e exagero de álcool enquanto usa este remédio."
+  ],
+  "alertasMedico": [
+   "Controle glicêmico: não recomendada com TFG <45 (baixa eficácia glicêmica; FDA 2026). Indicação cardiorrenal: iniciar com TFG >=25 e pode manter se cair abaixo de 25 (FDA; SBD 2026).",
+   "Cetoacidose euglicêmica: suspender 3 dias antes de cirurgia; risco maior com deficiência insulínica, redução de insulina, pancreatite prévia, dieta cetogênica e álcool; não usar em DM1.",
+   "Beers 2023: usar com cautela em idosos (infecção urogenital e cetoacidose euglicêmica); monitorar mais no início.",
+   "Indicada para reduzir eventos cardiovasculares e renais independentemente da HbA1c (SBD 2026 R8; ADA 2026).",
+   "Distribuída gratuitamente no Farmácia Popular desde fev/2025, com critérios de elegibilidade do programa."
+  ],
+  "fontes": [
+   "FDA label FARXIGA via openFDA (effective_time 20260710). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22FARXIGA%22",
+   "Bula Forxiga (AstraZeneca), versão paciente disponível na Drogasil (versão antiga; a bula profissional atual não foi obtida). https://img.drogasil.com.br/raiadrogasil_bula/Forxiga-Astrazeneca.pdf",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "ADA. Standards of Care in Diabetes 2026, seção 9 (Pharmacologic Approaches). Diabetes Care 2026;49(Suppl 1):S183. https://diabetesjournals.org/care/article/49/Supplement_1/S183/163934/",
+   "American Geriatrics Society. 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71:2052-81. https://geriatrictoolkit.missouri.edu/drug/Beers-Criteria-AGS-2023.pdf",
+   "Ministério da Saúde: gratuidade total no Farmácia Popular (fev/2025). https://agenciagov.ebc.com.br/noticias/202502/ministerio-da-saude-anuncia-100-de-gratuidade-no-farmacia-popular-e-abre-credenciamento-a-todos-os-municipios-do-pais",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "empagliflozina",
+  "nome": "Empagliflozina",
+  "marcas": [
+   "Jardiance"
+  ],
+  "classe": "Inibidor do SGLT2 (iSGLT2)",
+  "indicacoes": [
+   "diabetes",
+   "coracao",
+   "outro"
+  ],
+  "apresentacoes": [
+   "10 mg comprimido",
+   "25 mg comprimido"
+  ],
+  "posologiaUsual": "10 mg 1 vez ao dia pela manhã, com ou sem alimento. Para controle glicêmico adicional, 25 mg 1 vez ao dia se 10 mg for bem tolerado. Para insuficiência cardíaca e doença renal crônica, 10 mg.",
+  "doseMaxDia": "25 mg/dia (IC e DRC: 10 mg/dia)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Você vai urinar mais e pode sentir mais sede.",
+   "Infecção por fungo na região genital (coceira, corrimento ou vermelhidão), mais comum em mulheres.",
+   "Infecção urinária (ardência ao urinar).",
+   "Tontura ao levantar, por perda de líquido ou pressão mais baixa.",
+   "Leve perda de peso.",
+   "No começo, a creatinina do exame de sangue pode subir um pouco; isso é esperado."
+  ],
+  "sinaisAlerta": [
+   "Enjoo, vômitos, dor na barriga, cansaço intenso ou respiração rápida, mesmo com a glicemia normal ou pouco alta: pode ser cetoacidose euglicêmica. Pare o remédio e procure emergência.",
+   "Dor, inchaço ou vermelhidão na região genital ou entre o ânus e os genitais, com febre ou mal-estar: pode ser gangrena de Fournier, rara e grave. Procure emergência.",
+   "Febre, dor nas costas (região dos rins) ou ardência forte para urinar: infecção urinária grave.",
+   "Tontura forte, desmaio ou urina muito escassa: desidratação."
+  ],
+  "monitorizacao": [
+   "HbA1c a cada 3-6 meses quando usada para diabetes.",
+   "Creatinina/TFG (CKD-EPI 2021) antes de iniciar e periodicamente; pequena queda inicial e reversível da TFG é esperada.",
+   "Pressão arterial e sinais de desidratação, sobretudo em idosos e em uso de diurético.",
+   "Cetonemia/cetonúria se houver sintomas, mesmo com glicemia normal."
+  ],
+  "interacoes": [
+   "Diuréticos de alça e tiazídicos: maior risco de desidratação e hipotensão.",
+   "Insulina e sulfonilureias: maior risco de hipoglicemia; considerar reduzir a dose delas.",
+   "Lítio: pode ter o nível reduzido; monitorar litemia.",
+   "Álcool em excesso e dieta cetogênica aumentam o risco de cetoacidose."
+  ],
+  "gestacao": "Não recomendada no 2o e 3o trimestres (efeitos renais em animais); em geral é suspensa ao engravidar e substituída por insulina. Não usar na amamentação.",
+  "suspensao": "Suspender pelo menos 3 dias antes de cirurgia ou procedimento com jejum prolongado e retomar quando estiver estável e comendo (FDA). Pausar em doença aguda com vômitos, desidratação ou jejum. Parar por conta própria pode tirar a proteção do coração e dos rins.",
+  "orientacoes": [
+   "Beba água ao longo do dia, a não ser que o médico tenha restringido líquidos por insuficiência cardíaca.",
+   "Mantenha a higiene íntima diária, lavando e secando bem a região genital.",
+   "Se ficar doente com vômitos, diarreia ou sem conseguir comer, pause o remédio e fale com o médico; retome quando voltar a comer normalmente.",
+   "Evite dietas muito pobres em carboidratos (cetogênicas) e exagero de álcool enquanto usa este remédio."
+  ],
+  "alertasMedico": [
+   "Controle glicêmico: não recomendada com TFG <30 (FDA 2026). Indicação cardiorrenal: iniciar com TFG >=20 (SBD 2026; EMPA-KIDNEY); nos estudos, não foi exigido suspender se a TFG caísse abaixo de 20 ou houvesse diálise (FDA).",
+   "Cetoacidose euglicêmica: suspender 3 dias antes de cirurgia; não usar em DM1.",
+   "Beers 2023: cautela em idosos (infecção urogenital e cetoacidose euglicêmica).",
+   "Redução de morte cardiovascular no DM2 com DCV estabelecida e benefício na IC com qualquer fração de ejeção (FDA)."
+  ],
+  "fontes": [
+   "FDA label JARDIANCE via openFDA (effective_time 20260826). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22JARDIANCE%22",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "ADA. Standards of Care in Diabetes 2026, seção 9 (Pharmacologic Approaches). Diabetes Care 2026;49(Suppl 1):S183. https://diabetesjournals.org/care/article/49/Supplement_1/S183/163934/",
+   "American Geriatrics Society. 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71:2052-81. https://geriatrictoolkit.missouri.edu/drug/Beers-Criteria-AGS-2023.pdf",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Bula brasileira do Jardiance não consultada; existência de genéricos no Brasil não verificada."
+  ]
+ },
+ {
+  "id": "sitagliptina",
+  "nome": "Sitagliptina",
+  "marcas": [
+   "Januvia",
+   "genéricos"
+  ],
+  "classe": "Inibidor da DPP-4 (gliptina)",
+  "indicacoes": [
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "25 mg comprimido",
+   "50 mg comprimido",
+   "100 mg comprimido"
+  ],
+  "posologiaUsual": "100 mg 1 vez ao dia, com ou sem alimento. TFG 30-44: 50 mg 1 vez ao dia. TFG <30 ou diálise: 25 mg 1 vez ao dia.",
+  "doseMaxDia": "100 mg/dia (TFG 30-44: 50 mg; TFG <30: 25 mg)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Nariz entupido, coriza ou dor de garganta.",
+   "Dor de cabeça.",
+   "Dor nas articulações.",
+   "Enjoo ou diarreia leves.",
+   "Sozinha quase não causa hipoglicemia; com insulina ou sulfonilureia o risco aumenta."
+  ],
+  "sinaisAlerta": [
+   "Dor forte e contínua na barriga, que pode ir para as costas, com ou sem vômitos: pode ser pancreatite. Pare e procure emergência.",
+   "Bolhas ou feridas na pele: pode ser penfigoide bolhoso. Avise o médico.",
+   "Inchaço de rosto, lábios, língua ou garganta, ou falta de ar: reação alérgica grave. Procure emergência.",
+   "Falta de ar, inchaço nas pernas ou ganho rápido de peso: avise o médico (insuficiência cardíaca)."
+  ],
+  "monitorizacao": [
+   "HbA1c a cada 3 meses até a meta e depois a cada 6 meses.",
+   "Creatinina/TFG antes de iniciar e periodicamente, para ajustar a dose."
+  ],
+  "interacoes": [
+   "Insulina e sulfonilureias: maior risco de hipoglicemia; pode ser preciso reduzir a dose delas.",
+   "Digoxina: pequeno aumento do nível, sem necessidade de ajuste.",
+   "Não associar a agonista de GLP-1 ou tirzepatida (mecanismo redundante)."
+  ],
+  "gestacao": "Dados insuficientes em humanos; não é recomendada na gestação (usar insulina) nem na amamentação.",
+  "suspensao": "Pode ser suspensa sem desmame; a glicemia pode subir. Suspender de imediato se houver suspeita de pancreatite.",
+  "orientacoes": [
+   "Tome 1 vez ao dia, sempre no mesmo horário, com ou sem comida.",
+   "Se esquecer, tome quando lembrar no mesmo dia; não tome 2 doses no mesmo dia.",
+   "Se passar a usar remédio injetável semanal para diabetes (tipo semaglutida), avise: a sitagliptina costuma ser suspensa."
+  ],
+  "alertasMedico": [
+   "Ajustar pela TFG: 50 mg se 30-44 e 25 mg se <30/diálise (FDA 2026).",
+   "Pancreatite, penfigoide bolhoso, artralgia grave e hipersensibilidade (SSJ, angioedema) descritos.",
+   "Neutra para eventos cardiovasculares (TECOS); IC foi vista com outras gliptinas (saxagliptina, alogliptina).",
+   "Suspender ao iniciar arGLP-1/tirzepatida (ADA 2026)."
+  ],
+  "fontes": [
+   "FDA label JANUVIA via openFDA (effective_time 20260708). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22JANUVIA%22",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "ADA. Standards of Care in Diabetes 2026, seção 9 (Pharmacologic Approaches). Diabetes Care 2026;49(Suppl 1):S183. https://diabetesjournals.org/care/article/49/Supplement_1/S183/163934/",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Bula brasileira do Januvia e registro de genéricos no Brasil não consultados nesta revisão."
+  ]
+ },
+ {
+  "id": "vildagliptina",
+  "nome": "Vildagliptina",
+  "marcas": [
+   "Galvus",
+   "genéricos"
+  ],
+  "classe": "Inibidor da DPP-4 (gliptina)",
+  "indicacoes": [
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "50 mg comprimido"
+  ],
+  "posologiaUsual": "50 mg 2 vezes ao dia (manhã e noite) em monoterapia ou com metformina, pioglitazona ou insulina. Com sulfonilureia: 50 mg 1 vez ao dia pela manhã. Insuficiência renal moderada ou grave: 50 mg 1 vez ao dia.",
+  "doseMaxDia": "100 mg/dia (50 mg/dia com sulfonilureia ou em insuficiência renal moderada/grave)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Tontura.",
+   "Dor de cabeça.",
+   "Tremor leve.",
+   "Nariz entupido ou sintomas de resfriado.",
+   "Inchaço leve nas mãos ou pernas.",
+   "Sozinha quase não causa hipoglicemia; com sulfonilureia ou insulina o risco aumenta."
+  ],
+  "sinaisAlerta": [
+   "Pele ou olhos amarelados, urina escura, dor do lado direito da barriga: pode ser problema no fígado. Pare e procure o médico.",
+   "Dor forte e contínua na barriga, que pode ir para as costas: pode ser pancreatite. Procure emergência.",
+   "Inchaço de rosto, lábios ou garganta: reação alérgica grave, mais comum se você também usa remédio de pressão do tipo 'pril'. Procure emergência.",
+   "Bolhas ou descamação na pele: avise o médico."
+  ],
+  "monitorizacao": [
+   "TGO/TGP antes de iniciar, a cada 3 meses no primeiro ano e depois periodicamente (bula).",
+   "HbA1c a cada 3 meses até a meta e depois a cada 6 meses.",
+   "Creatinina/TFG pelo menos anualmente para ajuste de dose."
+  ],
+  "interacoes": [
+   "Sulfonilureia ou insulina: maior risco de hipoglicemia (com sulfonilureia a dose é 50 mg/dia).",
+   "IECA (enalapril, captopril etc.): maior chance de angioedema.",
+   "Não associar a agonista de GLP-1 ou tirzepatida (mecanismo redundante)."
+  ],
+  "gestacao": "Experiência insuficiente; não deve ser usada na gravidez salvo benefício claro (usar insulina). A bula brasileira contraindica na amamentação.",
+  "suspensao": "Pode ser suspensa sem desmame. Suspender se TGO/TGP >=3 vezes o limite persistente, icterícia ou pancreatite, e não reintroduzir.",
+  "orientacoes": [
+   "Tome com ou sem comida; se for 2 vezes ao dia, uma dose de manhã e outra à noite.",
+   "Faça os exames de fígado pedidos no primeiro ano.",
+   "Se esquecer, tome quando lembrar, sem dobrar a dose no mesmo dia."
+  ],
+  "alertasMedico": [
+   "Não recomendada em insuficiência hepática ou com ALT/AST pré-tratamento >2,5 vezes o LSN; suspender se >=3 vezes o LSN persistente e não reiniciar (bula).",
+   "Insuficiência renal moderada/grave ou DRC terminal: 50 mg 1 vez ao dia; cautela em hemodiálise.",
+   "Pancreatite: suspender e não reintroduzir; cautela com história prévia.",
+   "Experiência limitada em IC NYHA III e ausente em NYHA IV (não recomendada)."
+  ],
+  "fontes": [
+   "Bula profissional Galvus (Novartis), VPS25. https://portal.novartis.com.br/medicamentos/wp-content/uploads/2021/10/Bula-GALVUS-Comprimido-Medico.pdf",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "ADA. Standards of Care in Diabetes 2026, seção 9 (Pharmacologic Approaches). Diabetes Care 2026;49(Suppl 1):S183. https://diabetesjournals.org/care/article/49/Supplement_1/S183/163934/",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Existência de genéricos de vildagliptina no Brasil não verificada."
+  ]
+ },
+ {
+  "id": "pioglitazona",
+  "nome": "Pioglitazona",
+  "marcas": [
+   "Actos",
+   "Stanglit",
+   "Piotaz",
+   "Aglitil",
+   "genéricos"
+  ],
+  "classe": "Tiazolidinediona (glitazona)",
+  "indicacoes": [
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "15 mg comprimido",
+   "30 mg comprimido",
+   "45 mg comprimido"
+  ],
+  "posologiaUsual": "Iniciar 15 ou 30 mg 1 vez ao dia, com ou sem alimento (15 mg se IC NYHA I-II); aumentar de 15 em 15 mg conforme HbA1c. O efeito completo leva de 2 a 3 meses.",
+  "doseMaxDia": "45 mg/dia (15 mg/dia se em uso de genfibrozila)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Inchaço nas pernas e tornozelos.",
+   "Ganho de peso.",
+   "Sintomas de resfriado ou sinusite.",
+   "Dor de cabeça ou dor muscular.",
+   "Maior risco de fraturas (braço, mão, pé), sobretudo em mulheres."
+  ],
+  "sinaisAlerta": [
+   "Falta de ar, cansaço aos esforços, ganho rápido de peso (mais de 2 kg em poucos dias) ou inchaço importante: pode ser insuficiência cardíaca. Procure atendimento.",
+   "Pele ou olhos amarelados, urina escura, enjoo persistente ou dor do lado direito da barriga: avise o médico (fígado).",
+   "Sangue na urina, dor ou urgência para urinar: avise o médico.",
+   "Visão embaçada ou piora da visão: avise o médico (inchaço na retina)."
+  ],
+  "monitorizacao": [
+   "HbA1c a cada 3 meses até a meta e depois a cada 6 meses.",
+   "TGO/TGP, fosfatase alcalina e bilirrubinas antes de iniciar; controle periódico só se houver doença hepática (FDA).",
+   "Peso, edema e sinais de insuficiência cardíaca a cada consulta, principalmente após aumento de dose.",
+   "Exame de fundo de olho anual (rotina do diabetes)."
+  ],
+  "interacoes": [
+   "Genfibrozila: triplica o nível da pioglitazona; limitar a 15 mg/dia.",
+   "Rifampicina: reduz o efeito.",
+   "Insulina: mais edema e insuficiência cardíaca, e hipoglicemia (reduzir insulina 10-25% se ocorrer).",
+   "Sulfonilureias: hipoglicemia; reduzir a sulfonilureia se ocorrer."
+  ],
+  "gestacao": "Não recomendada na gestação nem na amamentação; usar insulina. Pode fazer voltar a ovulação em mulheres que não ovulavam, com risco de gravidez não planejada: use anticoncepção.",
+  "suspensao": "Pode ser suspensa sem desmame; o efeito sobre a glicemia diminui ao longo de semanas. Suspender se surgir insuficiência cardíaca.",
+  "orientacoes": [
+   "Tome 1 vez ao dia, sempre no mesmo horário, com ou sem comida.",
+   "Pese-se 1 vez por semana e avise se ganhar peso rápido ou inchar.",
+   "O efeito completo demora de 2 a 3 meses; não desanime nas primeiras semanas."
+  ],
+  "alertasMedico": [
+   "Boxed warning FDA: causa ou agrava IC; contraindicada em NYHA III-IV e não recomendada em IC sintomática.",
+   "Aumenta fraturas, sobretudo em mulheres; cautela na osteoporose.",
+   "Não usar com câncer de bexiga ativo; cautela com antecedente; investigar hematúria.",
+   "Edema macular diabético pode surgir ou piorar.",
+   "Não reduz eventos CV como classe (SBD 2026), embora o PROactive tenha mostrado redução do desfecho secundário (morte+IAM+AVC)."
+  ],
+  "fontes": [
+   "FDA label ACTOS via openFDA (effective_time 20250328). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22ACTOS%22",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "Marcas brasileiras (Actos, Aglitil, Piotaz, Stanglit): Guia Farmacêutico HSL e bula Stanglit (Libbs), conferidas por resumo de busca. https://guiafarmaceutico.hsl.org.br/pioglitazona",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "insulina-nph",
+  "nome": "Insulina NPH",
+  "marcas": [
+   "Humulin N",
+   "Novolin N",
+   "insulina humana NPH do SUS (vários fabricantes)"
+  ],
+  "classe": "Insulina humana de ação intermediária",
+  "indicacoes": [
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "100 UI/mL frasco 10 mL",
+   "100 UI/mL caneta 3 mL"
+  ],
+  "posologiaUsual": "Dose individualizada, via subcutânea. No DM2, início típico com 10 UI ou 0,1 a 0,2 UI/kg ao deitar, ajustando cerca de 2 UI a cada 3 dias pela glicemia de jejum; pode ser dividida em 2 ou 3 aplicações ao dia. No DM1, sempre associada a insulina de refeição.",
+  "doseMaxDia": "Sem dose máxima fixa; ajustada pela glicemia. Basal acima de cerca de 0,5 UI/kg/dia sugere excesso de basal e necessidade de rever o esquema (ADA 2026).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Hipoglicemia (açúcar baixo), inclusive de madrugada.",
+   "Ganho de peso.",
+   "Caroços ou endurecimento da pele quando se aplica sempre no mesmo lugar.",
+   "Vermelhidão, coceira ou dor leve no local da aplicação.",
+   "Inchaço leve nas pernas no início do tratamento."
+  ],
+  "sinaisAlerta": [
+   "Hipoglicemia: tremor, suor frio, fome forte, coração acelerado, confusão ou fala enrolada. Se a glicemia estiver abaixo de 70, tome 15 g de açúcar (1 colher de sopa de açúcar em água ou 150 mL de refrigerante comum) e meça de novo em 15 minutos.",
+   "Hipoglicemia grave: desmaio, convulsão ou confusão que não melhora com açúcar. Quem estiver perto não deve dar nada pela boca se você estiver desacordado; chame o SAMU (192).",
+   "Pesadelos, suor na madrugada ou dor de cabeça ao acordar: podem ser hipoglicemia noturna; meça a glicemia e avise o médico.",
+   "Glicemia persistentemente acima de 300 com vômitos, dor na barriga ou respiração rápida: procure emergência (cetoacidose, principalmente no tipo 1).",
+   "Falta de ar, inchaço no rosto ou manchas pelo corpo logo após aplicar: reação alérgica grave."
+  ],
+  "monitorizacao": [
+   "HbA1c a cada 3 meses.",
+   "Glicemia capilar (no mínimo jejum e antes de dormir; mais medições conforme o esquema) ou sensor contínuo.",
+   "Revisar técnica e locais de aplicação (lipo-hipertrofia) a cada consulta.",
+   "Registrar episódios de hipoglicemia."
+  ],
+  "interacoes": [
+   "Álcool: aumenta o risco de hipoglicemia, principalmente em jejum.",
+   "Betabloqueadores escondem sintomas de hipoglicemia.",
+   "Corticoides, tiazídicos, antipsicóticos atípicos e hormônio tireoidiano aumentam a necessidade de insulina.",
+   "Sulfonilureias e outros antidiabéticos somam risco de hipoglicemia.",
+   "Pioglitazona: mais edema e risco de insuficiência cardíaca."
+  ],
+  "gestacao": "Segura e preferida na gestação e na amamentação. As doses mudam bastante ao longo da gravidez e caem logo após o parto, por isso o acompanhamento é mais frequente.",
+  "suspensao": "Nunca suspenda por conta própria, sobretudo no diabetes tipo 1 (risco de cetoacidose). Em dias de doença, mantenha a insulina basal e meça a glicemia mais vezes; ligue para o médico para ajustar.",
+  "orientacoes": [
+   "Antes de aplicar, role o frasco ou a caneta entre as mãos e vire de cabeça para baixo cerca de 10 vezes, até ficar uniformemente leitoso; não sacuda com força.",
+   "Guarde as fechadas na geladeira (2 a 8 °C), na prateleira do meio, nunca no congelador nem encostadas no fundo; insulina que congelou deve ser descartada.",
+   "Em uso, fora da geladeira até 25-30 °C: frasco Humulin N por 31 dias, frasco Novolin N por 42 dias (até 25 °C), caneta Humulin N por 14 dias e caneta Novolin N por 28 dias. Anote a data de abertura.",
+   "Faça rodízio dos locais de aplicação (barriga, coxas, braços, nádegas), mantendo cerca de 1 cm entre as picadas, e use agulha nova a cada aplicação."
+  ],
+  "alertasMedico": [
+   "Pico entre 4 e 12 h favorece hipoglicemia noturna; se recorrente, considerar glargina ou ajustar horário/dose.",
+   "Beers 2023: evitar esquemas só com insulina rápida/regular em escala móvel sem basal.",
+   "Idosos: metas menos estritas e desintensificação se hipoglicemia (ADA 2026 seção 13).",
+   "Ao associar a sulfonilureia, iSGLT2 ou pioglitazona, rever a dose (hipoglicemia, edema)."
+  ],
+  "fontes": [
+   "FDA label HUMULIN N via openFDA (effective_time 20251219). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22HUMULIN+N%22",
+   "FDA label NOVOLIN N via openFDA (effective_time 20221123). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22NOVOLIN+N%22",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "ADA. Standards of Care in Diabetes 2026, seção 9 (Pharmacologic Approaches). Diabetes Care 2026;49(Suppl 1):S183. https://diabetesjournals.org/care/article/49/Supplement_1/S183/163934/",
+   "ADA. Standards of Care in Diabetes 2026, seção 13 (Older Adults). Diabetes Care 2026;49(Suppl 1):S277. https://diabetesjournals.org/care/article/49/Supplement_1/S277/163921/",
+   "American Geriatrics Society. 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71:2052-81. https://geriatrictoolkit.missouri.edu/drug/Beers-Criteria-AGS-2023.pdf",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Bulas brasileiras de Humulin N/Novolin N e das insulinas NPH do SUS não consultadas; prazos de uso conforme rótulos FDA."
+  ]
+ },
+ {
+  "id": "insulina-regular",
+  "nome": "Insulina Regular",
+  "marcas": [
+   "Humulin R",
+   "Novolin R",
+   "insulina humana regular do SUS (vários fabricantes)"
+  ],
+  "classe": "Insulina humana de ação rápida",
+  "indicacoes": [
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "100 UI/mL frasco 10 mL",
+   "100 UI/mL caneta 3 mL"
+  ],
+  "posologiaUsual": "Dose individualizada, via subcutânea, cerca de 30 minutos antes das refeições principais, geralmente junto com uma insulina basal (NPH ou glargina). Pode ser misturada na mesma seringa com a NPH.",
+  "doseMaxDia": "Sem dose máxima fixa; ajustada pela glicemia e pelo que se come.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Hipoglicemia (açúcar baixo), principalmente se atrasar ou pular a refeição.",
+   "Ganho de peso.",
+   "Caroços ou endurecimento da pele quando se aplica sempre no mesmo lugar.",
+   "Vermelhidão, coceira ou dor leve no local da aplicação."
+  ],
+  "sinaisAlerta": [
+   "Hipoglicemia: tremor, suor frio, fome forte, coração acelerado, confusão ou fala enrolada. Se a glicemia estiver abaixo de 70, tome 15 g de açúcar (1 colher de sopa de açúcar em água ou 150 mL de refrigerante comum) e meça de novo em 15 minutos.",
+   "Hipoglicemia grave: desmaio, convulsão ou confusão que não melhora com açúcar. Quem estiver perto não deve dar nada pela boca se você estiver desacordado; chame o SAMU (192).",
+   "Glicemia persistentemente acima de 300 com vômitos, dor na barriga ou respiração rápida: procure emergência (cetoacidose, principalmente no tipo 1).",
+   "Falta de ar, inchaço no rosto ou manchas pelo corpo logo após aplicar: reação alérgica grave."
+  ],
+  "monitorizacao": [
+   "HbA1c a cada 3 meses.",
+   "Glicemia capilar antes das refeições e, se necessário, 2 horas depois, ou sensor contínuo.",
+   "Revisar técnica, horário em relação à refeição e locais de aplicação."
+  ],
+  "interacoes": [
+   "Álcool: aumenta o risco de hipoglicemia.",
+   "Betabloqueadores escondem sintomas de hipoglicemia.",
+   "Corticoides, tiazídicos e antipsicóticos atípicos aumentam a necessidade de insulina.",
+   "Sulfonilureias e outros antidiabéticos somam risco de hipoglicemia."
+  ],
+  "gestacao": "Segura na gestação e na amamentação; as doses mudam ao longo da gravidez e caem logo após o parto.",
+  "suspensao": "Não suspenda por conta própria. Se não for comer, converse com o médico sobre pular ou reduzir a dose da refeição; não suspenda a insulina basal no tipo 1.",
+  "orientacoes": [
+   "Aplique cerca de 30 minutos antes de comer e não deixe de fazer a refeição.",
+   "Se misturar com NPH na mesma seringa, aspire primeiro a regular (transparente) e depois a NPH (leitosa), e aplique logo.",
+   "Guarde as fechadas na geladeira (2 a 8 °C), na prateleira do meio, nunca no congelador nem encostadas no fundo; insulina que congelou deve ser descartada.",
+   "Em uso, fora da geladeira até 25-30 °C: frasco Novolin R por 42 dias (até 25 °C) e caneta Novolin R por 28 dias; para outras marcas, siga a bula. Anote a data de abertura."
+  ],
+  "alertasMedico": [
+   "Beers 2023: evitar escala móvel isolada sem basal em idosos.",
+   "Duração de 6-8 h: risco de hipoglicemia tardia pós-prandial; análogos rápidos têm perfil mais fisiológico.",
+   "Reforçar intervalo de 30 min antes da refeição; aplicação junto da refeição piora a glicemia pós-prandial e a hipoglicemia tardia."
+  ],
+  "fontes": [
+   "FDA label NOVOLIN R via openFDA (effective_time 20221123). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22NOVOLIN+R%22",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "ADA. Standards of Care in Diabetes 2026, seção 9 (Pharmacologic Approaches). Diabetes Care 2026;49(Suppl 1):S183. https://diabetesjournals.org/care/article/49/Supplement_1/S183/163934/",
+   "ADA. Standards of Care in Diabetes 2026, seção 13 (Older Adults). Diabetes Care 2026;49(Suppl 1):S277. https://diabetesjournals.org/care/article/49/Supplement_1/S277/163921/",
+   "American Geriatrics Society. 2023 Updated AGS Beers Criteria. J Am Geriatr Soc 2023;71:2052-81. https://geriatrictoolkit.missouri.edu/drug/Beers-Criteria-AGS-2023.pdf",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Rótulo FDA do Humulin R U-100 não foi obtido (a consulta retornou o U-500); bulas brasileiras não consultadas."
+  ]
+ },
+ {
+  "id": "insulina-glargina",
+  "nome": "Insulina Glargina",
+  "marcas": [
+   "Lantus",
+   "Toujeo",
+   "Basaglar",
+   "Glargilin"
+  ],
+  "classe": "Análogo de insulina basal de longa ação",
+  "indicacoes": [
+   "diabetes"
+  ],
+  "apresentacoes": [
+   "100 UI/mL frasco 10 mL",
+   "100 UI/mL caneta 3 mL",
+   "100 UI/mL refil 3 mL",
+   "300 UI/mL caneta 1,5 mL"
+  ],
+  "posologiaUsual": "1 vez ao dia, sempre no mesmo horário (qualquer hora do dia), via subcutânea. No DM2, início típico com 10 UI/dia ou 0,1 a 0,2 UI/kg/dia, ajustando cerca de 2 UI a cada 3 dias pela glicemia de jejum. Toujeo (300 UI/mL) costuma exigir dose 10-18% maior que a glargina 100 UI/mL.",
+  "doseMaxDia": "Sem dose máxima fixa; ajustada pela glicemia. Basal acima de cerca de 0,5 UI/kg/dia sugere excesso de basal (ADA 2026).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Hipoglicemia (açúcar baixo), menos à noite do que com a NPH.",
+   "Ganho de peso.",
+   "Caroços ou endurecimento da pele quando se aplica sempre no mesmo lugar.",
+   "Vermelhidão, coceira ou dor leve no local da aplicação.",
+   "Inchaço leve nas pernas no início."
+  ],
+  "sinaisAlerta": [
+   "Hipoglicemia: tremor, suor frio, fome forte, coração acelerado, confusão ou fala enrolada. Se a glicemia estiver abaixo de 70, tome 15 g de açúcar (1 colher de sopa de açúcar em água ou 150 mL de refrigerante comum) e meça de novo em 15 minutos.",
+   "Hipoglicemia grave: desmaio, convulsão ou confusão que não melhora com açúcar. Quem estiver perto não deve dar nada pela boca se você estiver desacordado; chame o SAMU (192).",
+   "Glicemia persistentemente acima de 300 com vômitos, dor na barriga ou respiração rápida: procure emergência (cetoacidose, principalmente no tipo 1).",
+   "Falta de ar, inchaço no rosto ou manchas pelo corpo logo após aplicar: reação alérgica grave."
+  ],
+  "monitorizacao": [
+   "HbA1c a cada 3 meses.",
+   "Glicemia capilar de jejum diária durante a titulação (ou sensor contínuo).",
+   "Revisar técnica, locais de aplicação e episódios de hipoglicemia."
+  ],
+  "interacoes": [
+   "Álcool: aumenta o risco de hipoglicemia.",
+   "Betabloqueadores escondem sintomas de hipoglicemia.",
+   "Corticoides, tiazídicos e antipsicóticos atípicos aumentam a necessidade de insulina.",
+   "Sulfonilureias e outros antidiabéticos somam risco de hipoglicemia.",
+   "Pioglitazona: mais edema e risco de insuficiência cardíaca."
+  ],
+  "gestacao": "Pode ser usada na gestação e na amamentação quando indicada; a NPH tem mais tempo de experiência, e a decisão é do médico. As doses mudam ao longo da gravidez.",
+  "suspensao": "Nunca suspenda por conta própria, sobretudo no diabetes tipo 1. Em dias de doença, mantenha a basal e meça a glicemia mais vezes; ligue para o médico para ajustar.",
+  "orientacoes": [
+   "Aplique no mesmo horário todo dia; não misture com outras insulinas nem dilua. Não precisa agitar (é transparente).",
+   "Guarde as fechadas na geladeira (2 a 8 °C), na prateleira do meio, nunca no congelador nem encostadas no fundo; insulina que congelou deve ser descartada.",
+   "Em uso, fora da geladeira até 30 °C: Lantus (frasco ou caneta) por 28 dias; Toujeo por 6 semanas (42 dias). Para Basaglar e Glargilin, siga a bula. Anote a data de abertura.",
+   "Faça rodízio dos locais de aplicação (barriga, coxas, braços, nádegas), mantendo cerca de 1 cm entre as picadas, e use agulha nova a cada aplicação."
+  ],
+  "alertasMedico": [
+   "Lantus (U100) e Toujeo (U300) não são bioequivalentes: U100 para U300 unidade a unidade, com possível aumento de 10-18%; U300 para U100 reduzir cerca de 20% (bula Toujeo).",
+   "Nunca aspirar insulina da caneta U300 com seringa (risco de dose 3 vezes maior).",
+   "Menos hipoglicemia noturna que NPH; preferir quando há hipoglicemia com NPH.",
+   "Glargilin (Biomm) produzida no Brasil desde 2024; biossimilares trocados sob orientação e com monitorização."
+  ],
+  "fontes": [
+   "FDA label LANTUS via openFDA (effective_time 20250602). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22LANTUS%22",
+   "FDA label TOUJEO via openFDA (effective_time 20250530). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22TOUJEO%22",
+   "Bula profissional Toujeo SoloStar (Sanofi Medley): troca U100/U300 e validade de 6 semanas após aberto. https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Toujeo-Profissional-Consulta-Remedios.pdf",
+   "Anvisa (2024): insulina glargina Glargilin volta a ser fabricada no Brasil. https://www.gov.br/anvisa/pt-br/assuntos/noticias-anvisa/2024/insulina-glargina-volta-a-ser-fabricada-no-brasil",
+   "SBD. Diretriz da Sociedade Brasileira de Diabetes, Ed. 2026: Manejo do DM2 (revisão 07/08/2026). https://diretriz.diabetes.org.br/manejo-do-diabetes-mellitus-tipo-2/",
+   "ADA. Standards of Care in Diabetes 2026, seção 9 (Pharmacologic Approaches). Diabetes Care 2026;49(Suppl 1):S183. https://diabetesjournals.org/care/article/49/Supplement_1/S183/163934/",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Bulas brasileiras de Lantus, Basaglar e Glargilin não consultadas; o prazo de 28 dias do Lantus vem do rótulo FDA."
+  ]
+ },
+ {
+  "id": "levotiroxina",
+  "nome": "Levotiroxina",
+  "marcas": [
+   "Puran T4",
+   "Synthroid",
+   "Euthyrox",
+   "Levoid",
+   "genéricos"
+  ],
+  "classe": "Hormônio tireoidiano sintético (T4)",
+  "indicacoes": [
+   "tireoide"
+  ],
+  "apresentacoes": [
+   "12,5 mcg comprimido",
+   "25 mcg comprimido",
+   "37,5 mcg comprimido",
+   "50 mcg comprimido",
+   "62,5 mcg comprimido",
+   "75 mcg comprimido",
+   "88 mcg comprimido",
+   "100 mcg comprimido",
+   "112 mcg comprimido",
+   "125 mcg comprimido",
+   "150 mcg comprimido",
+   "175 mcg comprimido",
+   "200 mcg comprimido",
+   "300 mcg comprimido"
+  ],
+  "posologiaUsual": "1 vez ao dia em jejum, 30 a 60 minutos antes do café da manhã. Hipotireoidismo primário em adulto sem cardiopatia: dose plena de cerca de 1,6 mcg/kg/dia. Idosos, cardiopatas ou risco de fibrilação atrial: iniciar com dose menor (12,5 a 25 mcg/dia) e ajustar 12,5 a 25 mcg a cada 6 a 8 semanas.",
+  "doseMaxDia": "Sem teto fixo; doses acima de 200 mcg/dia raramente são necessárias, e falta de resposta com mais de 300 mcg/dia sugere má adesão, má absorção ou interação (FDA).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Na dose certa, em geral não causa efeitos colaterais.",
+   "Se a dose estiver alta: coração acelerado ou palpitação.",
+   "Tremor, nervosismo, ansiedade ou insônia.",
+   "Calor excessivo, suor e perda de peso sem explicação.",
+   "Diarreia.",
+   "Queda de cabelo passageira nos primeiros meses."
+  ],
+  "sinaisAlerta": [
+   "Dor no peito, palpitação forte ou batimentos irregulares, falta de ar: procure emergência.",
+   "Tremor intenso, agitação e perda de peso rápida: avise o médico (dose alta).",
+   "Inchaço de rosto ou garganta, manchas pelo corpo: reação alérgica, procure atendimento."
+  ],
+  "monitorizacao": [
+   "TSH 6 a 8 semanas após iniciar ou após qualquer mudança de dose ou de marca.",
+   "Com dose estável, TSH a cada 6 a 12 meses.",
+   "Hipotireoidismo central: guiar pelo T4 livre, não pelo TSH.",
+   "Suspender biotina pelo menos 2 dias antes da coleta (interfere no exame)."
+  ],
+  "interacoes": [
+   "Cálcio, ferro, antiácidos com alumínio/magnésio, sevelâmer, colestiramina/colesevelam e orlistate reduzem a absorção: separar pelo menos 4 horas.",
+   "Omeprazol e outros inibidores de bomba, sucralfato: podem reduzir a absorção e aumentar a necessidade de dose.",
+   "Estrogênio oral (anticoncepcional, reposição) e gestação aumentam a necessidade de levotiroxina.",
+   "Carbamazepina, fenitoína, rifampicina e fenobarbital aceleram o metabolismo.",
+   "Varfarina: efeito anticoagulante aumenta quando o paciente fica eutireoidiano; monitorar INR.",
+   "Café, soja e fibras em excesso perto da tomada reduzem a absorção."
+  ],
+  "gestacao": "Segura e essencial na gestação. A necessidade costuma aumentar logo no início: ao confirmar a gravidez, avise o médico imediatamente para ajustar a dose (em geral 20-30% a mais) e dosar TSH a cada 4 semanas na primeira metade. Compatível com a amamentação.",
+  "suspensao": "Não suspenda por conta própria; em geral o uso é por toda a vida. Evite trocar de marca sem avisar, pois o TSH pode mudar.",
+  "orientacoes": [
+   "Tome todos os dias em jejum, só com água, 30 a 60 minutos antes do café da manhã.",
+   "Deixe pelo menos 4 horas de intervalo entre a levotiroxina e cálcio, ferro, antiácidos ou polivitamínicos.",
+   "Mantenha a mesma marca; se precisar trocar, avise para repetir o TSH em 6 a 8 semanas.",
+   "Se esquecer, tome assim que lembrar no mesmo dia; não dobre a dose."
+  ],
+  "alertasMedico": [
+   "Boxed warning FDA: não usar para obesidade ou emagrecimento.",
+   "Idoso e coronariopata: iniciar baixo e titular devagar; excesso aumenta risco de fibrilação atrial e perda óssea.",
+   "Troca de marca/genérico: repetir TSH em 6-8 semanas.",
+   "Dose alta sem controle: investigar adesão, horário de tomada, má absorção (celíaca, gastrite atrófica) e interações."
+  ],
+  "fontes": [
+   "FDA label SYNTHROID via openFDA (effective_time 20240220). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22SYNTHROID%22",
+   "Bula Puran T4 (Sanofi Medley): apresentações e interações. https://img.drogasil.com.br/raiadrogasil_bula/PURANT4.pdf",
+   "Alexander EK et al. 2017 ATA Guidelines for Thyroid Disease During Pregnancy. Thyroid 2017;27:315-89 (citado de memória, não reconsultado).",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Marcas Euthyrox e Levoid e a apresentação 137 mcg não conferidas; Puran T4 não tem 137 mcg."
+  ]
+ },
+ {
+  "id": "metimazol",
+  "nome": "Tiamazol",
+  "marcas": [
+   "Tapazol",
+   "genéricos"
+  ],
+  "classe": "Antitireoidiano (tionamida); também chamado metimazol",
+  "indicacoes": [
+   "tireoide"
+  ],
+  "apresentacoes": [
+   "5 mg comprimido",
+   "10 mg comprimido"
+  ],
+  "posologiaUsual": "Dose inicial conforme gravidade: 15 mg/dia (leve), 30 a 40 mg/dia (moderado) ou 60 mg/dia (grave), em dose única diária ou dividida em 3 tomadas. Manutenção de 5 a 15 mg/dia, ajustada por T4 livre e T3.",
+  "doseMaxDia": "60 mg/dia (bula, hipertireoidismo grave)",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Coceira ou manchas vermelhas na pele.",
+   "Dor nas articulações.",
+   "Enjoo ou desconforto no estômago.",
+   "Alteração ou perda do paladar.",
+   "Queda de cabelo.",
+   "Dor de cabeça."
+  ],
+  "sinaisAlerta": [
+   "Febre, dor de garganta, aftas ou feridas na boca, ou qualquer infecção: pare o remédio e faça um hemograma no mesmo dia (risco de agranulocitose, queda grave das defesas).",
+   "Pele ou olhos amarelados, urina escura, fezes claras, coceira intensa ou dor do lado direito da barriga: pare e procure o médico (hepatite).",
+   "Manchas roxas ou sangramentos sem motivo: procure atendimento.",
+   "Sangue na urina, tosse com sangue ou feridas na pele que não cicatrizam: procure atendimento (vasculite)."
+  ],
+  "monitorizacao": [
+   "Hemograma completo e enzimas hepáticas antes de iniciar.",
+   "T4 livre e T3 cerca de 4 a 6 semanas após iniciar ou ajustar; depois a cada 2 a 3 meses na manutenção (o TSH pode demorar meses para normalizar).",
+   "Hemograma imediato se febre ou dor de garganta; hemograma periódico de rotina não comprovou prevenir agranulocitose.",
+   "Teste de gravidez se atraso menstrual."
+  ],
+  "interacoes": [
+   "Varfarina: o efeito pode mudar conforme a tireoide se normaliza; monitorar INR.",
+   "Betabloqueadores: pode ser preciso reduzir a dose quando o paciente fica eutireoidiano.",
+   "Digoxina: o nível pode subir quando o hipertireoidismo é controlado.",
+   "Teofilina: pode precisar de redução de dose com a normalização da tireoide."
+  ],
+  "gestacao": "Risco de malformações se usado no 1o trimestre (aplasia cútis, atresia de coanas ou de esôfago). Na gestação, costuma-se trocar por propiltiouracil no 1o trimestre e voltar ao tiamazol depois. Se engravidar, avise o médico imediatamente. Compatível com a amamentação em doses baixas a moderadas.",
+  "suspensao": "Não pare sem orientação; o hipertireoidismo volta. Na doença de Graves, o tratamento dura em geral 12 a 18 meses e a retirada é decidida pelo médico. Pare imediatamente e procure atendimento se tiver febre ou dor de garganta.",
+  "orientacoes": [
+   "Tome sempre do mesmo jeito (com ou sem comida) e no mesmo horário.",
+   "Se tiver febre ou dor de garganta, suspenda o remédio e faça um hemograma no mesmo dia.",
+   "Use método anticoncepcional eficaz; se engravidar, avise o médico logo."
+  ],
+  "alertasMedico": [
+   "Agranulocitose em cerca de 0,35% (bula), geralmente nos primeiros meses e com doses maiores; orientar por escrito e suspender se neutrófilos baixos. Não trocar para PTU após agranulocitose (reação cruzada).",
+   "Hepatotoxicidade (em geral colestática): suspender se transaminases >3 vezes o LSN.",
+   "Vasculite associada a ANCA descrita.",
+   "1o trimestre: embriopatia; preferir PTU no 1o trimestre e trocar para tiamazol no 2o e 3o (rótulo FDA).",
+   "DCB é tiamazol; metimazol é sinônimo usado na literatura."
+  ],
+  "fontes": [
+   "FDA label methimazole (genérico) via openFDA (effective_time 20260909). https://api.fda.gov/drug/label.json?search=openfda.generic_name:%22METHIMAZOLE%22",
+   "Bula profissional Tapazol (Biolab Sanus), 10/2022. https://pill-dev-site-pro-bula-pro.s3.us-east-2.amazonaws.com/7896241231630.pdf",
+   "Ross DS et al. 2016 ATA Guidelines for Hyperthyroidism. Thyroid 2016;26:1343-421 (citado de memória para monitorização e duração, não reconsultado).",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "alendronato",
+  "nome": "Alendronato",
+  "marcas": [
+   "Fosamax",
+   "genéricos"
+  ],
+  "classe": "Bisfosfonato",
+  "indicacoes": [
+   "osteoporose"
+  ],
+  "apresentacoes": [
+   "70 mg comprimido",
+   "10 mg comprimido"
+  ],
+  "posologiaUsual": "Osteoporose (pós-menopausa ou masculina): 70 mg 1 vez por semana, sempre no mesmo dia, ou 10 mg 1 vez ao dia. Tomar ao acordar, em jejum, com um copo cheio de água pura, 30 minutos antes de qualquer alimento, bebida ou remédio, e ficar em pé ou sentado ereto.",
+  "doseMaxDia": "70 mg/semana ou 10 mg/dia na osteoporose (40 mg/dia só na doença de Paget).",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Azia ou dor no estômago.",
+   "Dor nos ossos, músculos ou articulações.",
+   "Prisão de ventre, diarreia ou gases.",
+   "Enjoo ou sensação de estômago cheio.",
+   "Dor de cabeça."
+  ],
+  "sinaisAlerta": [
+   "Dor ao engolir, dor no peito atrás do osso esterno ou azia nova ou pior: pare e avise o médico (esofagite).",
+   "Dor nova na coxa ou na virilha: avise o médico (fratura atípica do fêmur, rara).",
+   "Dor ou feridas na gengiva, dente amolecido ou osso exposto na boca: avise o médico e o dentista (osteonecrose da mandíbula, rara).",
+   "Fezes pretas ou vômito com sangue: procure emergência."
+  ],
+  "monitorizacao": [
+   "Cálcio e vitamina D (25-OH) antes de iniciar; corrigir hipocalcemia antes.",
+   "Creatinina/TFG antes de iniciar e periodicamente: não recomendado com clearance <35 mL/min.",
+   "Densitometria óssea a cada 1 a 2 anos conforme resposta.",
+   "Reavaliar a necessidade do tratamento após 5 anos; considerar pausa se baixo risco (FDA: 3 a 5 anos).",
+   "Avaliação odontológica antes de iniciar se houver procedimento dentário previsto."
+  ],
+  "interacoes": [
+   "Cálcio, antiácidos, ferro, leite, café e suco: reduzem muito a absorção; tomar o alendronato 30 minutos antes de tudo e deixar cálcio para outro horário do dia.",
+   "Anti-inflamatórios e AAS: mais irritação no estômago e esôfago."
+  ],
+  "gestacao": "Não indicado na gestação nem na amamentação. Permanece no osso por anos; cautela em mulheres que ainda podem engravidar.",
+  "suspensao": "Pode ser interrompido sem desmame e sem efeito rebote importante (ao contrário do denosumabe). A pausa programada após 5 anos em pacientes de menor risco é decisão médica.",
+  "orientacoes": [
+   "Tome ao acordar, em jejum, com um copo cheio (cerca de 200 mL) de água pura, nunca com café, suco, leite ou água com gás.",
+   "Fique em pé ou sentado(a) ereto(a) por pelo menos 30 minutos e até fazer a primeira refeição; não deite.",
+   "Espere 30 minutos para comer, beber ou tomar outros remédios; cálcio e vitamina D ficam para outro horário.",
+   "Se esquecer a dose semanal, tome na manhã seguinte em que lembrar e volte ao dia de costume; nunca 2 comprimidos no mesmo dia."
+  ],
+  "alertasMedico": [
+   "Contraindicado em anormalidades do esôfago que retardam o esvaziamento (estenose, acalasia), incapacidade de ficar ereto por 30 minutos e hipocalcemia.",
+   "Não recomendado com clearance de creatinina <35 mL/min (FDA).",
+   "Osteonecrose de mandíbula e fratura atípica de fêmur: raras, aumentam com uso prolongado; reavaliar em 5 anos.",
+   "Garantir cálcio e vitamina D adequados."
+  ],
+  "fontes": [
+   "FDA label FOSAMAX via openFDA (effective_time 20260312). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22FOSAMAX%22",
+   "Adler RA et al. Managing Osteoporosis in Patients on Long-Term Bisphosphonate Treatment (ASBMR Task Force). J Bone Miner Res 2016;31:16-35 (citado de memória, não reconsultado).",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS",
+   "Bula brasileira do Fosamax/genéricos não consultada; apresentações 10 e 70 mg de conhecimento geral, não conferidas na Anvisa."
+  ]
+ },
+ {
+  "id": "alopurinol",
+  "nome": "Alopurinol",
+  "marcas": [
+   "Zyloric",
+   "genéricos"
+  ],
+  "classe": "Inibidor da xantina oxidase (hipouricemiante)",
+  "indicacoes": [
+   "gota",
+   "outro"
+  ],
+  "apresentacoes": [
+   "100 mg comprimido",
+   "300 mg comprimido"
+  ],
+  "posologiaUsual": "Gota: iniciar com 100 mg/dia ou menos (50 mg/dia se DRC estágio 3 ou pior), após uma refeição, e aumentar cerca de 100 mg a cada 2 a 5 semanas até ácido úrico <6 mg/dL; manutenção usual de 300 mg/dia ou mais. Doses acima de 300 mg podem ser divididas.",
+  "doseMaxDia": "900 mg/dia (bula brasileira Zyloric, casos graves); 800 mg/dia no rótulo FDA.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Mais crises de gota nos primeiros meses, enquanto o ácido úrico baixa.",
+   "Manchas vermelhas ou coceira leve na pele (sempre avise o médico).",
+   "Enjoo ou diarreia.",
+   "Sonolência ou tontura.",
+   "Alteração nos exames do fígado."
+  ],
+  "sinaisAlerta": [
+   "Qualquer mancha na pele, principalmente com febre, bolhas, feridas na boca ou nos olhos ou descamação: pare o alopurinol e procure emergência (reação grave de pele).",
+   "Febre com gânglios inchados, inchaço no rosto e mal-estar: procure atendimento (DRESS).",
+   "Pele ou olhos amarelados, urina escura: avise o médico.",
+   "Urina diminuindo muito ou sangue na urina: avise o médico."
+  ],
+  "monitorizacao": [
+   "Ácido úrico a cada 2 a 5 semanas durante o ajuste e depois a cada 6 meses (alvo <6 mg/dL).",
+   "Creatinina/TFG, hemograma e enzimas hepáticas antes de iniciar e periodicamente.",
+   "HLA-B*58:01 antes de iniciar em pessoas de ascendência do Sudeste Asiático (chinesa Han, coreana, tailandesa) e afrodescendentes (ACR 2020; rótulo FDA)."
+  ],
+  "interacoes": [
+   "Azatioprina e mercaptopurina: toxicidade grave na medula óssea; evitar ou reduzir a dose delas para cerca de 1/4.",
+   "Amoxicilina e ampicilina: mais erupções na pele.",
+   "Tiazídicos com insuficiência renal: maior risco de hipersensibilidade.",
+   "Varfarina: o efeito anticoagulante pode aumentar.",
+   "Capecitabina: evitar associação; pegloticase: não associar.",
+   "Ciclosporina: nível pode subir."
+  ],
+  "gestacao": "Dados limitados; em geral evitado na gestação, salvo necessidade clara. Passa para o leite materno: usar com cautela na amamentação.",
+  "suspensao": "É tratamento contínuo, por tempo indeterminado; não interrompa durante uma crise de gota. Pare imediatamente e procure atendimento se surgir qualquer mancha na pele.",
+  "orientacoes": [
+   "Tome após uma refeição, com bastante água ao longo do dia, se não houver restrição de líquidos.",
+   "Nos primeiros meses as crises podem aumentar: não pare o alopurinol e use a medicação de proteção indicada (colchicina ou anti-inflamatório) por 3 a 6 meses.",
+   "Se aparecer qualquer mancha na pele, pare e procure atendimento."
+  ],
+  "alertasMedico": [
+   "Treat-to-target: titular até ácido úrico <6 mg/dL em vez de fixar 300 mg (ACR 2020).",
+   "Profilaxia anti-inflamatória por 3-6 meses ao iniciar (ACR 2020).",
+   "HLA-B*58:01 em populações de risco; hipersensibilidade maior com dose inicial alta e DRC. Suspender definitivamente ao primeiro rash.",
+   "Azatioprina/6-mercaptopurina: interação grave.",
+   "Manter durante crises (ACR 2020; FDA)."
+  ],
+  "fontes": [
+   "FDA label allopurinol (genérico) via openFDA (effective_time 20260910). https://api.fda.gov/drug/label.json?search=openfda.generic_name:%22ALLOPURINOL%22",
+   "Bula profissional Zyloric (Aspen Pharma). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Zyloric-Profissional-Consulta-Remedios.pdf",
+   "FitzGerald JD et al. 2020 ACR Guideline for the Management of Gout. Arthritis Care Res 2020;72:744-60 (sem atualização localizada até 09/2026). https://rheumatology.org/gout-guideline",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ },
+ {
+  "id": "colchicina",
+  "nome": "Colchicina",
+  "marcas": [
+   "Colchis",
+   "genéricos"
+  ],
+  "classe": "Alcaloide anti-inflamatório (inibidor de microtúbulos)",
+  "indicacoes": [
+   "gota",
+   "coracao",
+   "outro"
+  ],
+  "apresentacoes": [
+   "0,5 mg comprimido",
+   "1 mg comprimido"
+  ],
+  "posologiaUsual": "Prevenção de crises ao iniciar alopurinol: 0,5 mg 1 a 2 vezes ao dia por 3 a 6 meses. Crise aguda: esquema de baixa dose, 1 mg ao primeiro sinal e 0,5 mg 1 hora depois (1,5 mg no primeiro dia), seguindo com 0,5 mg 1 a 2 vezes ao dia até a crise passar (EULAR/ACR).",
+  "doseMaxDia": "Profilaxia: 1 mg/dia usual (bula admite 0,5 mg até 3 vezes ao dia; FDA 1,2 mg/dia). Crise: 1,5 mg no primeiro dia. O teto de 7 mg citado na bula brasileira reflete esquema antigo e não deve ser usado.",
+  "portaria344": null,
+  "receituario": "simples",
+  "limiteQuantidade": null,
+  "efeitosComuns": [
+   "Diarreia (o mais comum).",
+   "Cólica ou dor na barriga.",
+   "Enjoo ou vômitos.",
+   "Com uso prolongado: fraqueza ou dor nos músculos.",
+   "Formigamento nas mãos ou pés (raro)."
+  ],
+  "sinaisAlerta": [
+   "Diarreia forte ou vômitos: pare a colchicina e avise o médico (pode ser o início de intoxicação).",
+   "Fraqueza ou dor muscular intensa, urina escura: procure atendimento (lesão muscular), sobretudo se usa remédio para colesterol.",
+   "Febre, dor de garganta, manchas roxas ou sangramentos: procure atendimento (queda das células do sangue).",
+   "Ingestão de quantidade maior que a prescrita, mesmo sem sintomas: procure emergência imediatamente."
+  ],
+  "monitorizacao": [
+   "Creatinina/TFG antes e periodicamente: TFG 30-59: 0,5 mg 1 vez ao dia; TFG 15-29: 0,5 mg a cada 2 ou 3 dias; TFG <15: contraindicada (bula Colchis).",
+   "Hemograma e CPK se uso prolongado, sintomas musculares, estatina associada ou DRC.",
+   "Revisar cada nova prescrição quanto a inibidores de CYP3A4 e P-glicoproteína."
+  ],
+  "interacoes": [
+   "Claritromicina, eritromicina, cetoconazol, itraconazol, ritonavir e outros inibidores de protease: intoxicação potencialmente fatal; contraindicados, especialmente com DRC ou hepatopatia.",
+   "Ciclosporina, verapamil, diltiazem, fluconazol, ranolazina e suco de toranja (grapefruit): reduzir a dose ou evitar.",
+   "Estatinas e fibratos: risco de miopatia e rabdomiólise.",
+   "Álcool: mais toxicidade no intestino e piora da gota."
+  ],
+  "gestacao": "A bula brasileira contraindica na gravidez. Passa para o leite materno: usar com cautela na amamentação. Converse com o médico antes de engravidar.",
+  "suspensao": "Pode ser suspensa sem desmame. Na prevenção ao iniciar alopurinol, manter por 3 a 6 meses ou até o ácido úrico estar no alvo e sem crises.",
+  "orientacoes": [
+   "Na crise, comece o quanto antes (idealmente nas primeiras 12 horas) e não repita doses além do prescrito.",
+   "Se tiver diarreia, pare e avise o médico.",
+   "Evite suco de toranja (grapefruit) e sempre avise que usa colchicina quando receber antibiótico, antifúngico ou remédio de pressão novo.",
+   "Guarde longe do alcance de crianças: a superdose é muito perigosa."
+  ],
+  "alertasMedico": [
+   "Janela terapêutica estreita; a bula brasileira ainda traz esquema de doses a cada 1-2 h até 7 mg, hoje obsoleto: usar baixa dose (1 mg + 0,5 mg em 1 h).",
+   "Contraindicada com inibidores fortes de CYP3A4 ou P-gp em DRC/hepatopatia; contraindicada com TFG <15 (bula) ou ClCr <15 (Lodoco).",
+   "Uso cardiovascular (0,5 mg/dia; LoDoCo2, COLCOT) aprovado pelo FDA em 2023 (Lodoco); não consta na bula brasileira (off-label no Brasil).",
+   "Ajustar dose em DRC e idosos; atenção à associação com estatina."
+  ],
+  "fontes": [
+   "Bula profissional Colchis 0,5 mg e 1 mg (Apsen). https://uploads.consultaremedios.com.br/drug_leaflet/pro/Bula-Colchis-Profissional-Consulta-Remedios.pdf",
+   "FDA label COLCRYS via openFDA (effective_time 20221001). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22COLCRYS%22",
+   "FDA label LODOCO via openFDA (effective_time 20260813). https://api.fda.gov/drug/label.json?search=openfda.brand_name:%22LODOCO%22",
+   "FitzGerald JD et al. 2020 ACR Guideline for the Management of Gout. Arthritis Care Res 2020;72:744-60. https://rheumatology.org/gout-guideline",
+   "Richette P et al. 2016 updated EULAR evidence-based recommendations for the management of gout. Ann Rheum Dis 2017;76:29-42 (citado de memória, não reconsultado).",
+   "Portaria SVS/MS 344/1998, Anexo I atualizado pela RDC Anvisa 1.036 de 09/07/2026 (DOU 13/07/2026): substância não consta em nenhuma lista (conferido no texto da RDC). https://anvisalegis.datalegis.net/action/ActionDatalegis.php?acao=abrirTextoAto&tipo=RDC&numeroAto=00001036&seqAto=000&valorAno=2026&orgao=RDC%2FDC%2FANVISA%2FMS"
+  ]
+ }
+]

@@ -1,27 +1,33 @@
 rules_version = '2';
-// Meu Neuro — regras do Firestore
-// pedidos: o paciente (login anônimo) cria e vê o próprio pedido; só médicos (claim "medico") listam e atendem.
+// RefilMed — regras do Firestore
+// pedidos: o paciente (login anônimo) cria e vê o próprio pedido; só médicos aprovados (claim "medico") listam e atendem.
+// medicos: cada médico mantém o próprio perfil; "aprovado" só o servidor grava (função definirPapel).
+// sessoesAssinatura, uso: só o servidor.
 service cloud.firestore {
   match /databases/{database}/documents {
     function logado() { return request.auth != null; }
     function medico() { return logado() && request.auth.token.medico == true; }
+    function admin() { return logado() && request.auth.token.admin == true; }
     function dono(d) { return logado() && d.pacienteUid == request.auth.uid; }
+    function semAtendimento() { return !('atendimento' in request.resource.data) || request.resource.data.atendimento == null; }
 
     match /pedidos/{id} {
       allow read: if medico() || (logado() && resource.data.pacienteUid == request.auth.uid);
       allow create: if dono(request.resource.data)
-        && request.resource.data.status in ['aguardando', 'urgencia']
-        && !('atendimento' in request.resource.data && request.resource.data.atendimento != null);
+        && request.resource.data.status in ['aguardando', 'urgencia'] && semAtendimento();
       // paciente só mexe enquanto o pedido está parado por urgência (ele pode refazer a triagem)
       allow update: if medico()
         || (dono(resource.data) && dono(request.resource.data)
             && resource.data.status == 'urgencia'
-            && request.resource.data.status in ['aguardando', 'urgencia']
-            && !('atendimento' in request.resource.data && request.resource.data.atendimento != null));
+            && request.resource.data.status in ['aguardando', 'urgencia'] && semAtendimento());
       allow delete: if false;
     }
     match /medicos/{uid} {
-      allow read, write: if medico() && request.auth.uid == uid;
+      allow read: if (logado() && request.auth.uid == uid) || admin();
+      allow create: if logado() && request.auth.uid == uid && request.auth.token.firebase.sign_in_provider != 'anonymous'
+        && !('aprovado' in request.resource.data);
+      allow update: if logado() && request.auth.uid == uid
+        && request.resource.data.get('aprovado', null) == resource.data.get('aprovado', null);
     }
     match /{doc=**} { allow read, write: if false; }
   }
