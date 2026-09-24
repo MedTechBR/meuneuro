@@ -72,7 +72,9 @@ async function gerarPDF(p, med, op) {
     const t = (s, x, yy, f = reg, sz = 10, cor = rgb(0.07, 0.07, 0.07)) => pg.drawText(limpa(s), { x, y: yy, size: sz, font: f, color: cor });
     // cabeçalho
     t(med.nome, M, y, neg, 15);
-    const direita = [med.endereco, [med.cidade, med.ufEnd].filter(Boolean).join('/'), med.telefone, 'Teleconsulta - RefilMed'].filter(Boolean);
+    const dl = String(med.cnpjLocal || '').replace(/\D/g, '');
+    const docLocal = dl.length === 14 ? 'CNPJ ' + dl.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5') : dl.length === 7 ? 'CNES ' + dl : '';
+    const direita = [[med.nomeLocal, docLocal].filter(Boolean).join(' - '), med.endereco, [med.cidade, med.ufEnd].filter(Boolean).join('/'), med.telefone, 'Teleconsulta - RefilMed'].filter(Boolean);
     direita.forEach((s, i) => { const w = reg.widthOfTextAtSize(limpa(s), 9); t(s, A4[0] - M - w, y - i * 12, reg, 9, rgb(0.25, 0.25, 0.25)); });
     t(['CRM ' + med.crm + '/' + med.uf, med.rqe ? 'RQE ' + med.rqe : '', med.especialidade].filter(Boolean).join(' - '), M, y - 16, reg, 9.5, rgb(0.25, 0.25, 0.25));
     y -= Math.max(34, direita.length * 12 + 6);

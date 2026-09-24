@@ -91,6 +91,18 @@
     return frs ? int + ' e ' + frs : String(int);
   };
 
+  // local de atendimento do emitente: CNPJ (14 dígitos, com dígitos verificadores) ou CNES (7 dígitos)
+  RF.docLocal = function (v) {
+    const d = String(v || '').replace(/\D/g, '');
+    if (d.length === 7) return { tipo: 'CNES', num: d, fmt: d, valido: true };
+    if (d.length === 14) {
+      const calc = n => { let s = 0, pos = n - 7; for (let i = 0; i < n; i++) { s += +d[i] * pos--; if (pos < 2) pos = 9; } const r = s % 11; return r < 2 ? 0 : 11 - r; };
+      const ok = !/^(\d)\1{13}$/.test(d) && calc(12) === +d[12] && calc(13) === +d[13];
+      return { tipo: 'CNPJ', num: d, fmt: d.replace(/(\d{2})(\d{3})(\d{3})(\d{4})(\d{2})/, '$1.$2.$3/$4-$5'), valido: ok };
+    }
+    return { tipo: '', num: d, fmt: d, valido: false };
+  };
+
   RF.fmtNum = function (x) {
     if (x == null || isNaN(x)) return '';
     return (Math.round(x * 100) / 100).toLocaleString('pt-BR');

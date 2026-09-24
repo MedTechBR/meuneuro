@@ -82,7 +82,7 @@
     medico: { r: 'Médico', cor: 'c-azul', i: 'ti-stethoscope', d: 'Atender, revisar e assinar receitas', nome: 'Dra. Helena Duarte' },
     atendente: { r: 'Atendente', cor: 'c-verde', i: 'ti-headset', d: 'Contato com pacientes e andamento da fila', nome: 'Lucas Moreira' }
   };
-  const MEDICO_DEMO = { nome: 'Dra. Helena Duarte', crm: '000000', uf: 'CE', rqe: '0000', especialidade: 'Clínica Médica', endereco: 'Endereço fictício de demonstração, 100', cidade: 'Sobral', ufEnd: 'CE', telefone: '(88) 0000-0000', demo: true };
+  const MEDICO_DEMO = { nome: 'Dra. Helena Duarte', crm: '000000', uf: 'CE', rqe: '0000', especialidade: 'Clínica Médica', endereco: 'Endereço fictício de demonstração, 100', cidade: 'Sobral', ufEnd: 'CE', telefone: '(88) 0000-0000', nomeLocal: 'Clínica de demonstração', cnpjLocal: '0000000', demo: true };
   RF.atualizarTopo = function () {
     const box = $('#topo-conta'); if (!box) return;
     const s = RF.backend.sessao.ler();

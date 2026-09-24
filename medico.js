@@ -59,6 +59,9 @@
         <label class="campo"><span>UF do CRM</span><select class="inp" name="uf" required><option value="">UF</option>${UFS.map(u => `<option ${m.uf === u ? 'selected' : ''}>${u}</option>`).join('')}</select></label></div>
         <div class="linha2"><label class="campo"><span>RQE</span><input class="inp" name="rqe" value="${v('rqe')}"></label>
         <label class="campo"><span>Especialidade</span><input class="inp" name="especialidade" value="${v('especialidade')}" placeholder="Ex.: Clínica Médica, Cardiologia"></label></div>
+        <div class="linha2"><label class="campo"><span>Local de atendimento (clínica ou serviço)</span><input class="inp" name="nomeLocal" value="${v('nomeLocal')}" placeholder="Ex.: Clínica São Lucas"></label>
+        <label class="campo"><span>CNPJ ou CNES do local</span><input class="inp" name="cnpjLocal" value="${v('cnpjLocal')}" inputmode="numeric" placeholder="00.000.000/0000-00 ou 7 dígitos do CNES"></label></div>
+        <p class="nota" style="margin:-6px 0 12px">Obrigatório na receita de controle especial (Portaria 6/1999, art. 85, redação da RDC 1.000/2025). É do local onde você atende, não da empresa do RefilMed.</p>
         <label class="campo"><span>Endereço profissional completo</span><input class="inp" name="endereco" value="${v('endereco')}" required placeholder="Rua, número, sala, bairro"></label>
         <div class="linha2"><label class="campo"><span>Cidade</span><input class="inp" name="cidade" value="${v('cidade')}" required></label>
         <label class="campo"><span>UF</span><select class="inp" name="ufEnd" required><option value="">UF</option>${UFS.map(u => `<option ${m.ufEnd === u ? 'selected' : ''}>${u}</option>`).join('')}</select></label></div>
@@ -75,6 +78,7 @@
       e.preventDefault();
       const f = Object.fromEntries(new FormData(e.target).entries());
       Object.keys(f).forEach(k => f[k] = String(f[k]).trim());
+      if (f.cnpjLocal) { const d = RF.docLocal(f.cnpjLocal); if (!d.valido) return RF.toast('CNPJ ou CNES do local inválido: confira os números (CNPJ tem 14 dígitos, CNES tem 7).'); f.cnpjLocal = d.fmt; }
       S.medico = Object.assign({}, S.medico, f);
       await RF.backend.medico.salvarPerfil(S.medico);
       RF.toast('Dados salvos.');
@@ -240,7 +244,7 @@
     S.abaCaso = 'atendimento';
     desenhar();
   }
-  function medicoResumo() { const m = S.medico; return { nome: m.nome, crm: m.crm, uf: m.uf, rqe: m.rqe || '', especialidade: m.especialidade || '', endereco: m.endereco, cidade: m.cidade, ufEnd: m.ufEnd, telefone: m.telefone }; }
+  function medicoResumo() { const m = S.medico; return { nome: m.nome, crm: m.crm, uf: m.uf, rqe: m.rqe || '', especialidade: m.especialidade || '', endereco: m.endereco, cidade: m.cidade, ufEnd: m.ufEnd, telefone: m.telefone, nomeLocal: m.nomeLocal || '', cnpjLocal: m.cnpjLocal || '' }; }
   function modeloEvolucao(p) {
     return `Teleconsulta para renovação de receita.\nPré-anamnese coletada por assistente automatizado (RefilMed ${RF.versao}), com transcrição anexa; informações revisadas e confirmadas pelo médico no atendimento.\n\n` +
       RF.resumoClinico(p) + `\n\nAvaliação:\n\nConduta:\n`;
@@ -442,6 +446,7 @@
       ${(p.receitas || []).some(b => b.tipo === 'controle_especial') ? ((RF.sncr.restantes((S.medico.sncr || {}).rce) || (p.receitas || []).every(b => b.tipo !== 'controle_especial' || b.numeroSNCR))
         ? '<div class="alerta info" style="margin:12px 0 0"><span class="ico"><i class="ti ti-numbers"></i></span><span>A receita de controle especial recebe a numeração SNCR do seu bloco ao gerar o PDF.</span></div>'
         : '<div class="alerta medio" style="margin:12px 0 0"><span class="ico"><i class="ti ti-alert-circle"></i></span><span>Receita de controle especial sem numeração SNCR: aceita só até 29/10/2026. Obtenha o bloco no seu perfil (SNCR).</span></div>') : ''}
+      ${(p.receitas || []).some(b => b.tipo === 'controle_especial') && !RF.docLocal(S.medico.cnpjLocal).valido ? '<div class="alerta medio" style="margin:10px 0 0"><span class="ico"><i class="ti ti-building-hospital"></i></span><span>Falta o CNPJ ou CNES do local de atendimento no seu perfil: a receita de controle especial precisa dele. <a href="#/medico/perfil">Completar perfil</a></span></div>' : ''}
       <h3 style="margin:18px 0 8px">Assinatura digital ICP-Brasil</h3>
       <ol class="small" style="margin:0;padding-left:18px;line-height:1.7">
         <li><button class="btn btn-s" id="bpdf"><i class="ti ti-file-download"></i>Gerar PDF da receita</button> (na janela de impressão, escolha "Salvar como PDF").</li>

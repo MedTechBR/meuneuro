@@ -11,7 +11,7 @@ const { assinarPDF, digestInfo } = require(path.join(raiz, 'functions/pades.js')
   const cert = fs.readFileSync(path.join(pasta, 'cert.pem'), 'utf8');
   const p = await RF.rodarRoteiro(RF.ROTEIROS[2]);                 // enxaqueca: simples + controle especial
   p.receitas.find(b => b.tipo === 'controle_especial').numeroSNCR = '2602.6-53.0000001';
-  const med = { nome: 'Dra. Teste Assinatura', crm: '000000', uf: 'CE', rqe: '0000', especialidade: 'Clínica Médica', endereco: 'Rua Teste, 1', cidade: 'Sobral', ufEnd: 'CE', telefone: '(88) 0000-0000' };
+  const med = { nome: 'Dra. Teste Assinatura', crm: '000000', uf: 'CE', rqe: '0000', especialidade: 'Clínica Médica', endereco: 'Rua Teste, 1', cidade: 'Sobral', ufEnd: 'CE', telefone: '(88) 0000-0000', nomeLocal: 'Clínica Teste', cnpjLocal: '11.222.333/0001-81' };
   const pdf = await gerarPDF(p, med, { urlQR: 'https://southamerica-east1-refilmed.cloudfunctions.net/receitaITI?_format=application/validador-iti+json&_secretCode=TESTE123', verificacao: 'ABC123' });
   let chamadas = 0;
   const assinado = await assinarPDF(pdf, {

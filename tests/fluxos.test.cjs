@@ -61,6 +61,13 @@ const t = async (nome, fn) => { try { await fn(); ok++; console.log('ok  ', nome
     assert.ok(html.includes('RECEITUÁRIO DE CONTROLE ESPECIAL')); assert.ok(html.includes('CPF:')); assert.ok(html.includes('Endereço:'));
     assert.ok(html.includes('(sessenta)'));
   });
+  await t('CNPJ/CNES do local de atendimento no controle especial', async () => {
+    assert.ok(RF.docLocal('11.222.333/0001-81').valido); assert.ok(!RF.docLocal('11.222.333/0001-80').valido);
+    assert.ok(RF.docLocal('2345678').valido); assert.ok(!RF.docLocal('123').valido);
+    const p = await RF.rodarRoteiro(RF.ROTEIROS[2]);
+    const html = RF.folhasReceita(p, { nome: 'Dra. X', crm: '1', uf: 'CE', nomeLocal: 'Clínica Teste', cnpjLocal: '11.222.333/0001-81' }, {});
+    assert.ok(html.includes('CNPJ 11.222.333/0001-81')); assert.ok(html.includes('Clínica Teste'));
+  });
   await t('PDF: detecta assinatura PAdES', () => {
     const enc = s => new TextEncoder().encode(s);
     assert.ok(!RF.pdfTemAssinatura(enc('%PDF-1.7 nada')).assinado);

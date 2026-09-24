@@ -171,7 +171,7 @@ exports.assinarReceita = onCall({ region: REGIAO, invoker: "public", timeoutSeco
   const segredo = require("crypto").randomBytes(18).toString("base64url");
   const em = new Date().toISOString();
   const verificacao = require("crypto").createHash("sha256").update(pedidoId + em + segredo).digest("hex").slice(0, 10).toUpperCase();
-  const medico = { nome: med.nome, crm: med.crm, uf: med.uf, rqe: med.rqe || "", especialidade: med.especialidade || "", endereco: med.endereco, cidade: med.cidade, ufEnd: med.ufEnd, telefone: med.telefone };
+  const medico = { nome: med.nome, crm: med.crm, uf: med.uf, rqe: med.rqe || "", especialidade: med.especialidade || "", endereco: med.endereco, cidade: med.cidade, ufEnd: med.ufEnd, telefone: med.telefone, nomeLocal: med.nomeLocal || "", cnpjLocal: med.cnpjLocal || "" };
   const urlQR = `${BASE_FUNCOES()}/receitaITI?_format=application/validador-iti+json&_secretCode=${segredo}`;
   const pdf = await gerarPDF(p, medico, { urlQR, emitidoEm: em, verificacao });
   const certs = await vidaas.certificados(sess.token);

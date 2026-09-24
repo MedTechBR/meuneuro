@@ -7,8 +7,10 @@
   function cabecalho(med) {
     const l2 = ['CRM ' + (med.crm || '______') + '/' + (med.uf || '__'), med.rqe ? 'RQE ' + med.rqe : '', med.especialidade || ''].filter(Boolean).join(' · ');
     const end = [med.endereco, med.cidade && (med.cidade + (med.ufEnd ? '/' + med.ufEnd : ''))].filter(Boolean).join(' · ');
+    const d = RF.docLocal(med.cnpjLocal);
+    const local = [med.nomeLocal, d.tipo ? d.tipo + ' ' + d.fmt : ''].filter(Boolean).join(' · ');
     return `<div class="cab"><div><div class="m">${esc(med.nome || 'Nome do médico')}</div><div class="d">${esc(l2)}</div></div>
-      <div class="d" style="text-align:right">${esc(end)}${med.telefone ? '<br>' + esc(med.telefone) : ''}<br>Teleconsulta · RefilMed</div></div>`;
+      <div class="d" style="text-align:right">${local ? esc(local) + '<br>' : ''}${esc(end)}${med.telefone ? '<br>' + esc(med.telefone) : ''}<br>Teleconsulta · RefilMed</div></div>`;
   }
   // receita simples: endereço residencial (Lei 5.991/73, art. 35); controle especial: CPF (Portaria 344, art. 55, red. RDC 1.000/2025)
   function pacienteBloco(p, modo) {
