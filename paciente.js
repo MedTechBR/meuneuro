@@ -123,18 +123,18 @@
 
   function desenharEtapas() {
     const e = conv.etapa;
-    $('#etapas').innerHTML = MN.ETAPAS.map((n, i) => `<div class="etapa ${i < e ? 'feito' : i === e ? 'atual' : ''}" title="${n}"><span class="pt"><i class="ti ${i < e ? 'ti-check' : MN.ETAPAS_ICO[i]}"></i></span><span class="nm">${n}</span></div>`).join('');
+    $('#etapas').innerHTML = MN.ETAPAS.map((n, i) => `<div class="etapa ${MN.ETAPAS_COR[i]} ${i < e ? 'feito' : i === e ? 'atual' : ''}" title="${n}"><span class="pt"><i class="ti ${i < e ? 'ti-check' : MN.ETAPAS_ICO[i]}"></i></span><span class="nm">${n}</span></div>`).join('');
     const b = $('#abrir-lado'); if (b) b.onclick = () => $('#lado').classList.toggle('aberto');
   }
 
   function desenharLado() {
     const p = conv.p, pa = p.paciente;
     const meds = p.meds.filter(m => m.nome);
-    const grupo = (ic, rot, corpo) => `<div class="grupo"><span class="ico sm"><i class="ti ${ic}"></i></span><div class="conteudo"><div class="rot">${rot}</div>${corpo}</div></div>`;
+    const grupo = (ic, rot, corpo, cor) => `<div class="grupo ${cor || ''}"><span class="ico sm"><i class="ti ${ic}"></i></span><div class="conteudo"><div class="rot">${rot}</div>${corpo}</div></div>`;
     let h = '<div class="card"><div class="lado-tit"><span class="ico"><i class="ti ti-clipboard-list"></i></span><h3>O que você informou</h3></div>';
-    h += grupo('ti-user', 'Paciente', pa.nome ? esc(pa.nome) + (pa.nasc ? ' · ' + MN.idade(pa.nasc) + ' anos' : '') : '<span class="muted small">Ainda não informado</span>');
-    if (p.condicoes.length) h += grupo('ti-brain', 'Motivo', p.condicoes.map(c => esc(c === 'outro' ? p.condicaoOutra : MN.condRot(c))).join('<br>'));
-    h += grupo('ti-pill', 'Remédios', meds.length ? meds.map(m => `<div class="rx-item"><b>${esc(MN.nomeRx(m))}</b><span>${esc(m.pos ? MN.descPosologia(m.pos, m.forma) : 'como toma: a informar')}</span></div>`).join('') : '<span class="muted small">Nenhum ainda</span>');
+    h += grupo('ti-user', 'Paciente', pa.nome ? esc(pa.nome) + (pa.nasc ? ' · ' + MN.idade(pa.nasc) + ' anos' : '') : '<span class="muted small">Ainda não informado</span>', 'c-azul');
+    if (p.condicoes.length) h += grupo('ti-brain', 'Motivo', p.condicoes.map(c => esc(c === 'outro' ? p.condicaoOutra : MN.condRot(c))).join('<br>'), 'c-rosa');
+    h += grupo('ti-pill', 'Remédios', meds.length ? meds.map(m => `<div class="rx-item"><b>${esc(MN.nomeRx(m))}</b><span>${esc(m.pos ? MN.descPosologia(m.pos, m.forma) : 'como toma: a informar')}</span></div>`).join('') : '<span class="muted small">Nenhum ainda</span>', 'c-violeta');
     h += '<p class="nota">O neurologista revisa tudo e decide a receita no atendimento.</p>';
     h += '<button class="btn btn-s lado-btn" style="width:100%;margin-top:12px" onclick="document.getElementById(\'lado\').classList.remove(\'aberto\')">Fechar</button></div>';
     $('#lado').innerHTML = h;

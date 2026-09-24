@@ -442,3 +442,54 @@ textarea.inp{resize:vertical;min-height:88px;line-height:1.45}
   .confianca{gap:14px}
 }
 .med>*,.conv-wrap>*{min-width:0}
+
+/* ---------- cores por categoria ----------
+   Cada bloco de ícone pega --tint/--tint-soft da classe c-* dele ou de um ancestral. */
+.c-azul{--tint:#3346c4;--tint-soft:#eceefc}
+.c-violeta{--tint:#7c3aed;--tint-soft:#f1eafe}
+.c-rosa{--tint:#db2777;--tint-soft:#fde8f1}
+.c-laranja{--tint:#ea580c;--tint-soft:#ffecde}
+.c-ambar{--tint:#b45309;--tint-soft:#fef1d3}
+.c-verde{--tint:#15803d;--tint-soft:#e2f5e7}
+.c-teal{--tint:#0f766e;--tint-soft:#ddf4f1}
+.c-ciano{--tint:#0369a1;--tint-soft:#dff0fa}
+.c-vermelho{--tint:#dc2626;--tint-soft:#fde8e8}
+.c-indigo{--tint:#4338ca;--tint-soft:#e8e8fc}
+.t-azul{color:#3346c4!important}.t-violeta{color:#7c3aed!important}.t-rosa{color:#db2777!important}.t-laranja{color:#ea580c!important}
+.t-verde{color:#15803d!important}.t-vermelho{color:#dc2626!important}.t-ambar{color:#b45309!important}.t-teal{color:#0f766e!important}
+.ico{background:var(--tint-soft,var(--acc-soft));color:var(--tint,var(--acc))}
+.ico.solid{background:var(--tint,var(--acc));color:#fff}
+.int:hover .ico,.int:focus-visible .ico{background:var(--tint,var(--acc));color:#fff}
+.int:hover{border-color:var(--tint-soft,var(--acc-soft-2))}
+.avatar{background:var(--tint-soft,var(--acc-soft));color:var(--tint,var(--acc-ink))}
+.cond:hover .seta{color:var(--tint,var(--acc))}
+.cond .ico{transition:background .2s var(--ease),color .2s var(--ease),transform .35s cubic-bezier(.3,1.6,.5,1)}
+.cond:hover .ico{transform:rotate(-8deg) scale(1.1)}
+.passo .num{color:var(--tint);background:var(--tint-soft);width:28px;height:28px;border-radius:10px;display:grid;place-items:center;top:18px;right:18px}
+.passo::before{content:"";position:absolute;left:22px;right:22px;top:0;height:3px;border-radius:0 0 3px 3px;background:var(--tint)}
+.etapa.atual .pt{background:var(--tint,var(--acc));border-color:var(--tint,var(--acc));box-shadow:0 0 0 4px var(--tint-soft,rgba(51,70,196,.15))}
+.etapa.feito .pt{background:var(--tint-soft,var(--acc-soft));border-color:var(--tint-soft,var(--acc-soft));color:var(--tint,var(--acc))}
+.etapa.feito::after{background:var(--tint,var(--acc))}
+.trilho-it:hover .ico{background:var(--tint-soft,var(--acc-soft));color:var(--tint,var(--acc))}
+.trilho-it.on{color:var(--tint,var(--acc-ink))}
+.trilho-it.on .ico{background:var(--tint,var(--acc));color:#fff;box-shadow:0 6px 16px -6px var(--tint,var(--acc))}
+.perfil.on{border-color:var(--tint,var(--acc));box-shadow:0 0 0 3px var(--tint-soft,var(--acc-soft))}
+.perfil.on .ico{background:var(--tint,var(--acc));color:#fff}
+.btn-p .ti{transition:transform .2s var(--ease)}
+.btn-p:hover .ti{transform:translateX(2px)}
+
+/* entrada: ícones que flutuam em volta da prévia */
+.home-prev-wrap{position:relative}
+.flutua{position:absolute;z-index:2;width:48px;height:48px;border-radius:16px;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(18,21,29,.25);animation:flutua 6s ease-in-out infinite;cursor:default;transition:transform .2s}
+.flutua .ti{font-size:24px;vertical-align:0}
+.flutua{background:var(--tint);color:#fff}
+.flutua:hover{animation-play-state:paused;transform:scale(1.12) rotate(-6deg)}
+.flutua.f1{top:-18px;left:-14px}
+.flutua.f2{top:38%;right:-12px;animation-delay:-2s}
+.flutua.f3{bottom:-20px;left:18%;animation-delay:-4s}
+@keyframes flutua{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.home-hero h1 span{color:inherit;background:linear-gradient(transparent 62%,#fde68a 62%);padding:0 2px}
+.selo{background:#fff;border:1px solid var(--line);box-shadow:var(--shadow)}
+@media (max-width:760px){.flutua{display:none}}
+.trilho-it .ico{background:transparent;color:var(--tint,var(--muted))}
+.trilho-it:not(.on) .ico .ti{opacity:.85}

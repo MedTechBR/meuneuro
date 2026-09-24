@@ -23,7 +23,7 @@
   }
 
   function telaHome() {
-    const conds = MN.CONDICOES.map(c => `<a class="cond int" href="#/paciente" data-c="${c.v}"><span class="ico"><i class="ti ${c.i}"></i></span><span>${esc(c.c)}</span><i class="ti ti-arrow-right seta"></i></a>`).join('');
+    const conds = MN.CONDICOES.map(c => `<a class="cond int ${c.cor}" href="#/paciente" data-c="${c.v}"><span class="ico"><i class="ti ${c.i}"></i></span><span>${esc(c.c)}</span><i class="ti ti-arrow-right seta"></i></a>`).join('');
     app.innerHTML = `<div class="home">
       <section class="home-hero">
         <div>
@@ -35,11 +35,15 @@
             <a class="btn" href="#/acompanhar"><i class="ti ti-search"></i>Acompanhar pedido</a>
           </div>
           <div class="confianca">
-            <div><span class="ico sm"><i class="ti ti-clock"></i></span>Cerca de 5 minutos para preencher</div>
-            <div><span class="ico sm"><i class="ti ti-certificate"></i></span>Assinatura digital ICP-Brasil</div>
-            <div><span class="ico sm"><i class="ti ti-lock"></i></span>Dados de saúde protegidos pela LGPD</div>
+            <div class="c-ambar"><span class="ico sm"><i class="ti ti-clock"></i></span>Cerca de 5 minutos para preencher</div>
+            <div class="c-verde"><span class="ico sm"><i class="ti ti-certificate"></i></span>Assinatura digital ICP-Brasil</div>
+            <div class="c-violeta"><span class="ico sm"><i class="ti ti-lock"></i></span>Dados de saúde protegidos pela LGPD</div>
           </div>
         </div>
+        <div class="home-prev-wrap">
+        <span class="flutua f1 c-violeta" aria-hidden="true"><i class="ti ti-brain"></i></span>
+        <span class="flutua f2 c-rosa" aria-hidden="true"><i class="ti ti-pill"></i></span>
+        <span class="flutua f3 c-verde" aria-hidden="true"><i class="ti ti-file-certificate"></i></span>
         <div class="card home-prev" aria-hidden="true">
           <div class="prev-top"><span class="av-ia">${MN.marcaSVG}</span><div><b>Assistente Meu Neuro</b><span class="on">pré-consulta</span></div></div>
           <div class="prev-msg ia">Qual é o nome do remédio que você quer renovar?</div>
@@ -48,7 +52,7 @@
           <div class="prev-msg pac">1 de manhã e 1 à noite</div>
           <div class="prev-msg ia">Entendi: 1 comprimido pela manhã e 1 à noite, 1.000 mg por dia. Está certo?</div>
           <div class="prev-rx"><div class="l"><b>Pedido para o neurologista</b><span class="tag acc">em revisão</span></div><div class="l"><span>Levetiracetam 500 mg</span><span class="muted">12/12 h</span></div><div class="l"><span>Última crise há mais de 1 ano</span><span class="tag ok">sem alertas</span></div></div>
-        </div>
+        </div></div>
       </section>
 
       <div class="sec-tit"><h2>Para quem já faz tratamento</h2><p>Escolha o seu caso para começar. Serve para quem já tem diagnóstico e usa remédio de forma contínua.</p></div>
@@ -56,9 +60,9 @@
 
       <div class="sec-tit"><h2>Como funciona</h2><p>O médico decide tudo. O assistente só adianta as informações para o atendimento ser rápido.</p></div>
       <section class="passos">
-        <div class="card passo int"><span class="num">1</span><span class="ico lg"><i class="ti ti-message-circle"></i></span><h3>Você conversa com o assistente</h3><p>Ele pergunta sobre remédios, doses, efeitos e sinais de alerta.</p></div>
-        <div class="card passo int"><span class="num">2</span><span class="ico lg"><i class="ti ti-stethoscope"></i></span><h3>O neurologista atende você</h3><p>Lê suas respostas, confirma com você por vídeo ou mensagem e decide a receita.</p></div>
-        <div class="card passo int"><span class="num">3</span><span class="ico lg"><i class="ti ti-file-certificate"></i></span><h3>Você baixa a receita assinada</h3><p>Vale em qualquer farmácia. É só entrar com o código do pedido.</p></div>
+        <div class="card passo int c-azul"><span class="num">1</span><span class="ico lg"><i class="ti ti-message-circle"></i></span><h3>Você conversa com o assistente</h3><p>Ele pergunta sobre remédios, doses, efeitos e sinais de alerta.</p></div>
+        <div class="card passo int c-verde"><span class="num">2</span><span class="ico lg"><i class="ti ti-stethoscope"></i></span><h3>O neurologista atende você</h3><p>Lê suas respostas, confirma com você por vídeo ou mensagem e decide a receita.</p></div>
+        <div class="card passo int c-violeta"><span class="num">3</span><span class="ico lg"><i class="ti ti-file-certificate"></i></span><h3>Você baixa a receita assinada</h3><p>Vale em qualquer farmácia. É só entrar com o código do pedido.</p></div>
       </section>
 
       <div class="aviso-urg"><span class="ico"><i class="ti ti-urgent"></i></span><span><b>Não atendemos urgência.</b> Fraqueza de repente, fala enrolada, crise convulsiva que não para ou a pior dor de cabeça da vida: ligue 192 (SAMU) ou vá ao pronto-socorro.</span></div>
@@ -73,9 +77,9 @@
 
   /* ---------- conta e login de demonstração ---------- */
   const PERFIS = {
-    paciente: { r: 'Paciente', i: 'ti-user-heart', d: 'Renovar receitas e acompanhar pedidos', nome: 'Paciente de demonstração' },
-    medico: { r: 'Médico', i: 'ti-stethoscope', d: 'Atender, revisar e assinar receitas', nome: 'Dra. Helena Duarte' },
-    atendente: { r: 'Atendente', i: 'ti-headset', d: 'Contato com pacientes e andamento da fila', nome: 'Lucas Moreira' }
+    paciente: { r: 'Paciente', cor: 'c-rosa', i: 'ti-user-heart', d: 'Renovar receitas e acompanhar pedidos', nome: 'Paciente de demonstração' },
+    medico: { r: 'Médico', cor: 'c-azul', i: 'ti-stethoscope', d: 'Atender, revisar e assinar receitas', nome: 'Dra. Helena Duarte' },
+    atendente: { r: 'Atendente', cor: 'c-verde', i: 'ti-headset', d: 'Contato com pacientes e andamento da fila', nome: 'Lucas Moreira' }
   };
   const MEDICO_DEMO = { nome: 'Dra. Helena Duarte', crm: '000000', uf: 'CE', rqe: '0000', especialidade: 'Neurologia', endereco: 'Endereço fictício de demonstração, 100', cidade: 'Sobral', ufEnd: 'CE', telefone: '(88) 0000-0000', demo: true };
   MN.atualizarTopo = function () {
@@ -84,7 +88,7 @@
     if (!s) { box.innerHTML = '<a class="top-link" href="#/entrar"><i class="ti ti-login-2"></i>Entrar</a>'; return; }
     const destino = s.perfil === 'paciente' ? '#/minha-area' : '#/medico';
     const ini = String(s.nome || '?').split(/\s+/).filter(w => !/^(dr|dra)\.?$/i.test(w)).map(w => w[0]).slice(0, 2).join('').toUpperCase();
-    box.innerHTML = `<a class="conta" href="${destino}" title="Minha área"><span class="avatar">${esc(ini)}</span><span class="nm">${esc(String(s.nome).split(' ').slice(0, 2).join(' '))}<small>${PERFIS[s.perfil].r}</small></span></a>`;
+    box.innerHTML = `<a class="conta" href="${destino}" title="Minha área"><span class="avatar ${PERFIS[s.perfil].cor}">${esc(ini)}</span><span class="nm">${esc(String(s.nome).split(' ').slice(0, 2).join(' '))}<small>${PERFIS[s.perfil].r}</small></span></a>`;
   };
 
   function telaLogin(pre) {
@@ -93,8 +97,8 @@
     const desenhar = () => {
       const P = PERFIS[perfil];
       app.innerHTML = `<div class="estreito"><div class="card">
-        <div class="cab-card"><span class="ico lg"><i class="ti ti-login-2"></i></span><div><h2>Entrar no Meu Neuro</h2><p class="muted small">Escolha como você usa a plataforma.</p></div></div>
-        <div class="perfis">${Object.entries(PERFIS).map(([k, x]) => `<button class="perfil int ${k === perfil ? 'on' : ''}" data-p="${k}"><span class="ico"><i class="ti ${x.i}"></i></span><span>${x.r}<br><small>${x.d}</small></span></button>`).join('')}</div>
+        <div class="cab-card c-azul"><span class="ico lg"><i class="ti ti-login-2"></i></span><div><h2>Entrar no Meu Neuro</h2><p class="muted small">Escolha como você usa a plataforma.</p></div></div>
+        <div class="perfis">${Object.entries(PERFIS).map(([k, x]) => `<button class="perfil int ${x.cor} ${k === perfil ? 'on' : ''}" data-p="${k}"><span class="ico"><i class="ti ${x.i}"></i></span><span>${x.r}<br><small>${x.d}</small></span></button>`).join('')}</div>
         <form id="fl">
           <label class="campo"><span>Nome</span><input class="inp" name="nome" value="${esc(P.nome)}" required></label>
           ${firebase && perfil !== 'paciente' ? '<label class="campo"><span>E-mail</span><input class="inp" type="email" name="email" required></label><label class="campo"><span>Senha</span><input class="inp" type="password" name="senha" required></label>' : ''}
@@ -125,15 +129,15 @@
     if (!s || s.perfil !== 'paciente') { location.hash = '#/entrar/paciente'; return; }
     let meus = [];
     try { meus = JSON.parse(localStorage.getItem('meuneuro.v1.meus-pedidos') || '[]'); } catch (e) { }
-    const rot = { aguardando: ['Na fila do médico', 'acc', 'ti-clock'], em_atendimento: ['Em atendimento', 'warn', 'ti-stethoscope'], assinado: ['Receita assinada', 'ok', 'ti-file-certificate'], recusado: ['Não renovado', 'bad', 'ti-ban'], urgencia: ['Interrompido', 'bad', 'ti-urgent'] };
+    const rot = { aguardando: ['Na fila do médico', 'acc', 'ti-clock', 'c-azul'], em_atendimento: ['Em atendimento', 'warn', 'ti-stethoscope', 'c-ambar'], assinado: ['Receita assinada', 'ok', 'ti-file-certificate', 'c-verde'], recusado: ['Não renovado', 'bad', 'ti-ban', 'c-vermelho'], urgencia: ['Interrompido', 'bad', 'ti-urgent', 'c-vermelho'] };
     const pedidos = [];
     for (const m of meus) { const r = await MN.backend.consultarPorCodigo(m.codigo, m.nasc); if (r.pedido) pedidos.push(r.pedido); }
     const rasc = MN.backend.rascunho.ler();
     app.innerHTML = `<div class="estreito">
-      <div class="card"><div class="cab-card"><span class="ico lg"><i class="ti ti-user-heart"></i></span><div><h2>Olá, ${esc(String(s.nome).split(' ')[0])}</h2><p class="muted small">Suas renovações de receita neste aparelho.</p></div></div>
+      <div class="card"><div class="cab-card c-rosa"><span class="ico lg"><i class="ti ti-user-heart"></i></span><div><h2>Olá, ${esc(String(s.nome).split(' ')[0])}</h2><p class="muted small">Suas renovações de receita neste aparelho.</p></div></div>
         <div style="display:flex;gap:8px;flex-wrap:wrap"><a class="btn btn-p" href="#/paciente"><i class="ti ti-${rasc && rasc.status === 'rascunho' ? 'player-play' : 'plus'}"></i>${rasc && rasc.status === 'rascunho' ? 'Continuar pedido em andamento' : 'Nova renovação'}</a>
         <button class="btn btn-g" id="sair-pac"><i class="ti ti-logout"></i>Sair</button></div>
-        <div class="lista-ped">${pedidos.length ? pedidos.map(p => { const x = rot[p.status] || [p.status, '', 'ti-file']; return `<a class="ped int" href="#/acompanhar/${esc(p.codigo)}"><span class="ico"><i class="ti ${x[2]}"></i></span><span class="corpo"><b>${esc((p.meds || []).map(m => m.nome).join(', ') || 'Pedido sem remédios listados')}</b><span class="m">${esc(p.codigo)} · ${esc(MN.fmtData(p.enviadoEm))}</span></span><span class="tag ${x[1]}">${x[0]}</span></a>`; }).join('') : '<div class="vazio" style="padding:26px 10px"><span class="ico lg"><i class="ti ti-file-plus"></i></span><p>Você ainda não fez nenhum pedido neste aparelho.</p></div>'}</div>
+        <div class="lista-ped">${pedidos.length ? pedidos.map(p => { const x = rot[p.status] || [p.status, '', 'ti-file']; return `<a class="ped int ${x[3] || ''}" href="#/acompanhar/${esc(p.codigo)}"><span class="ico"><i class="ti ${x[2]}"></i></span><span class="corpo"><b>${esc((p.meds || []).map(m => m.nome).join(', ') || 'Pedido sem remédios listados')}</b><span class="m">${esc(p.codigo)} · ${esc(MN.fmtData(p.enviadoEm))}</span></span><span class="tag ${x[1]}">${x[0]}</span></a>`; }).join('') : '<div class="vazio" style="padding:26px 10px"><span class="ico lg"><i class="ti ti-file-plus"></i></span><p>Você ainda não fez nenhum pedido neste aparelho.</p></div>'}</div>
       </div></div>`;
     $('#sair-pac').onclick = () => { MN.backend.sessao.sair(); MN.atualizarTopo(); location.hash = '#/'; };
   }
@@ -144,7 +148,7 @@
     try { meus = JSON.parse(localStorage.getItem('meuneuro.v1.meus-pedidos') || '[]'); } catch (e) { }
     const pre = meus.find(x => x.codigo === codigo);
     app.innerHTML = `<div class="estreito"><div class="card" id="acomp">
-      <div class="cab-card"><span class="ico lg"><i class="ti ti-file-search"></i></span><div><h2>Acompanhar pedido</h2><p class="muted small">Use o código que apareceu no fim da conversa e a data de nascimento do paciente.</p></div></div>
+      <div class="cab-card c-violeta"><span class="ico lg"><i class="ti ti-file-search"></i></span><div><h2>Acompanhar pedido</h2><p class="muted small">Use o código que apareceu no fim da conversa e a data de nascimento do paciente.</p></div></div>
       <form id="fa"><div class="linha2">
         <label class="campo"><span>Código do pedido</span><input class="inp" name="codigo" value="${esc(codigo || '')}" placeholder="MN-XXXXXX" required style="text-transform:uppercase"></label>
         <label class="campo"><span>Data de nascimento</span><input class="inp" name="nasc" type="date" value="${esc(pre ? pre.nasc : '')}" required></label></div>
@@ -190,7 +194,7 @@
 
   /* ---------- verificar autenticidade ---------- */
   async function telaVerificar(cod) {
-    app.innerHTML = `<div class="estreito"><div class="card"><div class="cab-card"><span class="ico lg"><i class="ti ti-shield-check"></i></span><div><h2>Verificar receita</h2><p class="muted small">Digite o código de verificação impresso no rodapé da receita.</p></div></div>
+    app.innerHTML = `<div class="estreito"><div class="card"><div class="cab-card c-verde"><span class="ico lg"><i class="ti ti-shield-check"></i></span><div><h2>Verificar receita</h2><p class="muted small">Digite o código de verificação impresso no rodapé da receita.</p></div></div>
       <form id="fv" class="escreve"><input class="inp" name="c" value="${esc(cod || '')}" placeholder="Código de verificação" required style="text-transform:uppercase"><button class="btn btn-p" aria-label="Verificar"><i class="ti ti-search"></i></button></form>
       <div id="rv"></div>
       <p class="small muted" style="margin-top:16px">A validade jurídica da assinatura digital ICP-Brasil é conferida no validador oficial: <a href="https://validar.iti.gov.br" target="_blank" rel="noopener">validar.iti.gov.br</a>.</p></div></div>`;

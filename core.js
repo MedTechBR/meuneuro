@@ -96,6 +96,10 @@
     return (Math.round(x * 100) / 100).toLocaleString('pt-BR');
   };
 
+  // cor estável a partir de um texto (avatar de paciente etc.)
+  MN.CORES = ['azul', 'violeta', 'rosa', 'laranja', 'verde', 'teal', 'ciano', 'indigo', 'ambar'];
+  MN.corDe = function (txt) { let h = 0; for (const ch of String(txt || '')) h = (h * 31 + ch.charCodeAt(0)) >>> 0; return 'c-' + MN.CORES[h % MN.CORES.length]; };
+
   MN.sha256 = async function (txt) {
     const c = G.crypto || require('crypto').webcrypto;
     const buf = await c.subtle.digest('SHA-256', new TextEncoder().encode(txt));

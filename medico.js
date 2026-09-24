@@ -46,7 +46,7 @@
     const m = S.medico || {};
     const v = k => esc(m[k] || '');
     el.innerHTML = `<div class="estreito"><div class="card">
-      <div class="cab-card"><span class="ico lg"><i class="ti ti-id-badge-2"></i></span><h2>${primeiro ? 'Seus dados de prescritor' : 'Perfil do médico'}</h2></div>
+      <div class="cab-card c-violeta"><span class="ico lg"><i class="ti ti-id-badge-2"></i></span><h2>${primeiro ? 'Seus dados de prescritor' : 'Perfil do médico'}</h2></div>
       <p class="muted small" style="margin:6px 0 16px">Saem no cabeçalho e na assinatura das receitas. O receituário de controle especial exige endereço completo e telefone do emitente.</p>
       <form id="fp">
         <label class="campo"><span>Nome completo</span><input class="inp" name="nome" value="${v('nome')}" required></label>
@@ -80,6 +80,7 @@
 
   /* ---------- painel ---------- */
   const ICO_ABA = { aguardando: 'ti-inbox', em_atendimento: 'ti-stethoscope', assinado: 'ti-file-certificate', outros: 'ti-arrow-forward-up' };
+  const COR_ABA = { aguardando: 'c-azul', em_atendimento: 'c-ambar', assinado: 'c-verde', outros: 'c-rosa' };
   const CURTO = { aguardando: 'Fila', em_atendimento: 'Atendendo', assinado: 'Assinados', outros: 'Outros' };
   function iniciais(nome) { const p = String(nome || '?').trim().split(/\s+/); return ((p[0] || '')[0] + ((p.length > 1 ? p[p.length - 1] : '')[0] || '')).toUpperCase(); }
 
@@ -88,10 +89,10 @@
     const n = k => S.pedidos.filter(ABAS_FILA.find(a => a.k === k).f).length;
     el.innerHTML = `<div class="med ${S.caso ? 'com-caso' : ''}">
       <nav class="trilho" aria-label="Seções">
-        ${ABAS_FILA.map(a => `<button class="trilho-it ${S.aba === a.k ? 'on' : ''}" data-a="${a.k}" title="${a.r}"><span class="ico"><i class="ti ${ICO_ABA[a.k]}"></i></span>${CURTO[a.k]}${a.k === 'aguardando' && n(a.k) ? `<span class="n">${n(a.k)}</span>` : ''}</button>`).join('')}
+        ${ABAS_FILA.map(a => `<button class="trilho-it ${COR_ABA[a.k]} ${S.aba === a.k ? 'on' : ''}" data-a="${a.k}" title="${a.r}"><span class="ico"><i class="ti ${ICO_ABA[a.k]}"></i></span>${CURTO[a.k]}${a.k === 'aguardando' && n(a.k) ? `<span class="n">${n(a.k)}</span>` : ''}</button>`).join('')}
         <span class="trilho-sp"></span>
-        ${S.papel === 'medico' ? '<a class="trilho-it" href="#/medico/perfil" title="Perfil"><span class="ico"><i class="ti ti-user-circle"></i></span>Perfil</a>' : ''}
-        <button class="trilho-it" id="sair-trilho" title="Sair"><span class="ico"><i class="ti ti-logout"></i></span>Sair</button>
+        ${S.papel === 'medico' ? '<a class="trilho-it c-violeta" href="#/medico/perfil" title="Perfil"><span class="ico"><i class="ti ti-user-circle"></i></span>Perfil</a>' : ''}
+        <button class="trilho-it c-vermelho" id="sair-trilho" title="Sair"><span class="ico"><i class="ti ti-logout"></i></span>Sair</button>
       </nav>
       <aside class="fila"><div class="fila-top">
         <div style="display:flex;align-items:center;gap:8px"><div style="flex:1"><h2>${ABAS_FILA.find(a => a.k === S.aba).r}</h2><div class="sub">${n(S.aba)} pedido${n(S.aba) === 1 ? '' : 's'}</div></div>
@@ -122,7 +123,7 @@
     box.innerHTML = l.map(p => {
       const al = p.alertas || [], altos = al.filter(x => x.nivel === 'alto').length, med = al.filter(x => x.nivel === 'medio').length;
       const meds = (p.meds || []).map(m => m.nome).join(', ') || (p.semAssistente ? 'Sem assistente' : 'Sem remédios');
-      return `<button class="fila-item ${S.caso && S.caso.id === p.id ? 'on' : ''}" data-id="${p.id}"><span class="avatar">${esc(iniciais(p.paciente.nome))}</span><span class="corpo">
+      return `<button class="fila-item ${S.caso && S.caso.id === p.id ? 'on' : ''}" data-id="${p.id}"><span class="avatar ${MN.corDe(p.paciente.nome)}">${esc(iniciais(p.paciente.nome))}</span><span class="corpo">
         <span class="l1"><span class="nome">${esc(p.paciente.nome || 'Sem nome')}</span><span class="quando">${MN.quando(p.enviadoEm || p.atualizadoEm)}</span></span>
         <span class="l2" style="display:block">${esc(MN.idade(p.paciente.nasc) + ' anos · ' + meds)}</span>
         <span class="l3">${altos ? `<span class="tag bad"><i class="ti ti-alert-triangle" style="font-size:13px;vertical-align:-2px"></i>${altos}</span>` : ''}${med ? `<span class="tag warn"><i class="ti ti-alert-circle" style="font-size:13px;vertical-align:-2px"></i>${med}</span>` : ''}${(p.condicoes || []).slice(0, 2).map(c => `<span class="tag">${esc(c === 'outro' ? (p.condicaoOutra || 'Outro') : MN.condCurta(c))}</span>`).join('')}</span>
@@ -140,7 +141,7 @@
     const podeAgir = !atend && (p.status === 'aguardando' || p.status === 'em_atendimento');
     box.innerHTML = `
       <a class="btn btn-s btn-g lado-btn" href="#/medico" style="margin:0 0 10px -6px"><i class="ti ti-arrow-left"></i>Voltar</a>
-      <div class="caso-top"><div class="caso-quem"><span class="avatar lg">${esc(iniciais(pa.nome))}</span><div>
+      <div class="caso-top"><div class="caso-quem"><span class="avatar lg ${MN.corDe(pa.nome)}">${esc(iniciais(pa.nome))}</span><div>
         <h1>${esc(pa.nome)}</h1>
         <div class="id"><span>${MN.idade(pa.nasc)} anos · ${pa.sexo === 'F' ? 'Feminino' : 'Masculino'} · ${esc(p.codigo)} · ${esc(MN.fmtData(p.enviadoEm, true))}</span><span class="tag ${st.c}">${st.r}</span></div>
       </div></div><div class="caso-acoes">
@@ -153,7 +154,7 @@
       </div></div>
       ${atend ? '<div class="alerta info" style="margin-top:14px"><span class="ico"><i class="ti ti-lock"></i></span><span>Perfil atendente: você vê dados de contato e o andamento do pedido. Informações clínicas e a receita ficam com o médico.</span></div>' : ''}
       <div class="alertas">${(atend ? [] : p.alertas || []).map(a => `<div class="alerta ${a.nivel}"><span class="ico"><i class="ti ${a.nivel === 'alto' ? 'ti-alert-triangle' : a.nivel === 'medio' ? 'ti-alert-circle' : 'ti-info-circle'}"></i></span><span>${esc(a.texto)}</span></div>`).join('')}</div>
-      <div class="abas">${(atend ? [['resumo', 'Dados e contato', 'ti-address-book']] : [['resumo', 'Resumo', 'ti-notes'], ['conversa', 'Conversa', 'ti-messages'], ['receita', 'Receita', 'ti-prescription'], ['atendimento', 'Atendimento', 'ti-stethoscope']]).map(([k, r, ic]) => `<button class="aba ${S.abaCaso === k ? 'on' : ''}" data-k="${k}"><i class="ti ${ic}"></i>${r}</button>`).join('')}</div>
+      <div class="abas">${(atend ? [['resumo', 'Dados e contato', 'ti-address-book t-verde']] : [['resumo', 'Resumo', 'ti-notes t-teal'], ['conversa', 'Conversa', 'ti-messages t-azul'], ['receita', 'Receita', 'ti-prescription t-violeta'], ['atendimento', 'Atendimento', 'ti-stethoscope t-ambar']]).map(([k, r, ic]) => `<button class="aba ${S.abaCaso === k ? 'on' : ''}" data-k="${k}"><i class="ti ${ic}"></i>${r}</button>`).join('')}</div>
       <div id="conteudo"></div>`;
     box.querySelectorAll('.aba').forEach(b => b.onclick = () => { S.abaCaso = b.dataset.k; desenharCaso(); });
     const ini = $('#iniciar'); if (ini) ini.onclick = iniciar;
@@ -189,7 +190,7 @@
   function abaResumo(box, p) {
     const pa = p.paciente;
     const rx = k => k ? ({ simples: ['Simples', ''], controle_especial: ['Controle especial', 'warn'], notificacao_b: ['Notificação B', 'bad'], notificacao_a: ['Notificação A', 'bad'] }[k.receituario] || ['?', '']) : ['Não classificado', ''];
-    let h = `<div class="sec"><h3><span class="ico sm"><i class="ti ti-id"></i></span>Paciente</h3><dl class="dl">
+    let h = `<div class="sec"><h3><span class="ico sm c-azul"><i class="ti ti-id"></i></span>Paciente</h3><dl class="dl">
       <dt>Nome</dt><dd>${esc(pa.nome)}${pa.responsavel ? ' · responsável: ' + esc(pa.responsavel) : ''}</dd>
       <dt>Nascimento</dt><dd>${esc(MN.fmtData(pa.nasc))} (${MN.idade(pa.nasc)} anos)</dd>
       <dt>CPF</dt><dd>${esc(MN.fmtCPF(pa.cpf) || '—')}</dd>
@@ -198,7 +199,7 @@
       <dt>Consentimento</dt><dd>${p.consentimento ? 'Aceito em ' + esc(MN.fmtData(p.consentimento.em, true)) + ' (' + esc(p.consentimento.versao) + ')' + (p.consentimento.assistente === false ? ' · recusou o assistente' : '') : '—'}</dd>
     </dl></div>`;
     if (S.papel !== 'atendente' && p.meds && p.meds.length) {
-      h += `<div class="sec"><h3><span class="ico sm"><i class="ti ti-pill"></i></span>Medicações informadas</h3><div style="overflow-x:auto"><table class="tab"><thead><tr><th>Medicação</th><th>Posologia informada</th><th>Uso e adesão</th><th>Efeitos</th><th>Receituário</th></tr></thead><tbody>`;
+      h += `<div class="sec"><h3><span class="ico sm c-violeta"><i class="ti ti-pill"></i></span>Medicações informadas</h3><div style="overflow-x:auto"><table class="tab"><thead><tr><th>Medicação</th><th>Posologia informada</th><th>Uso e adesão</th><th>Efeitos</th><th>Receituário</th></tr></thead><tbody>`;
       for (const m of p.meds) {
         const k = MN.kbPorId(m.kbId), r = rx(k), tot = MN.totalDia(m);
         const ef = (m.efeitos || []).concat(m.efeitosOutros ? [m.efeitosOutros] : []);
@@ -211,9 +212,9 @@
       }
       h += '</tbody></table></div></div>';
     }
-    if (S.papel !== 'atendente') h += `<div class="sec"><h3><span class="ico sm"><i class="ti ti-notes"></i></span>Resumo para o prontuário<span style="flex:1"></span><button class="btn btn-s btn-g" id="copiar"><i class="ti ti-copy"></i>Copiar</button></h3><div class="resumo-txt">${esc(p.resumo || '')}</div>
+    if (S.papel !== 'atendente') h += `<div class="sec"><h3><span class="ico sm c-teal"><i class="ti ti-notes"></i></span>Resumo para o prontuário<span style="flex:1"></span><button class="btn btn-s btn-g" id="copiar"><i class="ti ti-copy"></i>Copiar</button></h3><div class="resumo-txt">${esc(p.resumo || '')}</div>
       ${p.resumoIA ? `<h3 style="margin-top:14px">Síntese da IA</h3><div class="resumo-txt">${esc(p.resumoIA)}</div>` : ''}</div>`;
-    h += `<div class="sec"><h3><span class="ico sm"><i class="ti ti-history"></i></span>Histórico do pedido</h3><ul class="small" style="margin:0;padding-left:18px">${(p.historico || []).map(x => `<li>${esc(MN.fmtData(x.em, true))} · ${esc(x.evento)}${x.por ? ' · ' + esc(x.por) : ''}</li>`).join('')}</ul></div>`;
+    h += `<div class="sec"><h3><span class="ico sm c-ambar"><i class="ti ti-history"></i></span>Histórico do pedido</h3><ul class="small" style="margin:0;padding-left:18px">${(p.historico || []).map(x => `<li>${esc(MN.fmtData(x.em, true))} · ${esc(x.evento)}${x.por ? ' · ' + esc(x.por) : ''}</li>`).join('')}</ul></div>`;
     box.innerHTML = h;
     const cp = $('#copiar'); if (cp) cp.onclick = () => copiar(p.resumo);
   }
