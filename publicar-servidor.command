@@ -14,7 +14,7 @@ if ! $FB functions:secrets:access VIDAAS_CLIENT_SECRET --project refilmed >/dev/
   printf 'nao-usado' | $FB functions:secrets:set VIDAAS_CLIENT_SECRET --project refilmed --data-file=- --force || exit 1
 fi
 echo "== 5/5 Publicando regras e funções"
-$FB deploy --only firestore:rules,storage,functions --project refilmed --non-interactive --force || { read -n 1 -s -r -p "Falhou. Tecle algo para fechar"; exit 1; }
+$FB deploy --only firestore,storage,functions --project refilmed --non-interactive --force || { read -n 1 -s -r -p "Falhou. Tecle algo para fechar"; exit 1; }
 echo
 echo "Pronto. O servidor está no ar. Próximo: ativar-vidaas.command, quando a Valid liberar o cadastro."
 read -n 1 -s -r -p "Tecle algo para fechar"

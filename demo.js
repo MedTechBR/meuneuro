@@ -137,7 +137,7 @@
   RF.criarExemplos = async function () {
     for (const R of RF.ROTEIROS) {
       const p = await RF.rodarRoteiro(R);
-      p.exemplo = true;
+      p.exemplo = true; p.clinicaId = 'demo'; p.medicoUid = 'demo';
       await RF.backend.salvarPedido(p);
     }
   };

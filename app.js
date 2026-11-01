@@ -21,65 +21,93 @@
     if (r === 'minha-area') return telaMinhaArea();
     if (r === 'admin') return telaAdmin();
     if (r === 'sala') return telaSala(a);
+    if (r === 'm') return telaLink(a);
     return telaHome();
   }
 
+  /* ---------- página pública: fala com o médico ---------- */
   function telaHome() {
-    const conds = RF.CONDICOES.map(c => `<a class="cond int ${c.cor}" href="#/paciente" data-c="${c.v}"><span class="ico"><i class="ti ${c.i}"></i></span><span>${esc(c.c)}</span><i class="ti ti-arrow-right seta"></i></a>`).join('');
+    const demo = RF.backend.modo === 'local';
+    const item = (cor, ic, tit, txt) => `<div class="card passo int ${cor}"><span class="ico lg"><i class="ti ${ic}"></i></span><h3>${tit}</h3><p>${txt}</p></div>`;
     app.innerHTML = `<div class="home">
       <section class="home-hero">
         <div>
-          <span class="selo"><span class="ico sm solid" style="width:24px;height:24px;border-radius:8px"><i class="ti ti-brain" style="font-size:14px"></i></span>Renovação de receita em neurologia</span>
-          <h1>Sua receita neurológica <span>renovada</span> sem sair de casa</h1>
-          <p class="lead">Epilepsia, enxaqueca, Parkinson, demência, dor neuropática, AVC e sono. Você conta ao assistente quais remédios usa, as doses e como tem se sentido. Um médico lê tudo, fala com você por vídeo e assina a receita digital, inclusive de remédio controlado.</p>
+          <span class="selo"><span class="ico sm solid" style="width:24px;height:24px;border-radius:8px"><i class="ti ti-brain" style="font-size:14px"></i></span>Para neurologistas e neurocirurgiões</span>
+          <h1>Renovação de receita <span>neurológica</span> para o seu consultório</h1>
+          <p class="lead">Você manda um link ao paciente. Um assistente pergunta quais remédios ele usa, as doses, os efeitos e os sinais de alerta. Você recebe o resumo e a receita já rascunhada, fala com ele por vídeo e assina.</p>
           <div class="home-acoes">
-            <a class="btn btn-p" href="#/paciente"><i class="ti ti-message-circle"></i>Renovar minha receita</a>
-            <a class="btn" href="#/acompanhar"><i class="ti ti-search"></i>Acompanhar pedido</a>
-          </div>
-          <div class="confianca">
-            <div class="c-ambar"><span class="ico sm"><i class="ti ti-clock"></i></span>Cerca de 5 minutos para preencher</div>
-            <div class="c-verde"><span class="ico sm"><i class="ti ti-certificate"></i></span>Assinatura digital ICP-Brasil e numeração da Anvisa</div>
-            <div class="c-violeta"><span class="ico sm"><i class="ti ti-lock"></i></span>Dados de saúde protegidos pela LGPD</div>
+            <a class="btn btn-p" href="mailto:contato@medtechbr.com.br?subject=${encodeURIComponent('Quero usar o Meu Neuro')}"><i class="ti ti-mail"></i>Falar com a MedTech</a>
+            ${demo ? '<a class="btn" href="#/m/demo"><i class="ti ti-eye"></i>Ver como o paciente vê</a>' : ''}
+            <a class="btn" href="#/entrar/medico"><i class="ti ti-login-2"></i>Entrar</a>
           </div>
         </div>
         <div class="home-prev-wrap">
-        <span class="flutua f1 c-violeta" aria-hidden="true"><i class="ti ti-brain"></i></span>
-        <span class="flutua f2 c-rosa" aria-hidden="true"><i class="ti ti-pill"></i></span>
-        <span class="flutua f3 c-verde" aria-hidden="true"><i class="ti ti-file-certificate"></i></span>
         <div class="card home-prev" aria-hidden="true">
           <div class="prev-top"><span class="av-ia">${RF.marcaSVG}</span><div><b>Assistente Meu Neuro</b><span class="on">pré-consulta</span></div></div>
           <div class="prev-msg ia">Qual é o nome do remédio que você quer renovar?</div>
           <div class="prev-msg pac">Keppra 500</div>
           <div class="prev-msg ia">Como você toma Levetiracetam 500 mg?</div>
           <div class="prev-msg pac">1 de manhã e 1 à noite</div>
-          <div class="prev-msg ia">Entendi: 1 comprimido pela manhã e 1 à noite, 1.000 mg por dia. Está certo?</div>
           <div class="prev-rx"><div class="l"><b>Pedido para o médico</b><span class="tag acc">em revisão</span></div><div class="l"><span>Levetiracetam 500 mg</span><span class="muted">12/12 h</span></div><div class="l"><span>Sem crises há mais de 1 ano</span><span class="tag ok">sem alertas</span></div></div>
         </div></div>
       </section>
-
-      <div class="sec-tit"><h2>Para quem já faz tratamento</h2><p>Escolha o seu caso para começar. Serve para quem já tem diagnóstico neurológico e usa remédio de forma contínua.</p></div>
-      <section class="cond-grid">${conds}</section>
-
-      <div class="sec-tit"><h2>Como funciona</h2><p>O médico decide tudo. O assistente só adianta as informações para o atendimento ser rápido.</p></div>
+      <div class="sec-tit"><h2>O que vem pronto</h2><p>O médico decide tudo. O sistema adianta o que é repetitivo.</p></div>
       <section class="passos">
-        <div class="card passo int c-azul"><span class="num">1</span><span class="ico lg"><i class="ti ti-message-circle"></i></span><h3>Você conversa com o assistente</h3><p>Ele pergunta sobre remédios, doses, efeitos e sinais de alerta.</p></div>
-        <div class="card passo int c-verde"><span class="num">2</span><span class="ico lg"><i class="ti ti-stethoscope"></i></span><h3>O médico atende você</h3><p>Lê suas respostas, confirma com você por vídeo ou mensagem e decide a receita.</p></div>
-        <div class="card passo int c-violeta"><span class="num">3</span><span class="ico lg"><i class="ti ti-file-certificate"></i></span><h3>Você baixa a receita assinada</h3><p>Vale em qualquer farmácia. É só entrar com o código do pedido.</p></div>
+        ${item('c-azul', 'ti-link', 'Seu link e sua fila', 'Cada médico tem um endereço próprio. Os dados de cada clínica ficam separados dos demais.')}
+        ${item('c-violeta', 'ti-message-circle', 'Pré-consulta guiada', 'Epilepsia, cefaleia, Parkinson, tremor, demência, dor neuropática, AVC e sono, com perguntas de controle de cada caso.')}
+        ${item('c-ambar', 'ti-alert-triangle', 'Alertas na revisão', 'Interações, doses, gestação com valproato, intervalo de 180 dias da consulta presencial e sinais de urgência.')}
+        ${item('c-verde', 'ti-file-certificate', 'Receita conforme a Anvisa', 'Modelos oficiais eletrônicos, numeração do SNCR e assinatura ICP-Brasil, inclusive controle especial e notificações.')}
+        ${item('c-rosa', 'ti-video', 'Teleconsulta por vídeo', 'Vídeo direto com o paciente, sem instalar nada, e aviso pelo WhatsApp quando a receita fica pronta.')}
+        ${item('c-teal', 'ti-notes', 'Prontuário do atendimento', 'Evolução já preenchida com o resumo, transcrição da conversa e histórico de cada pedido.')}
       </section>
+      <footer class="home-rodape"><span>${rodapeEmpresa()}</span><a href="#/verificar">Verificar uma receita</a><a href="#/acompanhar">Sou paciente: acompanhar pedido</a></footer>
+    </div>`;
+  }
 
+  /* ---------- página do médico: fala com o paciente ---------- */
+  async function telaLink(slug) {
+    app.innerHTML = '<div class="estreito"><div class="card"><p class="muted">Carregando…</p></div></div>';
+    let l = null;
+    try { l = slug ? await RF.backend.obterLink(slug) : null; } catch (e) { console.warn(e); }
+    if (!l) { app.innerHTML = '<div class="estreito"><div class="card"><div class="cab-card c-ambar"><span class="ico lg"><i class="ti ti-link-off"></i></span><div><h2>Link indisponível</h2><p class="muted small">Confira o endereço com o seu médico.</p></div></div><a class="btn" href="#/acompanhar"><i class="ti ti-search"></i>Acompanhar um pedido que já fiz</a></div></div>'; return; }
+    RF.link.gravar(l);
+    const cl = l.clinica, conds = RF.CONDICOES.map(c => `<a class="cond int ${c.cor}" href="#/paciente" data-c="${c.v}"><span class="ico"><i class="ti ${c.i}"></i></span><span>${esc(c.c)}</span><i class="ti ti-arrow-right seta"></i></a>`).join('');
+    app.innerHTML = `<div class="home">
+      <section class="home-hero" style="grid-template-columns:1fr">
+        <div>
+          <span class="selo"><span class="avatar ${RF.corDe(l.medicoNome)}" style="width:26px;height:26px;font-size:11px">${esc(String(l.medicoNome || '?').split(/\s+/).filter(w => !/^(dr|dra)\.?$/i.test(w)).map(w => w[0]).slice(0, 2).join('').toUpperCase())}</span>${esc(l.medicoNome || cl.nome)}${l.crm ? ' · CRM ' + esc(l.crm) + '/' + esc(l.uf) : ''}${l.rqe ? ' · RQE ' + esc(l.rqe) : ''}</span>
+          <h1>Renove sua receita <span>sem sair de casa</span></h1>
+          <p class="lead">Responda às perguntas sobre seus remédios, as doses e como tem se sentido. ${esc(String(l.medicoNome || 'O médico'))} lê tudo, fala com você por vídeo e assina a receita digital, inclusive de remédio controlado.</p>
+          <div class="home-acoes">
+            <a class="btn btn-p" href="#/paciente"><i class="ti ti-message-circle"></i>Renovar minha receita</a>
+            <a class="btn" href="#/acompanhar"><i class="ti ti-search"></i>Acompanhar pedido</a>
+          </div>
+          <div class="confianca">
+            <div class="c-ambar"><span class="ico sm"><i class="ti ti-clock"></i></span>Cerca de 5 minutos para preencher</div>
+            <div class="c-verde"><span class="ico sm"><i class="ti ti-certificate"></i></span>Assinatura digital ICP-Brasil</div>
+            <div class="c-violeta"><span class="ico sm"><i class="ti ti-lock"></i></span>Dados de saúde protegidos pela LGPD</div>
+          </div>
+        </div>
+      </section>
+      <div class="sec-tit"><h2>Para quem já faz tratamento</h2><p>Escolha o seu caso para começar.</p></div>
+      <section class="cond-grid">${conds}</section>
       <div class="aviso-urg"><span class="ico"><i class="ti ti-urgent"></i></span><span><b>Não atendemos urgência.</b> Dor no peito, falta de ar forte, fraqueza de repente, fala enrolada ou crise convulsiva que não para: ligue 192 (SAMU) ou vá ao pronto-socorro.</span></div>
-      <footer class="home-rodape"><span>${rodapeEmpresa()}</span><a href="#/termos">Termo de consentimento e privacidade</a><a href="#/medico">Área do médico</a></footer>
+      <footer class="home-rodape"><span>${esc(`Atendimento: ${cl.nome}${cl.cnpj ? ', CNPJ ' + cl.cnpj : ''}${cl.cidade ? ', ' + cl.cidade + '/' + (cl.uf || '') : ''}.`)}${cl.rt && cl.rt.nome ? esc(` Responsável técnico: ${cl.rt.nome}, CRM ${cl.rt.crm}/${cl.rt.uf}.`) : ''} ${rodapePlataforma()}</span><a href="#/termos">Termo de consentimento e privacidade</a></footer>
     </div>`;
     app.querySelectorAll('.cond').forEach(a => a.addEventListener('click', () => { try { sessionStorage.setItem('mn-cond', a.dataset.c); } catch (e) { } }));
   }
 
+  function rodapePlataforma() {
+    const e = (G.MEUNEURO_CONFIG || {}).empresa || {};
+    return esc(`Plataforma Meu Neuro, de ${e.razao}, CNPJ ${e.cnpj}.`);
+  }
   function rodapeEmpresa() {
-    const c = G.MEUNEURO_CONFIG || {}, e = c.empresa || {}, r = c.responsavelTecnico || {};
-    return esc(`Meu Neuro é um serviço de ${e.razao}, CNPJ ${e.cnpj}. Telemedicina conforme a Lei 14.510/2022 e a Resolução CFM 2.314/2022.`) + (r.nome ? esc(` Responsável técnico: ${r.nome}, CRM ${r.crm}/${r.uf}.`) : '');
+    const r = (G.MEUNEURO_CONFIG || {}).responsavelTecnico || {};
+    return rodapePlataforma() + esc(' Telemedicina conforme a Lei 14.510/2022 e a Resolução CFM 2.314/2022.') + (r.nome ? esc(` Responsável técnico: ${r.nome}, CRM ${r.crm}/${r.uf}.`) : '');
   }
 
   function telaTermos() {
-    app.innerHTML = `<div class="estreito"><div class="card"><div class="cab-card"><span class="ico lg"><i class="ti ti-file-text"></i></span><h2>Termo de consentimento e privacidade</h2></div><div style="white-space:pre-wrap;margin-top:12px;font-size:14.5px">${esc(RF.TCLE)}</div><p class="small muted" style="margin-top:12px">Versão ${esc(RF.TCLE_VERSAO)}</p><a class="btn" href="#/" style="margin-top:14px">Voltar</a></div></div>`;
+    app.innerHTML = `<div class="estreito"><div class="card"><div class="cab-card"><span class="ico lg"><i class="ti ti-file-text"></i></span><h2>Termo de consentimento e privacidade</h2></div><div style="white-space:pre-wrap;margin-top:12px;font-size:14.5px">${esc(RF.tcleDe((RF.link.ler() || {}).clinica))}</div><p class="small muted" style="margin-top:12px">Versão ${esc(RF.TCLE_VERSAO)}</p><a class="btn" href="#/" style="margin-top:14px">Voltar</a></div></div>`;
   }
 
   /* ---------- conta e login de demonstração ---------- */
@@ -158,21 +186,59 @@
     if (RF.backend.modo !== 'firebase') { app.innerHTML = '<div class="estreito"><div class="card"><h2>Administração</h2><p class="muted" style="margin-top:8px">Disponível no modo com banco de dados (Firebase). Abra com ?backend=firebase para testar.</p></div></div>'; return; }
     const eu = await RF.backend.medico.atual();
     if (!eu || !eu.permissoes.admin) { app.innerHTML = '<div class="estreito"><div class="card"><h2>Administração</h2><p class="muted" style="margin-top:8px">Entre com a conta de administrador.</p><a class="btn btn-p" href="#/entrar/medico" style="margin-top:12px">Entrar</a></div></div>'; return; }
-    let lista = [];
-    try { lista = await RF.backend.listarMedicos(); } catch (e) { RF.toast('Não consegui ler os cadastros: ' + e.message); }
-    const linha = m => `<div class="ped"><span class="avatar ${RF.corDe(m.nome || m.email)}">${esc(String(m.nome || m.email || '?').split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase())}</span>
-      <span class="corpo"><b>${esc(m.nome || '(sem nome)')}</b><span class="m">${esc(m.email || '')}${m.crm ? ' · CRM ' + esc(m.crm) + '/' + esc(m.uf || '') : ''}${m.rqe ? ' · RQE ' + esc(m.rqe) : ''} · pediu: ${esc(m.papelPedido || 'medico')}</span></span>
-      ${m.aprovado ? '<span class="tag ok">aprovado</span>' : `<button class="btn btn-s btn-p" data-ap="${esc(m.uid)}" data-papel="${esc(m.papelPedido || 'medico')}">Aprovar</button>`}</div>`;
+    let lista = [], clinicas = [];
+    try { [lista, clinicas] = await Promise.all([RF.backend.listarMedicos(), RF.backend.listarClinicas()]); } catch (e) { RF.toast('Não consegui ler os cadastros: ' + e.message); }
     let sa = null; try { sa = await RF.backend.saude(); } catch (e) { }
     const cfg = G.MEUNEURO_CONFIG || {};
     const item = (ok, txt) => `<div class="small" style="padding:4px 0"><i class="ti ${ok ? 'ti-circle-check t-verde' : 'ti-alert-circle t-vermelho'}"></i> ${txt}</div>`;
-    const pront = `<div style="margin-bottom:14px"><h3 style="margin-bottom:6px">Prontidão para atender</h3>${item(!!sa, 'Servidor publicado (funções)')}${item(sa && sa.vidaas, 'Assinatura VIDaaS habilitada')}${item(RF.sncr.ambiente() === 'producao', 'SNCR em produção (hoje: ' + RF.sncr.ambiente() + ')')}${item(RF.sncr.cnpjPlataforma().length === 14, 'CNPJ da plataforma no SNCR')}${item(cfg.responsavelTecnico && cfg.responsavelTecnico.nome, 'Diretor técnico médico informado')}${item(cfg.ativo === true, 'Site aberto ao público (ativo: true)')}</div>`;
-    app.innerHTML = `<div class="estreito" style="max-width:820px"><div class="card"><div class="cab-card c-violeta"><span class="ico lg"><i class="ti ti-shield-lock"></i></span><div><h2>Administração</h2><p class="muted small">Confira CRM e RQE no Cadastro Nacional do CFM antes de aprovar (Res. CFM 2.299/2021, art. 8º).</p></div></div>
-      ${pront}<div class="lista-ped">${lista.length ? lista.map(linha).join('') : '<p class="muted">Nenhum cadastro ainda.</p>'}</div></div></div>`;
+    const pront = `<div style="margin-bottom:18px"><h3 style="margin-bottom:6px">Prontidão para atender</h3>${item(!!sa, 'Servidor publicado (funções)')}${item(sa && sa.vidaas, 'Assinatura VIDaaS habilitada')}${item(RF.sncr.ambiente() === 'producao', 'SNCR em produção (hoje: ' + RF.sncr.ambiente() + ')')}${item(RF.sncr.cnpjPlataforma().length === 14, 'CNPJ da plataforma no SNCR')}${item(cfg.responsavelTecnico && cfg.responsavelTecnico.nome, 'Diretor técnico da MedTech informado')}${item(cfg.ativo === true, 'Site em modo real (ativo: true)')}</div>`;
+    const nomeCl = id => (clinicas.find(c => c.id === id) || {}).nome || '';
+    const pendentes = lista.filter(m => !m.aprovado), aprovados = lista.filter(m => m.aprovado);
+    const opcoes = clinicas.filter(c => c.ativa).map(c => `<option value="${esc(c.id)}">${esc(c.nome)}</option>`).join('');
+    const linhaPend = m => `<div class="ped"><span class="avatar ${RF.corDe(m.nome || m.email)}">${esc(String(m.nome || m.email || '?').split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase())}</span>
+      <span class="corpo"><b>${esc(m.nome || '(sem nome)')}</b><span class="m">${esc(m.email || '')}${m.crm ? ' · CRM ' + esc(m.crm) + '/' + esc(m.uf || '') : ''}${m.rqe ? ' · RQE ' + esc(m.rqe) : ''} · pediu: ${esc(m.papelPedido || 'medico')}</span></span>
+      <select class="inp" data-cl="${esc(m.uid)}" style="width:auto;min-height:34px;padding:4px 8px" aria-label="Clínica"><option value="">Clínica</option>${opcoes}</select>
+      <button class="btn btn-s btn-p" data-ap="${esc(m.uid)}" data-papel="${esc(m.papelPedido || 'medico')}">Aprovar</button></div>`;
+    const linhaOk = m => `<div class="ped"><span class="avatar ${RF.corDe(m.nome || m.email)}">${esc(String(m.nome || m.email || '?').split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase())}</span>
+      <span class="corpo"><b>${esc(m.nome || '(sem nome)')}</b><span class="m">${esc(nomeCl(m.clinicaId))}${m.crm ? ' · CRM ' + esc(m.crm) + '/' + esc(m.uf || '') : ''}${m.linkSlug ? ' · ' + esc(location.origin + location.pathname + '#/m/' + m.linkSlug) : ''}</span></span><span class="tag ok">aprovado</span></div>`;
+    const linhaCl = c => `<div class="ped"><span class="ico c-azul"><i class="ti ti-building-hospital"></i></span><span class="corpo"><b>${esc(c.nome)}</b><span class="m">${c.cnpj ? 'CNPJ ' + esc(c.cnpj) + ' · ' : ''}${esc([c.cidade, c.uf].filter(Boolean).join('/'))}${c.rt && c.rt.nome ? ' · RT ' + esc(c.rt.nome) + ', CRM ' + esc(c.rt.crm) + '/' + esc(c.rt.uf) : ''}</span></span><button class="btn btn-s ${c.ativa ? 'btn-g' : ''}" data-ativa="${esc(c.id)}" data-v="${c.ativa ? '0' : '1'}">${c.ativa ? 'Suspender' : 'Reativar'}</button></div>`;
+    const UFS = 'AC AL AP AM BA CE DF ES GO MA MT MS MG PA PB PR PE PI RJ RN RS RO RR SC SP SE TO'.split(' ').map(u => `<option>${u}</option>`).join('');
+    app.innerHTML = `<div class="estreito" style="max-width:860px"><div class="card"><div class="cab-card c-violeta"><span class="ico lg"><i class="ti ti-shield-lock"></i></span><div><h2>Administração</h2><p class="muted small">A MedTech gerencia clínicas e contas. Os pedidos dos pacientes ficam só com cada clínica.</p></div></div>
+      ${pront}
+      <h3 style="margin-bottom:6px">Clínicas</h3>
+      <div class="lista-ped">${clinicas.length ? clinicas.map(linhaCl).join('') : '<p class="muted">Nenhuma clínica ainda.</p>'}</div>
+      <details style="margin:12px 0 20px"><summary style="cursor:pointer;font-weight:600">Nova clínica</summary>
+        <form id="fc" style="margin-top:12px">
+          <label class="campo"><span>Nome da clínica ou do consultório</span><input class="inp" name="nome" required></label>
+          <div class="linha2"><label class="campo"><span>CNPJ</span><input class="inp" name="cnpj" required inputmode="numeric" placeholder="00.000.000/0000-00"></label><label class="campo"><span>Telefone</span><input class="inp" name="telefone"></label></div>
+          <div class="linha2"><label class="campo"><span>Cidade</span><input class="inp" name="cidade" required></label><label class="campo"><span>UF</span><select class="inp" name="uf" required><option value=""></option>${UFS}</select></label></div>
+          <div class="linha2"><label class="campo"><span>Responsável técnico (médico)</span><input class="inp" name="rtNome" required></label><label class="campo"><span>CRM do responsável</span><input class="inp" name="rtCrm" required inputmode="numeric"></label></div>
+          <label class="campo"><span>UF do CRM do responsável</span><select class="inp" name="rtUf" required><option value=""></option>${UFS}</select></label>
+          <button class="btn btn-p"><i class="ti ti-plus"></i>Criar clínica</button>
+        </form></details>
+      <h3 style="margin-bottom:6px">Aguardando aprovação</h3>
+      <p class="small muted" style="margin:0 0 8px">Confira CRM e RQE no Cadastro Nacional do CFM antes de aprovar (Res. CFM 2.299/2021, art. 8º).</p>
+      <div class="lista-ped">${pendentes.length ? pendentes.map(linhaPend).join('') : '<p class="muted">Ninguém aguardando.</p>'}</div>
+      ${aprovados.length ? `<h3 style="margin:18px 0 6px">Profissionais</h3><div class="lista-ped">${aprovados.map(linhaOk).join('')}</div>` : ''}
+    </div></div>`;
+    $('#fc').onsubmit = async e => {
+      e.preventDefault();
+      const f = Object.fromEntries(new FormData(e.target).entries());
+      const d = RF.docLocal(f.cnpj);
+      if (d.tipo !== 'CNPJ' || !d.valido) return RF.toast('CNPJ inválido: confira os números.');
+      try { await RF.backend.salvarClinica({ nome: f.nome.trim(), cnpj: d.fmt, telefone: f.telefone.trim(), cidade: f.cidade.trim(), uf: f.uf, rt: { nome: f.rtNome.trim(), crm: f.rtCrm.trim(), uf: f.rtUf }, ativa: true, criadaEm: RF.agora() }); RF.toast('Clínica criada.'); telaAdmin(); }
+      catch (err) { RF.toast('Não consegui criar: ' + err.message); }
+    };
+    app.querySelectorAll('[data-ativa]').forEach(b => b.onclick = async () => {
+      if (b.dataset.v === '0' && !confirm('Suspender esta clínica? Os links dela param de receber pedidos novos; o que já existe continua guardado.')) return;
+      try { await RF.backend.salvarClinica({ id: b.dataset.ativa, ativa: b.dataset.v === '1' }); telaAdmin(); } catch (err) { RF.toast(err.message); }
+    });
     app.querySelectorAll('[data-ap]').forEach(b => b.onclick = async () => {
+      const clinicaId = app.querySelector(`[data-cl="${b.dataset.ap}"]`).value;
+      if (!clinicaId) return RF.toast('Escolha a clínica antes de aprovar.');
       b.disabled = true;
-      try { await RF.backend.definirPapel({ uid: b.dataset.ap, papel: b.dataset.papel }); RF.toast('Aprovado. A pessoa precisa sair e entrar de novo.'); telaAdmin(); }
-      catch (e) { RF.toast('A aprovação usa a função do servidor (plano Blaze). Enquanto isso, rode tools/definir_papel.py.'); b.disabled = false; }
+      try { await RF.backend.definirPapel({ uid: b.dataset.ap, papel: b.dataset.papel, clinicaId }); RF.toast('Aprovado. A pessoa precisa sair e entrar de novo.'); telaAdmin(); }
+      catch (e) { RF.toast(/not-found|internal|unavailable/.test(e.code || '') ? 'A aprovação precisa do servidor publicado (plano Blaze).' : e.message); b.disabled = false; }
     });
   }
 

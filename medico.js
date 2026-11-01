@@ -71,6 +71,7 @@
         <label class="campo"><span>CPF (é conferido com o seu certificado)</span><input class="inp" name="cpf" value="${v('cpf')}" inputmode="numeric" placeholder="000.000.000-00"></label></div>
         <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px">${primeiro ? '' : '<a class="btn" href="#/medico">Cancelar</a>'}<button class="btn btn-p">Salvar</button></div>
       </form>
+      ${primeiro ? '' : secaoLink(m)}
       ${primeiro ? '' : secaoSNCR(m)}
       ${primeiro ? '' : `<div style="border-top:1px solid var(--line);margin-top:22px;padding-top:16px">
         <h3>Dados deste navegador</h3><p class="small muted" style="margin:4px 0 10px">Modo ${RF.backend.modo}. ${Object.entries(RF.backend.diagnostico()).map(([k, s]) => esc(k.replace('meuneuro.v1.', '')) + ': ' + esc(s)).join(' · ') || 'nada salvo'}</p>
@@ -88,8 +89,23 @@
       if (primeiro) RF.telaMedico(el);
     };
     ligarSNCR();
+    const cl = $('#copia-link'); if (cl) cl.onclick = () => copiar(linkDe(S.medico));
     const exp = $('#exp'); if (exp) exp.onclick = () => baixar('meuneuro-backup-' + new Date().toISOString().slice(0, 10) + '.json', JSON.stringify(RF.backend.exportar(), null, 1), 'application/json');
     const sair = $('#sair'); if (sair) sair.onclick = async () => { await RF.backend.medico.sair(); RF.backend.sessao.sair(); RF.atualizarTopo(); location.hash = '#/'; };
+  }
+
+  /* ---------- link que o médico manda aos pacientes ---------- */
+  function linkDe(m) { const slug = m.linkSlug || (RF.backend.modo === 'local' ? 'demo' : ''); return slug ? location.origin + location.pathname + '#/m/' + slug : ''; }
+  function secaoLink(m) {
+    const u = linkDe(m);
+    if (!u) return '';
+    const msg = 'Para renovar sua receita, responda às perguntas neste link. Eu reviso tudo e falo com você antes de assinar: ' + u;
+    return `<div style="border-top:1px solid var(--line);margin-top:22px;padding-top:16px">
+      <h3 style="display:flex;align-items:center;gap:10px"><span class="ico sm c-azul"><i class="ti ti-link"></i></span>Seu link para pacientes</h3>
+      <p class="small muted" style="margin:6px 0 10px">O paciente que entra por ele cai na sua fila.</p>
+      <input class="inp" readonly value="${esc(u)}" aria-label="Seu link" onfocus="this.select()">
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button class="btn btn-s" id="copia-link" type="button"><i class="ti ti-copy"></i>Copiar</button><a class="btn btn-s" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(msg)}"><i class="ti ti-brand-whatsapp"></i>Enviar pelo WhatsApp</a></div>
+    </div>`;
   }
 
   /* ---------- SNCR (numeração oficial da Anvisa) ---------- */
@@ -168,16 +184,22 @@
     const aba = ABAS_FILA.find(a => a.k === S.aba);
     const q = RF.norm(S.busca || '');
     const esp = S.esp && S.esp !== 'Todas' ? S.esp : null;
-    let l = S.pedidos.filter(aba.f).filter(p => !esp || (p.especialidades || []).includes(esp)).filter(p => !q || RF.norm(p.paciente.nome + ' ' + (p.meds || []).map(m => m.nome).join(' ') + ' ' + p.codigo).includes(q));
+    const eu = RF.backend.medico.uid && RF.backend.medico.uid();
+    const deOutro = p => S.papel === 'medico' && p.medicoUid && p.medicoUid !== eu;
+    const tot = S.pedidos.filter(aba.f);
+    S.temOutros = tot.some(deOutro);
+    let l = tot.filter(p => S.todos || !deOutro(p)).filter(p => !esp || (p.especialidades || []).includes(esp)).filter(p => !q || RF.norm(p.paciente.nome + ' ' + (p.meds || []).map(m => m.nome).join(' ') + ' ' + p.codigo).includes(q));
     if (S.aba === 'aguardando') l.sort((a, b) => String(a.enviadoEm).localeCompare(String(b.enviadoEm)));
     const box = $('#lista');
     if (!l.length) {
-      box.innerHTML = `<div class="vazio"><span class="ico lg"><i class="ti ${q ? 'ti-search-off' : 'ti-mood-empty'}"></i></span><p>${q ? 'Nada encontrado.' : 'Nenhum pedido aqui.'}</p>
+      box.innerHTML = `<div class="vazio"><span class="ico lg"><i class="ti ${q ? 'ti-search-off' : 'ti-mood-empty'}"></i></span><p>${q ? 'Nada encontrado.' : 'Nenhum pedido aqui.'}</p>${S.temOutros ? '<button class="btn btn-s" id="ver-todos" style="margin-top:10px">Ver toda a clínica</button>' : ''}${!q && !S.pedidos.length && S.medico.linkSlug ? '<p class="small muted">Mande seu link aos pacientes: está no seu <a href="#/medico/perfil">perfil</a>.</p>' : ''}
         ${RF.backend.modo === 'local' && !S.pedidos.length && RF.criarExemplos ? '<button class="btn btn-s" id="ex" style="margin-top:14px"><i class="ti ti-sparkles"></i>Criar 3 pedidos de exemplo</button>' : ''}</div>`;
       const ex = $('#ex'); if (ex) ex.onclick = async () => { await RF.criarExemplos(); await recarregar(); desenhar(); };
+      const vt0 = $('#ver-todos'); if (vt0) vt0.onclick = () => { S.todos = true; desenharLista(); };
       return;
     }
-    box.innerHTML = l.map(p => {
+    const quadro = S.temOutros ? `<button class="esp-chip ${S.todos ? 'on' : ''}" id="ver-todos" style="margin:0 0 10px">${S.todos ? 'Toda a clínica' : 'Só os meus'}: trocar</button>` : '';
+    box.innerHTML = quadro + l.map(p => {
       const al = p.alertas || [], altos = al.filter(x => x.nivel === 'alto').length, med = al.filter(x => x.nivel === 'medio').length;
       const meds = (p.meds || []).map(m => m.nome).join(', ') || (p.semAssistente ? 'Sem assistente' : 'Sem remédios');
       return `<button class="fila-item ${S.caso && S.caso.id === p.id ? 'on' : ''}" data-id="${p.id}"><span class="avatar ${RF.corDe(p.paciente.nome)}">${esc(iniciais(p.paciente.nome))}</span><span class="corpo">
@@ -186,6 +208,7 @@
         <span class="l3">${altos ? `<span class="tag bad"><i class="ti ti-alert-triangle" style="font-size:13px;vertical-align:-2px"></i>${altos}</span>` : ''}${med ? `<span class="tag warn"><i class="ti ti-alert-circle" style="font-size:13px;vertical-align:-2px"></i>${med}</span>` : ''}${(p.condicoes || []).slice(0, 2).map(c => `<span class="tag">${esc(c === 'outro' ? (p.condicaoOutra || 'Outro') : RF.condCurta(c))}</span>`).join('')}</span>
       </span></button>`;
     }).join('');
+    const vt = $('#ver-todos'); if (vt) vt.onclick = () => { S.todos = !S.todos; desenharLista(); };
     box.querySelectorAll('.fila-item').forEach(b => b.onclick = () => { location.hash = '#/medico/caso/' + b.dataset.id; });
   }
 

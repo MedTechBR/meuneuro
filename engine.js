@@ -306,13 +306,19 @@
     revisao: 4, semia_texto: 3, fim_semia: 4, corrigir_qual: 4, corrigir_acao: 4, orientacao: 4, fim: 4
   };
 
-  RF.TCLE_VERSAO = 'tcle-2026-11';
+  RF.TCLE_VERSAO = 'tcle-2026-11b';
   RF.TCLE = 'Termo de consentimento para teleatendimento\n\n' +
-    '1. O Meu Neuro, serviço de M PARENTE OLIVEIRA TECNOLOGIA LTDA (CNPJ 69.544.873/0001-61), faz renovação de receitas de remédios neurológicos de uso contínuo por telemedicina (Lei 14.510/2022 e Resolução CFM 2.314/2022). A consulta presencial continua sendo a referência: o atendimento a distância tem limitações, como a falta de exame físico, e você pode interromper e optar pelo atendimento presencial a qualquer momento.\n\n' +
+    '1. {PRESTADOR} faz renovação de receitas de remédios neurológicos de uso contínuo por telemedicina (Lei 14.510/2022 e Resolução CFM 2.314/2022). A consulta presencial continua sendo a referência: o atendimento a distância tem limitações, como a falta de exame físico, e você pode interromper e optar pelo atendimento presencial a qualquer momento.\n\n' +
     '2. A primeira etapa é conduzida por um assistente automatizado (inteligência artificial) que só coleta informações e dá orientações gerais. Ele não faz diagnóstico, não muda doses e não decide o tratamento. Você pode recusar o assistente e seguir direto com o médico.\n\n' +
     '3. Um médico revisa todas as respostas, faz o atendimento e decide se renova, ajusta ou não renova a receita, que só vale depois da assinatura digital dele.\n\n' +
-    '4. Seus dados de saúde são usados apenas para o seu atendimento (LGPD, art. 11, II, f), ficam no seu prontuário pelo prazo legal de 20 anos e só são vistos pela equipe que atende você. Nada é usado para propaganda ou vendido.\n\n' +
+    '4. {RESPONSAVEL} responde pelos seus dados de saúde, usados apenas para o seu atendimento (LGPD, art. 11, II, f). Eles ficam no seu prontuário pelo prazo legal de 20 anos e só são vistos pela equipe que atende você. A plataforma Meu Neuro, de M PARENTE OLIVEIRA TECNOLOGIA LTDA (CNPJ 69.544.873/0001-61), só os trata em nome dela. Nada é usado para propaganda ou vendido.\n\n' +
     '5. Este serviço não atende urgências. Em caso de urgência, ligue 192 (SAMU) ou procure um pronto-socorro.';
+
+  // o termo nomeia quem presta o atendimento: a clínica do link que o paciente recebeu
+  RF.tcleDe = function (cl) {
+    const nome = cl && cl.nome ? cl.nome + (cl.cnpj ? ' (CNPJ ' + cl.cnpj + ')' : '') : 'A clínica que enviou este link';
+    return RF.TCLE.replace('{PRESTADOR}', nome).replace('{RESPONSAVEL}', cl && cl.nome ? cl.nome : 'A clínica');
+  };
 
   RF.cpfValido = function (c) {
     const d = String(c || '').replace(/\D/g, '');
@@ -560,8 +566,8 @@
       }
       switch (this.passo) {
         case 'inicio':
-          if (v === 'termos') return { msgs: [{ texto: RF.TCLE }] };
-          p.consentimento = { em: RF.agora(), versao: RF.TCLE_VERSAO, texto: RF.TCLE, assistente: v !== 'semia' };
+          if (v === 'termos') return { msgs: [{ texto: RF.tcleDe(p.clinica) }] };
+          p.consentimento = { em: RF.agora(), versao: RF.TCLE_VERSAO, texto: RF.tcleDe(p.clinica), assistente: v !== 'semia' };
           if (v === 'semia') { p.semAssistente = true; this.passo = 'nome'; return { msgs: [{ texto: 'Tudo bem. Vou pedir só os dados obrigatórios e fazer uma checagem de segurança. O restante você conta diretamente ao médico, sem o assistente.' }] }; }
           this.passo = 'nome'; return;
         case 'nome': {

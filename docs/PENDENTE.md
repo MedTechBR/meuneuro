@@ -4,13 +4,17 @@
 1. **Plano Blaze** no projeto Firebase `refilmed` (é pagamento). Depois, duplo clique em `publicar-servidor.command`.
 2. **Canal VIDaaS na Valid.** A habilitação é pela equipe comercial "Vendas Health" (validcertificadora.com.br/pages/psc-integracao-via-api; 0800-725-4565; ecleoneide.santos@valid.com). Pedir client_id e client_secret da aplicação Meu Neuro; o do assinador pessoal não deve ser reaproveitado. Depois, `ativar-vidaas.command`. Até lá funciona o caminho "Assinar por fora".
 3. **Teste no SNCR de treinamento:** entrar como médico no site com `?backend=firebase`, Perfil → Obter números pelo gov.br. O botão já chega ao login; o treinamento usa o gov.br de testes (sso.staging.acesso.gov.br), com conta própria criada na hora (passo a passo em docs/sncr/instrucoes.txt), não a conta gov.br de verdade. É o único trecho que os testes não alcançam.
-4. **Legal (não é código; ver REGULATORIO.md):** empresa registrada no CRM da UF-sede, diretor técnico médico (preencher `responsavelTecnico` em config.js), avaliação de risco e governança da IA (Res. CFM 2.454/2026), parecer sobre software médico (RDC 657/2022), RIPD e contrato com o provedor de IA (LGPD).
+4. **Legal (não é código; ver REGULATORIO.md):** empresa registrada no CRM da UF-sede, diretor técnico médico (o da MedTech em `responsavelTecnico` de config.js; o de cada clínica na administração), avaliação de risco e governança da IA (Res. CFM 2.454/2026), parecer sobre software médico (RDC 657/2022), RIPD e contrato com o provedor de IA (LGPD).
 5. **Cota de notificação:** cada médico pede números à Vigilância Sanitária de cada estado onde atende (P&R RDC 1.000, pergunta 54). Sem cota, Notificação A/B sai em talonário de papel.
 6. **Preço e cobrança da consulta.**
 
-## Venda a clínicas (CNPJs médicos): ainda não implementado
-O código atende uma clínica só. Para vender: separar pedidos e médicos por clínica, rodapé e termo com os dados de cada uma, contrato em que a clínica é controladora e a MedTech é operadora (LGPD), cobrança por clínica ou por médico. O CNPJ enviado ao SNCR continua o da MedTech.
+## Venda a clínicas (CNPJs médicos)
+Feito: dados separados por clínica nas regras do banco e no servidor, link próprio de cada médico (`#/m/<slug>`), termo e rodapé com os dados da clínica, página pública voltada a médicos, administração de clínicas. A administração da MedTech não lê pedidos.
+Falta: um gestor dentro da clínica aprovar a própria equipe (hoje só a MedTech aprova), médico em mais de uma clínica (hoje é uma por conta), exportar os dados na saída do cliente, contrato em que a clínica é controladora e a MedTech é operadora (LGPD), cobrança por médico. O CNPJ enviado ao SNCR continua o da MedTech.
 Registro no CRM com diretor técnico: a clínica, pelo serviço médico (Lei 14.510/2022, art. 3º; CFM 2.314/2022, art. 17); a MedTech, pela leitura da CFM 2.299/2021, art. 5º (plataforma de prescrição). Confirmar no CREMEC.
+
+## Roteiro do piloto (colega do Ceará)
+1. Blaze e `publicar-servidor.command`. 2. Você cria sua conta no site com `?backend=firebase`; eu dou a permissão de administrador. 3. Em `#/admin`, criar a clínica dele. 4. Ele cria a conta, você aprova escolhendo a clínica e o link aparece no perfil dele. 5. Ele pede numeração digital à Vigilância do município dele e assina anexando o PDF até o VIDaaS sair.
 
 ## Virada para produção (feita depois do item 3)
 `config.js`: `ativo: true` e `sncr.ambiente: 'producao'`. `functions/.env.refilmed`: `SNCR_AMBIENTE=producao`. Publicar o site e as funções. Número de homologação não entra em receita de produção: o sistema recusa.

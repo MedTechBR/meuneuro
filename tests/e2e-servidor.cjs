@@ -58,7 +58,7 @@ let ok = 0;
 const t = async (n, f) => { try { await f(); ok++; console.log('ok  ', n); } catch (e) { console.log('FALHOU', n, '\n   ', e.stack); process.exitCode = 1; } };
 async function pedidoEmAtendimento(i, uid) {
   const p = await RF.rodarRoteiro(RF.ROTEIROS[i]);
-  p.pacienteUid = uid; p.status = 'em_atendimento'; p.atendimento = { evolucao: 'x' }; p.historico = p.historico || [];
+  p.pacienteUid = uid; p.clinicaId = 'cA'; p.clinica = { id: 'cA', nome: 'Clínica A', cnpj: '11.222.333/0001-81' }; p.status = 'em_atendimento'; p.atendimento = { evolucao: 'x' }; p.historico = p.historico || [];
   p.receitas.forEach(b => { b.ambienteSNCR = 'homologacao'; });
   await db.collection('pedidos').doc(p.id).set(JSON.parse(JSON.stringify(p)));
   return p;
@@ -67,10 +67,17 @@ const numerar = async (p, base = 1) => { let n = base; const r = p.receitas.map(
 
 (async () => {
   await new Promise(r => srv.listen(9911, '127.0.0.1', r));
-  const medU = await usuario('med@teste.br', { medico: true });
-  const atd = await usuario('atd@teste.br', { atendente: true });
+  await db.collection('clinicas').doc('cA').set({ nome: 'Clínica A', cnpj: '11.222.333/0001-81', ativa: true });
+  await db.collection('clinicas').doc('cB').set({ nome: 'Clínica B', ativa: true });
+  const medU = await usuario('med@teste.br', { medico: true, clinica: 'cA' });
+  const medB = await usuario('medb@teste.br', { medico: true, clinica: 'cB' });
+  const medSem = await usuario('medsem@teste.br', { medico: true });
+  const atd = await usuario('atd@teste.br', { atendente: true, clinica: 'cA' });
+  const atdB = await usuario('atdb@teste.br', { atendente: true, clinica: 'cB' });
   const adm = await usuario('admin@teste.br', {});
   await db.collection('medicos').doc(medU.uid).set(MED);
+  await db.collection('medicos').doc(medB.uid).set(MED);
+  await db.collection('medicos').doc(medSem.uid).set(MED);
 
   // ---------- VIDaaS ----------
   const p = await pedidoEmAtendimento(1, 'pac1'); // Parkinson: simples + controle especial + notificação B
@@ -147,6 +154,35 @@ const numerar = async (p, base = 1) => { let n = base; const r = p.receitas.map(
     assert.strictEqual(d.status, 'assinado'); assert.strictEqual(d.atendimento.assinatura.provedor, 'anexo');
   });
 
+  // ---------- separação entre clínicas ----------
+  await t('médico e atendente de outra clínica não alcançam o pedido', async () => {
+    const q = await pedidoEmAtendimento(3, 'pac3');
+    await numerar(q, 200);
+    await recusa(fn('assinarReceita', { pedidoId: q.id }, medB.token), /não encontrado|VIDaaS/);
+    await recusa(fn('emitirComAnexos', { pedidoId: q.id, documentos: [] }, medB.token), /não encontrado/);
+    await recusa(fn('assinarReceita', { pedidoId: q.id }, medSem.token), /clínica/);
+    await recusa(fn('baixarReceita', { pedidoId: p.id }, medB.token), /não encontrada/);
+    await recusa(fn('atendenteRegistrar', { pedidoId: q.id, evento: 'x' }, atdB.token), /não encontrado/);
+    assert.strictEqual((await fn('atendenteFila', {}, atdB.token)).length, 0);
+  });
+  await t('aprovar liga a conta à clínica e cria o link público do médico', async () => {
+    const novo = await usuario('nova@teste.br', {});
+    await db.collection('medicos').doc(novo.uid).set({ nome: 'Dra. Ana Lúcia Sá', crm: '777', uf: 'CE', rqe: '1', especialidade: 'Neurocirurgia' });
+    await recusa(fn('definirPapel', { uid: novo.uid, papel: 'medico' }, adm.token), /clínica/);
+    await recusa(fn('definirPapel', { uid: novo.uid, papel: 'medico', clinicaId: 'naoexiste' }, adm.token), /clínica/);
+    const r = await fn('definirPapel', { uid: novo.uid, papel: 'medico', clinicaId: 'cA' }, adm.token);
+    assert.strictEqual(r.claims.clinica, 'cA'); assert.strictEqual(r.linkSlug, 'ana-lucia-sa');
+    const l = (await db.collection('links').doc('ana-lucia-sa').get()).data();
+    assert.strictEqual(l.medicoUid, novo.uid); assert.strictEqual(l.clinicaId, 'cA'); assert.strictEqual(l.medicoNome, 'Dra. Ana Lúcia Sá');
+    const m = (await db.collection('medicos').doc(novo.uid).get()).data();
+    assert.strictEqual(m.clinicaId, 'cA'); assert.strictEqual(m.nomeLocal, 'Clínica A'); assert.strictEqual(m.cnpjLocal, '11.222.333/0001-81');
+    const homon = await usuario('homon@teste.br', {});
+    await db.collection('medicos').doc(homon.uid).set({ nome: 'Dra. Ana Lúcia Sá' });
+    assert.strictEqual((await fn('definirPapel', { uid: homon.uid, papel: 'medico', clinicaId: 'cB' }, adm.token)).linkSlug, 'ana-lucia-sa-2');
+    const r2 = await fn('definirPapel', { uid: novo.uid, papel: 'medico', clinicaId: 'cA' }, adm.token);
+    assert.strictEqual(r2.linkSlug, 'ana-lucia-sa', 'aprovar de novo não cria outro link');
+  });
+
   // ---------- papéis ----------
   await t('quem não é médico não assina nem baixa pelo id', async () => {
     await recusa(fn('assinarReceita', { pedidoId: p.id }, atd.token), /Somente médicos/);
@@ -168,7 +204,7 @@ const numerar = async (p, base = 1) => { let n = base; const r = p.receitas.map(
     await recusa(fn('saude', {}, medU.token));
     const s = await fn('saude', {}, adm.token);
     assert.strictEqual(s.vidaas, true); assert.strictEqual(s.sncrAmbiente, 'homologacao');
-    const r = await fn('definirPapel', { email: 'atd@teste.br', papel: 'medico' }, adm.token);
+    const r = await fn('definirPapel', { email: 'atd@teste.br', papel: 'medico', clinicaId: 'cA' }, adm.token);
     assert.strictEqual(r.claims.medico, true);
   });
   console.log(`\n${ok} testes de ponta a ponta passaram`);

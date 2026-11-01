@@ -6,9 +6,20 @@
   let conv = null, ocupado = false;
 
   RF.telaPaciente = function (el) {
+    const link = RF.link.ler();
+    if (!link && RF.backend.modo !== 'local') {
+      el.innerHTML = `<div class="estreito"><div class="card"><div class="cab-card c-azul"><span class="ico lg"><i class="ti ti-link"></i></span><div><h2>Use o link do seu médico</h2><p class="muted small">Para renovar a receita, abra o link que o seu neurologista ou neurocirurgião enviou. Assim o pedido chega direto a ele.</p></div></div><a class="btn" href="#/acompanhar"><i class="ti ti-search"></i>Acompanhar um pedido que já fiz</a></div></div>`;
+      return;
+    }
     const salvo = RF.backend.rascunho.ler();
-    const pedido = salvo && salvo.status === 'rascunho' || (salvo && salvo.status === 'urgencia') ? salvo : null;
+    let pedido = salvo && salvo.status === 'rascunho' || (salvo && salvo.status === 'urgencia') ? salvo : null;
+    // rascunho de outro médico: este link começa um pedido novo
+    if (pedido && link && pedido.clinicaId && pedido.clinicaId !== link.clinicaId) pedido = null;
     conv = new RF.Conversa(pedido, { ia: (t, d) => RF.backend.ia(t, d) });
+    if (!conv.p.clinicaId) {
+      const l = link || { clinicaId: 'demo', medicoUid: 'demo', medicoNome: 'Dra. Helena Duarte', clinica: { id: 'demo', nome: 'Clínica de demonstração' } };
+      Object.assign(conv.p, { clinicaId: l.clinicaId, medicoUid: l.medicoUid || null, medicoNome: l.medicoNome || '', clinica: { id: l.clinicaId, nome: l.clinica.nome, cnpj: l.clinica.cnpj || '' } });
+    }
     el.innerHTML = `
       <div class="conv-wrap">
         <section class="conv" aria-label="Conversa com o assistente">

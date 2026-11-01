@@ -1,4 +1,6 @@
 {
-  "indexes": [],
+  "indexes": [
+    { "collectionGroup": "pedidos", "queryScope": "COLLECTION", "fields": [ { "fieldPath": "clinicaId", "order": "ASCENDING" }, { "fieldPath": "atualizadoEm", "order": "DESCENDING" } ] }
+  ],
   "fieldOverrides": []
 }

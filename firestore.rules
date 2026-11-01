@@ -1,7 +1,10 @@
 rules_version = '2';
-// Meu Neuro — regras do Firestore
-// pedidos: o paciente (login anônimo) cria e vê o próprio pedido; só médicos aprovados (claim "medico") listam e atendem.
-// medicos: cada médico mantém o próprio perfil; "aprovado" só o servidor grava (função definirPapel).
+// Meu Neuro — regras do Firestore. Cada clínica é um cliente: um profissional só enxerga os pedidos da clínica dele.
+// clinicas: dados públicos da clínica (rodapé e termo do paciente); só o administrador da MedTech grava. Clínica inativa não recebe pedido.
+// links: página pública de cada médico; o próprio médico atualiza os dados dele.
+// pedidos: o paciente (login anônimo) cria e vê o próprio; médico com a claim "clinica" lista e atende os da clínica dele.
+//   O administrador da MedTech NÃO lê pedidos. Pedido assinado não muda, e só o servidor assina.
+// medicos: cada médico mantém o próprio perfil; aprovado, clinicaId e linkSlug só o servidor grava.
 // sessoesAssinatura, uso: só o servidor. Atendente não lê pedidos: usa as funções atendenteFila e atendenteRegistrar.
 service cloud.firestore {
   match /databases/{database}/documents {
@@ -9,16 +12,29 @@ service cloud.firestore {
     function medico() { return logado() && request.auth.token.medico == true; }
     function admin() { return logado() && request.auth.token.admin == true; }
     function dono(d) { return logado() && d.pacienteUid == request.auth.uid; }
+    function daClinica(d) { return medico() && request.auth.token.clinica is string && d.clinicaId == request.auth.token.clinica; }
     function semAtendimento() { return !('atendimento' in request.resource.data) || request.resource.data.atendimento == null; }
+    function clinicaAtiva(id) { return id is string && exists(/databases/$(database)/documents/clinicas/$(id)) && get(/databases/$(database)/documents/clinicas/$(id)).data.ativa == true; }
+    function mesmaClinica() { return request.resource.data.clinicaId == resource.data.clinicaId; }
 
+    match /clinicas/{id} {
+      allow get: if true;
+      allow list, create, update: if admin();
+      allow delete: if false;
+    }
+    match /links/{slug} {
+      allow get: if true;
+      allow update: if logado() && resource.data.medicoUid == request.auth.uid
+        && request.resource.data.medicoUid == resource.data.medicoUid && mesmaClinica();
+      allow list, create, delete: if false;
+    }
     match /pedidos/{id} {
-      allow read: if medico() || (logado() && resource.data.pacienteUid == request.auth.uid);
-      allow create: if dono(request.resource.data)
+      allow read: if daClinica(resource.data) || dono(resource.data);
+      allow create: if dono(request.resource.data) && clinicaAtiva(request.resource.data.clinicaId)
         && request.resource.data.status in ['aguardando', 'urgencia'] && semAtendimento();
       // paciente só mexe enquanto o pedido está parado por urgência (ele pode refazer a triagem)
-      // pedido assinado não muda mais, e só o servidor marca como assinado (a assinatura é conferida lá)
-      allow update: if (medico() && resource.data.status != 'assinado' && request.resource.data.status != 'assinado')
-        || (dono(resource.data) && dono(request.resource.data)
+      allow update: if (daClinica(resource.data) && mesmaClinica() && resource.data.status != 'assinado' && request.resource.data.status != 'assinado')
+        || (dono(resource.data) && dono(request.resource.data) && mesmaClinica()
             && resource.data.status == 'urgencia'
             && request.resource.data.status in ['aguardando', 'urgencia'] && semAtendimento());
       allow delete: if false;
@@ -26,9 +42,11 @@ service cloud.firestore {
     match /medicos/{uid} {
       allow read: if (logado() && request.auth.uid == uid) || admin();
       allow create: if logado() && request.auth.uid == uid && request.auth.token.firebase.sign_in_provider != 'anonymous'
-        && !('aprovado' in request.resource.data);
+        && !('aprovado' in request.resource.data) && !('clinicaId' in request.resource.data) && !('linkSlug' in request.resource.data);
       allow update: if logado() && request.auth.uid == uid
-        && request.resource.data.get('aprovado', null) == resource.data.get('aprovado', null);
+        && request.resource.data.get('aprovado', null) == resource.data.get('aprovado', null)
+        && request.resource.data.get('clinicaId', null) == resource.data.get('clinicaId', null)
+        && request.resource.data.get('linkSlug', null) == resource.data.get('linkSlug', null);
     }
     // sinalização do vídeo (WebRTC): só SDP e ICE, sem dado de saúde; id não adivinhável; o médico apaga ao encerrar
     match /salas/{id} {

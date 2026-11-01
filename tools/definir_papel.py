@@ -3,7 +3,7 @@
 
 Usa as credenciais padrão do Google deste computador (Application Default Credentials) — nenhuma
 senha ou chave fica no código. Uso:
-    python3 tools/definir_papel.py email@exemplo.com medico
+    python3 tools/definir_papel.py email@exemplo.com medico --clinica <id>
     python3 tools/definir_papel.py email@exemplo.com admin
     python3 tools/definir_papel.py email@exemplo.com medico --tirar
     python3 tools/definir_papel.py --listar
@@ -41,13 +41,17 @@ def main():
     u = conta_por_email(email)
     claims = json.loads(u.get('customAttributes') or '{}')
     claims[papel] = ativo
+    clinica = sys.argv[sys.argv.index('--clinica') + 1] if '--clinica' in sys.argv else None
+    if papel != 'admin' and ativo and not clinica: sys.exit('Médico e atendente precisam de --clinica <id>. O link público do médico é criado pela tela de administração.')
+    if clinica: claims['clinica'] = clinica
     r = s.post(f'{IDT}/accounts:update', json={'localId': u['localId'], 'customAttributes': json.dumps(claims)}, headers=H)
     r.raise_for_status()
     if papel == 'medico':
         agora = datetime.datetime.utcnow().isoformat() + 'Z'
         doc = f'https://firestore.googleapis.com/v1/projects/{PROJETO}/databases/(default)/documents/medicos/{u["localId"]}'
-        s.patch(doc, params={'updateMask.fieldPaths': ['aprovado', 'aprovadoEm']},
-                json={'fields': {'aprovado': {'booleanValue': ativo}, 'aprovadoEm': {'stringValue': agora}}}, headers=H).raise_for_status()
+        campos = {'aprovado': {'booleanValue': ativo}, 'aprovadoEm': {'stringValue': agora}}
+        if clinica: campos['clinicaId'] = {'stringValue': clinica}
+        s.patch(doc, params={'updateMask.fieldPaths': list(campos)}, json={'fields': campos}, headers=H).raise_for_status()
     print(f'{email}: {papel} = {ativo}. Permissões agora: {claims}. A pessoa precisa sair e entrar de novo no site.')
 
 main()

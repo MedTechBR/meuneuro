@@ -35,8 +35,17 @@
     } catch (e) { /* backup é melhor-esforço */ }
   }
 
+  // o link que o paciente abriu decide a clínica e o médico do pedido
+  const K_LINK = PREF + 'link';
+  RF.link = {
+    ler() { return ler(K_LINK, null); },
+    gravar(l) { return gravar(K_LINK, l); }
+  };
+  const CLINICA_DEMO = { id: 'demo', nome: 'Clínica de demonstração', cnpj: '', cidade: 'Sobral', uf: 'CE', ativa: true, rt: { nome: 'Dra. Helena Duarte', crm: '000000', uf: 'CE' } };
+
   const local = {
     modo: 'local',
+    async obterLink(slug) { return { slug, clinicaId: 'demo', medicoUid: 'demo', medicoNome: 'Dra. Helena Duarte', crm: '000000', uf: 'CE', rqe: '0000', especialidade: 'Neurologia', clinica: CLINICA_DEMO }; },
     async iniciar() { return true; },
     async salvarPedido(p) {
       const todos = ler(K.pedidos, {});
@@ -85,6 +94,7 @@
     async saude() { return null; },
     assinatura: null,
     medico: {
+      uid() { return 'demo'; },
       async atual() { const s = local.sessao.ler(); return s && s.perfil === 'medico' ? ler(K.medico, null) || {} : null; },
       async entrar() { return ler(K.medico, null) || {}; },
       async sair() { local.sessao.sair(); },
@@ -147,6 +157,26 @@
       if (!auth.currentUser) await A.signInAnonymously(auth);
       return auth.currentUser;
     },
+    async obterLink(slug) {
+      const { F, db } = this._;
+      const l = await F.getDoc(F.doc(db, 'links', String(slug)));
+      if (!l.exists()) return null;
+      const c = await F.getDoc(F.doc(db, 'clinicas', l.data().clinicaId));
+      if (!c.exists() || c.data().ativa !== true) return null;
+      return Object.assign({ slug }, l.data(), { clinica: Object.assign({ id: c.id }, c.data()) });
+    },
+    async listarClinicas() {
+      const { F, db } = this._;
+      const s = await F.getDocs(F.collection(db, 'clinicas'));
+      return s.docs.map(d => Object.assign({ id: d.id }, d.data()));
+    },
+    async salvarClinica(c) {
+      const { F, db } = this._;
+      const id = c.id || RF.uid(10);
+      const dados = Object.assign({}, c); delete dados.id;
+      await F.setDoc(F.doc(db, 'clinicas', id), dados, { merge: true });
+      return id;
+    },
     async salvarPedido(p) {
       const { F, db } = this._;
       const u = await this._garantirLogin();
@@ -164,7 +194,9 @@
       const { F, db } = this._;
       const ses = this.sessao.ler();
       if (ses && ses.perfil === 'atendente') return (await this._.Fn.httpsCallable(this._.fns, 'atendenteFila')({})).data;
-      const q = F.query(F.collection(db, 'pedidos'), F.orderBy('atualizadoEm', 'desc'), F.limit(300));
+      const tok = await this._.auth.currentUser.getIdTokenResult();
+      if (!tok.claims.clinica) return [];
+      const q = F.query(F.collection(db, 'pedidos'), F.where('clinicaId', '==', tok.claims.clinica), F.orderBy('atualizadoEm', 'desc'), F.limit(300));
       const s = await F.getDocs(q);
       return s.docs.map(d => d.data());
     },
@@ -222,6 +254,7 @@
       } catch (e) { console.warn('[Meu Neuro] IA indisponível:', e && e.message); return null; }
     },
     medico: {
+      uid() { const u = firebase._.auth.currentUser; return u ? u.uid : null; },
       // devolve o perfil com as permissões; null se não houver conta de profissional logada
       async atual() {
         const { auth } = firebase._;
@@ -229,7 +262,7 @@
         if (!u || u.isAnonymous) return null;
         const tok = await u.getIdTokenResult(true);
         const perfil = (await this.perfil()) || {};
-        return Object.assign({ email: u.email }, perfil, { permissoes: { medico: !!tok.claims.medico, atendente: !!tok.claims.atendente, admin: !!tok.claims.admin } });
+        return Object.assign({ email: u.email }, perfil, { permissoes: { medico: !!(tok.claims.medico && tok.claims.clinica), atendente: !!(tok.claims.atendente && tok.claims.clinica), admin: !!tok.claims.admin } });
       },
       async entrar(email, senha) {
         const { A, auth } = firebase._;
@@ -248,8 +281,10 @@
       async salvarPerfil(m) {
         const { F, db, auth } = firebase._;
         // a numeração SNCR só muda por transacaoPerfil: uma gravação comum não pode trazer de volta número já usado
-        const copia = Object.assign({}, m); delete copia.permissoes; delete copia.aprovado; delete copia.aprovadoEm; delete copia.sncr;
+        const copia = Object.assign({}, m); delete copia.permissoes; delete copia.aprovado; delete copia.aprovadoEm; delete copia.sncr; delete copia.clinicaId; delete copia.linkSlug;
         await F.setDoc(F.doc(db, 'medicos', auth.currentUser.uid), copia, { merge: true });
+        // a página pública do médico acompanha o perfil
+        if (m.linkSlug) await F.updateDoc(F.doc(db, 'links', m.linkSlug), { medicoNome: m.nome || '', crm: m.crm || '', uf: m.uf || '', rqe: m.rqe || '', especialidade: m.especialidade || '' });
         return true;
       },
       async transacaoPerfil(fn) {

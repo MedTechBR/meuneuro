@@ -85,6 +85,13 @@ const t = async (nome, fn) => { try { await fn(); ok++; console.log('ok  ', nome
     const c = (n, a, b) => { const r = RF.separarConcentracao(n); assert.strictEqual(r.nome, a); assert.strictEqual(r.conc, b); };
     c('Pregabalina 75 mg', 'Pregabalina', '75 mg'); c('Levodopa + benserazida 200 mg + 50 mg', 'Levodopa + benserazida', '200 mg + 50 mg'); c('Clonazepam', 'Clonazepam', '');
   });
+  await t('termo nomeia a clínica e guarda o texto aceito no pedido', async () => {
+    const tx = RF.tcleDe({ nome: 'Clínica Neuro Ceará', cnpj: '11.222.333/0001-81' });
+    assert.ok(tx.includes('Clínica Neuro Ceará (CNPJ 11.222.333/0001-81) faz renovação')); assert.ok(tx.includes('Clínica Neuro Ceará responde pelos seus dados')); assert.ok(!tx.includes('{'));
+    assert.ok(!RF.tcleDe(null).includes('{'));
+    const c = new RF.Conversa(); c.p.clinica = { nome: 'Clínica Neuro Ceará', cnpj: '' }; c.perguntar(); await c.responder('aceito');
+    assert.ok(c.p.consentimento.texto.includes('Clínica Neuro Ceará faz renovação'));
+  });
   await t('avisa remédio fora da neurologia', async () => {
     const p = await RF.rodarRoteiro({ ...RF.ROTEIROS[3], meds: RF.ROTEIROS[3].meds });
     assert.ok(p.alertas.some(a => /Fora da neurologia/.test(a.texto)), p.alertas.map(a => a.texto).join('|'));

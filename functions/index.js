@@ -105,7 +105,7 @@ exports.consultarPedido = onCall({ region: REGIAO, invoker: "public" }, async re
   const at = p.atendimento || {};
   return {
     pedido: {
-      codigo: p.codigo, status: p.status, enviadoEm: p.enviadoEm, paciente: { nome: p.paciente.nome, nasc: p.paciente.nasc, sexo: p.paciente.sexo, cpf: p.paciente.cpf, endereco: p.paciente.endereco, bairro: p.paciente.bairro, cidade: p.paciente.cidade, uf: p.paciente.uf, responsavel: p.paciente.responsavel || "" },
+      codigo: p.codigo, status: p.status, enviadoEm: p.enviadoEm, clinica: p.clinica || null, paciente: { nome: p.paciente.nome, nasc: p.paciente.nasc, sexo: p.paciente.sexo, cpf: p.paciente.cpf, endereco: p.paciente.endereco, bairro: p.paciente.bairro, cidade: p.paciente.cidade, uf: p.paciente.uf, responsavel: p.paciente.responsavel || "" },
       meds: p.meds, condicoes: p.condicoes, gestacao: p.gestacao,
       receitas: p.status === "assinado" ? p.receitas : null,
       atendimento: { iniciadoEm: at.iniciadoEm || null, concluidoEm: at.concluidoEm || null, medico: at.medico || null, orientacaoMedico: at.orientacaoMedico || "", motivoRecusa: at.motivoRecusa || "", sala: p.status === "em_atendimento" ? (at.sala || null) : null, assinatura: p.status === "assinado" ? publicoAssinatura(at.assinatura) : null }
@@ -141,6 +141,7 @@ const vidaasSegredo = defineSecret("VIDAAS_CLIENT_SECRET");
 
 async function exigirMedico(req) {
   if (!req.auth || req.auth.token.medico !== true) throw new HttpsError("permission-denied", "Somente médicos.");
+  if (typeof req.auth.token.clinica !== "string") throw new HttpsError("permission-denied", "Sua conta ainda não está ligada a uma clínica.");
   const s = await db.collection("medicos").doc(req.auth.uid).get();
   if (!s.exists) throw new HttpsError("failed-precondition", "Complete seu perfil de prescritor.");
   return s.data();
@@ -149,10 +150,10 @@ function resumoMedico(med) { return { nome: med.nome, crm: med.crm, uf: med.uf, 
 function idadeDe(nasc) { const d = new Date(nasc), h = new Date(); let i = h.getFullYear() - d.getFullYear(); if (h < new Date(h.getFullYear(), d.getMonth(), d.getDate())) i--; return isFinite(i) ? i : null; }
 
 // lê o pedido e confere tudo que a emissão exige, antes de gastar assinatura
-async function pedidoEmissivel(pedidoId) {
+async function pedidoEmissivel(pedidoId, req) {
   const ref = db.collection("pedidos").doc(String(pedidoId || ""));
   const p = (await ref.get()).data();
-  if (!p) throw new HttpsError("not-found", "Pedido não encontrado.");
+  if (!p || p.clinicaId !== req.auth.token.clinica) throw new HttpsError("not-found", "Pedido não encontrado.");
   if (p.status !== "em_atendimento") throw new HttpsError("failed-precondition", "O pedido não está em atendimento.");
   const docs = blocosEmitidos(p);
   if (!docs.length) throw new HttpsError("failed-precondition", "A receita está vazia.");
@@ -224,7 +225,7 @@ exports.assinarReceita = onCall({ region: REGIAO, invoker: "public", timeoutSeco
   const pedidoId = String((req.data || {}).pedidoId || "");
   const sess = (await db.collection("sessoesAssinatura").doc(req.auth.uid).get()).data() || {};
   if (!sess.token || sess.expiraEm < Date.now()) throw new HttpsError("failed-precondition", "Autorize a assinatura no app VIDaaS primeiro.");
-  const { ref, p, docs } = await pedidoEmissivel(pedidoId);
+  const { ref, p, docs } = await pedidoEmissivel(pedidoId, req);
   const pr = preparo(p), medico = resumoMedico(med);
   const certs = await vidaas.certificados(sess.token);
   const alvo = certs[0];
@@ -245,7 +246,7 @@ exports.assinarReceita = onCall({ region: REGIAO, invoker: "public", timeoutSeco
 exports.emitirComAnexos = onCall({ region: REGIAO, invoker: "public", timeoutSeconds: 120, memory: "512MiB" }, async req => {
   const med = await exigirMedico(req);
   const d = req.data || {};
-  const { ref, p, docs } = await pedidoEmissivel(d.pedidoId);
+  const { ref, p, docs } = await pedidoEmissivel(d.pedidoId, req);
   const recebidos = new Map((d.documentos || []).map(x => [String(x.id), x.pdfBase64]));
   const cpfMed = String(med.cpf || "").replace(/\D/g, "");
   if (cpfMed.length !== 11) throw new HttpsError("failed-precondition", "Informe seu CPF no perfil: ele é conferido com o certificado da assinatura.");
@@ -271,8 +272,10 @@ exports.emitirComAnexos = onCall({ region: REGIAO, invoker: "public", timeoutSec
 exports.baixarReceita = onCall({ region: REGIAO, invoker: "public", memory: "512MiB" }, async req => {
   const d = req.data || {};
   let p = null;
-  if (d.pedidoId && req.auth && req.auth.token.medico === true) p = (await db.collection("pedidos").doc(String(d.pedidoId)).get()).data();
-  else if (d.codigo) {
+  if (d.pedidoId && req.auth && req.auth.token.medico === true) {
+    p = (await db.collection("pedidos").doc(String(d.pedidoId)).get()).data();
+    if (p && p.clinicaId !== req.auth.token.clinica) p = null;
+  } else if (d.codigo) {
     const s = await db.collection("pedidos").where("codigo", "==", String(d.codigo).toUpperCase()).limit(1).get();
     if (!s.empty && s.docs[0].data().paciente.nasc === d.nasc) p = s.docs[0].data();
   }
@@ -306,10 +309,10 @@ exports.receitaArquivo = onRequest({ region: REGIAO, cors: true, invoker: "publi
 });
 
 /* ---------------- atendente: só contato, sem dados clínicos ---------------- */
-const exigirAtendente = req => { if (!req.auth || req.auth.token.atendente !== true) throw new HttpsError("permission-denied", "Somente atendentes."); };
+const exigirAtendente = req => { if (!req.auth || req.auth.token.atendente !== true || typeof req.auth.token.clinica !== "string") throw new HttpsError("permission-denied", "Somente atendentes."); };
 exports.atendenteFila = onCall({ region: REGIAO, invoker: "public" }, async req => {
   exigirAtendente(req);
-  const s = await db.collection("pedidos").orderBy("atualizadoEm", "desc").limit(300).get();
+  const s = await db.collection("pedidos").where("clinicaId", "==", req.auth.token.clinica).orderBy("atualizadoEm", "desc").limit(300).get();
   return s.docs.map(x => x.data()).filter(p => p.status !== "rascunho").map(p => ({
     id: p.id, codigo: p.codigo, status: p.status, enviadoEm: p.enviadoEm, atualizadoEm: p.atualizadoEm, especialidades: [], meds: [], alertas: [], condicoes: [],
     paciente: { nome: p.paciente.nome, telefone: p.paciente.telefone, email: p.paciente.email || "", nasc: p.paciente.nasc, responsavel: p.paciente.responsavel || "" },
@@ -321,7 +324,10 @@ exports.atendenteRegistrar = onCall({ region: REGIAO, invoker: "public" }, async
   const d = req.data || {};
   const evento = String(d.evento || "").slice(0, 400);
   if (!evento) throw new HttpsError("invalid-argument", "Evento vazio.");
-  await db.collection("pedidos").doc(String(d.pedidoId || "")).update({ historico: FieldValue.arrayUnion({ em: new Date().toISOString(), evento: "Contato: " + evento.replace(/^Contato:\s*/, ""), por: req.auth.token.name || req.auth.token.email || "Atendente" }) });
+  const ref = db.collection("pedidos").doc(String(d.pedidoId || ""));
+  const p = (await ref.get()).data();
+  if (!p || p.clinicaId !== req.auth.token.clinica) throw new HttpsError("not-found", "Pedido não encontrado.");
+  await ref.update({ historico: FieldValue.arrayUnion({ em: new Date().toISOString(), evento: "Contato: " + evento.replace(/^Contato:\s*/, ""), por: req.auth.token.name || req.auth.token.email || "Atendente" }) });
   return { ok: true };
 });
 
@@ -337,16 +343,48 @@ function ehAdmin(req) {
   const email = req.auth && req.auth.token.email && req.auth.token.email.toLowerCase();
   return !!req.auth && (req.auth.token.admin === true || (email && ADMIN_EMAILS.includes(email) && req.auth.token.email_verified));
 }
+// endereço público do médico: #/m/<slug>
+function paraSlug(t) { return String(t || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/\b(dra?|prof[a]?)\.?\s+/g, "").replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 40); }
+async function criarLink(uid, clinicaId, perfil, email) {
+  const base = paraSlug(perfil.nome) || paraSlug(String(email).split("@")[0]) || "medico";
+  for (let i = 0; i < 20; i++) {
+    const slug = i ? `${base}-${i + 1}` : base;
+    const r = db.collection("links").doc(slug);
+    try { await r.create({ medicoUid: uid, clinicaId, medicoNome: perfil.nome || "", crm: perfil.crm || "", uf: perfil.uf || "", rqe: perfil.rqe || "", especialidade: perfil.especialidade || "", criadoEm: new Date().toISOString() }); return slug; }
+    catch (e) { if (e.code !== 6) throw e; } // 6 = já existe
+  }
+  throw new HttpsError("internal", "Não consegui criar o link do médico.");
+}
 exports.definirPapel = onCall({ region: REGIAO, invoker: "public" }, async req => {
   if (!ehAdmin(req)) throw new HttpsError("permission-denied", "Somente o administrador.");
   const d = req.data || {};
   const papel = String(d.papel || "medico");
   if (!["medico", "atendente", "admin"].includes(papel)) throw new HttpsError("invalid-argument", "Papel inválido.");
   const u = d.uid ? await admin.auth().getUser(String(d.uid)) : await admin.auth().getUserByEmail(String(d.email || "").toLowerCase().trim());
-  const claims = Object.assign({}, u.customClaims, { [papel]: d.ativo !== false });
+  const ativo = d.ativo !== false;
+  const claims = Object.assign({}, u.customClaims, { [papel]: ativo });
+  const ref = db.collection("medicos").doc(u.uid);
+  if (papel === "admin" || !ativo) {
+    await admin.auth().setCustomUserClaims(u.uid, claims);
+    if (papel !== "admin") await ref.set({ aprovado: false }, { merge: true });
+    return { ok: true, uid: u.uid, claims };
+  }
+  // médico e atendente pertencem a uma clínica: é o que separa os dados de cada cliente
+  const clinicaId = String(d.clinicaId || "");
+  const cl = clinicaId ? await db.collection("clinicas").doc(clinicaId).get() : null;
+  if (!cl || !cl.exists) throw new HttpsError("invalid-argument", "Escolha a clínica.");
+  claims.clinica = clinicaId;
   await admin.auth().setCustomUserClaims(u.uid, claims);
-  if (papel === "medico") await db.collection("medicos").doc(u.uid).set({ aprovado: d.ativo !== false, aprovadoEm: new Date().toISOString() }, { merge: true });
-  return { ok: true, uid: u.uid, claims };
+  const perfil = (await ref.get()).data() || {};
+  const novo = { aprovado: true, aprovadoEm: new Date().toISOString(), clinicaId };
+  let linkSlug = perfil.linkSlug || null;
+  if (papel === "medico") {
+    if (!perfil.nomeLocal) novo.nomeLocal = cl.data().nome;
+    if (!perfil.cnpjLocal && cl.data().cnpj) novo.cnpjLocal = cl.data().cnpj;
+    if (!linkSlug) { linkSlug = await criarLink(u.uid, clinicaId, perfil, u.email); novo.linkSlug = linkSlug; }
+  }
+  await ref.set(novo, { merge: true });
+  return { ok: true, uid: u.uid, claims, linkSlug };
 });
 // compatibilidade com o nome antigo
 exports.definirMedico = exports.definirPapel;
