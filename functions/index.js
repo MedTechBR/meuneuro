@@ -1,5 +1,5 @@
 /* ============================================================================
-   RefilMed — functions/index.js (projeto Firebase PRÓPRIO do RefilMed)
+   Meu Neuro — functions/index.js (projeto Firebase PRÓPRIO do Meu Neuro)
    IA via Vertex AI SEM chave de API (conta de serviço do projeto), consulta do pedido
    pelo paciente, verificação pública de receita e gestão da permissão de médico.
 
@@ -10,8 +10,10 @@
      4. Definir ADMIN_EMAILS (variável de ambiente da função) com o e-mail do administrador.
    ============================================================================ */
 const { onCall, onRequest, HttpsError } = require("firebase-functions/v2/https");
+const { defineSecret } = require("firebase-functions/params");
 const admin = require("firebase-admin");
-admin.initializeApp();
+const { FieldValue } = require("firebase-admin/firestore");
+admin.initializeApp(process.env.STORAGE_BUCKET ? { storageBucket: process.env.STORAGE_BUCKET } : {});
 const db = admin.firestore();
 
 const REGIAO = "southamerica-east1";
@@ -50,7 +52,7 @@ async function consumirCota(uid, tipo) {
       const s = await t.get(ref);
       const atual = (s.exists && s.data()[tipo]) || 0;
       if (atual >= TETO_DIA) return -1;
-      t.set(ref, { [tipo]: atual + 1, em: admin.firestore.FieldValue.serverTimestamp() }, { merge: true });
+      t.set(ref, { [tipo]: atual + 1, em: FieldValue.serverTimestamp() }, { merge: true });
       return atual + 1;
     });
     if (n < 0) throw new HttpsError("resource-exhausted", "Limite diário atingido.");
@@ -58,7 +60,7 @@ async function consumirCota(uid, tipo) {
 }
 
 // Regras fixas do assistente: Res. CFM 2.454/2026, art. 5º §2º (sem diagnóstico nem decisão terapêutica)
-const SISTEMA_PACIENTE = "Você é o assistente automatizado do RefilMed, serviço brasileiro de renovação de receitas de uso contínuo por telemedicina. " +
+const SISTEMA_PACIENTE = "Você é o assistente automatizado do Meu Neuro, serviço brasileiro de renovação de receitas de remédios neurológicos de uso contínuo por telemedicina. " +
   "Responda em português do Brasil, em até 3 frases curtas, com linguagem simples. Você NÃO faz diagnóstico, NÃO sugere mudar dose, trocar, iniciar ou suspender remédio, " +
   "NÃO diz que a receita será renovada. Para qualquer decisão, diga que o médico vai avaliar no atendimento. Se a pergunta indicar urgência (crise que não para, fraqueza súbita, " +
   "fala enrolada, pior dor de cabeça da vida, pensamento suicida), oriente ligar 192 (SAMU) ou 188 (CVV) e procurar pronto-socorro.";
@@ -89,10 +91,11 @@ exports.assistenteIA = onCall({ region: REGIAO, timeoutSeconds: 60, memory: "256
 });
 
 /* ---------------- paciente consulta o pedido pelo código ---------------- */
+const publicoAssinatura = a => a ? { em: a.em, tipo: a.tipo, provedor: a.provedor || "", verificacao: a.verificacao, documentos: (a.documentos || []).map(d => ({ id: d.id, tipo: d.tipo, rot: d.rot, numero: d.numero || "" })) } : null;
 exports.consultarPedido = onCall({ region: REGIAO, invoker: "public" }, async req => {
   const codigo = String((req.data || {}).codigo || "").toUpperCase().replace(/\s/g, "");
   const nasc = String((req.data || {}).nasc || "");
-  if (!/^RF-[2-9A-Z]{6}$/.test(codigo) || !/^\d{4}-\d{2}-\d{2}$/.test(nasc)) return { erro: "nao_encontrado" };
+  if (!/^(MN|RF)-[2-9A-Z]{6}$/.test(codigo) || !/^\d{4}-\d{2}-\d{2}$/.test(nasc)) return { erro: "nao_encontrado" };
   if (req.auth) await consumirCota(req.auth.uid, "consulta");
   const s = await db.collection("pedidos").where("codigo", "==", codigo).limit(1).get();
   if (s.empty) return { erro: "nao_encontrado" };
@@ -105,7 +108,7 @@ exports.consultarPedido = onCall({ region: REGIAO, invoker: "public" }, async re
       codigo: p.codigo, status: p.status, enviadoEm: p.enviadoEm, paciente: { nome: p.paciente.nome, nasc: p.paciente.nasc, sexo: p.paciente.sexo, cpf: p.paciente.cpf, endereco: p.paciente.endereco, bairro: p.paciente.bairro, cidade: p.paciente.cidade, uf: p.paciente.uf, responsavel: p.paciente.responsavel || "" },
       meds: p.meds, condicoes: p.condicoes, gestacao: p.gestacao,
       receitas: p.status === "assinado" ? p.receitas : null,
-      atendimento: { iniciadoEm: at.iniciadoEm || null, concluidoEm: at.concluidoEm || null, medico: at.medico || null, orientacaoMedico: at.orientacaoMedico || "", motivoRecusa: at.motivoRecusa || "", assinatura: p.status === "assinado" ? at.assinatura : null }
+      atendimento: { iniciadoEm: at.iniciadoEm || null, concluidoEm: at.concluidoEm || null, medico: at.medico || null, orientacaoMedico: at.orientacaoMedico || "", motivoRecusa: at.motivoRecusa || "", sala: p.status === "em_atendimento" ? (at.sala || null) : null, assinatura: p.status === "assinado" ? publicoAssinatura(at.assinatura) : null }
     }
   };
 });
@@ -118,16 +121,23 @@ exports.verificarReceita = onCall({ region: REGIAO, invoker: "public" }, async r
   if (s.empty) return null;
   const p = s.docs[0].data(), a = p.atendimento;
   const ini = String(p.paciente.nome || "").split(/\s+/).filter(Boolean).map(x => x[0].toUpperCase() + ".").join(" ");
-  return { valida: p.status === "assinado", emitidaEm: a.assinatura.em, medico: { nome: a.medico.nome, crm: a.medico.crm, uf: a.medico.uf }, paciente: ini, hash: a.assinatura.hash, itens: (p.receitas || []).reduce((n, r) => n + r.itens.length, 0), tipoAssinatura: a.assinatura.tipo };
+  return { valida: p.status === "assinado", emitidaEm: a.assinatura.em, medico: { nome: a.medico.nome, crm: a.medico.crm, uf: a.medico.uf }, paciente: ini, hash: a.assinatura.hash || "", itens: (p.receitas || []).reduce((n, r) => n + r.itens.length, 0), tipoAssinatura: a.assinatura.tipo, documentos: (a.assinatura.documentos || []).map(d => ({ rot: d.rot, numero: d.numero || "" })) };
 });
 
-/* ---------------- assinatura integrada (VIDaaS) ----------------
-   Fluxo no painel do médico: vidaasIniciar → (médico aprova no celular) → vidaasStatus → assinarReceita.
+/* ---------------- emissão ----------------
+   Dois caminhos que terminam iguais (documentos no Storage, pedido "assinado", imutável pelas regras):
+   - VIDaaS: vidaasIniciar → (médico aprova no celular) → vidaasStatus → assinarReceita.
+   - PDF assinado por fora: o navegador gera os PDFs, o médico assina no assinador dele e anexa em emitirComAnexos.
    A sessão do VIDaaS fica em sessoesAssinatura/{uid}, coleção que só o servidor lê (regras fecham tudo). */
+const crypto = require("crypto");
 const vidaas = require("./vidaas");
-const { gerarPDF } = require("./pdf");
-const { assinarPDF } = require("./pades");
+const { gerarDocumento, blocosEmitidos, ROTULO } = require("./pdf");
+const { assinarPDF, conferirAssinatura } = require("./pades");
 const BASE_FUNCOES = () => `https://${REGIAO}-${PROJECT}.cloudfunctions.net`;
+const SITE = process.env.SITE_URL || "https://medtechbr.com.br/meuneuro/";
+const AMBIENTE_SNCR = process.env.SNCR_AMBIENTE === "producao" ? "producao" : "homologacao";
+const COM_NUMERO = new Set(["controle_especial", "notificacao_a", "notificacao_b", "notificacao_b2", "retencao"]);
+const vidaasSegredo = defineSecret("VIDAAS_CLIENT_SECRET");
 
 async function exigirMedico(req) {
   if (!req.auth || req.auth.token.medico !== true) throw new HttpsError("permission-denied", "Somente médicos.");
@@ -135,63 +145,130 @@ async function exigirMedico(req) {
   if (!s.exists) throw new HttpsError("failed-precondition", "Complete seu perfil de prescritor.");
   return s.data();
 }
+function resumoMedico(med) { return { nome: med.nome, crm: med.crm, uf: med.uf, rqe: med.rqe || "", especialidade: med.especialidade || "", endereco: med.endereco, cidade: med.cidade, ufEnd: med.ufEnd, telefone: med.telefone, nomeLocal: med.nomeLocal || "", cnpjLocal: med.cnpjLocal || "" }; }
+function idadeDe(nasc) { const d = new Date(nasc), h = new Date(); let i = h.getFullYear() - d.getFullYear(); if (h < new Date(h.getFullYear(), d.getMonth(), d.getDate())) i--; return isFinite(i) ? i : null; }
 
-exports.vidaasIniciar = onCall({ region: REGIAO, invoker: "public", secrets: [] }, async req => {
+// lê o pedido e confere tudo que a emissão exige, antes de gastar assinatura
+async function pedidoEmissivel(pedidoId) {
+  const ref = db.collection("pedidos").doc(String(pedidoId || ""));
+  const p = (await ref.get()).data();
+  if (!p) throw new HttpsError("not-found", "Pedido não encontrado.");
+  if (p.status !== "em_atendimento") throw new HttpsError("failed-precondition", "O pedido não está em atendimento.");
+  const docs = blocosEmitidos(p);
+  if (!docs.length) throw new HttpsError("failed-precondition", "A receita está vazia.");
+  for (const { b } of docs) {
+    if (COM_NUMERO.has(b.tipo) && !b.numeroSNCR) throw new HttpsError("failed-precondition", `${ROTULO[b.tipo]} sem numeração do SNCR: obtenha os números no perfil ou marque para sair em papel.`);
+    if (AMBIENTE_SNCR === "producao" && b.numeroSNCR && b.ambienteSNCR !== "producao") throw new HttpsError("failed-precondition", "Este pedido usa numeração de homologação. Refaça a reserva com números de produção.");
+    if (["controle_especial", "notificacao_a", "notificacao_b", "notificacao_b2"].includes(b.tipo) && !p.paciente.endereco) throw new HttpsError("failed-precondition", "Falta o endereço do paciente, obrigatório neste receituário.");
+  }
+  return { ref, p, docs };
+}
+// a identificação usada no PDF sai da preparação gravada pelo médico (caminho do anexo) ou é criada aqui
+function preparo(p) {
+  const pr = (p.atendimento && p.atendimento.preparo) || {};
+  const segredo = pr.segredo || crypto.randomBytes(18).toString("base64url");
+  const em = pr.em || new Date().toISOString();
+  const verificacao = pr.verificacao || crypto.randomBytes(5).toString("hex").toUpperCase();
+  return { segredo, em, verificacao };
+}
+function opcoesDoc(b, p, pr) {
+  const semQRiti = ["controle_especial", "notificacao_a", "notificacao_b", "notificacao_b2"].includes(b.tipo);
+  return {
+    emitidoEm: pr.em, verificacao: pr.verificacao, urlVerificar: SITE.replace(/^https?:\/\//, "") + "#/verificar/" + pr.verificacao,
+    urlQR: semQRiti ? null : `${BASE_FUNCOES()}/receitaITI?_format=application/validador-iti+json&_secretCode=${pr.segredo}`,
+    idade: idadeDe(p.paciente.nasc), ambienteSNCR: b.ambienteSNCR || AMBIENTE_SNCR, marca: b.numeroSNCR && b.ambienteSNCR !== "producao" ? "HOMOLOGACAO - SEM VALIDADE" : ""
+  };
+}
+async function finalizar(ref, p, med, pr, documentos, provedor, por) {
+  const medico = resumoMedico(med);
+  const at = Object.assign({}, p.atendimento || {}, {
+    medico, concluidoEm: pr.em,
+    assinatura: { em: pr.em, tipo: "icp", provedor, verificacao: pr.verificacao, segredo: pr.segredo, documentos, hash: documentos[0].hash }
+  });
+  delete at.preparo; delete at.sala;
+  await ref.update({ status: "assinado", atendimento: at, atualizadoEm: pr.em, historico: FieldValue.arrayUnion({ em: pr.em, evento: `Receita assinada (ICP-Brasil, ${por}) e emitida: ${documentos.map(d => d.rot + (d.numero ? " " + d.numero : "")).join("; ")}`, por: medico.nome }) });
+  return { ok: true, verificacao: pr.verificacao };
+}
+async function guardar(pedidoId, verificacao, id, bytes) {
+  const arquivo = `receitas/${pedidoId}/${verificacao}-${id}.pdf`;
+  await admin.storage().bucket().file(arquivo).save(Buffer.from(bytes), { contentType: "application/pdf", resumable: false });
+  return { arquivo, hash: crypto.createHash("sha256").update(bytes).digest("hex") };
+}
+
+exports.vidaasIniciar = onCall({ region: REGIAO, invoker: "public", secrets: [vidaasSegredo] }, async req => {
   const med = await exigirMedico(req);
   if (!med.cpf) throw new HttpsError("failed-precondition", "Informe seu CPF no perfil para usar o VIDaaS.");
+  if (!process.env.VIDAAS_CLIENT_ID) throw new HttpsError("failed-precondition", "VIDaaS ainda não habilitado: falta o cadastro da aplicação na Valid. Use o PDF assinado por fora.");
   const { code, verifier } = await vidaas.autorizar(med.cpf, 3600);
   await db.collection("sessoesAssinatura").doc(req.auth.uid).set({ code, verifier, pedidoEm: Date.now(), token: null, expiraEm: 0 });
   return { aguardando: true };
 });
 
-exports.vidaasStatus = onCall({ region: REGIAO, invoker: "public" }, async req => {
+exports.vidaasStatus = onCall({ region: REGIAO, invoker: "public", secrets: [vidaasSegredo] }, async req => {
   await exigirMedico(req);
   const ref = db.collection("sessoesAssinatura").doc(req.auth.uid);
   const s = await ref.get();
   if (!s.exists) return { autorizado: false, iniciado: false };
   const d = s.data();
   if (d.token && d.expiraEm > Date.now()) return { autorizado: true };
-  if (!d.code || Date.now() - d.pedidoEm > 6 * 60 * 1000) return { autorizado: false, expirado: true };
+  if (!d.code || Date.now() - d.pedidoEm > 6 * 60 * 1000) return { autorizado: false, expirado: !!d.code };
   const aut = await vidaas.consultarAprovacao(d.code);
   if (!aut) return { autorizado: false };
-  const t = await vidaas.trocarToken(aut);
-  await ref.set({ token: t.token, expiraEm: t.expiraEm, code: null }, { merge: true });
+  const t = await vidaas.trocarToken(aut, d.verifier);
+  await ref.set({ token: t.token, expiraEm: t.expiraEm, code: null, verifier: null }, { merge: true });
   return { autorizado: true };
 });
 
-exports.assinarReceita = onCall({ region: REGIAO, invoker: "public", timeoutSeconds: 120, memory: "512MiB" }, async req => {
+exports.assinarReceita = onCall({ region: REGIAO, invoker: "public", timeoutSeconds: 180, memory: "512MiB", secrets: [vidaasSegredo] }, async req => {
   const med = await exigirMedico(req);
   const pedidoId = String((req.data || {}).pedidoId || "");
   const sess = (await db.collection("sessoesAssinatura").doc(req.auth.uid).get()).data() || {};
   if (!sess.token || sess.expiraEm < Date.now()) throw new HttpsError("failed-precondition", "Autorize a assinatura no app VIDaaS primeiro.");
-  const ref = db.collection("pedidos").doc(pedidoId);
-  const p = (await ref.get()).data();
-  if (!p) throw new HttpsError("not-found", "Pedido não encontrado.");
-  if (p.status !== "em_atendimento") throw new HttpsError("failed-precondition", "O pedido não está em atendimento.");
-  const segredo = require("crypto").randomBytes(18).toString("base64url");
-  const em = new Date().toISOString();
-  const verificacao = require("crypto").createHash("sha256").update(pedidoId + em + segredo).digest("hex").slice(0, 10).toUpperCase();
-  const medico = { nome: med.nome, crm: med.crm, uf: med.uf, rqe: med.rqe || "", especialidade: med.especialidade || "", endereco: med.endereco, cidade: med.cidade, ufEnd: med.ufEnd, telefone: med.telefone, nomeLocal: med.nomeLocal || "", cnpjLocal: med.cnpjLocal || "" };
-  const urlQR = `${BASE_FUNCOES()}/receitaITI?_format=application/validador-iti+json&_secretCode=${segredo}`;
-  const pdf = await gerarPDF(p, medico, { urlQR, emitidoEm: em, verificacao });
+  const { ref, p, docs } = await pedidoEmissivel(pedidoId);
+  const pr = preparo(p), medico = resumoMedico(med);
   const certs = await vidaas.certificados(sess.token);
   const alvo = certs[0];
-  const assinado = await assinarPDF(pdf, {
-    certs: [alvo.certificate], nome: medico.nome, local: [medico.cidade, medico.ufEnd].filter(Boolean).join("/"),
-    assinarHash: hash => vidaas.assinarHash(sess.token, alvo.alias, hash)
-  });
-  const arquivo = `receitas/${pedidoId}-${verificacao}.pdf`;
-  await admin.storage().bucket().file(arquivo).save(assinado, { contentType: "application/pdf", resumable: false });
-  const at = Object.assign({}, p.atendimento || {}, {
-    medico, concluidoEm: em,
-    assinatura: { em, tipo: "icp", provedor: "vidaas", verificacao, arquivo, segredo, hash: require("crypto").createHash("sha256").update(assinado).digest("hex") }
-  });
-  await ref.update({ status: "assinado", atendimento: at, atualizadoEm: em, historico: admin.firestore.FieldValue.arrayUnion({ em, evento: "Receita assinada com VIDaaS (ICP-Brasil) e emitida", por: medico.nome }) });
-  return { ok: true, verificacao };
+  const documentos = [];
+  for (const { b, id } of docs) {
+    const pdf = await gerarDocumento(b, p, medico, opcoesDoc(b, p, pr));
+    const assinado = await assinarPDF(pdf, {
+      certs: [alvo.certificate], nome: medico.nome, local: [medico.cidade, medico.ufEnd].filter(Boolean).join("/"),
+      assinarHash: hash => vidaas.assinarHash(sess.token, alvo.alias, hash)
+    });
+    const g = await guardar(pedidoId, pr.verificacao, id, assinado);
+    documentos.push({ id, tipo: b.tipo, rot: ROTULO[b.tipo], numero: b.numeroSNCR || "", arquivo: g.arquivo, hash: g.hash });
+  }
+  return finalizar(ref, p, med, pr, documentos, "vidaas", "VIDaaS");
 });
 
-// link temporário do PDF assinado: médico do pedido, ou paciente com código + nascimento
-exports.baixarReceita = onCall({ region: REGIAO, invoker: "public" }, async req => {
+// caminho sem VIDaaS: { pedidoId, documentos: [{ id, pdfBase64 }] }, um PDF assinado para cada documento do pedido
+exports.emitirComAnexos = onCall({ region: REGIAO, invoker: "public", timeoutSeconds: 120, memory: "512MiB" }, async req => {
+  const med = await exigirMedico(req);
+  const d = req.data || {};
+  const { ref, p, docs } = await pedidoEmissivel(d.pedidoId);
+  const recebidos = new Map((d.documentos || []).map(x => [String(x.id), x.pdfBase64]));
+  const cpfMed = String(med.cpf || "").replace(/\D/g, "");
+  if (cpfMed.length !== 11) throw new HttpsError("failed-precondition", "Informe seu CPF no perfil: ele é conferido com o certificado da assinatura.");
+  const pr = preparo(p);
+  if (!(p.atendimento && p.atendimento.preparo)) throw new HttpsError("failed-precondition", "Gere os PDFs pelo sistema antes de anexar.");
+  const documentos = [];
+  for (const { b, id } of docs) {
+    const b64 = recebidos.get(id);
+    if (!b64) throw new HttpsError("invalid-argument", `Falta o PDF assinado de: ${ROTULO[b.tipo]}.`);
+    const buf = Buffer.from(String(b64), "base64");
+    if (buf.length > 3 * 1024 * 1024) throw new HttpsError("invalid-argument", "PDF acima de 3 MB.");
+    const c = conferirAssinatura(buf);
+    if (!c.ok) throw new HttpsError("failed-precondition", `${ROTULO[b.tipo]}: ${c.motivo}`);
+    if (!c.icp) throw new HttpsError("failed-precondition", `${ROTULO[b.tipo]}: o certificado não é ICP-Brasil.`);
+    if (c.cpf !== cpfMed) throw new HttpsError("failed-precondition", `${ROTULO[b.tipo]}: o certificado não é do CPF do seu perfil.`);
+    const g = await guardar(p.id || d.pedidoId, pr.verificacao, id, buf);
+    documentos.push({ id, tipo: b.tipo, rot: ROTULO[b.tipo], numero: b.numeroSNCR || "", arquivo: g.arquivo, hash: g.hash });
+  }
+  return finalizar(ref, p, med, pr, documentos, "anexo", "PDF anexado");
+});
+
+// PDF assinado: médico, ou paciente com código + nascimento. Vai pela própria função (sem URL assinada, que exigiria permissão extra de IAM).
+exports.baixarReceita = onCall({ region: REGIAO, invoker: "public", memory: "512MiB" }, async req => {
   const d = req.data || {};
   let p = null;
   if (d.pedidoId && req.auth && req.auth.token.medico === true) p = (await db.collection("pedidos").doc(String(d.pedidoId)).get()).data();
@@ -199,21 +276,59 @@ exports.baixarReceita = onCall({ region: REGIAO, invoker: "public" }, async req 
     const s = await db.collection("pedidos").where("codigo", "==", String(d.codigo).toUpperCase()).limit(1).get();
     if (!s.empty && s.docs[0].data().paciente.nasc === d.nasc) p = s.docs[0].data();
   }
-  const arq = p && p.atendimento && p.atendimento.assinatura && p.atendimento.assinatura.arquivo;
-  if (!arq) throw new HttpsError("not-found", "Receita assinada não encontrada.");
-  const [url] = await admin.storage().bucket().file(arq).getSignedUrl({ action: "read", expires: Date.now() + 15 * 60 * 1000 });
-  return { url };
+  const docs = (p && p.status === "assinado" && p.atendimento.assinatura.documentos) || [];
+  const alvo = docs.find(x => x.id === d.docId) || docs[0];
+  if (!alvo) throw new HttpsError("not-found", "Receita assinada não encontrada.");
+  const [bytes] = await admin.storage().bucket().file(alvo.arquivo).download();
+  return { base64: bytes.toString("base64"), nome: `${p.codigo}-${alvo.tipo.replace(/_/g, "-")}-${alvo.id}.pdf` };
 });
 
-// QR code no padrão do ITI: o validar.iti.gov.br chama esta URL e baixa o PDF assinado
+// QR code no padrão do ITI (receita simples e retenção): o validar.iti.gov.br chama esta URL e baixa os PDFs
+async function pedidoPorSegredo(segredo) {
+  if (!/^[A-Za-z0-9_-]{8,64}$/.test(segredo)) return null;
+  const s = await db.collection("pedidos").where("atendimento.assinatura.segredo", "==", segredo).limit(1).get();
+  return s.empty || s.docs[0].data().status !== "assinado" ? null : s.docs[0].data();
+}
+const comQRiti = d => d.tipo === "simples" || d.tipo === "retencao";
 exports.receitaITI = onRequest({ region: REGIAO, cors: true, invoker: "public" }, async (req, res) => {
   const segredo = String(req.query._secretCode || "");
-  if (!/^[A-Za-z0-9_-]{8,64}$/.test(segredo)) { res.status(400).json({ erro: "código inválido" }); return; }
-  const s = await db.collection("pedidos").where("atendimento.assinatura.segredo", "==", segredo).limit(1).get();
-  if (s.empty || s.docs[0].data().status !== "assinado") { res.status(404).json({ erro: "não encontrado" }); return; }
-  const arq = s.docs[0].data().atendimento.assinatura.arquivo;
-  const [url] = await admin.storage().bucket().file(arq).getSignedUrl({ action: "read", expires: Date.now() + 10 * 60 * 1000 });
-  res.set("Cache-Control", "no-store").json({ version: "1.0.0", prescription: { signatureFiles: [{ url }] } });
+  const p = await pedidoPorSegredo(segredo);
+  if (!p) { res.status(404).json({ erro: "não encontrado" }); return; }
+  const signatureFiles = p.atendimento.assinatura.documentos.filter(comQRiti).map(d => ({ url: `${BASE_FUNCOES()}/receitaArquivo?_secretCode=${segredo}&doc=${d.id}` }));
+  res.set("Cache-Control", "no-store").json({ version: "1.0.0", prescription: { signatureFiles } });
+});
+exports.receitaArquivo = onRequest({ region: REGIAO, cors: true, invoker: "public", memory: "512MiB" }, async (req, res) => {
+  const p = await pedidoPorSegredo(String(req.query._secretCode || ""));
+  const d = p && p.atendimento.assinatura.documentos.filter(comQRiti).find(x => x.id === String(req.query.doc || ""));
+  if (!d) { res.status(404).json({ erro: "não encontrado" }); return; }
+  const [bytes] = await admin.storage().bucket().file(d.arquivo).download();
+  res.set("Cache-Control", "no-store").type("application/pdf").send(bytes);
+});
+
+/* ---------------- atendente: só contato, sem dados clínicos ---------------- */
+const exigirAtendente = req => { if (!req.auth || req.auth.token.atendente !== true) throw new HttpsError("permission-denied", "Somente atendentes."); };
+exports.atendenteFila = onCall({ region: REGIAO, invoker: "public" }, async req => {
+  exigirAtendente(req);
+  const s = await db.collection("pedidos").orderBy("atualizadoEm", "desc").limit(300).get();
+  return s.docs.map(x => x.data()).filter(p => p.status !== "rascunho").map(p => ({
+    id: p.id, codigo: p.codigo, status: p.status, enviadoEm: p.enviadoEm, atualizadoEm: p.atualizadoEm, especialidades: [], meds: [], alertas: [], condicoes: [],
+    paciente: { nome: p.paciente.nome, telefone: p.paciente.telefone, email: p.paciente.email || "", nasc: p.paciente.nasc, responsavel: p.paciente.responsavel || "" },
+    historico: (p.historico || []).filter(h => /^(Contato|Pedido|Atendimento iniciado)/.test(h.evento || "")), atendimento: { sala: (p.atendimento || {}).sala || null }
+  }));
+});
+exports.atendenteRegistrar = onCall({ region: REGIAO, invoker: "public" }, async req => {
+  exigirAtendente(req);
+  const d = req.data || {};
+  const evento = String(d.evento || "").slice(0, 400);
+  if (!evento) throw new HttpsError("invalid-argument", "Evento vazio.");
+  await db.collection("pedidos").doc(String(d.pedidoId || "")).update({ historico: FieldValue.arrayUnion({ em: new Date().toISOString(), evento: "Contato: " + evento.replace(/^Contato:\s*/, ""), por: req.auth.token.name || req.auth.token.email || "Atendente" }) });
+  return { ok: true };
+});
+
+/* ---------------- prontidão (tela de administração) ---------------- */
+exports.saude = onCall({ region: REGIAO, invoker: "public" }, async req => {
+  if (!ehAdmin(req)) throw new HttpsError("permission-denied", "Somente o administrador.");
+  return { servidor: true, vidaas: !!process.env.VIDAAS_CLIENT_ID, sncrAmbiente: AMBIENTE_SNCR, site: SITE };
 });
 
 /* ---------------- administração: papéis (medico, atendente, admin) ----------------

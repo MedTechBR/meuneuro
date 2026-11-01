@@ -1,4 +1,4 @@
-/* RefilMed — roteiros de exemplo (dados fictícios)
+/* Meu Neuro — roteiros de exemplo (dados fictícios)
    Usado pelos testes automáticos (node) e pelo botão "Criar pedidos de exemplo" no modo local.
    Cada roteiro responde à conversa real, passo a passo, como um paciente faria. */
 (function (G) {
@@ -49,14 +49,13 @@
     {
       nome: 'Antônio Pereira Gomes', idade: 64, sexo: 'M', cpf: cpfFicticio('321654987'), tel: '88966660004',
       end: { endereco: 'Rua Coronel Diogo, 300', bairro: 'Centro', cidade: 'Sobral', uf: 'CE' },
-      condicoes: ['hipertensao', 'diabetes', 'colesterol'], ultima: '6a12m', pa: '140a159', hba1c: '8a9', hipo: 'poucas', lipidio: 'normal',
+      condicoes: ['avc', 'dor_neuropatica'], ultima: '6a12m', geral: 'parcial',
       meds: [
-        { texto: 'losartana 50', pos: '1 de manhã e 1 à noite', tempo: 'gt5a', adesao: 'boa', efeitos: [], eficacia: 'parcial' },
-        { texto: 'glifage xr 500', pos: '2 comprimidos no jantar', tempo: '1a5a', adesao: 'as_vezes', efeitos: [0], eficacia: 'parcial' },
-        { texto: 'glibenclamida 5 mg', pos: '1 antes do café', tempo: 'gt5a', adesao: 'boa', efeitos: [], eficacia: 'boa' },
-        { texto: 'sinvastatina 20mg', pos: '1 à noite', tempo: 'gt5a', adesao: 'boa', efeitos: [], eficacia: 'boa' }
+        { texto: 'aas 100', pos: '1 comprimido no almoço', tempo: 'gt5a', adesao: 'boa', efeitos: [], eficacia: 'boa' },
+        { texto: 'sinvastatina 20mg', pos: '1 à noite', tempo: 'gt5a', adesao: 'boa', efeitos: [], eficacia: 'boa' },
+        { texto: 'pregabalina 75 mg', pos: '1 de manhã e 1 à noite', tempo: '1a5a', adesao: 'as_vezes', efeitos: [0], eficacia: 'parcial' }
       ],
-      outros: '', alergias: '', comorb: ['rim'], exames: 'sim', examesTxt: 'Creatinina 1,3 e glicada 8,4 em julho', duracao: '90', livre: ''
+      outros: 'Losartana 50 mg', alergias: '', comorb: ['has'], exames: 'sim', examesTxt: 'Colesterol e creatinina normais em julho', duracao: '60', livre: ''
     }
   ];
 

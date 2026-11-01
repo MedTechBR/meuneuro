@@ -1,4 +1,4 @@
-/* RefilMed — tela do paciente (conversa com o assistente) */
+/* Meu Neuro — tela do paciente (conversa com o assistente) */
 (function (G) {
   const RF = G.RF;
   const { esc, $ } = RF;
@@ -13,7 +13,7 @@
       <div class="conv-wrap">
         <section class="conv" aria-label="Conversa com o assistente">
           <div class="conv-top">
-            <div class="conv-head"><span class="av-ia">${RF.marcaSVG}</span><div><b>Assistente RefilMed</b><span class="st">Pré-consulta · o médico revisa tudo</span></div><span class="sp"></span>
+            <div class="conv-head"><span class="av-ia">${RF.marcaSVG}</span><div><b>Assistente Meu Neuro</b><span class="st">Pré-consulta · o médico revisa tudo</span></div><span class="sp"></span>
               <button class="btn btn-s btn-g lado-btn" id="abrir-lado"><i class="ti ti-clipboard-list"></i><span>O que informei</span></button></div>
             <div class="etapas" id="etapas"></div>
           </div>
@@ -91,7 +91,7 @@
       await RF.backend.salvarPedido(limpo(p));
       RF.backend.rascunho.apagar();
       try {
-        const k = 'refilmed.v1.meus-pedidos';
+        const k = 'meuneuro.v1.meus-pedidos';
         const l = JSON.parse(localStorage.getItem(k) || '[]');
         if (!l.find(x => x.codigo === p.codigo)) l.unshift({ codigo: p.codigo, nasc: p.paciente.nasc, em: p.enviadoEm });
         localStorage.setItem(k, JSON.stringify(l.slice(0, 10)));
@@ -171,7 +171,7 @@
       h += chips(inp.chips || []);
       h += `<form class="escreve" id="f"><input class="inp" type="number" inputmode="numeric" id="t" min="${inp.min}" max="${inp.max}" placeholder="Ou escreva o número (${esc(inp.sufixo || '')})"><button class="btn btn-p" aria-label="Enviar"><i class="ti ti-arrow-up"></i></button></form>`;
     } else if (inp.tipo === 'multi') {
-      let pre = ''; try { pre = conv.passo === 'condicoes' ? sessionStorage.getItem('rf-cond') || '' : ''; } catch (e) { }
+      let pre = ''; try { pre = conv.passo === 'condicoes' ? sessionStorage.getItem('mn-cond') || '' : ''; } catch (e) { }
       h += '<div class="lista-sel">' + (inp.opcoes || []).map((o, i) => `<label class="opt"><input type="checkbox" data-v="${esc(o.v)}" data-r="${esc(o.r)}" ${o.v === pre ? 'checked' : ''}><span>${esc(o.r)}</span></label>`).join('');
       if (inp.nenhum) h += `<label class="opt"><input type="checkbox" data-v="${esc(inp.nenhum.v)}" data-r="${esc(inp.nenhum.r)}" data-nenhum="1"><span><b>${esc(inp.nenhum.r)}</b></span></label>`;
       if (inp.outro) h += `<div style="padding:6px 10px 10px"><input class="inp" id="outro" placeholder="${esc(inp.outro)} (opcional)"></div>`;

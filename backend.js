@@ -1,14 +1,14 @@
-/* RefilMed — camada de dados
+/* Meu Neuro — camada de dados
    Dois adaptadores atrás da MESMA interface:
    - local (padrão): tudo no navegador. Paciente e médico precisam usar o mesmo aparelho;
      serve para demonstração e para validar o fluxo.
-   - firebase: projeto Firebase PRÓPRIO do RefilMed (config em config.js). Paciente entra
+   - firebase: projeto Firebase PRÓPRIO do Meu Neuro (config em config.js). Paciente entra
      anônimo, médico por e-mail/senha com a permissão "medico" dada pela função definirMedico.
    Interface: iniciar, salvarPedido, obterPedido, listarPedidos, consultarPorCodigo,
               verificarReceita, ia, medico (perfil/entrar/sair). */
 (function (G) {
   const RF = G.RF = G.RF || {};
-  const PREF = 'refilmed.v1.';
+  const PREF = 'meuneuro.v1.';
   const K = { pedidos: PREF + 'pedidos', medico: PREF + 'medico', sessao: PREF + 'sessao', rascunho: PREF + 'rascunho' };
   const LS_RUIM = {};
   let primeiroSave = true;
@@ -18,7 +18,7 @@
     let bruto = null;
     try { bruto = G.localStorage.getItem(k); } catch (e) { return padrao; }
     if (bruto == null) return padrao;
-    try { return JSON.parse(bruto); } catch (e) { LS_RUIM[k] = true; console.warn('[RefilMed] chave ilegível preservada:', k); return padrao; }
+    try { return JSON.parse(bruto); } catch (e) { LS_RUIM[k] = true; console.warn('[Meu Neuro] chave ilegível preservada:', k); return padrao; }
   }
   function gravar(k, v) {
     if (LS_RUIM[k]) { RF.toast && RF.toast('Dados locais com problema: não gravei por cima. Veja Configurações.'); return false; }
@@ -45,7 +45,7 @@
         // trava: se o armazenamento parece vazio mas existe backup com dados, não sobrescreve
         const bak = ler(K.pedidos + '.bak1', null);
         if (bak && Object.keys(bak).length > 1 && !LS_RUIM[K.pedidos]) {
-          console.warn('[RefilMed] pedidos vazios com backup presente — restaurando antes de gravar');
+          console.warn('[Meu Neuro] pedidos vazios com backup presente — restaurando antes de gravar');
           Object.assign(todos, bak);
         }
       }
@@ -82,13 +82,15 @@
     },
     async ia() { return null; },
     async baixarReceita() { throw new Error('Disponível só com o servidor publicado.'); },
+    async saude() { return null; },
     assinatura: null,
     medico: {
       async atual() { const s = local.sessao.ler(); return s && s.perfil === 'medico' ? ler(K.medico, null) || {} : null; },
       async entrar() { return ler(K.medico, null) || {}; },
       async sair() { local.sessao.sair(); },
       async salvarPerfil(m) { return gravar(K.medico, m); },
-      async perfil() { return ler(K.medico, null); }
+      async perfil() { return ler(K.medico, null); },
+      async transacaoPerfil(fn) { const m = ler(K.medico, null) || {}; const r = fn(m); gravar(K.medico, m); return r; }
     },
     // sessão de demonstração: perfil (medico | atendente | paciente) escolhido na tela Entrar
     sessao: {
@@ -111,7 +113,7 @@
       } catch (e) { }
       return out;
     },
-    exportar() { return { app: 'refilmed', versao: 1, exportadoEm: RF.agora(), pedidos: ler(K.pedidos, {}), medico: ler(K.medico, null) }; }
+    exportar() { return { app: 'meuneuro', versao: 1, exportadoEm: RF.agora(), pedidos: ler(K.pedidos, {}), medico: ler(K.medico, null) }; }
   };
 
   function iniciais(nome) {
@@ -125,13 +127,18 @@
     modo: 'firebase',
     _: null,
     async iniciar() {
-      const cfg = G.REFILMED_CONFIG;
+      const cfg = G.MEUNEURO_CONFIG;
       const [app, auth, fs, fn] = await Promise.all([
         import(SDK + 'firebase-app.js'), import(SDK + 'firebase-auth.js'),
         import(SDK + 'firebase-firestore.js'), import(SDK + 'firebase-functions.js')
       ]);
       const a = app.initializeApp(cfg);
       this._ = { A: auth, F: fs, Fn: fn, auth: auth.getAuth(a), db: fs.getFirestore(a), fns: fn.getFunctions(a, cfg.regiaoFunctions || 'southamerica-east1') };
+      if (cfg.emulador) { // testes locais: firebase emulators
+        auth.connectAuthEmulator(this._.auth, 'http://127.0.0.1:' + cfg.emulador.auth, { disableWarnings: true });
+        fs.connectFirestoreEmulator(this._.db, '127.0.0.1', cfg.emulador.firestore);
+        fn.connectFunctionsEmulator(this._.fns, '127.0.0.1', cfg.emulador.functions);
+      }
       await new Promise(r => { const off = auth.onAuthStateChanged(this._.auth, () => { off(); r(); }); });
       return true;
     },
@@ -155,6 +162,8 @@
     },
     async listarPedidos() {
       const { F, db } = this._;
+      const ses = this.sessao.ler();
+      if (ses && ses.perfil === 'atendente') return (await this._.Fn.httpsCallable(this._.fns, 'atendenteFila')({})).data;
       const q = F.query(F.collection(db, 'pedidos'), F.orderBy('atualizadoEm', 'desc'), F.limit(300));
       const s = await F.getDocs(q);
       return s.docs.map(d => d.data());
@@ -177,8 +186,16 @@
     },
     async baixarReceita(dados) {
       const f = this._.Fn.httpsCallable(this._.fns, 'baixarReceita');
-      return (await f(dados)).data.url;
+      const { base64, nome } = (await f(dados)).data;
+      const bin = atob(base64), bytes = new Uint8Array(bin.length);
+      for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      const a = G.document.createElement('a'); a.href = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' })); a.download = nome; a.click();
+      setTimeout(() => URL.revokeObjectURL(a.href), 5000);
     },
+    async registrarContato(pedidoId, evento) { await this._.Fn.httpsCallable(this._.fns, 'atendenteRegistrar')({ pedidoId, evento }); },
+    async emitirComAnexos(pedidoId, documentos) { return (await this._.Fn.httpsCallable(this._.fns, 'emitirComAnexos')({ pedidoId, documentos })).data; },
+    async saude() { return (await this._.Fn.httpsCallable(this._.fns, 'saude')({})).data; },
+    async garantirLogin() { return this._garantirLogin(); },
     // assinatura integrada (VIDaaS) — exige as funções publicadas (plano Blaze)
     assinatura: {
       async iniciar() { const f = firebase._.Fn.httpsCallable(firebase._.fns, 'vidaasIniciar'); return (await f({})).data; },
@@ -202,7 +219,7 @@
         const f = this._.Fn.httpsCallable(this._.fns, 'assistenteIA');
         const r = await f({ tarefa, dados });
         return (r.data && r.data.texto) || null;
-      } catch (e) { console.warn('[RefilMed] IA indisponível:', e && e.message); return null; }
+      } catch (e) { console.warn('[Meu Neuro] IA indisponível:', e && e.message); return null; }
     },
     medico: {
       // devolve o perfil com as permissões; null se não houver conta de profissional logada
@@ -230,9 +247,21 @@
       async sair() { await firebase._.A.signOut(firebase._.auth); },
       async salvarPerfil(m) {
         const { F, db, auth } = firebase._;
-        const copia = Object.assign({}, m); delete copia.permissoes; delete copia.aprovado; delete copia.aprovadoEm;
+        // a numeração SNCR só muda por transacaoPerfil: uma gravação comum não pode trazer de volta número já usado
+        const copia = Object.assign({}, m); delete copia.permissoes; delete copia.aprovado; delete copia.aprovadoEm; delete copia.sncr;
         await F.setDoc(F.doc(db, 'medicos', auth.currentUser.uid), copia, { merge: true });
         return true;
+      },
+      async transacaoPerfil(fn) {
+        const { F, db, auth } = firebase._;
+        const ref = F.doc(db, 'medicos', auth.currentUser.uid);
+        return F.runTransaction(db, async t => {
+          const s = await t.get(ref);
+          const m = s.exists() ? s.data() : {};
+          const r = fn(m);
+          t.set(ref, { sncr: m.sncr || {} }, { merge: true });
+          return r;
+        });
       },
       async perfil() {
         const { F, db, auth } = firebase._;
@@ -247,7 +276,15 @@
     exportar: local.exportar
   };
 
-  const cfg = G.REFILMED_CONFIG || {};
+  const cfg = G.MEUNEURO_CONFIG || {};
+  // testes em localhost com os emuladores: ?emu=1 (nunca em produção)
+  try {
+    if (G.location && G.location.hostname === 'localhost' && /[?&]emu=1/.test(G.location.search + (sessionStorage.getItem('mn-emu') || ''))) {
+      sessionStorage.setItem('mn-emu', '?emu=1');
+      Object.assign(cfg, { projectId: 'demo-meuneuro', apiKey: 'chave-teste', ativo: true, emulador: { auth: 9099, firestore: 8085, functions: 5055 } });
+      cfg.sncr = Object.assign({}, cfg.sncr, { baseUrl: 'http://127.0.0.1:9911/sncr' });
+    }
+  } catch (e) { }
   // ?backend=firebase (ou =local) força o modo e fica guardado neste navegador, para testar antes de ligar para todos
   let forcado = null;
   try {

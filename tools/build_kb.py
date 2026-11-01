@@ -176,9 +176,10 @@ def main():
             x['excecao6meses'] = EXCECAO_6M.get(i) if x['receituario'] == 'controle_especial' else None
             x['formas'] = formas_de(x.get('apresentacoes') or [])
             x['aliases'] = APELIDOS.get(i, [])
+            x['area'] = 'neuro' if arq.stem in ('antiepilepticos', 'cefaleia_dor_avc', 'parkinson_demencia') else 'geral'
             kb.append(x)
     kb.sort(key=lambda k: k['nome'])
-    js = '/* RefilMed — banco de medicamentos neurológicos (GERADO por tools/build_kb.py; não editar à mão)\n' \
+    js = '/* Meu Neuro — banco de medicamentos neurológicos (GERADO por tools/build_kb.py; não editar à mão)\n' \
          '   Conteúdo verificado em bulas ANVISA, rótulos FDA/EMA, PCDT/MS e diretrizes (fontes em cada item). */\n' \
          '(typeof window !== "undefined" ? window : globalThis).RF_KB = ' + json.dumps(kb, ensure_ascii=False, indent=0) + ';\n'
     (RAIZ / 'kb.js').write_text(js, encoding='utf-8')

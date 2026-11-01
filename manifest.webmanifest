@@ -1,7 +1,7 @@
 {
-  "name": "RefilMed",
-  "short_name": "RefilMed",
-  "description": "Renovação de receita de remédios de uso contínuo com médico.",
+  "name": "Meu Neuro",
+  "short_name": "Meu Neuro",
+  "description": "Renovação de receita neurológica com médico.",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",

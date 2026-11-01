@@ -1,4 +1,4 @@
-# RefilMed — Base regulatória (Brasil, verificada em 23/09/2026)
+# Meu Neuro — Base regulatória (Brasil, verificada em 23/09/2026)
 
 Escopo: triagem por assistente de IA (queixas + medicações neurológicas atuais + rascunho de renovação de receita), depois teleconsulta com neurologista, que revisa, assina digitalmente e libera a receita online.
 
@@ -49,7 +49,7 @@ URL: https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2018/2217_2018.pd
   - (d) data e hora;
   - (e) assinatura digital.
   - URL: https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2021/2299_2021.pdf
-- **Res. CFM 2.336/2023 (publicidade), art. 4º:** peça publicitária deve trazer nome, CRM, a palavra "MÉDICO" e especialidade + **número do RQE**. O art. 5º traz as regras para estabelecimentos. Como a marca "RefilMed" anuncia neurologia, só médico com RQE em Neurologia pode ser apresentado como neurologista.
+- **Res. CFM 2.336/2023 (publicidade), art. 4º:** peça publicitária deve trazer nome, CRM, a palavra "MÉDICO" e especialidade + **número do RQE**. O art. 5º traz as regras para estabelecimentos. Como a marca "Meu Neuro" anuncia neurologia, só médico com RQE em Neurologia pode ser apresentado como neurologista.
   - URL: https://sistemas.cfm.org.br/normas/arquivos/resolucoes/BR/2023/2336_2023.pdf
 
 ### Guarda do prontuário
@@ -423,3 +423,12 @@ URL: https://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm
 - A redação exata anterior do art. 45 da Portaria 344. Que a Notificação B era válida só na UF de emissão vem de fonte secundária.
 - Se o PL 2338/2023 teve votação na Câmara depois de junho/2026. Nada encontrado.
 - Qualquer parecer do CFM ou de CRM específico sobre renovação de controlados por teleconsulta **só assíncrona**. Nada encontrado. A recomendação de síncrono é cautela minha, não regra.
+
+---
+
+## Atualização de 01/11/2026 (fontes em docs/sncr/)
+- **P&R Integração SNCR, 1ª ed., e Manual da API, 3ª ed.:** API nova em `api-gateway.{hmg,prd}.apps.anvisa.gov.br/api-sncr/api/v1/`; token de 30 segundos sem renovação; sem credenciamento nem custo; CNPJ da requisição é o da mantenedora da plataforma, não o da clínica (34); número não usado se perde e não há cancelamento (35, 36); o saldo é controlado pela plataforma (38).
+- **Modelos eletrônicos:** sem alteração de campos, cores ou estrutura (40) e sem logotipo (41). Endereço do paciente obrigatório (45). O sistema deve impedir controlado fora do leiaute oficial (48). Indisponibilidade da API: papel (53).
+- **Decisão do Meu Neuro:** um medicamento por documento controlado, porque o modelo tem um campo de medicamento só e assim cada um tem seu número. A Portaria 344/98, art. 57, permite até 3 por RCE e a Anvisa anunciou registro de uso de mais de um medicamento por receita; a escolha é mais restritiva, não contraria a norma.
+- **Transição encerrada:** o P&R RDC 1.000, 2ª ed., dá 30/10/2026 como último dia de RCE e RET eletrônicas sem numeração; a notícia da Anvisa fala em 29/10.
+- **Notificações em telemedicina:** numeração da Vigilância de cada estado de atuação (P&R RDC 1.000, 2ª ed., 54).

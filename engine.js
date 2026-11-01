@@ -1,4 +1,4 @@
-/* RefilMed — motor da conversa com o paciente
+/* Meu Neuro — motor da conversa com o paciente
    Roteiro fixo (garante que nada importante fica sem perguntar) + interpretação de texto livre
    (nome do remédio, dose, posologia). Quando o backend tem IA publicada, ela entra como reforço
    para entender respostas que o interpretador local não resolveu e para dúvidas do paciente.
@@ -214,29 +214,18 @@
 
   /* ====================== conteúdo fixo ====================== */
   // condições de uso contínuo; esp = especialidade que costuma acompanhar (fila do médico filtra por ela)
+  // esp = subárea: vira o filtro da fila do médico
   RF.CONDICOES = [
-    { v: 'hipertensao', cor: 'c-vermelho', i: 'ti-heart-rate-monitor', c: 'Pressão alta', r: 'Pressão alta (hipertensão)', esp: 'Cardiologia' },
-    { v: 'diabetes', cor: 'c-laranja', i: 'ti-droplet', c: 'Diabetes', r: 'Diabetes', esp: 'Endocrinologia' },
-    { v: 'colesterol', cor: 'c-ambar', i: 'ti-chart-line', c: 'Colesterol', r: 'Colesterol ou triglicerídeos altos', esp: 'Cardiologia' },
-    { v: 'coracao', cor: 'c-rosa', i: 'ti-heart', c: 'Coração', r: 'Doença do coração (infarto, arritmia, insuficiência cardíaca)', esp: 'Cardiologia' },
-    { v: 'tireoide', cor: 'c-teal', i: 'ti-butterfly', c: 'Tireoide', r: 'Hipotireoidismo ou outra doença da tireoide', esp: 'Endocrinologia' },
-    { v: 'asma_dpoc', cor: 'c-ciano', i: 'ti-lungs', c: 'Asma ou DPOC', r: 'Asma, bronquite ou DPOC (enfisema)', esp: 'Pneumologia' },
-    { v: 'estomago', cor: 'c-verde', i: 'ti-soup', c: 'Estômago', r: 'Refluxo, gastrite ou úlcera', esp: 'Gastroenterologia' },
-    { v: 'depressao_ansiedade', cor: 'c-violeta', i: 'ti-mood-smile', c: 'Saúde mental', r: 'Depressão, ansiedade ou outro problema de saúde mental', esp: 'Psiquiatria' },
-    { v: 'sono', cor: 'c-indigo', i: 'ti-moon', c: 'Sono', r: 'Insônia ou outro distúrbio do sono', esp: 'Psiquiatria' },
-    { v: 'epilepsia', cor: 'c-violeta', i: 'ti-wave-sine', c: 'Epilepsia', r: 'Epilepsia ou crises convulsivas', esp: 'Neurologia' },
-    { v: 'enxaqueca', cor: 'c-ambar', i: 'ti-bolt', c: 'Enxaqueca', r: 'Enxaqueca ou outra dor de cabeça crônica', esp: 'Neurologia' },
-    { v: 'parkinson', cor: 'c-verde', i: 'ti-walk', c: 'Parkinson', r: 'Doença de Parkinson', esp: 'Neurologia' },
-    { v: 'demencia', cor: 'c-rosa', i: 'ti-puzzle', c: 'Demência', r: 'Alzheimer ou outra demência', esp: 'Neurologia' },
-    { v: 'dor_neuropatica', cor: 'c-laranja', i: 'ti-flame', c: 'Dor crônica', r: 'Dor crônica ou neuropática (queimação, choque, formigamento)', esp: 'Neurologia' },
-    { v: 'avc', cor: 'c-vermelho', i: 'ti-brain', c: 'AVC', r: 'AVC (derrame) prévio', esp: 'Neurologia' },
-    { v: 'osteoporose', cor: 'c-ciano', i: 'ti-bone', c: 'Osteoporose', r: 'Osteoporose', esp: 'Endocrinologia' },
-    { v: 'gota', cor: 'c-laranja', i: 'ti-shoe', c: 'Gota', r: 'Gota (ácido úrico)', esp: 'Reumatologia' },
-    { v: 'prostata', cor: 'c-azul', i: 'ti-gender-male', c: 'Próstata', r: 'Próstata aumentada', esp: 'Urologia' },
-    { v: 'anticoncepcao', cor: 'c-rosa', i: 'ti-gender-female', c: 'Anticoncepção', r: 'Anticoncepcional (evitar gravidez)', esp: 'Ginecologia' },
-    { v: 'tremor', cor: 'c-teal', i: 'ti-hand-stop', c: 'Tremor', r: 'Tremor essencial', esp: 'Neurologia' }
+    { v: 'epilepsia', cor: 'c-violeta', i: 'ti-wave-sine', c: 'Epilepsia', r: 'Epilepsia ou crises convulsivas', esp: 'Epilepsia' },
+    { v: 'enxaqueca', cor: 'c-ambar', i: 'ti-bolt', c: 'Enxaqueca', r: 'Enxaqueca ou outra dor de cabeça crônica', esp: 'Cefaleia' },
+    { v: 'parkinson', cor: 'c-verde', i: 'ti-walk', c: 'Parkinson', r: 'Doença de Parkinson', esp: 'Movimento' },
+    { v: 'tremor', cor: 'c-teal', i: 'ti-hand-stop', c: 'Tremor', r: 'Tremor essencial', esp: 'Movimento' },
+    { v: 'demencia', cor: 'c-rosa', i: 'ti-puzzle', c: 'Demência', r: 'Alzheimer ou outra demência', esp: 'Cognição' },
+    { v: 'dor_neuropatica', cor: 'c-laranja', i: 'ti-flame', c: 'Dor neuropática', r: 'Dor crônica ou neuropática (queimação, choque, formigamento)', esp: 'Dor' },
+    { v: 'avc', cor: 'c-vermelho', i: 'ti-brain', c: 'AVC', r: 'AVC (derrame) prévio', esp: 'AVC' },
+    { v: 'sono', cor: 'c-indigo', i: 'ti-moon', c: 'Sono', r: 'Insônia ou outro distúrbio do sono', esp: 'Sono' }
   ];
-  RF.espDe = v => (RF.CONDICOES.find(c => c.v === v) || { esp: 'Clínica Médica' }).esp;
+  RF.espDe = v => (RF.CONDICOES.find(c => c.v === v) || { esp: 'Outros' }).esp;
   RF.condRot = v => (RF.CONDICOES.find(c => c.v === v) || { r: v }).r;
   RF.condCurta = v => (RF.CONDICOES.find(c => c.v === v) || { c: v }).c;
 
@@ -317,9 +306,9 @@
     revisao: 4, semia_texto: 3, fim_semia: 4, corrigir_qual: 4, corrigir_acao: 4, orientacao: 4, fim: 4
   };
 
-  RF.TCLE_VERSAO = 'tcle-2026-09';
+  RF.TCLE_VERSAO = 'tcle-2026-11';
   RF.TCLE = 'Termo de consentimento para teleatendimento\n\n' +
-    '1. O RefilMed faz renovação de receitas de remédios de uso contínuo por telemedicina (Lei 14.510/2022 e Resolução CFM 2.314/2022). A consulta presencial continua sendo a referência: o atendimento a distância tem limitações, como a falta de exame físico, e você pode interromper e optar pelo atendimento presencial a qualquer momento.\n\n' +
+    '1. O Meu Neuro, serviço de M PARENTE OLIVEIRA TECNOLOGIA LTDA (CNPJ 69.544.873/0001-61), faz renovação de receitas de remédios neurológicos de uso contínuo por telemedicina (Lei 14.510/2022 e Resolução CFM 2.314/2022). A consulta presencial continua sendo a referência: o atendimento a distância tem limitações, como a falta de exame físico, e você pode interromper e optar pelo atendimento presencial a qualquer momento.\n\n' +
     '2. A primeira etapa é conduzida por um assistente automatizado (inteligência artificial) que só coleta informações e dá orientações gerais. Ele não faz diagnóstico, não muda doses e não decide o tratamento. Você pode recusar o assistente e seguir direto com o médico.\n\n' +
     '3. Um médico revisa todas as respostas, faz o atendimento e decide se renova, ajusta ou não renova a receita, que só vale depois da assinatura digital dele.\n\n' +
     '4. Seus dados de saúde são usados apenas para o seu atendimento (LGPD, art. 11, II, f), ficam no seu prontuário pelo prazo legal de 20 anos e só são vistos pela equipe que atende você. Nada é usado para propaganda ou vendido.\n\n' +
@@ -399,7 +388,7 @@
       switch (this.passo) {
         case 'inicio': return {
           msgs: [
-            { texto: 'Olá! Eu sou a assistente virtual do RefilMed, um sistema automatizado (inteligência artificial). Vou adiantar a renovação da sua receita de remédios de uso contínuo antes de você ser atendido pelo médico.' },
+            { texto: 'Olá! Eu sou a assistente virtual do Meu Neuro, um sistema automatizado (inteligência artificial). Vou adiantar a renovação da sua receita de remédios de uso contínuo antes de você ser atendido pelo médico.' },
             { texto: 'Vou perguntar quais remédios você usa, as doses, como toma, há quanto tempo e se sente algum efeito. No final, explico os cuidados com cada remédio. Depois, um médico revisa tudo, faz o seu atendimento e é ele quem decide e assina a receita.\n\nMinha função é só coletar informações e dar orientações gerais: eu não faço diagnóstico nem decido o tratamento. Este serviço não atende urgências. Leva cerca de 5 minutos.' }
           ],
           input: { tipo: 'chips', opcoes: [{ v: 'aceito', r: 'Concordo e quero começar', p: 1 }, { v: 'termos', r: 'Ler o termo de consentimento' }, { v: 'semia', r: 'Prefiro não usar o assistente' }] }
@@ -615,7 +604,7 @@
         case 'semia_texto': {
           const s = String(v || '').trim();
           if (s.length < 3) throw new Error('Escreva pelo menos o nome dos remédios que precisa renovar.');
-          p.relato = s; p.status = 'aguardando'; p.enviadoEm = RF.agora(); p.especialidades = ['Clínica Médica'];
+          p.relato = s; p.status = 'aguardando'; p.enviadoEm = RF.agora(); p.especialidades = ['Outros'];
           p.alertas = [{ nivel: 'medio', texto: 'Paciente optou por não usar o assistente: anamnese e prescrição devem ser feitas no atendimento.' }];
           p.resumo = RF.resumoClinico(p); p.receitas = [];
           p.historico.push({ em: RF.agora(), evento: 'Pedido enviado pelo paciente (sem assistente)' });

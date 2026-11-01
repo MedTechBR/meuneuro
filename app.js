@@ -1,4 +1,4 @@
-/* RefilMed — rotas, entrada, acompanhamento do paciente e verificação de receita */
+/* Meu Neuro — rotas, entrada, acompanhamento do paciente e verificação de receita */
 (function (G) {
   const RF = G.RF;
   const { esc, $ } = RF;
@@ -20,6 +20,7 @@
     if (r === 'entrar') return telaLogin(a);
     if (r === 'minha-area') return telaMinhaArea();
     if (r === 'admin') return telaAdmin();
+    if (r === 'sala') return telaSala(a);
     return telaHome();
   }
 
@@ -28,35 +29,35 @@
     app.innerHTML = `<div class="home">
       <section class="home-hero">
         <div>
-          <span class="selo"><span class="ico sm solid" style="width:24px;height:24px;border-radius:8px"><i class="ti ti-stethoscope" style="font-size:14px"></i></span>Médicos com CRM verificado em todo atendimento</span>
-          <h1>Sua receita de uso contínuo <span>renovada</span> sem sair de casa</h1>
-          <p class="lead">Você conta ao assistente quais remédios usa, as doses e como tem se sentido. Um médico lê tudo, fala com você e assina a receita digital. Pressão, diabetes, tireoide, saúde mental, neurologia e muito mais.</p>
+          <span class="selo"><span class="ico sm solid" style="width:24px;height:24px;border-radius:8px"><i class="ti ti-brain" style="font-size:14px"></i></span>Renovação de receita em neurologia</span>
+          <h1>Sua receita neurológica <span>renovada</span> sem sair de casa</h1>
+          <p class="lead">Epilepsia, enxaqueca, Parkinson, demência, dor neuropática, AVC e sono. Você conta ao assistente quais remédios usa, as doses e como tem se sentido. Um médico lê tudo, fala com você por vídeo e assina a receita digital, inclusive de remédio controlado.</p>
           <div class="home-acoes">
             <a class="btn btn-p" href="#/paciente"><i class="ti ti-message-circle"></i>Renovar minha receita</a>
             <a class="btn" href="#/acompanhar"><i class="ti ti-search"></i>Acompanhar pedido</a>
           </div>
           <div class="confianca">
             <div class="c-ambar"><span class="ico sm"><i class="ti ti-clock"></i></span>Cerca de 5 minutos para preencher</div>
-            <div class="c-verde"><span class="ico sm"><i class="ti ti-certificate"></i></span>Assinatura digital ICP-Brasil</div>
+            <div class="c-verde"><span class="ico sm"><i class="ti ti-certificate"></i></span>Assinatura digital ICP-Brasil e numeração da Anvisa</div>
             <div class="c-violeta"><span class="ico sm"><i class="ti ti-lock"></i></span>Dados de saúde protegidos pela LGPD</div>
           </div>
         </div>
         <div class="home-prev-wrap">
-        <span class="flutua f1 c-vermelho" aria-hidden="true"><i class="ti ti-heart"></i></span>
+        <span class="flutua f1 c-violeta" aria-hidden="true"><i class="ti ti-brain"></i></span>
         <span class="flutua f2 c-rosa" aria-hidden="true"><i class="ti ti-pill"></i></span>
         <span class="flutua f3 c-verde" aria-hidden="true"><i class="ti ti-file-certificate"></i></span>
         <div class="card home-prev" aria-hidden="true">
-          <div class="prev-top"><span class="av-ia">${RF.marcaSVG}</span><div><b>Assistente RefilMed</b><span class="on">pré-consulta</span></div></div>
+          <div class="prev-top"><span class="av-ia">${RF.marcaSVG}</span><div><b>Assistente Meu Neuro</b><span class="on">pré-consulta</span></div></div>
           <div class="prev-msg ia">Qual é o nome do remédio que você quer renovar?</div>
-          <div class="prev-msg pac">Losartana 50</div>
-          <div class="prev-msg ia">Como você toma Losartana 50 mg?</div>
+          <div class="prev-msg pac">Keppra 500</div>
+          <div class="prev-msg ia">Como você toma Levetiracetam 500 mg?</div>
           <div class="prev-msg pac">1 de manhã e 1 à noite</div>
-          <div class="prev-msg ia">Entendi: 1 comprimido pela manhã e 1 à noite, 100 mg por dia. Está certo?</div>
-          <div class="prev-rx"><div class="l"><b>Pedido para o médico</b><span class="tag acc">em revisão</span></div><div class="l"><span>Losartana 50 mg</span><span class="muted">12/12 h</span></div><div class="l"><span>Pressão em casa abaixo de 13 por 8</span><span class="tag ok">sem alertas</span></div></div>
+          <div class="prev-msg ia">Entendi: 1 comprimido pela manhã e 1 à noite, 1.000 mg por dia. Está certo?</div>
+          <div class="prev-rx"><div class="l"><b>Pedido para o médico</b><span class="tag acc">em revisão</span></div><div class="l"><span>Levetiracetam 500 mg</span><span class="muted">12/12 h</span></div><div class="l"><span>Sem crises há mais de 1 ano</span><span class="tag ok">sem alertas</span></div></div>
         </div></div>
       </section>
 
-      <div class="sec-tit"><h2>Para quem já faz tratamento</h2><p>Escolha o seu caso para começar. Serve para quem já tem diagnóstico e usa remédio de forma contínua.</p></div>
+      <div class="sec-tit"><h2>Para quem já faz tratamento</h2><p>Escolha o seu caso para começar. Serve para quem já tem diagnóstico neurológico e usa remédio de forma contínua.</p></div>
       <section class="cond-grid">${conds}</section>
 
       <div class="sec-tit"><h2>Como funciona</h2><p>O médico decide tudo. O assistente só adianta as informações para o atendimento ser rápido.</p></div>
@@ -67,9 +68,14 @@
       </section>
 
       <div class="aviso-urg"><span class="ico"><i class="ti ti-urgent"></i></span><span><b>Não atendemos urgência.</b> Dor no peito, falta de ar forte, fraqueza de repente, fala enrolada ou crise convulsiva que não para: ligue 192 (SAMU) ou vá ao pronto-socorro.</span></div>
-      <footer class="home-rodape"><span>RefilMed · telemedicina conforme a Lei 14.510/2022 e a Resolução CFM 2.314/2022</span><a href="#/termos">Termo de consentimento e privacidade</a><a href="#/medico">Área do médico</a></footer>
+      <footer class="home-rodape"><span>${rodapeEmpresa()}</span><a href="#/termos">Termo de consentimento e privacidade</a><a href="#/medico">Área do médico</a></footer>
     </div>`;
-    app.querySelectorAll('.cond').forEach(a => a.addEventListener('click', () => { try { sessionStorage.setItem('rf-cond', a.dataset.c); } catch (e) { } }));
+    app.querySelectorAll('.cond').forEach(a => a.addEventListener('click', () => { try { sessionStorage.setItem('mn-cond', a.dataset.c); } catch (e) { } }));
+  }
+
+  function rodapeEmpresa() {
+    const c = G.MEUNEURO_CONFIG || {}, e = c.empresa || {}, r = c.responsavelTecnico || {};
+    return esc(`Meu Neuro é um serviço de ${e.razao}, CNPJ ${e.cnpj}. Telemedicina conforme a Lei 14.510/2022 e a Resolução CFM 2.314/2022.`) + (r.nome ? esc(` Responsável técnico: ${r.nome}, CRM ${r.crm}/${r.uf}.`) : '');
   }
 
   function telaTermos() {
@@ -82,7 +88,7 @@
     medico: { r: 'Médico', cor: 'c-azul', i: 'ti-stethoscope', d: 'Atender, revisar e assinar receitas', nome: 'Dra. Helena Duarte' },
     atendente: { r: 'Atendente', cor: 'c-verde', i: 'ti-headset', d: 'Contato com pacientes e andamento da fila', nome: 'Lucas Moreira' }
   };
-  const MEDICO_DEMO = { nome: 'Dra. Helena Duarte', crm: '000000', uf: 'CE', rqe: '0000', especialidade: 'Clínica Médica', endereco: 'Endereço fictício de demonstração, 100', cidade: 'Sobral', ufEnd: 'CE', telefone: '(88) 0000-0000', nomeLocal: 'Clínica de demonstração', cnpjLocal: '0000000', demo: true };
+  const MEDICO_DEMO = { nome: 'Dra. Helena Duarte', crm: '000000', uf: 'CE', rqe: '0000', especialidade: 'Neurologia', endereco: 'Endereço fictício de demonstração, 100', cidade: 'Sobral', ufEnd: 'CE', telefone: '(88) 0000-0000', nomeLocal: 'Clínica de demonstração', cnpjLocal: '0000000', demo: true };
   RF.atualizarTopo = function () {
     const box = $('#topo-conta'); if (!box) return;
     const s = RF.backend.sessao.ler();
@@ -95,15 +101,16 @@
   function telaLogin(pre) {
     let perfil = PERFIS[pre] ? pre : 'paciente';
     const firebase = RF.backend.modo === 'firebase';
+    if (firebase && perfil === 'paciente') { location.hash = '#/paciente'; return; }
     const desenhar = () => {
       const P = PERFIS[perfil];
       app.innerHTML = `<div class="estreito"><div class="card">
-        <div class="cab-card c-azul"><span class="ico lg"><i class="ti ti-login-2"></i></span><div><h2>Entrar no RefilMed</h2><p class="muted small">Escolha como você usa a plataforma.</p></div></div>
-        <div class="perfis">${Object.entries(PERFIS).map(([k, x]) => `<button class="perfil int ${x.cor} ${k === perfil ? 'on' : ''}" data-p="${k}"><span class="ico"><i class="ti ${x.i}"></i></span><span>${x.r}<br><small>${x.d}</small></span></button>`).join('')}</div>
+        <div class="cab-card c-azul"><span class="ico lg"><i class="ti ti-login-2"></i></span><div><h2>Entrar no Meu Neuro</h2><p class="muted small">Escolha como você usa a plataforma.</p></div></div>
+        <div class="perfis">${Object.entries(PERFIS).filter(([k]) => !firebase || k !== 'paciente').map(([k, x]) => `<button class="perfil int ${x.cor} ${k === perfil ? 'on' : ''}" data-p="${k}"><span class="ico"><i class="ti ${x.i}"></i></span><span>${x.r}<br><small>${x.d}</small></span></button>`).join('')}</div>
         <form id="fl">
           <label class="campo"><span>Nome</span><input class="inp" name="nome" value="${firebase && perfil !== 'paciente' ? '' : esc(P.nome)}" placeholder="Seu nome completo" required autocomplete="name"></label>
           ${firebase && perfil !== 'paciente' ? '<label class="campo"><span>E-mail</span><input class="inp" type="email" name="email" required autocomplete="username"></label><label class="campo"><span>Senha</span><input class="inp" type="password" name="senha" required minlength="8" autocomplete="current-password"></label><label class="check" style="margin-top:-4px"><input type="checkbox" name="novo"> Ainda não tenho conta: criar agora (fica aguardando aprovação)</label>' : ''}
-          ${perfil === 'medico' ? `<p class="nota" style="margin:-4px 0 14px">${firebase ? 'Na primeira vez, marque "criar agora". A administração confere CRM e RQE no Cadastro Nacional do CFM antes de liberar o acesso.' : 'Conta fictícia com CRM 000000/CE para testar. Em produção, cada médico entra com e-mail e senha e tem o CRM e o RQE conferidos no cadastro do CFM.'}</p>` : ''}
+          ${perfil === 'medico' ? `<p class="nota" style="margin:-4px 0 14px">${firebase ? 'Na primeira vez, marque "criar agora". A administração confere CRM e RQE no Cadastro Nacional do CFM antes de liberar o acesso.' : 'Conta fictícia com CRM 000000/CE, só para testar.'}</p>` : ''}
           ${perfil === 'atendente' ? '<p class="nota" style="margin:-4px 0 14px">O atendente vê dados de contato e o andamento dos pedidos, sem acesso às informações clínicas nem à receita.</p>' : ''}
           ${perfil === 'paciente' ? '<p class="nota" style="margin:-4px 0 14px">Na versão final o paciente entra com CPF e código enviado por SMS ou e-mail. Aqui, para testar, basta o nome.</p>' : ''}
           <button class="btn btn-p" style="width:100%"><i class="ti ti-arrow-right"></i>Entrar como ${P.r.toLowerCase()}${firebase && perfil !== 'paciente' ? '' : ' (demonstração)'}</button>
@@ -156,8 +163,12 @@
     const linha = m => `<div class="ped"><span class="avatar ${RF.corDe(m.nome || m.email)}">${esc(String(m.nome || m.email || '?').split(/\s+/).map(w => w[0]).slice(0, 2).join('').toUpperCase())}</span>
       <span class="corpo"><b>${esc(m.nome || '(sem nome)')}</b><span class="m">${esc(m.email || '')}${m.crm ? ' · CRM ' + esc(m.crm) + '/' + esc(m.uf || '') : ''}${m.rqe ? ' · RQE ' + esc(m.rqe) : ''} · pediu: ${esc(m.papelPedido || 'medico')}</span></span>
       ${m.aprovado ? '<span class="tag ok">aprovado</span>' : `<button class="btn btn-s btn-p" data-ap="${esc(m.uid)}" data-papel="${esc(m.papelPedido || 'medico')}">Aprovar</button>`}</div>`;
+    let sa = null; try { sa = await RF.backend.saude(); } catch (e) { }
+    const cfg = G.MEUNEURO_CONFIG || {};
+    const item = (ok, txt) => `<div class="small" style="padding:4px 0"><i class="ti ${ok ? 'ti-circle-check t-verde' : 'ti-alert-circle t-vermelho'}"></i> ${txt}</div>`;
+    const pront = `<div style="margin-bottom:14px"><h3 style="margin-bottom:6px">Prontidão para atender</h3>${item(!!sa, 'Servidor publicado (funções)')}${item(sa && sa.vidaas, 'Assinatura VIDaaS habilitada')}${item(RF.sncr.ambiente() === 'producao', 'SNCR em produção (hoje: ' + RF.sncr.ambiente() + ')')}${item(RF.sncr.cnpjPlataforma().length === 14, 'CNPJ da plataforma no SNCR')}${item(cfg.responsavelTecnico && cfg.responsavelTecnico.nome, 'Diretor técnico médico informado')}${item(cfg.ativo === true, 'Site aberto ao público (ativo: true)')}</div>`;
     app.innerHTML = `<div class="estreito" style="max-width:820px"><div class="card"><div class="cab-card c-violeta"><span class="ico lg"><i class="ti ti-shield-lock"></i></span><div><h2>Administração</h2><p class="muted small">Confira CRM e RQE no Cadastro Nacional do CFM antes de aprovar (Res. CFM 2.299/2021, art. 8º).</p></div></div>
-      <div class="lista-ped">${lista.length ? lista.map(linha).join('') : '<p class="muted">Nenhum cadastro ainda.</p>'}</div></div></div>`;
+      ${pront}<div class="lista-ped">${lista.length ? lista.map(linha).join('') : '<p class="muted">Nenhum cadastro ainda.</p>'}</div></div></div>`;
     app.querySelectorAll('[data-ap]').forEach(b => b.onclick = async () => {
       b.disabled = true;
       try { await RF.backend.definirPapel({ uid: b.dataset.ap, papel: b.dataset.papel }); RF.toast('Aprovado. A pessoa precisa sair e entrar de novo.'); telaAdmin(); }
@@ -169,7 +180,7 @@
     const s = RF.backend.sessao.ler();
     if (!s || s.perfil !== 'paciente') { location.hash = '#/entrar/paciente'; return; }
     let meus = [];
-    try { meus = JSON.parse(localStorage.getItem('refilmed.v1.meus-pedidos') || '[]'); } catch (e) { }
+    try { meus = JSON.parse(localStorage.getItem('meuneuro.v1.meus-pedidos') || '[]'); } catch (e) { }
     const rot = { aguardando: ['Na fila do médico', 'acc', 'ti-clock', 'c-azul'], em_atendimento: ['Em atendimento', 'warn', 'ti-stethoscope', 'c-ambar'], assinado: ['Receita assinada', 'ok', 'ti-file-certificate', 'c-verde'], recusado: ['Não renovado', 'bad', 'ti-ban', 'c-vermelho'], urgencia: ['Interrompido', 'bad', 'ti-urgent', 'c-vermelho'] };
     const pedidos = [];
     for (const m of meus) { const r = await RF.backend.consultarPorCodigo(m.codigo, m.nasc); if (r.pedido) pedidos.push(r.pedido); }
@@ -186,12 +197,12 @@
   /* ---------- acompanhar ---------- */
   function telaAcompanhar(codigo) {
     let meus = [];
-    try { meus = JSON.parse(localStorage.getItem('refilmed.v1.meus-pedidos') || '[]'); } catch (e) { }
+    try { meus = JSON.parse(localStorage.getItem('meuneuro.v1.meus-pedidos') || '[]'); } catch (e) { }
     const pre = meus.find(x => x.codigo === codigo);
     app.innerHTML = `<div class="estreito"><div class="card" id="acomp">
       <div class="cab-card c-violeta"><span class="ico lg"><i class="ti ti-file-search"></i></span><div><h2>Acompanhar pedido</h2><p class="muted small">Use o código que apareceu no fim da conversa e a data de nascimento do paciente.</p></div></div>
       <form id="fa"><div class="linha2">
-        <label class="campo"><span>Código do pedido</span><input class="inp" name="codigo" value="${esc(codigo || '')}" placeholder="RF-XXXXXX" required style="text-transform:uppercase"></label>
+        <label class="campo"><span>Código do pedido</span><input class="inp" name="codigo" value="${esc(codigo || '')}" placeholder="MN-XXXXXX" required style="text-transform:uppercase"></label>
         <label class="campo"><span>Data de nascimento</span><input class="inp" name="nasc" type="date" value="${esc(pre ? pre.nasc : '')}" required></label></div>
         <button class="btn btn-p" style="width:100%">Ver pedido</button></form>
       ${meus.length ? `<p class="small muted" style="margin-top:14px">Pedidos feitos neste aparelho: ${meus.map(m => `<a href="#/acompanhar/${esc(m.codigo)}">${esc(m.codigo)}</a>`).join(' · ')}</p>` : ''}
@@ -217,23 +228,42 @@
     let h = `<div class="card" style="margin-top:16px"><h3>${esc(p.paciente.nome)} · ${esc(p.codigo)}</h3>
       <ol class="linha-tempo">${passos.map((x, i) => `<li class="${x.f ? 'feito' : i === agora ? 'agora' : ''}"><span class="pt"><i class="ti ${x.f ? 'ti-check' : x.i}"></i></span><div><b>${x.r}</b>${x.d ? `<div class="small muted">${esc(x.d)}</div>` : ''}</div></li>`).join('')}</ol>`;
     if (p.status === 'aguardando') h += '<p class="muted small">Seu pedido está na fila. O médico pode entrar em contato pelo telefone informado. Continue tomando seus remédios normalmente.</p>';
+    if (p.status === 'em_atendimento' && at.sala) h += `<a class="btn btn-p" href="#/sala/${esc(at.sala)}" style="margin-bottom:12px"><i class="ti ti-video"></i>Entrar na teleconsulta</a>`;
     if (p.status === 'urgencia') h += '<div class="alerta alto"><i class="ti ti-urgent"></i><span>Este pedido foi interrompido por sinais de alerta. Procure atendimento presencial.</span></div>';
     if (p.status === 'recusado') h += `<div class="alerta medio"><i class="ti ti-info-circle"></i><span><b>${esc(at.motivoRecusa || '')}</b><br>${esc(at.orientacaoMedico || '')}</span></div>`;
+    const docs = (at.assinatura && at.assinatura.documentos) || [];
     if (p.status === 'assinado') {
       h += `${at.orientacaoMedico ? `<div class="alerta info" style="margin-bottom:12px"><i class="ti ti-message-2"></i><span><b>Orientação do médico:</b> ${esc(at.orientacaoMedico)}</span></div>` : ''}
-        <div style="display:flex;gap:8px;flex-wrap:wrap">${at.assinatura && (at.assinatura.pdf || at.assinatura.arquivo) ? '<button class="btn btn-p" id="pdfass"><i class="ti ti-file-certificate"></i>Baixar receita assinada (PDF)</button>' : ''}<button class="btn ${at.assinatura && (at.assinatura.pdf || at.assinatura.arquivo) ? '' : 'btn-p'}" id="imp"><i class="ti ti-printer"></i>Ver e imprimir</button></div>
-        ${(p.receitas || []).some(b => b.tipo.startsWith('notificacao')) ? '<p class="small" style="margin-top:10px">Um dos seus remédios exige receita em papel especial (notificação). O médico vai combinar com você como recebê-la.</p>' : ''}
-        <p class="small muted" style="margin-top:10px">A receita vale em qualquer farmácia. Receitas de remédios controlados valem por 30 dias a partir da emissão.</p>`;
+        <div style="display:flex;gap:8px;flex-wrap:wrap">${docs.map(d => `<button class="btn btn-p" data-doc="${esc(d.id)}"><i class="ti ti-file-certificate"></i>${esc(d.rot)}</button>`).join('')}<button class="btn" id="imp"><i class="ti ti-printer"></i>Ver cópia</button></div>
+        ${(p.receitas || []).some(b => b.papel) ? '<p class="small" style="margin-top:10px">Um dos seus remédios sai em receituário de papel. O médico vai combinar com você como recebê-lo.</p>' : ''}
+        <p class="small muted" style="margin-top:10px">Leve o PDF à farmácia, no celular ou impresso. Receita de controle especial e notificações valem por 30 dias a partir da emissão, em todo o Brasil, e cada uma só pode ser usada uma vez.</p>`;
     }
     h += '</div>';
     if (p.meds && p.meds.length && p.status !== 'urgencia') h += `<div class="card" style="margin-top:16px"><h3>Informações sobre seus remédios</h3><div class="small muted" style="margin:4px 0 8px">Informações gerais. Siga sempre a orientação do seu médico.</div>${p.meds.filter(m => m.nome).map(m => `<div style="border-top:1px solid var(--line);padding:12px 0" class="msg orient" >${RF.orientacaoMed(m, p)}</div>`).join('')}<div style="border-top:1px solid var(--line);padding-top:12px" class="msg orient">${RF.seguimentoPaciente(p)}</div></div>`;
     $('#res').innerHTML = h;
     $('#res').querySelectorAll('.msg.orient').forEach(x => { x.style.border = '0'; x.style.borderTop = '1px solid var(--line)'; x.style.borderRadius = '0'; x.style.padding = '12px 0'; });
     const imp = $('#imp'); if (imp) imp.onclick = () => RF.imprimir(RF.folhasReceita(p, at.medico || {}, { orientacoes: true }));
-    const pa = $('#pdfass'); if (pa) pa.onclick = async () => {
-      if (at.assinatura.pdf) return RF.baixarDataURL(at.assinatura.pdf, 'receita-' + p.codigo + '.pdf');
-      try { const url = await RF.backend.baixarReceita({ codigo: p.codigo, nasc: p.paciente.nasc }); window.open(url, '_blank', 'noopener'); }
-      catch (e) { RF.toast(e.message || 'Não foi possível baixar agora.'); }
+    $('#res').querySelectorAll('[data-doc]').forEach(bt => bt.onclick = async () => {
+      try {
+        if (at.assinatura.tipo === 'icp') return RF.backend.baixarReceita({ codigo: p.codigo, nasc: p.paciente.nasc, docId: bt.dataset.doc });
+        const x = RF.documentosDe(p).find(d => d.id === bt.dataset.doc);
+        await RF.baixarPdf(x.id, x.b, p, at.medico || {}, { em: at.assinatura.em, verificacao: at.assinatura.verificacao, segredo: 'demo' }, true);
+      } catch (e) { RF.toast(e.message || 'Não foi possível baixar agora.'); }
+    });
+  }
+
+  /* ---------- teleconsulta: entrada do paciente ---------- */
+  async function telaSala(id) {
+    if (!id) { location.hash = '#/acompanhar'; return; }
+    app.innerHTML = `<div class="estreito sala-pac"><div class="card"><div class="cab-card c-azul"><span class="ico lg"><i class="ti ti-video"></i></span><div><h2>Teleconsulta</h2><p class="muted small">Permita o uso da câmera e do microfone. A imagem vai direto para o médico e não é gravada.</p></div></div>
+      <button class="btn btn-p" id="ent-sala" style="width:100%"><i class="ti ti-video"></i>Entrar</button><div id="sala-area" style="margin-top:12px"></div>
+      <p class="small muted" style="margin-top:12px">Não conectou? O médico pode falar com você pelo WhatsApp do telefone informado.</p></div></div>`;
+    $('#ent-sala').onclick = async () => {
+      $('#ent-sala').remove();
+      try {
+        if (RF.backend.garantirLogin) await RF.backend.garantirLogin();
+        await RF.abrirVideo($('#sala-area'), { id, papel: 'paciente', aoEncerrar: () => { location.hash = '#/acompanhar'; } });
+      } catch (e) { RF.toast('Não consegui entrar: ' + e.message); }
     };
   }
 
@@ -248,7 +278,7 @@
       const r = await RF.backend.verificarReceita(new FormData(e.target).get('c'));
       $('#rv').innerHTML = !r ? '<div class="alerta alto" style="margin-top:14px"><i class="ti ti-x"></i><span>Código não encontrado.</span></div>'
         : `<div class="alerta ${r.valida && r.tipoAssinatura === 'icp' ? 'info' : 'medio'}" style="margin-top:14px"><i class="ti ${r.valida ? 'ti-circle-check' : 'ti-alert-circle'}"></i><span>
-          ${r.tipoAssinatura === 'icp' ? 'Receita emitida pelo RefilMed com PDF assinado digitalmente.' : 'Receita de demonstração, sem validade legal.'}<br>
+          ${r.tipoAssinatura === 'icp' ? 'Receita emitida pelo Meu Neuro com PDF assinado digitalmente.' : 'Receita de demonstração, sem validade legal.'}<br>${(r.documentos || []).filter(d => d.numero).map(d => esc(d.rot) + ' N.º ' + esc(d.numero)).join('<br>')}${(r.documentos || []).some(d => d.numero) ? '<br>' : ''}
           Médico: ${esc(r.medico.nome)} · CRM ${esc(r.medico.crm)}/${esc(r.medico.uf)}<br>Paciente: ${esc(r.paciente)} · ${r.itens} item(ns) · emitida em ${esc(RF.fmtData(r.emitidaEm, true))}</span></div>`;
     };
     if (cod) $('#fv').requestSubmit();
@@ -257,6 +287,7 @@
   /* ---------- início ---------- */
   (async function () {
     if (RF.backend.modo === 'local') { const m = $('#modo'); m.textContent = 'Modo local'; m.title = 'Dados guardados só neste navegador'; m.classList.remove('hide'); $('#demo-aviso').classList.remove('hide'); }
+    // tem de ser a primeira coisa: o session_id e o token do SNCR duram 30 segundos
     try { await RF.sncr.processarRetorno(); } catch (e) { console.warn(e); }
     try { await RF.backend.iniciar(); }
     catch (e) { console.error(e); RF.backend = RF.backendLocal; RF.toast('Backend indisponível; usando modo local.'); }

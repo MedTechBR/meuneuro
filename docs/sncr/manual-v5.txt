@@ -1,0 +1,770 @@
+      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+               Agência Nacional de Vigilância Sanitária (Anvisa).
+                    Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+              É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+Presidente da República
+Luís Inácio Lula da Silva
+
+Ministro da Saúde
+Alexandre Rocha Santos Padilha
+
+Diretor Presidente da Anvisa
+Leandro Pinheiro Safatle
+
+Diretores da Anvisa
+Daniela Marreco Cerqueira – Segunda Diretoria
+Marcelo Mario Matos Moreira – Terceira Diretoria (Diretor Substituto)
+Daniel Meirelles Fernandes Pereira – Quarta Diretoria
+Thiago Lopes Cardoso Campos – Quinta Diretoria
+
+Gerente de Produtos Controlados
+Renata de Morais Souza - Especialista em regulação e vigilância sanitária
+
+Elaboração / Redação
+Antônio Carlos de Lima Mendes Junior - Arquiteto de software - Spassu Tecnologia e
+Serviços
+Thiago Brasil Silvério - Assessor e Gerente Substituto - Especialista em regulação e
+vigilância sanitária
+Wesley Vieira Bandeira - Analista de negócios - Spassu Tecnologia e Serviços
+
+
+
+
+                                     Brasília, setembro de 2026
+                                               3ª edição
+                              Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                        É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                       Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+SUMÁRIO
+
+1.     Apresentação ............................................................................................................... 4
+     1.1.      Objetivo do Manual .............................................................................................................4
+     1.2.      Público-Alvo .........................................................................................................................4
+       1.2.1.         Esse manual é destinado a .......................................................................................4
+2.     API SNCR ...................................................................................................................... 4
+     2.1.      Swagger ................................................................................................................................4
+     2.2.      Autenticação ........................................................................................................................5
+       2.2.1.         Visão Geral ..................................................................................................................5
+       2.2.3.         Fluxo .............................................................................................................................6
+       2.2.4.         Endpoints .....................................................................................................................6
+            2.2.4.1.          auth/login (Inicia o fluxo) ......................................................................................6
+            2.2.4.2.          auth/token (Recupera Access Token) ...............................................................7
+            2.2.4.3.          Variáveis de Configuração: ................................................................................7
+     2.3.      Endpoints ........................................................................................................................... 10
+       2.3.1.         Notificação de Receita ............................................................................................ 10
+            2.3.1.1.          URL .................................................................................................................... 10
+            2.3.1.2.          Fluxo .................................................................................................................. 10
+            2.3.1.3.          Dados para requisição ..................................................................................... 10
+            2.3.1.4.          Resposta ........................................................................................................... 11
+            2.3.1.5.          Regras de negócio e restrições .................................................................... 11
+            2.3.1.6.          Códigos de status ............................................................................................ 12
+            2.3.1.7.          Mensagens de erro ......................................................................................... 12
+       2.3.2.         Receita de Controle Especial / Receita Sujeita a Retenção .............................. 13
+            2.3.2.1. URL ........................................................................................................................ 13
+            2.3.2.2.          Fluxo .................................................................................................................. 13
+            2.3.2.3.          Dados para requisição .................................................................................... 13
+            2.3.2.4.          Resposta ........................................................................................................... 14
+            2.3.2.5.          Regras de negócio e restrições .................................................................... 14
+            2.3.2.6.          Códigos de status ............................................................................................ 15
+            2.3.2.7.          Mensagens de erro ......................................................................................... 15
+     2.4.      Documentações auxiliares .............................................................................................. 16
+     2.5.      Contato............................................................................................................................... 16
+                            Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                      É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                     Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+1.        Apresentação
+
+     1.1. Objetivo do Manual
+
+    Este manual tem por objetivo estabelecer orientações para a integração com a API do Sistema Nacional de
+Controle de Receituários (SNCR), disponibilizando informações técnicas e operacionais necessárias à
+implementação e ao consumo dos serviços oferecidos pela plataforma.
+    O documento visa apoiar desenvolvedores, analistas e demais profissionais de tecnologia da informação
+responsáveis pela integração de sistemas ao SNCR, servindo como referência para a correta utilização dos
+recursos disponibilizados.
+
+     1.2. Público-Alvo
+
+          1.2.1. Esse manual é destinado a:
+
+    Profissionais da área de tecnologia da informação, empresas desenvolvedoras de software, plataformas de
+prescrição eletrônica, prestadores de serviços digitais em saúde que tenham interesse em integrar suas
+soluções ao SNCR.
+
+
+2.        API SNCR
+
+    Serviço para fornecimento de numerações de notificação de receitas eletrônicas para elaboração de
+prescrições eletrônicas.
+
+
+     •      Base URL:
+              Ambiente                                                               URL
+         Homologação (hmg)      https://api-gateway.hmg.apps.anvisa.gov.br/api-sncr/api/v1/
+         Produção (prd)         https://api-gateway.prd.apps.anvisa.gov.br/api-sncr/api/v1/
+
+
+
+
+     2.1. Swagger
+
+     •      URL:
+              Ambiente                                                               URL
+         Homologação (hmg)      https://api-gateway.hmg.apps.anvisa.gov.br/api-sncr/swagger-ui/index.html#/
+         Produção (prd)         Indisponível.
+
+
+Obs.: O swagger para o ambiente de produção não será disponibilizado por questões de segurança
+considerando que a ferramenta possui funcionalidade para requisições a API e poderia gerar numerações reais.
+
+
+               Detalhes técnicos da API disponíveis:
+                        • Métodos HTTP;
+                        • Schemas;
+                        • Exemplos de requisição e resposta;
+                        • Autenticação técnica;
+                        • Payloads completos;
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                               Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+     ATENÇÃO!
+
+     Durante a fase de integração e homologação técnica com o SNCR, o perfil de requisição de
+     numeração de Notificação de Receita pelo prescritor poderá operar, em ambiente de teste, sem
+     depender de aprovação prévia da autoridade sanitária, exclusivamente para viabilizar a
+     validação técnica das integrações. Essa funcionalidade não se aplica ao ambiente de produção.
+
+     Em operação real, toda solicitação de numeração de Notificação de Receita continuará sujeita à
+     análise e aprovação prévia da Visa competente, que permanece responsável pela autorização da
+     numeração. As plataformas integradas ao SNCR, inclusive as mantidas por conselhos profissionais
+     ou por provedores privados, atuam apenas como intermediadoras tecnológicas para consumo dos
+     números previamente autorizados ao prescritor, sem substituição da competência regulatória e
+     operacional da vigilância sanitária.
+
+     Além disso, cumpre esclarecer que a página de solicitação de numeração destinada aos
+     prescritores não estará disponível nesta primeira etapa de implementação, prevista até 30 de
+     setembro de 2026. Nesse período inicial, o fluxo de solicitação permanecerá ocorrendo pelos
+     canais atualmente adotados por cada Visa competente, conforme seus procedimentos próprios.
+
+
+
+
+   2.2. Autenticação
+
+      2.2.1. Visão Geral:
+
+   A API SNCR utiliza um mecanismo de autenticação integrado à plataforma Gov.br, garantindo que apenas
+usuários devidamente identificados e autorizados possam acessar seus recursos.
+
+   Para que uma requisição seja processada com sucesso, o profissional requisitante deve possuir uma conta
+Gov.br ativa e válida. O processo de autenticação é realizado por meio do protocolo OAuth 2.0 com OpenID
+Connect (OIDC), utilizando o Gov.br como provedor de identidade.
+
+    A integração é realizada pelo GovBrRedirectFilter, componente de autenticação que implementa o fluxo de
+autenticação OAuth2/OIDC para integração com o Gov.br via Keycloak, com suporte a múltiplos clientes
+frontend em domínios diferentes (cross-domain).
+
+
+
+          IMPORTANTE
+          Na etapa inicial de operação da API, não há trava vinculada ao nível da conta Gov.br para
+          a realização das chamadas de requisição de numeração. No entanto, cabe ressaltar que
+          a emissão e a assinatura da prescrição eletrônica final exigirão o uso de assinatura
+          eletrônica qualificada (ICP-Brasil) ou avançada, conforme os requisitos estabelecidos para
+          cada tipo de receituário.
+
+
+
+
+      2.2.2. Credenciamento:
+
+    O serviço de prescrição eletrônica não solicita chaves fixas ou credenciais de parceiro à Anvisa. A
+autenticação baseia-se na sessão individual do prescritor autenticado no Gov.br, sendo o token gerado
+dinamicamente para aquela transação.
+                 Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+           É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                          Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+2.2.3. Fluxo:
+
+
+
+
+2.2.4. Endpoints:
+
+   2.2.4.1. GET
+             auth/login (Inicia o fluxo)
+
+     i.   Dados para requisição:
+
+             Parâmetro              Obrigatório             Descrição
+             client_url             Sim                     URL de retorno do frontend.
+             state                  Não                     Estado arbitrário do cliente
+
+
+    ii.   Comportamento:
+
+             •    Gera nonce e state assinado com HMAC-SHA256.
+             •    Cria sessão temporária (apenas para validação do nonce).
+             •    Redireciona para Keycloak com kc_idp_hint=govbr.
+                                 Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                           É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                          Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+                 iii. Callback Configurável (${app.auth.auth-callback})
+
+                              Processamento:
+
+                                         1. Recebe code e state do Keycloak.
+                                         2. Valida assinatura e expiração do state.
+                                         3. Valida nonce (não depende de cookie!).
+                                         4. Troca code por access_token via Keycloak.
+                                         5. Gera session_token de uso único (30s).
+                                         6. Redireciona para client_url com ?session_id={token}
+
+
+
+                2.2.4.2. GET
+                          auth/token (Recupera Access Token)
+
+                     • Resposta (200 OK):
+{
+    “access_token”: “jwt_token_aqui”,
+    “token_type”: “Bearer”
+}
+
+
+                     • Erro:
+{
+    “error”: “Sessão inválida ou expirada”
+}
+
+
+
+                                     Observação: O token é removido da sessão após a requisição (uso único).
+
+
+
+                2.2.4.3. Variáveis de Configuração:
+
+                     • application.yml:
+app:
+auth:
+auth-callback: “/api/v1/auth/callback”
+call-back-url: https://sncr-api.apps.anvisa.gov.br/api/v1/auth/callback
+allowed-domains:
+- https://*.br
+
+keycloack:
+auth-server-url: https://acesso.apps.anvisa.gov.br/auth
+realm: anvisa
+resource: sncr-api
+credentials:
+secret: <client-secret>
+
+
+
+
+                     • Segurança:
+
+                     Mecanismo                                    Descrição
+                     HMAC State                                   state assinado com HMAC-SHA256
+
+                     Nonce Validation                             Previne replay attacks (timeout: 5 minutos)
+                 Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+           É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                          Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+   Session Token One-Time                 session_token expira em 30s e é removido após uso
+
+   State Expiry                           Timeout configurável (5 minutos)
+
+   Domain Whitelist                       Apenas domínios .br são permitidos
+
+
+
+
+ IMPORTANTE
+ Não há cadastro prévio de URLs na Anvisa. A regra de segurança exige obrigatoriamente
+ que a URL pertença a um domínio nacional com terminação .br.
+
+ O erro “Domínio não autorizado" trata-se de erro genérico e evidencia que alguma etapa
+ do fluxo de autenticação não foi observada corretamente. Utilize as “Instruções de
+ Integração API SNCR” e “Aplicação exemplo para validação do fluxo de autenticação”
+ disponível na página de documentos do SNCR, citada no item 2.4 deste manual, para
+ verificar a implementação.
+
+
+
+
+ NOTA DE ATUALIZAÇÃO
+ O fluxo de autenticação foi atualizado e agora possui novos mecanismos de validação para
+ garantir que o client_url e o session_id sejam utilizados por domínios autorizados. A validação do
+ domínio considera o host efetivo da URL, restringindo os domínios permitidos ao padrão
+ estabelecido, e é realizada durante as diferentes etapas do fluxo de autenticação. O session_id
+ fica vinculado ao Origin que iniciou a autenticação, sendo exigido o mesmo Origin para a
+ obtenção do access_token.
+
+ Para ambientes de desenvolvimento local, são permitidos os hosts localhost e 127.0.0.1,
+ independentemente da porta utilizada, como 4200, 3000 ou 8080.
+
+
+
+
+2.2.4.4. Passo a passo do fluxo de autenticação
+
+      I.   Usuário: seleciona Entrar na plataforma;
+     II.   Frontend: inicia a autenticação redirecionando para /auth/login?client_url=SEU_SITE;
+    III.   Backend: redireciona o usuário para o Gov.br;
+   IV.     Usuário: realiza a autenticação no Gov.br;
+    V.     Backend: após o processamento da autenticação, redireciona o usuário para
+           SEU_SITE?session_id=xxx;
+   VI. Frontend: obtém o session_id e solicita o token por meio de GET /auth/token?session_id=xxx;
+  VII. Frontend: armazena o access_token retornado;
+  VIII. Frontend: utiliza o access_token nas requisições aos recursos protegidos, por meio do
+        cabeçalho Authorization: Bearer <access_token>;
+                               Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                         É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                        Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+               IMPORTANTE
+               O estado da autenticação é mantido via:
+                                  • nonce no state para validação do callback
+                                  • session_token na URL para recuperação do token
+
+
+
+
+                  • Estrutura do State Assinado:
+Payload: {clientUrl}|{nonce}|{clientState}|{expiry}
+Assinatura: HMAC-SHA256(payload)
+State Final: Base64Url(payload + “|” + assinatura)
+
+
+                  • Notas de Segurança:
+
+                          i.   HTTPS obrigatório em produção;
+                         ii.   session token tem expiração curta (30s) e uso único;
+                        iii.   state tem expiração de 5 minutos;
+                        iv.    nonce armazenado em memória com timeout;
+                         v.    access token tem expiração de 30 segundos.
+                        vi.    Não há refresh token. Faz-se necessário realizar novo login no GovBr.
+                             Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                       É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                      Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+      2.3. Endpoints
+
+          2.3.1. Notificação de Receita:
+                 Disponibilização de números para notificações de receita autorizadas pela Vigilância Sanitária.
+
+              2.3.1.1. URL: POST numeracoes/notificacao-receita
+
+              2.3.1.2. Fluxo:
+
+
+
+
+              2.3.1.3. Dados para requisição:
+
+        Parâmetro       Tipo        Obrigatório    Exemplo     Descrição
+
+                                                               Tipo de receita. Valores permitidos: NRA, NRB, NRB2,
+        receita         string      Sim            NRA
+                                                               NRR, NRT.
+                                                               Conselho no qual o prescritor possui inscrição. Valores
+        conselho        string      Sim            CRM
+                                                               permitidos: CRM, CRMV e CRO.
+        uf              string      Sim            RJ          Unidade Federativa (UF) do conselho.
+        documento       string      Sim            123456      Número de identificação do prescritor no conselho.
+                        Integer
+        quantidade                  Sim            25          Quantidade de números desejados. Min: 10 – Max: 50
+                        (32)
+
+
+                   • Exemplo:
+{
+    “receita”: “NRA”,
+    “conselho”: “CRM”,
+    “uf”: “RJ”,
+    “documento”: “123456”
+    “quantidade”: 25
+}
+                               Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                         É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                        Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+             2.3.1.4. Resposta:
+
+         Campo                    Tipo               Exemplo                Descrição
+                                                     2411.1-00.0000001
+                                                                            Número da receita disponibilizado. Mais de um
+         numeroReceita            string             2411.1-00.0000002
+                                                                            número poderá ser informado.
+                                                     2411.1-00.0000003
+                                                     49                     Quantidade de numerações de receita do tipo
+         saldoReceitas            Interger (32)
+                                                                            informado disponíveis
+                                                     "Saldo inferior a 50
+                                                                            Mensagem de alerta exibida quando a quantidade
+                                                     receitas
+         mensagem                 string                                    de numerações atribuídas a um prescritor é inferior
+                                                     disponíveis."
+                                                                            a 50.
+
+
+                 • Exemplo:
+{
+    “numeracoesReceita”: “[2411.1-00.0000001, 2411.1-00.0000002]”,
+    “saldoReceitas”: 49,
+    “mensagem”: “Saldo inferior a 50 receitas disponíveis”,
+}
+
+
+
+
+               2.3.1.5. Regras de negócio e restrições:
+
+                    i. Validação do prescritor:
+
+                              • O profissional autenticado por meio do gov.br durante o processo de autenticação da
+                                API SNCR deve corresponder ao prescritor informado na requisição.
+
+                              • O prescritor deve ter sido previamente cadastrado no sistema SNCR. O cadastro de
+                                um prescritor acontece de forma automática ao interagir com o endpoint de
+                                autenticação, a partir do qual, após autenticação via gov.br, será verificado se o
+                                profissional possui inscrição ativa em conselho.
+
+                              • Os dados de conselho profissional, UF do conselho e número de documento
+                                profissional informados na requisição devem corresponder a um registro válido
+                                existente na base de dados do sistema SNCR.
+
+                   ii. Numerações atribuídas:
+                          • O prescritor deve possuir numerações disponíveis e atribuídas ao seu cadastro para o
+                             tipo de receita solicitado (NRA, NRB, NRB2, NRR ou NRT).
+
+                  iii. Limite de numerações de receita:
+                           • A disponibilização de numerações está limitada a 50 números por tipo de receita, por
+                               prescritor e por dia.
+
+                              • Caso a quantidade solicitada seja superior à quantidade de numerações disponíveis
+                                para o prescritor, a API retornará apenas a quantidade existente em estoque.
+                   Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+             É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                            Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+       RECOMENDAÇÃO
+       Recomenda-se que as plataformas disponibilizem ao prescritor um recurso para informar
+       a quantidade de numerações necessária para atender à sua demanda de prescrição,
+       observadas regras negociais da API, incluindo os limites diários disponibilizados. É
+       importante que os limites sejam informados ao prescritor de forma clara, bem como que
+       ele seja alertado sobre a necessidade de evitar solicitações antecipadas ou em quantidade
+       excessiva, de modo a preservar a disponibilidade de numerações para uso em outras
+       plataformas.
+
+
+
+      2.3.1.6. Códigos de status:
+
+Código         Descrição
+200            Numeração de receita disponibilizada com sucesso.
+               Parâmetros inválidos, prescritor não encontrado, limite diário alcançado ou quantidade
+400
+               solicitada inválida.
+401            Não autorizado.
+403            Acesso negado.
+404            Página não foi encontrada.
+500            Erro interno do servidor.
+
+
+
+
+      2.3.1.7. Mensagens de erro:
+
+
+Código     Mensagem                                     Descrição
+
+400        Tipo da receita não pode ser nulo            O campo receita não foi informado na requisição.
+           Tipo de receita inválido para esta           O valor informado para receita não é suportado. Valores
+400
+           requisição.                                  aceitos: NRA, NRB, NRB2, NRR e NRT.
+400        Conselho inválido                            O conselho informado não é suportado pela API.
+400        Conselho não pode ser nulo                   O campo conselho não foi informado na requisição.
+400        UF não pode ser nulo                         O campo uf não foi informado na requisição.
+           Número de identificação do prescritor
+400                                                     O campo documento não foi informado na requisição.
+           não pode ser nulo
+           Quantidade de receitas não pode ser
+400                                                     O campo quantidade não foi informado na requisição.
+           nulo
+                                                        O valor informado para quantidade é inferior ao mínimo
+400        A quantidade mínima permitida é 10
+                                                        permitido.
+                                                        O valor informado para quantidade é superior ao máximo
+400        A quantidade máxima permitida é 50
+                                                        permitido.
+           Limite diário de 50 receitas atingido. Já
+                                                        A quantidade solicitada ultrapassa o limite diário de
+400        disponibilizadas hoje: { }. Saldo restante
+                                                        disponibilização de numerações para o prescritor.
+           para hoje: { }.
+                                                        Não há numerações do tipo de receita informado
+           Prescritor não possui saldo disponível.
+400                                                     disponíveis para o prescritor. É necessário gerar novas
+           Favor gerar novos números de receita.
+                                                        numerações para prosseguir.
+                                                        O conselho, número de inscrição ou UF informados não
+           Inscrição fornecida é diferente da
+404                                                     correspondem a uma inscrição ativa vinculada ao CPF do
+           autenticada.
+                                                        profissional autenticado via Gov.br.
+                              Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                        É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                       Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+          2.3.2. Receita de Controle Especial / Receita Sujeita a Retenção:
+                 Criação do bloco de numeração para receitas de controle especial e receitas sujeitas à retenção.
+
+                2.3.2.1. URL: POST numeracoes/receita-especial-retencao
+
+                2.3.2.2. Fluxo:
+
+
+
+
+              2.3.2.3. Dados para requisição:
+
+
+         Parâmetro       Tipo     Obrigatório   Exemplo             Descrição
+
+                                                                    Conselho ao qual o prescritor possui inscrição.
+         conselho        string   Sim           CRM
+                                                                    Valores permitidos: CRM, CRMV e CRO.
+         tipo            string   Sim           RCE                 Tipo de receita. Valores permitidos: RCE e RET.
+         documento       string   Sim           123456              Número de identificação do prescritor no conselho.
+         uf              string   Sim           RJ                  Unidade Federativa (UF) do conselho.
+                                                                    CNPJ da empresa responsável pela plataforma de
+         cnpj            string   Sim           11111111111111
+                                                                    prescrição eletrônica que está consumindo a API.
+
+
+
+                 • Exemplo:
+{
+    “conselho”: “CRM”,
+    “tipo”: “RCE”,
+    “documento”: “11111”,
+    “uf”: “RJ”,
+    “cnpj”: “11111111111111”,
+}
+                                Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                          É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                         Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+              2.3.2.4. Resposta:
+
+        Campo                     Tipo            Exemplo               Descrição
+
+                                                  2602.6-53.0000001     Numeração inicial do intervalo de 1000 números
+        inicio                    string
+                                                                        disponibilizados.
+                                                  2602.6-53.0001000     Numeração final do intervalo de 1000 números
+        fim                       string
+                                                                        disponibilizados.
+                                                                        Indicação da quantidade de número
+        quantidade                Integer (32)    1000                  disponibilizados. Neste cenário, 1000 números será
+                                                                        uma constante.
+                                                  "Numeração gerada
+                                                                        Mensagem exibida após requisição realizada com
+        mensagem                  string          com sucesso."
+                                                                        sucesso.
+
+
+
+
+                  • Exemplo:
+{
+    “inicio”: “2602.6-53.0000001”,
+    “fim”: “2602.6-53.0001000”,
+    “quantidade”: 1000,
+    “mensagem”: “Numeração gerada com sucesso.”
+}
+
+
+
+
+                 2.3.2.5. Regras de negócio e restrições:
+
+                     i.   Validação do prescritor:
+
+                            • O profissional autenticado por meio do gov.br durante o processo de autenticação da
+                              API SNCR deve corresponder ao prescritor informado na requisição.
+
+                            • O prescritor deve possuir inscrição ativa no conselho profissional indicado na requisição.
+
+                            • Os dados de conselho profissional, UF do conselho e número de documento profissional
+                              informados na requisição devem corresponder a um registro válido existente na base de
+                              dados do sistema SNCR.
+
+                    ii.   Validação do CNPJ:
+
+                            • O CNPJ informado deve corresponder ao CNPJ da empresa responsável pela plataforma
+                              de prescrição eletrônica que está consumindo a API.
+
+                            • O CNPJ informado deve ser válido, conforme validação dos dígitos verificadores.
+
+                   iii.   Limite de numerações de receita:
+
+                              •    O endpoint “Receita de Controle Especial / Receita Sujeita a Retenção” disponibiliza
+                                   1.000 numerações por requisição.
+
+                              •    Limite de 3 requisições mensais por inscrição profissional para obtenção de
+                                   numerações de Receita de Controle Especial (RCE) / Receita Sujeita a Retenção
+                                   (RET);
+                   Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+             É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                            Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+                  •    Cada profissional está limitado à obtenção de 3.000 numerações por tipo de receita
+                       (RCE e RET) por mês.
+
+
+
+       RECOMENDAÇÃO
+       Recomenda-se solicitar apenas a quantidade de numerações necessária para atender à
+       demanda, evitando solicitações antecipadas ou excessivas, de modo a preservar a
+       disponibilidade para utilização por outras plataformas pelo mesmo prescritor.
+
+
+
+
+      2.3.2.6. Códigos de status:
+
+Código         Descrição
+
+201            Numeração de receita gerada com sucesso.
+400            Parâmetros inválidos ou regra de negócio não atendida.
+401            Não autorizado.
+403            Acesso negado.
+404            Página não foi encontrada.
+500            Erro interno do servidor.
+
+
+
+
+  2.3.2.7. Mensagens de erro:
+
+
+Código      Mensagem                                        Descrição
+
+400         Tipo de receita não pode ser nulo.              O campo tipo não foi informado na requisição.
+
+400         UF não pode ser nulo.                           O campo uf não foi informado na requisição.
+
+400         Conselho não pode ser nulo.                     O campo conselho não foi informado na requisição.
+400         Documento não pode ser nulo.                    O campo documento não foi informado na requisição.
+400         CNPJ não pode ser nulo.                         O campo cnpj não foi informado na requisição.
+                                                            O CNPJ informado não possui formato válido ou não
+400         CNPJ inválido.
+                                                            passou na validação dos dígitos verificadores.
+                                                            Apenas os conselhos “CRM”, “CRMV” e “CRO” podem
+400         Conselho inválido
+                                                            ser informados.
+400         Tipo da receita inválido. Valores permitidos:   Apenas receitas dos tipos RCE e RET podem ser
+            [RCE, RET]                                      emitidas.
+400         UF não encontrada: {UF}                         A UF deve existir na base cadastral do sistema.
+            Usuário atingiu o limite máximo de receita      O prescritor possui limite mensal de 3.000 receitas
+400
+            para o tipo de receita no mês atual.            por tipo.
+                                                            O usuário autenticado via Gov.br ainda não possui
+            Usuário autenticado não encontrado:
+400                                                         cadastro no SNCR. É necessário realizar o cadastro
+            {USER_ID}
+                                                            antes de utilizar a operação.
+                                                            Dados de prescritor detentor do CPF obtido na
+            Prescritor não encontrado com o CPF
+404                                                         autenticação do profissional no gov.br não
+            fornecido.
+                                                            localizados.
+            O usuário informado não possui vínculo          O prescritor deve possuir inscrição ativa e
+404         ativo no conselho {CONSELHO} para o             compatível com conselho, UF e registro informados
+            documento {DOCUMENTO} e UF {UF}.                na requisição.
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                               Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+                                                             Falha na comunicação com a API do conselho,
+               Erro na comunicação com a API do
+     404                                                     resposta diferente de HTTP 2xx ou a resposta não
+               {CONSELHO}.
+                                                             contém dados.
+
+
+
+
+   2.4. Documentações auxiliares
+
+    Outras documentações estão disponíveis para auxiliar profissionais da área de tecnologia no processo de
+integração das plataformas à API SNCR, bem como informações relevantes para usuários do sistema.
+
+         Documentações disponíveis:
+            • Manual do SNCR;
+            • Perguntas & Respostas;
+            • Instruções de Integração API SNCR;
+            • Aplicação exemplo para validação do fluxo de autenticação.
+
+         Os documentos estão disponíveis em:
+         https://www.gov.br/anvisa/pt-br/assuntos/medicamentos/controlados/sncr
+
+
+
+   2.5. Contato
+
+    Em caso de dúvidas, necessidade de orientações e informações referentes à API SNCR, o e-mail
+sncr.integracao@anvisa.gov.br poderá ser utilizado para encaminhamento de mensagens.
+

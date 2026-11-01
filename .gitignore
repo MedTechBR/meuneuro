@@ -1,2 +1,6 @@
-functions/node_modules/
+functions/node_modules
+functions/node_modules.nosync/
+functions/.secret.local
+functions/.env.demo-meuneuro
+*.log
 .DS_Store

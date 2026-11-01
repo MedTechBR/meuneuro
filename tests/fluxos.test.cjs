@@ -30,7 +30,7 @@ const t = async (nome, fn) => { try { await fn(); ok++; console.log('ok  ', nome
       assert.strictEqual(p.status, 'aguardando');
       assert.ok(p.resumo.includes(R.nome));
       assert.strictEqual(p.meds.length, R.meds.length);
-      for (const b of p.receitas) if (b.tipo === 'controle_especial') assert.ok(b.itens.length <= 3);
+      for (const b of p.receitas) if (b.tipo !== 'simples') assert.strictEqual(b.itens.length, 1, 'um remédio por documento controlado');
       for (const b of p.receitas) for (const i of b.itens) { const lim = RF.limiteDias(RF.kbPorId(i.kbId), p); if (lim) assert.ok(i.dias <= lim, i.nome + ' excede limite'); }
     });
   }
@@ -55,11 +55,39 @@ const t = async (nome, fn) => { try { await fn(); ok++; console.log('ok  ', nome
     const p3 = await RF.rodarRoteiro(RF.ROTEIROS[2]);
     assert.ok(p3.alertas.some(a => /uso excessivo/.test(a.texto)));
   });
-  await t('documento: controle especial com CPF, simples com endereço', async () => {
+  await t('documento: controle especial no modelo oficial, com CPF e endereço; simples com endereço', async () => {
     const p = await RF.rodarRoteiro(RF.ROTEIROS[2]);
     const html = RF.folhasReceita(p, { nome: 'Dra. X', crm: '1', uf: 'CE', cidade: 'Fortaleza' }, {});
-    assert.ok(html.includes('RECEITUÁRIO DE CONTROLE ESPECIAL')); assert.ok(html.includes('CPF:')); assert.ok(html.includes('Endereço:'));
-    assert.ok(html.includes('(sessenta)'));
+    assert.ok(html.includes('RECEITA DE CONTROLE ESPECIAL')); assert.ok(html.includes('ELETRÔNICA'));
+    assert.ok(html.includes('CPF ou, se estrangeiro, PASSAPORTE')); assert.ok(html.includes('ENDEREÇO COMPLETO')); assert.ok(html.includes('Endereço:'));
+    assert.ok(html.includes('(sessenta)')); assert.ok(html.includes('sncr.anvisa.gov.br'));
+  });
+  await t('notificação B entra como documento eletrônico próprio', async () => {
+    const p = await RF.rodarRoteiro(RF.ROTEIROS[1]); // rivotril
+    const b = p.receitas.find(x => x.tipo === 'notificacao_b');
+    assert.ok(b && b.itens[0].kbId === 'clonazepam');
+    assert.ok(RF.folhasReceita(p, { nome: 'Dra. X', crm: '1', uf: 'CE' }, {}).includes('NOTIFICAÇÃO DE RECEITA B'));
+    b.papel = true;
+    assert.ok(!RF.folhasReceita(p, { nome: 'Dra. X', crm: '1', uf: 'CE' }, {}).includes('NOTIFICAÇÃO DE RECEITA B'));
+  });
+  await t('remédio fora do banco nunca vira receita comum sozinho', () => {
+    assert.strictEqual(RF.classificar('Ozempic 1 mg').tipo, 'retencao');
+    assert.strictEqual(RF.classificar('Mounjaro').tipo, 'retencao');
+    assert.strictEqual(RF.classificar('Amoxicilina 500').tipo, 'retencao');
+    assert.strictEqual(RF.classificar('Tramal 50 mg').tipo, 'confirmar');
+    assert.strictEqual(RF.classificar('Venvanse 30').tipo, 'confirmar');
+    assert.strictEqual(RF.classificar('Xyzabc 10 mg').tipo, 'confirmar');
+    assert.strictEqual(RF.classificar('Rivotril 2 mg').tipo, 'notificacao_b');
+    assert.strictEqual(RF.classificar('Pregabalina 75 mg').tipo, 'controle_especial');
+    assert.strictEqual(RF.classificar('Sumax 50').tipo, 'simples');
+  });
+  await t('concentração separada do nome', () => {
+    const c = (n, a, b) => { const r = RF.separarConcentracao(n); assert.strictEqual(r.nome, a); assert.strictEqual(r.conc, b); };
+    c('Pregabalina 75 mg', 'Pregabalina', '75 mg'); c('Levodopa + benserazida 200 mg + 50 mg', 'Levodopa + benserazida', '200 mg + 50 mg'); c('Clonazepam', 'Clonazepam', '');
+  });
+  await t('avisa remédio fora da neurologia', async () => {
+    const p = await RF.rodarRoteiro({ ...RF.ROTEIROS[3], meds: RF.ROTEIROS[3].meds });
+    assert.ok(p.alertas.some(a => /Fora da neurologia/.test(a.texto)), p.alertas.map(a => a.texto).join('|'));
   });
   await t('CNPJ/CNES do local de atendimento no controle especial', async () => {
     assert.ok(RF.docLocal('11.222.333/0001-81').valido); assert.ok(!RF.docLocal('11.222.333/0001-80').valido);

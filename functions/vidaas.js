@@ -1,4 +1,4 @@
-/* RefilMed — cliente da API de assinatura em nuvem (padrão ITI para prestadores de serviço de confiança)
+/* Meu Neuro — cliente da API de assinatura em nuvem (padrão ITI para prestadores de serviço de confiança)
    Mesmo fluxo do assinador local do Matheus (~/AssinadorVIDaaS/assinador.py), que já funciona em produção:
    1. autorizar: GET /v0/oauth/authorize com PKCE e login_hint = CPF → notificação no app do celular
    2. aguardar:  GET /valid/api/v1/trusted-services/authentications?code= até vir authorizationToken
@@ -6,7 +6,7 @@
    4. certificado: GET /v0/oauth/certificate-discovery (Bearer) → [{alias, certificate}]
    5. assinar:   POST /v0/oauth/signature com o hash SHA-256 → assinatura RAW PKCS#1 v1.5
    Configuração (variáveis da função): VIDAAS_BASE_URL (padrão https://certificado.vidaas.com.br),
-   VIDAAS_CLIENT_ID (cadastro da aplicação RefilMed na Valid) e, se a Valid exigir, VIDAAS_CLIENT_SECRET. */
+   VIDAAS_CLIENT_ID (cadastro da aplicação Meu Neuro na Valid) e o segredo VIDAAS_CLIENT_SECRET (Secret Manager). */
 const crypto = require('crypto');
 
 const base = () => process.env.VIDAAS_BASE_URL || 'https://certificado.vidaas.com.br';
@@ -42,9 +42,10 @@ async function consultarAprovacao(code) {
   try { return JSON.parse(t).authorizationToken || null; } catch (e) { return null; }
 }
 
-async function trocarToken(authorizationToken) {
-  const form = new URLSearchParams({ grant_type: 'authorization_code', client_id: clientId(), code: authorizationToken });
-  if (process.env.VIDAAS_CLIENT_SECRET) form.set('client_secret', process.env.VIDAAS_CLIENT_SECRET);
+async function trocarToken(authorizationToken, verifier) {
+  const form = new URLSearchParams({ grant_type: 'authorization_code', client_id: clientId(), code: authorizationToken, code_verifier: verifier });
+  const seg = process.env.VIDAAS_CLIENT_SECRET;
+  if (seg && seg !== 'nao-usado') form.set('client_secret', seg);
   const r = await fetch(base() + '/v0/oauth/token', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: form });
   if (r.status !== 200) throw new Error('VIDaaS recusou o token (HTTP ' + r.status + ').');
   const j = await r.json();

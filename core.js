@@ -1,4 +1,4 @@
-/* RefilMed — utilidades compartilhadas (global RF) */
+/* Meu Neuro — utilidades compartilhadas (global RF) */
 (function (G) {
   const RF = G.RF = G.RF || {};
 
@@ -24,7 +24,7 @@
     const abc = '23456789ABCDEFGHJKMNPQRSTUVWXYZ';
     const a = new Uint8Array(6);
     (G.crypto || require('crypto').webcrypto).getRandomValues(a);
-    return 'RF-' + Array.from(a, b => abc[b % abc.length]).join('');
+    return 'MN-' + Array.from(a, b => abc[b % abc.length]).join('');
   };
 
   RF.idade = function (nasc, ref) {
@@ -148,5 +148,5 @@
   RF.fecharModal = function () { const m = document.getElementById('rf-modal'); if (m) m.remove(); };
   document.addEventListener('keydown', e => { if (e.key === 'Escape') RF.fecharModal(); });
 
-  RF.marcaSVG = '<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#0f7b6c"/><path d="M25.6 12.4a10.4 10.4 0 0 0 -18.9 -2.6M6.4 19.6a10.4 10.4 0 0 0 18.9 2.6" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.7" stroke-linecap="round"/><path d="M6.2 5.8v4.3h4.3M25.8 26.2v-4.3h-4.3" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><g transform="translate(6.2 6.2) scale(.82)" fill="none" stroke="#fff" stroke-width="2.1" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 12.5l8 -8a4.95 4.95 0 0 1 7 7l-8 8a4.95 4.95 0 0 1 -7 -7"/><path d="M8.5 8.5l7 7"/></g></svg>';
+  RF.marcaSVG = '<svg viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#3346c4"/><g transform="translate(5 4.6) scale(.92)" fill="none" stroke="#fff" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M15.5 13a3.5 3.5 0 0 0 -3.5 3.5v1a3.5 3.5 0 0 0 7 0v-1.8"/><path d="M8.5 13a3.5 3.5 0 0 1 3.5 3.5v1a3.5 3.5 0 0 1 -7 0v-1.8"/><path d="M17.5 16a3.5 3.5 0 0 0 0 -7h-.5"/><path d="M19 9.3v-2.8a3.5 3.5 0 0 0 -7 0"/><path d="M6.5 16a3.5 3.5 0 0 1 0 -7h.5"/><path d="M5 9.3v-2.8a3.5 3.5 0 0 1 7 0v10"/></g></svg>';
 })(typeof window !== 'undefined' ? window : globalThis);

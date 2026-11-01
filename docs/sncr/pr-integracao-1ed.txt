@@ -1,0 +1,775 @@
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+Presidente da República
+Luís Inácio Lula da Silva
+
+Ministro da Saúde
+Alexandre Rocha Santos Padilha
+
+Diretor Presidente da Anvisa
+Leandro Pinheiro Safatle
+
+Diretores da Anvisa
+Daniela Marreco Cerqueira – Segunda Diretoria
+Marcelo Mario Matos Moreira – Terceira Diretoria (Diretor Substituto)
+Daniel Meirelles Fernandes Pereira – Quarta Diretoria
+Thiago Lopes Cardoso Campos – Quinta Diretoria
+
+Gerente de Produtos Controlados
+Renata de Morais Souza - Especialista em regulação e vigilância sanitária
+
+Elaboração / Redação
+Francisco Danilo Melo de Sousa - Especialista em regulação e vigilância sanitária
+Luciana dos Santos Lopes - Especialista em regulação e vigilância sanitária
+Thiago Brasil Silvério - Assessor e Gerente Substituto - Especialista em regulação e
+vigilância sanitária
+
+
+
+
+                                                                                                 1
+                                    Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                          É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+1. Sumário
+2.      Apresentação.................................................................................................... 4
+     2.1. Objetivo do documento Perguntas e Respostas .........................................................4
+     2.2. Público-alvo .............................................................................................................4
+3.      VISÃO GERAL DO SNCR ...................................................................................... 5
+        1.   O que é o Sistema Nacional de Controle de Receituários (SNCR)?............................................... 5
+        2.   Qual é o objetivo da integração dos serviços de prescrição eletrônica ao SNCR? ....................... 5
+        3.   Quais receituários serão controlados pelo SNCR no modelo eletrônico? .................................... 5
+        4.   O receituário físico (em papel) continuará existindo e sendo válido? ......................................... 5
+        5.   A RDC nº 1.028/2026 alterou a vigência geral da RDC nº 1.000/2025? ....................................... 5
+
+4.      INTEGRAÇÃO DE PLATAFORMAS E AMBIENTES .................................................. 6
+        6. O serviço de prescrição eletrônica precisa de credenciamento prévio ou selo de homologação
+        da Anvisa? ........................................................................................................................................... 6
+        7. É necessário peticionamento no sistema Solicita ou envio de documentos da empresa? .......... 6
+        8. Onde a documentação técnica da API do SNCR pode ser acessada? ........................................... 6
+        9. Existe algum custo ou taxa cobrada pela Anvisa para a utilização da API do SNCR? ................... 6
+     4.1. Ambiente de Treinamento ........................................................................................6
+        10. O que é o ambiente de treinamento e quais são os seus endereços oficiais? ............................. 6
+        11. O ambiente de treinamento continuará disponível após a entrada do SNCR em produção?...... 7
+        12. Existe um processo formal de emissão de parecer da Anvisa após os testes no treinamento? .. 7
+     4.2. Ambiente de Produção .............................................................................................7
+        13. Qual é o cronograma oficial para a entrada em produção da API do SNCR? ............................... 7
+        14. Quais são os endereços oficiais e parâmetros de acesso ao ambiente de produção? ................. 7
+        15. Como funciona a virada de chave do ambiente de treinamento para o ambiente de produção?
+            7
+
+5.      AUTENTICAÇÃO E CADASTRO ............................................................................ 8
+        16. Como funciona o fluxo de autenticação via Gov.br na API do SNCR? .......................................... 8
+        17. O serviço de prescrição eletrônica precisa obter credenciais fixas como client_id e client_secret?
+            8
+        18. Como cadastrar o parâmetro de retorno (client_url) e quais são as regras de whitelist? ........... 8
+        19. Como ocorre o cadastramento do prescritor no ambiente de treinamento do SNCR? ............... 8
+        20. Como ocorre o cadastramento do prescritor no ambiente de produção do SNCR? .................... 8
+        21. É possível consultar a elegibilidade ou cadastro prévio de um médico pelo SNCR? ................... 8
+        22. Como o SNCR valida as informações dos conselhos profissionais? .............................................. 9
+        23. Quais conselhos profissionais são aceitos pela API do SNCR?...................................................... 9
+        24. Existe exigência de nível de selo da conta Gov.br (Bronze, Prata ou Ouro) para que o prescritor
+        realize a requisição de numerações na API? ....................................................................................... 9
+        25. Como tratar o retorno da autenticação gov.br no frontend? ...................................................... 9
+        26. Como enviar o Token de Acesso para consumir os recursos (endpoints) da API? ....................... 9
+        27. Quais são as práticas recomendadas de segurança para armazenamento do Token? ................ 9
+        28. O que deve ser feito caso a API retorne um erro 401 (Não Autorizado)? .................................... 9
+
+6.      NUMERAÇÃO DOS RECEITUÁRIOS ................................................................... 10
+        29. Como funciona a requisição de Notificações de Receita (NRA, NRB, NRB2, NRR e NRT)? ......... 10
+        30. Como fica o limite diário de Notificações de Receita para o prescritor que atua em múltiplos
+        serviços de prescrição eletrônica no mesmo dia? ............................................................................ 10
+        31. É possível solicitar numerações ou cotas eletrônicas via API em nome de Pessoas Jurídicas
+        (hospitais/clínicas)? .......................................................................................................................... 10
+
+
+
+
+                                                                                                                                                             2
+                                 Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                       É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                          Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+     32. Quais são as regras para Receita de Controle Especial (RCE) e Sujeitas à Retenção (RET)?....... 10
+     33. Quais são os limites quantitativos mensais para RCE e RET? ..................................................... 10
+     34. Qual CNPJ deve ser informado no parâmetro CNPJ do payload das requisições de RCE e RET?11
+     35. A API possui endpoint para cancelamento de numerações ou de receitas emitidas? ............... 11
+     36. O que acontece com uma numeração solicitada via API que não foi utilizada ou cuja receita foi
+     cancelada? ........................................................................................................................................ 11
+     37. A API disponibiliza endpoint para consulta do saldo de numerações de notificação de receita do
+     prescritor? ......................................................................................................................................... 11
+     38. Quem controla o saldo dos números baixados dentro de um lote de 1.000? ........................... 11
+
+7.   RECEITUÁRIOS ELETRÔNICOS........................................................................... 12
+     39. Onde os modelos visuais oficiais de receituários eletrônicos estão publicados? ...................... 12
+     40. É permitida a personalização visual ou alteração do leiaute do receituário eletrônico? ........... 12
+     41. Os serviços de prescrição eletrônica podem incluir logotipos comerciais ou marcas d'água na
+     receita? 12
+     42. Como proceder quando o detalhamento da prescrição exceder uma página? ......................... 12
+     43. Quais são as exigências de assinatura eletrônica para receitas digitais? ................................... 12
+     44. A via eletrônica da receita precisa de impressão física em duas vias? ....................................... 12
+     45. O preenchimento do endereço do paciente é obrigatório nos modelos de receituários
+     eletrônicos? ...................................................................................................................................... 12
+     46. Quais campos do leiaute e do cabeçalho são de validação obrigatória na geração do PDF pelas
+     plataformas? ..................................................................................................................................... 13
+     47. Qual é o prazo que as plataformas possuem para concluir a integração após a entrada em
+     operação do registro de uso no SNCR? ............................................................................................. 13
+     48. O sistema de prescrição pode permitir a emissão de medicamentos da Portaria 344/98 no
+     leiaute de receita simples/comum?.................................................................................................. 13
+
+8.   FARMÁCIAS E DISPENSAÇÃO ........................................................................... 14
+     49. Como a farmácia realiza o registro de utilização (baixa) da receita eletrônica? ........................ 14
+     50. Haverá API para integração direta do SNCR com softwares de PDV/dispensação de farmácias?
+         14
+     51. O cadastro no CNES é obrigatório para estabelecimentos dispensadores? ............................... 14
+     52. Como é gerido o acesso das equipes de farmácia ao SNCR?...................................................... 14
+     53. Qual é o procedimento de contingência em caso de indisponibilidade da API do SNCR? ......... 14
+
+9.   DÚVIDAS E ORIENTAÇÕES ADICIONAIS ............................................................ 15
+     54. Os produtos de Cannabis possuem fluxo de requisição isolado ou diferenciado na API? ......... 15
+     55. Quais tipos de receituário devem ser utilizados para produtos de Cannabis?........................... 15
+     56. O Termo de Consentimento Livre e Esclarecido (TCLE) deve integrar o arquivo eletrônico da
+     receita? 15
+     57. Existem campos, metadados ou parâmetros específicos para Cannabis na API? ...................... 15
+     58. Quais são as regras de quantidade e validade para prescrições de Cannabis? .......................... 15
+
+
+
+
+                                                                                                                                                          3
+                     Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+              É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                            Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+2. Apresentação
+   2.1. Objetivo do documento Perguntas e Respostas
+
+A Agência Nacional de Vigilância Sanitária (Anvisa), por intermédio da Gerência de
+Produtos Controlados (GPCON), apresenta o presente documento de Perguntas e
+Respostas do Sistema Nacional de Controle de Receituários (SNCR v2.0). Este
+documento consolida o posicionamento oficial da Agência acerca das regras de negócio,
+diretrizes regulatórias e parâmetros operacionais de integração tecnológica aplicáveis
+às plataformas privadas de prescrição eletrônica, no âmbito da Resolução da Diretoria
+Colegiada - RDC nº 1.000, de 11 de dezembro de 2025, atualizada pela RDC nº 1.028,
+de 1º de junho de 2026.
+
+O objetivo fundamental deste guia é fornecer orientação clara, precisa e padronizada a
+desenvolvedores de software, empresas de Tecnologia da Informação em saúde,
+conselhos profissionais, farmácias e autoridades sanitárias. O documento busca dirimir
+dúvidas técnicas sobre o barramento de comunicação via API (Application Programming
+Interface), simplificar a adequação dos sistemas de prontuário eletrônico às exigências
+da Anvisa e assegurar o cumprimento estrito da legislação sanitária vigente.
+
+   2.2. Público-alvo
+
+Este documento é destinado principalmente a:
+
+      Serviços de prescrição eletrônica: Fornecedores de plataformas de prescrição
+       eletrônica, prontuários eletrônicos do paciente (PEP) e sistemas de gestão
+       hospitalar/ambulatorial que buscam integração automatizada via API com o
+       SNCR.
+      Profissionais prescritores: Médicos (CRM), Cirurgiões-Dentistas (CRO) e
+       Médicos-Veterinários (CRMV) que utilizam ferramentas digitais ou receituários
+       físicos para a prescrição de medicamentos sob controle especial.
+      Estabelecimentos dispensadores: Farmácias, drogarias e unidades
+       dispensadoras do Sistema Único de Saúde (SUS), responsáveis pelo registro de
+       uso eletrônico dos receituários.
+      Órgãos de Vigilância Sanitária (VISAs): Autoridades sanitárias estaduais, distrital
+       e municipais envolvidas na gestão de numerações físicas e eletrônicas e
+       fiscalização de receituários.
+
+
+
+
+                                                                                                4
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+3. VISÃO GERAL DO SNCR
+
+1.     O que é o Sistema Nacional de Controle de Receituários (SNCR)?
+
+
+O SNCR é uma plataforma tecnológica centralizada desenvolvida e gerida pela Anvisa
+para gerenciar, atribuir e rastrear em âmbito nacional as numerações de receituários de
+medicamentos sujeitos a controle especial. O sistema unifica o controle sanitário de
+prescrições físicas e eletrônicas em um banco de dados único, garantindo a
+rastreabilidade do ciclo de vida dos documentos desde a sua solicitação até a sua
+efetiva baixa na dispensação.
+2.   Qual é o objetivo da integração dos serviços de prescrição eletrônica ao
+SNCR?
+
+
+A integração via API (Application Programming Interface) permite que os serviços de
+prescrição eletrônica solicitem e recebam numerações oficiais em tempo real. Isso
+garante a rastreabilidade nacional das prescrições digitais, impede a duplicação ou
+reutilização fraudulenta de receitas e assegura a conformidade sanitária das prescrições
+emitidas no país sem sobrecarregar o trabalho diário dos profissionais de saúde.
+
+
+3.     Quais receituários serão controlados pelo SNCR no modelo eletrônico?
+
+
+O SNCR abrangerá a gestão e atribuição de numerações para:
+    as Notificações de Receita (NRA - amarela, NRB e NRB2 - azul, NRR - retinoides
+     e NRT - talidomida),
+    Receitas de Controle Especial (RCE - C1/C5); e
+    Receitas Sujeitas à Retenção (RET - incluindo antimicrobianos da RDC nº
+     471/2021 e agonistas do receptor de GLP-1).
+
+
+4.     O receituário físico (em papel) continuará existindo e sendo válido?
+
+A RDC nº 1.000/2025 e a implantação do SNCR não extinguem o receituário físico e
+não tornam obrigatória a prescrição eletrônica. Os modelos em papel continuam
+plenamente válidos por prazo indeterminado e coexistem com o formato digital. Além
+disso, a receita em papel é a principal via de contingência sanitária nacional em caso de
+falhas tecnológicas
+
+5.     A RDC nº 1.028/2026 alterou a vigência geral da RDC nº 1.000/2025?
+
+Não. A RDC nº 1.028/2026 alterou exclusivamente o prazo para a disponibilização
+completa das funcionalidades eletrônicas do SNCR em ambiente de produção para
+emissão via serviços de prescrição eletrônica, fixando o marco temporal para 30 de
+setembro de 2026. As disposições gerais da RDC nº 1.000/2025 entraram em vigor em
+13 de fevereiro de 2026.
+
+
+
+
+                                                                                                 5
+                        Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                 É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                               Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+4. INTEGRAÇÃO DE PLATAFORMAS E AMBIENTES
+
+6.     O serviço de prescrição eletrônica precisa de credenciamento prévio ou
+selo de homologação da Anvisa?
+Não está previsto processo de credenciamento prévio, licenciamento ou concessão de
+'selo de homologação' para empresas de software. As validações realizadas pelo
+sistema no momento da requisição dizem respeito estritamente à identificação e à
+regularidade do profissional prescritor junto ao seu conselho de classe. Qualquer
+plataforma poderá integrar-se, desde que atenda aos requisitos técnicos da API.
+7.    É necessário peticionamento no sistema Solicita ou envio de documentos
+da empresa?
+
+Não existe exigência de peticionamento no sistema Solicita nem de envio prévio de atos
+constitutivos, contratos sociais ou documentos cadastrais do serviço de prescrição
+eletrônica para participar da integração ou utilizar os ambientes da API.
+8.        Onde a documentação técnica da API do SNCR pode ser acessada?
+
+A documentação técnica completa, incluindo o Manual da API SNCR e as Instruções de
+Integração, está publicada oficialmente no portal da Anvisa na página dedicada ao
+SNCR.
+9.   Existe algum custo ou taxa cobrada pela Anvisa para a utilização da API do
+SNCR?
+Não. A disponibilização da infraestrutura, dos serviços e dos barramentos da API do
+SNCR é inteiramente gratuita para os serviço de prescrição eletrônica.
+
+
+      4.1. Ambiente de Treinamento
+
+
+10.       O que é o ambiente de treinamento e quais são os seus endereços oficiais?
+
+O ambiente de treinamento (sandbox/homologação) é um espaço dedicado a testes e
+validações tecnológicas, permitindo que as equipes de TI simulem o fluxo completo de
+requisição de numerações sem gerar impacto regulatório ou consumir cotas reais de
+numeração.
+Endereços Oficiais do Ambiente de Treinamento:
+
+         Portal de Treinamento: https://sncr-treinamento.anvisa.gov.br
+         Base URL da API de Homologação: https://api-
+          gateway.hmg.apps.anvisa.gov.br/api-sncr/api/v1/
+         Swagger UI: https://api-gateway.hmg.apps.anvisa.gov.br/api-sncr/swagger-
+          ui/index.html
+
+Assim, é obrigatório manter plena compatibilidade e fidelidade com a numeração
+oficialmente disponibilizada pelo sistema.
+
+
+
+
+                                                                                                   6
+                        Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                 É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                               Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+11.   O ambiente de treinamento continuará disponível após a entrada do SNCR
+em produção?
+
+O ambiente de treinamento continuará ativo, aberto e disponível permanentemente,
+mesmo após a entrada em produção em 30 de setembro de 2026, como forma de dar
+suporte adequado ao processo de integração dos serviços de prescrição eletrônica ao
+SNCR.
+
+
+
+
+12.    Existe um processo formal de emissão de parecer da Anvisa após os testes
+no treinamento?
+
+Não, posto que o ambiente de treinamento é de livre acesso e autoatendimento. Os
+serviços de prescrição eletrônica devem realizar as validações necessárias por conta
+própria, garantindo que suas requisições cumpram o Manual da API antes de realizarem
+a transição para a produção.
+
+
+      4.2. Ambiente de Produção
+
+
+13.       Qual é o cronograma oficial para a entrada em produção da API do SNCR?
+
+Conforme estabelecido pela RDC nº 1.028/2026, a disponibilização completa das
+funcionalidades do SNCR em ambiente de produção para a emissão de prescrições em
+plataformas parceiras ocorrerá até 30 de setembro de 2026.
+
+14.   Quais são os endereços oficiais e parâmetros de acesso ao ambiente de
+produção?
+Para a operação em ambiente real de produção, as plataformas integradas deverão
+direcionar suas chamadas aos endpoints oficiais que serão liberados no portal da
+Anvisa.
+
+Endereços Indicativos do Ambiente de Produção (Entrada em 30/09/2026):
+
+         Portal Oficial de Produção: https://sncr.anvisa.gov.br (ou indicação XX)
+         Base URL da API de Produção: https://api-gateway.prd.apps.anvisa.gov.br/api-
+          sncr/api/v1/
+15.   Como funciona a virada de chave do ambiente de treinamento para o
+ambiente de produção?
+
+A transição é essencialmente parametrizada pela alteração da Base URL da API na
+aplicação comercial da plataforma e pelo direcionamento da autenticação para o
+Keycloak/Gov.br de produção. Uma vez alterados os endpoints, as requisições passam
+a consumir cotas reais e a atribuir numerações oficiais da base nacional da Anvisa.
+
+
+
+
+                                                                                                   7
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+5. AUTENTICAÇÃO E CADASTRO
+
+16.    Como funciona o fluxo de autenticação via Gov.br na API do SNCR?
+
+A autenticação opera via protocolo O Auth 2.0 / OpenID Connect (OIDC) intermediado
+pelo Keycloak da Anvisa. Quando o prescritor aciona a requisição na plataforma privada,
+o sistema redireciona o usuário para o login do Gov.br. Após a validação bem-sucedida,
+o SNCR gera um código temporário que é trocado por um *Bearer Token* (JWT) enviado
+no cabeçalho (*Header*) das requisições subsequentes.
+
+17.    O serviço de prescrição eletrônica precisa obter credenciais fixas como
+client_id e client_secret?
+
+O serviço de prescrição eletrônica não solicita chaves fixas ou credenciais de parceiro
+à Anvisa. A autenticação baseia-se na sessão individual do prescritor autenticado no
+Gov.br, sendo o *Token* gerado dinamicamente para aquela transação.
+
+18.   Como cadastrar o parâmetro de retorno (client_url) e quais são as regras
+de whitelist?
+O endereço de retorno é informado dinamicamente no parâmetro de consulta
+(`client_url`) na chamada de login. Não há cadastro prévio de URLs na Anvisa. A regra
+de segurança exige obrigatoriamente que a URL pertença a um domínio nacional com
+terminação .br.
+19.  Como ocorre o cadastramento do prescritor no ambiente de treinamento
+do SNCR?
+
+No ambiente de treinamento, o cadastramento do profissional ocorre de forma
+automática em seu primeiro acesso, desde que informe e possua uma inscrição ativa
+em seu respectivo conselho profissional (CRM, CRO ou CRMV), viabilizando a
+realização imediata de testes e simulações de requisição.
+
+20.  Como ocorre o cadastramento do prescritor no ambiente de produção do
+SNCR?
+
+
+No ambiente de produção, o cadastramento é automático via API após autenticação via
+gov.br ao ser identificado que o profissional não possui cadastro no sistema. O
+cadastramento automático via sistema será disponibilizado em breve.
+O cadastro ocorre mediante a validação da identidade (via autenticação Gov.br) e da
+verificação de regularidade profissional do prescritor de forma síncrona junto à base do
+conselho profissional correspondente (CFM, CFO ou CFMV).
+21.  É possível consultar a elegibilidade ou cadastro prévio de um médico pelo
+SNCR?
+
+
+Não. A API não disponibiliza endpoints públicos para consulta de elegibilidade, status
+cadastral ou existência de registro de terceiros.
+
+
+
+
+                                                                                                 8
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+22.    Como o SNCR valida as informações dos conselhos profissionais?
+
+
+O SNCR realiza a validação através de uma consulta direta e em tempo real às bases
+de dados oficiais dos respetivos conselhos de classe (como o Conselho Federal de
+Medicina - CFM, ou o Conselho Federal de Odontologia - CFO). Quando o profissional
+se autentica ou realiza uma transação na plataforma, o sistema comunica com o
+conselho profissional para garantir que o número de inscrição e o estado do prescritor
+estão ativos e regulares, utilizando sempre dados reais e atualizados.
+
+
+23.    Quais conselhos profissionais são aceitos pela API do SNCR?
+
+
+A API aceita exclusivamente inscrições profissionais vinculadas ao CRM (Medicina),
+CRO (Odontologia) e CRMV (Medicina Veterinária).
+24.   Existe exigência de nível de selo da conta Gov.br (Bronze, Prata ou Ouro)
+para que o prescritor realize a requisição de numerações na API?
+Na etapa inicial de operação da API, não há trava vinculada ao nível da conta Gov.br
+para a realização das chamadas de requisição de numeração. No entanto, cabe
+ressaltar que a emissão e a assinatura da prescrição eletrônica final exigirão o uso de
+assinatura eletrônica qualificada (ICP-Brasil) ou avançada, conforme os requisitos
+estabelecidos para cada tipo de receituário.
+25.    Como tratar o retorno da autenticação gov.br no frontend?
+
+Após autenticar no gov.br, o backend do SNCR redirecionará o usuário de volta para a
+URL fornecida na requisição inicial, anexando o parâmetro session_id na URL. O
+frontend deve capturar esse session_id e fazer uma requisição do tipo GET para
+/auth/token com o intuito de obter o Token de Acesso (JWT). O session_id deve ser
+utilizado imediatamente e uma única vez.
+26.  Como enviar o Token de Acesso para consumir os recursos (endpoints) da
+API?
+Para acessar os endpoints protegidos, o token recebido (JWT) deve ser incluído no
+cabeçalho (header) de todas as requisições utilizando a estrutura Authorization: Bearer
+{token}.
+
+
+27.   Quais são as práticas recomendadas de segurança para armazenamento
+do Token?
+
+O token JWT deve ser armazenado de forma segura na aplicação. A diretriz técnica
+orienta que se dê preferência ao uso de session Storage em vez de localStorage para
+guardar essa informação.
+28.    O que deve ser feito caso a API retorne um erro 401 (Não Autorizado)?
+
+O token de acesso possui um prazo de validade. Sempre que a API retornar o erro 401
+(token expirado ou inválido), o sistema deve limpar a sessão (removendo o token
+armazenado) e redirecionar o usuário imediatamente para a página de login.
+
+
+
+
+                                                                                                 9
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+6. NUMERAÇÃO DOS RECEITUÁRIOS
+
+29.   Como funciona a requisição de Notificações de Receita (NRA, NRB, NRB2,
+NRR e NRT)?
+O fornecimento de Notificações de Receita via API depende de cota prévia aprovada
+pela Vigilância Sanitária local para o prescritor. A requisição via API exige lote de 10 a
+50 números por chamada, com limite diário de até 50 números por tipo de receita por
+prescritor.
+
+
+30.   Como fica o limite diário de Notificações de Receita para o prescritor que
+atua em múltiplos serviços de prescrição eletrônica no mesmo dia?
+
+
+O limite máximo de 50 numerações diárias para Notificações de Receita (NRA, NRB,
+NRB2, NRR e NRT) é calculado por prescritor (CPF/CRM). Para evitar que a cota diária
+do profissional seja esgotada em um único sistema e impeça a emissão de receitas em
+outras ferramentas durante o mesmo dia, os serviços de prescrição eletrônica devem
+parametrizar suas chamadas à API para solicitar lotes fracionados (mínimo de 10
+numerações), requisitando novos blocos apenas à medida que o saldo em uso for
+consumido.
+
+
+31.  É possível solicitar numerações ou cotas eletrônicas via API em nome de
+Pessoas Jurídicas (hospitais/clínicas)?
+
+
+Não. Nesta fase, a requisição e a guarda das numerações via API estão atreladas
+exclusivamente ao CPF do profissional prescritor (pessoa física).
+32.   Quais são as regras para Receita de Controle Especial (RCE) e Sujeitas à
+Retenção (RET)?
+
+
+A liberação para RCE e RET ocorre de forma automatizada e síncrona pela API, sem
+necessidade de aprovação prévia da Vigilância Sanitária, mediante a verificação da
+regularidade profissional junto ao respectivo Conselho de classe. As numerações são
+fornecidas obrigatoriamente em blocos fixos de 1.000 números por chamada.
+
+
+33.    Quais são os limites quantitativos mensais para RCE e RET?
+
+
+Cada profissional pode realizar até 3 requisições mensais de 1.000 números por classe
+de receita (teto de 3.000/mês por CRM-UF). As cotas de 3.000 para RCE e 3.000 para
+RET são segregadas, independentes e não intercambiáveis entre si.
+
+
+
+
+                                                                                                 10
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+34.    Qual CNPJ deve ser informado no parâmetro CNPJ do payload das
+requisições de RCE e RET?
+
+
+O campo CNPJ deve ser preenchido obrigatoriamente com o CNPJ do serviço de
+prescrição eletrônica (empresa mantenedora da ferramenta que consome a API). Este
+campo não deve ser preenchido com o CNPJ do cliente do serviço, tais como hospitais,
+clínicas, unidades de saúde ou consultórios onde o profissional atua.
+
+
+35.   A API possui endpoint para cancelamento de numerações ou de receitas
+emitidas?
+
+
+Na versão inicial da API do SNCR, não existe endpoint de cancelamento ou de
+devolução de numerações para uso pelos serviços de prescrição eletrônica.
+
+
+
+
+36.   O que acontece com uma numeração solicitada via API que não foi utilizada
+ou cuja receita foi cancelada?
+
+
+A numeração não utilizada torna-se indisponível para reutilização.
+O consumo da cota mensal do prescritor contabiliza-se de maneira definitiva no
+momento em que o lote é entregue ao serviço de prescrição eletrônica.
+37.    A API disponibiliza endpoint para consulta do saldo de numerações de
+notificação de receita do prescritor?
+Não há endpoint de consulta autônoma de saldo no MVP. Contudo, a cada requisição
+efetuada, o payload de resposta da API devolve o campo saldo receitas, que informa o
+estoque remanescente e emite um alerta caso o valor seja inferior a 50 unidades.
+38.    Quem controla o saldo dos números baixados dentro de um lote de 1.000?
+A gestão interna e o controle de quais números do lote já foram atribuídos a receitas
+emitidas cabem ao próprio serviço de prescrição eletrônica.
+
+
+
+
+                                                                                                 11
+                        Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                 É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                               Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+7. RECEITUÁRIOS ELETRÔNICOS
+
+39.   Onde os modelos visuais oficiais de receituários eletrônicos estão
+publicados?
+Os modelos oficiais são disponibilizados exclusivamente na página do portal da Anvisa.
+Link de acesso: Receituário Eletrônico.
+40.    É permitida a personalização visual ou alteração do leiaute do receituário
+eletrônico?
+
+Não, os modelos eletrônicos observam padronização oficial estrita. Não é permitida a
+alteração de campos, cores ou estrutura do documento.
+41.   Os serviços de prescrição eletrônica podem incluir logotipos comerciais
+ou marcas d'água na receita?
+Não, é expressamente proibida a inserção de logotipos do serviço de prescrição
+eletrônica, marcas de empresas, cabeçalhos ou rodapés comerciais no modelo oficial
+do receituário.
+42.   Como proceder quando o detalhamento da prescrição exceder uma
+página?
+A área de detalhamento dos medicamentos e posologia pode ser estendida para
+páginas subsequentes, desde que preservada a estrutura dos campos obrigatórios, do
+cabeçalho e do rodapé definidos no modelo oficial.
+
+
+43.       Quais são as exigências de assinatura eletrônica para receitas digitais?
+
+As exigências variam conforme a classe do medicamento prescrito:
+
+         Receituários Controlados (Portaria 344/98 e RDC 1000/2025): Exigem
+          obrigatoriamente assinatura eletrônica qualificada (ICP-Brasil) do profissional
+          prescritor.
+         Sujeitas à Retenção (RET - RDC 471/2021): Aceitam assinatura eletrônica
+          avançada (incluindo Gov.br) ou qualificada.
+
+44.       A via eletrônica da receita precisa de impressão física em duas vias?
+
+Não, uma vez que, no meio eletrônico, a receita é um documento nato-digital único. Não
+existe retenção de papel no ambiente digital, sendo o controle exercido exclusivamente
+pela baixa de uso no SNCR. O paciente pode imprimir uma cópia física apenas para
+acompanhamento do tratamento, bem como a farmácia pode imprimir uma cópia física
+para o seu controle interno.
+45.    O preenchimento do endereço do paciente é obrigatório nos modelos de
+receituários eletrônicos?
+Sim. O preenchimento do endereço completo do paciente constitui requisito legal e
+normativo obrigatório para a prescrição de medicamentos sujeitos a controle especial,
+devendo estar presente nos modelos e leiautes oficiais de receituários.
+
+
+
+
+                                                                                                   12
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+46.   Quais campos do leiaute e do cabeçalho são de validação obrigatória na
+geração do PDF pelas plataformas?
+
+O software deve inserir obrigatoriamente a expressão "Receituário de Controle Especial"
+no cabeçalho das receitas brancas. Além disso, para os modelos de Notificação de
+Receita, é obrigatória a inclusão do campo destinado ao endereço completo do paciente.
+47.   Qual é o prazo que as plataformas possuem para concluir a integração
+após a entrada em operação do registro de uso no SNCR?
+
+As receitas eletrônicas emitidas por sistemas não integrados só poderão ser aceitas
+pelas farmácias durante o prazo limite de até 30 dias após o início do registro de uso no
+SNCR
+48.    O sistema de prescrição pode permitir a emissão de medicamentos da
+Portaria 344/98 no leiaute de receita simples/comum?
+Não. O software deve impedir que fármacos controlados sejam gerados fora dos leiautes
+oficiais previstos pela RDC nº 1000/2025.
+
+
+
+
+                                                                                                 13
+                     Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+              É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                            Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+8. FARMÁCIAS E DISPENSAÇÃO
+49.    Como a farmácia realiza o registro de utilização (baixa) da receita
+eletrônica?
+
+O registro de uso é feito no portal web do SNCR, mediante autenticação de acesso
+institucional gerenciada pelo sistema Cadastro Anvisa.
+50.   Haverá API para integração direta do SNCR com softwares de
+PDV/dispensação de farmácias?
+Não. No conjunto de funcionalidades previstas até 30 de setembro de 2026, não há
+previsão de endpoint para integração com sistemas de ponto de venda (PDV) ou ERPs
+de farmácias.
+51.    O cadastro no CNES é obrigatório para estabelecimentos dispensadores?
+
+Não. Para farmácias e drogarias privadas, o cadastro no CNES não é obrigatório para
+acesso e operação no SNCR. Para os estabelecimentos privados, os requisitos de
+acesso futuro ao sistema compreendem: possuir e-CNPJ, Autorização de
+Funcionamento de Empresa (AFE) válida emitida pela Anvisa, estar com o
+estabelecimento regularizado e contar com conta Gov.br dos gestores/responsáveis. O
+cadastro no CNES (Cadastro Nacional de Estabelecimentos de Saúde) é exigido
+especificamente para farmácias e dispensários públicos de saúde.
+
+52.    Como é gerido o acesso das equipes de farmácia ao SNCR?
+
+O Responsável Legal da farmácia realiza o vínculo inicial no Cadastro Anvisa com o e-
+CNPJ do estabelecimento e delega os perfis de acesso aos profissionais designados
+para a realização do registro de uso, que operam o SNCR autenticando-se com seus
+CPFs no Gov.br.
+
+53.   Qual é o procedimento de contingência em caso de indisponibilidade da
+API do SNCR?
+
+Como a receita física em papel continua válida e coexistindo com o meio digital, diante
+de qualquer indisponibilidade sistêmica o profissional deve emitir o receituário físico
+convencional em papel. Não há previsão de funcionamento offline ou sincronização
+posterior pela API.
+
+
+
+
+                                                                                                14
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+9. DÚVIDAS E ORIENTAÇÕES ADICIONAIS
+54.    Os produtos de Cannabis possuem fluxo de requisição isolado ou
+diferenciado na API?
+
+Não. As prescrições de produtos à base de Cannabis seguem exatamente o mesmo
+fluxo operacional aplicável aos demais medicamentos sob controle especial, sem rotas
+ou tratamentos sistêmicos diferenciados no SNCR.
+
+55.  Quais tipos de receituário devem ser utilizados para produtos de
+Cannabis?
+Para os produtos de Cannabis regularizados pela Anvisa, a definição do receituário varia
+em função da concentração de THC presente na formulação: nas opções com teor de
+THC menor ou igual a 0,2% (ou medicamentos predominantemente à base de
+Canabidiol), a prescrição deve ser realizada por meio de Receita de Controle Especial
+(RCE) em duas vias; já para os produtos cujo teor de THC seja superior a 0,2%, a
+prescrição exige obrigatoriamente a Notificação de Receita A (NRA), acompanhada da
+respetiva justificativa clínica, nos termos fixados pela Portaria SVS/MS n.º 344/1998 e
+respetivas atualizações normativas.
+
+56.   O Termo de Consentimento Livre e Esclarecido (TCLE) deve integrar o
+arquivo eletrônico da receita?
+
+Não. O TCLE pode ser gerado, assinado e armazenado de forma autônoma. Não há
+exigência técnica de que o termo componha o mesmo arquivo PDF da prescrição.
+
+57.  Existem campos, metadados ou parâmetros específicos para Cannabis na
+API?
+
+Não. O payload da API do SNCR não possui campos específicos para notificação de
+lotes, concentração ou metadados exclusivos de Cannabis.
+
+58.  Quais são as regras de quantidade e validade para prescrições de
+Cannabis?
+
+As quantidades máximas e prazos de validade das receitas de produtos de Cannabis
+seguem rigorosamente os limites normativos já estabelecidos pela Portaria SVS/MS nº
+344/1998 e pela RDC nº 1.015/2026.
+
+
+
+
+                                                                                                 15
+

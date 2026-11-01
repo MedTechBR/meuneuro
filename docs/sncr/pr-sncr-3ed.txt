@@ -1,0 +1,316 @@
+PERGUNTAS E RESPOSTAS
+    RDC 873/2024
+
+
+
+
+    Gerência de Produtos Controlados / Quinta Diretoria
+                        4ª Edição
+                     Janeiro de 2025
+Copyright © 2024. Agência Nacional de Vigilância Sanitária. É permitida a reprodução parcial ou
+total desta obra, desde que citada a fonte. Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+Presidente da República
+Luís Inácio Lula da Silva
+
+Ministra da Saúde
+Nísia Verônica Trindade Lima
+
+Diretor-presidente
+Vago
+
+Diretores
+Daniel Meirelles Fernandes Pereira
+Romison Rodrigues Mota
+Danitza Passamai Rojas Buvinich.
+
+Gerente de Produtos Controlados
+Renata de Morais Souza
+
+Redação
+Luciana dos Santos Lopes
+Thiago Brasil Silvério
+Introdução
+
+A RDC nº 873/2024 representa um avanço significativo na gestão de medicamentos
+controlados no Brasil, ao estabelecer o Sistema Nacional de Controle de Receituários (SNCR),
+uma plataforma on-line que fornece às autoridades sanitárias uma numeração que deve ser
+utilizada nas Notificações de Receita pelos prescritores. Este sistema promove a
+centralização do controle especial dos receituários de substâncias controladas, alinhando-
+se à Lei nº 13.732/2018, que reconhece a validade nacional destes receituários.
+
+O SNCR faz parte das estratégias da Anvisa de modernização do controle de receituários e
+constitui uma importante ferramenta de auxílio às vigilâncias sanitárias estaduais e
+municipais.
+
+Além disso, a RDC nº 873/2024 traz importantes ajustes ao texto da Portaria SVS/MS nº
+344/98 e da Portaria SVS/MS nº 06/99, decorrentes tanto da edição da Lei nº
+13.732/2018, ao dispor sobre a validade nacional dos receituários, quanto da
+implementação do SNCR e sua base nacional de numeração de receituários.
+
+Este documento de Perguntas e Respostas aborda questões de destaque relacionadas à
+RDC nº 873/2024 e às modificações que ela promove na Portaria SVS/MS nº 344/98, na
+Portaria SVS/MS nº 06/99, e na RDC nº 58/2007 e na RDC nº 11/2011. A leitura atenta
+deste material é essencial para a correta aplicação das novas diretrizes e para a
+adaptação às mudanças introduzidas pelo SNCR.
+O que Há de Novo Nesta Versão do Manual
+    Esta 4ª edição do Perguntas e Respostas do Sistema Nacional de Controle de
+Receituários (SNCR) apresenta atualizações significativas para aprimorar a compreensão
+e execução dos processos relacionados ao sistema. As mudanças foram implementadas
+para resolver problemas recorrentes e otimizar as operações das autoridades sanitárias.
+A seguir, destacamos as principais alterações:
+    Prorrogação da Obrigatoriedade: Conforme a Resolução RDC nº 956, de 27 de
+dezembro de 2024, a obrigatoriedade do uso do SNCR foi prorrogada para 1º de julho
+de 2025, permitindo mais tempo do SNVS para adaptação ao sistema.
+    Cadastro de Usuários: Foram atualizadas as informações que devem ser enviadas
+pelos usuários para cadastramento no SNCR, e inseridas orientações detalhadas sobre o
+processo de cadastramento de usuários. É enfatizada a necessidade de verificação
+cuidadosa dos dados para evitar erros.
+    Gestão de Perfis de Acesso: O sistema continua a operar com um único perfil de
+acesso, sem distinções de permissões. Reforçamos a importância da supervisão pelas
+Vigilâncias Sanitárias Estaduais para a gestão das atividades e atribuição de
+responsabilidades.
+    Suporte e Contato: Acrescentada a informação sobre como pedir a edição de dados
+no sistema.
+Perguntas e Respostas sobre a RDC nº 873/2024
+
+
+Impacto da RDC nº 873/2024 na Portaria SVS/MS nº
+344/98, Portaria nº 06/99 e, na RDC nº 58/2007 e
+RDC nº 11/2011
+1. Quais as principais mudanças promovidas pela RDC 873/2024 na legislação, como
+   por exemplo, a Portaria 344/98 e Portaria 06/99?
+
+A RDC 873/2024 introduz diversas alterações nas Portarias 344/98 e Portaria 06/99,
+incluindo:
+
+
+   •   Validade nacional das notificações de receita: As notificações de receita "B",
+       "B2" (RDC nº 58/2007), Especial (para retinóides de uso sistêmico) passam a ter
+       validade em todo o território nacional por 30 dias. A Notificação de Receita de
+       Talidomida (RDC nº 11/2011) passa, por sua vez, a ter validade em todo o
+       território nacional por 20 dias. Isso significa que uma receita emitida em um
+       determinado estado será aceita em todas as Unidades Federativas - UFs para compra
+       do medicamento prescrito.
+   •   Eliminação da necessidade de justificativa para aquisição em outra Unidade
+       Federativa - UF: No caso da Notificação de Receita “A”, que já era válida em todo
+       território nacional, não é mais necessário apresentar justificativa para adquirir o
+       medicamento em outra Unidade Federativa.
+   •   Eliminação da averiguação e visto em receitas de outras UFs: Os receituários
+       que já eram válidos em todo território nacional (notificação de receita "A" e a
+       Receita de Controle Especial) não precisam mais ser apresentados à autoridade
+       sanitária local para averiguação e visto, quando provenientes de outra UF.
+   •   Implementação do SNCR: A RDC nº 873/2024 estabelece a obrigatoriedade do
+       uso do SNCR pelas Autoridades Sanitárias Competentes, a partir de 01º de
+       janeiro de 2025, para a gestão de receituários de medicamentos controlados.
+   •   Atualização de artigos: Diversos artigos da Portaria SVS/MS nº 344/98 e da
+       Portaria nº 06/99 foram alterados ou revogados para se adequarem às novas
+       disposições da RDC nº 873/2024.
+
+
+
+
+   Atenção: o uso obrigatório do SNCR foi adiado para 1º
+                   de julho de 2025.
+Validade Nacional das Receitas de Medicamentos Controlados
+
+2. A partir desta data não será necessário apresentar justificativa para aquisição de
+   medicamentos sujeitos a NRA em outra unidade federativa (UF)?
+
+Isso mesmo. A partir da vigência da RDC nº 873/2024 (18 de julho de 2024), não será
+mais necessário apresentar justificativa para aquisição de medicamentos sujeitos a NRA
+em outra UF. O artigo 41 da Portaria SVS/MS nº 344/98 foi alterado, estabelecendo que
+a Notificação de Receita "A" será válida em todo o Território Nacional por 30 dias, sem
+menção à necessidade de justificativa para aquisição em outra UF.
+
+3. Mesmo não sendo necessário apresentar justificativa para aquisição em outra UF,
+   será necessário apresentar a NRA proveniente de outra UF à autoridade sanitária
+   para averiguação e visto em 72h?
+
+Não. A RDC nº 873/2024 remove essa exigência. O parágrafo único do artigo 41 da
+Portaria SVS/MS nº 344/98, que tratava dessa necessidade, foi eliminado, retirando a
+necessidade de apresentação da NRA à autoridade sanitária para averiguação e visto.
+
+4. A partir da vigência da RDC nº 873/2024 (18 de julho de 2024), será necessário
+   apresentar receita de controle especial proveniente de outra UF à autoridade
+   sanitária para averiguação e visto?
+
+Não. A RDC nº 873/2024 revogou o § 3˚do art. 52, da Portaria SVS/MS nº 344, de 12 de
+maio de 1998.
+
+
+Uso do Sistema Nacional de Controle de Receituários (SNCR)
+
+5. Quem deve usar o Sistema Nacional de Controle de Receituários (SNCR)?
+
+O SNCR é destinado às Vigilâncias Sanitárias de Estados, Municípios e do Distrito Federal.
+O sistema também permite a consulta, pelo cidadão e por profissionais de saúde, acerca
+da existência de determinada numeração de receituário.
+
+6. Como acesso o SNCR?
+
+Para acessar o SNCR, utilize o link: https://sncr.anvisa.gov.br/.
+7. Como me cadastro para utilizar o SNCR?
+
+Os gestores das autoridades sanitárias locais devem seguir o procedimento abaixo para
+cadastrar os usuários no Sistema Nacional de Controle de Receituários (SNCR):
+
+Envio de Dados via SEI:
+
+• Encaminhar um ofício através do Sistema Eletrônico de Informações (SEI) à Anvisa. O ofício
+deve conter os seguintes dados pessoais para cada usuário a ser cadastrado:
+           o   Nome completo
+           o   E-mail pessoal (deve ser o mesmo utilizado em outros sistemas da Anvisa,
+               se aplicável)
+           o   CPF
+           o   VISA (especificar se é municipal ou estadual, e o respectivo estado ou
+               município)
+
+Cadastro e Notificação:
+
+• Após o envio dos dados e processamento do cadastro, a Anvisa notificará a conclusão do
+cadastro por e-mail.
+
+Acesso ao Sistema:
+
+• Os usuários devem acessar o SNCR utilizando o login Gov.br. O acesso só será possível após
+a conclusão do cadastro conforme descrito no item 3.1.1.
+
+• Importante: A Anvisa não gerencia o login Gov.br. Para suporte relacionado a esse acesso,
+consulte a seção de Ajuda da conta Gov.br.
+
+
+Observações importantes:
+   •   Uso de E-mail Pessoal:
+           o   Cada servidor deve usar seu próprio e-mail pessoal para o cadastro, seja
+               ele com domínio institucional ou não. Isso visa evitar problemas
+               associados ao uso de e-mails genéricos das visas.
+   •   Verificação dos Dados:
+           o   É essencial verificar cuidadosamente todos os dados, especialmente o
+               CPF, para evitar atrasos ou problemas no cadastro devido a erros de
+               digitação. Vários problemas de cadastro de usuários têm sido
+               identificados em razão de erros nos dados informados.
+                Importante: O SNCR oferece acesso a funcionalidades de geração
+                 de números para Notificações de Receita A (NRA) e Talidomida
+                  (NRT) a todos os usuários, mas isso não significa que as Visas
+                 municipais estejam autorizadas a utilizá-las. Esta funcionalidade
+                está disponível a todos até que sejam implementados os perfis de
+                                             usuário.
+
+               Assim, o SNCR não altera os fluxos e as responsabilidades definidos
+                por cada Estado, com relação à descentralização das atividades.
+
+
+8. O SNCR será de uso obrigatório pelas Vigilâncias Sanitárias a partir de quando?
+
+Conforme a Resolução RDC nº 956, de 27 de dezembro de 2024, a obrigatoriedade do
+uso do SNCR foi prorrogada para 1º de julho de 2025, permitindo mais tempo do SNVS
+para adaptação ao sistema. Recomendamos a todas as Visas que busquem iniciar a
+utilização do sistema o quanto antes.
+
+9. Sou uma Vigilância Sanitária local, já posso utilizar o SNCR antes da data
+   obrigatória?
+
+Sim, o sistema já está disponível para o uso pelos órgãos de vigilância sanitária que assim
+o desejarem.
+
+10. Como as vigilâncias sanitárias devem se organizar para atender os prazos de
+    transição?
+
+   ✓ Até 30 de junho de 2025, as vigilâncias sanitárias competentes já devem ter seus
+     usuários do SNCR cadastrados e treinados para utilização do sistema.
+   ✓ A partir de 01º de julho de 2025, todas as numerações a serem utilizadas em
+     talonários ou distribuídas aos prescritores devem ser provenientes do SNCR.
+   ✓ Devem ser iniciados os procedimentos necessários (licitações, compras, etc) para
+     a confecção de talonários em prazo suficiente para que, minimamente, a partir
+     de 19 de julho de 2026, os talonários a serem entregues contenham as
+     numerações provenientes do SNCR.
+
+11. Como prescritor, devo acessar o SNCR para solicitar talonários ou numerações?
+
+Não, neste momento, não há modificações dos procedimentos para os prescritores
+solicitarem suas numerações ou talonários de Notificação de Receita. Assim, devem ser
+seguidos os mesmos procedimentos já estabelecidos na Portaria SVS/MS nº 344/98 e
+Portaria nº 06/1999, e nas orientações complementares definidas pelas Vigilâncias
+Sanitárias locais.
+O SNCR deve ser acessado, no momento, somente pela Vigilância Sanitária competente.
+Talonários de Notificação de Receita
+
+12. O que fazer com os talonários de Notificação de Receita A já impressos com base
+    em numeração fornecida localmente?
+
+Talonários impressos até 30/06/2025 sem numeração do SNCR podem ser entregues até
+18/07/2026.
+
+13. Qual será a validade dos talonários já distribuídos?
+
+Talonários já distribuídos aos prescritores podem ser utilizados por prazo
+indeterminado.
+
+
+Modelo de Notificação de Receita
+
+14. Como as Vigilâncias Sanitárias devem proceder para ajustar o novo padrão de
+    numeração do SNCR nos campos dos Modelos de Notificação de Receita
+    atualmente utilizados?
+
+As Vigilâncias Sanitárias locais devem ajustar os campos “UF” e “Número” de cada
+modelo de Notificação de Receita para acomodar o novo padrão de numeração do SNCR.
+O sistema já inclui, na composição do número, um campo que corresponde ao estado
+onde a receita foi emitida, tornando desnecessária a indicação do estado no campo “UF”
+do modelo.
+
+As numerações geradas pelo SNCR seguem um padrão específico que incorpora o código
+da Unidade Federativa. A tabela a seguir detalha os códigos correspondentes a cada
+estado:
+
+
+ Código    Unidade            Código    Unidade             Código   Unidade
+           Federativa                   Federativa                   Federativa
+ 12        Acre               41        Paraná              21       Maranhão
+ 27        Alagoas            25        Paraíba             51       Mato Grosso
+ 16        Amapá              15        Pará                50       Mato Grosso do
+                                                                     Sul
+ 13        Amazonas           26        Pernambuco          31       Minas Gerais
+ 29        Bahia              22        Piauí               14       Roraima
+ 23        Ceará              24        Rio Grande do       42       Santa Catarina
+                                        Norte
+ 53        Distrito Federal   43        Rio Grande do Sul   28       Sergipe
+ 32        Espírito Santo     33        Rio de Janeiro      35       São Paulo
+ 52        Goiás              11        Rondônia            17       Tocantins
+   A sequência de numeração é gerada automaticamente conforme o padrão do
+SNCR, garantindo que cada receita seja identificável de acordo com o estado de
+emissão.:
+
+
+
+
+Inoperância do SNCR
+
+15. O que fazer em caso de inoperância do SNCR?
+
+Em caso de eventual inoperância do SNCR, a Anvisa indicará as ferramentas que poderão
+ser utilizadas em caráter excepcional, mediante autorização expressa. Isso pode incluir
+o gerenciamento por meio de procedimentos locais a serem indicados pela Autoridade
+Sanitária Competente.
+
+
+Suporte
+Para dúvidas e suporte relacionados ao Sistema Nacional de Controle de
+Receituários (SNCR), por favor, entre em contato pelo e-mail
+med.controlados@anvisa.gov.br.
+
+Este canal está disponível para atender solicitações de edição de dados no
+sistema, incluindo ajustes em cadastros de gráficas, prescritores ou instituições.
+
+
+Observações Adicionais
+
+As alterações nos artigos 69, 76, 77, 78, 79 e 107 da Portaria nº 6/99 entrarão em vigor
+a partir do início da utilização do Sistema Nacional de Controle de Receituários (SNCR)
+pela Autoridade Sanitária Competente, pois se referem a medidas inerentes ao uso do
+SNCR.
+

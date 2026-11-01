@@ -1,8 +1,8 @@
 rules_version = '2';
-// RefilMed — regras do Firestore
+// Meu Neuro — regras do Firestore
 // pedidos: o paciente (login anônimo) cria e vê o próprio pedido; só médicos aprovados (claim "medico") listam e atendem.
 // medicos: cada médico mantém o próprio perfil; "aprovado" só o servidor grava (função definirPapel).
-// sessoesAssinatura, uso: só o servidor.
+// sessoesAssinatura, uso: só o servidor. Atendente não lê pedidos: usa as funções atendenteFila e atendenteRegistrar.
 service cloud.firestore {
   match /databases/{database}/documents {
     function logado() { return request.auth != null; }
@@ -16,7 +16,8 @@ service cloud.firestore {
       allow create: if dono(request.resource.data)
         && request.resource.data.status in ['aguardando', 'urgencia'] && semAtendimento();
       // paciente só mexe enquanto o pedido está parado por urgência (ele pode refazer a triagem)
-      allow update: if medico()
+      // pedido assinado não muda mais, e só o servidor marca como assinado (a assinatura é conferida lá)
+      allow update: if (medico() && resource.data.status != 'assinado' && request.resource.data.status != 'assinado')
         || (dono(resource.data) && dono(request.resource.data)
             && resource.data.status == 'urgencia'
             && request.resource.data.status in ['aguardando', 'urgencia'] && semAtendimento());
@@ -28,6 +29,11 @@ service cloud.firestore {
         && !('aprovado' in request.resource.data);
       allow update: if logado() && request.auth.uid == uid
         && request.resource.data.get('aprovado', null) == resource.data.get('aprovado', null);
+    }
+    // sinalização do vídeo (WebRTC): só SDP e ICE, sem dado de saúde; id não adivinhável; o médico apaga ao encerrar
+    match /salas/{id} {
+      allow get, create, update, delete: if logado();
+      match /{sub}/{cand} { allow read, write: if logado(); }
     }
     match /{doc=**} { allow read, write: if false; }
   }

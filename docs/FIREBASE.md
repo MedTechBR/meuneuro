@@ -1,4 +1,4 @@
-# Backend Firebase do RefilMed
+# Backend Firebase do Meu Neuro
 
 Projeto **refilmed** (https://console.firebase.google.com/project/refilmed), conta matheusparente1@gmail.com. Criado em 24/09/2026.
 
@@ -25,6 +25,6 @@ Abra o site com `?backend=firebase` (vale para aquele navegador; `?backend=local
 1. **Plano Blaze** (Uso e faturamento). Depois, duplo clique em `publicar-servidor.command`:
    publica as funções (IA, consulta por código, verificação, assinatura VIDaaS, QR do ITI, aprovação)
    e as regras do Storage.
-2. **VIDaaS:** cadastrar a aplicação RefilMed na Valid e colocar o `VIDAAS_CLIENT_ID` em
+2. **VIDaaS:** cadastrar a aplicação Meu Neuro na Valid e colocar o `VIDAAS_CLIENT_ID` em
    `functions/.env.refilmed`; rodar o script de novo.
 3. Ligar para todos: `ativo: true` em `config.js` e publicar o site.

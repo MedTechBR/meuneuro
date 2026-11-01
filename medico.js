@@ -1,4 +1,4 @@
-/* RefilMed — painel do médico: fila, revisão, receita, atendimento e assinatura */
+/* Meu Neuro — painel do médico: fila, revisão, receita, atendimento e assinatura */
 (function (G) {
   const RF = G.RF;
   const { esc, $ } = RF;
@@ -30,6 +30,8 @@
       if (casoId === 'perfil') casoId = null;
       if (S.abaCaso !== 'resumo') S.abaCaso = 'resumo';
     } else {
+      const res = await RF.sncr.aplicarResultado();
+      if (res) RF.toast(res.erro || res.msg);
       const m = (await RF.backend.medico.perfil()) || {};
       S.medico = m;
       if (!m.nome || !m.crm || !m.uf) return telaPerfil(el, true);
@@ -58,21 +60,21 @@
         <div class="linha2"><label class="campo"><span>CRM</span><input class="inp" name="crm" value="${v('crm')}" required inputmode="numeric"></label>
         <label class="campo"><span>UF do CRM</span><select class="inp" name="uf" required><option value="">UF</option>${UFS.map(u => `<option ${m.uf === u ? 'selected' : ''}>${u}</option>`).join('')}</select></label></div>
         <div class="linha2"><label class="campo"><span>RQE</span><input class="inp" name="rqe" value="${v('rqe')}"></label>
-        <label class="campo"><span>Especialidade</span><input class="inp" name="especialidade" value="${v('especialidade')}" placeholder="Ex.: Clínica Médica, Cardiologia"></label></div>
+        <label class="campo"><span>Especialidade</span><input class="inp" name="especialidade" value="${v('especialidade')}" placeholder="Ex.: Neurologia"></label></div>
         <div class="linha2"><label class="campo"><span>Local de atendimento (clínica ou serviço)</span><input class="inp" name="nomeLocal" value="${v('nomeLocal')}" placeholder="Ex.: Clínica São Lucas"></label>
         <label class="campo"><span>CNPJ ou CNES do local</span><input class="inp" name="cnpjLocal" value="${v('cnpjLocal')}" inputmode="numeric" placeholder="00.000.000/0000-00 ou 7 dígitos do CNES"></label></div>
-        <p class="nota" style="margin:-6px 0 12px">Obrigatório na receita de controle especial (Portaria 6/1999, art. 85, redação da RDC 1.000/2025). É do local onde você atende, não da empresa do RefilMed.</p>
+        <p class="nota" style="margin:-6px 0 12px">Sai junto do endereço do emitente. É do local onde você atende, não da empresa do Meu Neuro.</p>
         <label class="campo"><span>Endereço profissional completo</span><input class="inp" name="endereco" value="${v('endereco')}" required placeholder="Rua, número, sala, bairro"></label>
         <div class="linha2"><label class="campo"><span>Cidade</span><input class="inp" name="cidade" value="${v('cidade')}" required></label>
         <label class="campo"><span>UF</span><select class="inp" name="ufEnd" required><option value="">UF</option>${UFS.map(u => `<option ${m.ufEnd === u ? 'selected' : ''}>${u}</option>`).join('')}</select></label></div>
         <div class="linha2"><label class="campo"><span>Telefone profissional</span><input class="inp" name="telefone" value="${v('telefone')}" required></label>
-        <label class="campo"><span>CPF (para a assinatura VIDaaS)</span><input class="inp" name="cpf" value="${v('cpf')}" inputmode="numeric" placeholder="000.000.000-00"></label></div>
+        <label class="campo"><span>CPF (é conferido com o seu certificado)</span><input class="inp" name="cpf" value="${v('cpf')}" inputmode="numeric" placeholder="000.000.000-00"></label></div>
         <div style="display:flex;gap:8px;justify-content:flex-end;margin-top:6px">${primeiro ? '' : '<a class="btn" href="#/medico">Cancelar</a>'}<button class="btn btn-p">Salvar</button></div>
       </form>
       ${primeiro ? '' : secaoSNCR(m)}
       ${primeiro ? '' : `<div style="border-top:1px solid var(--line);margin-top:22px;padding-top:16px">
-        <h3>Dados deste navegador</h3><p class="small muted" style="margin:4px 0 10px">Modo ${RF.backend.modo}. ${Object.entries(RF.backend.diagnostico()).map(([k, s]) => esc(k.replace('refilmed.v1.', '')) + ': ' + esc(s)).join(' · ') || 'nada salvo'}</p>
-        <div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn-s" id="exp"><i class="ti ti-download"></i>Exportar cópia (JSON)</button><button class="btn btn-s btn-g" id="sair"><i class="ti ti-logout"></i>Sair</button></div></div>`}
+        <h3>Dados deste navegador</h3><p class="small muted" style="margin:4px 0 10px">Modo ${RF.backend.modo}. ${Object.entries(RF.backend.diagnostico()).map(([k, s]) => esc(k.replace('meuneuro.v1.', '')) + ': ' + esc(s)).join(' · ') || 'nada salvo'}</p>
+        <div style="display:flex;gap:8px;flex-wrap:wrap">${RF.backend.modo === 'local' ? '<button class="btn btn-s" id="exp"><i class="ti ti-download"></i>Exportar cópia (JSON)</button>' : ''}<button class="btn btn-s btn-g" id="sair"><i class="ti ti-logout"></i>Sair</button></div></div>`}
     </div></div>`;
     $('#fp').onsubmit = async e => {
       e.preventDefault();
@@ -85,58 +87,49 @@
       location.hash = '#/medico';
       if (primeiro) RF.telaMedico(el);
     };
-    ligarSNCR(el);
-    const exp = $('#exp'); if (exp) exp.onclick = () => baixar('refilmed-backup-' + new Date().toISOString().slice(0, 10) + '.json', JSON.stringify(RF.backend.exportar(), null, 1), 'application/json');
+    ligarSNCR();
+    const exp = $('#exp'); if (exp) exp.onclick = () => baixar('meuneuro-backup-' + new Date().toISOString().slice(0, 10) + '.json', JSON.stringify(RF.backend.exportar(), null, 1), 'application/json');
     const sair = $('#sair'); if (sair) sair.onclick = async () => { await RF.backend.medico.sair(); RF.backend.sessao.sair(); RF.atualizarTopo(); location.hash = '#/'; };
   }
 
   /* ---------- SNCR (numeração oficial da Anvisa) ---------- */
   function secaoSNCR(m) {
-    const sn = RF.sncr, bl = (m.sncr || {}).rce, nb = (m.sncr || {}).nrb || [];
-    const rest = sn.restantes(bl);
+    const sn = RF.sncr;
+    const linha = (tipo, nota) => `<dt>${sn.TIPOS[tipo].rot}</dt><dd>${sn.saldo(m, tipo)} número(s) ${nota ? `<span class="small muted">· ${nota}</span>` : ''}</dd>`;
     return `<div class="sncr-box" style="border-top:1px solid var(--line);margin-top:22px;padding-top:16px">
-      <h3 style="display:flex;align-items:center;gap:10px"><span class="ico sm c-verde"><i class="ti ti-shield-check"></i></span>SNCR da Anvisa <span class="tag ${sn.ambiente() === 'producao' ? 'ok' : 'warn'}">${sn.ambiente() === 'producao' ? 'produção' : 'homologação'}</span></h3>
-      <p class="small muted" style="margin:6px 0 12px">Numeração oficial obrigatória nas receitas de controle especial eletrônicas a partir de 30/10/2026 (RDC 1.000/2025). O cadastro no SNCR é do médico: entre uma vez com o gov.br em sncr${sn.ambiente() === 'producao' ? '' : '-treinamento'}.anvisa.gov.br.</p>
+      <h3 style="display:flex;align-items:center;gap:10px"><span class="ico sm c-verde"><i class="ti ti-shield-check"></i></span>Numeração SNCR da Anvisa <span class="tag ${sn.ambiente() === 'producao' ? 'ok' : 'warn'}">${sn.ambiente() === 'producao' ? 'produção' : 'homologação'}</span></h3>
+      <p class="small muted" style="margin:6px 0 12px">Obrigatória nos receituários controlados eletrônicos. Cada pedido abre o gov.br com a sua conta; número obtido e não usado se perde, então peça só o que vai usar.</p>
       <dl class="dl" style="grid-template-columns:200px 1fr;font-size:14px">
-        <dt>Sessão gov.br</dt><dd>${sn.conectado() ? '<span class="tag ok">conectado</span>' : '<span class="tag">desconectado</span>'}</dd>
-        <dt>Controle especial (RCE)</dt><dd>${bl && bl.inicio ? `${rest} número(s) restantes · bloco ${esc(bl.inicio)} a ${esc(bl.fim)}` : 'nenhum bloco obtido'}</dd>
-        <dt>Notificação B</dt><dd>${nb.length ? nb.length + ' número(s) disponíveis' : 'nenhum'}</dd>
+        ${linha('controle_especial', 'bloco de 1.000, até 3 pedidos por mês')}${linha('notificacao_b', 'da cota aprovada pela Vigilância')}${linha('notificacao_a', 'da cota aprovada pela Vigilância')}${linha('retencao', 'bloco de 1.000, até 3 pedidos por mês')}
       </dl>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px">
-        ${sn.conectado() ? '<button class="btn btn-s" id="sncr-bloco" type="button"><i class="ti ti-numbers"></i>Obter 1.000 números de controle especial</button><button class="btn btn-s" id="sncr-nrb" type="button"><i class="ti ti-file-alert"></i>Buscar números de Notificação B</button><button class="btn btn-s btn-g" id="sncr-sair" type="button">Desconectar</button>'
-          : `<button class="btn btn-s btn-p" id="sncr-entrar" type="button" ${sn.dominioAceito() ? '' : 'disabled title="O SNCR só aceita sites .br (não funciona em localhost)"'}><i class="ti ti-login-2"></i>Entrar com gov.br no SNCR</button>`}
-      </div>
-      ${sn.dominioAceito() ? '' : '<p class="nota">O SNCR só aceita sites com domínio .br; teste em medtechbr.com.br.</p>'}
+      <div class="linha2" style="margin-top:12px"><label class="campo"><span>Tipo</span><select class="inp" id="sncr-tipo">${Object.entries(sn.TIPOS).map(([k, t]) => `<option value="${k}">${t.rot}</option>`).join('')}</select></label>
+        <label class="campo" id="sncr-qtd-c"><span>Quantos (notificação: 10 a 50, até 50 por dia)</span><input class="inp" id="sncr-qtd" type="number" min="10" max="50" value="10"></label></div>
+      <button class="btn btn-s btn-p" id="sncr-pedir" type="button" ${sn.dominioAceito() ? '' : 'disabled title="O SNCR só aceita sites .br"'}><i class="ti ti-login-2"></i>Obter números pelo gov.br</button>
+      <p class="nota">Notificações dependem de cota: peça à Vigilância Sanitária de cada estado onde você atende, inclusive em telemedicina. Com o SNCR fora do ar, a saída é o receituário em papel.</p>
     </div>`;
   }
-  function ligarSNCR(el) {
-    const sn = RF.sncr, m = S.medico;
-    const guardar = async (parcial, msg) => { m.sncr = Object.assign({}, m.sncr, parcial); await RF.backend.medico.salvarPerfil(m); RF.toast(msg); telaPerfil(el, false); };
-    const e = $('#sncr-entrar'); if (e) e.onclick = () => sn.entrar();
-    const s = $('#sncr-sair'); if (s) s.onclick = () => { sn.sair(); telaPerfil(el, false); };
-    const b = $('#sncr-bloco'); if (b) b.onclick = async () => {
-      if (sn.restantes((m.sncr || {}).rce) > 50 && !confirm('Ainda há números no bloco atual. O SNCR permite só 3 pedidos por mês. Pedir outro mesmo assim?')) return;
-      b.disabled = true;
-      try { const bl = await sn.pedirBloco(m, 'RCE'); await guardar({ rce: bl }, `Bloco recebido: ${bl.inicio} a ${bl.fim}.`); }
-      catch (err) { RF.toast(err.message); b.disabled = false; }
-    };
-    const n = $('#sncr-nrb'); if (n) n.onclick = async () => {
-      n.disabled = true;
-      try { const r = await sn.pedirNotificacoes(m, 'NRB', 10); await guardar({ nrb: ((m.sncr || {}).nrb || []).concat(r.numeros) }, r.numeros.length ? `${r.numeros.length} número(s) de Notificação B recebidos.` : (r.mensagem || 'Nenhum número autorizado pela Vigilância Sanitária.')); }
-      catch (err) { RF.toast(err.message); n.disabled = false; }
+  function ligarSNCR() {
+    const b = $('#sncr-pedir'); if (!b) return;
+    const sel = $('#sncr-tipo'), qc = $('#sncr-qtd-c');
+    sel.onchange = () => { qc.style.display = RF.sncr.TIPOS[sel.value].faixa ? 'none' : ''; };
+    sel.onchange();
+    b.onclick = () => {
+      const tipo = sel.value, T = RF.sncr.TIPOS[tipo];
+      if (T.faixa && !confirm(`Pedir um bloco de 1.000 números de ${T.rot}? O SNCR permite 3 pedidos por mês e os números não voltam.`)) return;
+      try { RF.sncr.pedirNumeros(tipo, S.medico, +$('#sncr-qtd').value || 10, '#/medico/perfil'); } catch (e) { RF.toast(e.message); }
     };
   }
-  // reserva números SNCR para as receitas de controle especial do pedido (idempotente)
+  // reserva um número para cada documento controlado do pedido, em transação (dois atendimentos não pegam o mesmo)
   async function reservarNumerosSNCR(p) {
-    const m = S.medico, bl = m.sncr && m.sncr.rce;
-    let usou = false;
-    for (const b of p.receitas || []) {
-      if (b.tipo !== 'controle_especial' || b.numeroSNCR || !b.itens.length) continue;
-      const num = RF.sncr.consumir(bl);
-      if (!num) break;
-      b.numeroSNCR = num; usou = true;
-    }
-    if (usou) { await RF.backend.medico.salvarPerfil(m); await salvar(p, 'Numeração SNCR reservada: ' + p.receitas.filter(b => b.numeroSNCR).map(b => b.numeroSNCR).join(', ')); }
+    const demo = RF.backend.modo === 'local';
+    const alvo = RF.documentosDe(p).filter(x => RF.RX_REGRAS[x.b.tipo].sncr && !x.b.numeroSNCR);
+    if (!alvo.length) return;
+    const amb = demo ? 'demonstracao' : RF.sncr.ambiente();
+    const numeros = demo ? alvo.map((_, i) => '0000.0-00.' + String(Date.now() % 1e6 + i).padStart(7, '0'))
+      : await RF.backend.medico.transacaoPerfil(m => alvo.map(x => RF.sncr.consumir(m, x.b.tipo)));
+    alvo.forEach((x, i) => { if (numeros[i]) { x.b.numeroSNCR = numeros[i]; x.b.ambienteSNCR = amb; } });
+    await salvar(p, 'Numeração SNCR reservada: ' + numeros.filter(Boolean).join(', '));
+    S.medico = (await RF.backend.medico.perfil()) || S.medico;
   }
 
   /* ---------- painel ---------- */
@@ -209,7 +202,7 @@
         <h1>${esc(pa.nome)}</h1>
         <div class="id"><span>${RF.idade(pa.nasc)} anos · ${pa.sexo === 'F' ? 'Feminino' : 'Masculino'} · ${esc(p.codigo)} · ${esc(RF.fmtData(p.enviadoEm, true))}</span><span class="tag ${st.c}">${st.r}</span></div>
       </div></div><div class="caso-acoes">
-        ${pa.telefone ? `<a class="btn btn-s" target="_blank" rel="noopener" href="https://wa.me/55${esc(pa.telefone)}?text=${encodeURIComponent('Olá, ' + pa.nome.split(' ')[0] + '. Aqui é ' + (S.medico.nome || 'o médico') + ', do RefilMed. Recebi seu pedido de renovação de receita (' + p.codigo + ') e vou fazer seu atendimento agora.')}"><i class="ti ti-brand-whatsapp"></i>WhatsApp</a>` : ''}
+        ${pa.telefone ? `<a class="btn btn-s" target="_blank" rel="noopener" href="https://wa.me/55${esc(pa.telefone)}?text=${encodeURIComponent('Olá, ' + pa.nome.split(' ')[0] + '. Aqui é ' + (S.medico.nome || 'o médico') + ', do Meu Neuro. Recebi seu pedido de renovação de receita (' + p.codigo + ') e vou fazer seu atendimento agora.')}"><i class="ti ti-brand-whatsapp"></i>WhatsApp</a>` : ''}
         ${atend ? '<button class="btn btn-s btn-p" id="contato"><i class="ti ti-phone-check"></i>Registrar contato</button>' : ''}
         ${!atend && p.status === 'aguardando' ? '<button class="btn btn-s btn-p" id="iniciar"><i class="ti ti-player-play"></i>Iniciar atendimento</button>' : ''}
         ${!atend && p.status === 'em_atendimento' ? '<button class="btn btn-s btn-p" id="assinar"><i class="ti ti-signature"></i>Assinar e emitir</button>' : ''}
@@ -231,7 +224,9 @@
 
   async function salvar(p, evento) {
     if (evento) p.historico.push({ em: RF.agora(), evento, por: S.medico.nome });
-    await RF.backend.salvarPedido(p);
+    if (S.papel === 'atendente' && RF.backend.registrarContato) return RF.backend.registrarContato(p.id, evento);
+    try { await RF.backend.salvarPedido(p); }
+    catch (e) { RF.toast('Não consegui salvar: ' + e.message); throw e; }
   }
 
   async function iniciar() {
@@ -246,7 +241,7 @@
   }
   function medicoResumo() { const m = S.medico; return { nome: m.nome, crm: m.crm, uf: m.uf, rqe: m.rqe || '', especialidade: m.especialidade || '', endereco: m.endereco, cidade: m.cidade, ufEnd: m.ufEnd, telefone: m.telefone, nomeLocal: m.nomeLocal || '', cnpjLocal: m.cnpjLocal || '' }; }
   function modeloEvolucao(p) {
-    return `Teleconsulta para renovação de receita.\nPré-anamnese coletada por assistente automatizado (RefilMed ${RF.versao}), com transcrição anexa; informações revisadas e confirmadas pelo médico no atendimento.\n\n` +
+    return `Teleconsulta neurológica para renovação de receita.\nPré-anamnese coletada por assistente automatizado (Meu Neuro ${RF.versao}), com transcrição anexa; informações revisadas e confirmadas pelo médico no atendimento.\n\n` +
       RF.resumoClinico(p) + `\n\nAvaliação:\n\nConduta:\n`;
   }
 
@@ -285,7 +280,7 @@
 
   /* ---------- aba conversa ---------- */
   function abaConversa(box, p) {
-    box.innerHTML = `<p class="small muted" style="margin:0 0 12px"><i class="ti ti-lock" style="font-size:15px"></i> Transcrição integral da pré-consulta com o assistente automatizado (RefilMed ${esc(RF.versao)}). Faz parte do prontuário.</p>
+    box.innerHTML = `<p class="small muted" style="margin:0 0 12px"><i class="ti ti-lock" style="font-size:15px"></i> Transcrição integral da pré-consulta com o assistente automatizado (Meu Neuro ${esc(RF.versao)}). Faz parte do prontuário.</p>
       <div class="transc">${(p.transcript || []).map(t => `<div class="msg ${t.de === 'pac' ? 'pac' : 'ia'}">${esc(t.texto)}<div style="font-size:11px;opacity:.7;margin-top:4px">${esc(RF.fmtData(t.t, true))}</div></div>`).join('')}</div>`;
   }
 
@@ -295,15 +290,20 @@
     const med = (p.atendimento && p.atendimento.medico) || medicoResumo();
     if (!edita) {
       const ass = p.atendimento && p.atendimento.assinatura;
+      const dcs = (ass && ass.documentos) || [];
       box.innerHTML = `<div style="display:flex;gap:8px;flex-wrap:wrap;margin:0 0 14px">
-        <button class="btn btn-s" id="imp2"><i class="ti ti-printer"></i>Imprimir / salvar PDF</button>
-        ${ass && (ass.pdf || ass.arquivo) ? '<button class="btn btn-s" id="baixpdf"><i class="ti ti-file-certificate"></i>PDF assinado</button>' : ''}</div>
+        ${dcs.map(d => `<button class="btn btn-s ${ass.tipo === 'icp' ? 'btn-p' : ''}" data-doc="${esc(d.id)}"><i class="ti ti-file-certificate"></i>${esc(d.rot)}${d.numero ? ' ' + esc(d.numero) : ''}</button>`).join('')}
+        <button class="btn btn-s" id="imp2"><i class="ti ti-printer"></i>Cópia para impressão</button>
+        ${ass && p.paciente.telefone ? `<a class="btn btn-s" target="_blank" rel="noopener" href="${linkAvisoPaciente(p)}"><i class="ti ti-brand-whatsapp"></i>Avisar paciente</a>` : ''}</div>
         <div class="doc-area">${RF.folhasReceita(p, med, { orientacoes: true }) || '<p class="muted">Nenhuma receita emitida.</p>'}</div>`;
       $('#imp2').onclick = () => RF.imprimir(RF.folhasReceita(p, med, { orientacoes: true }));
-      const bp = $('#baixpdf'); if (bp) bp.onclick = async () => {
-        if (ass.pdf) return baixarDataURL(ass.pdf, 'receita-' + p.codigo + '-assinada.pdf');
-        try { window.open(await RF.backend.baixarReceita({ pedidoId: p.id }), '_blank', 'noopener'); } catch (e) { RF.toast(e.message); }
-      };
+      box.querySelectorAll('[data-doc]').forEach(bt => bt.onclick = async () => {
+        try {
+          if (ass.tipo === 'icp') return RF.backend.baixarReceita({ pedidoId: p.id, docId: bt.dataset.doc });
+          const x = RF.documentosDe(p).find(d => d.id === bt.dataset.doc);
+          await RF.baixarPdf(x.id, x.b, p, med, { em: ass.em, verificacao: ass.verificacao, segredo: 'demo' }, true);
+        } catch (e) { RF.toast(e.message); }
+      });
       return;
     }
     if (!p.receitas) p.receitas = RF.montarReceitas(p);
@@ -317,11 +317,12 @@
       <p class="nota" style="margin:0 0 14px">Rascunho gerado a partir das respostas do paciente. Revise cada item: a emissão é ato do médico. Remédios controlados respeitam os limites da Portaria 344/98 (60 dias; anticonvulsivantes e antiparkinsonianos até 6 meses; acima disso, justificativa com CID).</p>`;
     if (!blocos.length) h += '<p class="muted">Sem itens. Use "Adicionar item".</p>';
     blocos.forEach((b, bi) => {
-      const r = RF.RX_REGRAS[b.tipo];
-      const papel = b.tipo === 'notificacao_b' || b.tipo === 'notificacao_a';
-      h += `<div class="rx-bloco"><div class="rx-bloco-top"><h3><span class="ico sm ${papel ? 'bad' : b.tipo === 'controle_especial' ? 'warn' : ''}"><i class="ti ${papel ? 'ti-file-alert' : 'ti-prescription'}"></i></span>${esc(r.rot)}${b.tipo === 'controle_especial' ? ' <span class="tag warn">até 3 substâncias</span>' : ''}</h3>
-        ${papel ? '<span class="tag bad">Talonário de papel</span>' : ''}</div>
-        ${papel ? '<p class="nota" style="margin:0 0 10px">Não é emitida pela plataforma: exige Notificação em talonário numerado da Vigilância Sanitária até a integração ao SNCR (RDC 1.000/2025). Combine com o paciente a entrega da notificação física.</p>' : ''}
+      const r = RF.RX_REGRAS[b.tipo] || RF.RX_REGRAS.simples;
+      const conf = b.tipo === 'confirmar';
+      h += `<div class="rx-bloco"><div class="rx-bloco-top"><h3><span class="ico sm ${conf ? 'bad' : r.sncr ? 'warn' : ''}"><i class="ti ${conf ? 'ti-help-circle' : r.sncr ? 'ti-file-alert' : 'ti-prescription'}"></i></span>${esc(r.rot)}${b.numeroSNCR ? ` <span class="tag ok">N.º ${esc(b.numeroSNCR)}</span>` : ''}${b.papel ? ' <span class="tag bad">em papel, fora da plataforma</span>' : ''}</h3>
+        ${r.sncr ? `<button class="btn btn-s btn-g" data-papel="${bi}" title="Contingência: o documento não sai por aqui">${b.papel ? 'Voltar para eletrônica' : 'Sair em papel'}</button>` : ''}</div>
+        ${conf ? '<p class="nota" style="margin:0 0 10px">Não reconheci este remédio com segurança. Escolha o receituário: controlado não pode sair em receita comum.</p>' : ''}
+        ${b.papel ? '<p class="nota" style="margin:0 0 10px">Combine com o paciente a entrega do receituário físico.</p>' : ''}
         <div class="rx-cab"><span>Medicamento e forma</span><span>Posologia</span><span>Quantidade / dias</span><span></span></div>`;
       b.itens.forEach((it, ii) => {
         const k = RF.kbPorId(it.kbId), lim = RF.limiteDias(k, p);
@@ -331,6 +332,7 @@
           <textarea class="inp" data-f="posologia" rows="2" aria-label="Posologia">${esc(it.posologia)}</textarea>
           <div><input class="inp" data-f="quantidade" type="number" min="0" value="${it.quantidade != null ? it.quantidade : ''}" placeholder="uso contínuo" aria-label="Quantidade"><div style="display:flex;gap:6px;margin-top:6px;align-items:center"><input class="inp" data-f="dias" type="number" min="1" value="${it.dias || ''}" aria-label="Dias"><span class="small muted">dias</span></div></div>
           <button class="btn btn-s btn-g" data-del title="Remover" aria-label="Remover"><i class="ti ti-trash"></i></button>
+          ${conf ? `<div style="grid-column:1/-1"><select class="inp" data-classe aria-label="Receituário"><option value="">Escolha o receituário</option>${['simples', 'controle_especial', 'notificacao_b', 'notificacao_b2', 'notificacao_a', 'retencao'].map(t => `<option value="${t}">${RF.RX_REGRAS[t].rot}</option>`).join('')}</select></div>` : ''}
           ${excede ? `<div style="grid-column:1/-1"><label class="campo" style="margin:0"><span style="color:var(--bad)">Acima do limite de ${lim} dias: justificativa com CID e posologia (art. 60)</span><input class="inp" data-f="justificativa" value="${esc(it.justificativa || '')}" placeholder="Ex.: G40.2, epilepsia focal em uso contínuo, 1 cp 12/12h"></label></div>` : ''}
         </div>`;
       });
@@ -354,12 +356,21 @@
         } else it[f] = inp.value;
         salvarDepois();
       });
+      const cl = l.querySelector('[data-classe]'); if (cl) cl.onchange = () => {
+        if (!cl.value) return;
+        const b = blocos[+l.dataset.b]; b.itens.splice(+l.dataset.i, 1);
+        if (!b.itens.length) blocos.splice(+l.dataset.b, 1);
+        it.tipoConfirmado = cl.value;
+        colocarNoBloco(p, it, cl.value);
+        salvar(p, `Receituário de ${it.nome} definido pelo médico: ${RF.RX_REGRAS[cl.value].rot}`); abaReceita(box, p);
+      };
       l.querySelector('[data-del]').onclick = () => {
         const b = blocos[+l.dataset.b]; b.itens.splice(+l.dataset.i, 1);
         if (!b.itens.length) blocos.splice(+l.dataset.b, 1);
         salvar(p, 'Item removido da receita'); abaReceita(box, p);
       };
     });
+    box.querySelectorAll('[data-papel]').forEach(x => x.onclick = () => { const b = blocos[+x.dataset.papel]; b.papel = !b.papel; salvar(p, `${RF.RX_REGRAS[b.tipo].rot} de ${b.itens[0].nome}: ${b.papel ? 'sai em papel' : 'volta para eletrônica'}`); abaReceita(box, p); });
     $('#dur').onchange = e => { p.duracao = +e.target.value; p.receitas = RF.montarReceitas(p); salvar(p, 'Duração alterada para ' + p.duracao + ' dias'); abaReceita(box, p); };
     $('#refazer').onclick = () => { if (confirm('Refazer o rascunho a partir das respostas do paciente? Suas edições nesta aba serão perdidas.')) { p.receitas = RF.montarReceitas(p); salvar(p, 'Rascunho da receita refeito'); abaReceita(box, p); } };
     $('#add').onclick = () => abrirNovoItem(p, () => abaReceita(box, p));
@@ -371,6 +382,16 @@
     return (p.receitas || []).map(b => RF.RX_REGRAS[b.tipo].rot.toUpperCase() + '\n' + b.itens.map((it, i) => `${i + 1}. ${it.nome}${it.forma ? ' (' + it.forma + ')' : ''}\n   ${it.posologia}\n   Quantidade: ${RF.textoQuantidade(it, b.tipo)}${it.quantidade != null ? ' (' + it.dias + ' dias)' : ''}`).join('\n')).join('\n\n');
   }
 
+  // simples agrupa; os demais são um documento por remédio
+  function colocarNoBloco(p, item, tipo) {
+    let b = tipo === 'simples' || tipo === 'confirmar' ? p.receitas.find(x => x.tipo === tipo) : null;
+    if (!b) { b = { tipo, itens: [] }; p.receitas.push(b); p.receitas.sort((a, c) => (RF.RX_REGRAS[a.tipo].ordem || 0) - (RF.RX_REGRAS[c.tipo].ordem || 0)); }
+    b.itens.push(item);
+  }
+  function linkAvisoPaciente(p) {
+    const t = `Olá, ${p.paciente.nome.split(' ')[0]}. Sua receita do Meu Neuro está pronta. Baixe em ${location.origin + location.pathname}#/acompanhar/${p.codigo} com o código ${p.codigo} e a sua data de nascimento.`;
+    return 'https://wa.me/55' + String(p.paciente.telefone).replace(/\D/g, '') + '?text=' + encodeURIComponent(t);
+  }
   function abrirNovoItem(p, depois) {
     RF.modal(`<h2>Adicionar item</h2>
       <label class="campo"><span>Medicamento (busque no banco ou escreva)</span><input class="inp" id="n-nome" list="n-lista" placeholder="Ex.: Lamotrigina 100 mg"><datalist id="n-lista">${(G.RF_KB || []).map(k => `<option value="${esc(k.nome)}">`).join('')}</datalist></label>
@@ -380,17 +401,13 @@
       <div class="rod"><button class="btn" onclick="RF.fecharModal()">Cancelar</button><button class="btn btn-p" id="n-ok">Adicionar</button></div>`);
     $('#n-ok').onclick = () => {
       const nome = $('#n-nome').value.trim(); if (!nome) return RF.toast('Informe o medicamento.');
-      const ach = RF.acharMed(nome)[0];
-      const k = ach && ach.score >= 60 ? ach.m : null;
-      const tipo = k ? k.receituario : 'simples';
+      const cl = RF.classificar(nome, null), k = cl.k || null, tipo = cl.tipo;
       const qtd = $('#n-qtd').value;
       const item = { idx: -1, kbId: k ? k.id : null, nome, forma: $('#n-forma').value.trim(), posologia: $('#n-pos').value.trim(), quantidade: qtd === '' ? null : +qtd, unidade: RF.unidadeDe($('#n-forma').value), dias: +$('#n-dias').value || 30, manual: true };
-      let b = p.receitas.find(x => x.tipo === tipo && (tipo !== 'controle_especial' || x.itens.length < 3) && !tipo.startsWith('notificacao'));
-      if (!b) { b = { tipo, itens: [] }; p.receitas.push(b); p.receitas.sort((a, c) => ['simples', 'controle_especial', 'notificacao_b', 'notificacao_a'].indexOf(a.tipo) - ['simples', 'controle_especial', 'notificacao_b', 'notificacao_a'].indexOf(c.tipo)); }
-      b.itens.push(item);
+      colocarNoBloco(p, item, tipo);
       salvar(p, 'Item adicionado pelo médico: ' + nome);
       RF.fecharModal(); depois();
-      if (k) RF.toast(`Classificado como ${RF.RX_REGRAS[tipo].rot.toLowerCase()} (${k.nome}).`);
+      RF.toast(cl.certo ? `Classificado como ${RF.RX_REGRAS[tipo].rot.toLowerCase()}.` : 'Escolha o receituário deste item.');
     };
   }
 
@@ -398,11 +415,12 @@
   function abaAtendimento(box, p) {
     const at = p.atendimento || {};
     if (p.status === 'aguardando') {
-      box.innerHTML = `<div class="card" style="padding:22px;max-width:640px"><span class="ico lg" style="margin-bottom:12px"><i class="ti ti-player-play"></i></span><h3>Atendimento ainda não iniciado</h3><p class="muted" style="margin:6px 0 14px">Ao iniciar, o pedido sai da fila de espera e o modelo de evolução é preenchido com o resumo da pré-consulta. Faça o contato pelo WhatsApp ou por vídeo, confirme as informações com o paciente e registre a evolução.</p><button class="btn btn-p" id="ini2"><i class="ti ti-player-play"></i>Iniciar atendimento</button></div>`;
+      box.innerHTML = `<div class="card" style="padding:22px;max-width:640px"><span class="ico lg" style="margin-bottom:12px"><i class="ti ti-player-play"></i></span><h3>Atendimento ainda não iniciado</h3><p class="muted" style="margin:6px 0 14px">Ao iniciar, o pedido sai da fila de espera e o modelo de evolução é preenchido com o resumo da pré-consulta. Abra o vídeo com o paciente, confirme as informações com o paciente e registre a evolução.</p><button class="btn btn-p" id="ini2"><i class="ti ti-player-play"></i>Iniciar atendimento</button></div>`;
       $('#ini2').onclick = iniciar; return;
     }
     const so = p.status !== 'em_atendimento';
     box.innerHTML = `<div style="max-width:820px">
+      ${so ? '' : `<div class="alerta info" style="margin-bottom:14px"><span class="ico"><i class="ti ti-video"></i></span><span style="flex:1">Teleconsulta por vídeo direto com o paciente. O paciente entra pelo link ou pela tela de acompanhamento.<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:8px"><button class="btn btn-s btn-p" id="abrir-video"><i class="ti ti-video"></i>${S.video ? 'Vídeo aberto' : 'Abrir sala de vídeo'}</button>${at.sala && p.paciente.telefone ? `<a class="btn btn-s" target="_blank" rel="noopener" href="https://wa.me/55${String(p.paciente.telefone).replace(/\D/g, '')}?text=${encodeURIComponent('Olá, ' + p.paciente.nome.split(' ')[0] + '. Sua teleconsulta do Meu Neuro vai começar: ' + location.origin + location.pathname + '#/sala/' + at.sala)}"><i class="ti ti-brand-whatsapp"></i>Enviar link</a>` : ''}</div></span></div>`}
       <div class="linha2"><label class="campo"><span>Modalidade</span><select class="inp" id="mod" ${so ? 'disabled' : ''}>
         ${[['video', 'Teleconsulta por vídeo (síncrona)'], ['voz', 'Chamada de voz (síncrona)'], ['mensagem', 'Mensagens (assíncrona)']].map(([v, r]) => `<option value="${v}" ${at.modalidade === v ? 'selected' : ''}>${r}</option>`).join('')}</select></label>
         <label class="campo"><span>Conduta</span><select class="inp" id="cond" ${so ? 'disabled' : ''}>
@@ -417,22 +435,46 @@
     const upd = () => { at.modalidade = $('#mod').value; at.conduta = $('#cond').value; at.evolucao = $('#evo').value; at.orientacaoMedico = $('#ori').value; p.atendimento = at; clearTimeout(t); t = setTimeout(() => salvar(p), 600); };
     ['mod', 'cond', 'evo', 'ori'].forEach(id => { $('#' + id).oninput = upd; $('#' + id).onchange = upd; });
     $('#assinar2').onclick = abrirAssinatura;
+    $('#abrir-video').onclick = async () => {
+      if (S.video) return;
+      const novo = !at.sala;
+      if (novo) at.sala = (RF.backend.modo === 'local' ? 'loop:' : '') + RF.uid() + RF.uid();
+      p.atendimento = at;
+      S.video = true;
+      if (novo) await salvar(p, 'Sala de vídeo aberta');
+      abaAtendimento(box, p);
+      try { S.videoCtl = await RF.abrirVideo(document.body, { id: at.sala, papel: 'medico', aoEncerrar: () => { S.video = false; S.videoCtl = null; if (S.caso === p && S.abaCaso === 'atendimento') abaAtendimento($('#conteudo'), p); } }); }
+      catch (e) { S.video = false; RF.toast('Não consegui abrir o vídeo: ' + e.message); }
+    };
   }
 
   /* ---------- assinatura ---------- */
+  const paraBase64 = buf => { let t = ''; for (let i = 0; i < buf.length; i += 32768) t += String.fromCharCode.apply(null, buf.subarray(i, i + 32768)); return btoa(t); };
   function abrirAssinatura() {
-    const p = S.caso, at = p.atendimento || {};
-    const itens = (p.receitas || []).filter(b => !b.tipo.startsWith('notificacao')).reduce((n, b) => n + b.itens.length, 0);
-    const papel = (p.receitas || []).filter(b => b.tipo.startsWith('notificacao')).flatMap(b => b.itens.map(i => i.nome));
-    const faltaJust = (p.receitas || []).flatMap(b => b.itens).filter(it => { const lim = RF.limiteDias(RF.kbPorId(it.kbId), p); return lim && it.dias > lim && !String(it.justificativa || '').trim(); });
-    if (!itens && !papel.length) return RF.toast('A receita está vazia.');
-    if (faltaJust.length) { S.abaCaso = 'receita'; desenharCaso(); return RF.toast('Preencha a justificativa dos itens acima do limite de dias.'); }
-    if (!String(at.evolucao || '').trim()) { S.abaCaso = 'atendimento'; desenharCaso(); return RF.toast('Registre a evolução do atendimento antes de assinar.'); }
-    const local = RF.backend.modo === 'local';
+    const p = S.caso, at = p.atendimento || {}, demo = RF.backend.modo === 'local', m = S.medico;
+    const docs = RF.documentosDe(p);
+    const papel = (p.receitas || []).filter(b => b.papel).flatMap(b => b.itens.map(i => i.nome));
+    const itens = (p.receitas || []).flatMap(b => b.itens);
+    const conf = (p.receitas || []).filter(b => b.tipo === 'confirmar');
+    // o nome pode ter sido editado: controlado nunca sai em leiaute errado
+    const trocado = (p.receitas || []).flatMap(b => b.itens.map(it => ({ b, it, c: RF.classificar(it.nome, it.kbId) }))).filter(x => x.c.certo && x.c.tipo !== x.b.tipo && !x.it.tipoConfirmado);
+    const faltaJust = itens.filter(it => { const lim = RF.limiteDias(RF.kbPorId(it.kbId), p); return lim && it.dias > lim && !String(it.justificativa || '').trim(); });
+    const ir = (aba, msg) => { S.abaCaso = aba; desenharCaso(); RF.toast(msg); };
+    if (!docs.length && !papel.length) return RF.toast('A receita está vazia.');
+    if (conf.length) return ir('receita', 'Escolha o receituário dos itens que não reconheci.');
+    if (trocado.length) return ir('receita', `${trocado[0].it.nome} precisa de ${RF.RX_REGRAS[trocado[0].c.tipo].rot.toLowerCase()}: use "Refazer rascunho" ou remova e adicione o item.`);
+    if (faltaJust.length) return ir('receita', 'Preencha a justificativa dos itens acima do limite de dias.');
+    if (!String(at.evolucao || '').trim()) return ir('atendimento', 'Registre a evolução do atendimento antes de assinar.');
+    if (!m.endereco || !m.telefone) return RF.toast('Complete endereço e telefone no perfil: saem no receituário.');
+    if (docs.some(x => RF.RX_REGRAS[x.b.tipo].sncr && x.b.tipo !== 'retencao') && !p.paciente.endereco) return RF.toast('Falta o endereço do paciente, obrigatório nos controlados.');
     const c180 = RF.acima180(p) || p.ultimaConsulta === 'nunca';
     const valp = RF.valproatoFertil(p);
+    // falta de numeração por tipo (já reservados não contam)
+    const faltam = {};
+    if (!demo) docs.forEach(x => { if (RF.RX_REGRAS[x.b.tipo].sncr && !x.b.numeroSNCR) faltam[x.b.tipo] = (faltam[x.b.tipo] || 0) + 1; });
+    const semNumero = Object.keys(faltam).filter(t => RF.sncr.saldo(m, t) < faltam[t]);
     RF.modal(`<h2>Assinar e emitir</h2>
-      <p class="muted small">${itens} item(ns) em receita eletrônica${papel.length ? ' · ' + papel.length + ' em talonário de papel' : ''}.</p>
+      <p class="muted small">${docs.length} documento(s) eletrônico(s)${papel.length ? ' · ' + papel.length + ' em papel' : ''}: ${esc(docs.map(x => x.b.tipo === 'simples' ? 'Receita simples' : RF.RX_REGRAS[x.b.tipo].rot + ' de ' + x.b.itens[0].nome).join('; '))}.</p>
       <label class="check"><input type="checkbox" class="req"> Revisei a pré-anamnese e confirmei as informações com o paciente no atendimento.</label>
       <label class="check"><input type="checkbox" class="req"> Revisei cada item da receita (medicamento, posologia, quantidade e tipo de receituário).</label>
       ${c180 ? `<div class="alerta alto" style="margin:10px 0 4px"><i class="ti ti-calendar-exclamation"></i><span>Consulta presencial: CFM 2.314/2022, art. 6º §2º (intervalo máximo de 180 dias em doença crônica).</span></div>
@@ -442,38 +484,19 @@
         <label class="check"><input type="checkbox" class="req"> Gravidez descartada (teste quando indicado).</label>
         <label class="check"><input type="checkbox" class="req"> Alternativas terapêuticas consideradas e registradas.</label>
         <label class="check"><input type="checkbox" class="req"> Paciente ciente dos riscos (registrado na evolução).</label>` : ''}
-      ${papel.length ? `<label class="check"><input type="checkbox" class="req"> Vou providenciar a Notificação de Receita em papel para: ${esc(papel.join(', '))}.</label>` : ''}
-      ${(p.receitas || []).some(b => b.tipo === 'controle_especial') ? ((RF.sncr.restantes((S.medico.sncr || {}).rce) || (p.receitas || []).every(b => b.tipo !== 'controle_especial' || b.numeroSNCR))
-        ? '<div class="alerta info" style="margin:12px 0 0"><span class="ico"><i class="ti ti-numbers"></i></span><span>A receita de controle especial recebe a numeração SNCR do seu bloco ao gerar o PDF.</span></div>'
-        : '<div class="alerta medio" style="margin:12px 0 0"><span class="ico"><i class="ti ti-alert-circle"></i></span><span>Receita de controle especial sem numeração SNCR: aceita só até 29/10/2026. Obtenha o bloco no seu perfil (SNCR).</span></div>') : ''}
-      ${(p.receitas || []).some(b => b.tipo === 'controle_especial') && !RF.docLocal(S.medico.cnpjLocal).valido ? '<div class="alerta medio" style="margin:10px 0 0"><span class="ico"><i class="ti ti-building-hospital"></i></span><span>Falta o CNPJ ou CNES do local de atendimento no seu perfil: a receita de controle especial precisa dele. <a href="#/medico/perfil">Completar perfil</a></span></div>' : ''}
-      <h3 style="margin:18px 0 8px">Assinatura digital ICP-Brasil</h3>
-      <ol class="small" style="margin:0;padding-left:18px;line-height:1.7">
-        <li><button class="btn btn-s" id="bpdf"><i class="ti ti-file-download"></i>Gerar PDF da receita</button> (na janela de impressão, escolha "Salvar como PDF").</li>
-        <li>Assine o PDF no seu assinador com certificado ICP-Brasil (VIDaaS, BirdID, SafeID ou <a href="https://assinador.iti.br" target="_blank" rel="noopener">assinador.iti.br</a>), no padrão PAdES.</li>
-        <li>Anexe o PDF assinado: <input type="file" id="fpdf" accept="application/pdf" style="margin-top:6px;max-width:100%"></li>
-      </ol>
-      <p class="small" id="fpdf-st" style="margin:8px 0 0"></p>
+      ${papel.length ? `<label class="check"><input type="checkbox" class="req"> Vou providenciar em papel: ${esc(papel.join(', '))}.</label>` : ''}
+      ${semNumero.map(t => `<div class="alerta medio" style="margin:12px 0 0"><span class="ico"><i class="ti ti-numbers"></i></span><span style="flex:1">Faltam números de ${esc(RF.sncr.TIPOS[t].rot)} (preciso de ${faltam[t]}, tenho ${RF.sncr.saldo(m, t)}). <button class="btn btn-s btn-p" data-numeros="${t}" style="margin-top:6px"><i class="ti ti-login-2"></i>Obter pelo gov.br</button><br><span class="small">Sem cota ou com o SNCR fora do ar: feche e marque "Sair em papel" na aba Receita.</span></span></div>`).join('')}
+      ${demo ? '<p class="nota" style="margin-top:12px">Demonstração: a numeração é fictícia e os PDFs saem marcados como sem validade.</p>' : ''}
+      <div id="ass-corpo"></div>
       <div class="rod">
         <button class="btn" onclick="RF.fecharModal()">Cancelar</button>
-        ${local ? '<button class="btn" id="demo" title="Simula o fluxo integrado; não tem validade legal"><i class="ti ti-device-mobile-check"></i>Assinar com VIDaaS (simulação)</button>' : '<button class="btn btn-p" id="vidaas"><i class="ti ti-device-mobile-check"></i>Assinar com VIDaaS</button>'}
-        <button class="btn btn-p" id="ok" disabled>Emitir com PDF assinado</button>
-      </div>`, f => { f.querySelector('.modal').style.maxWidth = '640px'; });
-    let pdf = null, decisao180 = null;
+        ${demo ? '<button class="btn btn-p" id="demo"><i class="ti ti-device-mobile-check"></i>Assinar com VIDaaS (simulação)</button>' : `<button class="btn btn-p" id="vidaas" ${semNumero.length ? 'disabled' : ''}><i class="ti ti-device-mobile-check"></i>Assinar com VIDaaS</button>`}
+      </div>`, f => { f.querySelector('.modal').style.maxWidth = '660px'; });
+    document.querySelectorAll('[data-numeros]').forEach(b => b.onclick = () => {
+      try { RF.sncr.pedirNumeros(b.dataset.numeros, m, Math.max(10, faltam[b.dataset.numeros]), '#/medico/caso/' + p.id); } catch (e) { RF.toast(e.message); }
+    });
+    let decisao180 = null;
     const med = medicoResumo();
-    $('#bpdf').onclick = async () => { await reservarNumerosSNCR(p); RF.imprimir(RF.folhasReceita(Object.assign({}, p, { atendimento: null }), med, {}).replace(/RASCUNHO: sem validade até a assinatura do médico/g, 'Pedido ' + p.codigo + ' · documento para assinatura digital')); };
-    $('#fpdf').onchange = async e => {
-      const f = e.target.files[0]; const st = $('#fpdf-st'); pdf = null; $('#ok').disabled = true;
-      if (!f) return;
-      if (f.size > 700 * 1024) { st.innerHTML = '<span style="color:var(--bad)">Arquivo acima de 700 KB. Gere o PDF sem imagens pesadas.</span>'; return; }
-      const buf = new Uint8Array(await f.arrayBuffer());
-      const r = RF.pdfTemAssinatura(buf);
-      if (!r.pdf) { st.innerHTML = '<span style="color:var(--bad)">O arquivo não é um PDF.</span>'; return; }
-      if (!r.assinado) { st.innerHTML = '<span style="color:var(--bad)">Não encontrei assinatura digital neste PDF. Assine no seu assinador ICP-Brasil e anexe o arquivo assinado.</span>'; return; }
-      pdf = await new Promise(res => { const fr = new FileReader(); fr.onload = () => res(fr.result); fr.readAsDataURL(f); });
-      st.innerHTML = '<span style="color:var(--ok)"><i class="ti ti-circle-check"></i> Assinatura digital encontrada. Confira a validade em validar.iti.gov.br.</span>';
-      $('#ok').disabled = false;
-    };
     const validar = () => {
       const reqs = [...document.querySelectorAll('#rf-modal .req')];
       if (reqs.some(c => !c.checked)) { RF.toast('Confirme todos os itens da lista.'); return false; }
@@ -481,27 +504,62 @@
       decisao180 = d ? d.value : null;
       return true;
     };
-    const emitir = async (tipo, jaValidado) => {
-      if (!jaValidado && !validar()) return;
+    // verificação e data entram no PDF antes de assinar: ficam gravadas para o servidor usar as mesmas
+    const prepararEmissao = async () => {
       await reservarNumerosSNCR(p);
-      const em = RF.agora();
-      const hash = await RF.sha256(RF.conteudoAssinado(p, med, em));
-      p.atendimento = Object.assign(p.atendimento || {}, {
-        medico: med, concluidoEm: em, decisao180, checklistValproato: valp || null,
-        assinatura: { em, tipo, hash, verificacao: hash.slice(0, 10).toUpperCase(), pdf: tipo === 'icp' ? pdf : null }
-      });
-      p.status = 'assinado';
-      await salvar(p, tipo === 'icp' ? 'Receita assinada (ICP-Brasil) e emitida' : 'Receita emitida em modo demonstração (sem validade)');
-      RF.fecharModal(); RF.toast('Receita emitida. O paciente já pode baixar pelo código ' + p.codigo + '.');
-      S.abaCaso = 'receita'; desenhar();
+      const semN = RF.documentosDe(p).filter(x => RF.RX_REGRAS[x.b.tipo].sncr && !x.b.numeroSNCR);
+      if (semN.length) throw new Error('Saldo de numeração insuficiente. Obtenha números no perfil.');
+      const hex = n => [...crypto.getRandomValues(new Uint8Array(n))].map(x => x.toString(16).padStart(2, '0')).join('');
+      const a = p.atendimento;
+      a.medico = med; a.decisao180 = decisao180; a.checklistValproato = valp || null;
+      a.preparo = a.preparo || { em: RF.agora(), verificacao: hex(5).toUpperCase(), segredo: hex(18) };
+      await salvar(p);
+      return a.preparo;
     };
-    $('#ok').onclick = () => emitir('icp');
+    const depois = async msg => {
+      Object.assign(p, await RF.backend.obterPedido(p.id));
+      RF.fecharModal(); RF.toast(msg);
+      S.abaCaso = 'receita'; await recarregar(); desenhar();
+    };
+    const corpo = $('#ass-corpo');
+    if (!demo) {
+      // caminho alternativo: PDF oficial assinado no assinador do médico
+      corpo.innerHTML = `<details style="margin-top:16px"><summary style="cursor:pointer;font-weight:600">Assinar por fora (BirdID, SafeID, token, assinador.iti.br)</summary>
+        <p class="small muted" style="margin:8px 0">Baixe cada PDF, assine em PAdES com o certificado ICP-Brasil do CPF do seu perfil e anexe aqui. Não edite o arquivo.</p>
+        <div id="anexos">${docs.map(x => `<div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap;padding:8px 0;border-top:1px solid var(--line)"><span style="flex:1;min-width:180px" class="small"><b>${esc(RF.RX_REGRAS[x.b.tipo].rot)}</b><br>${esc(x.b.itens.map(i => i.nome).join(', '))}</span><button class="btn btn-s" data-baixa="${x.id}"><i class="ti ti-download"></i>PDF</button><input type="file" accept="application/pdf" data-anexo="${x.id}" style="max-width:190px"><span data-st="${x.id}" class="small"></span></div>`).join('')}</div>
+        <button class="btn btn-p" id="ok" disabled style="margin-top:8px"><i class="ti ti-send"></i>Emitir com os PDFs assinados</button></details>`;
+      const anexos = {};
+      corpo.querySelectorAll('[data-baixa]').forEach(b => b.onclick = async () => {
+        if (!validar()) return;
+        try { const pr = await prepararEmissao(); const x = RF.documentosDe(p).find(d => d.id === b.dataset.baixa); await RF.baixarPdf(x.id, x.b, p, med, pr, false); }
+        catch (e) { RF.toast(e.message); }
+      });
+      corpo.querySelectorAll('[data-anexo]').forEach(inp => inp.onchange = async () => {
+        const id = inp.dataset.anexo, st = corpo.querySelector(`[data-st="${id}"]`), f = inp.files[0];
+        delete anexos[id];
+        if (f) {
+          const buf = new Uint8Array(await f.arrayBuffer()), r = RF.pdfTemAssinatura(buf);
+          if (r.assinado) { anexos[id] = paraBase64(buf); st.innerHTML = '<i class="ti ti-circle-check t-verde"></i>'; }
+          else st.textContent = r.pdf ? 'Sem assinatura digital.' : 'Não é PDF.';
+        } else st.textContent = '';
+        $('#ok').disabled = docs.some(x => !anexos[x.id]) || !p.atendimento.preparo;
+      });
+      $('#ok').onclick = async () => {
+        if (!validar()) return;
+        $('#ok').disabled = true;
+        try {
+          await prepararEmissao();
+          const r = await RF.backend.emitirComAnexos(p.id, docs.map(x => ({ id: x.id, pdfBase64: anexos[x.id] })));
+          await depois('Receita emitida. Verificação ' + r.verificacao + '.');
+        } catch (e) { RF.toast(e.message); $('#ok').disabled = false; }
+      };
+    }
     const vd = $('#vidaas'); if (vd) vd.onclick = async () => {
       if (!validar()) return;
-      await reservarNumerosSNCR(p);
       const mm = document.querySelector('#rf-modal .modal');
       const tela = (tit, txt, carregando) => { mm.innerHTML = `<div style="text-align:center;padding:10px 4px"><span class="ico lg c-verde" style="margin:0 auto 14px;width:64px;height:64px;border-radius:20px"><i class="ti ti-device-mobile-message" style="font-size:30px"></i></span><h2>${tit}</h2><p class="muted" style="margin:8px 0 18px">${txt}</p>${carregando ? '<div class="digitando" style="justify-content:center;display:flex"><i></i><i></i><i></i></div>' : ''}<div class="rod" style="justify-content:center"><button class="btn" onclick="RF.fecharModal()">Fechar</button></div></div>`; };
       try {
+        await prepararEmissao();
         let st = await RF.backend.assinatura.status();
         if (!st.autorizado) {
           await RF.backend.assinatura.iniciar();
@@ -514,29 +572,35 @@
           }
           if (!st.autorizado) return;
         }
-        tela('Assinando', 'Gerando o PDF, assinando com seu certificado ICP-Brasil e enviando ao paciente.', true);
+        tela('Assinando', `Gerando ${docs.length} documento(s) e assinando com seu certificado ICP-Brasil.`, true);
         const r = await RF.backend.assinatura.assinar(p.id);
-        const novo = await RF.backend.obterPedido(p.id);
-        Object.assign(p, novo);
-        RF.fecharModal(); RF.toast('Receita assinada. Verificação ' + r.verificacao + '.');
-        S.abaCaso = 'receita'; desenhar();
+        await depois('Receita assinada. Verificação ' + r.verificacao + '.');
       } catch (e) {
-        const semServidor = /not-found|internal|unavailable|functions/i.test((e && (e.code || e.message)) || '');
-        tela('Não foi possível assinar', semServidor ? 'O servidor de assinatura ainda não está publicado (precisa do plano Blaze). Use o caminho do PDF assinado por fora, logo abaixo.' : RF.esc(e.message || 'Erro na assinatura.'), false);
+        const semServidor = /functions\/(not-found|internal|unavailable)/.test((e && e.code) || '');
+        tela('Não foi possível assinar', semServidor ? 'O servidor de assinatura não respondeu. Use "Assinar por fora" ou tente em instantes.' : RF.esc(e.message || 'Erro na assinatura.'), false);
       }
     };
-    const demo = $('#demo'); if (demo) demo.onclick = () => {
+    const dm = $('#demo'); if (dm) dm.onclick = () => {
       if (!validar()) return;
       // simulação do fluxo integrado: push no app VIDaaS do médico, aprovação no celular, PDF assinado volta sozinho
-      const m = document.querySelector('#rf-modal .modal');
-      m.innerHTML = `<div style="text-align:center;padding:10px 4px">
+      const mm = document.querySelector('#rf-modal .modal');
+      mm.innerHTML = `<div style="text-align:center;padding:10px 4px">
         <span class="ico lg" style="margin:0 auto 14px;width:64px;height:64px;border-radius:20px"><i class="ti ti-device-mobile-message" style="font-size:30px"></i></span>
         <h2>Aprove no seu celular</h2>
-        <p class="muted" style="margin:8px 0 18px">Enviamos uma notificação para o app VIDaaS do CPF cadastrado. Abra o app e toque em Autorizar para assinar ${itens} item(ns).</p>
+        <p class="muted" style="margin:8px 0 18px">Enviamos uma notificação para o app VIDaaS do CPF cadastrado. Abra o app e toque em Autorizar.</p>
         <div class="digitando" style="justify-content:center;display:flex"><i></i><i></i><i></i></div>
         <p class="nota" style="margin:14px 0 18px">Simulação para demonstração: nenhuma notificação real é enviada e a receita não tem validade legal.</p>
         <div class="rod" style="justify-content:center"><button class="btn" onclick="RF.fecharModal()">Cancelar</button><button class="btn btn-p" id="aprovar"><i class="ti ti-check"></i>Simular aprovação no celular</button></div></div>`;
-      document.getElementById('aprovar').onclick = () => emitir('demo', true);
+      document.getElementById('aprovar').onclick = async () => {
+        await reservarNumerosSNCR(p);
+        const em = RF.agora(), hash = await RF.sha256(RF.conteudoAssinado(p, med, em));
+        p.atendimento = Object.assign(p.atendimento || {}, { medico: med, concluidoEm: em, decisao180, checklistValproato: valp || null,
+          assinatura: { em, tipo: 'demo', hash, verificacao: hash.slice(0, 10).toUpperCase(), documentos: RF.documentosDe(p).map(x => ({ id: x.id, tipo: x.b.tipo, rot: RF.RX_REGRAS[x.b.tipo].rot, numero: x.b.numeroSNCR || '' })) } });
+        p.status = 'assinado';
+        await salvar(p, 'Receita emitida em modo demonstração (sem validade)');
+        RF.fecharModal(); RF.toast('Receita emitida (demonstração). O paciente já pode baixar pelo código ' + p.codigo + '.');
+        S.abaCaso = 'receita'; desenhar();
+      };
     };
   }
 

@@ -1,5 +1,5 @@
-/* RefilMed — documentos (receita simples, controle especial em 2 vias, orientações)
-   Renderiza em HTML A4; o navegador gera o PDF pela impressão (Salvar como PDF). */
+/* Meu Neuro — documentos em tela (receita simples, modelos oficiais, orientações) e ponte para o PDF
+   O original é sempre o PDF de functions/pdf.js; o HTML aqui é pré-visualização e cópia do paciente. */
 (function (G) {
   const RF = G.RF = G.RF || {};
   const esc = RF.esc;
@@ -10,15 +10,16 @@
     const d = RF.docLocal(med.cnpjLocal);
     const local = [med.nomeLocal, d.tipo ? d.tipo + ' ' + d.fmt : ''].filter(Boolean).join(' · ');
     return `<div class="cab"><div><div class="m">${esc(med.nome || 'Nome do médico')}</div><div class="d">${esc(l2)}</div></div>
-      <div class="d" style="text-align:right">${local ? esc(local) + '<br>' : ''}${esc(end)}${med.telefone ? '<br>' + esc(med.telefone) : ''}<br>Teleconsulta · RefilMed</div></div>`;
+      <div class="d" style="text-align:right">${local ? esc(local) + '<br>' : ''}${esc(end)}${med.telefone ? '<br>' + esc(med.telefone) : ''}<br>Teleconsulta · Meu Neuro</div></div>`;
   }
   // receita simples: endereço residencial (Lei 5.991/73, art. 35); controle especial: CPF (Portaria 344, art. 55, red. RDC 1.000/2025)
   function pacienteBloco(p, modo) {
     const pa = p.paciente;
     const idade = RF.idade(pa.nasc);
     let s = `<div class="pac"><b>Paciente:</b> ${esc(pa.nome)}${idade != null ? ' · ' + idade + ' anos' : ''}`;
+    if (modo === 'ret') s += `<br><b>Sexo:</b> ${pa.sexo === 'F' ? 'feminino' : pa.sexo === 'M' ? 'masculino' : '—'}`;
     if (modo === 'cpf' || modo === 'tudo') s += `<br><b>CPF:</b> ${esc(RF.fmtCPF(pa.cpf) || '—')}`;
-    if (modo === 'end' || modo === 'tudo') s += `<br><b>Endereço:</b> ${esc([pa.endereco, pa.bairro, pa.cidade && pa.cidade + '/' + (pa.uf || '')].filter(Boolean).join(', '))}`;
+    if (modo === 'end' || modo === 'tudo' || modo === 'ret') s += `<br><b>Endereço:</b> ${esc([pa.endereco, pa.bairro, pa.cidade && pa.cidade + '/' + (pa.uf || '')].filter(Boolean).join(', '))}`;
     if (pa.responsavel) s += `<br><b>Responsável:</b> ${esc(pa.responsavel)}`;
     return s + '</div>';
   }
@@ -43,6 +44,53 @@
       ${esc(it.posologia || '')}<br><span style="font-size:12.5px">Quantidade: ${esc(RF.textoQuantidade(it, bloco.tipo))}${it.quantidade != null ? ' · ' + it.dias + ' dias de tratamento' : ''}${it.obs ? ' · ' + esc(it.obs) : ''}</span></li>`).join('') + '</ol>';
   }
 
+  // cópia em tela dos modelos eletrônicos da Anvisa, com os mesmos campos e a mesma ordem
+  function modeloOficial(b, p, med, ass) {
+    const it = b.itens[0], pa = p.paciente, nome = { controle_especial: 'RECEITA DE CONTROLE ESPECIAL', notificacao_a: 'NOTIFICAÇÃO DE RECEITA A', notificacao_b: 'NOTIFICAÇÃO DE RECEITA B', notificacao_b2: 'NOTIFICAÇÃO DE RECEITA B2' }[b.tipo];
+    const n = RF.separarConcentracao(it.nome);
+    const d = RF.docLocal(med.cnpjLocal);
+    const endMed = [[med.nomeLocal, d.tipo ? d.tipo + ' ' + d.fmt : ''].filter(Boolean).join(' · '), med.endereco, med.cidade && (med.cidade + (med.ufEnd ? '/' + med.ufEnd : ''))].filter(Boolean).join(', ');
+    const endPac = [pa.endereco, pa.bairro, pa.cidade && pa.cidade + '/' + (pa.uf || '')].filter(Boolean).join(', ');
+    return `<div class="folha oficial ${b.tipo}"><div class="of-top"><div class="of-tit"><b>${nome}</b><span>ELETRÔNICA</span></div><div class="of-num">N.º ${esc(b.numeroSNCR || '')}</div></div>
+      <div class="of-2"><div class="of-box"><h4>EMITENTE</h4><dl><dt>NOME DO PRESCRITOR:</dt><dd>${esc(med.nome || '')}</dd><dt>INSCRIÇÃO NO CONSELHO PROFISSIONAL / UF:</dt><dd>CRM ${esc(med.crm || '')}/${esc(med.uf || '')}${med.rqe ? ' · RQE ' + esc(med.rqe) : ''}</dd><dt>ENDEREÇO COMPLETO:</dt><dd>${esc(endMed)}</dd><dt>TELEFONE:</dt><dd>${esc(med.telefone || '')}</dd></dl></div>
+      <div class="of-box"><h4>PACIENTE</h4><dl><dt>NOME:</dt><dd>${esc(pa.nome)}${pa.responsavel ? ' (responsável: ' + esc(pa.responsavel) + ')' : ''}</dd><dt>CPF ou, se estrangeiro, PASSAPORTE:</dt><dd>${esc(RF.fmtCPF(pa.cpf) || pa.passaporte || 'não possui')}</dd><dt>ENDEREÇO COMPLETO:</dt><dd>${esc(endPac)}</dd></dl></div></div>
+      <div class="of-box of-rx"><h4>PRESCRIÇÃO</h4><p><span>NOME DO MEDICAMENTO OU SUBSTÂNCIA:</span> ${esc(n.nome)}</p><p><span>CONCENTRAÇÃO:</span> ${esc(n.conc)}</p><p><span>FORMA FARMACÊUTICA:</span> ${esc(it.forma || '')}</p><p><span>QUANTIDADE:</span> ${esc(RF.textoQuantidade(it, b.tipo))}</p><p><span>POSOLOGIA:</span> ${esc(it.posologia || '')}</p><p class="small">Duração: ${esc(it.dias)} dias de tratamento.</p>${it.justificativa ? `<p class="small">Justificativa (Portaria 344/98, art. 60): ${esc(it.justificativa)}</p>` : ''}</div>
+      <div class="of-rod">IDENTIFICAÇÃO DA PLATAFORMA Meu Neuro<br>REGISTRO DA ASSINATURA DIGITAL E DATA ${ass ? esc(RF.fmtData(ass.em, true)) : 'aguardando assinatura'}<br>VALIDE ESSA ASSINATURA EM <b>validar.iti.gov.br</b>${ass && ass.verificacao ? '<br>ESTA PRESCRIÇÃO PODE SER VERIFICADA EM: código ' + esc(ass.verificacao) : ''}<br>VERIFIQUE A NUMERAÇÃO E REGISTRE A UTILIZAÇÃO DESTA PRESCRIÇÃO EM <b>sncr.anvisa.gov.br</b>${ass && ass.tipo !== 'icp' ? '<br><b>DEMONSTRAÇÃO: sem validade legal</b>' : ''}</div></div>`;
+  }
+  RF.separarConcentracao = function (nome) {
+    const m = /^(.*?\D)\s+(\d[\d.,]*\s*(?:mg|mcg|µg|g|ui|mL|ml|%)\b.*)$/i.exec(String(nome || '').trim());
+    return m ? { nome: m[1].trim(), conc: m[2].trim() } : { nome: String(nome || '').trim(), conc: '' };
+  };
+
+  /* ---------- PDFs no navegador (o mesmo gerador do servidor) ---------- */
+  function script(src) { return new Promise((ok, erro) => { const e = document.createElement('script'); e.src = src; e.onload = ok; e.onerror = () => erro(new Error('Não consegui carregar ' + src)); document.head.appendChild(e); }); }
+  RF.carregarPdf = async function () {
+    if (G.MNPdf) return G.MNPdf;
+    await script('vendor/pdf-lib.min.js');
+    await script('vendor/qrcode.min.js');
+    await script('functions/pdf.js');
+    return G.MNPdf;
+  };
+  // opções de cada documento; precisam dar o mesmo resultado que o servidor (functions/index.js, opcoesDoc)
+  RF.opcoesPdf = function (b, p, pr, demo) {
+    const cfg = G.MEUNEURO_CONFIG || {};
+    const site = location.origin + location.pathname;
+    const oficial = !!(RF.RX_REGRAS[b.tipo] && RF.RX_REGRAS[b.tipo].sncr && b.tipo !== 'retencao');
+    return {
+      emitidoEm: pr.em, verificacao: pr.verificacao, urlVerificar: site.replace(/^https?:\/\//, '') + '#/verificar/' + pr.verificacao,
+      urlQR: oficial ? null : `https://${cfg.regiaoFunctions || 'southamerica-east1'}-${cfg.projectId}.cloudfunctions.net/receitaITI?_format=application/validador-iti+json&_secretCode=${pr.segredo}`,
+      idade: RF.idade(p.paciente.nasc), ambienteSNCR: b.ambienteSNCR || RF.sncr.ambiente(),
+      marca: demo ? 'DEMONSTRACAO - SEM VALIDADE' : b.numeroSNCR && b.ambienteSNCR !== 'producao' ? 'HOMOLOGACAO - SEM VALIDADE' : ''
+    };
+  };
+  RF.baixarPdf = async function (id, b, p, med, pr, demo) {
+    const M = await RF.carregarPdf();
+    const bytes = await M.gerarDocumento(b, p, med, RF.opcoesPdf(b, p, pr, demo));
+    const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([bytes], { type: 'application/pdf' }));
+    a.download = `${p.codigo}-${b.tipo.replace('_', '-')}-${id}.pdf`; a.click(); setTimeout(() => URL.revokeObjectURL(a.href), 5000);
+  };
+  RF.documentosDe = p => (p.receitas || []).map((b, i) => ({ b, id: 'd' + i })).filter(x => x.b.itens && x.b.itens.length && !x.b.papel && x.b.tipo !== 'confirmar');
+
   // devolve HTML das folhas; opts: {ass, orientacoes:boolean}
   RF.folhasReceita = function (p, med, opts) {
     opts = opts || {};
@@ -53,15 +101,11 @@
       if (!b.itens.length) continue;
       if (b.tipo === 'simples') {
         folhas.push(`<div class="folha">${cabecalho(med)}<div class="tit">RECEITUÁRIO</div>${pacienteBloco(p, 'end')}<div class="uso">USO ORAL / CONFORME INDICADO</div>${itensHTML(b)}${assinatura(med, ass, data)}${rodape(p, ass)}</div>`);
-      } else if (b.tipo === 'controle_especial') {
-        // eletrônica: documento único (RDC 1.000/2025, art. 10); papel: 2 vias (Portaria 344/98, art. 52)
-        const vias = opts.papel ? ['1ª via: retenção da farmácia', '2ª via: orientação ao paciente'] : ['Via única eletrônica'];
-        for (const via of vias) {
-          folhas.push(`<div class="folha"><div class="via">${via}${b.numeroSNCR ? ' · Numeração SNCR ' + esc(b.numeroSNCR) : ''}</div>${cabecalho(med)}<div class="tit">RECEITUÁRIO DE CONTROLE ESPECIAL</div>${pacienteBloco(p, 'cpf')}<div class="uso">USO ORAL</div>${itensHTML(b)}${justificativas(b)}${assinatura(med, ass, data)}
-          <div class="caixas"><div><b>Identificação do comprador</b><br>Nome:<br>RG/Órgão emissor:<br>Endereço:<br>Cidade/UF:<br>Telefone:</div><div><b>Identificação do fornecedor</b><br><br><br>Assinatura do farmacêutico<br>Data: ___/___/_____</div></div>${rodape(p, ass)}</div>`);
-        }
+      } else if (b.tipo === 'retencao') {
+        folhas.push(`<div class="folha"><div class="via">${b.numeroSNCR ? 'N.º ' + esc(b.numeroSNCR) : 'Numeração SNCR na emissão'}</div>${cabecalho(med)}<div class="tit">RECEITA SUJEITA A RETENÇÃO</div>${pacienteBloco(p, 'ret')}${itensHTML(b)}${assinatura(med, ass, data)}${rodape(p, ass)}</div>`);
+      } else if (RF.RX_REGRAS[b.tipo] && RF.RX_REGRAS[b.tipo].sncr && !b.papel) {
+        folhas.push(modeloOficial(b, p, med, ass));
       }
-      // Notificação A/B: não gera documento (talonário de papel; nunca imitar a notificação)
     }
     if (opts.orientacoes) {
       const meds = p.meds.filter(m => m.nome);

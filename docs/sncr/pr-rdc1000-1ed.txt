@@ -1,0 +1,1235 @@
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+Presidente da República
+Luís Inácio Lula da Silva
+
+Ministro da Saúde
+Alexandre Rocha Santos Padilha
+
+Diretor Presidente da Anvisa
+Leandro Pinheiro Safatle
+
+Diretores da Anvisa
+Daniela Marreco Cerqueira – Segunda Diretoria
+Marcelo Mario Matos Moreira – Terceira Diretoria (Diretor Substituto)
+Daniel Meirelles Fernandes Pereira – Quarta Diretoria
+Thiago Lopes Cardoso Campos – Quinta Diretoria
+
+Gerente de Produtos Controlados
+Renata de Morais Souza - Especialista em regulação e vigilância sanitária
+
+Elaboração / Redação
+Luciana dos Santos Lopes - Especialista em regulação e vigilância sanitária
+Thiago Brasil Silvério - Assessor e Gerente Substituto - Especialista em regulação e
+vigilância sanitária
+
+
+
+
+                                                                                                 1
+                                   Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                         É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                            Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+1. Sumário
+2.     Apresentação ..................................................................................................... 5
+     2.1.       Objetivo do documento Perguntas e Respostas..................................................... 5
+     2.2.       Público-alvo .......................................................................................................... 5
+     2.3.       Contexto e importância da RDC Anvisa nº 1.000/2025 .......................................... 6
+     2.4.       Ênfase do documento e vigência imediata............................................................. 6
+3.     RECEITUÁRIOS FÍSICOS ....................................................................................... 7
+       1.     A RDC nº 1.000/2025 acaba com as notificações de receita em papel? .................................. 7
+       2.     A RDC nº 1.000/2025 trata de quais tipos de receituários? ..................................................... 7
+       3.     O que muda nos modelos de Notificações de Receita e Receita de Controle Especial físicas? 7
+       4.     Quando e onde os modelos de receituários serão disponibilizados? ...................................... 7
+       5.     Devo buscar orientações complementares da Vigilância Sanitária local quanto à impressão
+       dos receituários? ................................................................................................................................ 8
+       6.     Quais são as principais alterações no modelo das Notificações de Receita dos tipos A, B, B2 e
+       C2? 8
+       7.     O que mudou no layout das Notificações de Receita dos tipos A, B, B2 e C2? ........................ 8
+       8.     O layout das Receitas de Controle Especial é obrigatório conforme o modelo apresentado ou
+       é possível adotar disposições alternativas dos campos, desde que atendidos os requisitos da
+       norma? ............................................................................................................................................... 9
+       9.     O prescritor ou a instituição de saúde podem obter apenas a numeração da Notificação de
+       Receita A junto à Vigilância Sanitária e realizar a impressão dos talonários às próprias expensas? . 9
+       10.       Com a permanência da impressão da Notificação de Receita A por meio de gráficas, é
+       necessário cadastro ou identificação da gráfica no SNCR? Como ocorre a geração e a distribuição
+       das numerações? ............................................................................................................................... 9
+       11.       O profissional que optar por imprimir a Notificação de Receita A em gráfica própria
+       precisa comparecer à Vigilância Sanitária para carimbar os talonários após a impressão? ............ 10
+       12.       A Vigilância Sanitária pode continuar realizando a impressão de talonários de Notificação
+       de Receita A e de Talidomida, caso tenha interesse, ou essa prática foi vedada com as alterações
+       normativas? ..................................................................................................................................... 10
+       13.       As Notificações de Receita do tipo A e de Talidomida já impressas pela Anvisa continuam
+       válidas após a RDC Anvisa nº 1.000/2025? ...................................................................................... 11
+       14.       Existe limite de quantidade de numeração de receituários que pode ser concedida a cada
+       profissional prescritor? .................................................................................................................... 11
+       15.       Os novos modelos de Notificação de Receita deixam de conter canhotos? ..................... 11
+       16.       O novo modelo de Notificação de Receita deixa de exigir o endereço do paciente? ........ 12
+       17.       Houve alterações específicas no modelo da Notificação de Receita C2 (retinoides de uso
+       sistêmico)? ....................................................................................................................................... 12
+       18.       O CPF do paciente (ou passaporte) será obrigatório também para as receitas da RDC nº
+       471/2021, assim como para as da Portaria nº 344/1998? ............................................................... 12
+       19.       A substituição dos dados do paciente — com a inclusão obrigatória de CPF ou passaporte
+       e a retirada do endereço — também se aplica aos receituários emitidos em papel, conforme as
+       disposições da Portaria nº 344/1998, já atualizada pela RDC nº 1000/2025?................................. 12
+       20.       Caso o paciente não possua CPF no momento da prescrição, qual alternativa poderá ser
+       utilizada para sua identificação, considerando que a RDC nº 1000/2025 adota o CPF como
+       identificador único? ......................................................................................................................... 13
+       21.       O endereço do prescritor deve ser registrado na receita ou apenas o endereço da
+       instituição de saúde deve constar no documento? ......................................................................... 13
+       22.       Com a revogação das disposições anteriores, permanece necessária a indicação da
+       Unidade Federativa (UF)? ................................................................................................................ 13
+
+
+
+                                                                                                                                                            2
+                                 Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                       É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                          Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+     23.       Quais são os requisitos de assinatura eletrônica aplicáveis ao Termo de Consentimento
+     Pós-Informação previsto no § 3º do Art. 50, incluindo a necessidade de anexação ao arquivo da
+     receita e as exigências relativas ao seu arquivamento nos locais correspondentes às vias físicas? 14
+     24.       O registro de utilização das notificações de receita emitidas em papel também passará a
+     ser realizado no Sistema Nacional de Controle de Receitas (SNCR)? .............................................. 14
+     25.       As prescrições manuais de antimicrobianos e de agonistas do receptor GLP-1 precisam
+     conter numeração do SNCR? ........................................................................................................... 14
+     26.       É necessário manter cópia física da receita ou do registro de dispensação de
+     medicamentos?................................................................................................................................ 14
+     27.       As prescrições emitidas em caráter emergencial foram alteradas pela RDC Anvisa nº
+     1.000/2025? ..................................................................................................................................... 15
+     28.       Os novos modelos de Notificação de Receita A deixam de trazer a indicação do intervalo
+     de numeração impresso no rodapé do talonário? ........................................................................... 15
+     29.       Os blocos impressos de Notificação de Receita devem continuar contendo 20 folhas
+     cada? 15
+     30.       O novo modelo de funcionamento do SNCR retira das Vigilâncias Sanitárias locais o
+     controle sobre as Notificações de Receita emitidas em seu território? .......................................... 16
+     31.       A RDC nº 1.000/2025 altera a forma de escrituração de receitas eletrônicas no SNGPC? 16
+     32.       Profissionais médicos que possuem apenas o Registro Único emitido pelo Ministério da
+     Saúde (RMS) podem solicitar numeração de Notificações de Receita, Receitas de Controle Especial
+     e prescrições de antimicrobianos?................................................................................................... 16
+     33.       No novo modelo de Receita de Controle Especial (RCE), quais informações devem ser
+     preenchidas no campo de dispensação para medicamentos genéricos? ........................................ 16
+     34.       Nos novos modelos dos receituários o campo Identificação do estabelecimento
+     dispensador não existe mais. Onde esses dados devem ser anotados no momento da dispensação
+     do medicamento? ............................................................................................................................ 16
+     35.       Se o prescritor já tiver seu nome impresso no cabeçalho do receituário, é necessário
+     repetir a sua identificação no campo de assinatura? ...................................................................... 17
+
+4.   RECEITUÁRIOS ELETRÔNICOS ............................................................................ 18
+     36.      Quais tipos de assinatura eletrônica podem ser utilizados em receitas médicas digitais no
+     Brasil? 18
+     37.      Quais medicamentos exigem assinatura eletrônica qualificada (ICP-Brasil) na prescrição
+     digital? 18
+     38.      Em quais situações a assinatura eletrônica avançada — incluindo a assinatura gov.br —
+     pode ser utilizada em receitas digitais, e quais são as limitações para medicamentos sujeitos a
+     controle especial? ............................................................................................................................ 19
+     39.      Como verificar a validade de uma assinatura eletrônica em uma receita digital? ............ 19
+     40.      Quais tipos de assinatura eletrônica são aceitos para o prescritor, o paciente e o
+     profissional farmacêutico no âmbito da RDC nº 1000/2025?.......................................................... 19
+     41.      Quando os requisitos técnicos para integração dos sistemas de prescrição ao SNCR serão
+     divulgados? ...................................................................................................................................... 20
+     42.      A partir de quando será possível emitir Notificações de Receita eletrônicas para
+     medicamentos tarja preta? .............................................................................................................. 20
+     43.      O SNCR possui cadastro ou acesso direto para farmácias e drogarias? ............................ 20
+     44.      O que as farmácias precisam fazer para se adaptarem à dispensação com receitas
+     eletrônicas? ...................................................................................................................................... 20
+     45.      Será necessário treinamento para equipes de farmácias? ................................................ 20
+     46.      Para o registro e a dispensação de receituários eletrônicos. O que são os modelos de
+     Notificações de Receita eletrônicas previstos na RDC nº 1.000/2025? ........................................... 21
+     47.      A numeração prevista no art. 7˚ da RDC nº 1.000/2025 vale para receitas em papel?..... 21
+     48.      No caso da assinatura avançada para receitas sujeitas a retenção (RDC 471), elas
+     precisarão ser assinaturas avançadas “validáveis” no ITI? Nem todas as assinaturas avançadas têm
+     vínculo com o ITI. ............................................................................................................................. 21
+
+
+
+                                                                                                                                                        3
+                           Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                  É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                                    Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+49.      A possibilidade de utilização de assinatura eletrônica avançada para receitas sujeitas à
+retenção — incluindo antimicrobianos e medicamentos da classe GLP-1 — passará a vigorar a
+partir do dia 13? Além disso, essas receitas continuarão exigindo validação no ITI para fins de
+registro de uso? ............................................................................................................................... 22
+50.      Diante da inexistência de duas vias para as receitas, como deverá ser realizado o registro
+eletrônico de uso enquanto o SNCR ainda não estiver operacional, especialmente no caso de
+receitas de Controle Especial e Sujeitas à Retenção? Considerando que atualmente as anotações
+são feitas na cópia impressa do PDF (‘segunda via’), essas anotações poderão ser realizadas
+diretamente em plataformas digitais? ............................................................................................. 22
+51.      Quais cuidados devem ser observados quanto à proteção de dados pessoais nas
+prescrições eletrônicas?................................................................................................................... 22
+52.      Há cronograma definido para a integração entre o SNCR e o SNGPC? ............................. 23
+
+
+
+
+                                                                                                                                                4
+                     Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+              É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                            Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+2. Apresentação
+2.1. Objetivo do documento Perguntas e Respostas
+
+Este documento de Perguntas e Respostas sobre a RDC Anvisa nº 1.000/2025, que
+dispõe sobre os requisitos de controle para Notificações de Receita, Receitas de
+Controle Especial e Receitas sujeitas à retenção emitidas em meio eletrônico, tem como
+objetivo esclarecer dúvidas recorrentes e orientar a aplicação prática da norma, com
+foco especial nos pontos que entram em vigência a partir de 13 de fevereiro de 2026.
+
+O material busca apoiar a interpretação uniforme da regulamentação, consolidando
+entendimentos institucionais sobre as alterações imediatas da RDC nº 1.000/2025,
+especialmente no que se refere:
+
+   •   à convivência entre receituários físicos e eletrônicos;
+   •   às alterações nos modelos de receituários físicos;
+   •   às responsabilidades das Vigilâncias Sanitárias locais no período de transição;
+       e
+   •   às orientações operacionais aplicáveis enquanto as funcionalidades do Sistema
+       Nacional de Controle de Receituários (SNCR) seguem em processo de
+       evolução.
+
+O documento não substitui a leitura da legislação sanitária vigente, tampouco dos
+manuais e atos normativos correlatos, mas atua como instrumento complementar de
+orientação, voltado à aplicação consistente e segura da norma no cotidiano das ações
+de vigilância sanitária.
+
+2.2. Público-alvo
+
+Este documento é destinado principalmente a:
+
+   •   Autoridades Sanitárias Locais (estaduais, municipais e do Distrito Federal) e
+              profissionais que atuam no Sistema Nacional de Vigilância Sanitária
+              (SNVS), responsáveis pela fiscalização, orientação e controle sanitário
+              relacionados à prescrição, à dispensação e à escrituração de
+              medicamentos, principalmente os sujeitos a controle especial;
+   •   Profissionais de farmácias e drogarias, com e sem manipulação, diretamente
+              envolvidos na correta aplicação da norma, especialmente no contexto da
+              utilização dos novos modelos de receituários, inclusive eletrônicos;
+   •   Prescritores de medicamentos; e
+   •   Público em geral, em especial usuários do sistema de saúde, pacientes e demais
+              interessados nas regras aplicáveis à prescrição, dispensação e controle
+              de medicamentos, principalmente os sujeitos a controle especial.
+
+O conteúdo foi estruturado considerando a realidade operacional das Vigilâncias
+Sanitárias, buscando responder às dúvidas mais frequentes identificadas no processo
+de implementação da norma.
+
+
+
+
+                                                                                                5
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+2.3. Contexto e importância da RDC Anvisa nº 1.000/2025
+
+A RDC Anvisa nº 1.000, de 2025, representa um marco importante no processo de
+modernização do controle sanitário de receituários no Brasil, ao estabelecer requisitos
+específicos para a emissão, o controle e a rastreabilidade de receituários emitidos em
+meio eletrônico.
+
+A norma se insere em um contexto mais amplo de transformação digital do controle de
+medicamentos sujeitos a controle especial, em consonância com:
+
+   •   a instituição do Sistema Nacional de Controle de Receituários (SNCR); e
+   •   a necessidade de aprimorar a segurança, a rastreabilidade e a padronização
+       nacional dos procedimentos sanitários.
+
+É fundamental destacar que a RDC nº 1.000/2025:
+
+   •   não extingue o receituário físico;
+   •   não torna obrigatória a prescrição eletrônica;
+   •   não invalida os modelos físicos previamente impressos, que permanecem
+       válidos conforme a legislação sanitária vigente.
+
+Seu foco está na organização do modelo eletrônico e na readequação de fluxos
+administrativos, promovendo maior clareza quanto às responsabilidades institucionais e
+preparando o ambiente regulatório para a ampliação gradual do uso de ferramentas
+digitais.
+
+2.4. Ênfase do documento e vigência imediata
+
+Embora a RDC nº 1.000/2025 trate de forma estruturada do receituário eletrônico, este
+documento de Perguntas e Respostas prioriza os aspectos que produzem efeitos
+imediatos a partir de 13 de fevereiro de 2026, data de início de sua vigência.
+
+Nesse sentido, são enfatizados:
+
+   •   os impactos da norma sobre os receituários físicos, especialmente quanto à
+       validade de estoques existentes e à adoção de novos modelos;
+   •   as orientações transitórias aplicáveis enquanto o SNCR não dispõe de todas as
+       funcionalidades previstas;
+   •   o papel das Vigilâncias Sanitárias na orientação, harmonização de
+       entendimentos e fiscalização durante o período de adaptação.
+
+
+
+
+                                                                                                 6
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+3. RECEITUÁRIOS FÍSICOS
+
+1. A RDC nº 1.000/2025 acaba com as notificações de receita em papel?
+
+A RDC nº 1.000/2025 não elimina o uso de receituários físicos nem torna obrigatória a
+prescrição eletrônica. As notificações de receita em papel continuam válidas e poderão
+ser utilizadas normalmente por prescritores e instituições de saúde, conforme a
+legislação vigente.
+2. A RDC nº 1.000/2025 trata de quais tipos de receituários?
+
+A norma trata de dois conjuntos distintos de receituários, com finalidades diferentes:
+   • receituários eletrônicos, utilizados exclusivamente em plataformas de prescrição
+      eletrônica integradas ao SNCR;
+   • receituários físicos, que continuam sendo utilizados por profissionais prescritores
+      e serviços de saúde.
+
+
+3. O que muda nos modelos de Notificações de Receita e Receita de Controle
+   Especial físicas?
+
+A Anvisa está disponibilizando os modelos atualizados de Notificações de Receita e
+Receita de Controle Especial físicas, com ajustes pontuais, sem alteração da natureza
+do controle sanitário.
+
+Esses modelos:
+
+   •   podem continuar ser utilizados por prescritores e instituições de saúde;
+   •   não serão extintos; permanecem válidos conforme a legislação vigente.
+
+4. Quando e onde os modelos de receituários serão disponibilizados?
+
+A Anvisa disponibilizará os modelos:
+
+   •   de receituários físicos, para uso por profissionais e instituições, publicado no
+       sítio eletrônico da Anvisa em Modelos de receituários; e
+
+   •   de receituários eletrônicos, destinados exclusivamente às plataformas de
+       prescrição.
+
+Atenção: os modelos de receituários constantes dos anexos da Portaria nº 344/98
+foram revogados e deixam de ser válidos para novas impressões a partir de 13 de
+fevereiro de 2026. Os novos modelos que deverão ser utilizados estão disponibilizados
+no link informado acima.
+
+Como medida de transição, os receituários impressos até 12 de fevereiro de 2026
+poderão continuar sendo utilizados por tempo indeterminado. As solicitações de
+impressão de receituários realizadas até essa data, ainda que o processo de impressão
+
+
+
+
+                                                                                                 7
+                     Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+              É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                            Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+esteja em andamento, podem ser concluídas utilizando os modelos vigentes à época da
+solicitação, sem necessidade de cancelamento ou retrabalho;
+
+No caso dos modelos eletrônicos, a divulgação estará vinculada à implementação do
+SNCR e à definição dos requisitos técnicos de integração, que, conforme a RDC nº
+1.000/2025, serão divulgados até 1º de junho de 2026.
+
+5. Devo buscar orientações complementares da Vigilância Sanitária local quanto
+   à impressão dos receituários?
+
+Sim, é fundamental consultar a Vigilância Sanitária local para verificar se existem
+diretrizes específicas para essa impressão, como, por exemplo, a obrigatoriedade de
+utilizar apenas gráficas previamente cadastradas junto à referida autoridade, prática
+comum em algumas localidades.
+
+6. Quais são as principais alterações no modelo das Notificações de Receita dos
+   tipos A, B, B2 e C2?
+
+A RDC Anvisa nº 1.000/2025 promoveu alterações relevantes nos modelos de
+Notificações de Receita dos tipos A, B, B2 e C2, incluindo a revogação dos modelos
+anteriormente previstos como anexos da Portaria SVS/MS nº 344/1998.
+
+Em razão dessa revogação, os modelos válidos de receituários controlados deixam de
+constar como anexos normativos e passam a ser disponibilizados por meio de
+documento técnico próprio, publicado no sítio eletrônico da Anvisa, conforme previsto
+na RDC nº 1.000/2025.
+
+Atualmente, os modelos oficiais de Notificações de Receita encontram-se disponíveis
+na página do Sistema Nacional de Controle de Receituários (SNCR), na seção Modelos
+de receituários.
+
+7. O que mudou no layout das Notificações de Receita dos tipos A, B, B2 e C2?
+
+No novo modelo das Notificações de Receita dos tipos A, B, B2 e C2, as informações
+destinadas ao estabelecimento dispensador deixam de constar no corpo principal do
+formulário e passam a ser integralmente registradas por meio do carimbo ou registro
+posicionado no verso da Notificação de Receita.
+
+Essa adequação foi realizada porque os referidos dados já integram entre as
+informações obrigatórias a serem apostadas no verso do documento, conforme previsto
+no Anexo IX da Portaria SVS/MS nº 6, de 1999, evitando a duplicidade de campos e
+promovendo maior padronização do modelo.
+
+Assim, o novo layout mantém a integralidade das informações exigidas para fins de
+controle sanitário, ao mesmo tempo em que simplifica o formulário e harmoniza o
+preenchimento com os procedimentos já estabelecidos para a dispensação.
+
+
+
+
+                                                                                                8
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+8. O layout das Receitas de Controle Especial é obrigatório conforme o modelo
+   apresentado ou é possível adotar disposições alternativas dos campos, desde
+   que atendidos os requisitos da norma?
+
+No caso das Receitas de Controle Especial, é possível utilizar outros layouts, desde que
+sejam mantidos todos os campos previstos na norma e que esteja claramente indicada
+a identificação de “Receita de Controle Especial”. O layout atual será esse até a
+transição para o modelo de controle integrado ao SNCR, quando já deveremos ter
+definidos os modelos dos receituários eletrônicos que serão utilizados.
+
+9. O prescritor ou a instituição de saúde podem obter apenas a numeração da
+   Notificação de Receita A junto à Vigilância Sanitária e realizar a impressão dos
+   talonários às próprias expensas?
+
+Sim. A RDC Anvisa nº 1.000/2025 retirou a obrigatoriedade de impressão da Notificação
+de Receita A pela Vigilância Sanitária, sem vedar essa prática quando a autoridade
+sanitária local optar por mantê-la como procedimento administrativo.
+
+A partir de 13 de fevereiro de 2026, todos os receituários destinados à prescrição de
+medicamentos controlados pela Portaria SVS/MS nº 344/1998 poderão ser impressos
+em gráficas pelos próprios profissionais prescritores e instituições de saúde às suas
+próprias expensas. Todas as novas impressões devem obrigatoriamente utilizar os
+modelos oficiais publicados no site da Anvisa, uma vez que os modelos anteriores foram
+revogados.
+
+Atenção: A RDC 1000/2025 não eliminou a exigência de impressão em gráficas nem a
+obrigatoriedade de numeração fornecida pela autoridade sanitária local para as
+Notificações de Receita. Assim, prescritores e instituições devem continuar solicitando
+previamente essa numeração junto à autoridade sanitária competente e, a partir de 13
+de fevereiro de 2026, poderão providenciar a impressão dos receituários em gráfica.
+
+10. Com a permanência da impressão da Notificação de Receita A por meio de
+    gráficas, é necessário cadastro ou identificação da gráfica no SNCR? Como
+    ocorre a geração e a distribuição das numerações?
+
+A impressão dos talonários de Notificação de Receita A poderá ser solicitada
+diretamente pelo profissional prescritor ou pela instituição, conforme o caso, não sendo
+necessária a identificação ou o cadastro da gráfica no SNCR.
+
+Essa alteração decorre da adequação do SNCR à RDC Anvisa nº 1.000/2025, que
+redefiniu o papel do sistema e da autoridade sanitária. A norma estabelece que a
+atribuição da Vigilância Sanitária é a distribuição da numeração das Notificações de
+Receita, e não mais a gestão física de talonários.
+
+Nesse contexto, foram removidas do SNCR duas etapas anteriormente existentes:
+
+   •   a identificação/cadastramento de gráficas; e
+   •   o fluxo no qual a autoridade sanitária local recebia previamente blocos de
+       numeração para, a partir daí, realizar expedições sucessivas até a dispensação
+       ao profissional prescritor.
+
+
+
+                                                                                                 9
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+No novo modelo, o SNCR passa a gerar diretamente as numerações de Notificação de
+Receita A, as quais são distribuídas eletronicamente dentro do próprio sistema,
+conforme os fluxos de distribuição entre Vigilâncias Sanitárias. Assim, não há mais a
+etapa intermediária de “recebimento” de numerações da gráfica pela Visa para posterior
+redistribuição manual ou física entre Vigilâncias sanitárias.
+
+Dessa forma, talonários e numerações passam a ser tratados de maneira integrada,
+sendo a numeração controlada exclusivamente pelo SNCR e a impressão realizada com
+base nos modelos oficiais de receituários controlados publicados no portal da Anvisa.
+
+Ressalta-se, por fim, que caso a autoridade sanitária local possua procedimento próprio
+de cadastramento ou controle de gráficas, que não envolva o SNCR, esse
+procedimento poderá ser mantido e deverá ser respeitado, desde que não conflite com
+as disposições da RDC nº 1.000/2025 e com o funcionamento do sistema nacional.
+
+11. O profissional que optar por imprimir a Notificação de Receita A em gráfica
+    própria precisa comparecer à Vigilância Sanitária para carimbar os talonários
+    após a impressão?
+
+Não. Não há necessidade de aposição de carimbo pela Vigilância Sanitária após a
+impressão dos talonários em gráfica, para fins de validação da Notificação de Receita
+A.
+
+A validação da numeração ocorre no momento da sua concessão ao profissional
+prescritor ou à instituição, por meio da funcionalidade de dispensação da numeração no
+Sistema Nacional de Controle de Receituários (SNCR).
+
+Assim, uma vez concedida e registrada a numeração no SNCR, não se exige etapa
+adicional de validação física ou carimbo posterior, independentemente de quem realize
+a impressão dos talonários.
+
+12. A Vigilância Sanitária pode continuar realizando a impressão de talonários de
+    Notificação de Receita A e de Talidomida, caso tenha interesse, ou essa prática
+    foi vedada com as alterações normativas?
+
+Sim. A Vigilância Sanitária (VISA) pode continuar realizando a impressão de talonários
+de Notificação de Receita A e de Talidomida, caso entenda conveniente. Com a RDC
+Anvisa nº 1.000/2025, essa atividade deixa de ser uma obrigação e passa a ser uma
+faculdade administrativa.
+
+As alterações normativas não proíbem a impressão pela Vigilância Sanitária. O que
+ocorreu foi a retirada da exigência de que essa atribuição fosse exercida de forma
+exclusiva pelo poder público, como anteriormente previsto na Portaria SVS/MS nº
+344/1998.
+
+Paralelamente, o profissional prescritor ou a instituição de saúde passou a ter o direito
+de solicitar apenas a numeração da Notificação de Receita A e de Talidomida à
+Vigilância Sanitária, podendo providenciar a impressão dos talonários por conta própria,
+às suas expensas, desde que sejam observados os modelos oficiais de receituários
+controlados disponibilizados no portal da Anvisa.
+
+
+
+                                                                                                 10
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+Em razão dessa mudança, etapas relacionadas à impressão gráfica — como envio de
+arquivos, escolha de gráfica ou recebimento de talonários impressos — não integram
+mais o fluxo do SNCR. Este sistema nacional não contempla funcionalidades de
+identificação de gráficas nem de controle do processo de impressão.
+
+Por outro lado, caso a autoridade sanitária local opte por manter fluxos administrativos
+próprios, como a impressão direta ou a expedição de talonários entre Vigilâncias
+Sanitárias, esses procedimentos podem continuar sendo adotados. Nesses casos, o
+SNCR permanece responsável exclusivamente pela geração e pela distribuição da
+numeração das Notificações de Receita, sem interferir nos arranjos locais relacionados
+à impressão física dos talonários.
+
+13. As Notificações de Receita do tipo A e de Talidomida já impressas pela Anvisa
+    continuam válidas após a RDC Anvisa nº 1.000/2025?
+
+Sim. A RDC Anvisa nº 1.000/2025 permite a distribuição e a utilização, por prazo
+indeterminado, destas Notificações de Receita já impressas, ou em processo de
+impressão, pela Vigilância Sanitária local.
+
+A norma não estabelece prazo de validade nem limite temporal para o uso desses
+formulários previamente impressos, tampouco determina sua substituição ou
+inutilização em razão da entrada em vigor do novo marco regulatório. Assim, essas
+notificações podem continuar sendo distribuídas pelas Vigilâncias Sanitárias e utilizadas
+pelos prescritores, desde que atendidos os demais requisitos sanitários aplicáveis.
+
+Ressalta-se que a RDC nº 1.000/2025 promove a reorganização dos fluxos de controle
+e numeração das Notificações de Receita, sem invalidar os estoques existentes ou
+impor a descontinuidade dos modelos físicos já produzidos. A medida assegura uma
+transição regulatória adequada, com segurança jurídica e continuidade da assistência à
+saúde.
+
+14. Existe limite de quantidade de numeração de receituários que pode ser
+    concedida a cada profissional prescritor?
+Não. As regras para a concessão de numeração de receituários não foram alteradas
+pela RDC Anvisa nº 1.000/2025. Da mesma forma, o fluxo de solicitação de numeração
+pelo profissional prescritor ou pela instituição permanece inalterado, devendo seguir os
+procedimentos e critérios já adotados pelas Vigilâncias Sanitárias competentes.
+
+Assim, eventuais limites quantitativos, critérios de concessão ou controles
+administrativos continuam a ser definidos conforme a regulamentação vigente e os
+fluxos já estabelecidos, não havendo inovação normativa nesse ponto.
+
+15. Os novos modelos de Notificação de Receita deixam de conter canhotos?
+
+A Portaria SVS/MS nº 344/1998 não previa, de forma expressa, a existência de canhotos
+nos modelos de Notificação de Receita. A utilização de canhotos decorreu,
+historicamente, de procedimentos administrativos adotados por algumas Vigilâncias
+Sanitárias como forma adicional de controle.
+
+
+
+
+                                                                                                 11
+                     Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+              É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                            Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+Nesse sentido, não há impedimento normativo para a manutenção ou adoção de
+canhotos, tampouco para a utilização de modelos de receituários que contemplem
+canhotos, desde que sejam observados os modelos oficiais publicados pela Anvisa e os
+requisitos sanitários vigentes.
+
+16. O novo modelo de Notificação de Receita deixa de exigir o endereço do
+    paciente?
+
+
+Sim. No novo modelo de Notificação de Receita, não há mais campo para endereço do
+paciente.
+
+Passam a ser exigidos:
+
+   •   nome completo do paciente; e
+   •   CPF, ou passaporte, no caso de paciente estrangeiro,
+
+em conformidade com as alterações normativas vigentes.
+
+17. Houve alterações específicas no modelo da Notificação de Receita C2
+    (retinoides de uso sistêmico)?
+
+
+Sim. No novo modelo da Notificação de Receita C2:
+
+   •   deixa de ser exigida a marcação de “tratamento inicial” ou “tratamento
+       subsequente”;
+   •   o prescritor deve indicar expressamente a substância prescrita, não havendo
+       mais campos pré-preenchidos;
+   •   permanece a advertência visual relativa à gestação, em razão do caráter
+       teratogênico dos retinoides sistêmicos.
+
+18. O CPF do paciente (ou passaporte) será obrigatório também para as receitas
+    da RDC nº 471/2021, assim como para as da Portaria nº 344/1998?
+
+Para as receitas da RDC nº 471/2021, o CPF do paciente ou passaporte não será
+obrigatório. Os campos de preenchimento das receitas permanecem inalterados,
+conforme previsto na norma correspondente.
+
+
+19. A substituição dos dados do paciente — com a inclusão obrigatória de CPF ou
+    passaporte e a retirada do endereço — também se aplica aos receituários
+    emitidos em papel, conforme as disposições da Portaria nº 344/1998, já
+    atualizada pela RDC nº 1000/2025?
+
+A Portaria nº 344/98, já considerando as alterações promovidas pela RDC nº 1000/2025,
+define os campos de preenchimento para receituários controlados, tanto em papel
+quanto eletrônicos.
+
+
+
+
+                                                                                                12
+                       Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                              Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+20. Caso o paciente não possua CPF no momento da prescrição, qual alternativa
+    poderá ser utilizada para sua identificação, considerando que a RDC nº
+    1000/2025 adota o CPF como identificador único?
+
+A exigência do CPF como identificador único guarda observância à Lei nº 14.534/2023,
+que estabelece o CPF como número suficiente e substitutivo para a identificação do
+cidadão nos bancos de dados públicos.
+
+Nos casos em que o paciente não possua CPF, excepcionalmente, pode ser registrada
+a indicação “não possui” no campo correspondente, de forma a não impedir a emissão
+da receita e o acesso à assistência à saúde.
+
+
+21. O endereço do prescritor deve ser registrado na receita ou apenas o endereço
+    da instituição de saúde deve constar no documento?
+
+Prescrições impressas por prescritores e prescrições eletrônicas não incluem o
+endereço do profissional. O endereço só aparece em prescrições impressas por
+instituições de saúde.
+
+
+22. Com a revogação das disposições anteriores, permanece necessária a
+    indicação da Unidade Federativa (UF)?
+
+O código de numeração do SNCR inclui a identificação da unidade federativa, conforme
+o padrão de código de endereçamento geográfico estabelecido pelo Instituto Brasileiro
+de Geografia e Estatística.
+
+     A tabela a seguir detalha os códigos correspondentes a cada estado:
+
+Código     Unidade                 Código              Unidade             Código                 Unidade
+           Federativa                                  Federativa                                 Federativa
+12         Acre                    41                  Paraná              21                     Maranhão
+27         Alagoas                 25                  Paraíba             51                     Mato Grosso
+16         Amapá                   15                  Pará                50                     Mato Grosso
+                                                                                                  do Sul
+13         Amazonas                26                  Pernambuco          31                     Minas Gerais
+29         Bahia                   22                  Piauí               14                     Roraima
+23         Ceará                   24                  Rio Grande          42                     Santa
+                                                       do Norte                                   Catarina
+53         Distrito Federal        43                  Rio Grande          28                     Sergipe
+                                                       do Sul
+32         Espírito Santo          33                  Rio de              35                     São Paulo
+                                                       Janeiro
+52         Goiás                   11                  Rondônia            17                     Tocantins
+
+
+
+
+                                                                                                              13
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+A sequência de numeração é gerada automaticamente conforme o padrão do SNCR,
+garantindo que cada receita seja identificável de acordo com o estado de emissão.:
+
+
+
+
+23. Quais são os requisitos de assinatura eletrônica aplicáveis ao Termo de
+    Consentimento Pós-Informação previsto no § 3º do Art. 50, incluindo a
+    necessidade de anexação ao arquivo da receita e as exigências relativas ao
+    seu arquivamento nos locais correspondentes às vias físicas?
+
+O termo de consentimento pós-informação pode ser assinado com assinatura avançada
+pelo paciente e pelo escritor. Ele pode ser criado em um documento nato digital, que
+não precisa estar anexado ao PDF da receita nem no mesmo arquivo. O arquivamento
+desse termo segue as mesmas regras de guarda de documentos físicos. Além disso,
+não há impedimento para que o termo seja impresso e assinado fisicamente pelo médico
+e pelo paciente, enquanto a receita apresentada é digital.
+
+
+24. O registro de utilização das notificações de receita emitidas em papel também
+    passará a ser realizado no Sistema Nacional de Controle de Receitas (SNCR)?
+
+As notificações de receita em papel não terão registro de utilização no Sistema Nacional
+de Controle de Receitas (SNCR) neste momento. Portanto, o procedimento de retenção
+da notificação de receita e sua posterior escrituração no Sistema Nacional de
+Gerenciamento de Produtos Controlados (SNGPC) permanece inalterado.
+
+
+25. As prescrições manuais de antimicrobianos e de agonistas do receptor GLP-1
+    precisam conter numeração do SNCR?
+
+Não. As prescrições emitidas em meio físico (manuais) de antimicrobianos e de
+agonistas do receptor GLP1 não estão sujeitas à numeração do SNCR.
+A numeração do SNCR aplica-se exclusivamente aos receituários emitidos em meio
+eletrônico, e será obrigatória quando a ferramenta correspondente do SNCR estiver
+disponível para o público.
+
+
+26. É necessário manter cópia física da receita ou do registro de dispensação de
+    medicamentos?
+
+(Procedimento temporário ainda vigente para Receitas de Controle Especial e
+Receitas Sujeitas à Retenção emitidas eletronicamente, enquanto o SNCR não realiza
+o controle desses receituários.)
+
+Até a disponibilização da funcionalidade específica do Sistema Nacional de Controle de
+Receituários (SNCR) para o registro eletrônico do uso das prescrições, a manutenção
+do procedimento físico, com impressão do documento eletrônico em formato PDF,
+
+
+
+                                                                                                 14
+                     Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+              É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                            Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+constitui o padrão de conformidade regulatória recomendado. Nesse período de
+transição, a guarda dos documentos pode ocorrer da seguinte forma:
+
+   •   Uma via em formato eletrônico, obtida por meio do sistema de prescrição ou por
+       download do documento, utilizada como comprovação da saída do medicamento
+       do estoque em eventuais fiscalizações; e
+   •   Uma via impressa, destinada exclusivamente à consulta ao documento
+       eletrônico, na qual devem constar carimbo ou registro com a identificação do
+       comprador e do fornecedor, bem como a anotação, no verso, da quantidade
+       dispensada, conforme a legislação sanitária vigente
+
+Eventuais registros realizados exclusivamente em plataformas digitais intermediárias
+não substituem, neste momento, o procedimento previsto na regulamentação sanitária,
+devendo ser observada a sistemática atualmente respaldada até a implementação das
+funcionalidades correspondentes no SNCR.
+27. As prescrições emitidas em caráter emergencial foram alteradas pela RDC
+    Anvisa nº 1.000/2025?
+
+Não. As prescrições emitidas em caráter emergencial permanecem restritas ao meio
+físico, nos termos da regulamentação sanitária vigente. A utilização da prescrição
+emergencial:
+
+   •   não pode ser empregada como mecanismo substitutivo da regular obtenção de
+       numeração junto à Vigilância Sanitária; e
+   •   mantém a obrigatoriedade de apresentação à Autoridade Sanitária no prazo de
+       até 72 horas.
+
+A RDC Anvisa nº 1.000/2025 não altera os pressupostos nem a natureza excepcional
+desse procedimento.
+
+28. Os novos modelos de Notificação de Receita A deixam de trazer a indicação
+    do intervalo de numeração impresso no rodapé do talonário?
+
+Sim. Os novos modelos de Notificação de Receita A não apresentam mais a indicação
+do intervalo de numeração impressa no rodapé do talonário.
+
+29. Os blocos impressos de Notificação de Receita devem continuar contendo 20
+    folhas cada?
+
+A RDC Anvisa nº 1.000/2025 retirou a indicação expressa quanto à quantidade de folhas
+por bloco, anteriormente prevista na regulamentação.
+
+Essa alteração não impede nem desobriga a utilização de blocos com 20 folhas, prática
+que pode continuar sendo adotada, conforme a organização administrativa da Vigilância
+Sanitária ou a opção do prescritor ou da instituição responsável pela impressão.
+
+A definição da quantidade de folhas por bloco passa, portanto, a ter caráter
+administrativo, desde que respeitados os modelos oficiais de receituários publicados
+pela Anvisa e os requisitos sanitários aplicáveis.
+
+
+
+                                                                                                15
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+30. O novo modelo de funcionamento do SNCR retira das Vigilâncias Sanitárias
+    locais o controle sobre as Notificações de Receita emitidas em seu território?
+
+Não. O SNCR não elimina nem reduz o papel das Vigilâncias Sanitárias.
+As Visas terão acesso a relatórios completos de numerações concedidas, com
+identificação dos prescritores, preservando a capacidade de monitoramento,
+fiscalização e atuação em situações de risco sanitário.
+
+31. A RDC nº 1.000/2025 altera a forma de escrituração de receitas eletrônicas no
+   SNGPC?
+
+Não.    Não    há   alteração   na    forma     de    escrituração    no    SNGPC.
+Deve ser informado o número do receituário, seja ele físico ou eletrônico, no campo
+correspondente. A impressão da receita eletrônica não invalida a prescrição, mas o
+documento de referência permanece sendo o eletrônico.
+
+32. Profissionais médicos que possuem apenas o Registro Único emitido pelo
+    Ministério da Saúde (RMS) podem solicitar numeração de Notificações de
+    Receita, Receitas de Controle Especial e prescrições de antimicrobianos?
+
+Sim. A RDC nº 52, de 6 de outubro de 2013, estabelece que o Registro Único emitido
+pelo Ministério da Saúde (RMS), nos termos do § 3º do art. 16 da Lei nº 12.871, de 22
+de outubro de 2013, constitui informação apta a substituir o número de inscrição no
+Conselho Regional de Medicina (CRM) em:
+
+   •   Notificações de Receita;
+   •   Receitas de Controle Especial;
+   •   Prescrições de antimicrobianos; e
+   •   Quaisquer outras situações em que a legislação sanitária exija a identificação do
+       prescritor por meio de número de inscrição profissional.
+
+Dessa forma, o RMS deve ser aceito pelas Vigilâncias Sanitárias para fins de concessão
+de numeração e identificação do prescritor, produzindo os mesmos efeitos
+administrativos e sanitários do número de inscrição no CRM, desde que o profissional
+esteja regularmente autorizado a exercer a atividade médica nos termos da legislação
+vigente.
+
+33. No novo modelo de Receita de Controle Especial (RCE), quais informações
+    devem ser preenchidas no campo de dispensação para medicamentos
+    genéricos?
+
+Para medicamentos genéricos, o campo de dispensação na RCE deve conter o nome
+do fabricante.
+34. Nos novos modelos dos receituários o campo Identificação do
+    estabelecimento dispensador não existe mais. Onde esses dados devem ser
+    anotados no momento da dispensação do medicamento?
+
+Não. Os dados do estabelecimento dispensador continuam obrigatórios conforme a
+Portaria nº 06/99, porém deixam de constar no corpo principal da Notificação de Receita.
+
+
+
+                                                                                                 16
+                     Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+              É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                            Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+Essas informações devem ser registradas no momento da dispensação, por meio
+de carimbo ou registro no verso do documento, contendo os dados da farmácia, do
+farmacêutico responsável e do medicamento dispensado, conforme a legislação
+sanitária aplicável.
+
+"Art. 82
+
+b) identificação do estabelecimento dispensador: o responsável pelo atendimento, deve
+utilizar o carimbo de identificado do estabelecimento contendo o CNPJ, ou, CNES, no
+caso de estabelecimentos públicos de dispensação, nome e endereço completo, datar
+e colocar seu nome de forma legível abaixo do carimbo de identificação do
+estabelecimento;"
+
+Além disso, a anotação da quantidade dispensada deve continuar sendo feita no verso
+da Notificação, conforme alínea c do Art. 82 da Portaria 06/1999:
+
+"c) identificação da quantidade aviada ou número de registro: a farmácia ou drogaria
+deve ter um carimbo próprio (ANEXO IX) e anotar no verso da Notificação da Receita a
+quantidade dispensada e quando tratar-se de formulações magistrais, o número de
+registro da receita no livro de receituário."
+
+No caso da Receita de Controle Especial, vale a mesma orientação: os dados do
+estabelecimento dispensador podem ser apostos mediante carimbo pela farmácia ou
+drogaria, ou preenchidos, caso os campos já estejam impressos no receituário. A
+quantidade aviada, ou, quando tratar- se de formulações magistrais, o número do
+registro da receita no livro correspondente, deverão ser anotados no verso.
+
+35. Se o prescritor já tiver seu nome impresso no cabeçalho do receituário, é
+    necessário repetir a sua identificação no campo de assinatura?
+
+Não. Quando o nome do prescritor já estiver impresso no cabeçalho do receituário, não
+é necessária a repetição da sua identificação no campo de assinatura, nem a utilização
+de carimbo.
+
+A identificação do prescritor no campo de assinatura é exigida apenas quando o seu
+nome não constar previamente no receituário, devendo, nesse caso, ser realizada de
+forma legível, conforme os requisitos sanitários aplicáveis.
+
+
+
+
+                                                                                                17
+                       Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+                É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                              Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+4. RECEITUÁRIOS ELETRÔNICOS
+
+36. Quais tipos de assinatura eletrônica podem ser utilizados em receitas médicas
+    digitais no Brasil?
+
+A legislação brasileira prevê três tipos de assinatura eletrônica: simples, avançada e
+qualificada.
+
+    •   Assinatura eletrônica simples: Utiliza dados eletrônicos associados ao
+        signatário, mas não oferece garantias suficientes de autoria e integridade para
+        documentos que exigem maior nível de segurança jurídica. Por essa razão, não
+        é adequada para prescrições médicas digitais, especialmente aquelas
+        relacionadas a medicamentos sujeitos a controle sanitário.
+
+    •   Assinatura eletrônica avançada: É aquela que permite identificar o signatário,
+        associar a assinatura de forma inequívoca ao documento e detectar eventuais
+        alterações posteriores, nos termos da Lei nº 14.063/2020. A assinatura realizada
+        por meio da plataforma gov.br é classificada como assinatura eletrônica
+        avançada. Esse tipo de assinatura pode ser utilizado em prescrições digitais de
+        medicamentos que não sejam classificados como sujeitos a controle especial
+        pela Portaria SVS/MS nº 344/1998, como as receitas sujeitas à retenção, a
+        exemplo dos antimicrobianos e dos agonistas do receptor GLP-1, observadas as
+        normas específicas aplicáveis.
+
+    •   Assinatura eletrônica qualificada: É aquela realizada com certificado digital
+        emitido no âmbito da Infraestrutura de Chaves Públicas Brasileira (ICP-Brasil),
+        sendo o tipo de assinatura que oferece o maior nível de segurança jurídica. A
+        assinatura eletrônica qualificada é obrigatória para prescrições digitais de
+        medicamentos sujeitos a controle especial, conforme previsto na legislação
+        vigente, não sendo admitida, nesses casos, a substituição por assinatura
+        avançada.
+
+
+37. Quais medicamentos exigem assinatura eletrônica qualificada (ICP-Brasil) na
+    prescrição digital?
+
+Os medicamentos sujeitos a controle especial, conforme definidos na Portaria SVS/MS
+nº 344, de 1998, exigem que a receita digital seja assinada com assinatura eletrônica
+qualificada no padrão ICP-Brasil, sem exceções, conforme determina a Lei nº
+14.063/2020:
+
+ ”Art. 13. Os receituários de medicamentos sujeitos a controle especial e os atestados médicos em
+meio eletrônico, previstos em ato do Ministério da Saúde, somente serão válidos quando subscritos
+com assinatura eletrônica qualificada do profissional de saúde.”
+
+
+
+
+                                                                                                  18
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+38. Em quais situações a assinatura eletrônica avançada — incluindo a assinatura
+    gov.br — pode ser utilizada em receitas digitais, e quais são as limitações para
+    medicamentos sujeitos a controle especial?
+
+A assinatura eletrônica avançada, incluindo aquela realizada por meio da
+plataforma gov.br, não pode ser utilizada na prescrição digital de medicamentos sujeitos
+a controle especial, conforme definidos na Portaria SVS/MS nº 344/1998, uma vez que
+esses receituários exigem assinatura eletrônica qualificada (ICP-Brasil). Nesses casos,
+a receita digital assinada com assinatura avançada não é considerada válida.
+
+Por outro lado, a assinatura eletrônica avançada pode ser utilizada na prescrição digital
+de medicamentos não classificados como controlados pela Portaria nº 344/1998,
+incluindo:
+
+   •   medicamentos sujeitos à prescrição médica comum;
+   •   medicamentos sujeitos à retenção de receita, como antimicrobianos e
+       medicamentos agonistas do receptor do GLP-1.
+
+Em todos os casos, a assinatura eletrônica utilizada deve permitir a verificação
+da autenticidade, da integridade e da validade jurídica do documento.
+
+39. Como verificar a validade de uma assinatura eletrônica em uma receita digital?
+
+A validade de uma assinatura eletrônica em uma receita digital pode ser verificada por
+meio do validador oficial do Instituto Nacional de Tecnologia da Informação (ITI),
+disponível no serviço de validação de assinaturas eletrônicas Validar.
+
+Esse validador pode ser utilizado tanto para assinaturas no padrão ICP-Brasil quanto
+para assinaturas realizadas por meio da plataforma Gov.br.
+
+Já no caso de receitas emitidas por plataformas privadas ou sistemas próprios de
+prescrição, a verificação da assinatura deve ser feita utilizando o validador indicado pela
+própria empresa ou serviço que emitiu a prescrição.
+
+40. Quais tipos de assinatura eletrônica são aceitos para o prescritor, o paciente
+    e o profissional farmacêutico no âmbito da RDC nº 1000/2025?
+
+Para o profissional prescritor, a assinatura qualificada é obrigatória para receituários
+controlados, conforme previsto em lei. Já para receitas sujeitas à retenção e outras
+receitas, a assinatura avançada é aceita.
+
+Pacientes que assinam termos de responsabilidade ou de ciência podem usar qualquer
+padrão de assinatura avançada em documentos nato-digitais.
+
+Profissionais farmacêuticos também podem usar assinatura avançada.
+
+
+
+
+                                                                                                 19
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+41. Quando os requisitos técnicos para integração dos sistemas de prescrição ao
+    SNCR serão divulgados?
+
+Os requisitos técnicos para a integração dos serviços de prescrição eletrônica ao SNCR
+serão definidos pela Anvisa e divulgados em seu sítio eletrônico até 1º de junho de 2026.
+
+42. A partir de quando será possível emitir Notificações de Receita eletrônicas
+    para medicamentos tarja preta?
+
+As Notificações de Receita poderão ser emitidas eletronicamente a partir da
+disponibilização, pela Anvisa, das ferramentas eletrônicas para requisição de
+numeração e registro de utilização, previstas para até 1º de junho de 2026.
+
+
+43. O SNCR possui cadastro ou acesso direto para farmácias e drogarias?
+
+Não. Atualmente, o Sistema Nacional de Controle de Receituários (SNCR) não dispõe
+de interface de acesso nem de perfil de usuário para farmácias e drogarias.
+
+O SNCR é acessado exclusivamente pelas autoridades sanitárias estaduais, municipais
+e do Distrito Federal, com a finalidade de gerar e distribuir numerações de Notificações
+de Receita aos prescritores e às instituições autorizadas.
+
+Assim, não há, neste momento, funcionalidade de cadastro, login ou operação direta do
+sistema por estabelecimentos dispensadores. Isso ocorrerá quando a Anvisa
+disponibilizar as ferramentas eletrônicas para requisição de numeração e registro de
+utilização de receituários, previstas para até 1º de junho de 2026.
+
+44. O que as farmácias precisam fazer para se adaptarem à dispensação com
+    receitas eletrônicas?
+
+As farmácias deverão acessar o SNCR por meio do sistema Cadastro Anvisa para
+registrar a utilização dos receituários eletrônicos e possuir Cadastro Nacional de
+Estabelecimentos de Saúde (CNES), que é um cadastro obrigatório para
+estabelecimentos de saúde. Isso ocorrerá quando a Anvisa disponibilizar as ferramentas
+eletrônicas para requisição de numeração e registro de utilização de receituários,
+previstas para até 1º de junho de 2026.
+45. Será necessário treinamento para equipes de farmácias?
+
+Sim. A Anvisa disponibilizará manuais de utilização do SNCR e promoverá ações de
+treinamento para orientar os usuários quanto aos procedimentos necessários
+
+
+
+
+                                                                                                 20
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+46. Qual é a finalidade dos modelos de Notificações de Receita eletrônicas
+    previstos na RDC nº 1.000/2025 e como eles devem ser utilizados??
+
+Os modelos de Notificações de Receita eletrônicas, previstos no art. 7º da RDC nº
+1.000/2025:
+
+   •   serão destinados exclusivamente às plataformas de prescrição eletrônica;
+   •   serão utilizados somente no ambiente digital, de forma integrada ao Sistema
+       Nacional de Controle de Receituários (SNCR);
+
+Esses modelos não serão utilizados diretamente por pessoas físicas, nem preenchidos
+ou emitidos manualmente por prescritores.
+
+47. A numeração prevista no art. 7˚ da RDC nº 1.000/2025 vale para receitas em
+    papel?
+
+Não.
+
+A numeração mencionada no art. 7º da RDC nº 1.000/2025 refere-se exclusivamente às
+receitas emitidas em meio eletrônico, no âmbito das plataformas integradas ao SNCR.
+
+Ela não se aplica às notificações de receita físicas.
+
+Da mesma forma, a numerações das notificações de receitas físicas somente poderão
+ser usadas com documentos físicos.
+
+48. No caso da assinatura avançada para receitas sujeitas a retenção (RDC 471),
+    elas precisarão ser assinaturas avançadas “validáveis” no ITI? Nem todas as
+    assinaturas avançadas têm vínculo com o ITI.
+
+Conforme o inciso I do Art. 3º da RDC 1000/2025, a assinatura eletrônica avançada é
+aquela que “utiliza certificados não emitidos pela ICP-Brasil ou outro meio de
+comprovação da autoria e da integridade de documentos eletrônicos, nos termos da Lei
+nº 14.063/2020”.
+
+Dessa forma, as assinaturas avançadas não se restringem às assinaturas vinculadas
+ao ITI, como o gov.br.
+
+O requisito essencial é que o método utilizado permita comprovar autoria e integridade,
+atendendo aos critérios da Lei nº 14.063/2020. Portanto, assinaturas avançadas sem
+relação com o ITI continuam válidas, desde que obedeçam aos requisitos legais.
+
+
+
+
+                                                                                                 21
+                      Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+               É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                             Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+49. A possibilidade de utilização de assinatura eletrônica avançada para receitas
+    sujeitas à retenção — incluindo antimicrobianos e medicamentos da classe
+    GLP-1 — passará a vigorar a partir do dia 13? Além disso, essas receitas
+    continuarão exigindo validação no ITI para fins de registro de uso?
+
+Sim, é importante lembrar que essas receitas já não precisam de assinatura qualificada,
+pois não são consideradas receituários controlados pela Portaria nº 344/98. Portanto,
+a partir de 13 de fevereiro, elas também poderão ser assinadas com assinatura
+avançada. Se forem assinadas com assinatura gov.br, a validação será feita
+obrigatoriamente no portal Validar do ITI.
+
+Quanto ao registro eletrônico de uso da receita pela farmácia, ele será feito
+posteriormente, quando a ferramenta correspondente do SNCR estiver disponível para
+o público.
+
+
+50. Diante da inexistência de duas vias para as receitas, como deverá ser realizado
+    o registro eletrônico de uso enquanto o SNCR ainda não estiver operacional,
+    especialmente no caso de receitas de Controle Especial e Sujeitas à
+    Retenção? Considerando que atualmente as anotações são feitas na cópia
+    impressa do PDF (‘segunda via’), essas anotações poderão ser realizadas
+    diretamente em plataformas digitais?
+
+Os procedimentos para esse tipo de situação seguirão conforme orientação vigente até
+o momento, que é a impressão do documento em PDF e a realização de anotações em
+papel. Embora não haja impedimento para que as anotações sejam realizadas
+diretamente nas plataformas, estas carecem de amparo normativo, de forma que o
+procedimento de impressão é o que possui validade. Esse procedimento não deverá ser
+mais realizado assim que a ferramenta de registro eletrônico de uso do SNCR estiver
+disponível.
+
+
+51. Quais cuidados devem ser observados quanto à proteção de dados pessoais
+    nas prescrições eletrônicas?
+
+As prescrições eletrônicas envolvem o tratamento de dados pessoais sensíveis, nos
+termos da Lei nº 13.709/2018 (Lei Geral de Proteção de Dados Pessoais – LGPD).
+
+Nesse contexto:
+
+   •   prescritores, plataformas de prescrição, farmácias e demais agentes envolvidos
+       atuam como agentes de tratamento de dados;
+   •   devem ser adotadas medidas técnicas e administrativas compatíveis com o
+       risco, visando à proteção da confidencialidade, integridade e disponibilidade das
+       informações; e
+   •   o acesso aos dados deve observar o princípio da necessidade, limitando-se ao
+       estritamente indispensável para o cumprimento da finalidade sanitária.
+
+
+
+
+                                                                                                 22
+                     Copyright © 2026. Agência Nacional de Vigilância Sanitária.
+              É permitida a reprodução parcial ou total desta obra, desde que citada a fonte.
+                            Agência Nacional de Vigilância Sanitária (Anvisa).
+
+
+
+
+52. Há cronograma definido para a integração entre o SNCR e o SNGPC?
+
+No momento, não há cronograma definido para a integração entre o Sistema Nacional
+de Controle de Receituários (SNCR) e o Sistema Nacional de Gerenciamento de
+Produtos Controlados (SNGPC). A evolução das funcionalidades do SNCR, inclusive
+eventuais integrações com outros sistemas, será oportunamente comunicada por meio
+de atos específicos da Anvisa e ampla divulgação em seu portal institucional,
+assegurando previsibilidade regulatória e alinhamento com as Vigilâncias Sanitárias e
+os entes regulados.
+
+
+
+
+                                                                                                23
+

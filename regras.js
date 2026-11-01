@@ -1,4 +1,4 @@
-/* RefilMed — regras clínicas e regulatórias
+/* Meu Neuro — regras clínicas e regulatórias
    Alertas para o médico, resumo clínico, rascunho das receitas e orientações ao paciente.
    Tudo determinístico e auditável; os textos clínicos vêm do banco verificado (kb.js). */
 (function (G) {
@@ -43,10 +43,27 @@
 
   /* ---- limites de receituário (Portaria SVS/MS 344/1998; ver docs/REGULATORIO.md) ---- */
   RF.RX_REGRAS = {
-    simples: { rot: 'Receita simples', vias: 1, diasMax: null },
-    controle_especial: { rot: 'Receituário de controle especial', vias: 2, diasMax: 60, diasMaxExcecao: 180 },
-    notificacao_b: { rot: 'Notificação de Receita B', vias: 1, diasMax: 60, eletronica: false },
-    notificacao_a: { rot: 'Notificação de Receita A', vias: 1, diasMax: 30, eletronica: false }
+    simples: { rot: 'Receita simples', diasMax: null },
+    controle_especial: { rot: 'Receita de controle especial', diasMax: 60, diasMaxExcecao: 180, sncr: true, ordem: 2 },
+    notificacao_b: { rot: 'Notificação de Receita B', diasMax: 60, sncr: true, ordem: 3 },
+    notificacao_b2: { rot: 'Notificação de Receita B2', diasMax: 30, sncr: true, ordem: 4 },
+    notificacao_a: { rot: 'Notificação de Receita A', diasMax: 30, sncr: true, ordem: 5 },
+    retencao: { rot: 'Receita sujeita a retenção', diasMax: null, sncr: true, ordem: 6 },
+    confirmar: { rot: 'Confirmar o receituário', diasMax: null, ordem: 1 }
+  };
+  // Fora do banco, mas com regra conhecida. O sistema não pode deixar controlado sair em receita comum (P&R Integração SNCR, 48).
+  const RET_NOMES = /semaglutida|ozempic|wegovy|rybelsus|liraglutida|saxenda|victoza|dulaglutida|trulicity|tirzepatida|mounjaro|lixisenatida|soliqua|amoxicilina|azitromicina|cefalexina|cefuroxima|ceftriaxona|ciprofloxacino|levofloxacino|norfloxacino|nitrofurantoina|macrodantina|doxiciclina|minociclina|clindamicina|metronidazol|sulfametoxazol|bactrim|claritromicina|penicilina|benzetacil|fosfomicina|monuril/;
+  const P344_NOMES = /tramadol|tramal|codeina|tylex|morfina|dimorf|oxicodona|oxycontin|fentanil|metadona|mytedom|buprenorfina|tapentadol|lisdexanfetamina|venvanse|modafinil|stavigile|canabidiol|cannabis|flunitrazepam|midazolam|nitrazepam|clordiazepoxido|sibutramina|cetamina|esketamina|spravato/;
+  // { tipo, certo }: certo=false quer dizer que o médico precisa escolher o receituário
+  RF.classificar = function (nome, kbId) {
+    const k = kbId ? RF.kbPorId(kbId) : null;
+    if (k) return { tipo: k.receituario, certo: true, k };
+    const t = RF.norm(nome);
+    if (RET_NOMES.test(t)) return { tipo: 'retencao', certo: true };
+    if (P344_NOMES.test(t)) return { tipo: 'confirmar', certo: false, controlado: true };
+    const a = RF.acharMed(nome)[0];
+    if (a && a.score >= 60) return { tipo: a.m.receituario, certo: true, k: a.m };
+    return { tipo: 'confirmar', certo: false };
   };
   // exceção de 6 meses (art. 59, p.u.) só quando a indicação informada é a do grupo (epilepsia/Parkinson)
   RF.limiteDias = function (k, p) {
@@ -196,7 +213,7 @@
     }
     if (p.meds.some(m => m.kbId === 'citalopram') && idade >= 60) add('medio', 'Citalopram em ≥60 anos: dose máxima 20 mg/dia (prolongamento do QT).');
     const na = p.meds.filter(m => { const k = RF.kbPorId(m.kbId); return k && k.receituario === 'notificacao_a'; });
-    if (na.length) add('medio', `${nomes(na)}: exige Notificação de Receita A (amarela) em papel; a plataforma não emite.`);
+    if (na.length) add('medio', `${nomes(na)}: exige Notificação de Receita A. A eletrônica usa número da cota aprovada pela Vigilância Sanitária; sem cota, só talonário de papel.`);
 
     const bzd = temGrupo(p, 'bzd');
     if (bzd.length) {
@@ -204,7 +221,9 @@
       if (bzd.length > 1) add('medio', `Mais de um benzodiazepínico/hipnótico (${nomes(bzd)}).`);
     }
     const nb = p.meds.filter(m => { const k = RF.kbPorId(m.kbId); return k && k.receituario === 'notificacao_b'; });
-    if (nb.length) add('medio', `${nomes(nb)}: exige Notificação de Receita B em talonário de papel. A emissão eletrônica depende de integração ao SNCR da Anvisa (RDC 1.000/2025, art. 4º §2º), que a plataforma ainda não tem.`);
+    if (nb.length) add('medio', `${nomes(nb)}: exige Notificação de Receita B. A eletrônica usa número da cota aprovada pela Vigilância Sanitária; sem cota, só talonário de papel.`);
+    const foraNeuro = p.meds.filter(m => { const k = RF.kbPorId(m.kbId); return k && k.area === 'geral'; });
+    if (foraNeuro.length) add('info', `Fora da neurologia: ${nomes(foraNeuro)}. Renove só se fizer sentido neste atendimento; se não, oriente o paciente a procurar quem acompanha.`);
     const tca = temGrupo(p, 'tca');
     if (tca.length && (comorb.includes('glaucoma') || comorb.includes('prostata'))) add('medio', `Tricíclico (${nomes(tca)}) com ${comorb.includes('glaucoma') ? 'glaucoma' : 'prostatismo'}: efeito anticolinérgico.`);
     if (tca.length && comorb.includes('coracao')) add('medio', `Tricíclico (${nomes(tca)}) com cardiopatia: risco de arritmia; considerar ECG.`);
@@ -294,7 +313,7 @@
     p.meds.forEach((m, idx) => {
       if (!m.nome || m.manter === false) return;
       const k = RF.kbPorId(m.kbId);
-      const tipo = k ? k.receituario : 'simples';
+      const tipo = RF.classificar(m.nome, m.kbId).tipo;
       const lim = RF.limiteDias(k, p);
       const d = lim ? Math.min(dias, lim) : dias;
       const un = RF.unidadeDe(m.forma);
@@ -308,26 +327,22 @@
         quantidade: qtd, unidade: un, dias: d, limitado: !!(lim && dias > lim), sos: !!(m.pos && m.pos.sos),
         obs: RF.unidadeContavel(m.forma) ? '' : 'informar a quantidade de frascos, canetas ou dispositivos'
       };
-      if (tipo === 'notificacao_b' || tipo === 'notificacao_a') {
-        // uma notificação por substância
-        const chave = tipo + ':' + (m.kbId || m.nome);
-        (blocos[chave] = blocos[chave] || { tipo, itens: [] }).itens.push(item);
-      } else (blocos[tipo] = blocos[tipo] || { tipo, itens: [] }).itens.push(item);
+      (blocos[tipo] = blocos[tipo] || []).push(item);
     });
-    const ordem = { simples: 0, controle_especial: 1, notificacao_b: 2, notificacao_a: 3 };
+    // receita simples junta tudo; os demais saem um documento por remédio, cada um com seu número SNCR
+    // (o modelo eletrônico oficial tem um campo de medicamento só)
     const out = [];
-    for (const b of Object.values(blocos).sort((a, b) => ordem[a.tipo] - ordem[b.tipo])) {
-      // Portaria 344/98, art. 57: no máximo 3 substâncias por receituário de controle especial
-      if (b.tipo === 'controle_especial' && b.itens.length > 3) {
-        for (let i = 0; i < b.itens.length; i += 3) out.push({ tipo: b.tipo, itens: b.itens.slice(i, i + 3) });
-      } else out.push(b);
+    if (blocos.simples) out.push({ tipo: 'simples', itens: blocos.simples });
+    for (const t of Object.keys(blocos).filter(x => x !== 'simples').sort((a, c) => RF.RX_REGRAS[a].ordem - RF.RX_REGRAS[c].ordem)) {
+      if (t === 'confirmar') out.unshift({ tipo: t, itens: blocos[t] });
+      else blocos[t].forEach(it => out.push({ tipo: t, itens: [it] }));
     }
     return out;
   };
   RF.textoQuantidade = function (it, tipo) {
     if (it.quantidade == null) return 'Uso contínuo';
     const un = it.quantidade > 1 ? it.unidade[1] : it.unidade[0];
-    if (tipo && tipo !== 'simples') return `${it.quantidade} (${RF.extenso(it.quantidade)}) ${un}`;
+    if (tipo && tipo !== 'simples' && tipo !== 'confirmar') return `${it.quantidade} (${RF.extenso(it.quantidade)}) ${un}`;
     return `${it.quantidade} ${un}`;
   };
 

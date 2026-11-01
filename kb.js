@@ -1,4 +1,4 @@
-/* RefilMed — banco de medicamentos neurológicos (GERADO por tools/build_kb.py; não editar à mão)
+/* Meu Neuro — banco de medicamentos neurológicos (GERADO por tools/build_kb.py; não editar à mão)
    Conteúdo verificado em bulas ANVISA, rótulos FDA/EMA, PCDT/MS e diretrizes (fontes em cada item). */
 (typeof window !== "undefined" ? window : globalThis).RF_KB = [
 {
@@ -76,7 +76,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "alopurinol",
@@ -156,7 +157,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "alprazolam",
@@ -263,7 +265,8 @@
 "forma": "comprimido de liberação prolongada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "amantadina",
@@ -344,7 +347,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "amitriptilina",
@@ -436,7 +440,8 @@
 "amitriptilina",
 "amitripitilina",
 "amitriptilina"
-]
+],
+"area": "neuro"
 },
 {
 "id": "anlodipino",
@@ -517,7 +522,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "apixabana",
@@ -593,7 +599,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "aripiprazol",
@@ -682,7 +689,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "atenolol",
@@ -762,7 +770,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "atorvastatina",
@@ -848,7 +857,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "baclofeno",
@@ -924,7 +934,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "formoterol-beclometasona",
@@ -1012,7 +1023,8 @@
 "forma": "pó inalatório"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "biperideno",
@@ -1103,7 +1115,8 @@
 "forma": "solução injetável"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "bisoprolol",
@@ -1187,7 +1200,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "bromazepam",
@@ -1267,7 +1281,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "citalopram",
@@ -1341,7 +1356,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "budesonida-formoterol",
@@ -1452,7 +1468,8 @@
 "forma": "aerossol oral (bombinha)"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "candesartana",
@@ -1530,7 +1547,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "captopril",
@@ -1612,7 +1630,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "carbamazepina",
@@ -1723,7 +1742,8 @@
 "carbamazepine",
 "carbamazepam",
 "carbamazepna"
-]
+],
+"area": "neuro"
 },
 {
 "id": "litio",
@@ -1802,7 +1822,8 @@
 "forma": "comprimido de liberação controlada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "carvedilol",
@@ -1889,7 +1910,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "clobazam",
@@ -1977,7 +1999,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "clonazepam",
@@ -2078,7 +2101,8 @@
 "aliases": [
 "clonazepan",
 "clonazepan gotas"
-]
+],
+"area": "neuro"
 },
 {
 "id": "clopidogrel",
@@ -2152,7 +2176,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "bupropiona",
@@ -2235,7 +2260,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "fluoxetina",
@@ -2319,7 +2345,8 @@
 "forma": "solução oral (gotas)"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "metilfenidato",
@@ -2428,7 +2455,8 @@
 "forma": "comprimido de liberação prolongada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "paroxetina",
@@ -2500,7 +2528,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "clortalidona",
@@ -2579,7 +2608,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "colchicina",
@@ -2660,7 +2690,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "dabigatrana",
@@ -2743,7 +2774,8 @@
 "forma": "cápsula"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "dapagliflozina",
@@ -2828,7 +2860,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "desogestrel",
@@ -2901,7 +2934,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "diazepam",
@@ -2984,7 +3018,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "donepezila",
@@ -3072,7 +3107,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "doxazosina",
@@ -3154,7 +3190,8 @@
 "forma": "comprimido de liberação controlada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "drospirenona-etinilestradiol",
@@ -3237,7 +3274,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "duloxetina",
@@ -3325,7 +3363,8 @@
 ],
 "aliases": [
 "duloxetine"
-]
+],
+"area": "neuro"
 },
 {
 "id": "empagliflozina",
@@ -3407,7 +3446,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "enalapril",
@@ -3495,7 +3535,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "entacapona",
@@ -3576,7 +3617,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "esomeprazol",
@@ -3655,7 +3697,8 @@
 "forma": "comprimido revestido de liberação retardada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "espironolactona",
@@ -3734,7 +3777,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "etinilestradiol-levonorgestrel",
@@ -3812,7 +3856,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "ezetimiba",
@@ -3880,7 +3925,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "fenitoina",
@@ -3977,7 +4023,8 @@
 "aliases": [
 "fenitoína",
 "hidantal"
-]
+],
+"area": "neuro"
 },
 {
 "id": "fenobarbital",
@@ -4080,7 +4127,8 @@
 "aliases": [
 "fenobarbitol",
 "gardenal"
-]
+],
+"area": "neuro"
 },
 {
 "id": "finasterida",
@@ -4159,7 +4207,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "flunarizina",
@@ -4233,7 +4282,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "furosemida",
@@ -4304,7 +4354,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "gabapentina",
@@ -4399,7 +4450,8 @@
 ],
 "aliases": [
 "gabapentin"
-]
+],
+"area": "neuro"
 },
 {
 "id": "galantamina",
@@ -4489,7 +4541,8 @@
 "forma": "cápsula de liberação prolongada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "glibenclamida",
@@ -4563,7 +4616,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "gliclazida",
@@ -4641,7 +4695,8 @@
 "forma": "comprimido de liberação prolongada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "glimepirida",
@@ -4733,7 +4788,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "hidroclorotiazida",
@@ -4809,7 +4865,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "indapamida",
@@ -4881,7 +4938,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "insulina-glargina",
@@ -4977,7 +5035,8 @@
 "basaglar",
 "toujeo",
 "glargilin"
-]
+],
+"area": "geral"
 },
 {
 "id": "insulina-nph",
@@ -5067,7 +5126,8 @@
 "insulina nph",
 "humulin n",
 "novolin n"
-]
+],
+"area": "geral"
 },
 {
 "id": "insulina-regular",
@@ -5150,7 +5210,8 @@
 "insulina regular",
 "humulin r",
 "novolin r"
-]
+],
+"area": "geral"
 },
 {
 "id": "lacosamida",
@@ -5255,7 +5316,8 @@
 "forma": "solução injetável"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "lamotrigina",
@@ -5381,7 +5443,8 @@
 "aliases": [
 "lamotrigine",
 "lamotrigyna"
-]
+],
+"area": "neuro"
 },
 {
 "id": "levetiracetam",
@@ -5500,7 +5563,8 @@
 "levetiracetan",
 "levetiracetame",
 "levetiracetamo"
-]
+],
+"area": "neuro"
 },
 {
 "id": "levodopa-benserazida",
@@ -5603,7 +5667,8 @@
 "benserazida",
 "prolopa bd",
 "prolopa hbs"
-]
+],
+"area": "neuro"
 },
 {
 "id": "levodopa-carbidopa",
@@ -5695,7 +5760,8 @@
 "levodopa carbidopa",
 "carbidopa levodopa",
 "sinemet"
-]
+],
+"area": "neuro"
 },
 {
 "id": "levotiroxina",
@@ -5845,7 +5911,8 @@
 "synthroid",
 "euthyrox",
 "levoid"
-]
+],
+"area": "geral"
 },
 {
 "id": "lorazepam",
@@ -5925,7 +5992,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "losartana",
@@ -6007,7 +6075,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "melatonina",
@@ -6081,7 +6150,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "memantina",
@@ -6166,7 +6236,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "metformina",
@@ -6270,7 +6341,8 @@
 "aliases": [
 "glifage",
 "glifage xr"
-]
+],
+"area": "geral"
 },
 {
 "id": "metoprolol",
@@ -6359,7 +6431,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "mirtazapina",
@@ -6450,7 +6523,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "montelucaste",
@@ -6534,7 +6608,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "naratriptana",
@@ -6610,7 +6685,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "nortriptilina",
@@ -6709,7 +6785,8 @@
 ],
 "aliases": [
 "nortripitilina"
-]
+],
+"area": "neuro"
 },
 {
 "id": "olanzapina",
@@ -6792,7 +6869,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "omeprazol",
@@ -6877,7 +6955,8 @@
 "forma": "cápsula"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "escitalopram",
@@ -6964,7 +7043,8 @@
 "forma": "solução oral (gotas)"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "oxcarbazepina",
@@ -7060,7 +7140,8 @@
 "aliases": [
 "oxcarbazepine",
 "oxicarbazepina"
-]
+],
+"area": "neuro"
 },
 {
 "id": "pantoprazol",
@@ -7138,7 +7219,8 @@
 "forma": "comprimido revestido de liberação retardada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "pioglitazona",
@@ -7224,7 +7306,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "pramipexol",
@@ -7335,7 +7418,8 @@
 "forma": "comprimido de liberação prolongada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "pregabalina",
@@ -7458,7 +7542,8 @@
 ],
 "aliases": [
 "pregabalin"
-]
+],
+"area": "neuro"
 },
 {
 "id": "primidona",
@@ -7542,7 +7627,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "propranolol",
@@ -7629,7 +7715,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "quetiapina",
@@ -7742,7 +7829,8 @@
 "forma": "comprimido de liberação prolongada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "rasagilina",
@@ -7824,7 +7912,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "risperidona",
@@ -7919,7 +8008,8 @@
 "forma": "solução oral"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "rivaroxabana",
@@ -8007,7 +8097,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "rivastigmina-adesivo",
@@ -8101,7 +8192,8 @@
 "adesivo de rivastigmina",
 "exelon patch",
 "rivastigmina patch"
-]
+],
+"area": "neuro"
 },
 {
 "id": "rivastigmina-oral",
@@ -8201,7 +8293,8 @@
 "forma": "solução oral"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "rizatriptana",
@@ -8278,7 +8371,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "rosuvastatina",
@@ -8368,7 +8462,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "salbutamol",
@@ -8461,7 +8556,8 @@
 "forma": "solução para nebulização"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "salmeterol-fluticasona",
@@ -8560,7 +8656,8 @@
 "forma": "aerossol oral (bombinha)"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "sertralina",
@@ -8649,7 +8746,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "sinvastatina",
@@ -8733,7 +8831,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "sitagliptina",
@@ -8813,7 +8912,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "desvenlafaxina",
@@ -8889,7 +8989,8 @@
 "forma": "comprimido de liberação controlada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "sumatriptana",
@@ -8989,7 +9090,8 @@
 "aliases": [
 "sumatriptano",
 "sumatripitana"
-]
+],
+"area": "neuro"
 },
 {
 "id": "tansulosina",
@@ -9064,7 +9166,8 @@
 "forma": "comprimido revestido de liberação prolongada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "metimazol",
@@ -9143,7 +9246,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "tiotropio",
@@ -9212,7 +9316,8 @@
 "forma": "solução para inalação"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "topiramato",
@@ -9316,7 +9421,8 @@
 "aliases": [
 "topiramate",
 "topiramatu"
-]
+],
+"area": "neuro"
 },
 {
 "id": "trazodona",
@@ -9413,7 +9519,8 @@
 "forma": "comprimido de liberação prolongada"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "valproato",
@@ -9555,7 +9662,8 @@
 "valproico",
 "depakene",
 "depakote"
-]
+],
+"area": "neuro"
 },
 {
 "id": "valsartana",
@@ -9640,7 +9748,8 @@
 "forma": "comprimido revestido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "varfarina",
@@ -9729,7 +9838,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "venlafaxina",
@@ -9820,7 +9930,8 @@
 ],
 "aliases": [
 "venlafaxine"
-]
+],
+"area": "neuro"
 },
 {
 "id": "vildagliptina",
@@ -9892,7 +10003,8 @@
 "forma": "comprimido"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "geral"
 },
 {
 "id": "zolmitriptana",
@@ -9974,7 +10086,8 @@
 "forma": "comprimido orodispersível"
 }
 ],
-"aliases": []
+"aliases": [],
+"area": "neuro"
 },
 {
 "id": "zolpidem",
@@ -10072,7 +10185,8 @@
 ],
 "aliases": [
 "zolpiden"
-]
+],
+"area": "neuro"
 },
 {
 "id": "aas",
@@ -10163,6 +10277,7 @@
 "AAS",
 "aspirina",
 "acido acetil salicilico"
-]
+],
+"area": "neuro"
 }
 ];

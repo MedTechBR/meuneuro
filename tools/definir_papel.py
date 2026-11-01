@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Dá ou tira um papel (medico, atendente, admin) de uma conta do RefilMed, sem precisar das funções.
+"""Dá ou tira um papel (medico, atendente, admin) de uma conta do Meu Neuro, sem precisar das funções.
 
 Usa as credenciais padrão do Google deste computador (Application Default Credentials) — nenhuma
 senha ou chave fica no código. Uso:
