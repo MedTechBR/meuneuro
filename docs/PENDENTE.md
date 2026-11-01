@@ -3,7 +3,7 @@
 ## Só o dono pode fazer
 1. **Plano Blaze** no projeto Firebase `refilmed` (é pagamento). Depois, duplo clique em `publicar-servidor.command`.
 2. **Canal VIDaaS na Valid.** A habilitação é pela equipe comercial "Vendas Health" (validcertificadora.com.br/pages/psc-integracao-via-api; 0800-725-4565; ecleoneide.santos@valid.com). Pedir client_id e client_secret da aplicação Meu Neuro; o do assinador pessoal não deve ser reaproveitado. Depois, `ativar-vidaas.command`. Até lá funciona o caminho "Assinar por fora".
-3. **Teste no SNCR de treinamento:** entrar como médico no site com `?backend=firebase`, Perfil → Obter números pelo gov.br. É o único trecho que depende da sua conta gov.br e que os testes não alcançam.
+3. **Teste no SNCR de treinamento:** entrar como médico no site com `?backend=firebase`, Perfil → Obter números pelo gov.br. O botão já chega ao login; o treinamento usa o gov.br de testes (sso.staging.acesso.gov.br), com conta própria criada na hora (passo a passo em docs/sncr/instrucoes.txt), não a conta gov.br de verdade. É o único trecho que os testes não alcançam.
 4. **Legal (não é código; ver REGULATORIO.md):** empresa registrada no CRM da UF-sede, diretor técnico médico (preencher `responsavelTecnico` em config.js), avaliação de risco e governança da IA (Res. CFM 2.454/2026), parecer sobre software médico (RDC 657/2022), RIPD e contrato com o provedor de IA (LGPD).
 5. **Cota de notificação:** cada médico pede números à Vigilância Sanitária de cada estado onde atende (P&R RDC 1.000, pergunta 54). Sem cota, Notificação A/B sai em talonário de papel.
 6. **Preço e cobrança da consulta.**
