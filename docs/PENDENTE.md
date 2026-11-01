@@ -8,6 +8,10 @@
 5. **Cota de notificação:** cada médico pede números à Vigilância Sanitária de cada estado onde atende (P&R RDC 1.000, pergunta 54). Sem cota, Notificação A/B sai em talonário de papel.
 6. **Preço e cobrança da consulta.**
 
+## Venda a clínicas (CNPJs médicos): ainda não implementado
+O código atende uma clínica só. Para vender: separar pedidos e médicos por clínica, rodapé e termo com os dados de cada uma, contrato em que a clínica é controladora e a MedTech é operadora (LGPD), cobrança por clínica ou por médico. O CNPJ enviado ao SNCR continua o da MedTech.
+Registro no CRM com diretor técnico: a clínica, pelo serviço médico (Lei 14.510/2022, art. 3º; CFM 2.314/2022, art. 17); a MedTech, pela leitura da CFM 2.299/2021, art. 5º (plataforma de prescrição). Confirmar no CREMEC.
+
 ## Virada para produção (feita depois do item 3)
 `config.js`: `ativo: true` e `sncr.ambiente: 'producao'`. `functions/.env.refilmed`: `SNCR_AMBIENTE=producao`. Publicar o site e as funções. Número de homologação não entra em receita de produção: o sistema recusa.
 
